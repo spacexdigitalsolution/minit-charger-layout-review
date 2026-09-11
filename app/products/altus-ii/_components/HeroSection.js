@@ -1,0 +1,86 @@
+"use client";
+
+import { useRef, useState } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { Download, Volume2, VolumeX } from "lucide-react";
+
+export default function HeroSection() {
+  const containerRef = useRef(null);
+  const [isMuted, setIsMuted] = useState(true);
+
+  useGSAP(() => {
+    let mm = gsap.matchMedia();
+    mm.add("(prefers-reduced-motion: no-preference)", () => {
+      const tl = gsap.timeline({ defaults: { ease: "power2.out", clearProps: "all" } });
+
+      tl.from(".hero-headline", { autoAlpha: 0, y: 30, duration: 0.8 }, 0)
+        .from(".hero-subcopy", { autoAlpha: 0, duration: 0.8 }, 0.2)
+        .from(".hero-specs", { autoAlpha: 0, x: -20, duration: 0.8 }, 0.35)
+        .from(".hero-buttons", { autoAlpha: 0, scale: 0.95, duration: 0.6 }, 0.5)
+        .from(".hero-mute", { autoAlpha: 0, duration: 0.6 }, 0.85);
+    });
+  }, { scope: containerRef });
+
+  return (
+    <section ref={containerRef} className="relative overflow-hidden w-full min-h-[90vh] flex items-center border-b border-zinc-200 dark:border-zinc-800">
+
+      {/* Video Background Layer */}
+      <video
+        autoPlay
+        muted={isMuted}
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover z-0"
+        poster="/assets/Products/altus-ii/context/altus_cta_bg.webp"
+      >
+        <source src="/assets/optimized-videos/ALTUS_II.mp4" type="video/mp4" />
+      </video>
+
+      {/* Legibility Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/40 to-transparent z-10" />
+
+      {/* Mute Toggle */}
+      <button
+        onClick={() => setIsMuted(!isMuted)}
+        className="hero-mute absolute bottom-6 right-6 z-30 p-3 rounded-full bg-black/40 hover:bg-black/60 text-white backdrop-blur-sm transition-colors border border-white/10"
+        aria-label={isMuted ? "Unmute video" : "Mute video"}
+      >
+        {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
+      </button>
+
+      {/* Content Layer */}
+      <div className="relative z-20 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
+        <div className="max-w-2xl">
+          <h1 className="hero-headline font-display text-6xl md:text-7xl font-black tracking-tighter text-white uppercase leading-[0.9] mb-4">
+            Altus II
+          </h1>
+          <p className="hero-subcopy mt-3 text-lg text-zinc-300 sm:mt-5 sm:text-2xl lg:text-xl xl:text-2xl font-light">
+            Versatile Outdoor Charger for GSE & EV. <br />
+            Robust charging with global deployment.
+          </p>
+
+          <div className="hero-specs mt-10 flex flex-col sm:flex-row gap-4">
+            <div className="bg-black/40 backdrop-blur-md border border-white/10 p-5 rounded flex items-center justify-between sm:w-1/2">
+              <dt className="text-sm font-bold text-zinc-400 uppercase tracking-wider">Power Output</dt>
+              <dd className="mt-1 text-2xl font-display font-bold tracking-tight text-white">40 kW</dd>
+            </div>
+            <div className="bg-black/40 backdrop-blur-md border border-white/10 p-5 rounded flex items-center justify-between sm:w-1/2">
+              <dt className="text-sm font-bold text-zinc-400 uppercase tracking-wider">Ports</dt>
+              <dd className="mt-1 text-2xl font-display font-bold tracking-tight text-white">2 - 3</dd>
+            </div>
+          </div>
+
+          <div className="hero-buttons mt-10 flex gap-4">
+            <button className="inline-flex items-center justify-center rounded bg-green-600 px-8 py-4 text-sm font-bold text-white hover:bg-green-700 transition-colors uppercase tracking-wider">
+              Get a Quote
+            </button>
+            <button className="inline-flex items-center justify-center rounded border border-white/20 px-8 py-4 text-sm font-bold text-white hover:bg-white/10 transition-colors uppercase tracking-wider backdrop-blur-sm">
+              <Download className="mr-2 h-4 w-4" /> Specs
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
