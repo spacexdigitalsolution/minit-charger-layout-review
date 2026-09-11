@@ -4,7 +4,7 @@ import { useState, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import Image from "next/image";
+import SmartImage from "../../../components/SmartImage";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -138,7 +138,7 @@ export default function PersonaSplit() {
           </div>
 
           <div className="lg:col-span-6 relative w-full aspect-square md:aspect-[4/3] bg-zinc-100 dark:bg-zinc-900 overflow-hidden rounded-sm">
-            <Image 
+            <SmartImage 
               key={activeData.id}
               src={activeData.image} 
               alt={activeData.label} 

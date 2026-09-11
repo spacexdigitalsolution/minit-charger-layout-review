@@ -4,7 +4,7 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import Image from "next/image";
+import SmartImage from "../../../components/SmartImage";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -54,7 +54,7 @@ export default function Var4Oversized() {
 
       {/* Subtle Background Texture */}
       <div className="absolute inset-0 w-full h-full opacity-20 pointer-events-none">
-        <Image 
+        <SmartImage 
           src="/assets/gse/MGNS_GSE_1.png" 
           alt="Background Texture"
           fill

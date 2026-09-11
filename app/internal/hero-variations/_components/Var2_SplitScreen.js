@@ -4,7 +4,7 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import Image from "next/image";
+import SmartImage from "../../../components/SmartImage";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -53,7 +53,7 @@ export default function Var2SplitScreen() {
 
       {/* Image Left */}
       <div className="v2-image w-full md:w-1/2 min-h-[50vh] md:min-h-screen relative bg-zinc-100 flex items-center justify-center p-12">
-        <Image 
+        <SmartImage 
           src="/assets/Products/altus-ii/context/altus_specs_render.png" 
           alt="Altus II Charging Station"
           fill

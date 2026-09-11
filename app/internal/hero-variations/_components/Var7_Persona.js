@@ -4,7 +4,7 @@ import { useState, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import Image from "next/image";
+import SmartImage from "../../../components/SmartImage";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -90,7 +90,7 @@ export default function Var7Persona() {
 
       {/* Dynamic Background */}
       <div ref={bgRef} className="absolute inset-0 w-full h-full">
-        <Image 
+        <SmartImage 
           src={activeData.image} 
           alt={activeData.label}
           fill

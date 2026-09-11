@@ -4,34 +4,15 @@ import { useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import { Plus, Minus } from "lucide-react";
+import { Plus } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const faqs = [
-  {
-    question: "What battery chemistries does the Altus II support?",
-    answer: "The Altus II is universally compatible and chemistry-agnostic. It seamlessly supports Lead Acid, Lithium-ion, and standard EV battery architectures."
-  },
-  {
-    question: "Can it charge both heavy GSE and passenger EVs?",
-    answer: "Yes. By utilizing the optional 3rd port for Level 2 (J1772) charging, the Altus II can simultaneously support your heavy-duty fleet and light passenger EVs."
-  },
-  {
-    question: "Does the charger require significant infrastructure upgrades?",
-    answer: "No. Our intelligent power sharing technology sequences charging across connected vehicles, ensuring maximum utilization of your available power without overdrawing the grid or requiring costly peak load upgrades."
-  },
-  {
-    question: "Is it rated for outdoor environments?",
-    answer: "Absolutely. The Altus II is built for the harshest ramp conditions with an IP54 outdoor-rated enclosure and an operating minimum temperature of -13°F."
-  },
-  {
-    question: "How does the automated billing work?",
-    answer: "The Altus II integrates a certified energy meter that precisely tracks power usage. This data is synced to the AssetPro cloud platform, allowing for automated compliance reporting and streamlined billing."
-  }
-];
-
-export default function FaqSection() {
+export default function FaqSection({ 
+  title = "Common Questions", 
+  description = "Find answers to the most common inquiries regarding the Altus II deployment, hardware capabilities, and ecosystem integrations.",
+  faqs = []
+}) {
   const containerRef = useRef(null);
   const [openIndex, setOpenIndex] = useState(null);
 
@@ -58,10 +39,10 @@ export default function FaqSection() {
           {/* Left Column: Heading & Intro */}
           <div className="lg:col-span-4 mb-12 lg:mb-0 faq-anim">
             <h2 className="font-display text-3xl font-black tracking-tighter text-zinc-900 dark:text-white uppercase mb-4">
-              Common Questions
+              {title}
             </h2>
             <p className="text-zinc-600 dark:text-zinc-400 font-light text-lg">
-              Find answers to the most common inquiries regarding the Altus II deployment, hardware capabilities, and ecosystem integrations.
+              {description}
             </p>
           </div>
           

@@ -5,7 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { Download } from "lucide-react";
-import Image from "next/image";
+import SmartImage from "../../../components/SmartImage";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -131,7 +131,7 @@ export default function SpecsTable() {
           {/* Left Column: Sticky Product Render */}
           <div className="hidden lg:block lg:col-span-5 sticky top-32 specs-anim">
             <div className="bg-zinc-50 dark:bg-zinc-900/40 rounded-2xl p-10 border border-zinc-200 dark:border-zinc-800 flex items-center justify-center min-h-[500px]">
-              <Image 
+              <SmartImage 
                 src="/assets/Products/altus-ii/context/altus_specs_render.png" 
                 alt="Altus II Hardware Render" 
                 width={500} 

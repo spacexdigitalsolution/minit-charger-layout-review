@@ -5,7 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { CheckCircle2 } from "lucide-react";
-import Image from "next/image";
+import SmartImage from "../../../components/SmartImage";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -42,7 +42,7 @@ export default function BenefitModules() {
         {/* Block 1 */}
         <div className="hd-block-1 lg:grid lg:grid-cols-12 lg:gap-16 items-center mb-32">
           <div className="hd-img-1 lg:col-span-7 relative w-full aspect-[4/3] bg-zinc-200 dark:bg-zinc-800 overflow-hidden rounded-sm">
-            <Image
+            <SmartImage
               src="/assets/gse/MGNS_GSE_1.png"
               alt="Magnus Charger supporting mixed fleet operations"
               fill
@@ -72,7 +72,7 @@ export default function BenefitModules() {
             </p>
           </div>
           <div className="hd-img-2 order-1 lg:order-2 lg:col-span-7 relative w-full aspect-[4/3] bg-zinc-200 dark:bg-zinc-100 overflow-hidden rounded-sm flex items-center justify-center p-8">
-            <Image
+            <SmartImage
               src="/assets/Products/Mobilus/MOBILUS Hardware Listing.webp"
               alt="Mobilus mobile charging platform"
               fill

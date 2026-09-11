@@ -4,7 +4,7 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import Image from "next/image";
+import SmartImage from "../../../components/SmartImage";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -54,7 +54,7 @@ export default function Var3Diagram() {
 
         <div className="relative w-full max-w-5xl mx-auto aspect-video md:aspect-[21/9] flex items-center justify-center my-12">
           <div className="v3-image relative w-full h-full max-w-2xl mx-auto">
-            <Image 
+            <SmartImage 
               src="/assets/Products/altus-ii/context/altus_specs_render.png" 
               alt="Altus II Charging Station Diagram"
               fill

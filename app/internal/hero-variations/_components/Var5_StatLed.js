@@ -4,7 +4,7 @@ import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import Image from "next/image";
+import SmartImage from "../../../components/SmartImage";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -107,7 +107,7 @@ export default function Var5StatLed() {
 
         {/* Supporting Image & CTA */}
         <div className="v5-image relative w-full max-w-3xl aspect-[21/9] bg-zinc-100 rounded-sm flex items-center justify-center p-8 border border-zinc-200 mb-10">
-          <Image 
+          <SmartImage 
             src="/assets/Products/altus-ii/context/altus_specs_render.png" 
             alt="Altus II Charging Station"
             fill

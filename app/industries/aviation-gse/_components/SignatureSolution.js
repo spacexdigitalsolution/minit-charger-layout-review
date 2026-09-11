@@ -4,7 +4,7 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import Image from "next/image";
+import SmartImage from "../../../components/SmartImage";
 import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -45,7 +45,7 @@ export default function SignatureSolution() {
 
         {/* Centerpiece Image area */}
         <div className="ss-image relative w-full max-w-5xl mx-auto aspect-video mb-12 bg-transparent flex items-center justify-center">
-          <Image 
+          <SmartImage 
             src="/assets/Products/altus-ii/context/altus_specs_render.png"
             alt="Altus II Charging Station Diagram"
             fill

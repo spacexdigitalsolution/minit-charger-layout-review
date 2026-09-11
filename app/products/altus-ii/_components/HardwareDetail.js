@@ -40,7 +40,7 @@ export default function HardwareDetail() {
 
         <div className="hd-block-1 lg:grid lg:grid-cols-12 lg:gap-16 items-center mb-32">
           <div className="hd-img-1 lg:col-span-7 relative w-full aspect-square bg-zinc-50 dark:bg-zinc-900/50 flex items-center justify-center border border-dashed border-zinc-300 dark:border-zinc-700">
-            <span className="text-sm font-medium text-zinc-500 dark:text-zinc-400">[ASSET GAP: Detail/Context Shot]</span>
+            {/* TODO: ASSET GAP - Detail/Context Shot */}
           </div>
           <div className="hd-text-1 lg:col-span-5 mt-12 lg:mt-0">
             <h2 className="font-display text-3xl font-black tracking-tighter text-zinc-900 dark:text-white sm:text-4xl uppercase mb-6">
@@ -90,7 +90,7 @@ export default function HardwareDetail() {
             </ul>
           </div>
           <div className="hd-img-2 order-1 lg:order-2 lg:col-span-7 relative w-full aspect-square bg-zinc-50 dark:bg-zinc-900/50 flex items-center justify-center border border-dashed border-zinc-300 dark:border-zinc-700">
-            <span className="text-sm font-medium text-zinc-500 dark:text-zinc-400">[ASSET GAP: Detail/Context Shot]</span>
+            {/* TODO: ASSET GAP - Detail/Context Shot */}
           </div>
         </div>
 
