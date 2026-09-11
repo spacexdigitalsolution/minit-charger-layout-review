@@ -17,9 +17,7 @@ export default function Var2SplitScreen() {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "top 70%",
-          toggleActions: "play none none none"
-        }
+          start: "top 70%", toggleActions: "play none none none", once: true}
       });
 
       tl.from(".v2-image", { 

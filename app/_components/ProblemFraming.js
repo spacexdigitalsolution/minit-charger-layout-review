@@ -16,9 +16,7 @@ export default function ProblemFraming() {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "top 80%",
-          toggleActions: "play none none none"
-        }
+          start: "top 80%", toggleActions: "play none none none", once: true}
       });
       tl.from(".pf-anim", { y: 20, autoAlpha: 0, duration: 0.6, stagger: 0.1, ease: "power2.out" });
     });

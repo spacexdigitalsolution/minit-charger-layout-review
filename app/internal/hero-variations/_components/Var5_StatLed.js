@@ -17,9 +17,7 @@ export default function Var5StatLed() {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "top 70%",
-          toggleActions: "play none none none"
-        }
+          start: "top 70%", toggleActions: "play none none none", once: true}
       });
 
       tl.from(".v5-header", { y: 20, autoAlpha: 0, duration: 0.6, ease: "power2.out", clearProps: "all" })
@@ -34,7 +32,7 @@ export default function Var5StatLed() {
         gsap.to(counter, {
           scrollTrigger: {
             trigger: containerRef.current,
-            start: "top 70%",
+            start: "top 70%", once: true,
           },
           innerHTML: target,
           duration: 1.2,

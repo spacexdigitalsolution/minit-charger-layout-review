@@ -42,7 +42,7 @@ export default function CustomerQuotes() {
     let mm = gsap.matchMedia();
     mm.add("(prefers-reduced-motion: no-preference)", () => {
       gsap.from(".quote-anim", {
-        scrollTrigger: { trigger: containerRef.current, start: "top 80%", toggleActions: "play none none none" },
+        scrollTrigger: { trigger: containerRef.current, start: "top 80%", toggleActions: "play none none none", once: true},
         y: 20, autoAlpha: 0, duration: 0.6, stagger: 0.1, ease: "power2.out"
       });
     });

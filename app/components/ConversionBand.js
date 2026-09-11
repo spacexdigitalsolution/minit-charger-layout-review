@@ -21,7 +21,7 @@ export default function ConversionBand({
     let mm = gsap.matchMedia();
     mm.add("(prefers-reduced-motion: no-preference)", () => {
       gsap.from(".cb-anim", {
-        scrollTrigger: { trigger: containerRef.current, start: "top 80%", toggleActions: "play none none none" },
+        scrollTrigger: { trigger: containerRef.current, start: "top 80%", toggleActions: "play none none none", once: true},
         y: 20, scale: 0.98, autoAlpha: 0, duration: 0.8, stagger: 0.1, ease: "power2.out", clearProps: "all"
       });
     });

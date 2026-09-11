@@ -16,20 +16,20 @@ export default function BenefitModules() {
     let mm = gsap.matchMedia();
     mm.add("(prefers-reduced-motion: no-preference)", () => {
       gsap.from(".hd-img-1", {
-        scrollTrigger: { trigger: ".hd-block-1", start: "top 80%", toggleActions: "play none none none" },
+        scrollTrigger: { trigger: ".hd-block-1", start: "top 80%", toggleActions: "play none none none", once: true},
         x: -30, autoAlpha: 0, duration: 0.8, ease: "power2.out", clearProps: "all"
       });
       gsap.from(".hd-text-1", {
-        scrollTrigger: { trigger: ".hd-block-1", start: "top 80%", toggleActions: "play none none none" },
+        scrollTrigger: { trigger: ".hd-block-1", start: "top 80%", toggleActions: "play none none none", once: true},
         y: 30, autoAlpha: 0, duration: 0.8, ease: "power2.out", clearProps: "all"
       });
 
       gsap.from(".hd-img-2", {
-        scrollTrigger: { trigger: ".hd-block-2", start: "top 80%", toggleActions: "play none none none" },
+        scrollTrigger: { trigger: ".hd-block-2", start: "top 80%", toggleActions: "play none none none", once: true},
         x: 30, autoAlpha: 0, duration: 0.8, ease: "power2.out", clearProps: "all"
       });
       gsap.from(".hd-text-2", {
-        scrollTrigger: { trigger: ".hd-block-2", start: "top 80%", toggleActions: "play none none none" },
+        scrollTrigger: { trigger: ".hd-block-2", start: "top 80%", toggleActions: "play none none none", once: true},
         y: 30, autoAlpha: 0, duration: 0.8, ease: "power2.out", clearProps: "all"
       });
     });

@@ -15,7 +15,7 @@ export default function TrustStrip() {
     let mm = gsap.matchMedia();
     mm.add("(prefers-reduced-motion: no-preference)", () => {
       gsap.from(".trust-anim", {
-        scrollTrigger: { trigger: containerRef.current, start: "top 90%", toggleActions: "play none none none" },
+        scrollTrigger: { trigger: containerRef.current, start: "top 90%", toggleActions: "play none none none", once: true},
         y: 10, autoAlpha: 0, duration: 0.6, stagger: 0.1, ease: "power2.out"
       });
     });

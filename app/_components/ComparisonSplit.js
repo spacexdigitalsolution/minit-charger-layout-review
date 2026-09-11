@@ -14,7 +14,7 @@ export default function ComparisonSplit() {
   useGSAP(() => {
     let mm = gsap.matchMedia();
     mm.add("(prefers-reduced-motion: no-preference)", () => {
-      const st = { trigger: containerRef.current, start: "top 80%", toggleActions: "play none none none" };
+      const st = { trigger: containerRef.current, start: "top 80%", toggleActions: "play none none none", once: true};
       
       gsap.from(".cs-title", { scrollTrigger: st, y: 20, autoAlpha: 0, duration: 0.6, ease: "power2.out" });
       gsap.from(".cs-left", { scrollTrigger: st, x: -30, autoAlpha: 0, duration: 0.6, ease: "power2.out", delay: 0.1 });

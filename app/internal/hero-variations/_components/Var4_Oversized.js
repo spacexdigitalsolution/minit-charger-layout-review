@@ -17,9 +17,7 @@ export default function Var4Oversized() {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "top 70%",
-          toggleActions: "play none none none"
-        }
+          start: "top 70%", toggleActions: "play none none none", once: true}
       });
 
       // Split the words conceptually in the DOM, animate them in stagger

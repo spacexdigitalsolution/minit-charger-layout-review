@@ -26,7 +26,7 @@ function StatItem({ targetValue, unit, label, index }) {
         gsap.to(obj, {
           scrollTrigger: {
             trigger: valueRef.current,
-            start: "top 90%",
+            start: "top 90%", once: true,
           },
           val: targetNum,
           duration: 1.5,
@@ -71,7 +71,7 @@ export default function StatModule({
       gsap.from(".stat-anim", {
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "top 80%",
+          start: "top 80%", once: true,
         },
         y: 30,
         autoAlpha: 0,

@@ -16,9 +16,7 @@ export default function VideoModule() {
       const tl = gsap.timeline({
         scrollTrigger: { 
           trigger: containerRef.current, 
-          start: "top 80%", 
-          toggleActions: "play none none none" 
-        }
+          start: "top 80%", toggleActions: "play none none none", once: true}
       });
       
       tl.from(".vid-anim", { y: 30, autoAlpha: 0, duration: 0.8, stagger: 0.1, ease: "power2.out", clearProps: "y,opacity,visibility" }, 0)

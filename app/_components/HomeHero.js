@@ -25,6 +25,7 @@ export default function HomeHero() {
   const [isMuted, setIsMuted] = useState(true);
   const [isPaused, setIsPaused] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+  const [inView, setInView] = useState(true);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -37,7 +38,19 @@ export default function HomeHero() {
       if (e.matches) setIsPaused(true);
     };
     mediaQuery.addEventListener("change", handler);
-    return () => mediaQuery.removeEventListener("change", handler);
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setInView(entry.isIntersecting),
+      { threshold: 0 }
+    );
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => {
+      mediaQuery.removeEventListener("change", handler);
+      observer.disconnect();
+    };
   }, []);
 
   useGSAP(() => {
@@ -49,19 +62,19 @@ export default function HomeHero() {
   }, { scope: containerRef });
 
   useEffect(() => {
-    if (isPaused) return;
+    if (isPaused || !inView) return;
 
     const timer = setTimeout(() => {
       setActiveSlide((prev) => (prev + 1) % slides.length);
     }, slides[activeSlide].duration);
 
     return () => clearTimeout(timer);
-  }, [activeSlide, isPaused]);
+  }, [activeSlide, isPaused, inView]);
 
   useEffect(() => {
     videoRefs.current.forEach((vid, idx) => {
       if (vid) {
-        if (idx === activeSlide) {
+        if (idx === activeSlide && inView) {
           vid.currentTime = 0;
           vid.play().catch(() => { });
         } else {
@@ -69,7 +82,7 @@ export default function HomeHero() {
         }
       }
     });
-  }, [activeSlide]);
+  }, [activeSlide, inView]);
 
   return (
     <section

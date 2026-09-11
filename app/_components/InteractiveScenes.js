@@ -38,7 +38,7 @@ export default function InteractiveScenes() {
       gsap.from(".scene-nav", {
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "top 80%",
+          start: "top 80%", once: true,
         },
         y: 20,
         autoAlpha: 0,
@@ -50,7 +50,7 @@ export default function InteractiveScenes() {
       gsap.from(contentRef.current, {
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "top 70%",
+          start: "top 70%", once: true,
         },
         y: 20,
         autoAlpha: 0,
