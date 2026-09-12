@@ -17,7 +17,8 @@ export default function Var3Diagram() {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "top 70%", toggleActions: "play none none none", once: true}
+          start: "top 70%", toggleActions: "play none none none", once: true
+        }
       });
 
       tl.from(".v3-header", { y: 20, autoAlpha: 0, duration: 0.6, ease: "power2.out", clearProps: "all" })
@@ -30,7 +31,7 @@ export default function Var3Diagram() {
 
   return (
     <div ref={containerRef} className="relative min-h-screen w-full bg-zinc-50 flex flex-col items-center justify-center overflow-hidden py-24">
-      
+
       {/* Variation Label */}
       <div className="absolute top-4 left-4 z-50 pointer-events-none">
         <span className="bg-zinc-900/10 text-zinc-900 backdrop-blur-md px-3 py-1 rounded-sm text-xs font-bold uppercase tracking-wider border border-zinc-900/20 shadow-sm">
@@ -40,7 +41,7 @@ export default function Var3Diagram() {
       </div>
 
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         <div className="v3-header text-center mb-12">
           <span className="text-xs font-bold text-zinc-400 uppercase tracking-widest mb-4 block">
             Aviation GSE
@@ -52,8 +53,8 @@ export default function Var3Diagram() {
 
         <div className="relative w-full max-w-5xl mx-auto aspect-video md:aspect-[21/9] flex items-center justify-center my-12">
           <div className="v3-image relative w-full h-full max-w-2xl mx-auto">
-            <SmartImage 
-              src="/assets/Products/altus-ii/context/altus_specs_render.png" 
+            <SmartImage
+              src="/assets/Products/Altus II/Altus II Listing.webp"
               alt="Altus II Charging Station Diagram"
               fill
               className="object-contain"

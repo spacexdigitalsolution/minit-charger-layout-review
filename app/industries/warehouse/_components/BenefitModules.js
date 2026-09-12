@@ -43,8 +43,7 @@ export default function BenefitModules() {
         <div className="hd-block-1 lg:grid lg:grid-cols-12 lg:gap-16 items-center mb-32">
           <div className="hd-img-1 lg:col-span-7 relative w-full aspect-[4/3] bg-zinc-200 dark:bg-zinc-800 overflow-hidden rounded-sm">
             <SmartImage
-              // AI-generated placeholder — replace with real photography, approved 2026-09-12
-              src="/assets/ai_placeholders/gse_ecosystem_1789225330392.jpg"
+              src="/assets/gse/MGNS_GSE_1.png"
               alt="Magnus Charger supporting mixed fleet operations"
               fill
               className="object-cover"
@@ -53,10 +52,10 @@ export default function BenefitModules() {
           <div className="hd-text-1 lg:col-span-5 mt-12 lg:mt-0">
             <span className="text-[10px] font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-widest mb-3 block">Solution Benefits</span>
             <h2 className="font-display text-3xl font-black tracking-tighter text-zinc-900 dark:text-white sm:text-4xl uppercase mb-6">
-              One Ecosystem from GSE to EV
+              Opportunity Charging That Works
             </h2>
             <p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
-              Airports are electrifying both ground support equipment and on-road passenger vehicles. Instead of managing separate legacy networks, deploy a unified multi-voltage platform capable of serving everything from a 24V baggage tractor to a 1000V electric shuttle bus. With support for CCS, NACS, and REMA connectors on a single platform, you can dramatically simplify training and maintenance for ground crew while reducing charger sprawl.
+              Stop swapping batteries. Fast opportunity charging allows your material handling equipment to charge during natural operator breaks and shift changes. By maintaining a high state of charge without battery swaps, you maximize the utilization of your fleet, protect battery life, and eliminate the need for dangerous, space-consuming battery rooms.
             </p>
           </div>
         </div>
@@ -66,16 +65,15 @@ export default function BenefitModules() {
           <div className="hd-text-2 order-2 lg:order-1 lg:col-span-5 mt-12 lg:mt-0">
             <span className="text-[10px] font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-widest mb-3 block">Solution Benefits</span>
             <h2 className="font-display text-3xl font-black tracking-tighter text-zinc-900 dark:text-white sm:text-4xl uppercase mb-6">
-              Scale Without Infrastructure Constraints
+              Reclaim Valuable Floor Space
             </h2>
             <p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
-              Deploy charging power exactly where it's needed without waiting for grid upgrades. Mobile charging and energy storage platforms like Mobilus allow you to avoid costly trenching and transformational upgrades. Paired with dynamic power balancing across multiple active ports, you can maximize the utilization of your existing electrical capacity across the ramp.
+              Every square foot matters in a modern warehouse. Our platforms are engineered for extreme space efficiency. By consolidating charging power and offering flexible mounting options—including wall and column mounts—you can recover massive amounts of square footage previously lost to legacy charging infrastructure, converting it directly into revenue-generating storage or staging areas.
             </p>
           </div>
           <div className="hd-img-2 order-1 lg:order-2 lg:col-span-7 relative w-full aspect-[4/3] bg-zinc-200 dark:bg-zinc-100 overflow-hidden rounded-sm flex items-center justify-center p-8">
             <SmartImage
-              // AI-generated placeholder — replace with real photography, approved 2026-09-12
-              src="/assets/ai_placeholders/mobilus_deployment_1789225347110.jpg"
+              src="/assets/Products/Mobilus/MOBILUS Hardware Listing.webp"
               alt="Mobilus mobile charging platform"
               fill
               className="object-contain p-12"

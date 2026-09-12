@@ -14,37 +14,20 @@ import FaqSection from "./components/FaqSection";
 import CustomerQuotes from "./_components/CustomerQuotes";
 import ConversionBand from "./components/ConversionBand";
 import SmoothScroll from "./products/altus-ii/_components/SmoothScroll";
+import CumulusSpotlight from "./components/CumulusSpotlight";
 
-const products = [
-  {
-    id: "altus-ii",
-    name: "Altus II",
-    kicker: "Airport GSE",
-    image: "/assets/homepage/Altus II.webp",
-    link: "/products/altus-ii"
-  },
-  {
-    id: "magnus",
-    name: "Magnus",
-    kicker: "Universal Mixed Fleet",
-    image: "/assets/homepage/Magnus Hardware-01.webp",
-    link: "/products/magnus"
-  },
-  {
-    id: "mobilus",
-    name: "Mobilus",
-    kicker: "Mobile Charging",
-    image: "/assets/homepage/MOBILUS Hardware-01.webp",
-    link: "/products/mobilus"
-  },
-  {
-    id: "cumulus",
-    name: "Cumulus",
-    kicker: "Enterprise Software",
-    image: "/assets/homepage/Cumulus Software-01.webp",
-    link: "/products/cumulus"
-  }
-];
+import { products } from "@/data/products";
+
+const displayProductIds = ["altus-ii", "magnus", "mobilus", "cumulus"];
+const pageProducts = products
+  .filter(p => displayProductIds.includes(p.id))
+  .map(p => ({
+    ...p,
+    kicker: p.categoryTag,
+    image: p.cardImage,
+    link: p.productPageUrl,
+    description: p.keyUSP
+  }));
 
 const faqs = [
   {
@@ -109,11 +92,18 @@ export default function Home() {
             description="Hardware and software engineered for the realities of industrial fleet operations."
             linkText="Explore the Ecosystem"
             linkHref="/products"
-            items={products}
+            items={pageProducts}
           />
 
           {/* 10. Customer quotes */}
           <CustomerQuotes />
+
+          {/* Cumulus Spotlight Cross-sell */}
+          <CumulusSpotlight 
+            headline="See your fleet before it strands you"
+            supportingCopy="Manage the complete charging operation, not only the charger. Connect your hardware to the Cumulus cloud platform for total visibility."
+            imageSide="right"
+          />
 
           {/* 11. Company proof/stat band with logos */}
           <LogoStrip

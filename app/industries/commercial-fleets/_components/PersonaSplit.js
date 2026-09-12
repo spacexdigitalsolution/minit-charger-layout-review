@@ -9,37 +9,34 @@ import SmartImage from "../../../components/SmartImage";
 gsap.registerPlugin(ScrollTrigger);
 
 const personaContent = {
-  handlers: {
-    id: "handlers",
-    label: "Ground Handlers",
-    headline: "Maximize Uptime on the Ramp",
-    problem: "Ground support teams face strict turnaround windows and mixed fleets of varying ages, chemistries, and voltages. Charger downtime or incompatibility immediately impacts SLAs.",
-    solution: "A single, multi-voltage platform capable of charging everything from legacy lead-acid baggage tractors to new lithium loaders. Minimize footprint, simplify crew training, and eliminate charger sprawl.",
-    // AI-generated placeholder — replace with real photography, approved 2026-09-12
-    image: "/assets/ai_placeholders/gse_ground_handlers_1789225264394.jpg"
+  managers: {
+    id: "managers",
+    label: "Fleet Managers",
+    headline: "Keep Vehicles on the Road",
+    problem: "You have a mixed fleet of class 2 to class 6 vehicles. Managing different charger types, cables, and software dashboards creates a disjointed, chaotic depot.",
+    solution: "Unify your depot with a multi-voltage platform that handles your entire mixed fleet. Monitor vehicle state-of-charge, schedule charging, and manage uptime from a single cloud dashboard.",
+    image: null
   },
-  authorities: {
-    id: "authorities",
-    label: "Airport Authorities",
-    headline: "Electrify Without Grid Constraints",
-    problem: "Transitioning an entire airport to zero-emission operations places unprecedented strain on existing electrical infrastructure. Trenching and transformer upgrades are slow and extremely costly.",
-    solution: "Deploy intelligent fast charging equipped with dynamic power balancing and mobile energy storage. Support multiple tenants across the airfield while strictly managing peak demand limits and avoiding costly infrastructure upgrades.",
-    // AI-generated placeholder — replace with real photography, approved 2026-09-12
-    image: "/assets/ai_placeholders/gse_airport_authorities_1789225276868.jpg"
+  facilities: {
+    id: "facilities",
+    label: "Facilities & Energy",
+    headline: "Scale Without the Substation",
+    problem: "Adding chargers usually means requesting multi-million dollar transformer upgrades and waiting 18 months for utility interconnection.",
+    solution: "Intelligent load management dynamically distributes available power based on vehicle departure schedules. Add more chargers to your existing electrical capacity without blowing peak demand limits.",
+    image: null
   },
-  airlines: {
-    id: "airlines",
-    label: "Airlines",
-    headline: "Protect Turnarounds & Cost of Ownership",
-    problem: "Airlines face increasing pressure to meet emissions targets without compromising on-time performance or inflating total cost of ownership (TCO) across global hub operations.",
-    solution: "High-reliability charging platforms designed for intense 24/7 utilization. Maximize fleet availability, ensure strict turnaround guarantees, and gain real-time visibility into energy consumption and asset health across your entire network.",
-    // AI-generated placeholder — replace with real photography, approved 2026-09-12
-    image: "/assets/ai_placeholders/gse_airlines_1789225313589.jpg"
+  executives: {
+    id: "executives",
+    label: "Executives & Finance",
+    headline: "De-risk the Transition",
+    problem: "Electrifying a commercial fleet involves massive capital expenditure and the risk of stranding assets if technology changes or software companies fail.",
+    solution: "Future-proof hardware designed for a 10+ year lifespan. Our platforms are chemistry-agnostic, OCPP-compliant, and built to scale alongside your operations seamlessly.",
+    image: null
   }
 };
 
 export default function PersonaSplit() {
-  const [activePersona, setActivePersona] = useState("handlers");
+  const [activePersona, setActivePersona] = useState("managers");
   const contentRef = useRef(null);
   const containerRef = useRef(null);
 

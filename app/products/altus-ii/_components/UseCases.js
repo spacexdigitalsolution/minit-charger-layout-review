@@ -28,7 +28,7 @@ export default function UseCases() {
   return (
     <section ref={containerRef} className="py-24 bg-white overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h2 className="uc-header font-display text-4xl font-black tracking-tighter text-zinc-900 dark:text-white uppercase mb-12 text-center">
+        <h2 className="uc-header font-display text-4xl md:text-5xl font-black tracking-tighter text-zinc-900 dark:text-white uppercase mb-12 text-center leading-tight">
           Primary Applications
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

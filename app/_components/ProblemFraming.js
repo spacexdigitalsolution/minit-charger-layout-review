@@ -27,7 +27,7 @@ export default function ProblemFraming() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
         <div className="pf-anim mb-16 md:w-2/3">
-          <h2 className="font-display text-4xl font-black tracking-tighter text-zinc-900 dark:text-white uppercase mb-6">
+          <h2 className="font-display text-4xl md:text-5xl font-black tracking-tighter text-zinc-900 dark:text-white uppercase mb-6 leading-tight">
             Why Industrial Fleets Are Switching to Smarter Charging
           </h2>
           <p className="text-xl text-zinc-600 dark:text-zinc-400 font-light leading-relaxed">

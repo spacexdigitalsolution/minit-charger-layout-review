@@ -17,7 +17,8 @@ export default function Var5StatLed() {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "top 70%", toggleActions: "play none none none", once: true}
+          start: "top 70%", toggleActions: "play none none none", once: true
+        }
       });
 
       tl.from(".v5-header", { y: 20, autoAlpha: 0, duration: 0.6, ease: "power2.out", clearProps: "all" })
@@ -28,7 +29,7 @@ export default function Var5StatLed() {
       gsap.utils.toArray(".v5-counter").forEach((counter) => {
         const target = parseFloat(counter.getAttribute("data-target"));
         const format = counter.getAttribute("data-format") || "int";
-        
+
         gsap.to(counter, {
           scrollTrigger: {
             trigger: containerRef.current,
@@ -38,7 +39,7 @@ export default function Var5StatLed() {
           duration: 1.2,
           ease: "power2.out",
           snap: { innerHTML: format === "float" ? 0.1 : 1 },
-          onUpdate: function() {
+          onUpdate: function () {
             if (format === "float") {
               counter.innerHTML = Number(this.targets()[0].innerHTML).toFixed(1);
             } else {
@@ -52,7 +53,7 @@ export default function Var5StatLed() {
 
   return (
     <div ref={containerRef} className="relative min-h-screen w-full bg-white flex flex-col items-center justify-center overflow-hidden py-24">
-      
+
       {/* Variation Label */}
       <div className="absolute top-4 left-4 z-50 pointer-events-none">
         <span className="bg-zinc-900/10 text-zinc-900 backdrop-blur-md px-3 py-1 rounded-sm text-xs font-bold uppercase tracking-wider border border-zinc-900/20 shadow-sm">
@@ -62,7 +63,7 @@ export default function Var5StatLed() {
       </div>
 
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center">
-        
+
         {/* Compact Header */}
         <div className="v5-header text-center mb-16 max-w-2xl mx-auto">
           <span className="text-[10px] font-bold text-green-600 uppercase tracking-widest mb-3 block">
@@ -76,7 +77,7 @@ export default function Var5StatLed() {
 
         {/* Huge Stats */}
         <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 mb-20">
-          
+
           <div className="v5-stat-container flex flex-col items-center text-center">
             <div className="flex items-baseline font-display font-black text-zinc-900 text-6xl md:text-8xl tracking-tighter leading-none mb-4">
               <span className="v5-counter" data-target="99.9" data-format="float">0.0</span>
@@ -105,8 +106,8 @@ export default function Var5StatLed() {
 
         {/* Supporting Image & CTA */}
         <div className="v5-image relative w-full max-w-3xl aspect-[21/9] bg-zinc-100 rounded-sm flex items-center justify-center p-8 border border-zinc-200 mb-10">
-          <SmartImage 
-            src="/assets/Products/altus-ii/context/altus_specs_render.png" 
+          <SmartImage
+            src="/assets/Products/Altus II/Altus II Listing.webp"
             alt="Altus II Charging Station"
             fill
             className="object-contain p-4"

@@ -1,13 +1,13 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { Download, Volume2, VolumeX } from "lucide-react";
+import { Download } from "lucide-react";
+import SmartImage from "@/app/components/SmartImage";
 
 export default function HeroSection() {
   const containerRef = useRef(null);
-  const [isMuted, setIsMuted] = useState(true);
 
   useGSAP(() => {
     let mm = gsap.matchMedia();
@@ -17,37 +17,28 @@ export default function HeroSection() {
       tl.from(".hero-headline", { autoAlpha: 0, y: 30, duration: 0.8 }, 0)
         .from(".hero-subcopy", { autoAlpha: 0, duration: 0.8 }, 0.2)
         .from(".hero-specs", { autoAlpha: 0, x: -20, duration: 0.8 }, 0.35)
-        .from(".hero-buttons", { autoAlpha: 0, scale: 0.95, duration: 0.6 }, 0.5)
-        .from(".hero-mute", { autoAlpha: 0, duration: 0.6 }, 0.85);
+        .from(".hero-buttons", { autoAlpha: 0, scale: 0.95, duration: 0.6 }, 0.5);
     });
   }, { scope: containerRef });
 
   return (
     <section ref={containerRef} className="relative overflow-hidden w-full min-h-[90vh] flex items-center border-b border-zinc-200 dark:border-zinc-800">
 
-      {/* Video Background Layer */}
-      <video
-        autoPlay
-        muted={isMuted}
-        loop
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover z-0"
-        poster="/assets/Products/altus-ii/context/altus_cta_bg.webp"
-      >
-        <source src="/assets/optimized-videos/ALTUS_II.mp4" type="video/mp4" />
-      </video>
+      {/* Static Hero Image Layer (Extracted from Video) */}
+      <div className="absolute inset-0 w-full h-full z-0 bg-zinc-900">
+        <SmartImage
+          src="/assets/Industries/Aviation-GSE/Why Minit Charger/Banner.webp"
+          alt="Altus II Charging Unit"
+          fill
+          priority
+          className="object-cover object-center opacity-80"
+        />
+      </div>
 
       {/* Legibility Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/40 to-transparent z-10" />
 
-      {/* Mute Toggle */}
-      <button
-        onClick={() => setIsMuted(!isMuted)}
-        className="hero-mute absolute bottom-6 right-6 z-30 p-3 rounded-full bg-black/40 hover:bg-black/60 text-white backdrop-blur-sm transition-colors border border-white/10"
-        aria-label={isMuted ? "Unmute video" : "Mute video"}
-      >
-        {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
-      </button>
+
 
       {/* Content Layer */}
       <div className="relative z-20 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">

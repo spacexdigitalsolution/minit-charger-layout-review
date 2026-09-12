@@ -9,37 +9,34 @@ import SmartImage from "../../../components/SmartImage";
 gsap.registerPlugin(ScrollTrigger);
 
 const personaContent = {
-  handlers: {
-    id: "handlers",
-    label: "Ground Handlers",
-    headline: "Maximize Uptime on the Ramp",
-    problem: "Ground support teams face strict turnaround windows and mixed fleets of varying ages, chemistries, and voltages. Charger downtime or incompatibility immediately impacts SLAs.",
-    solution: "A single, multi-voltage platform capable of charging everything from legacy lead-acid baggage tractors to new lithium loaders. Minimize footprint, simplify crew training, and eliminate charger sprawl.",
-    // AI-generated placeholder — replace with real photography, approved 2026-09-12
-    image: "/assets/ai_placeholders/gse_ground_handlers_1789225264394.jpg"
+  managers: {
+    id: "managers",
+    label: "Facility Managers",
+    headline: "Reclaim Your Floor Space",
+    problem: "Traditional lead-acid charging rooms consume massive amounts of revenue-generating floor space and require strict ventilation, eye-wash stations, and dedicated maintenance personnel.",
+    solution: "Eliminate the battery room entirely. Deploy compact, high-frequency fast chargers directly at the point of use or mounted on walls/columns, instantly recovering valuable square footage for inventory.",
+    image: null
   },
-  authorities: {
-    id: "authorities",
-    label: "Airport Authorities",
-    headline: "Electrify Without Grid Constraints",
-    problem: "Transitioning an entire airport to zero-emission operations places unprecedented strain on existing electrical infrastructure. Trenching and transformer upgrades are slow and extremely costly.",
-    solution: "Deploy intelligent fast charging equipped with dynamic power balancing and mobile energy storage. Support multiple tenants across the airfield while strictly managing peak demand limits and avoiding costly infrastructure upgrades.",
-    // AI-generated placeholder — replace with real photography, approved 2026-09-12
-    image: "/assets/ai_placeholders/gse_airport_authorities_1789225276868.jpg"
+  directors: {
+    id: "directors",
+    label: "Supply Chain Directors",
+    headline: "Uninterrupted Throughput",
+    problem: "Battery swaps mid-shift disrupt flow and reduce throughput. When equipment dies, pallets don't move, and SLAs are missed.",
+    solution: "Fast opportunity charging during natural breaks keeps the fleet running 24/7. Achieve 100% equipment availability without the need for spare batteries or swap infrastructure.",
+    image: null
   },
-  airlines: {
-    id: "airlines",
-    label: "Airlines",
-    headline: "Protect Turnarounds & Cost of Ownership",
-    problem: "Airlines face increasing pressure to meet emissions targets without compromising on-time performance or inflating total cost of ownership (TCO) across global hub operations.",
-    solution: "High-reliability charging platforms designed for intense 24/7 utilization. Maximize fleet availability, ensure strict turnaround guarantees, and gain real-time visibility into energy consumption and asset health across your entire network.",
-    // AI-generated placeholder — replace with real photography, approved 2026-09-12
-    image: "/assets/ai_placeholders/gse_airlines_1789225313589.jpg"
+  operators: {
+    id: "operators",
+    label: "Equipment Operators",
+    headline: "Safety & Simplicity",
+    problem: "Swapping 3,000lb batteries is dangerous, time-consuming, and prone to accidents. Operators want to drive, not wrestle with cables.",
+    solution: "Simply plug in during a break. No hoists, no acid spills, and no specialized training required. A highly visible UI confirms charging status immediately.",
+    image: null
   }
 };
 
 export default function PersonaSplit() {
-  const [activePersona, setActivePersona] = useState("handlers");
+  const [activePersona, setActivePersona] = useState("managers");
   const contentRef = useRef(null);
   const containerRef = useRef(null);
 

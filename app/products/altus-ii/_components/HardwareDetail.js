@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { CheckCircle2 } from "lucide-react";
+import SmartImage from "@/app/components/SmartImage";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -39,8 +40,14 @@ export default function HardwareDetail() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
         <div className="hd-block-1 lg:grid lg:grid-cols-12 lg:gap-16 items-center mb-32">
-          <div className="hd-img-1 lg:col-span-7 relative w-full aspect-square bg-zinc-50 dark:bg-zinc-900/50 flex items-center justify-center border border-dashed border-zinc-300 dark:border-zinc-700">
-            {/* TODO: ASSET GAP - Detail/Context Shot */}
+          <div className="hd-img-1 lg:col-span-7 relative w-full aspect-square bg-zinc-50 dark:bg-zinc-900/50 flex items-center justify-center overflow-hidden rounded-sm">
+            <SmartImage
+              // AI-generated placeholder — replace with real photography, approved 2026-09-12
+              src="/assets/ai_placeholders/cumulus_billing_dashboard_1789225361318.jpg"
+              alt="Power Usage Billing Dashboard"
+              fill
+              className="object-cover"
+            />
           </div>
           <div className="hd-text-1 lg:col-span-5 mt-12 lg:mt-0">
             <h2 className="font-display text-3xl font-black tracking-tighter text-zinc-900 dark:text-white sm:text-4xl uppercase mb-6">
@@ -89,8 +96,14 @@ export default function HardwareDetail() {
               </li>
             </ul>
           </div>
-          <div className="hd-img-2 order-1 lg:order-2 lg:col-span-7 relative w-full aspect-square bg-zinc-50 dark:bg-zinc-900/50 flex items-center justify-center border border-dashed border-zinc-300 dark:border-zinc-700">
-            {/* TODO: ASSET GAP - Detail/Context Shot */}
+          <div className="hd-img-2 order-1 lg:order-2 lg:col-span-7 relative w-full aspect-square bg-zinc-50 dark:bg-zinc-900/50 flex items-center justify-center overflow-hidden rounded-sm">
+            <SmartImage
+              // AI-generated placeholder — replace with real photography, approved 2026-09-12
+              src="/assets/ai_placeholders/altus_power_struggle_1789225372860.jpg"
+              alt="Intelligent Power Sharing Illustration"
+              fill
+              className="object-cover"
+            />
           </div>
         </div>
 

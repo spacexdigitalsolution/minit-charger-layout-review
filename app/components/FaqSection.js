@@ -36,7 +36,7 @@ export default function FaqSection({
           
           {/* Left Column: Heading & Intro */}
           <div className="lg:col-span-4 mb-12 lg:mb-0 faq-anim">
-            <h2 className="font-display text-3xl font-black tracking-tighter text-zinc-900 dark:text-white uppercase mb-4">
+            <h2 className="font-display text-4xl md:text-5xl font-black tracking-tighter text-zinc-900 dark:text-white uppercase mb-4 leading-tight">
               {title}
             </h2>
             <p className="text-zinc-600 dark:text-zinc-400 font-light text-lg">

@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { Download } from "lucide-react";
 import SmartImage from "../../../components/SmartImage";
+import ProductGallery from "./ProductGallery";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -43,6 +44,19 @@ const specCategories = [
   }
 ];
 
+const galleryImages = [
+  { src: "/assets/Products/Altus II/Altus II Listing.webp", alt: "Altus II Hardware Render (Angled)" },
+  { src: "/assets/Products/Altus II/ALTUSII_FRONT.webp", alt: "Altus II Hardware Render (Front)" },
+  // AI-generated placeholder — replace with real photography, approved 2026-09-12
+  { src: "/assets/ai_placeholders/altus_side_profile_1789225073213.jpg", alt: "Altus II Side Profile" },
+  // AI-generated placeholder — replace with real photography, approved 2026-09-12
+  { src: "/assets/ai_placeholders/altus_port_closeup_1789225089877.jpg", alt: "Altus II Port Close-up" },
+  // AI-generated placeholder — replace with real photography, approved 2026-09-12
+  { src: "/assets/ai_placeholders/altus_screen_closeup_1789225105457.jpg", alt: "Altus II Screen Close-up" },
+  // AI-generated placeholder — replace with real photography, approved 2026-09-12
+  { src: "/assets/ai_placeholders/altus_deployment_shot_1789225117192.jpg", alt: "Altus II Tarmac Deployment" }
+];
+
 export default function SpecsTable() {
   const containerRef = useRef(null);
   const tabsWrapperRef = useRef(null);
@@ -54,14 +68,15 @@ export default function SpecsTable() {
     let mm = gsap.matchMedia();
     mm.add("(prefers-reduced-motion: no-preference)", () => {
       const tl = gsap.timeline({
-        scrollTrigger: { 
-          trigger: containerRef.current, 
-          start: "top 80%", toggleActions: "play none none none", once: true}
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 80%", toggleActions: "play none none none", once: true
+        }
       });
-      
+
       tl.from(".specs-anim", { y: 30, autoAlpha: 0, duration: 0.8, stagger: 0.1, ease: "power2.out", clearProps: "all" });
     });
-    
+
     // Initial indicator position
     if (tabsRef.current[0]) {
       gsap.set(".tab-indicator", {
@@ -74,7 +89,7 @@ export default function SpecsTable() {
   const handleTabChange = contextSafe((index) => {
     if (index === activeTab || isAnimating) return;
     setIsAnimating(true);
-    
+
     // Slide indicator
     if (tabsRef.current[index]) {
       gsap.to(".tab-indicator", {
@@ -96,7 +111,8 @@ export default function SpecsTable() {
         // Animate rows in
         gsap.fromTo(".spec-row",
           { autoAlpha: 0, x: 10 },
-          { autoAlpha: 1, x: 0, duration: 0.2, stagger: 0.05, ease: "power2.out", clearProps: "all",
+          {
+            autoAlpha: 1, x: 0, duration: 0.2, stagger: 0.05, ease: "power2.out", clearProps: "all",
             onComplete: () => setIsAnimating(false)
           }
         );
@@ -107,7 +123,7 @@ export default function SpecsTable() {
   return (
     <section ref={containerRef} id="specs" className="py-24 bg-white dark:bg-zinc-950 overflow-hidden relative">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        
+
         {/* Header Area */}
         <div className="specs-anim flex flex-col md:flex-row md:items-end justify-between mb-16">
           <div>
@@ -125,19 +141,10 @@ export default function SpecsTable() {
         </div>
 
         <div className="lg:grid lg:grid-cols-12 lg:gap-16 items-start">
-          
+
           {/* Left Column: Sticky Product Render */}
           <div className="hidden lg:block lg:col-span-5 sticky top-32 specs-anim">
-            <div className="bg-zinc-50 dark:bg-zinc-900/40 rounded-2xl p-10 border border-zinc-200 dark:border-zinc-800 flex items-center justify-center min-h-[500px]">
-              <SmartImage 
-                src="/assets/Products/altus-ii/context/altus_specs_render.png" 
-                alt="Altus II Hardware Render" 
-                width={500} 
-                height={500}
-                className="object-contain w-full h-auto drop-shadow-2xl mix-blend-multiply dark:mix-blend-normal"
-                priority
-              />
-            </div>
+            <ProductGallery images={galleryImages} />
           </div>
 
           {/* Right Column: Spec Data */}
@@ -151,9 +158,8 @@ export default function SpecsTable() {
                     key={index}
                     ref={el => tabsRef.current[index] = el}
                     onClick={() => handleTabChange(index)}
-                    className={`pb-4 px-1 mr-8 text-sm font-bold uppercase tracking-wider whitespace-nowrap transition-colors ${
-                      isActive ? "text-zinc-900 dark:text-white" : "text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300"
-                    }`}
+                    className={`pb-4 px-1 mr-8 text-sm font-bold uppercase tracking-wider whitespace-nowrap transition-colors ${isActive ? "text-zinc-900 dark:text-white" : "text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300"
+                      }`}
                   >
                     {cat.name}
                   </button>

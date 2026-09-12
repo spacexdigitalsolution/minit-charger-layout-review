@@ -29,7 +29,7 @@ export default function CloudEcosystem() {
     <section ref={containerRef} className="py-24 bg-zinc-100 dark:bg-zinc-900 border-t border-zinc-200 dark:border-zinc-800 overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="ce-header text-center max-w-3xl mx-auto mb-16">
-          <h2 className="font-display text-4xl font-black tracking-tighter text-zinc-900 dark:text-white uppercase mb-4">
+          <h2 className="font-display text-4xl md:text-5xl font-black tracking-tighter text-zinc-900 dark:text-white uppercase mb-4 leading-tight">
             Total Fleet Visibility
           </h2>
           <p className="text-xl text-zinc-600 dark:text-zinc-400 font-light">

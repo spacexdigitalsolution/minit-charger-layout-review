@@ -7,9 +7,10 @@ import UseCases from "./_components/UseCases";
 import ImageCardGrid from "@/app/components/ImageCardGrid";
 import FaqSection from "@/app/components/FaqSection";
 import VideoModule from "./_components/VideoModule";
-import CloudEcosystem from "./_components/CloudEcosystem";
 import ConversionBand from "@/app/components/ConversionBand";
 import SmoothScroll from "./_components/SmoothScroll";
+import CumulusSpotlight from "@/app/components/CumulusSpotlight";
+import SmartImage from "@/app/components/SmartImage";
 
 const faqs = [
   {
@@ -34,29 +35,18 @@ const faqs = [
   }
 ];
 
-const relatedProducts = [
-  {
-    id: "magnus",
-    name: "Magnus",
-    kicker: "Universal Mixed Fleet • 100-200 kW",
-    image: null, // Gap flagged
-    link: "/products/magnus"
-  },
-  {
-    id: "momentus",
-    name: "Momentus",
-    kicker: "Industrial / Forklift • 20 kW",
-    image: null, // Gap flagged
-    link: "/products/momentus"
-  },
-  {
-    id: "maximus",
-    name: "Maximus",
-    kicker: "High-Throughput Industrial • 40 kW",
-    image: null, // Gap flagged
-    link: "/products/maximus"
-  }
-];
+import { products as allProducts } from "@/data/products";
+
+const relatedProductIds = ["magnus", "momentus", "maximus"];
+const relatedProducts = allProducts
+  .filter(p => relatedProductIds.includes(p.id))
+  .map(p => ({
+    ...p,
+    kicker: p.categoryTag,
+    image: p.cardImage,
+    link: p.productPageUrl,
+    description: p.keyUSP
+  }));
 
 export default function AltusIIProductPage() {
   return (
@@ -64,10 +54,11 @@ export default function AltusIIProductPage() {
       <HeroSection />
       <SmoothScroll>
         <div className="relative z-10 bg-white dark:bg-zinc-950">
+          <SpecsTable />
           <BenefitsGrid />
           <HardwareDetail />
-          
-          <StatModule 
+
+          <StatModule
             title="Engineered\nfor Extremes"
             description="Built to withstand the toughest outdoor ramp conditions while delivering exceptional efficiency."
             stats={[
@@ -76,27 +67,34 @@ export default function AltusIIProductPage() {
               { targetValue: -13, unit: "°F", label: "Operating Minimum" }
             ]}
           />
-          
-          <SpecsTable />
+
           <VideoModule />
-          <CloudEcosystem />
-          <UseCases />
-          
-          <ImageCardGrid 
+
+          <CumulusSpotlight
+            headline="Pair Altus II with Cumulus"
+            supportingCopy="Monitor every Altus II unit across your footprint. The Cumulus platform gives you real-time access to session data, battery health, and peak demand."
+            imageSide="left"
+            // AI-generated placeholder — replace with real photography, approved 2026-09-12
+            dashboardImage="/assets/ai_placeholders/cumulus_billing_dashboard_1789225361318.jpg"
+          />
+
+          {/*  <UseCases /> */}
+
+          <ImageCardGrid
             title="Explore the Ecosystem"
             description="Purpose-built charging platforms for every fleet application."
             linkText="View All Products"
             linkHref="/products"
             items={relatedProducts}
           />
-          
-          <FaqSection 
+
+          <FaqSection
             title="Common Questions"
             description="Find answers to the most common inquiries regarding the Altus II deployment, hardware capabilities, and ecosystem integrations."
             faqs={faqs}
           />
-          
-          <ConversionBand 
+
+          <ConversionBand
             headline="Ready to deploy the Altus II in your fleet?"
             primaryCTA={{ label: "Speak to an Expert", href: "/contact" }}
             secondaryCTA={{ label: "Request a Quote", href: "/contact" }}

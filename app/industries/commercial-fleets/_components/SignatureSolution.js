@@ -83,8 +83,8 @@ export default function SignatureSolution() {
         </div>
 
         <div className="text-center mt-12">
-          <Link href="/products/altus-ii" className="inline-flex items-center justify-center rounded border border-zinc-900 dark:border-white px-8 py-4 text-sm font-bold text-zinc-900 dark:text-white hover:bg-zinc-900 hover:text-white dark:hover:bg-white dark:hover:text-zinc-950 transition-colors uppercase tracking-wider">
-            Explore Altus II Specs
+          <Link href="/products/magnus" className="inline-flex items-center justify-center rounded border border-zinc-900 dark:border-white px-8 py-4 text-sm font-bold text-zinc-900 dark:text-white hover:bg-zinc-900 hover:text-white dark:hover:bg-white dark:hover:text-zinc-950 transition-colors uppercase tracking-wider">
+            Explore Magnus Specs
           </Link>
         </div>
 

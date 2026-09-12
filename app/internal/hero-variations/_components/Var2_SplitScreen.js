@@ -17,30 +17,31 @@ export default function Var2SplitScreen() {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "top 70%", toggleActions: "play none none none", once: true}
+          start: "top 70%", toggleActions: "play none none none", once: true
+        }
       });
 
-      tl.from(".v2-image", { 
-        x: "-10%", 
-        autoAlpha: 0, 
-        duration: 0.8, 
-        ease: "power2.out", 
-        clearProps: "all" 
+      tl.from(".v2-image", {
+        x: "-10%",
+        autoAlpha: 0,
+        duration: 0.8,
+        ease: "power2.out",
+        clearProps: "all"
       })
-      .from(".v2-element", { 
-        x: 20, 
-        autoAlpha: 0, 
-        duration: 0.8, 
-        stagger: 0.1, 
-        ease: "power2.out", 
-        clearProps: "all" 
-      }, "-=0.6");
+        .from(".v2-element", {
+          x: 20,
+          autoAlpha: 0,
+          duration: 0.8,
+          stagger: 0.1,
+          ease: "power2.out",
+          clearProps: "all"
+        }, "-=0.6");
     });
   }, { scope: containerRef });
 
   return (
     <div ref={containerRef} className="relative min-h-screen w-full flex flex-col md:flex-row bg-white overflow-hidden">
-      
+
       {/* Variation Label */}
       <div className="absolute top-4 left-4 z-50 pointer-events-none">
         <span className="bg-zinc-900/10 text-zinc-900 backdrop-blur-md px-3 py-1 rounded-sm text-xs font-bold uppercase tracking-wider border border-zinc-900/20 shadow-sm">
@@ -51,8 +52,8 @@ export default function Var2SplitScreen() {
 
       {/* Image Left */}
       <div className="v2-image w-full md:w-1/2 min-h-[50vh] md:min-h-screen relative bg-zinc-100 flex items-center justify-center p-12">
-        <SmartImage 
-          src="/assets/Products/altus-ii/context/altus_specs_render.png" 
+        <SmartImage
+          src="/assets/Products/Altus II/Altus II Listing.webp"
           alt="Altus II Charging Station"
           fill
           className="object-contain p-12 md:p-24"

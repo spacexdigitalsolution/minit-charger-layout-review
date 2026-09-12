@@ -25,7 +25,7 @@ export default function HeroSection() {
       {/* Background Image Layer */}
       <div 
         className="absolute inset-0 w-full h-full bg-cover bg-center z-0"
-        style={{ backgroundImage: "url('/assets/Industries/Aviation/Banner/Banner-Aviation.webp')" }}
+        style={{ backgroundImage: "url('/assets/gse/ALTUS_II_GSE_BACKGROUND.png')" }}
       />
 
       {/* Legibility Gradient Overlay */}
@@ -35,13 +35,13 @@ export default function HeroSection() {
       <div className="relative z-20 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
         <div className="max-w-3xl mb-16">
           <p className="hero-subcopy text-green-500 font-bold uppercase tracking-widest text-xs mb-4">
-            Aviation Ground Support Equipment
+            Warehouse & Material Handling
           </p>
           <h1 className="hero-headline font-display text-5xl md:text-7xl md:text-8xl font-black tracking-tighter text-white uppercase leading-[0.9] mb-6">
-            Keep the Ramp Moving.
+            Keep the Supply Chain Moving.
           </h1>
           <p className="hero-subcopy text-lg text-zinc-300 sm:text-2xl font-light leading-relaxed mb-10 max-w-2xl">
-            Fast-charging infrastructure for ramp operations.
+            Space-saving, high-throughput charging for continuous operations.
           </p>
 
           <div className="hero-buttons flex gap-4">

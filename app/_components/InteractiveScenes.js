@@ -100,7 +100,7 @@ export default function InteractiveScenes() {
                   <span className="text-[10px] font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-widest mb-4 block">
                     Application Profile
                   </span>
-                  <h2 className="font-display text-3xl font-black tracking-tighter text-zinc-900 dark:text-white sm:text-4xl uppercase mb-10 leading-tight">
+                  <h2 className="font-display text-4xl md:text-5xl font-black tracking-tighter text-zinc-900 dark:text-white uppercase mb-10 leading-tight">
                     {data.headline}
                   </h2>
 
