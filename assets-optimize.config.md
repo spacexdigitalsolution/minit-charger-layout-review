@@ -1,5 +1,7 @@
 # assets-optimize.config.md
-- `--input public/assets/videos`
-- `--output public/assets/optimized-videos`
+- `--input public/assets-src`
+- `--output public/assets`
+- `--image-format webp`
 - `--video-format mp4`
-- `--no-recursive`
+- `--responsive`
+- `--logo public/assets-src/logo.png`

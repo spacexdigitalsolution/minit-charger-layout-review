@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 
@@ -25,8 +26,8 @@ export default function Navbar() {
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-8">
             <Link href="/" className="flex items-center gap-2">
-              <div className={`flex items-center text-xl font-bold tracking-tight transition-colors duration-300 ${scrolled ? "text-zinc-900 dark:text-white" : "text-white"}`}>
-                MINIT <span className="text-green-600 ml-1">CHARGER</span>
+              <div className="relative w-32 h-10">
+                <Image src="/assets/logo.webp" alt="Minit Charger Logo" fill className="object-contain object-left" />
               </div>
             </Link>
             <div className="hidden md:flex md:gap-8">

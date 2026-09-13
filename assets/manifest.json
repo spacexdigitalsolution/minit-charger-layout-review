@@ -1,26 +1,478 @@
 {
-  "Air China.webp": {
-    "original": "/assets/Home Page/Trusted by Industry Leaders Optimized/Air China.webp"
+  "Home Page/A legacy of reliability/A legacy of reliability-01.png": {
+    "480": "/assets/Home Page/A legacy of reliability/A legacy of reliability-01-480.webp",
+    "768": "/assets/Home Page/A legacy of reliability/A legacy of reliability-01-768.webp",
+    "1200": "/assets/Home Page/A legacy of reliability/A legacy of reliability-01-1200.webp",
+    "1600": "/assets/Home Page/A legacy of reliability/A legacy of reliability-01-1600.webp",
+    "original": "/assets/Home Page/A legacy of reliability/A legacy of reliability-01.webp"
   },
-  "Boeing.webp": {
-    "original": "/assets/Home Page/Trusted by Industry Leaders Optimized/Boeing.webp"
+  "Home Page/Aviation (Airport GSE)/Altus II.png": {
+    "480": "/assets/Home Page/Aviation (Airport GSE)/Altus II-480.webp",
+    "768": "/assets/Home Page/Aviation (Airport GSE)/Altus II-768.webp",
+    "1200": "/assets/Home Page/Aviation (Airport GSE)/Altus II-1200.webp",
+    "1600": "/assets/Home Page/Aviation (Airport GSE)/Altus II-1600.webp",
+    "original": "/assets/Home Page/Aviation (Airport GSE)/Altus II.webp"
   },
-  "Americold.webp": {
-    "original": "/assets/Home Page/Trusted by Industry Leaders Optimized/Americold.webp"
+  "Home Page/Aviation (Airport GSE)/Cumulus Software-01.png": {
+    "480": "/assets/Home Page/Aviation (Airport GSE)/Cumulus Software-01-480.webp",
+    "768": "/assets/Home Page/Aviation (Airport GSE)/Cumulus Software-01-768.webp",
+    "1200": "/assets/Home Page/Aviation (Airport GSE)/Cumulus Software-01-1200.webp",
+    "1600": "/assets/Home Page/Aviation (Airport GSE)/Cumulus Software-01-1600.webp",
+    "original": "/assets/Home Page/Aviation (Airport GSE)/Cumulus Software-01.webp"
   },
-  "Coco cola.webp": {
-    "original": "/assets/Home Page/Trusted by Industry Leaders Optimized/Coco cola.webp"
+  "Home Page/Aviation (Airport GSE)/Magnus Hardware-01.png": {
+    "480": "/assets/Home Page/Aviation (Airport GSE)/Magnus Hardware-01-480.webp",
+    "768": "/assets/Home Page/Aviation (Airport GSE)/Magnus Hardware-01-768.webp",
+    "1200": "/assets/Home Page/Aviation (Airport GSE)/Magnus Hardware-01-1200.webp",
+    "1600": "/assets/Home Page/Aviation (Airport GSE)/Magnus Hardware-01-1600.webp",
+    "original": "/assets/Home Page/Aviation (Airport GSE)/Magnus Hardware-01.webp"
   },
-  "United.webp": {
-    "original": "/assets/Home Page/Trusted by Industry Leaders Optimized/United.webp"
+  "Home Page/Aviation (Airport GSE)/MOBILUS Hardware-01.png": {
+    "480": "/assets/Home Page/Aviation (Airport GSE)/MOBILUS Hardware-01-480.webp",
+    "768": "/assets/Home Page/Aviation (Airport GSE)/MOBILUS Hardware-01-768.webp",
+    "1200": "/assets/Home Page/Aviation (Airport GSE)/MOBILUS Hardware-01-1200.webp",
+    "1600": "/assets/Home Page/Aviation (Airport GSE)/MOBILUS Hardware-01-1600.webp",
+    "original": "/assets/Home Page/Aviation (Airport GSE)/MOBILUS Hardware-01.webp"
   },
-  "Southwest.webp": {
-    "original": "/assets/Home Page/Trusted by Industry Leaders Optimized/Southwest.webp"
+  "Home Page/Banner/Home banner - 01-01.png": {
+    "480": "/assets/Home Page/Banner/Home banner - 01-01-480.webp",
+    "768": "/assets/Home Page/Banner/Home banner - 01-01-768.webp",
+    "1200": "/assets/Home Page/Banner/Home banner - 01-01-1200.webp",
+    "1600": "/assets/Home Page/Banner/Home banner - 01-01-1600.webp",
+    "original": "/assets/Home Page/Banner/Home banner - 01-01.webp"
   },
-  "General Mills.webp": {
-    "original": "/assets/Home Page/Trusted by Industry Leaders Optimized/General Mills.webp"
+  "Home Page/Banner/Home banner - 01-02.png": {
+    "480": "/assets/Home Page/Banner/Home banner - 01-02-480.webp",
+    "768": "/assets/Home Page/Banner/Home banner - 01-02-768.webp",
+    "1200": "/assets/Home Page/Banner/Home banner - 01-02-1200.webp",
+    "1600": "/assets/Home Page/Banner/Home banner - 01-02-1600.webp",
+    "original": "/assets/Home Page/Banner/Home banner - 01-02.webp"
   },
-  "Nestle.webp": {
-    "original": "/assets/Home Page/Trusted by Industry Leaders Optimized/Nestle.webp"
+  "Home Page/Banner/Home banner - 01-03.png": {
+    "480": "/assets/Home Page/Banner/Home banner - 01-03-480.webp",
+    "768": "/assets/Home Page/Banner/Home banner - 01-03-768.webp",
+    "1200": "/assets/Home Page/Banner/Home banner - 01-03-1200.webp",
+    "1600": "/assets/Home Page/Banner/Home banner - 01-03-1600.webp",
+    "original": "/assets/Home Page/Banner/Home banner - 01-03.webp"
+  },
+  "Home Page/Banner/Home banner - 01-04.png": {
+    "480": "/assets/Home Page/Banner/Home banner - 01-04-480.webp",
+    "768": "/assets/Home Page/Banner/Home banner - 01-04-768.webp",
+    "1200": "/assets/Home Page/Banner/Home banner - 01-04-1200.webp",
+    "1600": "/assets/Home Page/Banner/Home banner - 01-04-1600.webp",
+    "original": "/assets/Home Page/Banner/Home banner - 01-04.webp"
+  },
+  "Home Page/Banner/Home banner - 01-05.png": {
+    "480": "/assets/Home Page/Banner/Home banner - 01-05-480.webp",
+    "768": "/assets/Home Page/Banner/Home banner - 01-05-768.webp",
+    "1200": "/assets/Home Page/Banner/Home banner - 01-05-1200.webp",
+    "1600": "/assets/Home Page/Banner/Home banner - 01-05-1600.webp",
+    "original": "/assets/Home Page/Banner/Home banner - 01-05.webp"
+  },
+  "Home Page/Engineered for Every Environment/Engineered for Airports.png": {
+    "480": "/assets/Home Page/Engineered for Every Environment/Engineered for Airports-480.webp",
+    "768": "/assets/Home Page/Engineered for Every Environment/Engineered for Airports-768.webp",
+    "1200": "/assets/Home Page/Engineered for Every Environment/Engineered for Airports-1200.webp",
+    "1600": "/assets/Home Page/Engineered for Every Environment/Engineered for Airports-1600.webp",
+    "original": "/assets/Home Page/Engineered for Every Environment/Engineered for Airports.webp"
+  },
+  "Home Page/Engineered for Every Environment/Engineered for Industrial & Commercial.png": {
+    "480": "/assets/Home Page/Engineered for Every Environment/Engineered for Industrial & Commercial-480.webp",
+    "768": "/assets/Home Page/Engineered for Every Environment/Engineered for Industrial & Commercial-768.webp",
+    "1200": "/assets/Home Page/Engineered for Every Environment/Engineered for Industrial & Commercial-1200.webp",
+    "1600": "/assets/Home Page/Engineered for Every Environment/Engineered for Industrial & Commercial-1600.webp",
+    "original": "/assets/Home Page/Engineered for Every Environment/Engineered for Industrial & Commercial.webp"
+  },
+  "Home Page/Engineered for Every Environment/Engineered for LSEVs.png": {
+    "480": "/assets/Home Page/Engineered for Every Environment/Engineered for LSEVs-480.webp",
+    "768": "/assets/Home Page/Engineered for Every Environment/Engineered for LSEVs-768.webp",
+    "1200": "/assets/Home Page/Engineered for Every Environment/Engineered for LSEVs-1200.webp",
+    "1600": "/assets/Home Page/Engineered for Every Environment/Engineered for LSEVs-1600.webp",
+    "original": "/assets/Home Page/Engineered for Every Environment/Engineered for LSEVs.webp"
+  },
+  "Home Page/Engineered for Every Environment/Engineered for Warehouses.png": {
+    "480": "/assets/Home Page/Engineered for Every Environment/Engineered for Warehouses-480.webp",
+    "768": "/assets/Home Page/Engineered for Every Environment/Engineered for Warehouses-768.webp",
+    "1200": "/assets/Home Page/Engineered for Every Environment/Engineered for Warehouses-1200.webp",
+    "1600": "/assets/Home Page/Engineered for Every Environment/Engineered for Warehouses-1600.webp",
+    "original": "/assets/Home Page/Engineered for Every Environment/Engineered for Warehouses.webp"
+  },
+  "Home Page/Footer CTA Band/Footer CTA-01.png": {
+    "480": "/assets/Home Page/Footer CTA Band/Footer CTA-01-480.webp",
+    "768": "/assets/Home Page/Footer CTA Band/Footer CTA-01-768.webp",
+    "1200": "/assets/Home Page/Footer CTA Band/Footer CTA-01-1200.webp",
+    "1600": "/assets/Home Page/Footer CTA Band/Footer CTA-01-1600.webp",
+    "original": "/assets/Home Page/Footer CTA Band/Footer CTA-01.webp"
+  },
+  "Home Page/Footer CTA Band/Footer CTA-02.png": {
+    "480": "/assets/Home Page/Footer CTA Band/Footer CTA-02-480.webp",
+    "768": "/assets/Home Page/Footer CTA Band/Footer CTA-02-768.webp",
+    "1200": "/assets/Home Page/Footer CTA Band/Footer CTA-02-1200.webp",
+    "1600": "/assets/Home Page/Footer CTA Band/Footer CTA-02-1600.webp",
+    "original": "/assets/Home Page/Footer CTA Band/Footer CTA-02.webp"
+  },
+  "Home Page/Indoor vs outdoor/Indoor material handling-01.png": {
+    "480": "/assets/Home Page/Indoor vs outdoor/Indoor material handling-01-480.webp",
+    "768": "/assets/Home Page/Indoor vs outdoor/Indoor material handling-01-768.webp",
+    "1200": "/assets/Home Page/Indoor vs outdoor/Indoor material handling-01-1200.webp",
+    "1600": "/assets/Home Page/Indoor vs outdoor/Indoor material handling-01-1600.webp",
+    "original": "/assets/Home Page/Indoor vs outdoor/Indoor material handling-01.webp"
+  },
+  "Home Page/Indoor vs outdoor/Outdoor eGSE & yards-01.png": {
+    "480": "/assets/Home Page/Indoor vs outdoor/Outdoor eGSE & yards-01-480.webp",
+    "768": "/assets/Home Page/Indoor vs outdoor/Outdoor eGSE & yards-01-768.webp",
+    "1200": "/assets/Home Page/Indoor vs outdoor/Outdoor eGSE & yards-01-1200.webp",
+    "1600": "/assets/Home Page/Indoor vs outdoor/Outdoor eGSE & yards-01-1600.webp",
+    "original": "/assets/Home Page/Indoor vs outdoor/Outdoor eGSE & yards-01.webp"
+  },
+  "Home Page/Interactive Charging Scenes/Interactive Charging Scenes- Airport-02.png": {
+    "480": "/assets/Home Page/Interactive Charging Scenes/Interactive Charging Scenes- Airport-02-480.webp",
+    "768": "/assets/Home Page/Interactive Charging Scenes/Interactive Charging Scenes- Airport-02-768.webp",
+    "1200": "/assets/Home Page/Interactive Charging Scenes/Interactive Charging Scenes- Airport-02-1200.webp",
+    "1600": "/assets/Home Page/Interactive Charging Scenes/Interactive Charging Scenes- Airport-02-1600.webp",
+    "original": "/assets/Home Page/Interactive Charging Scenes/Interactive Charging Scenes- Airport-02.webp"
+  },
+  "Home Page/Interactive Charging Scenes/Interactive Charging Scenes- warehouse-01.png": {
+    "480": "/assets/Home Page/Interactive Charging Scenes/Interactive Charging Scenes- warehouse-01-480.webp",
+    "768": "/assets/Home Page/Interactive Charging Scenes/Interactive Charging Scenes- warehouse-01-768.webp",
+    "1200": "/assets/Home Page/Interactive Charging Scenes/Interactive Charging Scenes- warehouse-01-1200.webp",
+    "1600": "/assets/Home Page/Interactive Charging Scenes/Interactive Charging Scenes- warehouse-01-1600.webp",
+    "original": "/assets/Home Page/Interactive Charging Scenes/Interactive Charging Scenes- warehouse-01.webp"
+  },
+  "Home Page/Low Speed Vehicles/Durus Listing.png": {
+    "480": "/assets/Home Page/Low Speed Vehicles/Durus Listing-480.webp",
+    "768": "/assets/Home Page/Low Speed Vehicles/Durus Listing-768.webp",
+    "1200": "/assets/Home Page/Low Speed Vehicles/Durus Listing-1200.webp",
+    "1600": "/assets/Home Page/Low Speed Vehicles/Durus Listing-1600.webp",
+    "original": "/assets/Home Page/Low Speed Vehicles/Durus Listing.webp"
+  },
+  "Home Page/Meet Momentus/Meet MOMENTUs-02.png": {
+    "480": "/assets/Home Page/Meet Momentus/Meet MOMENTUs-02-480.webp",
+    "768": "/assets/Home Page/Meet Momentus/Meet MOMENTUs-02-768.webp",
+    "1200": "/assets/Home Page/Meet Momentus/Meet MOMENTUs-02-1200.webp",
+    "1600": "/assets/Home Page/Meet Momentus/Meet MOMENTUs-02-1600.webp",
+    "original": "/assets/Home Page/Meet Momentus/Meet MOMENTUs-02.webp"
+  },
+  "Home Page/Trusted by Industry Leaders/Air China.png": {
+    "original": "/assets/Home Page/Trusted by Industry Leaders/Air China.webp"
+  },
+  "Home Page/Trusted by Industry Leaders/Americold.png": {
+    "original": "/assets/Home Page/Trusted by Industry Leaders/Americold.webp"
+  },
+  "Home Page/Trusted by Industry Leaders/Boeing.png": {
+    "original": "/assets/Home Page/Trusted by Industry Leaders/Boeing.webp"
+  },
+  "Home Page/Trusted by Industry Leaders/Coco cola.png": {
+    "original": "/assets/Home Page/Trusted by Industry Leaders/Coco cola.webp"
+  },
+  "Home Page/Trusted by Industry Leaders/General Mills.png": {
+    "original": "/assets/Home Page/Trusted by Industry Leaders/General Mills.webp"
+  },
+  "Home Page/Trusted by Industry Leaders/Nestle.png": {
+    "original": "/assets/Home Page/Trusted by Industry Leaders/Nestle.webp"
+  },
+  "Home Page/Trusted by Industry Leaders/Southwest.png": {
+    "original": "/assets/Home Page/Trusted by Industry Leaders/Southwest.webp"
+  },
+  "Home Page/Trusted by Industry Leaders/United.png": {
+    "original": "/assets/Home Page/Trusted by Industry Leaders/United.webp"
+  },
+  "Home Page/Warehouse & Manufacturing/Cumulus Software-01.png": {
+    "480": "/assets/Home Page/Warehouse & Manufacturing/Cumulus Software-01-480.webp",
+    "768": "/assets/Home Page/Warehouse & Manufacturing/Cumulus Software-01-768.webp",
+    "1200": "/assets/Home Page/Warehouse & Manufacturing/Cumulus Software-01-1200.webp",
+    "1600": "/assets/Home Page/Warehouse & Manufacturing/Cumulus Software-01-1600.webp",
+    "original": "/assets/Home Page/Warehouse & Manufacturing/Cumulus Software-01.webp"
+  },
+  "Home Page/Warehouse & Manufacturing/Indoor · High-capacity Maximus-01.png": {
+    "480": "/assets/Home Page/Warehouse & Manufacturing/Indoor · High-capacity Maximus-01-480.webp",
+    "768": "/assets/Home Page/Warehouse & Manufacturing/Indoor · High-capacity Maximus-01-768.webp",
+    "1200": "/assets/Home Page/Warehouse & Manufacturing/Indoor · High-capacity Maximus-01-1200.webp",
+    "1600": "/assets/Home Page/Warehouse & Manufacturing/Indoor · High-capacity Maximus-01-1600.webp",
+    "original": "/assets/Home Page/Warehouse & Manufacturing/Indoor · High-capacity Maximus-01.webp"
+  },
+  "Home Page/Warehouse & Manufacturing/MOMENTUs Hardware-01.png": {
+    "480": "/assets/Home Page/Warehouse & Manufacturing/MOMENTUs Hardware-01-480.webp",
+    "768": "/assets/Home Page/Warehouse & Manufacturing/MOMENTUs Hardware-01-768.webp",
+    "1200": "/assets/Home Page/Warehouse & Manufacturing/MOMENTUs Hardware-01-1200.webp",
+    "1600": "/assets/Home Page/Warehouse & Manufacturing/MOMENTUs Hardware-01-1600.webp",
+    "original": "/assets/Home Page/Warehouse & Manufacturing/MOMENTUs Hardware-01.webp"
+  },
+  "homepage/Altus II.webp": {
+    "480": "/assets/homepage/Altus II-480.webp",
+    "768": "/assets/homepage/Altus II-768.webp",
+    "1200": "/assets/homepage/Altus II-1200.webp",
+    "1600": "/assets/homepage/Altus II-1600.webp",
+    "original": "/assets/homepage/Altus II.webp"
+  },
+  "homepage/Cumulus Software-01.webp": {
+    "480": "/assets/homepage/Cumulus Software-01-480.webp",
+    "768": "/assets/homepage/Cumulus Software-01-768.webp",
+    "1200": "/assets/homepage/Cumulus Software-01-1200.webp",
+    "1600": "/assets/homepage/Cumulus Software-01-1600.webp",
+    "original": "/assets/homepage/Cumulus Software-01.webp"
+  },
+  "homepage/Engineered for Airports.webp": {
+    "480": "/assets/homepage/Engineered for Airports-480.webp",
+    "768": "/assets/homepage/Engineered for Airports-768.webp",
+    "1200": "/assets/homepage/Engineered for Airports-1200.webp",
+    "1600": "/assets/homepage/Engineered for Airports-1600.webp",
+    "original": "/assets/homepage/Engineered for Airports.webp"
+  },
+  "homepage/Engineered for Industrial & Commercial.webp": {
+    "480": "/assets/homepage/Engineered for Industrial & Commercial-480.webp",
+    "768": "/assets/homepage/Engineered for Industrial & Commercial-768.webp",
+    "1200": "/assets/homepage/Engineered for Industrial & Commercial-1200.webp",
+    "1600": "/assets/homepage/Engineered for Industrial & Commercial-1600.webp",
+    "original": "/assets/homepage/Engineered for Industrial & Commercial.webp"
+  },
+  "homepage/Engineered for LSEVs.webp": {
+    "480": "/assets/homepage/Engineered for LSEVs-480.webp",
+    "768": "/assets/homepage/Engineered for LSEVs-768.webp",
+    "1200": "/assets/homepage/Engineered for LSEVs-1200.webp",
+    "1600": "/assets/homepage/Engineered for LSEVs-1600.webp",
+    "original": "/assets/homepage/Engineered for LSEVs.webp"
+  },
+  "homepage/Engineered for Warehouses.webp": {
+    "480": "/assets/homepage/Engineered for Warehouses-480.webp",
+    "768": "/assets/homepage/Engineered for Warehouses-768.webp",
+    "1200": "/assets/homepage/Engineered for Warehouses-1200.webp",
+    "1600": "/assets/homepage/Engineered for Warehouses-1600.webp",
+    "original": "/assets/homepage/Engineered for Warehouses.webp"
+  },
+  "homepage/Footer CTA-02.webp": {
+    "480": "/assets/homepage/Footer CTA-02-480.webp",
+    "768": "/assets/homepage/Footer CTA-02-768.webp",
+    "1200": "/assets/homepage/Footer CTA-02-1200.webp",
+    "1600": "/assets/homepage/Footer CTA-02-1600.webp",
+    "original": "/assets/homepage/Footer CTA-02.webp"
+  },
+  "homepage/Home banner - 01-05.webp": {
+    "480": "/assets/homepage/Home banner - 01-05-480.webp",
+    "768": "/assets/homepage/Home banner - 01-05-768.webp",
+    "1200": "/assets/homepage/Home banner - 01-05-1200.webp",
+    "1600": "/assets/homepage/Home banner - 01-05-1600.webp",
+    "original": "/assets/homepage/Home banner - 01-05.webp"
+  },
+  "homepage/Indoor material handling-01.webp": {
+    "480": "/assets/homepage/Indoor material handling-01-480.webp",
+    "768": "/assets/homepage/Indoor material handling-01-768.webp",
+    "1200": "/assets/homepage/Indoor material handling-01-1200.webp",
+    "1600": "/assets/homepage/Indoor material handling-01-1600.webp",
+    "original": "/assets/homepage/Indoor material handling-01.webp"
+  },
+  "homepage/Interactive Charging Scenes- Airport-02.webp": {
+    "480": "/assets/homepage/Interactive Charging Scenes- Airport-02-480.webp",
+    "768": "/assets/homepage/Interactive Charging Scenes- Airport-02-768.webp",
+    "1200": "/assets/homepage/Interactive Charging Scenes- Airport-02-1200.webp",
+    "1600": "/assets/homepage/Interactive Charging Scenes- Airport-02-1600.webp",
+    "original": "/assets/homepage/Interactive Charging Scenes- Airport-02.webp"
+  },
+  "homepage/Interactive Charging Scenes- warehouse-01.webp": {
+    "480": "/assets/homepage/Interactive Charging Scenes- warehouse-01-480.webp",
+    "768": "/assets/homepage/Interactive Charging Scenes- warehouse-01-768.webp",
+    "1200": "/assets/homepage/Interactive Charging Scenes- warehouse-01-1200.webp",
+    "1600": "/assets/homepage/Interactive Charging Scenes- warehouse-01-1600.webp",
+    "original": "/assets/homepage/Interactive Charging Scenes- warehouse-01.webp"
+  },
+  "homepage/Magnus Hardware-01.webp": {
+    "480": "/assets/homepage/Magnus Hardware-01-480.webp",
+    "768": "/assets/homepage/Magnus Hardware-01-768.webp",
+    "1200": "/assets/homepage/Magnus Hardware-01-1200.webp",
+    "1600": "/assets/homepage/Magnus Hardware-01-1600.webp",
+    "original": "/assets/homepage/Magnus Hardware-01.webp"
+  },
+  "homepage/Meet MOMENTUs-02.webp": {
+    "480": "/assets/homepage/Meet MOMENTUs-02-480.webp",
+    "768": "/assets/homepage/Meet MOMENTUs-02-768.webp",
+    "1200": "/assets/homepage/Meet MOMENTUs-02-1200.webp",
+    "1600": "/assets/homepage/Meet MOMENTUs-02-1600.webp",
+    "original": "/assets/homepage/Meet MOMENTUs-02.webp"
+  },
+  "homepage/MOBILUS Hardware-01.webp": {
+    "480": "/assets/homepage/MOBILUS Hardware-01-480.webp",
+    "768": "/assets/homepage/MOBILUS Hardware-01-768.webp",
+    "1200": "/assets/homepage/MOBILUS Hardware-01-1200.webp",
+    "1600": "/assets/homepage/MOBILUS Hardware-01-1600.webp",
+    "original": "/assets/homepage/MOBILUS Hardware-01.webp"
+  },
+  "homepage/Outdoor eGSE & yards-01.webp": {
+    "480": "/assets/homepage/Outdoor eGSE & yards-01-480.webp",
+    "768": "/assets/homepage/Outdoor eGSE & yards-01-768.webp",
+    "1200": "/assets/homepage/Outdoor eGSE & yards-01-1200.webp",
+    "1600": "/assets/homepage/Outdoor eGSE & yards-01-1600.webp",
+    "original": "/assets/homepage/Outdoor eGSE & yards-01.webp"
+  },
+  "Industries/Aviation/Banner/Banner-Aviation page.png": {
+    "480": "/assets/Industries/Aviation/Banner/Banner-Aviation page-480.webp",
+    "768": "/assets/Industries/Aviation/Banner/Banner-Aviation page-768.webp",
+    "1200": "/assets/Industries/Aviation/Banner/Banner-Aviation page-1200.webp",
+    "1600": "/assets/Industries/Aviation/Banner/Banner-Aviation page-1600.webp",
+    "original": "/assets/Industries/Aviation/Banner/Banner-Aviation page.webp"
+  },
+  "Industries/Aviation/Banner/Banner-Aviation.png": {
+    "480": "/assets/Industries/Aviation/Banner/Banner-Aviation-480.webp",
+    "768": "/assets/Industries/Aviation/Banner/Banner-Aviation-768.webp",
+    "1200": "/assets/Industries/Aviation/Banner/Banner-Aviation-1200.webp",
+    "1600": "/assets/Industries/Aviation/Banner/Banner-Aviation-1600.webp",
+    "original": "/assets/Industries/Aviation/Banner/Banner-Aviation.webp"
+  },
+  "Industries/Aviation/The only charger engineered for airport turnaround pressure/ALTUS_II-DUAL PORT-IP65.png": {
+    "480": "/assets/Industries/Aviation/The only charger engineered for airport turnaround pressure/ALTUS_II-DUAL PORT-IP65-480.webp",
+    "768": "/assets/Industries/Aviation/The only charger engineered for airport turnaround pressure/ALTUS_II-DUAL PORT-IP65-768.webp",
+    "1200": "/assets/Industries/Aviation/The only charger engineered for airport turnaround pressure/ALTUS_II-DUAL PORT-IP65-1200.webp",
+    "original": "/assets/Industries/Aviation/The only charger engineered for airport turnaround pressure/ALTUS_II-DUAL PORT-IP65.webp"
+  },
+  "Industries/Aviation-GSE/Banner/Banner-Aviation.png": {
+    "480": "/assets/Industries/Aviation-GSE/Banner/Banner-Aviation-480.webp",
+    "768": "/assets/Industries/Aviation-GSE/Banner/Banner-Aviation-768.webp",
+    "1200": "/assets/Industries/Aviation-GSE/Banner/Banner-Aviation-1200.webp",
+    "1600": "/assets/Industries/Aviation-GSE/Banner/Banner-Aviation-1600.webp",
+    "original": "/assets/Industries/Aviation-GSE/Banner/Banner-Aviation.webp"
+  },
+  "Industries/Aviation-GSE/CTA/Banner.png": {
+    "480": "/assets/Industries/Aviation-GSE/CTA/Banner-480.webp",
+    "768": "/assets/Industries/Aviation-GSE/CTA/Banner-768.webp",
+    "1200": "/assets/Industries/Aviation-GSE/CTA/Banner-1200.webp",
+    "1600": "/assets/Industries/Aviation-GSE/CTA/Banner-1600.webp",
+    "original": "/assets/Industries/Aviation-GSE/CTA/Banner.webp"
+  },
+  "Industries/Aviation-GSE/Features/Built for the ramp.png": {
+    "480": "/assets/Industries/Aviation-GSE/Features/Built for the ramp-480.webp",
+    "768": "/assets/Industries/Aviation-GSE/Features/Built for the ramp-768.webp",
+    "1200": "/assets/Industries/Aviation-GSE/Features/Built for the ramp-1200.webp",
+    "original": "/assets/Industries/Aviation-GSE/Features/Built for the ramp.webp"
+  },
+  "Industries/Aviation-GSE/Features/No infrastructure upgrade required.png": {
+    "480": "/assets/Industries/Aviation-GSE/Features/No infrastructure upgrade required-480.webp",
+    "768": "/assets/Industries/Aviation-GSE/Features/No infrastructure upgrade required-768.webp",
+    "1200": "/assets/Industries/Aviation-GSE/Features/No infrastructure upgrade required-1200.webp",
+    "original": "/assets/Industries/Aviation-GSE/Features/No infrastructure upgrade required.webp"
+  },
+  "Industries/Aviation-GSE/Features/See your fleet before it strands you.png": {
+    "480": "/assets/Industries/Aviation-GSE/Features/See your fleet before it strands you-480.webp",
+    "768": "/assets/Industries/Aviation-GSE/Features/See your fleet before it strands you-768.webp",
+    "1200": "/assets/Industries/Aviation-GSE/Features/See your fleet before it strands you-1200.webp",
+    "original": "/assets/Industries/Aviation-GSE/Features/See your fleet before it strands you.webp"
+  },
+  "Industries/Aviation-GSE/Why Minit Charger/Banner.png": {
+    "480": "/assets/Industries/Aviation-GSE/Why Minit Charger/Banner-480.webp",
+    "768": "/assets/Industries/Aviation-GSE/Why Minit Charger/Banner-768.webp",
+    "1200": "/assets/Industries/Aviation-GSE/Why Minit Charger/Banner-1200.webp",
+    "1600": "/assets/Industries/Aviation-GSE/Why Minit Charger/Banner-1600.webp",
+    "original": "/assets/Industries/Aviation-GSE/Why Minit Charger/Banner.webp"
+  },
+  "Industries/Low-Speed-Vehicles/Banner/Banner -Low-Speed-Vehicles-Page.png": {
+    "480": "/assets/Industries/Low-Speed-Vehicles/Banner/Banner -Low-Speed-Vehicles-Page-480.webp",
+    "768": "/assets/Industries/Low-Speed-Vehicles/Banner/Banner -Low-Speed-Vehicles-Page-768.webp",
+    "1200": "/assets/Industries/Low-Speed-Vehicles/Banner/Banner -Low-Speed-Vehicles-Page-1200.webp",
+    "1600": "/assets/Industries/Low-Speed-Vehicles/Banner/Banner -Low-Speed-Vehicles-Page-1600.webp",
+    "original": "/assets/Industries/Low-Speed-Vehicles/Banner/Banner -Low-Speed-Vehicles-Page.webp"
+  },
+  "Industries/Warehouse/Banner/Banner-Warehouse-Page.png": {
+    "480": "/assets/Industries/Warehouse/Banner/Banner-Warehouse-Page-480.webp",
+    "768": "/assets/Industries/Warehouse/Banner/Banner-Warehouse-Page-768.webp",
+    "1200": "/assets/Industries/Warehouse/Banner/Banner-Warehouse-Page-1200.webp",
+    "1600": "/assets/Industries/Warehouse/Banner/Banner-Warehouse-Page-1600.webp",
+    "original": "/assets/Industries/Warehouse/Banner/Banner-Warehouse-Page.webp"
+  },
+  "Products/Altus II/Altus II Listing.png": {
+    "480": "/assets/Products/Altus II/Altus II Listing-480.webp",
+    "768": "/assets/Products/Altus II/Altus II Listing-768.webp",
+    "1200": "/assets/Products/Altus II/Altus II Listing-1200.webp",
+    "1600": "/assets/Products/Altus II/Altus II Listing-1600.webp",
+    "original": "/assets/Products/Altus II/Altus II Listing.webp"
+  },
+  "Products/Altus II/ALTUSII_FRONT.png": {
+    "480": "/assets/Products/Altus II/ALTUSII_FRONT-480.webp",
+    "768": "/assets/Products/Altus II/ALTUSII_FRONT-768.webp",
+    "original": "/assets/Products/Altus II/ALTUSII_FRONT.webp"
+  },
+  "Products/Altus II/Features/Turnaround Banner.png": {
+    "480": "/assets/Products/Altus II/Features/Turnaround Banner-480.webp",
+    "768": "/assets/Products/Altus II/Features/Turnaround Banner-768.webp",
+    "1200": "/assets/Products/Altus II/Features/Turnaround Banner-1200.webp",
+    "1600": "/assets/Products/Altus II/Features/Turnaround Banner-1600.webp",
+    "original": "/assets/Products/Altus II/Features/Turnaround Banner.webp"
+  },
+  "Products/altus-ii/context/altus_cta_bg.jpg": {
+    "480": "/assets/Products/altus-ii/context/altus_cta_bg-480.webp",
+    "768": "/assets/Products/altus-ii/context/altus_cta_bg-768.webp",
+    "1200": "/assets/Products/altus-ii/context/altus_cta_bg-1200.webp",
+    "original": "/assets/Products/altus-ii/context/altus_cta_bg.webp"
+  },
+  "Products/altus-ii/context/ALTUS_II_GSE_BACKGROUND.png": {
+    "480": "/assets/Products/altus-ii/context/ALTUS_II_GSE_BACKGROUND-480.webp",
+    "768": "/assets/Products/altus-ii/context/ALTUS_II_GSE_BACKGROUND-768.webp",
+    "1200": "/assets/Products/altus-ii/context/ALTUS_II_GSE_BACKGROUND-1200.webp",
+    "original": "/assets/Products/altus-ii/context/ALTUS_II_GSE_BACKGROUND.webp"
+  },
+  "Products/altus-ii/detail/ALTUS II NEW BRACKET CMS 1.png": {
+    "480": "/assets/Products/altus-ii/detail/ALTUS II NEW BRACKET CMS 1-480.webp",
+    "768": "/assets/Products/altus-ii/detail/ALTUS II NEW BRACKET CMS 1-768.webp",
+    "1200": "/assets/Products/altus-ii/detail/ALTUS II NEW BRACKET CMS 1-1200.webp",
+    "1600": "/assets/Products/altus-ii/detail/ALTUS II NEW BRACKET CMS 1-1600.webp",
+    "original": "/assets/Products/altus-ii/detail/ALTUS II NEW BRACKET CMS 1.webp"
+  },
+  "Products/altus-ii/detail/ALTUS II NEW BRACKET CMS 3.png": {
+    "480": "/assets/Products/altus-ii/detail/ALTUS II NEW BRACKET CMS 3-480.webp",
+    "768": "/assets/Products/altus-ii/detail/ALTUS II NEW BRACKET CMS 3-768.webp",
+    "1200": "/assets/Products/altus-ii/detail/ALTUS II NEW BRACKET CMS 3-1200.webp",
+    "1600": "/assets/Products/altus-ii/detail/ALTUS II NEW BRACKET CMS 3-1600.webp",
+    "original": "/assets/Products/altus-ii/detail/ALTUS II NEW BRACKET CMS 3.webp"
+  },
+  "Products/altus-ii/hero/ALTUS II NEW BRACKET CMS.png": {
+    "480": "/assets/Products/altus-ii/hero/ALTUS II NEW BRACKET CMS-480.webp",
+    "768": "/assets/Products/altus-ii/hero/ALTUS II NEW BRACKET CMS-768.webp",
+    "1200": "/assets/Products/altus-ii/hero/ALTUS II NEW BRACKET CMS-1200.webp",
+    "1600": "/assets/Products/altus-ii/hero/ALTUS II NEW BRACKET CMS-1600.webp",
+    "original": "/assets/Products/altus-ii/hero/ALTUS II NEW BRACKET CMS.webp"
+  },
+  "Products/altus-ii/hero/altus_hero_render.jpg": {
+    "480": "/assets/Products/altus-ii/hero/altus_hero_render-480.webp",
+    "768": "/assets/Products/altus-ii/hero/altus_hero_render-768.webp",
+    "original": "/assets/Products/altus-ii/hero/altus_hero_render.webp"
+  },
+  "Products/Cumulus/Cumulus Software Lisitng.png": {
+    "480": "/assets/Products/Cumulus/Cumulus Software Lisitng-480.webp",
+    "768": "/assets/Products/Cumulus/Cumulus Software Lisitng-768.webp",
+    "1200": "/assets/Products/Cumulus/Cumulus Software Lisitng-1200.webp",
+    "1600": "/assets/Products/Cumulus/Cumulus Software Lisitng-1600.webp",
+    "original": "/assets/Products/Cumulus/Cumulus Software Lisitng.webp"
+  },
+  "Products/Durus/Durus Listing.png": {
+    "480": "/assets/Products/Durus/Durus Listing-480.webp",
+    "768": "/assets/Products/Durus/Durus Listing-768.webp",
+    "1200": "/assets/Products/Durus/Durus Listing-1200.webp",
+    "1600": "/assets/Products/Durus/Durus Listing-1600.webp",
+    "original": "/assets/Products/Durus/Durus Listing.webp"
+  },
+  "Products/Magnus/Magnus Hardware Listing.png": {
+    "480": "/assets/Products/Magnus/Magnus Hardware Listing-480.webp",
+    "768": "/assets/Products/Magnus/Magnus Hardware Listing-768.webp",
+    "1200": "/assets/Products/Magnus/Magnus Hardware Listing-1200.webp",
+    "1600": "/assets/Products/Magnus/Magnus Hardware Listing-1600.webp",
+    "original": "/assets/Products/Magnus/Magnus Hardware Listing.webp"
+  },
+  "Products/Mobilus/MOBILUS Hardware Listing.png": {
+    "480": "/assets/Products/Mobilus/MOBILUS Hardware Listing-480.webp",
+    "768": "/assets/Products/Mobilus/MOBILUS Hardware Listing-768.webp",
+    "1200": "/assets/Products/Mobilus/MOBILUS Hardware Listing-1200.webp",
+    "1600": "/assets/Products/Mobilus/MOBILUS Hardware Listing-1600.webp",
+    "original": "/assets/Products/Mobilus/MOBILUS Hardware Listing.webp"
+  },
+  "Products/Momentus/MOMENTUs Hardware Listing.png": {
+    "480": "/assets/Products/Momentus/MOMENTUs Hardware Listing-480.webp",
+    "768": "/assets/Products/Momentus/MOMENTUs Hardware Listing-768.webp",
+    "1200": "/assets/Products/Momentus/MOMENTUs Hardware Listing-1200.webp",
+    "1600": "/assets/Products/Momentus/MOMENTUs Hardware Listing-1600.webp",
+    "original": "/assets/Products/Momentus/MOMENTUs Hardware Listing.webp"
+  },
+  "logo.png": {
+    "480": "/assets/logo-480.webp",
+    "768": "/assets/logo-768.webp",
+    "1200": "/assets/logo-1200.webp",
+    "1600": "/assets/logo-1600.webp",
+    "original": "/assets/logo.webp"
   }
 }
