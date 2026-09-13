@@ -1,33 +1,19 @@
 import HomeHero from "./_components/HomeHero";
-import TrustStrip from "./_components/TrustStrip";
 import ProblemFraming from "./_components/ProblemFraming";
 import EnvironmentGrid from "./_components/EnvironmentGrid";
 import EngineeredAdvantages from "./_components/EngineeredAdvantages";
 import InteractiveScenes from "./_components/InteractiveScenes";
-import ComparisonSplit from "./_components/ComparisonSplit";
-import FeaturedProduct from "./_components/FeaturedProduct";
 import ImageCardGrid from "./components/ImageCardGrid";
-import LogoStrip from "./_components/LogoStrip";
 import SpecsTable from "./products/altus-ii/_components/SpecsTable";
 import ProcessSteps from "./_components/ProcessSteps";
 import FaqSection from "./components/FaqSection";
-import CustomerQuotes from "./_components/CustomerQuotes";
 import ConversionBand from "./components/ConversionBand";
 import SmoothScroll from "./products/altus-ii/_components/SmoothScroll";
 import CumulusSpotlight from "./components/CumulusSpotlight";
+import TabbedProductCatalog from "./_components/TabbedProductCatalog";
+import ConsolidatedProof from "./_components/ConsolidatedProof";
 
 import { products } from "@/data/products";
-
-const displayProductIds = ["altus-ii", "magnus", "mobilus", "cumulus"];
-const pageProducts = products
-  .filter(p => displayProductIds.includes(p.id))
-  .map(p => ({
-    ...p,
-    kicker: p.categoryTag,
-    image: p.cardImage,
-    link: p.productPageUrl,
-    description: p.keyUSP
-  }));
 
 const faqs = [
   {
@@ -65,8 +51,6 @@ export default function Home() {
           {/* 1. Hero */}
           <HomeHero />
 
-          {/* 2. Trust strip */}
-          <TrustStrip />
 
           {/* 3. Why fleets switch */}
           <ProblemFraming />
@@ -80,23 +64,10 @@ export default function Home() {
           {/* 6. Interactive charging scenes */}
           <InteractiveScenes />
 
-          {/* 7. Indoor vs outdoor comparison */}
-          <ComparisonSplit />
 
-          {/* 8. Featured product spotlight */}
-          <FeaturedProduct />
+          {/* 9. Purpose-Built Platforms Catalog */}
+          <TabbedProductCatalog />
 
-          {/* 9. Cutting-edge solutions by use case */}
-          <ImageCardGrid
-            title="Purpose-Built Platforms"
-            description="Hardware and software engineered for the realities of industrial fleet operations."
-            linkText="Explore the Ecosystem"
-            linkHref="/products"
-            items={pageProducts}
-          />
-
-          {/* 10. Customer quotes */}
-          <CustomerQuotes />
 
           {/* Cumulus Spotlight Cross-sell */}
           <CumulusSpotlight 
@@ -105,16 +76,8 @@ export default function Home() {
             imageSide="right"
           />
 
-          {/* 11. Company proof/stat band with logos */}
-          <LogoStrip
-            title="Trusted by the World's Best"
-            description="For over two decades, leading fleets have relied on Minit Charger to keep their operations moving."
-            stats={[
-              { targetValue: 25, unit: "+", label: "Years Experience" },
-              { targetValue: 15000, unit: "+", label: "Global Installs" },
-              { targetValue: 99, unit: "%", label: "Uptime SLA" }
-            ]}
-          />
+          {/* 11. Consolidated Proof Section */}
+          <ConsolidatedProof />
 
           {/* 12. Spec comparison table */}
           <div className="bg-white dark:bg-zinc-950 border-b border-zinc-200 dark:border-zinc-800">
