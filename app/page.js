@@ -91,7 +91,7 @@ export default function Home() {
             description="Explore our latest case studies, deployment guides, and whitepapers."
             linkText="View All Resources"
             linkHref="/blogs"
-            imageMode="contain"
+            imageMode="cover"
             cardType="blog"
             items={featuredBlogs}
           />

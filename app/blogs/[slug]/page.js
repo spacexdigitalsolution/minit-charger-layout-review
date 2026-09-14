@@ -51,7 +51,7 @@ export default async function BlogPostPage({ params }) {
                 src={blog.heroImage || blog.thumbnailImage}
                 alt={blog.title}
                 fill
-                className="object-contain object-center opacity-90"
+                className="object-cover object-center opacity-90"
                 priority
               />
             </div>

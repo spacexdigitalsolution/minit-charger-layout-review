@@ -111,7 +111,7 @@ export default function BlogsPage() {
                     src={filteredBlogs[0].heroImage || filteredBlogs[0].thumbnailImage}
                     alt={filteredBlogs[0].title}
                     fill
-                    className="object-contain object-center transition-opacity duration-700"
+                    className="object-cover object-center transition-opacity duration-700"
                   />
                 </Link>
                 <div className="lg:w-1/3 flex flex-col justify-center py-4 pr-8">
@@ -147,7 +147,7 @@ export default function BlogsPage() {
                       src={blog.thumbnailImage}
                       alt={blog.title}
                       fill
-                      className="object-contain object-center transition-opacity duration-700"
+                      className="object-cover object-center transition-opacity duration-700"
                     />
                   </div>
 
