@@ -87,7 +87,7 @@ export default function SmartImage({
 
     return (
       <div
-        className={`relative flex flex-col items-center justify-center bg-gray-100 border-2 border-dashed border-gray-300 text-gray-500 overflow-hidden p-4 text-center ${className}`}
+        className={`relative flex flex-col items-center justify-center bg-gray-100 border-2 border-dashed border-gray-300 text-gray-500 overflow-hidden text-center ${className}`}
         style={{ width: imgWidth ? `${imgWidth}px` : '100%', height: imgHeight ? `${imgHeight}px` : '100%' }}
       >
         <div className="text-sm font-semibold text-gray-700">
@@ -122,14 +122,14 @@ export default function SmartImage({
 
     const fillStyle = props.fill
       ? {
-          position: 'absolute',
-          height: '100%',
-          width: '100%',
-          left: 0,
-          top: 0,
-          right: 0,
-          bottom: 0,
-        }
+        position: 'absolute',
+        height: '100%',
+        width: '100%',
+        left: 0,
+        top: 0,
+        right: 0,
+        bottom: 0,
+      }
       : { width: imgWidth ? `${imgWidth}px` : '100%', height: imgHeight ? `${imgHeight}px` : '100%' };
 
     return (

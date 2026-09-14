@@ -32,7 +32,7 @@ export default async function BlogPostPage({ params }) {
   return (
     <>
       <article className="relative z-10 bg-white dark:bg-zinc-950 font-sans min-h-screen pt-32 pb-24">
-        
+
         {/* Immersive Hero */}
         <header className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
           <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-zinc-200 dark:border-zinc-800 pb-12 mb-12">
@@ -44,14 +44,14 @@ export default async function BlogPostPage({ params }) {
               <span className="block text-sm text-zinc-500 dark:text-zinc-400">{new Date(blog.publishDate).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
             </div>
           </div>
-          
+
           {blog.heroImage && (
             <div className="relative aspect-[21/9] w-full overflow-hidden bg-zinc-100 dark:bg-zinc-900 rounded-sm">
               <SmartImage
-                src={blog.heroImage}
+                src={blog.heroImage || blog.thumbnailImage}
                 alt={blog.title}
                 fill
-                className="object-cover"
+                className="object-contain object-center opacity-90"
                 priority
               />
             </div>
@@ -61,7 +61,7 @@ export default async function BlogPostPage({ params }) {
         {/* Split-Pane Body */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
-            
+
             {/* Left Meta Column (Sticky) */}
             <aside className="lg:col-span-3 lg:col-start-1 order-2 lg:order-1 border-t lg:border-t-0 border-zinc-200 dark:border-zinc-800 pt-12 lg:pt-0">
               <div className="sticky top-32 flex flex-col gap-10">
@@ -80,13 +80,13 @@ export default async function BlogPostPage({ params }) {
                   <span className="block text-[10px] font-bold uppercase tracking-widest text-zinc-400 dark:text-zinc-500 mb-4">Share Article</span>
                   <div className="flex gap-3">
                     <button className="w-10 h-10 rounded-full border border-zinc-200 dark:border-zinc-800 flex items-center justify-center text-zinc-500 dark:text-zinc-400 hover:border-zinc-900 hover:text-zinc-900 dark:hover:border-white dark:hover:text-white transition-colors text-xs font-bold">
-                       IN
+                      IN
                     </button>
                     <button className="w-10 h-10 rounded-full border border-zinc-200 dark:border-zinc-800 flex items-center justify-center text-zinc-500 dark:text-zinc-400 hover:border-zinc-900 hover:text-zinc-900 dark:hover:border-white dark:hover:text-white transition-colors text-xs font-bold">
-                       TW
+                      TW
                     </button>
                     <button className="w-10 h-10 rounded-full border border-zinc-200 dark:border-zinc-800 flex items-center justify-center text-zinc-500 dark:text-zinc-400 hover:border-zinc-900 hover:text-zinc-900 dark:hover:border-white dark:hover:text-white transition-colors text-xs font-bold">
-                       FB
+                      FB
                     </button>
                   </div>
                 </div>
@@ -126,10 +126,10 @@ export default async function BlogPostPage({ params }) {
                       </ul>
                     );
                   }
-                  
+
                   // Perfected Editorial Drop Cap for the first paragraph
                   const isFirstParagraph = index === 0;
-                  
+
                   return (
                     <p key={index} className={`mb-10 text-xl tracking-normal ${isFirstParagraph ? "first-letter:text-8xl first-letter:font-display first-letter:font-black first-letter:text-zinc-900 dark:first-letter:text-white first-letter:float-left first-letter:mr-4 first-letter:leading-[0.75] first-letter:mt-2" : ""}`}>
                       {paragraph}
@@ -137,7 +137,7 @@ export default async function BlogPostPage({ params }) {
                   );
                 })}
               </div>
-              
+
               {/* End of article marker */}
               <div className="mt-20 flex justify-center">
                 <span className="w-2 h-2 rounded-full bg-zinc-300 dark:bg-zinc-700 mx-1"></span>
@@ -145,7 +145,7 @@ export default async function BlogPostPage({ params }) {
                 <span className="w-2 h-2 rounded-full bg-zinc-300 dark:bg-zinc-700 mx-1"></span>
               </div>
             </div>
-            
+
           </div>
         </div>
       </article>

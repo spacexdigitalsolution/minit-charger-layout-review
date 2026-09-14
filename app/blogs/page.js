@@ -7,7 +7,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import SmartImage from "@/app/components/SmartImage";
 import ConversionBand from "@/app/components/ConversionBand";
-
 import { blogs } from "@/data/blogs";
 import { ArrowRight } from "lucide-react";
 
@@ -93,8 +92,8 @@ export default function BlogsPage() {
                   key={cat}
                   onClick={() => handleTabClick(cat)}
                   className={`px-6 py-2 text-sm font-bold uppercase tracking-wider rounded-sm transition-all duration-300 border ${activeCategory === cat
-                      ? "bg-zinc-900 text-white border-zinc-900 dark:bg-white dark:text-zinc-950 dark:border-white"
-                      : "bg-transparent text-zinc-600 border-zinc-200 hover:border-zinc-900 hover:text-zinc-900 dark:text-zinc-400 dark:border-zinc-800 dark:hover:border-white dark:hover:text-white"
+                    ? "bg-zinc-900 text-white border-zinc-900 dark:bg-white dark:text-zinc-950 dark:border-white"
+                    : "bg-transparent text-zinc-600 border-zinc-200 hover:border-zinc-900 hover:text-zinc-900 dark:text-zinc-400 dark:border-zinc-800 dark:hover:border-white dark:hover:text-white"
                     }`}
                 >
                   {cat}
@@ -112,7 +111,7 @@ export default function BlogsPage() {
                     src={filteredBlogs[0].heroImage || filteredBlogs[0].thumbnailImage}
                     alt={filteredBlogs[0].title}
                     fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="object-contain object-center transition-opacity duration-700"
                   />
                 </Link>
                 <div className="lg:w-1/3 flex flex-col justify-center py-4 pr-8">
@@ -148,7 +147,7 @@ export default function BlogsPage() {
                       src={blog.thumbnailImage}
                       alt={blog.title}
                       fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="object-contain object-center transition-opacity duration-700"
                     />
                   </div>
 
