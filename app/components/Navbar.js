@@ -33,6 +33,7 @@ export default function Navbar() {
             <div className="hidden md:flex md:gap-8">
               <Link href="/products/altus-ii" className={`text-sm font-bold uppercase tracking-wider transition-colors duration-300 ${scrolled ? "text-zinc-600 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white" : "text-white/80 hover:text-white"}`}>Products</Link>
               <Link href="/industries/aviation-gse" className={`text-sm font-bold uppercase tracking-wider transition-colors duration-300 ${scrolled ? "text-zinc-600 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white" : "text-white/80 hover:text-white"}`}>Industries</Link>
+              <Link href="/blogs" className={`text-sm font-bold uppercase tracking-wider transition-colors duration-300 ${scrolled ? "text-zinc-600 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white" : "text-white/80 hover:text-white"}`}>Blogs</Link>
               <Link href="#" className={`text-sm font-bold uppercase tracking-wider transition-colors duration-300 ${scrolled ? "text-zinc-600 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white" : "text-white/80 hover:text-white"}`}>Company</Link>
             </div>
           </div>
@@ -57,6 +58,7 @@ export default function Navbar() {
             <div className="flex flex-col space-y-4">
               <Link href="/products/altus-ii" className="text-sm font-medium text-zinc-600 dark:text-zinc-300">Products</Link>
               <Link href="/industries/aviation-gse" className="text-sm font-medium text-zinc-600 dark:text-zinc-300">Industries</Link>
+              <Link href="/blogs" className="text-sm font-medium text-zinc-600 dark:text-zinc-300">Blogs</Link>
               <Link href="#" className="text-sm font-medium text-zinc-600 dark:text-zinc-300">Company</Link>
               <Link href="#" className="inline-flex h-9 items-center justify-center rounded-md bg-zinc-900 px-4 py-2 text-sm font-medium text-white dark:bg-white dark:text-zinc-900">
                 Contact Us

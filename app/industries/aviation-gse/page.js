@@ -5,7 +5,6 @@ import BenefitModules from "./_components/BenefitModules";
 import ImageCardGrid from "@/app/components/ImageCardGrid";
 import FaqSection from "@/app/components/FaqSection";
 import ConversionBand from "@/app/components/ConversionBand";
-import SmoothScroll from "@/app/products/altus-ii/_components/SmoothScroll";
 import StatsBlock from "@/app/components/StatsBlock";
 import CumulusSpotlight from "@/app/components/CumulusSpotlight";
 
@@ -56,7 +55,6 @@ export default function AviationGSEPage() {
   return (
     <>
       <HeroSection />
-      <SmoothScroll>
         <div className="relative z-10 bg-white dark:bg-zinc-950">
           <SignatureSolution />
           {/*  <StatsBlock stats={stats} /> */}
@@ -90,7 +88,6 @@ export default function AviationGSEPage() {
             bgImage="/assets/gse/MOB_GSE_2.png"
           />
         </div>
-      </SmoothScroll>
     </>
   );
 }

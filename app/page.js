@@ -8,12 +8,19 @@ import ImageCardGrid from "./components/ImageCardGrid";
 import ProcessSteps from "./_components/ProcessSteps";
 import FaqSection from "./components/FaqSection";
 import ConversionBand from "./components/ConversionBand";
-import SmoothScroll from "./products/altus-ii/_components/SmoothScroll";
 import CumulusSpotlight from "./components/CumulusSpotlight";
 import TabbedProductCatalog from "./_components/TabbedProductCatalog";
 import ConsolidatedProof from "./_components/ConsolidatedProof";
 
-import { products } from "@/data/products";
+import { blogs } from "@/data/blogs";
+
+const featuredBlogs = blogs.slice(0, 2).map((blog) => ({
+  id: blog.id,
+  name: blog.title,
+  kicker: blog.category,
+  image: blog.thumbnailImage,
+  link: `/blogs/${blog.slug}`
+}));
 
 const faqs = [
   {
@@ -45,7 +52,6 @@ const faqs = [
 export default function Home() {
   return (
     <>
-      <SmoothScroll>
         <div className="relative z-10 bg-white dark:bg-black font-sans">
 
           {/* 1. Hero */}
@@ -67,7 +73,7 @@ export default function Home() {
           <TabbedProductCatalog />
 
           {/* 7. Cumulus Spotlight Cross-sell */}
-          <CumulusSpotlight 
+          <CumulusSpotlight
             headline="See your fleet before it strands you"
             supportingCopy="Manage the complete charging operation, not only the charger. Connect your hardware to the Cumulus cloud platform for total visibility."
             imageSide="right"
@@ -84,12 +90,10 @@ export default function Home() {
             title="Insights & Resources"
             description="Explore our latest case studies, deployment guides, and whitepapers."
             linkText="View All Resources"
-            linkHref="/resources"
+            linkHref="/blogs"
             imageMode="cover"
-            items={[
-              { id: "gse-guide", name: "GSE Electrification Guide", kicker: "Whitepaper", image: "/assets/homepage/Engineered for Airports.webp", link: "/resources" },
-              { id: "warehouse-case", name: "Warehouse ROI Analysis", kicker: "Case Study", image: "/assets/homepage/Engineered for Warehouses.webp", link: "/resources" }
-            ]}
+            cardType="blog"
+            items={featuredBlogs}
           />
 
           {/* 11. FAQ */}
@@ -120,7 +124,6 @@ export default function Home() {
           />
 
         </div>
-      </SmoothScroll>
     </>
   );
 }

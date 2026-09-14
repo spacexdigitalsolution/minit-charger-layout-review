@@ -5,7 +5,6 @@ import BenefitModules from "./_components/BenefitModules";
 import ImageCardGrid from "@/app/components/ImageCardGrid";
 import FaqSection from "@/app/components/FaqSection";
 import ConversionBand from "@/app/components/ConversionBand";
-import SmoothScroll from "@/app/products/altus-ii/_components/SmoothScroll";
 import StatsBlock from "@/app/components/StatsBlock";
 import CumulusSpotlight from "@/app/components/CumulusSpotlight";
 
@@ -51,7 +50,6 @@ export default function CommercialFleetsPage() {
   return (
     <>
       <HeroSection />
-      <SmoothScroll>
         <div className="relative z-10 bg-white dark:bg-zinc-950">
           <StatsBlock stats={stats} />
           <SignatureSolution />
@@ -85,7 +83,6 @@ export default function CommercialFleetsPage() {
             bgImage={null}
           />
         </div>
-      </SmoothScroll>
     </>
   );
 }

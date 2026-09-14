@@ -5,8 +5,9 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import Link from "next/link";
-import SmartImage from "./SmartImage";
-import HoverZoomImage from "./HoverZoomImage";
+import ProductCard from "./ProductCard";
+import BlogCard from "./BlogCard";
+import IndustryCard from "./IndustryCard";
 import { ArrowRight } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -18,7 +19,8 @@ export default function ImageCardGrid({
   linkHref = "/products",
   items = [],
   imageMode = "contain",
-  theme = "dark"
+  theme = "dark",
+  cardType = "product"
 }) {
   const containerRef = useRef(null);
   const isLight = theme === "light";
@@ -65,52 +67,13 @@ export default function ImageCardGrid({
           {items.map((product) => {
             const paddingClass = product.imagePadding || 'p-4 pb-32';
             
-            return (
-              <Link
-                key={product.id}
-                href={product.link}
-                className={`rp-card group relative block aspect-square overflow-hidden rounded-sm ${isLight ? "bg-zinc-100" : "bg-zinc-900"}`}
-              >
-                {product.image ? (
-                  <HoverZoomImage>
-                    <SmartImage
-                      src={product.image}
-                      alt={product.name}
-                      fill
-                      className={`${imageMode === 'contain' ? `object-contain ${paddingClass}` : 'object-cover'} opacity-80 group-hover:opacity-100 transition-opacity duration-300`}
-                    />
-                  </HoverZoomImage>
-                ) : (
-                  // TODO: Missing Asset - {product.name}
-                  <div className={`absolute inset-0 ${isLight ? "bg-zinc-200 border-zinc-300" : "bg-zinc-900 border-zinc-800"} border`}></div>
-                )}
-
-                {/* Gradient Overlay for text legibility */}
-                <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/20 to-transparent opacity-90"></div>
-
-                {/* Text Content overlay */}
-                <div className="absolute inset-0 p-8 pr-16 flex flex-col justify-end pointer-events-none">
-                  {product.kicker && (
-                    <span className="text-[10px] font-bold text-green-500 uppercase tracking-widest mb-2 pointer-events-auto">
-                      {product.kicker}
-                    </span>
-                  )}
-                  <h3 className="font-display text-3xl font-bold uppercase tracking-wide text-white pointer-events-auto">
-                    {product.name}
-                  </h3>
-                  {product.description && (
-                    <p className="mt-2 text-sm text-zinc-300 line-clamp-2 group-hover:text-white transition-colors pointer-events-auto">
-                      {product.description}
-                    </p>
-                  )}
-                </div>
-
-                {/* Arrow Icon */}
-                <div className="absolute bottom-8 right-8 w-10 h-10 rounded-full border border-white/30 flex items-center justify-center transition-colors group-hover:bg-white group-hover:border-white shrink-0">
-                  <ArrowRight className="h-4 w-4 text-white group-hover:text-zinc-950 transition-colors" />
-                </div>
-              </Link>
-            );
+            if (cardType === "blog") {
+              return <BlogCard key={product.id} item={product} imageMode={imageMode} isLight={isLight} paddingClass={paddingClass} />;
+            } else if (cardType === "industry") {
+              return <IndustryCard key={product.id} item={product} imageMode={imageMode} isLight={isLight} paddingClass={paddingClass} />;
+            } else {
+              return <ProductCard key={product.id} item={product} imageMode={imageMode} isLight={isLight} paddingClass={paddingClass} />;
+            }
           })}
         </div>
 

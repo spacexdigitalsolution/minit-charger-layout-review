@@ -1,11 +1,15 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import Lenis from "lenis";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { usePathname } from "next/navigation";
 
 export default function SmoothScroll({ children }) {
+  const pathname = usePathname();
+  const lenisRef = useRef(null);
+
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -18,6 +22,8 @@ export default function SmoothScroll({ children }) {
       smoothTouch: false,
       touchMultiplier: 2,
     });
+    
+    lenisRef.current = lenis;
 
     lenis.on("scroll", ScrollTrigger.update);
 
@@ -32,6 +38,27 @@ export default function SmoothScroll({ children }) {
       gsap.ticker.remove(lenis.raf);
     };
   }, []);
+
+  useEffect(() => {
+    // Disable native scroll restoration to prevent conflicts with Lenis
+    if (typeof window !== "undefined" && "scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+
+    const resetScroll = () => {
+      window.scrollTo(0, 0);
+      if (lenisRef.current) {
+        lenisRef.current.scrollTo(0, { immediate: true });
+      }
+    };
+
+    // Force scroll reset immediately, on next frame, and after DOM paints
+    resetScroll();
+    requestAnimationFrame(resetScroll);
+    setTimeout(resetScroll, 20);
+    setTimeout(resetScroll, 100);
+
+  }, [pathname]);
 
   return <>{children}</>;
 }

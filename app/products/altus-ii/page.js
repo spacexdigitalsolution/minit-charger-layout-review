@@ -8,7 +8,6 @@ import ImageCardGrid from "@/app/components/ImageCardGrid";
 import FaqSection from "@/app/components/FaqSection";
 import VideoModule from "./_components/VideoModule";
 import ConversionBand from "@/app/components/ConversionBand";
-import SmoothScroll from "./_components/SmoothScroll";
 import CumulusSpotlight from "@/app/components/CumulusSpotlight";
 import SmartImage from "@/app/components/SmartImage";
 
@@ -52,8 +51,7 @@ export default function AltusIIProductPage() {
   return (
     <>
       <HeroSection />
-      <SmoothScroll>
-        <div className="relative z-10 bg-white dark:bg-zinc-950">
+      <div className="relative z-10 bg-white dark:bg-zinc-950">
           <SpecsTable />
           <BenefitsGrid />
           <HardwareDetail />
@@ -101,7 +99,6 @@ export default function AltusIIProductPage() {
             bgImage={null}
           />
         </div>
-      </SmoothScroll>
     </>
   );
 }

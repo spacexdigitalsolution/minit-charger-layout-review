@@ -1,4 +1,3 @@
-import SmoothScroll from "@/app/products/altus-ii/_components/SmoothScroll";
 import Var1FullBleed from "./_components/Var1_FullBleed";
 import Var2SplitScreen from "./_components/Var2_SplitScreen";
 import Var3Diagram from "./_components/Var3_Diagram";
@@ -25,7 +24,6 @@ export default function HeroVariationsPage() {
         <a href="#var-7" className="hover:text-green-600 transition-colors">Var 7: Persona</a>
       </div>
 
-      <SmoothScroll>
         <div className="pt-[44px]"> {/* Offset for fixed nav */}
           <section id="var-1" className="min-h-screen relative border-b-8 border-red-500"><Var1FullBleed /></section>
           <section id="var-2" className="min-h-screen relative border-b-8 border-red-500"><Var2SplitScreen /></section>
@@ -35,7 +33,6 @@ export default function HeroVariationsPage() {
           <section id="var-6" className="min-h-screen relative border-b-8 border-red-500"><Var6Moody /></section>
           <section id="var-7" className="min-h-screen relative border-b-8 border-red-500"><Var7Persona /></section>
         </div>
-      </SmoothScroll>
     </main>
   );
 }
