@@ -51,6 +51,7 @@ export default function Navbar() {
           </div>
         </div>
         {/* Mobile Menu */}
+
         {isOpen && (
           <div className="border-t border-zinc-200 bg-white px-4 py-4 dark:border-zinc-800 dark:bg-zinc-950 md:hidden">
             <div className="flex flex-col space-y-4">

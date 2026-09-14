@@ -4,7 +4,7 @@ import EnvironmentGrid from "./_components/EnvironmentGrid";
 import EngineeredAdvantages from "./_components/EngineeredAdvantages";
 import InteractiveScenes from "./_components/InteractiveScenes";
 import ImageCardGrid from "./components/ImageCardGrid";
-import SpecsTable from "./products/altus-ii/_components/SpecsTable";
+
 import ProcessSteps from "./_components/ProcessSteps";
 import FaqSection from "./components/FaqSection";
 import ConversionBand from "./components/ConversionBand";
@@ -51,43 +51,35 @@ export default function Home() {
           {/* 1. Hero */}
           <HomeHero />
 
-
-          {/* 3. Why fleets switch */}
+          {/* 2. Why fleets switch */}
           <ProblemFraming />
 
-          {/* 4. Engineered for Every Environment */}
+          {/* 3. Engineered for Every Environment */}
           <EnvironmentGrid />
 
-          {/* 5. Engineered advantages detail list */}
+          {/* 4. Engineered advantages detail list */}
           <EngineeredAdvantages />
 
-          {/* 6. Interactive charging scenes */}
+          {/* 5. Interactive charging scenes */}
           <InteractiveScenes />
 
-
-          {/* 9. Purpose-Built Platforms Catalog */}
+          {/* 6. Purpose-Built Platforms Catalog */}
           <TabbedProductCatalog />
 
-
-          {/* Cumulus Spotlight Cross-sell */}
+          {/* 7. Cumulus Spotlight Cross-sell */}
           <CumulusSpotlight 
             headline="See your fleet before it strands you"
             supportingCopy="Manage the complete charging operation, not only the charger. Connect your hardware to the Cumulus cloud platform for total visibility."
             imageSide="right"
           />
 
-          {/* 11. Consolidated Proof Section */}
+          {/* 8. Consolidated Proof Section */}
           <ConsolidatedProof />
 
-          {/* 12. Spec comparison table */}
-          <div className="bg-white dark:bg-zinc-950 border-b border-zinc-200 dark:border-zinc-800">
-            <SpecsTable />
-          </div>
-
-          {/* 13. Process steps */}
+          {/* 9. Process steps */}
           <ProcessSteps />
 
-          {/* 14. Guides/resources cross-sell - Reusing ImageCardGrid for resources */}
+          {/* 10. Guides/resources cross-sell */}
           <ImageCardGrid
             title="Insights & Resources"
             description="Explore our latest case studies, deployment guides, and whitepapers."
@@ -100,14 +92,14 @@ export default function Home() {
             ]}
           />
 
-          {/* 15. FAQ */}
+          {/* 11. FAQ */}
           <FaqSection
             title="Frequently Asked Questions"
             description="Common inquiries about our platform, deployment process, and technical capabilities."
             faqs={faqs}
           />
 
-          {/* 16. Local/regional service note */}
+          {/* 12. Local/regional service note */}
           <section className="py-16 bg-zinc-50 dark:bg-zinc-900 border-t border-zinc-200 dark:border-zinc-800 text-center">
             <div className="mx-auto max-w-3xl px-4">
               <h3 className="font-display text-xl font-bold uppercase tracking-wide text-zinc-900 dark:text-white mb-4">
@@ -119,7 +111,7 @@ export default function Home() {
             </div>
           </section>
 
-          {/* 17. Final CTA band */}
+          {/* 13. Final CTA band */}
           <ConversionBand
             headline="Every Minute of Downtime Has a Cost. Let's Fix That."
             primaryCTA={{ label: "Contact Sales", href: "/contact" }}
