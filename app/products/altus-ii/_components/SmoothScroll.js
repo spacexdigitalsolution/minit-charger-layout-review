@@ -46,17 +46,22 @@ export default function SmoothScroll({ children }) {
     }
 
     const resetScroll = () => {
-      window.scrollTo(0, 0);
+      // Force native scroll instantly
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+      
+      // Force Lenis to reset its internal state to top immediately
       if (lenisRef.current) {
-        lenisRef.current.scrollTo(0, { immediate: true });
+        lenisRef.current.scrollTo(0, { immediate: true, force: true });
+        // Optionally stop and start to clear momentum
+        lenisRef.current.stop();
+        lenisRef.current.start();
       }
     };
 
     // Force scroll reset immediately, on next frame, and after DOM paints
     resetScroll();
     requestAnimationFrame(resetScroll);
-    setTimeout(resetScroll, 20);
-    setTimeout(resetScroll, 100);
+    setTimeout(resetScroll, 50);
 
   }, [pathname]);
 

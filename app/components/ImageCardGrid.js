@@ -31,7 +31,8 @@ export default function ImageCardGrid({
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "top 80%", toggleActions: "play none none none", once: true}
+          start: "top 80%", toggleActions: "play none none none", once: true
+        }
       });
 
       tl.from(".rp-header", { y: 20, autoAlpha: 0, duration: 0.6, ease: "power2.out", clearProps: "all" })
@@ -39,15 +40,18 @@ export default function ImageCardGrid({
     });
   }, { scope: containerRef });
 
-  // Dynamically determine grid columns based on number of items
-  // Up to 4 items -> 2x2. 3 items -> 3 columns.
-  const gridColsClass = items.length === 3 ? "md:grid-cols-3" : "md:grid-cols-2 lg:grid-cols-4";
+  // Dynamically determine grid columns and max-width based on number of items
+  // This prevents 1 or 2 items from stretching across the entire 4-column span
+  let gridColsClass = "md:grid-cols-2 lg:grid-cols-4";
+  if (items.length === 1) gridColsClass = "md:grid-cols-1 max-w-sm";
+  else if (items.length === 2) gridColsClass = "md:grid-cols-2 max-w-3xl";
+  else if (items.length === 3) gridColsClass = "md:grid-cols-3 max-w-5xl";
 
   return (
     <section ref={containerRef} className={`py-24 overflow-hidden ${isLight ? "bg-white text-zinc-900" : "bg-zinc-950 text-white"}`}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
-        <div className="rp-header flex flex-col md:flex-row md:items-end justify-between mb-16">
+        <div className="rp-header flex flex-col md:flex-row md:items-end justify-between mb-6">
           <div>
             <h2 className="font-display text-4xl md:text-5xl font-black tracking-tighter uppercase mb-4">
               {title}
@@ -66,7 +70,7 @@ export default function ImageCardGrid({
         <div className={`grid grid-cols-1 ${gridColsClass} gap-4`}>
           {items.map((product) => {
             const paddingClass = product.imagePadding || 'p-4 pb-32';
-            
+
             if (cardType === "blog") {
               return <BlogCard key={product.id} item={product} imageMode={imageMode} isLight={isLight} paddingClass={paddingClass} />;
             } else if (cardType === "industry") {
