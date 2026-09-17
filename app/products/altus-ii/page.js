@@ -62,7 +62,7 @@ export default function AltusIIProductPage() {
             stats={[
               { targetValue: 95, unit: "%", label: "Max Efficiency" },
               { targetValue: "IP54", unit: "", label: "Outdoor Rated" },
-              { targetValue: "-13°F", unit: "to 122°F", label: "Full Operating Range" }
+              { targetValue: "-13", unit: "°F to 122°F", label: "Full Operating Range" }
             ]}
           />
 

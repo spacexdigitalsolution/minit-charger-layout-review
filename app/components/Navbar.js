@@ -7,6 +7,7 @@ import { useState, useEffect, useRef } from "react";
 import { productCategories, industryCategories } from "@/data/categories";
 import { products } from "@/data/products";
 import gsap from "gsap";
+import { usePathname } from "next/navigation";
 
 const DEFAULT_PREVIEW_PRODUCT = products.find(p => p.id === "magnus");
 
@@ -38,6 +39,7 @@ const MenuColumn = ({ title, products, onLinkClick, onHover }) => (
 );
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(true);
 
@@ -60,7 +62,7 @@ export default function Navbar() {
 
 
     // handleMouseEnterNav("products");
-  }, []);
+  }, [pathname]);
 
   // Lock body scroll & handle Escape key
   useEffect(() => {
@@ -93,8 +95,19 @@ export default function Navbar() {
     }, 120); // 120ms hover intent delay
   };
 
+  const handleNavClick = (menu) => {
+    if (activeDesktopMenu === menu && isMenuOpen) {
+      setIsMenuOpen(false);
+      setActiveDesktopMenu(null);
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    } else {
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+      setActiveDesktopMenu(menu);
+      setIsMenuOpen(true);
+    }
+  };
+
   const handleMouseLeaveNav = () => {
-    return;
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
     timeoutRef.current = setTimeout(() => {
       setIsMenuOpen(false);
@@ -152,13 +165,13 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`fixed top-0 z-50 w-full transition-colors duration-300 ${scrolled || activeDesktopMenu || isOpen
+        className={`fixed top-0 z-50 w-full transition-colors duration-300  ${scrolled || activeDesktopMenu || isOpen
           ? "border-b border-zinc-200 bg-white/95 backdrop-blur-md dark:border-zinc-800 dark:bg-zinc-950/95 shadow-sm"
           : "border-b border-transparent bg-transparent"
           }`}
         onMouseLeave={handleMouseLeaveNav}
       >
-        <div className="mx-auto flex h-20 max-w-[1440px] items-center justify-between ">
+        <div className="mx-auto flex h-20 max-w-[1200px] items-center justify-between ">
           <div className="flex items-center gap-8 h-full">
             <Link href="/" className="flex items-center gap-2" onClick={() => { setIsMenuOpen(false); setActiveDesktopMenu(null); }}>
               <div className="relative w-32 h-10">
@@ -170,6 +183,7 @@ export default function Navbar() {
             <div className="hidden md:flex md:gap-8 items-center h-full">
               <div
                 onMouseEnter={() => handleMouseEnterNav('products')}
+                onClick={() => handleNavClick('products')}
                 className={`group flex items-center h-full cursor-pointer text-sm font-bold uppercase tracking-wider transition-colors duration-300 ${activeDesktopMenu === 'products'
                   ? "text-[#16a34a]"
                   : scrolled || activeDesktopMenu || isOpen ? "text-zinc-600 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white" : "text-white/80 hover:text-white"
@@ -181,6 +195,7 @@ export default function Navbar() {
 
               <div
                 onMouseEnter={() => handleMouseEnterNav('industries')}
+                onClick={() => handleNavClick('industries')}
                 className={`group flex items-center h-full cursor-pointer text-sm font-bold uppercase tracking-wider transition-colors duration-300 ${activeDesktopMenu === 'industries'
                   ? "text-[#16a34a]"
                   : scrolled || activeDesktopMenu || isOpen ? "text-zinc-600 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white" : "text-white/80 hover:text-white"
@@ -226,7 +241,7 @@ export default function Navbar() {
 
               {/* Products Menu */}
               {activeDesktopMenu === 'products' && (
-                <div className="mt-12 mb-12 flex flex-col justify-center">
+                <div className="pl-12 mt-12 mb-12 flex flex-col justify-center">
                   <div className="grid grid-cols-[repeat(5,1fr)_2.5fr] gap-8">
 
                     {/* Column 1: Aviation */}
@@ -272,7 +287,7 @@ export default function Navbar() {
                           </div>
                         </div>
                       </div>
-                      
+
                       <div className="mt-8 pt-6 border-t border-zinc-100 dark:border-zinc-800/50">
                         <Link href="/products" onClick={() => setIsMenuOpen(false)} className="inline-flex items-center text-xs font-bold uppercase tracking-widest text-zinc-500 hover:text-zinc-900 dark:hover:text-white transition-colors group">
                           View All Products <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -288,7 +303,7 @@ export default function Navbar() {
 
               {/* Industries Menu */}
               {activeDesktopMenu === 'industries' && (
-                <div className="mt-12 mb-12 flex flex-col justify-center">
+                <div className="pl-12  mt-12 mb-12 flex flex-col justify-center">
                   <div className="grid grid-cols-4 gap-8">
                     <div className="col-span-1 flex flex-col justify-between border-r border-zinc-100 dark:border-zinc-800/50 pr-8">
                       <div>

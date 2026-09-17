@@ -88,7 +88,7 @@ export default function StatModule({
     <section ref={containerRef} className={`relative py-24 overflow-hidden ${theme === 'dark' ? 'bg-zinc-900' : 'bg-zinc-50'}`}>
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 z-10">
         <div className="stat-anim mb-24 md:w-3/4">
-          <h2 className={`font-display text-5xl font-black tracking-tighter leading-[0.9] uppercase ${theme === 'dark' ? 'text-white' : 'text-zinc-950'}`}>
+          <h2 className={`font-display text-5xl font-black leading-[0.9] uppercase ${theme === 'dark' ? 'text-white' : 'text-zinc-950'}`}>
             {title.split(/\\n|\n/).map((line, i) => (
               <span key={i} className="block">{line}</span>
             ))}
