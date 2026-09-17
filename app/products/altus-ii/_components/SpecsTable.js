@@ -24,14 +24,18 @@ const specCategories = [
     specs: [
       { label: "Output Power Rating", value: "40 kW" },
       { label: "Output Voltage Range", value: "24-100 VDC" },
+      { label: "Port Configuration", value: "Dual Port" },
+      { label: "Battery Chemistry Support", value: "Lead Acid, Lithium, EV" },
     ]
   },
   {
     name: "Hardware",
     specs: [
-      { label: "Port Options", value: "Anderson, Euro 320, REMA 320, BIW, J1772" },
+      { label: "Port Options", value: "Anderson, Euro 320, REMA 320, BIW (standard), J1772 (optional 3rd port, Level 2 EV charging)" },
       { label: "User Interface", value: "7\" Graphic LCD with Touch Panel" },
       { label: "Communication", value: "Cellular, Wi-Fi, Ethernet" },
+      { label: "Protection", value: "Over current, over voltage, under voltage, short circuit, ground fault, over temp" },
+      { label: "Regulatory Certification", value: "UL1564" },
     ]
   },
   {
@@ -40,6 +44,7 @@ const specCategories = [
       { label: "Operating Temperature", value: "-13°F to 122°F (-25°C to 50°C)" },
       { label: "Dimensions & Weight", value: "63\"H x 20\"W x 12\"D, 250lbs (113 kg)" },
       { label: "Mounting", value: "Pedestal Mount" },
+      { label: "Enclosure Rating", value: "IP54" },
     ]
   }
 ];
@@ -128,10 +133,10 @@ export default function SpecsTable() {
         <div className="specs-anim flex flex-col md:flex-row md:items-end justify-between mb-16">
           <div>
             <h2 className="font-display text-4xl font-black tracking-tighter text-zinc-900 dark:text-white uppercase mb-4">
-              Technical Specifications
+              The Full Technical Picture
             </h2>
             <p className="text-xl text-zinc-500 font-light max-w-xl">
-              Comprehensive datasheet and engineering specifications for the Altus II platform.
+              Everything you need to verify before Altus II goes into service.
             </p>
           </div>
           <a href="#" className="mt-8 md:mt-0 group inline-flex items-center text-sm font-bold uppercase tracking-widest text-zinc-900 dark:text-white hover:text-green-600 dark:hover:text-green-400 transition-colors">

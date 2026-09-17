@@ -51,23 +51,23 @@ export default function HardwareDetail() {
           </div>
           <div className="hd-text-1 lg:col-span-5 mt-12 lg:mt-0">
             <h2 className="font-display text-3xl font-black tracking-tighter text-zinc-900 dark:text-white sm:text-4xl uppercase mb-6">
-              Power Usage Billing, Automated
+              Track What's Used. Bill It Automatically.
             </h2>
             <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-8">
-              With a certified power meter, the Altus II precisely records power usage for each vehicle in your fleet. Integrated with our cloud platform, it provides automated billing capabilities that eliminate manual legwork and improve energy accountability.
+              Every vehicle's power use is metered and billed automatically, fair to every airline or team you charge. The same data shows your carbon footprint, your off-peak savings, and your charger performance, shared across your team so everyone can act on it.
             </p>
             <ul className="space-y-4">
               <li className="flex items-start">
                 <CheckCircle2 className="h-6 w-6 text-green-500 mr-3 shrink-0" />
-                <span className="text-zinc-700 dark:text-zinc-300">Certified energy metering for precise tracking</span>
+                <span className="text-zinc-700 dark:text-zinc-300">Connects with the systems you already run</span>
               </li>
               <li className="flex items-start">
                 <CheckCircle2 className="h-6 w-6 text-green-500 mr-3 shrink-0" />
-                <span className="text-zinc-700 dark:text-zinc-300">Seamless cloud platform integration</span>
+                <span className="text-zinc-700 dark:text-zinc-300">Get alerted before a charger needs service</span>
               </li>
               <li className="flex items-start">
                 <CheckCircle2 className="h-6 w-6 text-green-500 mr-3 shrink-0" />
-                <span className="text-zinc-700 dark:text-zinc-300">Automated reporting and billing data</span>
+                <span className="text-zinc-700 dark:text-zinc-300">Track every asset, not just chargers</span>
               </li>
             </ul>
           </div>
@@ -76,23 +76,23 @@ export default function HardwareDetail() {
         <div className="hd-block-2 lg:grid lg:grid-cols-12 lg:gap-16 items-center">
           <div className="hd-text-2 order-2 lg:order-1 lg:col-span-5 mt-12 lg:mt-0">
             <h2 className="font-display text-3xl font-black tracking-tighter text-zinc-900 dark:text-white sm:text-4xl uppercase mb-6">
-              End the Power Struggle
+              More Power. No New Wiring.
             </h2>
             <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-8">
-              Avoid costly infrastructure upgrades. Through intelligent power sharing, the Altus II sequences charging across connected vehicles, ensuring maximum utilization of available power without overdrawing the grid.
+              Adding more chargers doesn't mean adding more power. Altus II sequences charging automatically across two GSE ports and an optional EV port, running at up to 95% efficiency, cutting peak demand and reducing how much new electrical capacity you actually need.
             </p>
             <ul className="space-y-4">
               <li className="flex items-start">
                 <CheckCircle2 className="h-6 w-6 text-green-500 mr-3 shrink-0" />
-                <span className="text-zinc-700 dark:text-zinc-300">Smart port management and prioritization</span>
+                <span className="text-zinc-700 dark:text-zinc-300">Smart port prioritization, no manual switching</span>
               </li>
               <li className="flex items-start">
                 <CheckCircle2 className="h-6 w-6 text-green-500 mr-3 shrink-0" />
-                <span className="text-zinc-700 dark:text-zinc-300">Reduce peak load requirements</span>
+                <span className="text-zinc-700 dark:text-zinc-300">Rated for high-capacity, 3-phase power</span>
               </li>
               <li className="flex items-start">
                 <CheckCircle2 className="h-6 w-6 text-green-500 mr-3 shrink-0" />
-                <span className="text-zinc-700 dark:text-zinc-300">Simultaneous GSE and EV charging support</span>
+                <span className="text-zinc-700 dark:text-zinc-300">Charges GSE and EV vehicles together</span>
               </li>
             </ul>
           </div>

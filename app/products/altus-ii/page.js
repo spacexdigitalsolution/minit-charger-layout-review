@@ -13,24 +13,24 @@ import SmartImage from "@/app/components/SmartImage";
 
 const faqs = [
   {
-    question: "What battery chemistries does the Altus II support?",
-    answer: "The Altus II is universally compatible and chemistry-agnostic. It seamlessly supports Lead Acid, Lithium-ion, and standard EV battery architectures."
+    question: "Why Is Altus II Right Fit For Us?",
+    answer: "It charges GSE and small EVs across Lead Acid, Lithium, or EV batteries, with dual ports plus an optional 3rd port for passenger EVs."
   },
   {
-    question: "Can it charge both heavy GSE and passenger EVs?",
-    answer: "Yes. By utilizing the optional 3rd port for Level 2 (J1772) charging, the Altus II can simultaneously support your heavy-duty fleet and light passenger EVs."
+    question: "What Makes It Different From Other Chargers?",
+    answer: "Cables retract automatically instead of sitting exposed on the ramp, a 7-inch touchscreen shows live status, and cloud dashboards give visibility most chargers don't offer."
   },
   {
-    question: "Does the charger require significant infrastructure upgrades?",
-    answer: "No. Our intelligent power sharing technology sequences charging across connected vehicles, ensuring maximum utilization of your available power without overdrawing the grid or requiring costly peak load upgrades."
+    question: "What Charging Connectors Does Altus II Support?",
+    answer: "Altus II supports Anderson, Euro 320, REMA 320, and BIW connectors as standard, with an optional J1772 connector added for Level 2 passenger EV charging."
   },
   {
-    question: "Is it rated for outdoor environments?",
-    answer: "Absolutely. The Altus II is built for the harshest ramp conditions with an IP54 outdoor-rated enclosure and an operating minimum temperature of -13°F."
+    question: "Is Altus II Certified For Safety Standards?",
+    answer: "Yes. Altus II is UL1564 certified, the safety standard built specifically for electric industrial vehicle chargers, including the equipment used across airport ground operations."
   },
   {
-    question: "How does the automated billing work?",
-    answer: "The Altus II integrates a certified energy meter that precisely tracks power usage. This data is synced to the AssetPro cloud platform, allowing for automated compliance reporting and streamlined billing."
+    question: "Has Altus II Been Deployed Before?",
+    answer: "Yes, deployed at airports worldwide. It's pedestal-mounted for flexible ramp placement, no wall space or structural changes required to install it."
   }
 ];
 
@@ -57,20 +57,25 @@ export default function AltusIIProductPage() {
           <HardwareDetail />
 
           <StatModule
-            title="Engineered\nfor Extremes"
-            description="Built to withstand the toughest outdoor ramp conditions while delivering exceptional efficiency."
+            title="Extreme Conditions,\nZero Compromises"
+            description="From desert heat to freezing ramps, Altus II keeps charging at full efficiency."
             stats={[
               { targetValue: 95, unit: "%", label: "Max Efficiency" },
               { targetValue: "IP54", unit: "", label: "Outdoor Rated" },
-              { targetValue: -13, unit: "°F", label: "Operating Minimum" }
+              { targetValue: "-13°F", unit: "to 122°F", label: "Full Operating Range" }
             ]}
           />
 
           <VideoModule />
 
           <CumulusSpotlight
-            headline="Pair Altus II with Cumulus"
-            supportingCopy="Monitor every Altus II unit across your footprint. The Cumulus platform gives you real-time access to session data, battery health, and peak demand."
+            headline="Charge It. Track It. See It All."
+            supportingCopy="Altus II handles the charging. CellTrac, installed on the vehicle, checks the battery, its temperature, charge level, and health, then tells Altus II exactly how much power to send. Cumulus is the dashboard where you see it all, your chargers and your batteries at one place without switching screens."
+            featureBullets={[
+              "Tracks run time to schedule maintenance before problems start",
+              "GPS and geofencing, know where every vehicle is",
+              "Alerts the moment a battery misses equalization"
+            ]}
             imageSide="left"
             // AI-generated placeholder — replace with real photography, approved 2026-09-12
             dashboardImage="/assets/ai_placeholders/cumulus_billing_dashboard_1789225361318.jpg"
@@ -79,21 +84,21 @@ export default function AltusIIProductPage() {
           {/*  <UseCases /> */}
 
           <ImageCardGrid
-            title="Explore the Ecosystem"
-            description="Purpose-built charging platforms for every fleet application."
+            title="Minit Charger for Every Bottleneck You Run Into"
+            description="The problem doesn't stop at one fleet. Airports, warehouses, transit, every operation has its own. Explore what solves yours."
             linkText="View All Products"
             linkHref="/products"
             items={relatedProducts}
           />
 
           <FaqSection
-            title="Common Questions"
-            description="Find answers to the most common inquiries regarding the Altus II deployment, hardware capabilities, and ecosystem integrations."
+            title="Some Questions You May Have"
+            description="Here's generally what most people ask frequently before deploying Altus II."
             faqs={faqs}
           />
 
           <ConversionBand
-            headline="Ready to deploy the Altus II in your fleet?"
+            headline="Space. Power. Damage. Downtime. Altus II Solves It All."
             primaryCTA={{ label: "Speak to an Expert", href: "/contact" }}
             secondaryCTA={{ label: "Request a Quote", href: "/contact" }}
             bgImage={null}

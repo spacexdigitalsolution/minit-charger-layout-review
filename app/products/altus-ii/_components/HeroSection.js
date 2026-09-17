@@ -47,8 +47,9 @@ export default function HeroSection() {
             Altus II
           </h1>
           <p className="hero-subcopy mt-3 text-lg text-zinc-300 sm:mt-5 sm:text-2xl lg:text-xl xl:text-2xl font-light">
-            Versatile Outdoor Charger for GSE & EV. <br />
-            Robust charging with global deployment.
+            <strong className="block text-white font-medium mb-2">Built to Withstand Anything Outdoors</strong>
+            IP54-rated for -25°C to 50°C, charges all your GSE and small EVs, any battery chemistry. <br />
+            Deployed at airports worldwide, built for whatever the ramp brings.
           </p>
 
           <div className="hero-specs mt-10 flex flex-col sm:flex-row gap-4">

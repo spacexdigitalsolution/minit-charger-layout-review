@@ -29,10 +29,10 @@ export default function VideoModule() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="vid-anim mb-12 text-center">
           <h2 className="font-display text-4xl md:text-5xl font-black tracking-tighter text-white uppercase mb-4">
-            Beyond the Hardware
+            The X-Ray of Our Engineering
           </h2>
           <p className="text-xl text-zinc-400 max-w-2xl mx-auto font-light">
-            See the Altus II ecosystem in action.
+            Never judge a charger by its cover. Let's look at what's inside.
           </p>
         </div>
         <div className="vid-anim relative w-full aspect-video bg-zinc-900 border border-zinc-800 shadow-2xl">
