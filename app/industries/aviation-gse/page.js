@@ -16,20 +16,20 @@ export const metadata = {
 
 const faqs = [
   {
-    question: "Can these chargers withstand extreme apron weather conditions?",
-    answer: "Yes. Our systems are IP54/NEMA 3R rated or higher, designed specifically to operate reliably in the harsh, exposed environments of active airport ramps."
+    question: "Is Minit Charger used at other airports?",
+    answer: "Yes. Minit Charger is deployed at airports across the U.S., Spain, and Taiwan, backed by over a decade of charging technology experience."
   },
   {
-    question: "Do we need a massive grid upgrade to install these?",
-    answer: "Often, no. Our chargers feature intelligent power sharing capabilities, sequencing charging across connected GSE to stay under your existing peak load limits."
+    question: "Can chargers be diagnosed without a vehicle?",
+    answer: "Yes. A portable diagnostic tool validates pilot connection, communication, and power output on-site, without needing an actual vehicle present."
   },
   {
-    question: "Can we monitor fleet charging remotely?",
-    answer: "Absolutely. Full integration with AssetPro cloud software gives your operations center real-time visibility into charger status, session data, and remote diagnostics."
+    question: "What safety certifications do the chargers carry?",
+    answer: "Altus II is UL1564 certified with an IP54-rated enclosure, meeting safety standards for demanding outdoor airport environments."
   },
   {
-    question: "Are these compatible with different GSE voltages?",
-    answer: "Yes. Models like the Altus II and Magnus are universally compatible, supporting a wide voltage range for mixed fleets of baggage tractors, belt loaders, and pushbacks."
+    question: "Does ground crew need special training?",
+    answer: "No extensive training required. The 7-inch touch panel and automatic cable retraction keep day-to-day operation simple for any ground crew."
   }
 ];
 
@@ -70,19 +70,24 @@ export default function AviationGSEPage() {
           /> */}
 
           <CumulusSpotlight 
-            headline="Total Fleet Visibility"
-            supportingCopy="Keep the ramp moving. Monitor every charger across the apron in real-time, regardless of the GSE it's powering."
+            headline="Nothing On The Ramp Goes Unseen"
+            supportingCopy="Every battery's charge profile, location, and live status are visible and adjustable remotely, combining charger and battery health data in one dashboard."
+            featureBullets={[
+              "Remote, instant charge-profile updates, no technician needed",
+              "Deep insights into asset location, geofencing, and movement",
+              "Automatic billing and compliance reports, ready without extra work"
+            ]}
             imageSide="right"
           />
 
           <FaqSection
             title="Aviation GSE FAQ"
-            description="Answers to the most common questions from ground handlers, airlines, and airport authorities regarding fleet electrification."
+            description="What ground crews, airlines, and airport planners want to know before electrifying their fleets."
             faqs={faqs}
           />
 
           <ConversionBand
-            headline="Ready to electrify the ramp?"
+            headline="It's Time To Retire Outdated Charging"
             primaryCTA={{ label: "Speak to a GSE Expert", href: "/contact" }}
             secondaryCTA={{ label: "Request an Assessment", href: "/contact" }}
             bgImage="/assets/gse/MOB_GSE_2.png"

@@ -51,12 +51,12 @@ export default function BenefitModules() {
             />
           </div>
           <div className="hd-text-1 lg:col-span-5 mt-12 lg:mt-0">
-            <span className="text-[10px] font-bold text-zinc-400 dark:text-zinc-500 uppercase  mb-3 block">Solution Benefits</span>
+            <span className="text-[10px] font-bold text-zinc-400 dark:text-zinc-500 uppercase  mb-3 block">Minit Charger Attributes</span>
             <h2 className="font-display text-3xl font-black  text-zinc-900 dark:text-white sm:text-4xl uppercase mb-6">
-              One Ecosystem from GSE to EV
+              Operate All GSE To EV From One Ecosystem
             </h2>
             <p className="text-lg text-zinc-600 dark:text-zinc-400 ">
-              Airports are electrifying both ground support equipment and on-road passenger vehicles. Instead of managing separate legacy networks, deploy a unified multi-voltage platform capable of serving everything from a 24V baggage tractor to a 1000V electric shuttle bus. With support for CCS, NACS, and REMA connectors on a single platform, you can dramatically simplify training and maintenance for ground crew while reducing charger sprawl.
+              One charger handles two ground vehicles and an EV charging alongside them, no matter the connector or battery chemistry your fleet runs, output that spans 24 to 100 volts. The same platform scales up to buses, trucks, and passenger EVs, so nothing outgrows it. Cables retract on their own, every session shows clearly on the 7-inch touch panel, and the pedestal-mounted unit stands outside from ‑13°F to 122°F.
             </p>
           </div>
         </div>
@@ -64,12 +64,12 @@ export default function BenefitModules() {
         {/* Block 2 */}
         <div className="hd-block-2 lg:grid lg:grid-cols-12 lg:gap-16 items-center">
           <div className="hd-text-2 order-2 lg:order-1 lg:col-span-5 mt-12 lg:mt-0">
-            <span className="text-[10px] font-bold text-zinc-400 dark:text-zinc-500 uppercase  mb-3 block">Solution Benefits</span>
+            <span className="text-[10px] font-bold text-zinc-400 dark:text-zinc-500 uppercase  mb-3 block">The Mobilus Vantage</span>
             <h2 className="font-display text-3xl font-black  text-zinc-900 dark:text-white sm:text-4xl uppercase mb-6">
-              Scale Without Infrastructure Constraints
+              Charge Instantly Where The Fleet Waits
             </h2>
             <p className="text-lg text-zinc-600 dark:text-zinc-400 ">
-              Deploy charging power exactly where it's needed without waiting for grid upgrades. Mobile charging and energy storage platforms like Mobilus allow you to avoid costly trenching and transformational upgrades. Paired with dynamic power balancing across multiple active ports, you can maximize the utilization of your existing electrical capacity across the ramp.
+              When the ramp needs power but the grid doesn't have it yet, roll in a 200kWh battery on wheels. Mobilus charges up to 4 GSE units and 2 EVs at once, up to 90kW per gun, then recharges itself from any outlet or solar power. No trenching, no waiting on a utility, just power wherever you park it.
             </p>
           </div>
           <div className="hd-img-2 order-1 lg:order-2 lg:col-span-7 relative w-full aspect-[4/3] bg-zinc-200 dark:bg-zinc-100 overflow-hidden rounded-sm flex items-center justify-center p-8">

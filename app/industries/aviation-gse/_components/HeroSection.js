@@ -37,11 +37,11 @@ export default function HeroSection() {
           <p className="hero-subcopy text-green-500 font-bold uppercase  text-xs mb-4">
             Aviation Ground Support Equipment
           </p>
-          <h1 className="hero-headline font-display text-5xl md:text-7xl md:text-8xl font-black  text-white uppercase  mb-6">
-            Keep the Ramp Moving.
+          <h1 className="hero-headline font-display text-5xl font-black  text-white uppercase  mb-6">
+            Aviation Ground  Support, <br /> Never Grounded.
           </h1>
-          <p className="hero-subcopy text-lg text-zinc-300 sm:text-2xl font-light  mb-10 max-w-2xl">
-            Fast-charging infrastructure for ramp operations.
+          <p className="hero-subcopy text-lg text-zinc-300  font-light  mb-10 max-w-2xl">
+            Fast, connected GSE charging that solves turnaround, ramp space, power, and maintenance bottlenecks at once for every fleet type.
           </p>
 
           <div className="hero-buttons flex gap-4">

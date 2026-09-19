@@ -121,7 +121,7 @@ export default function Var7Persona() {
           <span className="text-xs font-bold text-green-500 uppercase  mb-6">
             Aviation GSE Solutions
           </span>
-          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-black  text-white uppercase mb-8 ">
+          <h1 className="font-display text-5xl md:text-5xl lg:text-5xl font-black  text-white uppercase mb-8 ">
             {activeData.headline}.
           </h1>
           <p className="text-xl text-zinc-400 font-light max-w-2xl  mb-12">

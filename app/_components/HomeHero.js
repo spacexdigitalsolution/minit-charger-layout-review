@@ -183,7 +183,7 @@ export default function HomeHero() {
       {/* Dynamic Content */}
       <div className="relative z-20 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-32">
         <div className="max-w-3xl">
-          <h1 className="hero-anim font-display text-5xl md:text-6xl lg:text-7xl font-black  text-white uppercase  mb-6">
+          <h1 className="hero-anim font-display text-5xl md:text-5xl lg:text-5xl font-black  text-white uppercase  mb-6">
             {slides[activeSlide].headline}
           </h1>
           <p className="hero-anim text-xl text-zinc-300 font-light mb-8">
@@ -215,7 +215,7 @@ export default function HomeHero() {
 
       {/* Controls */}
       <div className="absolute bottom-8 left-0 right-0 z-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 flex items-center justify-between">
 
           {/* Progress Indicators */}
           <div className="flex items-center gap-2">

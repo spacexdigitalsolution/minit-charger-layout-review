@@ -24,7 +24,7 @@ export default function HeroAnimation() {
   return (
     <section ref={containerRef} className="relative pb-24  md:pb-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
       <div className="relative z-10 w-full max-w-4xl">
-        <h1 className="hero-anim font-display text-6xl md:text-8xl font-black text-white   uppercase mb-8">
+        <h1 className="hero-anim font-display text-5xl md:text-5xl font-black text-white   uppercase mb-8">
           We Are<br />
           <span className="text-green-500">Minit Charger</span>
         </h1>

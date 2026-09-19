@@ -66,7 +66,7 @@ export default function Var2SplitScreen() {
           <span className="v2-element block text-xs font-bold text-zinc-400 uppercase  mb-6">
             Aviation GSE
           </span>
-          <h1 className="v2-element font-display text-4xl md:text-5xl lg:text-6xl font-black  text-zinc-900 uppercase mb-6 ">
+          <h1 className="v2-element font-display text-4xl md:text-5xl lg:text-5xl font-black  text-zinc-900 uppercase mb-6 ">
             Keep The Ramp Moving.
           </h1>
           <p className="v2-element text-lg md:text-xl text-zinc-600 mb-10 font-light ">

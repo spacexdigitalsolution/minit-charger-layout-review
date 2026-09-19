@@ -13,7 +13,7 @@ export default function ContactPage() {
         <div className="lg:grid lg:grid-cols-12 lg:gap-24 items-start">
 
           <div className="lg:col-span-4 mb-16 lg:mb-0 lg:sticky lg:top-40">
-            <h1 className="font-display text-5xl md:text-6xl font-black  uppercase text-zinc-900 dark:text-white mb-6 ">
+            <h1 className="font-display text-5xl md:text-5xl font-black  uppercase text-zinc-900 dark:text-white mb-6 ">
               Contact Us
             </h1>
             <p className="text-xl text-zinc-600 dark:text-zinc-400 font-light  mb-12">

@@ -43,7 +43,7 @@ export default function HeroSection() {
       {/* Content Layer */}
       <div className="relative z-20 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
         <div className="max-w-2xl">
-          <h1 className="hero-headline font-display text-6xl md:text-7xl font-black  text-white uppercase  mb-4">
+          <h1 className="hero-headline font-display text-5xl md:text-5xl font-black  text-white uppercase  mb-4">
             Altus II
           </h1>
           <p className="hero-subcopy mt-3 text-lg text-zinc-300 sm:mt-5 sm:text-2xl lg:text-xl xl:text-2xl font-light">

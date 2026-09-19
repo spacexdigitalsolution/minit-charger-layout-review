@@ -46,7 +46,7 @@ export default function Var3Diagram() {
           <span className="text-xs font-bold text-zinc-400 uppercase  mb-4 block">
             Aviation GSE
           </span>
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-black  text-zinc-900 uppercase mb-4  max-w-3xl mx-auto">
+          <h1 className="font-display text-4xl md:text-5xl lg:text-5xl font-black  text-zinc-900 uppercase mb-4  max-w-3xl mx-auto">
             Your Ramp, Configured.
           </h1>
         </div>

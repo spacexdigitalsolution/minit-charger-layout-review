@@ -42,7 +42,7 @@ export default function ConversionBand({
       <div className={`absolute inset-0 z-10 ${bgImage ? 'bg-zinc-950/85' : ''}`} />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center z-20">
-        <h2 className="cb-anim font-display text-5xl md:text-6xl font-black  text-white uppercase  mb-10 max-w-4xl mx-auto">
+        <h2 className="cb-anim font-display text-5xl md:text-5xl font-black  text-white uppercase  mb-10 max-w-4xl mx-auto">
           {headline}
         </h2>
         <div className="cb-anim flex flex-col sm:flex-row gap-6 justify-center">

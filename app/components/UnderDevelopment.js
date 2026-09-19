@@ -7,7 +7,7 @@ export default function UnderDevelopment({ title = "This Page", returnUrl = "/" 
   return (
     <div className="flex min-h-[60vh] flex-col items-center justify-center px-4 text-center">
       <div className="max-w-2xl">
-        <h1 className="mb-6 font-oswald text-4xl font-bold uppercase  md:text-5xl lg:text-6xl text-zinc-900 dark:text-white">
+        <h1 className="mb-6 font-oswald text-4xl font-bold uppercase  md:text-5xl lg:text-5xl text-zinc-900 dark:text-white">
           {title}
         </h1>
         <p className="mb-8 font-sans text-lg text-zinc-600 dark:text-zinc-400">

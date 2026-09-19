@@ -63,7 +63,7 @@ export default function Var1FullBleed() {
           <span className="v1-element block text-xs font-bold text-green-500 uppercase  mb-4">
             Aviation GSE
           </span>
-          <h1 className="v1-element font-display text-5xl md:text-7xl font-black  text-white uppercase mb-8 ">
+          <h1 className="v1-element font-display text-5xl md:text-5xl font-black  text-white uppercase mb-8 ">
             Keep The Ramp Moving.
           </h1>
           <div className="v1-element">

@@ -36,7 +36,7 @@ export default async function BlogPostPage({ params }) {
         {/* Immersive Hero */}
         <header className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
           <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-zinc-200 dark:border-zinc-800 pb-12 mb-12">
-            <h1 className="font-display text-5xl md:text-7xl lg:text-[5.5rem] font-black  text-zinc-900 dark:text-white  max-w-4xl uppercase">
+            <h1 className="font-display text-5xl md:text-5xl lg:text-[5.5rem] font-black  text-zinc-900 dark:text-white  max-w-4xl uppercase">
               {blog.title}
             </h1>
             <div className="mt-8 md:mt-0 text-left md:text-right shrink-0">
@@ -106,7 +106,7 @@ export default async function BlogPostPage({ params }) {
                   if (paragraph.startsWith('> ')) {
                     return (
                       <blockquote key={index} className="relative my-16">
-                        <div className="absolute top-0 left-0 text-9xl font-display text-green-500/20 dark:text-green-500/10 -mt-10 -ml-4 pointer-events-none">"</div>
+                        <div className="absolute top-0 left-0 text-5xl font-display text-green-500/20 dark:text-green-500/10 -mt-10 -ml-4 pointer-events-none">"</div>
                         <p className="font-display text-3xl md:text-4xl font-bold text-zinc-900 dark:text-white  relative z-10 pl-6 border-l-4 border-green-500">
                           {paragraph.replace('> ', '').replace(/"/g, '')}
                         </p>
@@ -131,7 +131,7 @@ export default async function BlogPostPage({ params }) {
                   const isFirstParagraph = index === 0;
 
                   return (
-                    <p key={index} className={`mb-10 text-xl  ${isFirstParagraph ? "first-letter:text-8xl first-letter:font-display first-letter:font-black first-letter:text-zinc-900 dark:first-letter:text-white first-letter:float-left first-letter:mr-4 first-letter:leading-[0.75] first-letter:mt-2" : ""}`}>
+                    <p key={index} className={`mb-10 text-xl  ${isFirstParagraph ? "first-letter:text-5xl first-letter:font-display first-letter:font-black first-letter:text-zinc-900 dark:first-letter:text-white first-letter:float-left first-letter:mr-4 first-letter:leading-[0.75] first-letter:mt-2" : ""}`}>
                       {paragraph}
                     </p>
                   );

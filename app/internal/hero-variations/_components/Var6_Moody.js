@@ -79,7 +79,7 @@ export default function Var6Moody() {
         </span>
 
         <div className="relative inline-block mb-12">
-          <h1 className="v6-element font-display text-5xl md:text-7xl lg:text-8xl font-black  text-white uppercase ">
+          <h1 className="v6-element font-display text-5xl md:text-5xl lg:text-5xl font-black  text-white uppercase ">
             Keep The Ramp<br />Moving.
           </h1>
           {/* Glowing neon green accent line */}

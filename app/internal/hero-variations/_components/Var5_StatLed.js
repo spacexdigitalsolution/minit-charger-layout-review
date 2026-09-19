@@ -79,25 +79,25 @@ export default function Var5StatLed() {
         <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 mb-20">
 
           <div className="v5-stat-container flex flex-col items-center text-center">
-            <div className="flex items-baseline font-display font-black text-zinc-900 text-6xl md:text-8xl   mb-4">
+            <div className="flex items-baseline font-display font-black text-zinc-900 text-5xl md:text-5xl   mb-4">
               <span className="v5-counter" data-target="99.9" data-format="float">0.0</span>
-              <span className="text-4xl md:text-6xl text-green-500 ml-1">%</span>
+              <span className="text-4xl md:text-5xl text-green-500 ml-1">%</span>
             </div>
             <span className="text-xs font-bold text-zinc-400 uppercase ">Platform Uptime</span>
           </div>
 
           <div className="v5-stat-container flex flex-col items-center text-center">
-            <div className="flex items-baseline font-display font-black text-zinc-900 text-6xl md:text-8xl   mb-4">
+            <div className="flex items-baseline font-display font-black text-zinc-900 text-5xl md:text-5xl   mb-4">
               <span className="v5-counter" data-target="1000" data-format="int">0</span>
-              <span className="text-4xl md:text-6xl text-green-500 ml-2">VDC</span>
+              <span className="text-4xl md:text-5xl text-green-500 ml-2">VDC</span>
             </div>
             <span className="text-xs font-bold text-zinc-400 uppercase ">Maximum Output Voltage</span>
           </div>
 
           <div className="v5-stat-container flex flex-col items-center text-center">
-            <div className="flex items-baseline font-display font-black text-zinc-900 text-6xl md:text-8xl   mb-4">
+            <div className="flex items-baseline font-display font-black text-zinc-900 text-5xl md:text-5xl   mb-4">
               <span className="v5-counter" data-target="24" data-format="int">0</span>
-              <span className="text-4xl md:text-6xl text-green-500 ml-2">/7</span>
+              <span className="text-4xl md:text-5xl text-green-500 ml-2">/7</span>
             </div>
             <span className="text-xs font-bold text-zinc-400 uppercase ">Continuous Operation</span>
           </div>

@@ -78,7 +78,7 @@ export default function BlogsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           <div className="text-center mb-16 blog-header">
-            <h1 className="font-display text-5xl md:text-6xl font-black  uppercase mb-6 text-zinc-900 dark:text-white">
+            <h1 className="font-display text-5xl md:text-5xl font-black  uppercase mb-6 text-zinc-900 dark:text-white">
               Insights & Resources
             </h1>
             <p className="text-xl text-zinc-600 dark:text-zinc-400 font-light max-w-2xl mx-auto mb-10">
