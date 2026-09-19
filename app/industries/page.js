@@ -14,7 +14,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const industryData = {
   "aviation-gse": {
-    image: "/assets/homepage/Outdoor eGSE & yards-01.webp", 
+    image: "/assets/homepage/Outdoor eGSE & yards-01.webp",
     description: "Keep your airport ground support operations moving with rapid, reliable charging infrastructure designed for the tarmac."
   },
   "warehouse": {
@@ -51,13 +51,13 @@ function IndustryBlock({ industry, index }) {
         ease: "power2.out",
         clearProps: "all"
       })
-      .from(".ind-text", {
-        x: isEven ? 50 : -50,
-        autoAlpha: 0,
-        duration: 0.8,
-        ease: "power2.out",
-        clearProps: "all"
-      }, "-=0.6");
+        .from(".ind-text", {
+          x: isEven ? 50 : -50,
+          autoAlpha: 0,
+          duration: 0.8,
+          ease: "power2.out",
+          clearProps: "all"
+        }, "-=0.6");
     });
   }, { scope: containerRef });
 
@@ -73,12 +73,12 @@ function IndustryBlock({ industry, index }) {
           />
         ) : (
           <div className="absolute inset-0 bg-zinc-100 flex items-center justify-center p-8 text-center">
-            <span className="text-zinc-500 font-oswald uppercase tracking-widest">Asset Gap: Context Photo Needed</span>
+            <span className="text-zinc-500 font-oswald uppercase ">Asset Gap: Context Photo Needed</span>
           </div>
         )}
       </div>
       <div className={`ind-text flex flex-col justify-center p-8 md:p-16 lg:p-24 ${isEven ? "md:order-2" : "md:order-1"}`}>
-        <h2 className="font-oswald text-4xl md:text-5xl font-bold uppercase tracking-wide mb-6">
+        <h2 className="font-oswald text-4xl md:text-5xl font-bold uppercase  mb-6">
           {industry.name}
         </h2>
         <p className="font-sans text-lg text-zinc-600 mb-8 max-w-lg">
@@ -87,7 +87,7 @@ function IndustryBlock({ industry, index }) {
         <div>
           <Link
             href={industry.slug}
-            className="group inline-flex h-12 items-center justify-center gap-2 rounded-none bg-zinc-900 px-8 text-sm font-bold uppercase tracking-wider text-white transition-all hover:bg-[#8CD34D] hover:text-zinc-900"
+            className="group inline-flex h-12 items-center justify-center gap-2 rounded-none bg-zinc-900 px-8 text-sm font-bold uppercase r text-white transition-all hover:bg-[#8CD34D] hover:text-zinc-900"
           >
             Learn More
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -103,7 +103,7 @@ export default function IndustriesPage() {
     <main className="min-h-screen bg-white">
       <div className="pt-24 bg-zinc-950 pb-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mb-4 mt-12 text-center">
-          <h1 className="font-oswald text-5xl md:text-7xl font-bold uppercase tracking-wide text-white mb-6">
+          <h1 className="font-oswald text-5xl md:text-7xl font-bold uppercase  text-white mb-6">
             Industries We Serve
           </h1>
           <p className="text-xl text-zinc-400 max-w-3xl font-sans mx-auto">
@@ -118,8 +118,8 @@ export default function IndustriesPage() {
         ))}
       </div>
 
-      <ConversionBand 
-        headline="Ready to power your operations?" 
+      <ConversionBand
+        headline="Ready to power your operations?"
         primaryCTA={{ label: "Contact Us", href: "/contact" }}
         secondaryCTA={{ label: "View Products", href: "/products" }}
       />

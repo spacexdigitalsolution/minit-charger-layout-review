@@ -16,7 +16,7 @@ export default function ValuesBlock({ title, description, imageSrc, imageAlt, al
     mm.add("(prefers-reduced-motion: no-preference)", () => {
       // Animate from the image side
       const direction = align === "left" ? -50 : 50;
-      
+
       gsap.from(".value-anim", {
         scrollTrigger: {
           trigger: containerRef.current,
@@ -48,11 +48,11 @@ export default function ValuesBlock({ title, description, imageSrc, imageAlt, al
         )}
       </div>
       <div className="w-full md:w-1/2 value-anim">
-        <h3 className={`font-display text-4xl font-bold mb-6 tracking-tight ${theme === 'dark' ? 'text-white' : 'text-zinc-950'}`}>{title}</h3>
+        <h3 className={`font-display text-4xl font-bold mb-6  ${theme === 'dark' ? 'text-white' : 'text-zinc-950'}`}>{title}</h3>
         {isGap || !description ? (
           <p className="text-zinc-500 font-mono text-sm">[CONTENT GAP: Missing definition for value "{title}"]</p>
         ) : (
-          <p className={`text-xl font-light leading-relaxed ${theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600'}`}>{description}</p>
+          <p className={`text-xl font-light  ${theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600'}`}>{description}</p>
         )}
       </div>
     </div>

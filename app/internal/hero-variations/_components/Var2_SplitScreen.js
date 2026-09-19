@@ -44,10 +44,10 @@ export default function Var2SplitScreen() {
 
       {/* Variation Label */}
       <div className="absolute top-4 left-4 z-50 pointer-events-none">
-        <span className="bg-zinc-900/10 text-zinc-900 backdrop-blur-md px-3 py-1 rounded-sm text-xs font-bold uppercase tracking-wider border border-zinc-900/20 shadow-sm">
+        <span className="bg-zinc-900/10 text-zinc-900 backdrop-blur-md px-3 py-1 rounded-sm text-xs font-bold uppercase r border border-zinc-900/20 shadow-sm">
           Variation 2
         </span>
-        <p className="text-zinc-600 text-[10px] mt-1 ml-1 uppercase tracking-widest">Simultaneous slide from edges</p>
+        <p className="text-zinc-600 text-[10px] mt-1 ml-1 uppercase ">Simultaneous slide from edges</p>
       </div>
 
       {/* Image Left */}
@@ -63,17 +63,17 @@ export default function Var2SplitScreen() {
       {/* Content Right */}
       <div className="w-full md:w-1/2 flex items-center p-8 md:p-16 lg:p-24 bg-white">
         <div className="max-w-xl">
-          <span className="v2-element block text-xs font-bold text-zinc-400 uppercase tracking-widest mb-6">
+          <span className="v2-element block text-xs font-bold text-zinc-400 uppercase  mb-6">
             Aviation GSE
           </span>
-          <h1 className="v2-element font-display text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter text-zinc-900 uppercase mb-6 leading-[1.1]">
+          <h1 className="v2-element font-display text-4xl md:text-5xl lg:text-6xl font-black  text-zinc-900 uppercase mb-6 ">
             Keep The Ramp Moving.
           </h1>
-          <p className="v2-element text-lg md:text-xl text-zinc-600 mb-10 font-light leading-relaxed">
+          <p className="v2-element text-lg md:text-xl text-zinc-600 mb-10 font-light ">
             Intelligent fast-charging infrastructure built to consolidate a broad range of applications into fewer, more compact platforms.
           </p>
           <div className="v2-element">
-            <button className="inline-flex items-center justify-center rounded border border-zinc-900 px-8 py-4 text-sm font-bold text-zinc-900 hover:bg-zinc-900 hover:text-white transition-colors uppercase tracking-wider">
+            <button className="inline-flex items-center justify-center rounded border border-zinc-900 px-8 py-4 text-sm font-bold text-zinc-900 hover:bg-zinc-900 hover:text-white transition-colors uppercase r">
               Explore Solutions
             </button>
           </div>

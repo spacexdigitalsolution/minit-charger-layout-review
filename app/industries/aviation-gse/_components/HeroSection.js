@@ -21,9 +21,9 @@ export default function HeroSection() {
 
   return (
     <section ref={containerRef} className="relative overflow-hidden w-full min-h-[85vh] flex items-center border-b border-zinc-200 dark:border-zinc-800">
-      
+
       {/* Background Image Layer */}
-      <div 
+      <div
         className="absolute inset-0 w-full h-full bg-cover bg-center z-0"
         style={{ backgroundImage: "url('/assets/Industries/Aviation/Banner/Banner-Aviation.webp')" }}
       />
@@ -34,18 +34,18 @@ export default function HeroSection() {
       {/* Content Layer */}
       <div className="relative z-20 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
         <div className="max-w-3xl mb-16">
-          <p className="hero-subcopy text-green-500 font-bold uppercase tracking-widest text-xs mb-4">
+          <p className="hero-subcopy text-green-500 font-bold uppercase  text-xs mb-4">
             Aviation Ground Support Equipment
           </p>
-          <h1 className="hero-headline font-display text-5xl md:text-7xl md:text-8xl font-black tracking-tighter text-white uppercase leading-[0.9] mb-6">
+          <h1 className="hero-headline font-display text-5xl md:text-7xl md:text-8xl font-black  text-white uppercase  mb-6">
             Keep the Ramp Moving.
           </h1>
-          <p className="hero-subcopy text-lg text-zinc-300 sm:text-2xl font-light leading-relaxed mb-10 max-w-2xl">
+          <p className="hero-subcopy text-lg text-zinc-300 sm:text-2xl font-light  mb-10 max-w-2xl">
             Fast-charging infrastructure for ramp operations.
           </p>
 
           <div className="hero-buttons flex gap-4">
-            <button className="inline-flex items-center justify-center rounded border border-white px-8 py-4 text-sm font-bold text-white hover:bg-white hover:text-zinc-950 transition-colors uppercase tracking-wider backdrop-blur-sm">
+            <button className="inline-flex items-center justify-center rounded border border-white px-8 py-4 text-sm font-bold text-white hover:bg-white hover:text-zinc-950 transition-colors uppercase r backdrop-blur-sm">
               Explore Solutions
             </button>
           </div>

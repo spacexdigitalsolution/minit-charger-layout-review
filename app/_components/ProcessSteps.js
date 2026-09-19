@@ -39,7 +39,8 @@ export default function ProcessSteps() {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "top 80%", toggleActions: "play none none none", once: true}
+          start: "top 80%", toggleActions: "play none none none", once: true
+        }
       });
       tl.from(".ps-header", { y: 20, autoAlpha: 0, duration: 0.6, ease: "power2.out" })
         .from(".ps-anim", { y: 20, autoAlpha: 0, duration: 0.6, stagger: 0.1, ease: "power2.out" }, "-=0.3");
@@ -49,12 +50,12 @@ export default function ProcessSteps() {
   return (
     <section ref={containerRef} className="py-24 bg-white dark:bg-zinc-950 border-b border-zinc-200 dark:border-zinc-800">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        
+
         <div className="ps-header mb-16 md:w-2/3">
-          <h2 className="font-display text-4xl font-black tracking-tighter text-zinc-900 dark:text-white uppercase mb-6">
+          <h2 className="font-display text-4xl font-black  text-zinc-900 dark:text-white uppercase mb-6">
             From First Call to Fully Installed
           </h2>
-          <p className="text-xl text-zinc-600 dark:text-zinc-400 font-light leading-relaxed">
+          <p className="text-xl text-zinc-600 dark:text-zinc-400 font-light ">
             Charging infrastructure isn't a fixed price, it's an engineering decision. We start by understanding your fleet, not by quoting a number that has nothing to do with how you operate.
           </p>
         </div>
@@ -62,13 +63,13 @@ export default function ProcessSteps() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 pt-12 border-t border-zinc-200 dark:border-zinc-800">
           {steps.map((step, idx) => (
             <div key={idx} className="ps-anim">
-              <div className="font-display text-5xl font-black text-zinc-200 dark:text-zinc-800 mb-6 tracking-tighter">
+              <div className="font-display text-5xl font-black text-zinc-200 dark:text-zinc-800 mb-6 ">
                 {step.num}
               </div>
-              <h3 className="font-display text-xl font-bold uppercase tracking-wide text-zinc-900 dark:text-white mb-4">
+              <h3 className="font-display text-xl font-bold uppercase  text-zinc-900 dark:text-white mb-4">
                 {step.title}
               </h3>
-              <p className="text-zinc-600 dark:text-zinc-400 font-light text-sm leading-relaxed">
+              <p className="text-zinc-600 dark:text-zinc-400 font-light text-sm ">
                 {step.description}
               </p>
             </div>

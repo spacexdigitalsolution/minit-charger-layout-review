@@ -24,7 +24,8 @@ export default function EnvironmentGrid() {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "top 80%", toggleActions: "play none none none", once: true}
+          start: "top 80%", toggleActions: "play none none none", once: true
+        }
       });
       tl.from(".eg-anim", { y: 20, autoAlpha: 0, duration: 0.6, stagger: 0.1, ease: "power2.out" });
     });
@@ -33,9 +34,9 @@ export default function EnvironmentGrid() {
   return (
     <section ref={containerRef} className="py-24 bg-zinc-50 dark:bg-black border-b border-zinc-200 dark:border-zinc-800">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        
+
         <div className="eg-anim text-center mb-16">
-          <h2 className="font-display text-4xl font-black tracking-tighter text-zinc-900 dark:text-white uppercase">
+          <h2 className="font-display text-4xl font-black  text-zinc-900 dark:text-white uppercase">
             Engineered for Every Environment
           </h2>
         </div>
@@ -45,10 +46,10 @@ export default function EnvironmentGrid() {
             <div key={idx} className="eg-anim group">
               <div className="relative aspect-square w-full bg-zinc-200 dark:bg-zinc-900 overflow-hidden mb-4 border border-zinc-200 dark:border-zinc-800">
                 {env.image ? (
-                  <SmartImage 
-                    src={env.image} 
-                    alt={env.name} 
-                    fill 
+                  <SmartImage
+                    src={env.image}
+                    alt={env.name}
+                    fill
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 ) : (
@@ -56,7 +57,7 @@ export default function EnvironmentGrid() {
                   <div className="absolute inset-0 bg-zinc-200 dark:bg-zinc-900"></div>
                 )}
               </div>
-              <h3 className="font-display text-sm font-bold uppercase tracking-widest text-zinc-900 dark:text-white text-center">
+              <h3 className="font-display text-sm font-bold uppercase  text-zinc-900 dark:text-white text-center">
                 {env.name}
               </h3>
             </div>

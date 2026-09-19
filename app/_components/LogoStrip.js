@@ -28,7 +28,8 @@ export default function LogoStrip({ title, description, stats }) {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "top 85%", toggleActions: "play none none none", once: true}
+          start: "top 85%", toggleActions: "play none none none", once: true
+        }
       });
 
       tl.from(".strip-header", { y: 20, autoAlpha: 0, duration: 0.6, ease: "power2.out", clearProps: "all" })
@@ -51,7 +52,8 @@ export default function LogoStrip({ title, description, stats }) {
           snap: { innerHTML: 1 },
           scrollTrigger: {
             trigger: containerRef.current,
-            start: "top 85%", toggleActions: "play none none none", once: true}
+            start: "top 85%", toggleActions: "play none none none", once: true
+          }
         });
       });
     });
@@ -64,7 +66,7 @@ export default function LogoStrip({ title, description, stats }) {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
         <div className="strip-header mb-16 text-center">
-          <h2 className="font-display text-4xl font-black tracking-tighter text-white uppercase mb-6">
+          <h2 className="font-display text-4xl font-black  text-white uppercase mb-6">
             {title}
           </h2>
           {description && (
@@ -78,14 +80,14 @@ export default function LogoStrip({ title, description, stats }) {
               {/* TODO: UNVERIFIED - confirm stats against Product Comparison Matrix before launch */}
               {stats.map((stat, idx) => (
                 <div key={idx} className="flex flex-col items-center relative">
-                  <div className="font-display text-4xl font-black text-white tracking-tighter flex items-center">
+                  <div className="font-display text-4xl font-black text-white  flex items-center">
                     <span className="stat-num" data-target={stat.targetValue}>
                       {/* Server-side render targetValue for no-js, GSAP will override */}
                       {stat.targetValue}
                     </span>
                     {stat.unit}
                   </div>
-                  <div className="text-xs font-bold text-green-500 uppercase tracking-widest mt-2">
+                  <div className="text-xs font-bold text-green-500 uppercase  mt-2">
                     {stat.label}
                   </div>
                 </div>

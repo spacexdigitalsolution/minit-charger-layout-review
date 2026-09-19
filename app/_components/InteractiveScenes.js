@@ -76,9 +76,9 @@ export default function InteractiveScenes() {
             <button
               key={tab.id}
               onClick={() => handleTabClick(tab.id)}
-              className={`px-6 py-3 text-sm font-bold uppercase tracking-wider rounded-none border transition-all duration-300 ${activeScene === tab.id
-                  ? "bg-zinc-900 border-zinc-900 text-white dark:bg-white dark:border-white dark:text-zinc-950"
-                  : "bg-transparent border-zinc-200 text-zinc-500 hover:bg-zinc-100 hover:text-zinc-900 dark:border-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-900 dark:hover:text-white"
+              className={`px-6 py-3 text-sm font-bold uppercase r rounded-none border transition-all duration-300 ${activeScene === tab.id
+                ? "bg-zinc-900 border-zinc-900 text-white dark:bg-white dark:border-white dark:text-zinc-950"
+                : "bg-transparent border-zinc-200 text-zinc-500 hover:bg-zinc-100 hover:text-zinc-900 dark:border-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-900 dark:hover:text-white"
                 }`}
             >
               {tab.label}
@@ -97,23 +97,23 @@ export default function InteractiveScenes() {
               >
 
                 <div className="lg:col-span-6">
-                  <span className="text-[10px] font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-widest mb-4 block">
+                  <span className="text-[10px] font-bold text-zinc-400 dark:text-zinc-500 uppercase  mb-4 block">
                     Application Profile
                   </span>
-                  <h2 className="font-display text-4xl md:text-5xl font-black tracking-tighter text-zinc-900 dark:text-white uppercase mb-10 leading-tight">
+                  <h2 className="font-display text-4xl md:text-5xl font-black  text-zinc-900 dark:text-white uppercase mb-10 ">
                     {data.headline}
                   </h2>
 
                   <div className="mb-8">
-                    <h3 className="text-[10px] font-bold text-zinc-500 dark:text-zinc-400 uppercase tracking-widest mb-3 border-b border-zinc-200 dark:border-zinc-800 pb-2">The Challenge</h3>
-                    <p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed font-light">
+                    <h3 className="text-[10px] font-bold text-zinc-500 dark:text-zinc-400 uppercase  mb-3 border-b border-zinc-200 dark:border-zinc-800 pb-2">The Challenge</h3>
+                    <p className="text-lg text-zinc-600 dark:text-zinc-400  font-light">
                       {data.problem}
                     </p>
                   </div>
 
                   <div>
-                    <h3 className="text-[10px] font-bold text-zinc-500 dark:text-zinc-400 uppercase tracking-widest mb-3 border-b border-zinc-200 dark:border-zinc-800 pb-2">The Capability</h3>
-                    <p className="text-lg text-zinc-900 dark:text-white leading-relaxed font-medium">
+                    <h3 className="text-[10px] font-bold text-zinc-500 dark:text-zinc-400 uppercase  mb-3 border-b border-zinc-200 dark:border-zinc-800 pb-2">The Capability</h3>
+                    <p className="text-lg text-zinc-900 dark:text-white  font-medium">
                       {data.solution}
                     </p>
                   </div>

@@ -53,7 +53,7 @@ export default function ImageCardGrid({
 
         <div className="rp-header flex flex-col md:flex-row md:items-end justify-between mb-6">
           <div>
-            <h2 className="font-display text-4xl md:text-5xl font-black tracking-tighter uppercase mb-4">
+            <h2 className="font-display text-4xl md:text-5xl font-black  uppercase mb-4">
               {title}
             </h2>
             <p className={`text-xl max-w-2xl font-light ${isLight ? "text-zinc-500" : "text-zinc-400"}`}>
@@ -61,7 +61,7 @@ export default function ImageCardGrid({
             </p>
           </div>
           {linkText && linkHref && (
-            <Link href={linkHref} className={`mt-6 md:mt-0 inline-flex items-center font-bold border-b pb-1 transition-colors uppercase tracking-wider text-sm group ${isLight ? "text-zinc-900 border-zinc-900 hover:text-zinc-600 hover:border-zinc-600" : "text-white border-white hover:text-zinc-300 hover:border-zinc-300"}`}>
+            <Link href={linkHref} className={`mt-6 md:mt-0 inline-flex items-center font-bold border-b pb-1 transition-colors uppercase r text-sm group ${isLight ? "text-zinc-900 border-zinc-900 hover:text-zinc-600 hover:border-zinc-600" : "text-white border-white hover:text-zinc-300 hover:border-zinc-300"}`}>
               {linkText} <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Link>
           )}

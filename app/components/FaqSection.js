@@ -8,8 +8,8 @@ import { Plus } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function FaqSection({ 
-  title = "Common Questions", 
+export default function FaqSection({
+  title = "Common Questions",
   description = "Find answers to the most common inquiries regarding the Altus II deployment, hardware capabilities, and ecosystem integrations.",
   faqs = []
 }) {
@@ -20,11 +20,12 @@ export default function FaqSection({
     let mm = gsap.matchMedia();
     mm.add("(prefers-reduced-motion: no-preference)", () => {
       const tl = gsap.timeline({
-        scrollTrigger: { 
-          trigger: containerRef.current, 
-          start: "top 80%", toggleActions: "play none none none", once: true}
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 80%", toggleActions: "play none none none", once: true
+        }
       });
-      
+
       tl.from(".faq-anim", { y: 20, autoAlpha: 0, duration: 0.6, stagger: 0.15, ease: "power2.out", clearProps: "all" });
     });
   }, { scope: containerRef });
@@ -33,17 +34,17 @@ export default function FaqSection({
     <section ref={containerRef} className="py-16 bg-white dark:bg-zinc-950 border-t border-zinc-200 dark:border-zinc-800 overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="lg:grid lg:grid-cols-12 lg:gap-16">
-          
+
           {/* Left Column: Heading & Intro */}
           <div className="lg:col-span-4 mb-12 lg:mb-0 faq-anim">
-            <h2 className="font-display text-4xl md:text-5xl font-black tracking-tighter text-zinc-900 dark:text-white uppercase mb-4 leading-tight">
+            <h2 className="font-display text-4xl md:text-5xl font-black  text-zinc-900 dark:text-white uppercase mb-4 ">
               {title}
             </h2>
             <p className="text-zinc-600 dark:text-zinc-400 font-light text-lg">
               {description}
             </p>
           </div>
-          
+
           {/* Right Column: Flat Accordion List */}
           <div className="lg:col-span-8">
             <div className="border-t border-zinc-200 dark:border-zinc-800 divide-y divide-zinc-200 dark:divide-zinc-800">
@@ -62,7 +63,7 @@ export default function FaqSection({
                         <Plus className="w-5 h-5" />
                       </span>
                     </button>
-                    <div 
+                    <div
                       className={`grid transition-all duration-300 ease-in-out ${isOpen ? "grid-rows-[1fr] opacity-100 pb-6" : "grid-rows-[0fr] opacity-0"}`}
                     >
                       <div className="overflow-hidden">

@@ -52,78 +52,78 @@ const faqs = [
 export default function Home() {
   return (
     <>
-        <div className="relative z-10 bg-white dark:bg-black font-sans">
+      <div className="relative z-10 bg-white dark:bg-black font-sans">
 
-          {/* 1. Hero */}
-          <HomeHero />
+        {/* 1. Hero */}
+        <HomeHero />
 
-          {/* 2. Why fleets switch */}
-          <ProblemFraming />
+        {/* 2. Why fleets switch */}
+        <ProblemFraming />
 
-          {/* 3. Engineered for Every Environment */}
-          <EnvironmentGrid />
+        {/* 3. Engineered for Every Environment */}
+        <EnvironmentGrid />
 
-          {/* 4. Engineered advantages detail list */}
-          <EngineeredAdvantages />
+        {/* 4. Engineered advantages detail list */}
+        <EngineeredAdvantages />
 
-          {/* 5. Interactive charging scenes */}
-          <InteractiveScenes />
+        {/* 5. Interactive charging scenes */}
+        <InteractiveScenes />
 
-          {/* 6. Purpose-Built Platforms Catalog */}
-          <TabbedProductCatalog />
+        {/* 6. Purpose-Built Platforms Catalog */}
+        <TabbedProductCatalog />
 
-          {/* 7. Cumulus Spotlight Cross-sell */}
-          <CumulusSpotlight
-            headline="See your fleet before it strands you"
-            supportingCopy="Manage the complete charging operation, not only the charger. Connect your hardware to the Cumulus cloud platform for total visibility."
-            imageSide="right"
-          />
+        {/* 7. Cumulus Spotlight Cross-sell */}
+        <CumulusSpotlight
+          headline="See your fleet before it strands you"
+          supportingCopy="Manage the complete charging operation, not only the charger. Connect your hardware to the Cumulus cloud platform for total visibility."
+          imageSide="right"
+        />
 
-          {/* 8. Consolidated Proof Section */}
-          <ConsolidatedProof />
+        {/* 8. Consolidated Proof Section */}
+        <ConsolidatedProof />
 
-          {/* 9. Process steps */}
-          <ProcessSteps />
+        {/* 9. Process steps */}
+        <ProcessSteps />
 
-          {/* 10. Guides/resources cross-sell */}
-          <ImageCardGrid
-            title="Insights & Resources"
-            description="Explore our latest case studies, deployment guides, and whitepapers."
-            linkText="View All Resources"
-            linkHref="/blogs"
-            imageMode="cover"
-            cardType="blog"
-            items={featuredBlogs}
-          />
+        {/* 10. Guides/resources cross-sell */}
+        <ImageCardGrid
+          title="Insights & Resources"
+          description="Explore our latest case studies, deployment guides, and whitepapers."
+          linkText="View All Resources"
+          linkHref="/blogs"
+          imageMode="cover"
+          cardType="blog"
+          items={featuredBlogs}
+        />
 
-          {/* 11. FAQ */}
-          <FaqSection
-            title="Frequently Asked Questions"
-            description="Common inquiries about our platform, deployment process, and technical capabilities."
-            faqs={faqs}
-          />
+        {/* 11. FAQ */}
+        <FaqSection
+          title="Frequently Asked Questions"
+          description="Common inquiries about our platform, deployment process, and technical capabilities."
+          faqs={faqs}
+        />
 
-          {/* 12. Local/regional service note */}
-          <section className="py-16 bg-zinc-50 dark:bg-zinc-900 border-t border-zinc-200 dark:border-zinc-800 text-center">
-            <div className="mx-auto max-w-3xl px-4">
-              <h3 className="font-display text-xl font-bold uppercase tracking-wide text-zinc-900 dark:text-white mb-4">
-                National Coverage, Local Support
-              </h3>
-              <p className="text-zinc-600 dark:text-zinc-400 font-light">
-                Our certified service network provides rapid on-site response and preventative maintenance across North America, ensuring your chargers are always ready when you need them.
-              </p>
-            </div>
-          </section>
+        {/* 12. Local/regional service note */}
+        <section className="py-16 bg-zinc-50 dark:bg-zinc-900 border-t border-zinc-200 dark:border-zinc-800 text-center">
+          <div className="mx-auto max-w-3xl px-4">
+            <h3 className="font-display text-xl font-bold uppercase  text-zinc-900 dark:text-white mb-4">
+              National Coverage, Local Support
+            </h3>
+            <p className="text-zinc-600 dark:text-zinc-400 font-light">
+              Our certified service network provides rapid on-site response and preventative maintenance across North America, ensuring your chargers are always ready when you need them.
+            </p>
+          </div>
+        </section>
 
-          {/* 13. Final CTA band */}
-          <ConversionBand
-            headline="Every Minute of Downtime Has a Cost. Let's Fix That."
-            primaryCTA={{ label: "Contact Sales", href: "/contact" }}
-            secondaryCTA={{ label: "Request an Audit", href: "/contact" }}
-            bgImage="/assets/Industries/Aviation-GSE/CTA/Banner.webp"
-          />
+        {/* 13. Final CTA band */}
+        <ConversionBand
+          headline="Every Minute of Downtime Has a Cost. Let's Fix That."
+          primaryCTA={{ label: "Contact Sales", href: "/contact" }}
+          secondaryCTA={{ label: "Request an Audit", href: "/contact" }}
+          bgImage="/assets/Industries/Aviation-GSE/CTA/Banner.webp"
+        />
 
-        </div>
+      </div>
     </>
   );
 }

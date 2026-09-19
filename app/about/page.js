@@ -24,10 +24,10 @@ export default function AboutPage() {
       {/* Purpose Statement */}
       <section className="bg-white py-24 md:py-32 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <p className="font-display text-3xl md:text-5xl font-medium text-zinc-950 leading-tight tracking-tight mb-8">
+          <p className="font-display text-3xl md:text-5xl font-medium text-zinc-950   mb-8">
             We engineer scale-proof charging solutions that keep the world's most demanding fleets moving.
           </p>
-          <p className="text-xl text-zinc-600 font-light max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl text-zinc-600 font-light max-w-2xl mx-auto ">
             For over 25 years, Minit Charger has been at the forefront of fast-charging technology, pioneering solutions that prioritize reliability, safety, and efficiency.
           </p>
         </div>
@@ -51,7 +51,7 @@ export default function AboutPage() {
       <section className="bg-white py-24 md:py-32 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="mb-16">
-            <h2 className="font-display text-5xl font-black text-zinc-950 tracking-tighter uppercase">Our Values</h2>
+            <h2 className="font-display text-5xl font-black text-zinc-950  uppercase">Our Values</h2>
           </div>
 
           <div className="flex flex-col">
@@ -89,11 +89,11 @@ export default function AboutPage() {
       <section className="bg-white py-24 border-t border-zinc-200 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
           <div>
-            <h3 className="font-display text-3xl font-bold text-zinc-950 mb-4 tracking-tight">Join Our Team</h3>
+            <h3 className="font-display text-3xl font-bold text-zinc-950 mb-4 ">Join Our Team</h3>
             <p className="text-lg text-zinc-600 mb-8 font-light max-w-sm">
               We are always looking for innovators who are ready to power the future of transportation.
             </p>
-            <Link href="/contact" className="inline-flex items-center text-green-500 hover:text-green-400 font-bold uppercase tracking-widest text-sm transition-colors group">
+            <Link href="/contact" className="inline-flex items-center text-green-500 hover:text-green-400 font-bold uppercase  text-sm transition-colors group">
               View Careers
               <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -101,11 +101,11 @@ export default function AboutPage() {
             </Link>
           </div>
           <div>
-            <h3 className="font-display text-3xl font-bold text-zinc-950 mb-4 tracking-tight">Sustainability</h3>
+            <h3 className="font-display text-3xl font-bold text-zinc-950 mb-4 ">Sustainability</h3>
             <p className="text-lg text-zinc-600 mb-8 font-light max-w-sm">
               Discover how our charging solutions reduce emissions and support a greener supply chain.
             </p>
-            <Link href="/contact" className="inline-flex items-center text-green-500 hover:text-green-400 font-bold uppercase tracking-widest text-sm transition-colors group">
+            <Link href="/contact" className="inline-flex items-center text-green-500 hover:text-green-400 font-bold uppercase  text-sm transition-colors group">
               Learn More
               <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />

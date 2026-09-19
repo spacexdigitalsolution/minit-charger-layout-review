@@ -183,7 +183,7 @@ export default function HomeHero() {
       {/* Dynamic Content */}
       <div className="relative z-20 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-32">
         <div className="max-w-3xl">
-          <h1 className="hero-anim font-display text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter text-white uppercase leading-[0.9] mb-6">
+          <h1 className="hero-anim font-display text-5xl md:text-6xl lg:text-7xl font-black  text-white uppercase  mb-6">
             {slides[activeSlide].headline}
           </h1>
           <p className="hero-anim text-xl text-zinc-300 font-light mb-8">
@@ -191,7 +191,7 @@ export default function HomeHero() {
           </p>
 
           {/* Feature Strip */}
-          <div className="hero-anim flex flex-wrap items-center gap-x-3 gap-y-2 mb-10 text-[10px] font-bold text-white/80 uppercase tracking-widest">
+          <div className="hero-anim flex flex-wrap items-center gap-x-3 gap-y-2 mb-10 text-[10px] font-bold text-white/80 uppercase ">
             {slides[activeSlide].features.map((feature, idx) => (
               <span key={idx} className="flex items-center">
                 {feature}
@@ -203,10 +203,10 @@ export default function HomeHero() {
           </div>
 
           <div className="hero-anim flex flex-col sm:flex-row gap-4">
-            <Link href="/contact" className="inline-flex items-center justify-center rounded-none bg-green-600 px-8 py-4 text-sm font-bold text-white hover:bg-green-700 transition-colors uppercase tracking-wider">
+            <Link href="/contact" className="inline-flex items-center justify-center rounded-none bg-green-600 px-8 py-4 text-sm font-bold text-white hover:bg-green-700 transition-colors uppercase r">
               Get a Quote
             </Link>
-            <Link href="/products" className="inline-flex items-center justify-center rounded-none bg-transparent border border-white px-8 py-4 text-sm font-bold text-white hover:bg-white/10 transition-colors uppercase tracking-wider">
+            <Link href="/products" className="inline-flex items-center justify-center rounded-none bg-transparent border border-white px-8 py-4 text-sm font-bold text-white hover:bg-white/10 transition-colors uppercase r">
               Explore Solutions
             </Link>
           </div>

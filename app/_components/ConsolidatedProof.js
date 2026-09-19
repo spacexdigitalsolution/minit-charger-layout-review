@@ -43,9 +43,9 @@ const testimonials = [
   }
 ];
 
-export default function ConsolidatedProof({ 
-  title = "Trusted by the World's Best", 
-  description = "For over two decades, leading fleets have relied on Minit Charger to keep their operations moving.", 
+export default function ConsolidatedProof({
+  title = "Trusted by the World's Best",
+  description = "For over two decades, leading fleets have relied on Minit Charger to keep their operations moving.",
   stats = [
     { targetValue: 25, unit: "+", label: "Years Experience" },
     { targetValue: 15000, unit: "+", label: "Global Installs" },
@@ -60,8 +60,8 @@ export default function ConsolidatedProof({
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "top 85%", 
-          toggleActions: "play none none none", 
+          start: "top 85%",
+          toggleActions: "play none none none",
           once: true
         }
       });
@@ -87,8 +87,8 @@ export default function ConsolidatedProof({
           snap: { innerHTML: 1 },
           scrollTrigger: {
             trigger: containerRef.current,
-            start: "top 85%", 
-            toggleActions: "play none none none", 
+            start: "top 85%",
+            toggleActions: "play none none none",
             once: true
           }
         });
@@ -102,7 +102,7 @@ export default function ConsolidatedProof({
 
         {/* Header & Stats */}
         <div className="proof-header mb-16 text-center">
-          <h2 className="font-display text-4xl font-black tracking-tighter text-zinc-900 dark:text-white uppercase mb-6">
+          <h2 className="font-display text-4xl font-black  text-zinc-900 dark:text-white uppercase mb-6">
             {title}
           </h2>
           {description && (
@@ -115,13 +115,13 @@ export default function ConsolidatedProof({
             <div className="mt-12 flex flex-wrap justify-center gap-8 md:gap-16">
               {stats.map((stat, idx) => (
                 <div key={idx} className="flex flex-col items-center relative">
-                  <div className="font-display text-4xl font-black text-zinc-900 dark:text-white tracking-tighter flex items-center">
+                  <div className="font-display text-4xl font-black text-zinc-900 dark:text-white  flex items-center">
                     <span className="stat-num" data-target={stat.targetValue}>
                       {stat.targetValue}
                     </span>
                     {stat.unit}
                   </div>
-                  <div className="text-xs font-bold text-green-600 dark:text-green-500 uppercase tracking-widest mt-2">
+                  <div className="text-xs font-bold text-green-600 dark:text-green-500 uppercase  mt-2">
                     {stat.label}
                   </div>
                 </div>
@@ -151,19 +151,19 @@ export default function ConsolidatedProof({
         <div className="grid grid-cols-1 md:grid-cols-3 gap-y-12 md:gap-y-0 md:divide-x divide-zinc-200 dark:divide-zinc-800">
           {testimonials.map((testimonial, idx) => (
             <div key={idx} className="quote-anim flex flex-col md:px-12 first:md:pl-0 last:md:pr-0">
-              <p className="text-xl md:text-2xl text-zinc-900 dark:text-white font-light leading-relaxed mb-8 italic">
+              <p className="text-xl md:text-2xl text-zinc-900 dark:text-white font-light  mb-8 italic">
                 &ldquo;{testimonial.quote}&rdquo;
               </p>
-              
+
               <div className="mt-auto flex items-center gap-4">
-                <div className="w-10 h-10 rounded-full bg-zinc-100 dark:bg-zinc-900 flex items-center justify-center text-xs font-bold text-zinc-500 uppercase tracking-widest shrink-0 border border-zinc-200 dark:border-zinc-800">
+                <div className="w-10 h-10 rounded-full bg-zinc-100 dark:bg-zinc-900 flex items-center justify-center text-xs font-bold text-zinc-500 uppercase  shrink-0 border border-zinc-200 dark:border-zinc-800">
                   {testimonial.initials}
                 </div>
                 <div>
-                  <div className="text-sm font-bold text-zinc-900 dark:text-white uppercase tracking-wider">
+                  <div className="text-sm font-bold text-zinc-900 dark:text-white uppercase r">
                     {testimonial.name}
                   </div>
-                  <div className="text-[10px] font-bold text-zinc-500 dark:text-zinc-400 uppercase tracking-widest mt-1">
+                  <div className="text-[10px] font-bold text-zinc-500 dark:text-zinc-400 uppercase  mt-1">
                     {testimonial.title}
                     <br />
                     <span className="text-zinc-400 dark:text-zinc-500">{testimonial.company}</span>

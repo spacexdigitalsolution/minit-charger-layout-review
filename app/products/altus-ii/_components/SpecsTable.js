@@ -132,14 +132,14 @@ export default function SpecsTable() {
         {/* Header Area */}
         <div className="specs-anim flex flex-col md:flex-row md:items-end justify-between mb-16">
           <div>
-            <h2 className="font-display text-4xl font-black tracking-tighter text-zinc-900 dark:text-white uppercase mb-4">
+            <h2 className="font-display text-4xl font-black  text-zinc-900 dark:text-white uppercase mb-4">
               The Full Technical Picture
             </h2>
             <p className="text-xl text-zinc-500 font-light max-w-xl">
               Everything you need to verify before Altus II goes into service.
             </p>
           </div>
-          <a href="#" className="mt-8 md:mt-0 group inline-flex items-center text-sm font-bold uppercase tracking-widest text-zinc-900 dark:text-white hover:text-green-600 dark:hover:text-green-400 transition-colors">
+          <a href="#" className="mt-8 md:mt-0 group inline-flex items-center text-sm font-bold uppercase  text-zinc-900 dark:text-white hover:text-green-600 dark:hover:text-green-400 transition-colors">
             Download PDF
             <Download className="ml-3 h-5 w-5 text-green-600 group-hover:scale-110 transition-transform" />
           </a>
@@ -163,7 +163,7 @@ export default function SpecsTable() {
                     key={index}
                     ref={el => tabsRef.current[index] = el}
                     onClick={() => handleTabChange(index)}
-                    className={`pb-4 px-1 mr-8 text-sm font-bold uppercase tracking-wider whitespace-nowrap transition-colors ${isActive ? "text-zinc-900 dark:text-white" : "text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300"
+                    className={`pb-4 px-1 mr-8 text-sm font-bold uppercase r whitespace-nowrap transition-colors ${isActive ? "text-zinc-900 dark:text-white" : "text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300"
                       }`}
                   >
                     {cat.name}

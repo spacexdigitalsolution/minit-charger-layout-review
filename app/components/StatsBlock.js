@@ -14,16 +14,16 @@ export default function StatsBlock({ stats = [] }) {
     let mm = gsap.matchMedia();
     mm.add("(prefers-reduced-motion: no-preference)", () => {
       gsap.from(".stat-item", {
-        scrollTrigger: { 
-          trigger: containerRef.current, 
-          start: "top 80%", 
-          toggleActions: "play none none none", 
-          once: true 
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 80%",
+          toggleActions: "play none none none",
+          once: true
         },
-        y: 30, 
-        autoAlpha: 0, 
-        duration: 0.8, 
-        stagger: 0.2, 
+        y: 30,
+        autoAlpha: 0,
+        duration: 0.8,
+        stagger: 0.2,
         ease: "power2.out",
         clearProps: "all"
       });
@@ -38,10 +38,10 @@ export default function StatsBlock({ stats = [] }) {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center divide-y md:divide-y-0 md:divide-x divide-zinc-800">
           {stats.map((stat, idx) => (
             <div key={idx} className="stat-item flex flex-col items-center justify-center pt-8 md:pt-0 md:first:pt-0 px-6">
-              <span className="font-display text-5xl md:text-7xl font-black text-green-500 mb-4 tracking-tighter">
+              <span className="font-display text-5xl md:text-7xl font-black text-green-500 mb-4 ">
                 {stat.value}
               </span>
-              <h3 className="font-bold text-white text-xl mb-2 uppercase tracking-wide">
+              <h3 className="font-bold text-white text-xl mb-2 uppercase ">
                 {stat.label}
               </h3>
               <p className="text-zinc-400 font-light text-sm max-w-xs">

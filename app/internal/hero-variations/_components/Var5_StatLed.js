@@ -56,20 +56,20 @@ export default function Var5StatLed() {
 
       {/* Variation Label */}
       <div className="absolute top-4 left-4 z-50 pointer-events-none">
-        <span className="bg-zinc-900/10 text-zinc-900 backdrop-blur-md px-3 py-1 rounded-sm text-xs font-bold uppercase tracking-wider border border-zinc-900/20 shadow-sm">
+        <span className="bg-zinc-900/10 text-zinc-900 backdrop-blur-md px-3 py-1 rounded-sm text-xs font-bold uppercase r border border-zinc-900/20 shadow-sm">
           Variation 5
         </span>
-        <p className="text-zinc-600 text-[10px] mt-1 ml-1 uppercase tracking-widest">Count-up on scroll</p>
+        <p className="text-zinc-600 text-[10px] mt-1 ml-1 uppercase ">Count-up on scroll</p>
       </div>
 
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center">
 
         {/* Compact Header */}
         <div className="v5-header text-center mb-16 max-w-2xl mx-auto">
-          <span className="text-[10px] font-bold text-green-600 uppercase tracking-widest mb-3 block">
+          <span className="text-[10px] font-bold text-green-600 uppercase  mb-3 block">
             Aviation GSE
           </span>
-          <h1 className="font-display text-4xl md:text-5xl font-black tracking-tighter text-zinc-900 uppercase mb-4 leading-tight">
+          <h1 className="font-display text-4xl md:text-5xl font-black  text-zinc-900 uppercase mb-4 ">
             Keep The Ramp Moving.
           </h1>
           <p className="text-zinc-500 text-lg">Intelligent fast-charging infrastructure built for ultimate reliability.</p>
@@ -79,27 +79,27 @@ export default function Var5StatLed() {
         <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 mb-20">
 
           <div className="v5-stat-container flex flex-col items-center text-center">
-            <div className="flex items-baseline font-display font-black text-zinc-900 text-6xl md:text-8xl tracking-tighter leading-none mb-4">
+            <div className="flex items-baseline font-display font-black text-zinc-900 text-6xl md:text-8xl   mb-4">
               <span className="v5-counter" data-target="99.9" data-format="float">0.0</span>
               <span className="text-4xl md:text-6xl text-green-500 ml-1">%</span>
             </div>
-            <span className="text-xs font-bold text-zinc-400 uppercase tracking-widest">Platform Uptime</span>
+            <span className="text-xs font-bold text-zinc-400 uppercase ">Platform Uptime</span>
           </div>
 
           <div className="v5-stat-container flex flex-col items-center text-center">
-            <div className="flex items-baseline font-display font-black text-zinc-900 text-6xl md:text-8xl tracking-tighter leading-none mb-4">
+            <div className="flex items-baseline font-display font-black text-zinc-900 text-6xl md:text-8xl   mb-4">
               <span className="v5-counter" data-target="1000" data-format="int">0</span>
               <span className="text-4xl md:text-6xl text-green-500 ml-2">VDC</span>
             </div>
-            <span className="text-xs font-bold text-zinc-400 uppercase tracking-widest">Maximum Output Voltage</span>
+            <span className="text-xs font-bold text-zinc-400 uppercase ">Maximum Output Voltage</span>
           </div>
 
           <div className="v5-stat-container flex flex-col items-center text-center">
-            <div className="flex items-baseline font-display font-black text-zinc-900 text-6xl md:text-8xl tracking-tighter leading-none mb-4">
+            <div className="flex items-baseline font-display font-black text-zinc-900 text-6xl md:text-8xl   mb-4">
               <span className="v5-counter" data-target="24" data-format="int">0</span>
               <span className="text-4xl md:text-6xl text-green-500 ml-2">/7</span>
             </div>
-            <span className="text-xs font-bold text-zinc-400 uppercase tracking-widest">Continuous Operation</span>
+            <span className="text-xs font-bold text-zinc-400 uppercase ">Continuous Operation</span>
           </div>
 
         </div>
@@ -115,7 +115,7 @@ export default function Var5StatLed() {
         </div>
 
         <div className="v5-header">
-          <button className="inline-flex items-center justify-center rounded border border-zinc-900 px-8 py-4 text-sm font-bold text-zinc-900 hover:bg-zinc-900 hover:text-white transition-colors uppercase tracking-wider">
+          <button className="inline-flex items-center justify-center rounded border border-zinc-900 px-8 py-4 text-sm font-bold text-zinc-900 hover:bg-zinc-900 hover:text-white transition-colors uppercase r">
             Explore Solutions
           </button>
         </div>

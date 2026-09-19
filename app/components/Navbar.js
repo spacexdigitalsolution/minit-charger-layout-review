@@ -26,7 +26,7 @@ const ProductLinkItem = ({ product, onLinkClick, onHover }) => (
 
 const MenuColumn = ({ title, products, onLinkClick, onHover }) => (
   <div className="mega-menu-column flex flex-col gap-1">
-    <h4 className="text-xs font-semibold tracking-widest uppercase text-zinc-900 dark:text-zinc-100 mb-4">{title}</h4>
+    <h4 className="text-xs font-semibold  uppercase text-zinc-900 dark:text-zinc-100 mb-4">{title}</h4>
     {products.map(p => (
       <ProductLinkItem
         key={p.id}
@@ -184,7 +184,7 @@ export default function Navbar() {
               <div
                 onMouseEnter={() => handleMouseEnterNav('products')}
                 onClick={() => handleNavClick('products')}
-                className={`group flex items-center h-full cursor-pointer text-sm font-bold uppercase tracking-wider transition-colors duration-300 ${activeDesktopMenu === 'products'
+                className={`group flex items-center h-full cursor-pointer text-sm font-bold uppercase r transition-colors duration-300 ${activeDesktopMenu === 'products'
                   ? "text-[#16a34a]"
                   : scrolled || activeDesktopMenu || isOpen ? "text-zinc-600 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white" : "text-white/80 hover:text-white"
                   }`}
@@ -196,7 +196,7 @@ export default function Navbar() {
               <div
                 onMouseEnter={() => handleMouseEnterNav('industries')}
                 onClick={() => handleNavClick('industries')}
-                className={`group flex items-center h-full cursor-pointer text-sm font-bold uppercase tracking-wider transition-colors duration-300 ${activeDesktopMenu === 'industries'
+                className={`group flex items-center h-full cursor-pointer text-sm font-bold uppercase r transition-colors duration-300 ${activeDesktopMenu === 'industries'
                   ? "text-[#16a34a]"
                   : scrolled || activeDesktopMenu || isOpen ? "text-zinc-600 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white" : "text-white/80 hover:text-white"
                   }`}
@@ -205,13 +205,13 @@ export default function Navbar() {
                 <ChevronDown className={`ml-1 h-4 w-4 transition-transform duration-300 ${activeDesktopMenu === 'industries' ? 'rotate-180 text-[#16a34a]' : ''}`} />
               </div>
 
-              <Link href="/blogs" onMouseEnter={handleMouseLeaveNav} onClick={() => { setIsMenuOpen(false); setActiveDesktopMenu(null); }} className={`text-sm font-bold uppercase tracking-wider transition-colors duration-300 ${scrolled || activeDesktopMenu || isOpen ? "text-zinc-600 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white" : "text-white/80 hover:text-white"}`}>Blogs</Link>
-              <Link href="#" onMouseEnter={handleMouseLeaveNav} onClick={() => { setIsMenuOpen(false); setActiveDesktopMenu(null); }} className={`text-sm font-bold uppercase tracking-wider transition-colors duration-300 ${scrolled || activeDesktopMenu || isOpen ? "text-zinc-600 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white" : "text-white/80 hover:text-white"}`}>Company</Link>
+              <Link href="/blogs" onMouseEnter={handleMouseLeaveNav} onClick={() => { setIsMenuOpen(false); setActiveDesktopMenu(null); }} className={`text-sm font-bold uppercase r transition-colors duration-300 ${scrolled || activeDesktopMenu || isOpen ? "text-zinc-600 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white" : "text-white/80 hover:text-white"}`}>Blogs</Link>
+              <Link href="#" onMouseEnter={handleMouseLeaveNav} onClick={() => { setIsMenuOpen(false); setActiveDesktopMenu(null); }} className={`text-sm font-bold uppercase r transition-colors duration-300 ${scrolled || activeDesktopMenu || isOpen ? "text-zinc-600 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white" : "text-white/80 hover:text-white"}`}>Company</Link>
             </div>
           </div>
 
           <div className="hidden md:flex md:items-center md:gap-4 h-full" onMouseEnter={handleMouseLeaveNav}>
-            <Link href="/contact" className={`inline-flex h-10 items-center justify-center rounded-none px-6 py-2 text-sm font-bold uppercase tracking-wider transition-colors duration-300 ${scrolled || activeDesktopMenu || isOpen
+            <Link href="/contact" className={`inline-flex h-10 items-center justify-center rounded-none px-6 py-2 text-sm font-bold uppercase r transition-colors duration-300 ${scrolled || activeDesktopMenu || isOpen
               ? "bg-zinc-900 text-white hover:bg-[#8CD34D] hover:text-zinc-900 dark:bg-white dark:text-zinc-900 dark:hover:bg-[#8CD34D]"
               : "bg-white text-zinc-900 hover:bg-[#8CD34D]"
               }`}>
@@ -273,15 +273,15 @@ export default function Navbar() {
 
                         {/* Text Stack */}
                         <div className="flex flex-col w-full">
-                          <h5 className="font-display text-3xl font-black tracking-tighter uppercase text-zinc-900 dark:text-white mb-3">
+                          <h5 className="font-display text-3xl font-black  uppercase text-zinc-900 dark:text-white mb-3">
                             {hoveredProduct?.name}
                           </h5>
-                          <p className="text-[14px] leading-relaxed text-zinc-500 dark:text-zinc-400 mb-6 line-clamp-2">
+                          <p className="text-[14px]  text-zinc-500 dark:text-zinc-400 mb-6 line-clamp-2">
                             {hoveredProduct?.shortDescription}
                           </p>
 
                           <div className="flex items-center">
-                            <Link href={hoveredProduct?.productPageUrl || "#"} onClick={() => setIsMenuOpen(false)} className="inline-flex items-center text-xs font-bold uppercase tracking-widest text-zinc-900 dark:text-white hover:text-zinc-500 transition-colors group">
+                            <Link href={hoveredProduct?.productPageUrl || "#"} onClick={() => setIsMenuOpen(false)} className="inline-flex items-center text-xs font-bold uppercase  text-zinc-900 dark:text-white hover:text-zinc-500 transition-colors group">
                               Explore {hoveredProduct?.name} <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                             </Link>
                           </div>
@@ -289,7 +289,7 @@ export default function Navbar() {
                       </div>
 
                       <div className="mt-8 pt-6 border-t border-zinc-100 dark:border-zinc-800/50">
-                        <Link href="/products" onClick={() => setIsMenuOpen(false)} className="inline-flex items-center text-xs font-bold uppercase tracking-widest text-zinc-500 hover:text-zinc-900 dark:hover:text-white transition-colors group">
+                        <Link href="/products" onClick={() => setIsMenuOpen(false)} className="inline-flex items-center text-xs font-bold uppercase  text-zinc-500 hover:text-zinc-900 dark:hover:text-white transition-colors group">
                           View All Products <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                         </Link>
                       </div>
@@ -307,13 +307,13 @@ export default function Navbar() {
                   <div className="grid grid-cols-4 gap-8">
                     <div className="col-span-1 flex flex-col justify-between border-r border-zinc-100 dark:border-zinc-800/50 pr-8">
                       <div>
-                        <h3 className="text-xs font-semibold tracking-widest uppercase text-zinc-900 dark:text-zinc-100 mb-4">Industries</h3>
-                        <p className="text-[14px] leading-relaxed text-zinc-500 dark:text-zinc-400">
+                        <h3 className="text-xs font-semibold  uppercase text-zinc-900 dark:text-zinc-100 mb-4">Industries</h3>
+                        <p className="text-[14px]  text-zinc-500 dark:text-zinc-400">
                           Tailored charging infrastructure for the world's most demanding operational environments.
                         </p>
                       </div>
                       <div className="mt-8 pt-6">
-                        <Link href="/industries" onClick={() => setIsMenuOpen(false)} className="inline-flex items-center text-xs font-bold uppercase tracking-widest text-zinc-500 hover:text-zinc-900 dark:hover:text-white transition-colors group">
+                        <Link href="/industries" onClick={() => setIsMenuOpen(false)} className="inline-flex items-center text-xs font-bold uppercase  text-zinc-500 hover:text-zinc-900 dark:hover:text-white transition-colors group">
                           View All Industries <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                         </Link>
                       </div>
@@ -326,10 +326,10 @@ export default function Navbar() {
                           onClick={() => setIsMenuOpen(false)}
                           className="mega-menu-column group flex flex-col p-8 bg-zinc-50 dark:bg-zinc-900/50 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
                         >
-                          <span className="font-display text-2xl font-black uppercase tracking-tighter text-zinc-900 dark:text-white mb-auto pb-12">
+                          <span className="font-display text-2xl font-black uppercase  text-zinc-900 dark:text-white mb-auto pb-12">
                             {cat.name}
                           </span>
-                          <span className="text-xs font-bold tracking-widest uppercase text-zinc-500 dark:text-zinc-400 flex items-center group-hover:text-zinc-900 dark:group-hover:text-white transition-colors">
+                          <span className="text-xs font-bold  uppercase text-zinc-500 dark:text-zinc-400 flex items-center group-hover:text-zinc-900 dark:group-hover:text-white transition-colors">
                             Explore <ArrowRight className="ml-2 h-4 w-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
                           </span>
                         </Link>
@@ -352,7 +352,7 @@ export default function Navbar() {
               <div className="border-b border-zinc-100 dark:border-zinc-800">
                 <button
                   onClick={() => toggleMobileMenu('products')}
-                  className="w-full flex items-center justify-between px-4 py-4 text-sm font-bold uppercase tracking-wider text-zinc-900 dark:text-white"
+                  className="w-full flex items-center justify-between px-4 py-4 text-sm font-bold uppercase r text-zinc-900 dark:text-white"
                 >
                   Products
                   <ChevronDown className={`h-4 w-4 transition-transform ${activeMobileMenu === 'products' ? 'rotate-180 text-[#16a34a]' : ''}`} />
@@ -365,7 +365,7 @@ export default function Navbar() {
                       if (catProducts.length === 0) return null;
                       return (
                         <div key={cat.id} className="flex flex-col gap-3">
-                          <span className="text-md font-bold uppercase tracking-[0.08em] text-zinc-500 border-b border-zinc-200 dark:border-zinc-800 pb-2">{cat.name}</span>
+                          <span className="text-md font-bold uppercase  text-zinc-500 border-b border-zinc-200 dark:border-zinc-800 pb-2">{cat.name}</span>
                           {catProducts.map(p => (
                             <Link key={p.id} href={p.productPageUrl} onClick={() => setIsOpen(false)} className="text-sm font-medium text-zinc-900 dark:text-zinc-300 flex items-center gap-2 py-1">
                               {p.name}
@@ -382,7 +382,7 @@ export default function Navbar() {
               <div className="border-b border-zinc-100 dark:border-zinc-800">
                 <button
                   onClick={() => toggleMobileMenu('industries')}
-                  className="w-full flex items-center justify-between px-4 py-4 text-sm font-bold uppercase tracking-wider text-zinc-900 dark:text-white"
+                  className="w-full flex items-center justify-between px-4 py-4 text-sm font-bold uppercase r text-zinc-900 dark:text-white"
                 >
                   Industries
                   <ChevronDown className={`h-4 w-4 transition-transform ${activeMobileMenu === 'industries' ? 'rotate-180 text-[#16a34a]' : ''}`} />
@@ -399,11 +399,11 @@ export default function Navbar() {
                 </div>
               </div>
 
-              <Link href="/blogs" onClick={() => setIsOpen(false)} className="block px-4 py-4 text-sm font-bold uppercase tracking-wider text-zinc-900 dark:text-white border-b border-zinc-100 dark:border-zinc-800">Blogs</Link>
-              <Link href="#" onClick={() => setIsOpen(false)} className="block px-4 py-4 text-sm font-bold uppercase tracking-wider text-zinc-900 dark:text-white border-b border-zinc-100 dark:border-zinc-800">Company</Link>
+              <Link href="/blogs" onClick={() => setIsOpen(false)} className="block px-4 py-4 text-sm font-bold uppercase r text-zinc-900 dark:text-white border-b border-zinc-100 dark:border-zinc-800">Blogs</Link>
+              <Link href="#" onClick={() => setIsOpen(false)} className="block px-4 py-4 text-sm font-bold uppercase r text-zinc-900 dark:text-white border-b border-zinc-100 dark:border-zinc-800">Company</Link>
 
               <div className="p-4 mt-4">
-                <Link href="/contact" onClick={() => setIsOpen(false)} className="flex h-12 w-full items-center justify-center rounded-none bg-zinc-900 px-4 py-2 text-sm font-bold uppercase tracking-wider text-white dark:bg-white dark:text-zinc-900 hover:bg-[#8CD34D] hover:text-zinc-900 dark:hover:bg-[#8CD34D] transition-colors">
+                <Link href="/contact" onClick={() => setIsOpen(false)} className="flex h-12 w-full items-center justify-center rounded-none bg-zinc-900 px-4 py-2 text-sm font-bold uppercase r text-white dark:bg-white dark:text-zinc-900 hover:bg-[#8CD34D] hover:text-zinc-900 dark:hover:bg-[#8CD34D] transition-colors">
                   Contact Us
                 </Link>
               </div>

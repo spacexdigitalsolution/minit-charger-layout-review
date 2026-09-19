@@ -39,9 +39,10 @@ export default function EngineeredAdvantages() {
     let mm = gsap.matchMedia();
     mm.add("(prefers-reduced-motion: no-preference)", () => {
       const tl = gsap.timeline({
-        scrollTrigger: { 
-          trigger: containerRef.current, 
-          start: "top 80%", toggleActions: "play none none none", once: true}
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 80%", toggleActions: "play none none none", once: true
+        }
       });
       tl.from(".ea-anim", { y: 20, autoAlpha: 0, duration: 0.6, stagger: 0.15, ease: "power2.out" });
     });
@@ -51,16 +52,16 @@ export default function EngineeredAdvantages() {
     <section ref={containerRef} className="py-24 bg-white dark:bg-zinc-950 border-b border-zinc-200 dark:border-zinc-800">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="lg:grid lg:grid-cols-2 lg:gap-24 items-start">
-          
+
           <div className="ea-anim mb-12 lg:mb-0 lg:sticky lg:top-32">
-            <h2 className="font-display text-4xl font-black tracking-tighter text-zinc-900 dark:text-white uppercase mb-6">
+            <h2 className="font-display text-4xl font-black  text-zinc-900 dark:text-white uppercase mb-6">
               Engineered for Technology, Performance, and Style
             </h2>
             <p className="text-xl text-zinc-600 dark:text-zinc-400 font-light">
               As amongst the leading electric vehicle charging manufacturers, we build every charger around real efficiency gains, practical everyday problem-solving features, and aesthetical designs that go with modern infrastructure.
             </p>
           </div>
-          
+
           <div className="border-t border-zinc-200 dark:border-zinc-800 divide-y divide-zinc-200 dark:divide-zinc-800">
             {advantages.map((adv, index) => {
               const isOpen = openIndex === index;
@@ -70,14 +71,14 @@ export default function EngineeredAdvantages() {
                     onClick={() => setOpenIndex(isOpen ? null : index)}
                     className="w-full flex items-center justify-between py-8 text-left focus:outline-none group"
                   >
-                    <span className={`font-display text-2xl uppercase tracking-wide transition-colors pr-8 ${isOpen ? 'font-black text-green-600' : 'font-bold text-zinc-900 dark:text-white group-hover:text-zinc-500'}`}>
+                    <span className={`font-display text-2xl uppercase  transition-colors pr-8 ${isOpen ? 'font-black text-green-600' : 'font-bold text-zinc-900 dark:text-white group-hover:text-zinc-500'}`}>
                       {adv.title}
                     </span>
                     <span className={`shrink-0 transition-all duration-300 ${isOpen ? "rotate-45 text-green-600" : "rotate-0 text-zinc-400 group-hover:text-zinc-500"}`}>
                       <Plus className="w-6 h-6" />
                     </span>
                   </button>
-                  <div 
+                  <div
                     className={`grid transition-all duration-300 ease-in-out ${isOpen ? "grid-rows-[1fr] opacity-100 pb-8" : "grid-rows-[0fr] opacity-0"}`}
                   >
                     <div className="overflow-hidden">

@@ -35,7 +35,7 @@ export default function LeadershipQuote({ quote, name, title, imageSrc, isGap = 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <blockquote className="text-center">
           <div className="quote-anim mb-12">
-            <p className="font-display text-4xl md:text-5xl font-medium text-white leading-tight tracking-tight">
+            <p className="font-display text-4xl md:text-5xl font-medium text-white  ">
               "{quote}"
             </p>
           </div>
@@ -51,7 +51,7 @@ export default function LeadershipQuote({ quote, name, title, imageSrc, isGap = 
             )}
             <div>
               <div className="text-lg font-bold text-white">{name}</div>
-              <div className="text-sm text-green-500 uppercase tracking-widest mt-1">{title}</div>
+              <div className="text-sm text-green-500 uppercase  mt-1">{title}</div>
             </div>
           </footer>
         </blockquote>

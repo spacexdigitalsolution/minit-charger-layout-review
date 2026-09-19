@@ -14,11 +14,12 @@ export default function VideoModule() {
     let mm = gsap.matchMedia();
     mm.add("(prefers-reduced-motion: no-preference)", () => {
       const tl = gsap.timeline({
-        scrollTrigger: { 
-          trigger: containerRef.current, 
-          start: "top 80%", toggleActions: "play none none none", once: true}
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 80%", toggleActions: "play none none none", once: true
+        }
       });
-      
+
       tl.from(".vid-anim", { y: 30, autoAlpha: 0, duration: 0.8, stagger: 0.1, ease: "power2.out", clearProps: "y,opacity,visibility" }, 0)
         .from("video", { scale: 1.05, duration: 1.2, ease: "power2.out", clearProps: "all" }, 0);
     });
@@ -28,7 +29,7 @@ export default function VideoModule() {
     <section ref={containerRef} className="py-24 bg-zinc-950 overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="vid-anim mb-12 text-center">
-          <h2 className="font-display text-4xl md:text-5xl font-black tracking-tighter text-white uppercase mb-4">
+          <h2 className="font-display text-4xl md:text-5xl font-black  text-white uppercase mb-4">
             The X-Ray of Our Engineering
           </h2>
           <p className="text-xl text-zinc-400 max-w-2xl mx-auto font-light">
@@ -36,11 +37,11 @@ export default function VideoModule() {
           </p>
         </div>
         <div className="vid-anim relative w-full aspect-video bg-zinc-900 border border-zinc-800 shadow-2xl">
-          <video 
-            className="w-full h-full object-cover" 
-            autoPlay 
-            muted 
-            loop 
+          <video
+            className="w-full h-full object-cover"
+            autoPlay
+            muted
+            loop
             playsInline
             poster="/assets/Products/altus-ii/context/altus_cta_bg.webp"
           >

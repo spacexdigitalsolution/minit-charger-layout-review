@@ -15,11 +15,12 @@ export default function UseCases() {
     let mm = gsap.matchMedia();
     mm.add("(prefers-reduced-motion: no-preference)", () => {
       const tl = gsap.timeline({
-        scrollTrigger: { 
-          trigger: containerRef.current, 
-          start: "top 80%", toggleActions: "play none none none", once: true}
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 80%", toggleActions: "play none none none", once: true
+        }
       });
-      
+
       tl.from(".uc-header", { y: 20, autoAlpha: 0, duration: 0.6, ease: "power2.out", clearProps: "all" })
         .from(".uc-card", { y: 20, autoAlpha: 0, duration: 0.6, stagger: 0.15, ease: "power2.out", clearProps: "all" }, "-=0.3");
     });
@@ -28,7 +29,7 @@ export default function UseCases() {
   return (
     <section ref={containerRef} className="py-24 bg-white overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h2 className="uc-header font-display text-4xl md:text-5xl font-black tracking-tighter text-zinc-900 dark:text-white uppercase mb-12 text-center leading-tight">
+        <h2 className="uc-header font-display text-4xl md:text-5xl font-black  text-zinc-900 dark:text-white uppercase mb-12 text-center ">
           Primary Applications
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

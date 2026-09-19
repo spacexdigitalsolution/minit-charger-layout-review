@@ -45,11 +45,11 @@ function StatItem({ targetValue, unit, label, index, theme = "dark" }) {
     <div className={`stat-anim py-8 md:py-0 ${index === 0 ? 'md:pr-8' : ''} ${index > 0 && index < 2 ? 'md:px-8' : ''} ${index === 2 ? 'md:pl-8' : ''}`}>
       <div
         ref={valueRef}
-        className={`font-display text-6xl leading-[0.8] font-black mb-6 tracking-tighter ${theme === 'dark' ? 'text-white' : 'text-zinc-950'}`}
+        className={`font-display text-5xl  font-black mb-6  ${theme === 'dark' ? 'text-white' : 'text-zinc-950'}`}
       >
         {isNaN(parseFloat(targetValue)) ? targetValue + unit : `0${unit}`}
       </div>
-      <div className="text-sm font-bold text-green-500 uppercase tracking-[0.2em]">{label}</div>
+      <div className="text-sm font-bold text-green-500 uppercase">{label}</div>
     </div>
   );
 }
@@ -88,7 +88,7 @@ export default function StatModule({
     <section ref={containerRef} className={`relative py-24 overflow-hidden ${theme === 'dark' ? 'bg-zinc-900' : 'bg-zinc-50'}`}>
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 z-10">
         <div className="stat-anim mb-24 md:w-3/4">
-          <h2 className={`font-display text-5xl font-black leading-[0.9] uppercase ${theme === 'dark' ? 'text-white' : 'text-zinc-950'}`}>
+          <h2 className={`font-display text-5xl font-black  uppercase ${theme === 'dark' ? 'text-white' : 'text-zinc-950'}`}>
             {title.split(/\\n|\n/).map((line, i) => (
               <span key={i} className="block">{line}</span>
             ))}

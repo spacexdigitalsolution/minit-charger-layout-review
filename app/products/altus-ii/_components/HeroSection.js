@@ -43,7 +43,7 @@ export default function HeroSection() {
       {/* Content Layer */}
       <div className="relative z-20 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
         <div className="max-w-2xl">
-          <h1 className="hero-headline font-display text-6xl md:text-7xl font-black tracking-tighter text-white uppercase leading-[0.9] mb-4">
+          <h1 className="hero-headline font-display text-6xl md:text-7xl font-black  text-white uppercase  mb-4">
             Altus II
           </h1>
           <p className="hero-subcopy mt-3 text-lg text-zinc-300 sm:mt-5 sm:text-2xl lg:text-xl xl:text-2xl font-light">
@@ -54,20 +54,20 @@ export default function HeroSection() {
 
           <div className="hero-specs mt-10 flex flex-col sm:flex-row gap-4">
             <div className="bg-black/40 backdrop-blur-md border border-white/10 p-5 rounded flex items-center justify-between sm:w-1/2">
-              <dt className="text-sm font-bold text-zinc-400 uppercase tracking-wider">Power Output</dt>
-              <dd className="mt-1 text-2xl font-display font-bold tracking-tight text-white">40 kW</dd>
+              <dt className="text-sm font-bold text-zinc-400 uppercase r">Power Output</dt>
+              <dd className="mt-1 text-2xl font-display font-bold  text-white">40 kW</dd>
             </div>
             <div className="bg-black/40 backdrop-blur-md border border-white/10 p-5 rounded flex items-center justify-between sm:w-1/2">
-              <dt className="text-sm font-bold text-zinc-400 uppercase tracking-wider">Ports</dt>
-              <dd className="mt-1 text-2xl font-display font-bold tracking-tight text-white">2 - 3</dd>
+              <dt className="text-sm font-bold text-zinc-400 uppercase r">Ports</dt>
+              <dd className="mt-1 text-2xl font-display font-bold  text-white">2 - 3</dd>
             </div>
           </div>
 
           <div className="hero-buttons mt-10 flex gap-4">
-            <button className="inline-flex items-center justify-center rounded bg-green-600 px-8 py-4 text-sm font-bold text-white hover:bg-green-700 transition-colors uppercase tracking-wider">
+            <button className="inline-flex items-center justify-center rounded bg-green-600 px-8 py-4 text-sm font-bold text-white hover:bg-green-700 transition-colors uppercase r">
               Get a Quote
             </button>
-            <button className="inline-flex items-center justify-center rounded border border-white/20 px-8 py-4 text-sm font-bold text-white hover:bg-white/10 transition-colors uppercase tracking-wider backdrop-blur-sm">
+            <button className="inline-flex items-center justify-center rounded border border-white/20 px-8 py-4 text-sm font-bold text-white hover:bg-white/10 transition-colors uppercase r backdrop-blur-sm">
               <Download className="mr-2 h-4 w-4" /> Specs
             </button>
           </div>

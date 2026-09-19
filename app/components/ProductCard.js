@@ -28,16 +28,16 @@ export default function ProductCard({ item, imageMode = "cover", isLight = false
       {/* Text Content overlay */}
       <div className="absolute inset-0 p-8 pr-16 flex flex-col justify-end pointer-events-none">
         {(item.kicker || item.categoryTag) && (
-          <span className={`text-[10px] font-bold text-[#8CD34D] uppercase tracking-widest pointer-events-auto ${item.secondaryTag ? 'mb-0.5' : 'mb-2'}`}>
+          <span className={`text-[10px] font-bold text-[#8CD34D] uppercase  pointer-events-auto ${item.secondaryTag ? 'mb-0.5' : 'mb-2'}`}>
             {item.kicker || item.categoryTag}
           </span>
         )}
         {item.secondaryTag && (
-          <span className="text-[10px] font-bold text-zinc-300 uppercase tracking-widest mb-2 pointer-events-auto">
+          <span className="text-[10px] font-bold text-zinc-300 uppercase  mb-2 pointer-events-auto">
             {item.secondaryTag}
           </span>
         )}
-        <h3 className="font-oswald text-2xl md:text-3xl font-bold uppercase tracking-wide text-white pointer-events-auto text-balance line-clamp-4">
+        <h3 className="font-oswald text-2xl md:text-3xl font-bold uppercase  text-white pointer-events-auto text-balance line-clamp-4">
           {item.name}
         </h3>
         {(item.description || item.shortDescription) && (

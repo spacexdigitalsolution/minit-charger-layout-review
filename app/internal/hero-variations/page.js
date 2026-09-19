@@ -14,7 +14,7 @@ export const metadata = {
 export default function HeroVariationsPage() {
   return (
     <main className="bg-white dark:bg-zinc-950 min-h-screen">
-      <div className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-zinc-950/80 backdrop-blur-md border-b border-zinc-200 dark:border-zinc-800 text-[10px] font-bold uppercase tracking-widest flex items-center justify-center flex-wrap gap-4 py-3 px-4 shadow-sm text-zinc-600 dark:text-zinc-400">
+      <div className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-zinc-950/80 backdrop-blur-md border-b border-zinc-200 dark:border-zinc-800 text-[10px] font-bold uppercase  flex items-center justify-center flex-wrap gap-4 py-3 px-4 shadow-sm text-zinc-600 dark:text-zinc-400">
         <a href="#var-1" className="hover:text-green-600 transition-colors">Var 1: Full-Bleed</a>
         <a href="#var-2" className="hover:text-green-600 transition-colors">Var 2: Split Screen</a>
         <a href="#var-3" className="hover:text-green-600 transition-colors">Var 3: Diagram</a>
@@ -24,15 +24,15 @@ export default function HeroVariationsPage() {
         <a href="#var-7" className="hover:text-green-600 transition-colors">Var 7: Persona</a>
       </div>
 
-        <div className="pt-[44px]"> {/* Offset for fixed nav */}
-          <section id="var-1" className="min-h-screen relative border-b-8 border-red-500"><Var1FullBleed /></section>
-          <section id="var-2" className="min-h-screen relative border-b-8 border-red-500"><Var2SplitScreen /></section>
-          <section id="var-3" className="min-h-screen relative border-b-8 border-red-500"><Var3Diagram /></section>
-          <section id="var-4" className="min-h-screen relative border-b-8 border-red-500"><Var4Oversized /></section>
-          <section id="var-5" className="min-h-screen relative border-b-8 border-red-500"><Var5StatLed /></section>
-          <section id="var-6" className="min-h-screen relative border-b-8 border-red-500"><Var6Moody /></section>
-          <section id="var-7" className="min-h-screen relative border-b-8 border-red-500"><Var7Persona /></section>
-        </div>
+      <div className="pt-[44px]"> {/* Offset for fixed nav */}
+        <section id="var-1" className="min-h-screen relative border-b-8 border-red-500"><Var1FullBleed /></section>
+        <section id="var-2" className="min-h-screen relative border-b-8 border-red-500"><Var2SplitScreen /></section>
+        <section id="var-3" className="min-h-screen relative border-b-8 border-red-500"><Var3Diagram /></section>
+        <section id="var-4" className="min-h-screen relative border-b-8 border-red-500"><Var4Oversized /></section>
+        <section id="var-5" className="min-h-screen relative border-b-8 border-red-500"><Var5StatLed /></section>
+        <section id="var-6" className="min-h-screen relative border-b-8 border-red-500"><Var6Moody /></section>
+        <section id="var-7" className="min-h-screen relative border-b-8 border-red-500"><Var7Persona /></section>
+      </div>
     </main>
   );
 }

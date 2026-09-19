@@ -19,11 +19,11 @@ export default function BlogCard({ item, imageMode = "cover", isLight = false, p
 
       <div className="flex flex-col flex-grow">
         {item.kicker && (
-          <span className="text-[10px] font-bold text-green-600 dark:text-green-500 uppercase tracking-widest mb-3 pointer-events-auto">
+          <span className="text-[10px] font-bold text-green-600 dark:text-green-500 uppercase  mb-3 pointer-events-auto">
             {item.kicker}
           </span>
         )}
-        <h3 className={`font-display text-2xl font-bold uppercase tracking-wide text-balance ${isLight ? 'text-zinc-900 group-hover:text-green-600' : 'text-white group-hover:text-green-400'} transition-colors leading-tight`}>
+        <h3 className={`font-display text-2xl font-bold uppercase  text-balance ${isLight ? 'text-zinc-900 group-hover:text-green-600' : 'text-white group-hover:text-green-400'} transition-colors `}>
           {item.name}
         </h3>
         {item.description && (

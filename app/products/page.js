@@ -12,7 +12,7 @@ export default function ProductsPage() {
     <main className="bg-white min-h-screen">
       <div className="pt-24 pb-16 bg-zinc-950">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-12">
-          <h1 className="font-oswald text-5xl font-bold uppercase tracking-wide text-white mb-3">
+          <h1 className="font-oswald text-5xl font-bold uppercase  text-white mb-3">
             Products
           </h1>
           <p className="text-xl text-zinc-400 max-w-3xl font-sans">
@@ -25,12 +25,12 @@ export default function ProductsPage() {
       <div className="sticky top-20 z-40 bg-white/95 backdrop-blur-md border-b border-zinc-200 shadow-sm hidden md:block">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-8 overflow-x-auto py-4 scrollbar-hide">
-            <span className="text-xs font-bold uppercase tracking-widest text-zinc-400 shrink-0">Jump to:</span>
+            <span className="text-xs font-bold uppercase  text-zinc-400 shrink-0">Jump to:</span>
             {productCategories.map(cat => {
               const hasProducts = products.some(p => p.categories?.includes(cat.id));
               if (!hasProducts) return null;
               return (
-                <a key={cat.id} href={`#cat-${cat.id}`} className="text-xs font-bold uppercase tracking-widest text-zinc-600 hover:text-zinc-900 transition-colors whitespace-nowrap">
+                <a key={cat.id} href={`#cat-${cat.id}`} className="text-xs font-bold uppercase  text-zinc-600 hover:text-zinc-900 transition-colors whitespace-nowrap">
                   {cat.name}
                 </a>
               );

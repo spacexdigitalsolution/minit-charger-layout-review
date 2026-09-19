@@ -16,20 +16,20 @@ export default function HardwareDetail() {
     let mm = gsap.matchMedia();
     mm.add("(prefers-reduced-motion: no-preference)", () => {
       gsap.from(".hd-img-1", {
-        scrollTrigger: { trigger: ".hd-block-1", start: "top 80%", toggleActions: "play none none none", once: true},
+        scrollTrigger: { trigger: ".hd-block-1", start: "top 80%", toggleActions: "play none none none", once: true },
         x: -30, autoAlpha: 0, duration: 0.8, ease: "power2.out", clearProps: "all"
       });
       gsap.from(".hd-text-1", {
-        scrollTrigger: { trigger: ".hd-block-1", start: "top 80%", toggleActions: "play none none none", once: true},
+        scrollTrigger: { trigger: ".hd-block-1", start: "top 80%", toggleActions: "play none none none", once: true },
         y: 30, autoAlpha: 0, duration: 0.8, ease: "power2.out", clearProps: "all"
       });
 
       gsap.from(".hd-img-2", {
-        scrollTrigger: { trigger: ".hd-block-2", start: "top 80%", toggleActions: "play none none none", once: true},
+        scrollTrigger: { trigger: ".hd-block-2", start: "top 80%", toggleActions: "play none none none", once: true },
         x: 30, autoAlpha: 0, duration: 0.8, ease: "power2.out", clearProps: "all"
       });
       gsap.from(".hd-text-2", {
-        scrollTrigger: { trigger: ".hd-block-2", start: "top 80%", toggleActions: "play none none none", once: true},
+        scrollTrigger: { trigger: ".hd-block-2", start: "top 80%", toggleActions: "play none none none", once: true },
         y: 30, autoAlpha: 0, duration: 0.8, ease: "power2.out", clearProps: "all"
       });
     });
@@ -50,7 +50,7 @@ export default function HardwareDetail() {
             />
           </div>
           <div className="hd-text-1 lg:col-span-5 mt-12 lg:mt-0">
-            <h2 className="font-display text-3xl font-black tracking-tighter text-zinc-900 dark:text-white sm:text-4xl uppercase mb-6">
+            <h2 className="font-display text-3xl font-black  text-zinc-900 dark:text-white sm:text-4xl uppercase mb-6">
               Track What's Used. Bill It Automatically.
             </h2>
             <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-8">
@@ -75,7 +75,7 @@ export default function HardwareDetail() {
 
         <div className="hd-block-2 lg:grid lg:grid-cols-12 lg:gap-16 items-center">
           <div className="hd-text-2 order-2 lg:order-1 lg:col-span-5 mt-12 lg:mt-0">
-            <h2 className="font-display text-3xl font-black tracking-tighter text-zinc-900 dark:text-white sm:text-4xl uppercase mb-6">
+            <h2 className="font-display text-3xl font-black  text-zinc-900 dark:text-white sm:text-4xl uppercase mb-6">
               More Power. No New Wiring.
             </h2>
             <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-8">

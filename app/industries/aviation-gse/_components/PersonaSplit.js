@@ -57,7 +57,7 @@ export default function PersonaSplit() {
         ease: "power2.out",
         clearProps: "all"
       });
-      
+
       gsap.from(contentRef.current, {
         scrollTrigger: {
           trigger: containerRef.current,
@@ -74,7 +74,7 @@ export default function PersonaSplit() {
 
   const handleTabClick = contextSafe((id) => {
     if (id === activePersona) return;
-    
+
     gsap.to(contentRef.current, {
       autoAlpha: 0,
       y: 10,
@@ -96,18 +96,17 @@ export default function PersonaSplit() {
   return (
     <section ref={containerRef} className="py-24 bg-white dark:bg-zinc-950 border-b border-zinc-200 dark:border-zinc-800 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Navigation Tabs */}
         <div className="persona-nav flex flex-wrap justify-center gap-2 mb-16">
           {Object.values(personaContent).map((tab) => (
             <button
               key={tab.id}
               onClick={() => handleTabClick(tab.id)}
-              className={`px-6 py-3 text-sm font-bold uppercase tracking-wider rounded-sm transition-all duration-300 ${
-                activePersona === tab.id
-                  ? "bg-zinc-900 text-white dark:bg-white dark:text-zinc-950"
-                  : "bg-zinc-100 text-zinc-500 hover:bg-zinc-200 hover:text-zinc-900 dark:bg-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-white"
-              }`}
+              className={`px-6 py-3 text-sm font-bold uppercase r rounded-sm transition-all duration-300 ${activePersona === tab.id
+                ? "bg-zinc-900 text-white dark:bg-white dark:text-zinc-950"
+                : "bg-zinc-100 text-zinc-500 hover:bg-zinc-200 hover:text-zinc-900 dark:bg-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-white"
+                }`}
             >
               {tab.label}
             </button>
@@ -116,36 +115,36 @@ export default function PersonaSplit() {
 
         {/* Dynamic Content */}
         <div ref={contentRef} className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
-          
+
           <div className="lg:col-span-6">
-            <span className="text-[10px] font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-widest mb-4 block">
+            <span className="text-[10px] font-bold text-zinc-400 dark:text-zinc-500 uppercase  mb-4 block">
               Built For Your Role
             </span>
-            <h2 className="font-display text-3xl font-black tracking-tighter text-zinc-900 dark:text-white sm:text-4xl uppercase mb-10 leading-tight">
+            <h2 className="font-display text-3xl font-black  text-zinc-900 dark:text-white sm:text-4xl uppercase mb-10 ">
               {activeData.headline}
             </h2>
-            
+
             <div className="mb-8">
-              <h3 className="text-[10px] font-bold text-zinc-500 dark:text-zinc-400 uppercase tracking-widest mb-3 border-b border-zinc-200 dark:border-zinc-800 pb-2">The Challenge</h3>
-              <p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
+              <h3 className="text-[10px] font-bold text-zinc-500 dark:text-zinc-400 uppercase  mb-3 border-b border-zinc-200 dark:border-zinc-800 pb-2">The Challenge</h3>
+              <p className="text-lg text-zinc-600 dark:text-zinc-400 ">
                 {activeData.problem}
               </p>
             </div>
 
             <div>
-              <h3 className="text-[10px] font-bold text-zinc-500 dark:text-zinc-400 uppercase tracking-widest mb-3 border-b border-zinc-200 dark:border-zinc-800 pb-2">The Capability</h3>
-              <p className="text-lg text-zinc-900 dark:text-white leading-relaxed font-medium">
+              <h3 className="text-[10px] font-bold text-zinc-500 dark:text-zinc-400 uppercase  mb-3 border-b border-zinc-200 dark:border-zinc-800 pb-2">The Capability</h3>
+              <p className="text-lg text-zinc-900 dark:text-white  font-medium">
                 {activeData.solution}
               </p>
             </div>
           </div>
 
           <div className="lg:col-span-6 relative w-full aspect-square md:aspect-[4/3] bg-zinc-100 dark:bg-zinc-900 overflow-hidden rounded-sm">
-            <SmartImage 
+            <SmartImage
               key={activeData.id}
-              src={activeData.image} 
-              alt={activeData.label} 
-              fill 
+              src={activeData.image}
+              alt={activeData.label}
+              fill
               className="object-contain object-center p-4"
             />
           </div>

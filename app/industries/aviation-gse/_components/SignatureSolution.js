@@ -35,10 +35,10 @@ export default function SignatureSolution() {
 
         {/* Header */}
         <div className="ss-header text-center mb-16 max-w-3xl mx-auto">
-          <span className="text-[10px] font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-widest mb-4 block">
+          <span className="text-[10px] font-bold text-zinc-400 dark:text-zinc-500 uppercase  mb-4 block">
             Signature Solution
           </span>
-          <h2 className="text-3xl md:text-5xl font-display font-black tracking-tighter uppercase text-zinc-900 dark:text-white">
+          <h2 className="text-3xl md:text-5xl font-display font-black  uppercase text-zinc-900 dark:text-white">
             Your Site, Configured.
           </h2>
         </div>
@@ -74,26 +74,26 @@ export default function SignatureSolution() {
           {/* HTML Callouts */}
           {/* Callout 1 (Top Left) */}
           <div className="ss-callout absolute top-[33%] right-[75%] text-right z-30 hidden md:block max-w-[200px]">
-            <span className="text-[10px] font-bold text-zinc-500 dark:text-zinc-400 uppercase tracking-wider block mb-1">Power Output</span>
-            <span className="text-sm font-black text-zinc-900 dark:text-white uppercase leading-tight">30–80 kW Output</span>
+            <span className="text-[10px] font-bold text-zinc-500 dark:text-zinc-400 uppercase r block mb-1">Power Output</span>
+            <span className="text-sm font-black text-zinc-900 dark:text-white uppercase ">30–80 kW Output</span>
           </div>
 
           {/* Callout 2 (Middle Right) */}
           <div className="ss-callout absolute top-[53%] left-[75%] text-left z-30 hidden md:block max-w-[200px]">
-            <span className="text-[10px] font-bold text-zinc-500 dark:text-zinc-400 uppercase tracking-wider block mb-1">Port Configuration</span>
-            <span className="text-sm font-black text-zinc-900 dark:text-white uppercase leading-tight">Dual Port</span>
+            <span className="text-[10px] font-bold text-zinc-500 dark:text-zinc-400 uppercase r block mb-1">Port Configuration</span>
+            <span className="text-sm font-black text-zinc-900 dark:text-white uppercase ">Dual Port</span>
           </div>
 
           {/* Callout 3 (Bottom Left) */}
           <div className="ss-callout absolute top-[63%] right-[75%] text-right z-30 hidden md:block max-w-[200px]">
-            <span className="text-[10px] font-bold text-zinc-500 dark:text-zinc-400 uppercase tracking-wider block mb-1">Connectors</span>
-            <span className="text-sm font-black text-zinc-900 dark:text-white uppercase leading-tight">Anderson, Euro, REMA</span>
+            <span className="text-[10px] font-bold text-zinc-500 dark:text-zinc-400 uppercase r block mb-1">Connectors</span>
+            <span className="text-sm font-black text-zinc-900 dark:text-white uppercase ">Anderson, Euro, REMA</span>
           </div>
 
           {/* Callout 4 (Top Right) */}
           <div className="ss-callout absolute top-[26%] left-[75%] text-left z-30 hidden md:block max-w-[220px]">
-            <span className="text-[10px] font-bold text-zinc-500 dark:text-zinc-400 uppercase tracking-wider block mb-1">Battery Chemistry</span>
-            <span className="text-sm font-black text-zinc-900 dark:text-white uppercase leading-tight">Lead Acid, Lithium, EV Compatible</span>
+            <span className="text-[10px] font-bold text-zinc-500 dark:text-zinc-400 uppercase r block mb-1">Battery Chemistry</span>
+            <span className="text-sm font-black text-zinc-900 dark:text-white uppercase ">Lead Acid, Lithium, EV Compatible</span>
           </div>
         </div>
 
@@ -102,25 +102,25 @@ export default function SignatureSolution() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0 divide-y md:divide-y-0 md:divide-x divide-zinc-200 dark:divide-zinc-800">
 
             <div className="ss-stat flex flex-col items-center text-center px-4 pt-4 md:pt-0">
-              <span className="text-[10px] font-bold text-zinc-500 dark:text-zinc-400 uppercase tracking-widest mb-2">Max Efficiency</span>
+              <span className="text-[10px] font-bold text-zinc-500 dark:text-zinc-400 uppercase  mb-2">Max Efficiency</span>
               <span className="font-display text-4xl md:text-5xl font-black text-zinc-900 dark:text-white">95<span className="text-2xl md:text-3xl ml-1">%</span></span>
             </div>
 
             <div className="ss-stat flex flex-col items-center text-center px-4 pt-8 md:pt-0">
-              <span className="text-[10px] font-bold text-zinc-500 dark:text-zinc-400 uppercase tracking-widest mb-2">Operating Environment</span>
-              <span className="font-display text-2xl md:text-3xl font-black text-zinc-900 dark:text-white leading-tight mt-2">Outdoor Rated</span>
+              <span className="text-[10px] font-bold text-zinc-500 dark:text-zinc-400 uppercase  mb-2">Operating Environment</span>
+              <span className="font-display text-2xl md:text-3xl font-black text-zinc-900 dark:text-white  mt-2">Outdoor Rated</span>
             </div>
 
             <div className="ss-stat flex flex-col items-center text-center px-4 pt-8 md:pt-0">
-              <span className="text-[10px] font-bold text-zinc-500 dark:text-zinc-400 uppercase tracking-widest mb-2">Installation</span>
-              <span className="font-display text-2xl md:text-3xl font-black text-zinc-900 dark:text-white leading-tight mt-2">Pedestal</span>
+              <span className="text-[10px] font-bold text-zinc-500 dark:text-zinc-400 uppercase  mb-2">Installation</span>
+              <span className="font-display text-2xl md:text-3xl font-black text-zinc-900 dark:text-white  mt-2">Pedestal</span>
             </div>
 
           </div>
         </div>
 
         <div className="text-center mt-12">
-          <Link href="/contact" className="inline-flex items-center justify-center rounded border border-zinc-900 dark:border-white px-8 py-4 text-sm font-bold text-zinc-900 dark:text-white hover:bg-zinc-900 hover:text-white dark:hover:bg-white dark:hover:text-zinc-950 transition-colors uppercase tracking-wider">
+          <Link href="/contact" className="inline-flex items-center justify-center rounded border border-zinc-900 dark:border-white px-8 py-4 text-sm font-bold text-zinc-900 dark:text-white hover:bg-zinc-900 hover:text-white dark:hover:bg-white dark:hover:text-zinc-950 transition-colors uppercase r">
             Speak to an Expert
           </Link>
         </div>
