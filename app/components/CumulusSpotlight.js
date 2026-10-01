@@ -75,6 +75,7 @@ export default function CumulusSpotlight({
                 alt="Cumulus Dashboard Interface"
                 fill
                 className="object-contain drop-shadow-xl"
+                mode="placeholder"
               />
             </div>
           </div>

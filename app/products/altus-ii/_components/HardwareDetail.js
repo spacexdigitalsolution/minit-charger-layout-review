@@ -46,6 +46,7 @@ export default function HardwareDetail() {
               src="/assets/ai_placeholders/cumulus_billing_dashboard_1789225361318.jpg"
               alt="Power Usage Billing Dashboard"
               fill
+              mode="placeholder"
               className="object-cover"
             />
           </div>
@@ -102,7 +103,8 @@ export default function HardwareDetail() {
               src="/assets/ai_placeholders/altus_power_struggle_1789225372860.jpg"
               alt="Intelligent Power Sharing Illustration"
               fill
-              className="object-cover"
+              //The X-Ray of Our  className="object-cover"
+              mode="placeholder"
             />
           </div>
         </div>
