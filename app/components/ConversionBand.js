@@ -11,6 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function ConversionBand({
   headline = "Ready to deploy the Altus II in your fleet?",
+  subheadline = null,
   primaryCTA = { label: "Speak to an Expert", href: "/contact" },
   secondaryCTA = { label: "Request a Quote", href: "/contact" },
   bgImage = null // Optional background image
@@ -42,9 +43,14 @@ export default function ConversionBand({
       <div className={`absolute inset-0 z-10 ${bgImage ? 'bg-zinc-950/85' : ''}`} />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center z-20">
-        <h2 className="cb-anim font-display text-5xl md:text-5xl font-black  text-white uppercase  mb-10 max-w-4xl mx-auto">
+        <h2 className="cb-anim font-display text-5xl md:text-5xl font-black  text-white uppercase  mb-4 max-w-4xl mx-auto">
           {headline}
         </h2>
+        {subheadline && (
+          <p className="cb-anim text-xl text-zinc-300 font-light mb-10 max-w-2xl mx-auto">
+            {subheadline}
+          </p>
+        )}
         <div className="cb-anim flex flex-col sm:flex-row gap-6 justify-center">
           <Link href={primaryCTA.href} className="inline-flex items-center justify-center rounded-none bg-green-600 px-8 py-4 text-lg font-bold text-white hover:bg-green-700 transition-colors uppercase r">
             {primaryCTA.label}

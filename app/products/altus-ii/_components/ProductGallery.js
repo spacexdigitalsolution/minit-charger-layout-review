@@ -7,19 +7,15 @@ export default function ProductGallery({ images }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [zoomLevel, setZoomLevel] = useState(1);
   const [zoomOrigin, setZoomOrigin] = useState("50% 50%");
-  const [isTouchDevice, setIsTouchDevice] = useState(false);
   const containerRef = useRef(null);
 
-  useEffect(() => {
-    // Detect touch device
-    if (typeof window !== "undefined" && ("ontouchstart" in window || navigator.maxTouchPoints > 0)) {
-      setIsTouchDevice(true);
-    }
-  }, []);
+  const isTouchDevice = () => {
+    return typeof window !== "undefined" && ("ontouchstart" in window || navigator.maxTouchPoints > 0);
+  };
 
   useEffect(() => {
     const container = containerRef.current;
-    if (!container || isTouchDevice) return;
+    if (!container || isTouchDevice()) return;
 
     const handleWheel = (e) => {
       e.preventDefault(); // Stop native page scroll
@@ -39,16 +35,16 @@ export default function ProductGallery({ images }) {
     return () => {
       container.removeEventListener("wheel", handleWheel);
     };
-  }, [isTouchDevice]);
+  }, []);
 
   const handleMouseEnter = () => {
-    if (!isTouchDevice) {
+    if (!isTouchDevice()) {
       setZoomLevel(2);
     }
   };
 
   const handleMouseMove = (e) => {
-    if (isTouchDevice || !containerRef.current) return;
+    if (isTouchDevice() || !containerRef.current) return;
 
     const { left, top, width, height } = containerRef.current.getBoundingClientRect();
     const x = ((e.clientX - left) / width) * 100;
@@ -58,13 +54,13 @@ export default function ProductGallery({ images }) {
   };
 
   const handleMouseLeave = () => {
-    if (!isTouchDevice) {
+    if (!isTouchDevice()) {
       setZoomLevel(1);
     }
   };
 
   const handleImageClick = () => {
-    if (isTouchDevice) {
+    if (isTouchDevice()) {
       // Toggle zoom on tap for touch devices
       if (zoomLevel === 1) {
         setZoomOrigin("50% 50%");
@@ -81,7 +77,7 @@ export default function ProductGallery({ images }) {
       <div
         ref={containerRef}
         data-lenis-prevent="true"
-        className="relative bg-zinc-50 dark:bg-zinc-900/40 rounded-2xl border border-zinc-200 dark:border-zinc-800 flex items-center justify-center min-h-[500px] overflow-hidden group cursor-crosshair"
+        className="relative bg-zinc-100 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-800 flex items-center justify-center min-h-[500px] overflow-hidden group cursor-crosshair"
         onMouseEnter={handleMouseEnter}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
@@ -110,8 +106,8 @@ export default function ProductGallery({ images }) {
         ))}
 
         {/* Accessibility Hint for Zoom */}
-        <div className="absolute top-4 right-4 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-sm px-3 py-1.5 rounded-full border border-zinc-200 dark:border-zinc-800 text-xs font-semibold text-zinc-600 dark:text-zinc-400 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-20">
-          {isTouchDevice ? "Tap to zoom" : "Scroll to zoom"}
+        <div className="absolute top-4 right-4 bg-zinc-950 px-3 py-1.5 border border-zinc-800 text-[10px] uppercase tracking-widest font-bold text-zinc-400 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-20">
+          Scroll to zoom
         </div>
       </div>
 
@@ -125,9 +121,9 @@ export default function ProductGallery({ images }) {
                 setActiveIndex(index);
                 setZoomLevel(1); // Reset zoom on image change
               }}
-              className={`relative flex-shrink-0 w-24 h-24 rounded-xl border-2 transition-all overflow-hidden bg-zinc-50 dark:bg-zinc-900/40 ${index === activeIndex
-                ? "border-green-600 dark:border-green-500 ring-2 ring-green-600/20"
-                : "border-zinc-200 dark:border-zinc-800 hover:border-zinc-400 dark:hover:border-zinc-600"
+              className={`relative flex-shrink-0 w-24 h-24 border transition-all overflow-hidden bg-zinc-100 dark:bg-zinc-900 ${index === activeIndex
+                ? "border-zinc-900 dark:border-white"
+                : "border-zinc-300 dark:border-zinc-800 hover:border-zinc-500 dark:hover:border-zinc-600"
                 }`}
               aria-label={`View ${image.alt}`}
               aria-current={index === activeIndex ? "true" : "false"}

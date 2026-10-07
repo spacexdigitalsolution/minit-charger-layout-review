@@ -77,7 +77,7 @@ export default function AltusIIProductPage() {
               "Alerts the moment a battery misses equalization"
             ]}
             imageSide="left"
-            // AI-generated placeholder — replace with real photography, approved 2026-09-12
+            // AI-generated placeholder - replace with real photography, approved 2026-09-12
             dashboardImage="/assets/ai_placeholders/cumulus_billing_dashboard_1789225361318.jpg"
           />
 

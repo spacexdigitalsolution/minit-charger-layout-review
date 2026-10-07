@@ -1,11 +1,10 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { Download } from "lucide-react";
-import SmartImage from "../../../components/SmartImage";
 import ProductGallery from "./ProductGallery";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -31,10 +30,10 @@ const specCategories = [
   {
     name: "Hardware",
     specs: [
-      { label: "Port Options", value: "Anderson, Euro 320, REMA 320, BIW (standard), J1772 (optional 3rd port, Level 2 EV charging)" },
+      { label: "Port Options", value: "Anderson, Euro 320, REMA 320, BIW (standard), J1772 (optional 3rd port)" },
       { label: "User Interface", value: "7\" Graphic LCD with Touch Panel" },
       { label: "Communication", value: "Cellular, Wi-Fi, Ethernet" },
-      { label: "Protection", value: "Over current, over voltage, under voltage, short circuit, ground fault, over temp" },
+      { label: "Protection", value: "Over current, voltage, short circuit, ground fault, over temp" },
       { label: "Regulatory Certification", value: "UL1564" },
     ]
   },
@@ -52,100 +51,48 @@ const specCategories = [
 const galleryImages = [
   { src: "/assets/Products/Altus II/Altus II Listing.webp", alt: "Altus II Hardware Render (Angled)" },
   { src: "/assets/Products/Altus II/ALTUSII_FRONT.webp", alt: "Altus II Hardware Render (Front)" },
-  // AI-generated placeholder — replace with real photography, approved 2026-09-12
   { src: "/assets/ai_placeholders/altus_side_profile_1789225073213.jpg", alt: "Altus II Side Profile" },
-  // AI-generated placeholder — replace with real photography, approved 2026-09-12
   { src: "/assets/ai_placeholders/altus_port_closeup_1789225089877.jpg", alt: "Altus II Port Close-up" },
-  // AI-generated placeholder — replace with real photography, approved 2026-09-12
   { src: "/assets/ai_placeholders/altus_screen_closeup_1789225105457.jpg", alt: "Altus II Screen Close-up" },
-  // AI-generated placeholder — replace with real photography, approved 2026-09-12
   { src: "/assets/ai_placeholders/altus_deployment_shot_1789225117192.jpg", alt: "Altus II Tarmac Deployment" }
 ];
 
 export default function SpecsTable() {
   const containerRef = useRef(null);
-  const tabsWrapperRef = useRef(null);
-  const tabsRef = useRef([]);
   const [activeTab, setActiveTab] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
 
-  const { contextSafe } = useGSAP(() => {
+  useGSAP(() => {
     let mm = gsap.matchMedia();
     mm.add("(prefers-reduced-motion: no-preference)", () => {
-      const tl = gsap.timeline({
+      gsap.from(".specs-anim", {
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "top 80%", toggleActions: "play none none none", once: true
-        }
+          start: "top 80%", toggleActions: "play none none none"
+        },
+        y: 30, autoAlpha: 0, duration: 0.8, stagger: 0.1, ease: "power2.out"
       });
-
-      tl.from(".specs-anim", { y: 30, autoAlpha: 0, duration: 0.8, stagger: 0.1, ease: "power2.out", clearProps: "all" });
     });
-
-    // Initial indicator position
-    if (tabsRef.current[0]) {
-      gsap.set(".tab-indicator", {
-        x: tabsRef.current[0].offsetLeft,
-        width: tabsRef.current[0].offsetWidth
-      });
-    }
   }, { scope: containerRef });
 
-  const handleTabChange = contextSafe((index) => {
-    if (index === activeTab || isAnimating) return;
-    setIsAnimating(true);
-
-    // Slide indicator
-    if (tabsRef.current[index]) {
-      gsap.to(".tab-indicator", {
-        x: tabsRef.current[index].offsetLeft,
-        width: tabsRef.current[index].offsetWidth,
-        duration: 0.3,
-        ease: "power2.out"
-      });
-    }
-
-    // Animate rows out
-    gsap.to(".spec-row", {
-      autoAlpha: 0,
-      x: -10,
-      duration: 0.15,
-      stagger: 0.02,
-      onComplete: () => {
-        setActiveTab(index);
-        // Animate rows in
-        gsap.fromTo(".spec-row",
-          { autoAlpha: 0, x: 10 },
-          {
-            autoAlpha: 1, x: 0, duration: 0.2, stagger: 0.05, ease: "power2.out", clearProps: "all",
-            onComplete: () => setIsAnimating(false)
-          }
-        );
-      }
-    });
-  });
-
   return (
-    <section ref={containerRef} id="specs" className="py-24 bg-white dark:bg-zinc-950 overflow-hidden relative">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section ref={containerRef} id="specs" className="py-24 bg-white dark:bg-zinc-950 border-b-2 border-zinc-200 dark:border-zinc-900 overflow-hidden relative">
+      <div className="mx-auto max-w-[1600px] px-6 md:px-12">
 
         {/* Header Area */}
-        <div className="specs-anim flex flex-col md:flex-row md:items-end justify-between mb-16">
+        <div className="specs-anim flex flex-col md:flex-row md:items-end justify-between mb-16 border-b-4 border-zinc-900 dark:border-white pb-8">
           <div>
-            <h2 className="font-display text-4xl font-black  text-zinc-900 dark:text-white uppercase mb-4">
-              The Full Technical Picture
+            <span className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest mb-4 block">Hardware Specifications</span>
+            <h2 className="font-display text-4xl md:text-6xl font-black text-zinc-900 dark:text-white uppercase leading-none">
+              The Full Technical Picture.
             </h2>
-            <p className="text-xl text-zinc-500 font-light max-w-xl">
-              Everything you need to verify before Altus II goes into service.
-            </p>
           </div>
-          <a href="#" className="mt-8 md:mt-0 group inline-flex items-center text-sm font-bold uppercase  text-zinc-900 dark:text-white hover:text-green-600 dark:hover:text-green-400 transition-colors">
-            Download PDF
-            <Download className="ml-3 h-5 w-5 text-green-600 group-hover:scale-110 transition-transform" />
+          <a href="#" className="mt-8 md:mt-0 group inline-flex items-center text-sm font-bold uppercase text-zinc-900 dark:text-white hover:text-green-600 dark:hover:text-green-400 transition-colors">
+            Download Tech Sheet
+            <Download className="ml-3 h-5 w-5 group-hover:scale-110 transition-transform" />
           </a>
         </div>
 
-        <div className="lg:grid lg:grid-cols-12 lg:gap-16 items-start">
+        <div className="lg:grid lg:grid-cols-12 lg:gap-24 items-start">
 
           {/* Left Column: Sticky Product Render */}
           <div className="hidden lg:block lg:col-span-5 sticky top-32 specs-anim">
@@ -155,36 +102,34 @@ export default function SpecsTable() {
           {/* Right Column: Spec Data */}
           <div className="lg:col-span-7">
             {/* Tabs Row */}
-            <div ref={tabsWrapperRef} className="specs-anim mb-8 border-b border-zinc-200 dark:border-zinc-800 flex overflow-x-auto hide-scrollbar relative">
+            <div className="specs-anim mb-12 border-b border-zinc-200 dark:border-zinc-800 flex overflow-x-auto hide-scrollbar relative gap-8">
               {specCategories.map((cat, index) => {
                 const isActive = activeTab === index;
                 return (
                   <button
                     key={index}
-                    ref={el => tabsRef.current[index] = el}
-                    onClick={() => handleTabChange(index)}
-                    className={`pb-4 px-1 mr-8 text-sm font-bold uppercase r whitespace-nowrap transition-colors ${isActive ? "text-zinc-900 dark:text-white" : "text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300"
+                    onClick={() => setActiveTab(index)}
+                    className={`pb-4 text-sm md:text-base font-bold uppercase tracking-wider whitespace-nowrap transition-colors border-b-2 ${isActive ? "border-zinc-900 dark:border-white text-zinc-900 dark:text-white" : "border-transparent text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300"
                       }`}
                   >
                     {cat.name}
                   </button>
                 );
               })}
-              <span className="tab-indicator absolute bottom-0 left-0 h-[2px] bg-zinc-900 dark:bg-white" />
             </div>
 
             {/* Tab Content */}
             <div className="specs-anim">
-              <div className="divide-y divide-zinc-200 dark:divide-zinc-800 border-t border-b border-zinc-200 dark:border-zinc-800">
+              <div className="divide-y divide-zinc-200 dark:divide-zinc-800">
                 {specCategories[activeTab].specs.map((spec, i) => (
-                  <div key={`${activeTab}-${i}`} className="spec-row flex flex-col sm:flex-row py-6 sm:items-center">
-                    <div className="sm:w-1/3 mb-2 sm:mb-0 pr-4">
-                      <span className="text-sm text-zinc-500 dark:text-zinc-400 font-normal">
+                  <div key={`${activeTab}-${i}`} className="spec-row flex flex-col md:flex-row py-8 md:items-start">
+                    <div className="md:w-2/5 mb-2 md:mb-0 pr-4">
+                      <span className="text-xs uppercase tracking-widest text-zinc-500 font-bold block mt-1">
                         {spec.label}
                       </span>
                     </div>
-                    <div className="sm:w-2/3">
-                      <span className="text-base text-zinc-900 dark:text-zinc-100 font-semibold">
+                    <div className="md:w-3/5">
+                      <span className="text-xl md:text-2xl text-zinc-900 dark:text-white font-light leading-snug">
                         {spec.value}
                       </span>
                     </div>

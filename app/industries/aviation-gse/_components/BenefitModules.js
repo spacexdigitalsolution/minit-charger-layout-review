@@ -69,7 +69,7 @@ export default function BenefitModules() {
               Charge Instantly Where The Fleet Waits
             </h2>
             <p className="text-lg text-zinc-600 dark:text-zinc-400 ">
-              When the ramp needs power but the grid doesn't have it yet, roll in a 200kWh battery on wheels. Mobilus charges up to 4 GSE units and 2 EVs at once, up to 90kW per gun, then recharges itself from any outlet or solar power. No trenching, no waiting on a utility, just power wherever you park it.
+              When the ramp needs power but the grid doesn&apos;t have it yet, roll in a 200kWh battery on wheels. Mobilus charges up to 4 GSE units and 2 EVs at once, up to 90kW per gun, then recharges itself from any outlet or solar power. No trenching, no waiting on a utility, just power wherever you park it.
             </p>
           </div>
           <div className="hd-img-2 order-1 lg:order-2 lg:col-span-7 relative w-full aspect-[4/3] bg-zinc-200 dark:bg-zinc-100 overflow-hidden rounded-sm flex items-center justify-center p-8">

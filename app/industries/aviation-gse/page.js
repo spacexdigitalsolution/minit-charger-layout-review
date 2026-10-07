@@ -1,6 +1,6 @@
 import HeroSection from "./_components/HeroSection";
-import SignatureSolution from "./_components/SignatureSolution";
-import PersonaSplit from "./_components/PersonaSplit";
+import ChallengesScroll from "./_components/ChallengesScroll";
+import ComparisonTable from "./_components/ComparisonTable";
 import BenefitModules from "./_components/BenefitModules";
 import ImageCardGrid from "@/app/components/ImageCardGrid";
 import FaqSection from "@/app/components/FaqSection";
@@ -56,18 +56,9 @@ export default function AviationGSEPage() {
     <>
       <HeroSection />
         <div className="relative z-10 bg-white dark:bg-zinc-950">
-          <SignatureSolution />
-          {/*  <StatsBlock stats={stats} /> */}
-          <PersonaSplit />
+          <ChallengesScroll />
+          <ComparisonTable />
           <BenefitModules />
-
-          {/*  <ImageCardGrid
-            title="One Connected Ecosystem"
-            description="Purpose-built platforms for aviation ground support operations."
-            linkText="View All Products"
-            linkHref="/products"
-            items={products}
-          /> */}
 
           <CumulusSpotlight 
             headline="Nothing On The Ramp Goes Unseen"
@@ -81,13 +72,14 @@ export default function AviationGSEPage() {
           />
 
           <FaqSection
-            title="Aviation GSE FAQ"
+            title="Frequently Asked Queries"
             description="What ground crews, airlines, and airport planners want to know before electrifying their fleets."
             faqs={faqs}
           />
 
           <ConversionBand
-            headline="It's Time To Retire Outdated Charging"
+            headline="It's Time To Retire The Outdated Ones"
+            subheadline="Adapt the modern ecosystem to maximize uptime, efficiency, and your bottom line"
             primaryCTA={{ label: "Speak to a GSE Expert", href: "/contact" }}
             secondaryCTA={{ label: "Request an Assessment", href: "/contact" }}
             bgImage="/assets/gse/MOB_GSE_2.png"

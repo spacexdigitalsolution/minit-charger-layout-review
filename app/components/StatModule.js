@@ -42,14 +42,14 @@ function StatItem({ targetValue, unit, label, index, theme = "dark" }) {
   }, { scope: valueRef });
 
   return (
-    <div className={`stat-anim py-8 md:py-0 ${index === 0 ? 'md:pr-8' : ''} ${index > 0 && index < 2 ? 'md:px-8' : ''} ${index === 2 ? 'md:pl-8' : ''}`}>
+    <div className={`stat-anim py-8 md:py-0 flex flex-col justify-end ${index === 0 ? 'md:pr-8' : ''} ${index > 0 && index < 2 ? 'md:px-8' : ''} ${index === 2 ? 'md:pl-8' : ''}`}>
+      <div className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest mb-4">{label}</div>
       <div
         ref={valueRef}
-        className={`font-display text-5xl  font-black mb-6  ${theme === 'dark' ? 'text-white' : 'text-zinc-950'}`}
+        className={`font-display text-7xl md:text-8xl lg:text-9xl font-black leading-none tracking-tighter ${theme === 'dark' ? 'text-white' : 'text-zinc-950'}`}
       >
         {isNaN(parseFloat(targetValue)) ? targetValue + unit : `0${unit}`}
       </div>
-      <div className="text-sm font-bold text-green-500 uppercase">{label}</div>
     </div>
   );
 }
@@ -88,12 +88,13 @@ export default function StatModule({
     <section ref={containerRef} className={`relative py-24 overflow-hidden ${theme === 'dark' ? 'bg-zinc-900' : 'bg-zinc-50'}`}>
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 z-10">
         <div className="stat-anim mb-24 md:w-3/4">
-          <h2 className={`font-display text-5xl font-black  uppercase ${theme === 'dark' ? 'text-white' : 'text-zinc-950'}`}>
+          <span className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest mb-4 block">Performance Metrics</span>
+          <h2 className={`font-display text-5xl md:text-7xl font-black uppercase leading-[0.9] ${theme === 'dark' ? 'text-white' : 'text-zinc-950'}`}>
             {title.split(/\\n|\n/).map((line, i) => (
               <span key={i} className="block">{line}</span>
             ))}
           </h2>
-          <p className={`mt-8 text-xl max-w-2xl font-light ${theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600'}`}>
+          <p className={`mt-8 text-xl max-w-2xl font-light leading-relaxed ${theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600'}`}>
             {description}
           </p>
         </div>
