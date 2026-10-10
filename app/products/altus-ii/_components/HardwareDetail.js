@@ -65,6 +65,7 @@ export default function HardwareDetail() {
               src="/assets/ai_placeholders/altus_hardware_1791407949017.jpg"
               alt="Heavy duty industrial charging cable macro shot"
               fill
+              mode="placeholder"
               className="object-cover object-center grayscale hover:grayscale-0 transition-all duration-700"
             />
           </div>

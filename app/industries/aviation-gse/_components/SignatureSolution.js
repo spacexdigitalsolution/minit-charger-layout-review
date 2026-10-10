@@ -49,6 +49,7 @@ export default function SignatureSolution() {
             src="/assets/Products/Altus II/ALTUSII_FRONT.webp"
             alt="Altus II Charging Station Diagram"
             fill
+            mode="placeholder"
             className="object-contain z-10 p-8"
           />
 

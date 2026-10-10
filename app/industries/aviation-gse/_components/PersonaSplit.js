@@ -145,6 +145,7 @@ export default function PersonaSplit() {
               src={activeData.image}
               alt={activeData.label}
               fill
+              mode="placeholder"
               className="object-contain object-center p-4"
             />
           </div>

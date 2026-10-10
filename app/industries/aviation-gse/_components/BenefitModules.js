@@ -47,6 +47,7 @@ export default function BenefitModules() {
               src="/assets/ai_placeholders/gse_ecosystem_1789225330392.jpg"
               alt="Magnus Charger supporting mixed fleet operations"
               fill
+              mode="placeholder"
               className="object-cover"
             />
           </div>
@@ -78,6 +79,7 @@ export default function BenefitModules() {
               src="/assets/ai_placeholders/mobilus_deployment_1789225347110.jpg"
               alt="Mobilus mobile charging platform"
               fill
+              mode="placeholder"
               className="object-contain p-12"
             />
           </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import Image from "next/image";
+import SmartImage from "@/app/components/SmartImage";
 
 export default function ProductGallery({ images }) {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -89,12 +89,13 @@ export default function ProductGallery({ images }) {
             className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ease-in-out ${index === activeIndex ? "opacity-100 z-10" : "opacity-0 z-0"
               }`}
           >
-            <Image
+            <SmartImage
               src={image.src}
               alt={image.alt}
               width={800}
               height={800}
               priority={index === 0}
+              mode="placeholder"
               className="object-contain w-full h-full p-4 drop-shadow-2xl mix-blend-multiply dark:mix-blend-normal transition-transform motion-reduce:transition-none"
               style={{
                 transformOrigin: zoomOrigin,
@@ -128,10 +129,11 @@ export default function ProductGallery({ images }) {
               aria-label={`View ${image.alt}`}
               aria-current={index === activeIndex ? "true" : "false"}
             >
-              <Image
+              <SmartImage
                 src={image.src}
                 alt={`Thumbnail of ${image.alt}`}
                 fill
+                mode="placeholder"
                 sizes="(max-width: 96px) 100vw, 96px"
                 className="object-contain p-2 mix-blend-multiply dark:mix-blend-normal"
               />
