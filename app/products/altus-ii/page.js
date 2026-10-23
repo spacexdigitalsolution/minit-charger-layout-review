@@ -1,20 +1,20 @@
 import HeroSection from "./_components/HeroSection";
-import BenefitsGrid from "./_components/BenefitsGrid";
-import HardwareDetail from "./_components/HardwareDetail";
-import StatModule from "@/app/components/StatModule";
 import SpecsTable from "./_components/SpecsTable";
-import UseCases from "./_components/UseCases";
+import BenefitsGrid from "./_components/BenefitsGrid";
+import PowerUsageBilling from "./_components/PowerUsageBilling";
+import GatePowerManager from "./_components/GatePowerManager";
+import StatModule from "@/app/components/StatModule";
+import VideoModule from "./_components/VideoModule";
+import PairAltusII from "./_components/PairAltusII";
 import ImageCardGrid from "@/app/components/ImageCardGrid";
 import FaqSection from "@/app/components/FaqSection";
-import VideoModule from "./_components/VideoModule";
 import ConversionBand from "@/app/components/ConversionBand";
-import CumulusSpotlight from "@/app/components/CumulusSpotlight";
-import SmartImage from "@/app/components/SmartImage";
+import { products as allProducts } from "@/data/products";
 
 const faqs = [
   {
     question: "Why Is Altus II Right Fit For Us?",
-    answer: "It charges GSE and small EVs across Lead Acid, Lithium, or EV batteries, with dual ports plus an optional 3rd port for passenger EVs."
+    answer: "It charges ground equipment on lead-acid or lithium batteries through two independent ports, plus a J1772 port for passenger EVs."
   },
   {
     question: "What Makes It Different From Other Chargers?",
@@ -34,8 +34,6 @@ const faqs = [
   }
 ];
 
-import { products as allProducts } from "@/data/products";
-
 const relatedProductIds = ["magnus", "momentus", "maximus"];
 const relatedProducts = allProducts
   .filter(p => relatedProductIds.includes(p.id))
@@ -50,60 +48,63 @@ const relatedProducts = allProducts
 export default function AltusIIProductPage() {
   return (
     <>
+      {/* 1. Banner Section */}
       <HeroSection />
+
       <div className="relative z-10 bg-white dark:bg-zinc-950">
-          <SpecsTable />
-          <BenefitsGrid />
-          <HardwareDetail />
+        {/* 2. Technical Specifications */}
+        <SpecsTable />
 
-          <StatModule
-            title="Extreme Conditions,\nZero Compromises"
-            description="From desert heat to freezing ramps, Altus II keeps charging at full efficiency."
-            stats={[
-              { targetValue: 95, unit: "%", label: "Max Efficiency" },
-              { targetValue: "IP54", unit: "", label: "Outdoor Rated" },
-              { targetValue: "-13", unit: "°F to 122°F", label: "Full Operating Range" }
-            ]}
-          />
+        {/* 3. Salient Features */}
+        <BenefitsGrid />
 
-          <VideoModule />
+        {/* 4. Power Usage Billing */}
+        <PowerUsageBilling />
 
-          <CumulusSpotlight
-            headline="Charge It. Track It. See It All."
-            supportingCopy="Altus II handles the charging. CellTrac, installed on the vehicle, checks the battery, its temperature, charge level, and health, then tells Altus II exactly how much power to send. Cumulus is the dashboard where you see it all, your chargers and your batteries at one place without switching screens."
-            featureBullets={[
-              "Tracks run time to schedule maintenance before problems start",
-              "GPS and geofencing, know where every vehicle is",
-              "Alerts the moment a battery misses equalization"
-            ]}
-            imageSide="left"
-            // AI-generated placeholder - replace with real photography, approved 2026-09-12
-            dashboardImage="/assets/ai_placeholders/cumulus_billing_dashboard_1789225361318.jpg"
-          />
+        {/* 5. End the Power Struggle */}
+        <GatePowerManager />
 
-          {/*  <UseCases /> */}
+        {/* 6. Engineered for Extremes */}
+        <StatModule
+          title={"Extreme Conditions,\nBuilt-In Protection"}
+          description="From desert heat to freezing ramps, Altus II keeps working. Its silicon carbide electronics handle heat better, and if temperatures climb too high, it lowers its own power to protect itself instead of shutting down."
+          stats={[
+            { targetValue: 95, unit: "%", label: "Max Efficiency" },
+            { targetValue: "IP54", unit: "", label: "Outdoor Rated" },
+            { targetValue: "-13°F to 122°F", unit: "", label: "Full Operating Range" }
+          ]}
+        />
 
-          <ImageCardGrid
-            title="Minit Charger for Every Bottleneck You Run Into"
-            description="The problem doesn't stop at one fleet. Airports, warehouses, transit, every operation has its own. Explore what solves yours."
-            linkText="View All Products"
-            linkHref="/products"
-            items={relatedProducts}
-          />
+        {/* 7. Beyond the Hardware */}
+        <VideoModule />
 
-          <FaqSection
-            title="Some Questions You May Have"
-            description="Here's generally what most people ask frequently before deploying Altus II."
-            faqs={faqs}
-          />
+        {/* 8. Pair Altus II */}
+        <PairAltusII />
 
-          <ConversionBand
-            headline="Space. Power. Damage. Downtime. Altus II Solves It All."
-            primaryCTA={{ label: "Speak to an Expert", href: "/contact" }}
-            secondaryCTA={{ label: "Request a Quote", href: "/contact" }}
-            bgImage={null}
-          />
-        </div>
+        {/* 9. Explore the Ecosystem */}
+        <ImageCardGrid
+          title="Minit Charger for Every Bottleneck You Run Into"
+          description="The problem doesn't stop at one fleet. Airports, warehouses, transit, every operation has its own. Explore what solves yours."
+          linkText="View All Products"
+          linkHref="/products"
+          items={relatedProducts}
+        />
+
+        {/* 10. FAQs */}
+        <FaqSection
+          title="Some Questions You May Have"
+          description="Here's generally what most people ask frequently before deploying Altus II."
+          faqs={faqs}
+        />
+
+        {/* 11. CTA */}
+        <ConversionBand
+          headline="Space. Power. Damage. Downtime. Altus II Solves It All."
+          primaryCTA={{ label: "Speak to an Expert", href: "/contact" }}
+          secondaryCTA={{ label: "Request a Quote", href: "/contact" }}
+          bgImage={null}
+        />
+      </div>
     </>
   );
 }

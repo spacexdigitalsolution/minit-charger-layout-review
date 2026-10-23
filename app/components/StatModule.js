@@ -7,26 +7,28 @@ import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-function StatItem({ targetValue, unit, label, index, theme = "dark" }) {
+function StatItem({ targetValue, unit = "", label, index, theme = "dark", fontSize }) {
   const valueRef = useRef(null);
+
+  const displayString = `${targetValue}${unit}`;
+  const isLong = displayString.length > 7;
 
   useGSAP(() => {
     let mm = gsap.matchMedia();
     mm.add("(prefers-reduced-motion: no-preference)", () => {
-      // Animate from 0 to targetValue
-      const obj = { val: 0 };
-
-      // If the targetValue is a number (e.g. 95, -13) we animate it. 
-      // If it's something like "25+", we extract the number part if possible, or just don't animate.
-      // Let's assume targetValue is the number we want to count up to.
-
-      const targetNum = parseFloat(targetValue);
+      // Animate from 0 to targetValue ONLY if it's a simple number (not a range like "-13°F to 122°F")
+      const isSimpleNumber =
+        typeof targetValue === "number" ||
+        (!isNaN(Number(targetValue)) && !String(targetValue).includes("to"));
+      const targetNum = isSimpleNumber ? parseFloat(targetValue) : NaN;
 
       if (!isNaN(targetNum)) {
+        const obj = { val: 0 };
         gsap.to(obj, {
           scrollTrigger: {
             trigger: valueRef.current,
-            start: "top 90%", once: true,
+            start: "top 90%",
+            once: true,
           },
           val: targetNum,
           duration: 1.5,
@@ -41,14 +43,20 @@ function StatItem({ targetValue, unit, label, index, theme = "dark" }) {
     });
   }, { scope: valueRef });
 
+  const sizeClass = fontSize
+    ? fontSize
+    : isLong
+      ? "text-3xl sm:text-4xl lg:text-5xl whitespace-nowrap"
+      : "text-5xl sm:text-6xl lg:text-7xl";
+
   return (
     <div className={`stat-anim py-8 md:py-0 flex flex-col justify-end ${index === 0 ? 'md:pr-8' : ''} ${index > 0 && index < 2 ? 'md:px-8' : ''} ${index === 2 ? 'md:pl-8' : ''}`}>
       <div className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest mb-4">{label}</div>
       <div
         ref={valueRef}
-        className={`font-display text-7xl md:text-8xl lg:text-9xl font-black leading-none tracking-tighter ${theme === 'dark' ? 'text-white' : 'text-zinc-950'}`}
+        className={`font-display font-black leading-none tracking-tight ${theme === 'dark' ? 'text-white' : 'text-zinc-950'} ${sizeClass}`}
       >
-        {isNaN(parseFloat(targetValue)) ? targetValue + unit : `0${unit}`}
+        {displayString}
       </div>
     </div>
   );
@@ -107,6 +115,7 @@ export default function StatModule({
               targetValue={stat.targetValue}
               unit={stat.unit}
               label={stat.label}
+              fontSize={stat.fontSize}
               theme={theme}
             />
           ))}

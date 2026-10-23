@@ -13,15 +13,15 @@ const benefits = [
     description: "Delivers 40kW of dual-port charging without taking up extra space on your ramp."
   },
   {
-    title: "Charges Every Fleet",
-    description: "Every GSE vehicle, any chemistry. Suitable for every lithium battery brand, just plug and it works, plus an optional 3rd port for passenger EVs."
+    title: "Charges Anything, Anywhere",
+    description: "Dual low-voltage ports for tugs, belt loaders, and baggage tractors on lead-acid or lithium, plus a J1772 port for passenger EVs. Battery settings are adjusted remotely, with no site visit."
   },
   {
     title: "Power On Demand",
-    description: "Automatically sequences charging across its ports, so every connected vehicle gets power when it needs it."
+    description: "Each port runs on its own 20 kW. If one has a fault, the other keeps charging as normal."
   },
   {
-    title: "Zero Damage Engineering",
+    title: "Engineered for Zero Damage",
     description: "The cable retracts automatically, never touching the ground, and detaches for easy swaps."
   }
 ];
@@ -49,7 +49,7 @@ export default function BenefitsGrid() {
         <div className="bg-header max-w-4xl mb-24">
           <span className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest mb-6 block">Beyond Standard</span>
           <h2 className="font-display text-4xl md:text-6xl lg:text-7xl font-black text-white uppercase leading-[0.9] tracking-tighter">
-            Not Like the Rest, But Beyond.
+            Not Like the Rest, But Beyond
           </h2>
         </div>
 

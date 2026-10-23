@@ -24,16 +24,16 @@ const specCategories = [
       { label: "Output Power Rating", value: "40 kW" },
       { label: "Output Voltage Range", value: "24-100 VDC" },
       { label: "Port Configuration", value: "Dual Port" },
-      { label: "Battery Chemistry Support", value: "Lead Acid, Lithium, EV" },
+      { label: "Battery Chemistry Support", value: "Lead Acid, Lithium" },
     ]
   },
   {
     name: "Hardware",
     specs: [
-      { label: "Port Options", value: "Anderson, Euro 320, REMA 320, BIW (standard), J1772 (optional 3rd port)" },
+      { label: "Port Options", value: "Anderson, Euro 320, REMA 320, BIW (standard), J1772 (optional 3rd port, Level 2 EV charging)" },
       { label: "User Interface", value: "7\" Graphic LCD with Touch Panel" },
       { label: "Communication", value: "Cellular, Wi-Fi, Ethernet" },
-      { label: "Protection", value: "Over current, voltage, short circuit, ground fault, over temp" },
+      { label: "Protection", value: "Over current, over voltage, under voltage, short circuit, ground fault, over temp" },
       { label: "Regulatory Certification", value: "UL1564" },
     ]
   },
@@ -83,8 +83,11 @@ export default function SpecsTable() {
           <div>
             <span className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest mb-4 block">Hardware Specifications</span>
             <h2 className="font-display text-4xl md:text-6xl font-black text-zinc-900 dark:text-white uppercase leading-none">
-              The Full Technical Picture.
+              The Full Technical Picture
             </h2>
+            <p className="text-xl text-zinc-600 dark:text-zinc-400 font-light mt-4">
+              Everything you need to verify before Altus II goes into service.
+            </p>
           </div>
           <a href="#" className="mt-8 md:mt-0 group inline-flex items-center text-sm font-bold uppercase text-zinc-900 dark:text-white hover:text-green-600 dark:hover:text-green-400 transition-colors">
             Download Tech Sheet

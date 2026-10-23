@@ -45,11 +45,14 @@ export default function HeroSection() {
       <div className="relative z-20 flex-grow flex flex-col justify-center px-6 md:px-12 w-full max-w-[1600px] mx-auto">
         <div className="max-w-4xl">
           <span className="hero-subtext text-xs tracking-widest uppercase font-bold text-zinc-400 mb-6 block">Industrial Grade</span>
-          <h1 className="hero-title font-display text-7xl md:text-8xl lg:text-[10rem] font-black text-white uppercase leading-[0.9] tracking-tighter mb-8">
-            Altus II.
+          <h1 className="hero-title font-display text-7xl md:text-8xl lg:text-[10rem] font-black text-white uppercase leading-[0.9] tracking-tighter mb-4">
+            Altus II
           </h1>
+          <h2 className="hero-subtext text-2xl md:text-3xl lg:text-4xl font-display font-bold text-zinc-200 uppercase tracking-tight mb-6">
+            Built to Withstand Anything Outdoors
+          </h2>
           <p className="hero-subtext text-xl md:text-2xl text-zinc-300 font-light max-w-2xl leading-relaxed">
-            Engineered for global-scale GSE operations. Zero compromises in power delivery, extreme environments, or operational visibility.
+            IP54-rated for -25°C to 50°C, charges your ground equipment on lead-acid or lithium batteries, plus passenger EVs. Deployed at airports worldwide, built for whatever the ramp brings.
           </p>
         </div>
       </div>

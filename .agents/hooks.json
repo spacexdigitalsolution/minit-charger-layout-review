@@ -1,0 +1,24 @@
+{
+  "PreToolUse": [
+    {
+      "matcher": "run_command",
+      "hooks": [
+        {
+          "type": "command",
+          "command": "node .agents/hooks/edit-guard.mjs",
+          "timeout": 10
+        }
+      ]
+    },
+    {
+      "matcher": "write_to_file|replace_file_content|multi_replace_file_content|view_file",
+      "hooks": [
+        {
+          "type": "command",
+          "command": "node .agents/hooks/secret-guard.mjs",
+          "timeout": 10
+        }
+      ]
+    }
+  ]
+}
