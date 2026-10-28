@@ -19,7 +19,7 @@ Minit Charger fleet EV charging infrastructure marketing website and layout revi
 ## Repository Map
 - `app/`: Next.js App Router pages and layouts.
 - `app/_components/`: Components specific to the home page (`app/page.js`).
-- `app/components/`: Reusable components shared across 2+ routes (e.g., `Navbar`, `Footer`, `SmartImage`).
+- `components/`: Reusable components shared across 2+ routes (e.g., `Navbar`, `Footer`, `SmartImage`).
 - `app/products/altus-ii/_components/`: Colocated components for the Altus II product route.
 - `app/industries/aviation-gse/_components/`: Colocated components for Aviation GSE industry route.
 - `data/`: In-memory static data models (`products.js`, `categories.js`, `industries.js`, `blogs.js`).
@@ -36,10 +36,10 @@ Execute only verbatim scripts from `package.json`:
 ## Component & Architecture Conventions
 - **App Router:** Use `app/`. Never mix with Pages router.
 - **Feature Colocation:** Colocate route-specific components inside `<route>/_components/`.
-- **Shared Components:** Place in `app/components/` only when used across multiple routes.
+- **Shared Components:** Place in `components/` only when used across multiple routes.
 - **File Size Cap:** Keep components under ~250 lines; split larger components into composable pieces.
 - **Component Boundaries:** Default to React Server Components (RSC). Add `'use client'` only to leaf components needing interactivity or animations.
-- **Images:** Always use `SmartImage` from `app/components/SmartImage.js` instead of raw `<img>` or direct `next/image`.
+- **Images:** Always use `SmartImage` from `components/SmartImage.js` instead of raw `<img>` or direct `next/image`.
 - **Animation:** Use `@gsap/react` `useGSAP` hook; never call `contextSafe` directly in component render body.
 
 ## Workflow Discipline

@@ -1,11 +1,29 @@
 {
   "version": 1,
   "skills": {
+    "create-nextjs-website": {
+      "source": "devanshdeveloper/skills-by-devansh",
+      "sourceType": "github",
+      "skillPath": "skills/create-nextjs-website/SKILL.md",
+      "computedHash": "b88a0e1dc71843d789eea03206812a51844d510c1fc4a7bee5d7564aa4b920d6"
+    },
+    "create-nww-website": {
+      "source": "devanshdeveloper/skills-by-devansh",
+      "sourceType": "github",
+      "skillPath": "skills/create-nww-website/SKILL.md",
+      "computedHash": "d54c4660641560a2bc175b49733a98266bda5d9aa91b7d301efabc9fa86ec492"
+    },
     "find-skills": {
       "source": "vercel-labs/skills",
       "sourceType": "github",
       "skillPath": "skills/find-skills/SKILL.md",
       "computedHash": "b146008599c31057cef1c145774cea5d5afb30e8f43fa802e47a4b461419aaaf"
+    },
+    "nww": {
+      "source": "devanshdeveloper/skills-by-devansh",
+      "sourceType": "github",
+      "skillPath": "skills/nww/SKILL.md",
+      "computedHash": "e8e9e1c2dc615aa2f1ffb0850539a1144abe0ae2c3a19c24dbfa5332f9fb1505"
     }
   }
 }

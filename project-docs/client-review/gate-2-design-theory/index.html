@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minit Charger — Gate 2 Design Theory Review</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #09090b;
+      --surface: #18181b;
+      --border: #27272a;
+      --text: #fafafa;
+      --text-muted: #a1a1aa;
+      --accent: #16a34a;
+      --radius: 8px;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 40px 20px;
+    }
+    .wrapper { max-width: 900px; margin: 0 auto; }
+    header { margin-bottom: 32px; border-bottom: 1px solid var(--border); padding-bottom: 24px; }
+    .badge { display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+    h1 { font-size: 28px; font-weight: 800; text-transform: uppercase; letter-spacing: -0.02em; margin-bottom: 8px; }
+    p.lead { color: var(--text-muted); font-size: 16px; margin-bottom: 24px; }
+    .spec-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .spec-card h2 { font-size: 18px; margin-bottom: 12px; color: var(--text); text-transform: uppercase; }
+    .spec-card p, .spec-card li { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+    .spec-card ul { list-style: disc inside; margin-top: 8px; }
+    a.back { color: var(--accent); text-decoration: none; font-size: 13px; font-weight: 600; display: inline-block; margin-bottom: 16px; }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <a href="../index.html" class="back">&larr; Back to Review Hub</a>
+    <header>
+      <span class="badge">Gate 2 Review &bull; Approved</span>
+      <h1>Gate 2: Design Theory &amp; Visual Direction</h1>
+      <p class="lead">Heavy-duty industrial clarity meets Swiss architectural precision for Minit Charger fleet electrification.</p>
+    </header>
+    <main>
+      <div class="spec-card">
+        <h2>Core Aesthetic Tenets</h2>
+        <ul>
+          <li><strong>Brutalist Industrial Precision:</strong> High-density technical data, sharp border dividers, mono kickers, zero frivolous ornament.</li>
+          <li><strong>Monochrome Palette:</strong> Zinc-950 deep contrasts, pure white backgrounds, and electric green (#16a34a) accents.</li>
+          <li><strong>Engineered Typography:</strong> Display bold headers paired with geometric sans and monospace telemetry badges.</li>
+          <li><strong>Fluid Motion:</strong> Scroll-driven GSAP timelines with strict reduced-motion accessibility overrides.</li>
+        </ul>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
+

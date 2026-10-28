@@ -1,12 +1,12 @@
 {
-  "name": "minit-charger-layout-review",
+  "name": "minit-charger-workspace",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
+    "dev": "pnpm --dir site dev",
+    "build": "pnpm --dir site build",
+    "start": "pnpm --dir site start",
+    "lint": "pnpm --dir site lint"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",

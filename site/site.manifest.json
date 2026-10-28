@@ -1,0 +1,34 @@
+{
+  "name": "minit-charger-site",
+  "version": "1.0.0",
+  "framework": "nextjs-app-router",
+  "routes": [
+    { "path": "/", "page": "app/page.js", "type": "landing", "status": "complete" },
+    { "path": "/about", "page": "app/about/page.js", "type": "static", "status": "complete" },
+    { "path": "/blogs", "page": "app/blogs/page.js", "type": "catalog", "status": "complete" },
+    { "path": "/blogs/[slug]", "page": "app/blogs/[slug]/page.js", "type": "dynamic", "status": "complete" },
+    { "path": "/industries", "page": "app/industries/page.js", "type": "catalog", "status": "complete" },
+    { "path": "/industries/aviation-gse", "page": "app/industries/aviation-gse/page.js", "type": "industry", "status": "complete" },
+    { "path": "/industries/[slug]", "page": "app/industries/[slug]/page.js", "type": "dynamic", "status": "complete" },
+    { "path": "/products", "page": "app/products/page.js", "type": "catalog", "status": "complete" },
+    { "path": "/products/altus-ii", "page": "app/products/altus-ii/page.js", "type": "product", "status": "complete" },
+    { "path": "/products/[slug]", "page": "app/products/[slug]/page.js", "type": "dynamic", "status": "complete" },
+    { "path": "/contact", "page": "app/contact/page.js", "type": "interactive", "status": "complete" },
+    { "path": "/internal/hero-variations", "page": "app/internal/hero-variations/page.js", "type": "review", "status": "complete" }
+  ],
+  "components": {
+    "shared": "components/",
+    "landing": "app/_components/",
+    "colocated": [
+      "app/about/_components/",
+      "app/blogs/_components/",
+      "app/blogs/[slug]/_components/",
+      "app/contact/_components/",
+      "app/industries/_components/",
+      "app/industries/aviation-gse/_components/",
+      "app/products/altus-ii/_components/",
+      "app/internal/hero-variations/_components/"
+    ]
+  }
+}
+
