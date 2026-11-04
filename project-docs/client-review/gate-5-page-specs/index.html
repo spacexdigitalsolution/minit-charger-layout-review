@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gate 5: Page Specifications & Asset Requirements</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --bg: #F8F9FA;
+      --surface: #FFFFFF;
+      --border: #E2E8F0;
+      --text: #0F172A;
+      --text-muted: #475569;
+      --accent: #D97706;
+      --radius: 12px;
+      --shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
+    }
+    body { font-family: var(--font-sans); background: var(--bg); color: var(--text); line-height: 1.6; padding: 48px 20px 80px; }
+    .wrapper { max-width: 860px; margin: 0 auto; }
+    .header { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 36px 32px; box-shadow: var(--shadow); margin-bottom: 32px; }
+    .badge { display: inline-block; background: #FEF3C7; color: #D97706; font-size: 13px; font-weight: 700; padding: 4px 12px; border-radius: 999px; margin-bottom: 12px; }
+    h1 { font-size: 32px; font-weight: 800; line-height: 1.25; margin-bottom: 8px; }
+    .lead { font-size: 16px; color: var(--text-muted); }
+    .cards { display: flex; flex-direction: column; gap: 16px; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .card h3 { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+    .card p { font-size: 14px; color: var(--text-muted); }
+    .card-btn { background: var(--accent); color: #FFFFFF; font-weight: 700; font-size: 13px; padding: 10px 18px; border-radius: 6px; text-decoration: none; white-space: nowrap; }
+    .card-btn:hover { opacity: 0.9; }
+    .back-link { display: inline-block; margin-bottom: 20px; font-size: 14px; font-weight: 600; color: #0284C7; text-decoration: none; }
+    .back-link:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <a href="../index.html" class="back-link">← Back to Client Review Portal</a>
+    <div class="header">
+      <span class="badge">Gate 5 Deliverables</span>
+      <h1>Page Specifications & Asset Requirements</h1>
+      <p class="lead">Review complete responsive layout blueprints, CMS schemas, and the full interactive image requirements portal with Google Docs tab navigation.</p>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div>
+          <h3>Interactive Image Requirements Portal (Google Docs Tabs)</h3>
+          <p>Full interactive tabbed portal with 21 page tabs, 106 image requirements, filter by priority, and one-click copy to Google Docs.</p>
+        </div>
+        <div>
+          <a href="../../client-image-requirements/index.html" class="card-btn">Open Tab Portal →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div>
+          <h3>Master Google Docs Format (Unified Document)</h3>
+          <p>Single master document formatted with Google Docs H1 tabs, summary tables, and framing directives for direct copy-paste or upload.</p>
+        </div>
+        <div>
+          <a href="../../client-image-requirements/MASTER-GOOGLE-DOC.html" class="card-btn">Open Master Doc →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div>
+          <h3>Responsive Layout System Specification</h3>
+          <p>Grid definitions, breakpoint rules, responsive typography scales, and token architecture.</p>
+        </div>
+        <div>
+          <a href="layout-system.md" class="card-btn">View Specification →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

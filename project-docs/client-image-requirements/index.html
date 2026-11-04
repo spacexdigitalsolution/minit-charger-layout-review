@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minit Charger &bull; Client Image Requirements Portal (Google Docs Tabs)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --bg-canvas: #090D16;
+      --bg-surface: #111827;
+      --bg-surface-elevated: #1F2937;
+      --border-subtle: #1F2937;
+      --border-strong: #374151;
+      --text-main: #F9FAFB;
+      --text-muted: #9CA3AF;
+      --text-dim: #6B7280;
+      --accent-green: #8CD34D;
+      --accent-blue: #38BDF8;
+      --accent-amber: #F59E0B;
+      --accent-red: #EF4444;
+      --tab-width: 340px;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg-canvas);
+      color: var(--text-main);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* TOP BAR */
+    header.portal-header {
+      background-color: var(--bg-surface);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      z-index: 20;
+    }
+    .brand-block {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand-logo {
+      background: linear-gradient(135deg, var(--accent-green), #4ADE80);
+      color: #090D16;
+      font-weight: 900;
+      font-size: 14px;
+      letter-spacing: 1px;
+      padding: 6px 10px;
+      border-radius: 6px;
+    }
+    .brand-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+    .brand-subtitle {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 8px 14px;
+      border-radius: 6px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+    .btn-primary {
+      background-color: var(--accent-green);
+      color: #090D16;
+    }
+    .btn-primary:hover {
+      background-color: #9fe25e;
+      transform: translateY(-1px);
+    }
+    .btn-secondary {
+      background-color: var(--bg-surface-elevated);
+      color: var(--text-main);
+      border-color: var(--border-strong);
+    }
+    .btn-secondary:hover {
+      background-color: #374151;
+      border-color: #4B5563;
+    }
+
+    /* APP LAYOUT */
+    .app-body {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+    }
+
+    /* LEFT TAB SIDEBAR */
+    aside.tabs-sidebar {
+      width: var(--tab-width);
+      background-color: var(--bg-surface);
+      border-right: 1px solid var(--border-subtle);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .sidebar-search-box {
+      padding: 16px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .search-input {
+      width: 100%;
+      background-color: var(--bg-canvas);
+      border: 1px solid var(--border-strong);
+      color: var(--text-main);
+      font-size: 13px;
+      padding: 8px 12px;
+      border-radius: 6px;
+      outline: none;
+      font-family: var(--font-sans);
+    }
+    .search-input:focus {
+      border-color: var(--accent-green);
+    }
+    .tabs-nav-scroll {
+      flex: 1;
+      overflow-y: auto;
+      padding: 12px 8px;
+    }
+    .tab-category-label {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-dim);
+      padding: 12px 10px 6px;
+    }
+    .tab-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 6px;
+      color: var(--text-muted);
+      cursor: pointer;
+      margin-bottom: 3px;
+      transition: all 0.15s ease;
+      user-select: none;
+      font-size: 13px;
+    }
+    .tab-item:hover {
+      background-color: var(--bg-surface-elevated);
+      color: var(--text-main);
+    }
+    .tab-item.active {
+      background-color: #1E293B;
+      color: var(--text-main);
+      font-weight: 700;
+      border-left: 3px solid var(--accent-green);
+    }
+    .tab-num {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-dim);
+      width: 22px;
+    }
+    .tab-item.active .tab-num {
+      color: var(--accent-green);
+    }
+    .tab-label {
+      flex: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .tab-badge {
+      font-size: 10px;
+      font-weight: 700;
+      background-color: rgba(255,255,255,0.08);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: var(--font-mono);
+      color: var(--text-dim);
+    }
+    .tab-item.active .tab-badge {
+      background-color: rgba(140, 211, 77, 0.15);
+      color: var(--accent-green);
+    }
+
+    /* MAIN CONTENT VIEW */
+    main.content-view {
+      flex: 1;
+      overflow-y: auto;
+      background-color: var(--bg-canvas);
+      padding: 32px 40px 80px;
+    }
+    .content-wrapper {
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+
+    /* TAB BANNER */
+    .tab-hero {
+      background: linear-gradient(180deg, #1E293B 0%, #111827 100%);
+      border: 1px solid var(--border-strong);
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 28px;
+    }
+    .tab-hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .badge-category {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--accent-green);
+    }
+    .badge-code {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      background-color: rgba(255, 255, 255, 0.08);
+      padding: 2px 8px;
+      border-radius: 4px;
+      color: var(--text-muted);
+    }
+    .tab-hero h1 {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+    .tab-hero-route {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--accent-blue);
+      margin-bottom: 16px;
+    }
+    .tab-hero-purpose {
+      background-color: rgba(0, 0, 0, 0.25);
+      border-left: 3px solid var(--accent-green);
+      padding: 12px 16px;
+      border-radius: 0 6px 6px 0;
+      font-size: 14px;
+      color: #E2E8F0;
+      line-height: 1.6;
+    }
+
+    /* ACTION BAR */
+    .view-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .filter-group {
+      display: flex;
+      gap: 8px;
+    }
+    .filter-btn {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .filter-btn:hover {
+      color: var(--text-main);
+      border-color: var(--border-strong);
+    }
+    .filter-btn.active {
+      background-color: var(--accent-green);
+      color: #090D16;
+      border-color: var(--accent-green);
+      font-weight: 700;
+    }
+
+    /* SUMMARY TABLE */
+    .section-title {
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .table-container {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      overflow-x: auto;
+      margin-bottom: 36px;
+    }
+    table.summary-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      text-align: left;
+    }
+    table.summary-table th {
+      background-color: var(--bg-surface-elevated);
+      padding: 12px 16px;
+      font-size: 11px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border-strong);
+    }
+    table.summary-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border-subtle);
+      color: var(--text-main);
+    }
+    table.summary-table tr:last-child td {
+      border-bottom: none;
+    }
+    .badge-p0 {
+      display: inline-block;
+      background-color: rgba(239, 68, 68, 0.15);
+      color: #F87171;
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+    .badge-p1 {
+      display: inline-block;
+      background-color: rgba(245, 158, 11, 0.15);
+      color: #FBBF24;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    /* SHOT CARDS */
+    .shots-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .shot-card {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      padding: 24px;
+      transition: border-color 0.2s ease;
+    }
+    .shot-card:hover {
+      border-color: var(--border-strong);
+    }
+    .shot-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .shot-id {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--accent-green);
+    }
+    .shot-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      background-color: var(--bg-canvas);
+      padding: 14px 16px;
+      border-radius: 6px;
+      margin-bottom: 16px;
+      border: 1px solid var(--border-subtle);
+    }
+    .spec-item {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .spec-label {
+      font-size: 11px;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .spec-value {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+    .directive-box {
+      background-color: rgba(56, 189, 248, 0.08);
+      border-left: 3px solid var(--accent-blue);
+      border-radius: 0 6px 6px 0;
+      padding: 14px 18px;
+      margin-bottom: 16px;
+    }
+    .directive-label {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--accent-blue);
+      margin-bottom: 4px;
+    }
+    .directive-text {
+      font-size: 14px;
+      color: #E2E8F0;
+      line-height: 1.6;
+      font-style: italic;
+    }
+    .instructions-box {
+      margin-top: 12px;
+    }
+    .instructions-label {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+    .instructions-list {
+      padding-left: 20px;
+      font-size: 13px;
+      color: #D1D5DB;
+      line-height: 1.6;
+    }
+    .instructions-list li {
+      margin-bottom: 4px;
+    }
+
+    /* MODAL */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(4px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+      padding: 20px;
+    }
+    .modal-overlay.open {
+      display: flex;
+    }
+    .modal-card {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-strong);
+      border-radius: 12px;
+      max-width: 680px;
+      width: 100%;
+      padding: 32px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    }
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .modal-header h2 {
+      font-size: 20px;
+      font-weight: 800;
+    }
+    .modal-close {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 20px;
+      cursor: pointer;
+    }
+    .modal-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .step-item {
+      display: flex;
+      gap: 14px;
+    }
+    .step-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background-color: var(--accent-green);
+      color: #090D16;
+      font-weight: 800;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .step-text h4 {
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+    .step-text p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* TOAST */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background-color: var(--accent-green);
+      color: #090D16;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 12px 20px;
+      border-radius: 8px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      opacity: 0;
+      transform: translateY(12px);
+      transition: all 0.25s ease;
+      pointer-events: none;
+      z-index: 1000;
+    }
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP HEADER -->
+  <header class="portal-header">
+    <div class="brand-block">
+      <div class="brand-logo">MINIT</div>
+      <div>
+        <div class="brand-title">Client Image Requirements &bull; Google Docs Tab Navigation</div>
+        <div class="brand-subtitle">Master Creative Shot Directives &bull; 21 Page Tabs &bull; 106 Image Assets</div>
+      </div>
+    </div>
+    <div class="header-actions">
+      <button class="btn btn-secondary" onclick="openDocsGuideModal()">
+        <span>📖 How to Use in Google Docs</span>
+      </button>
+      <button class="btn btn-secondary" onclick="copyCurrentTabRich()">
+        <span>📋 Copy Current Tab</span>
+      </button>
+      <a class="btn btn-secondary" href="MASTER-GOOGLE-DOC.html" target="_blank">
+        <span>📄 Open Master Doc</span>
+      </a>
+      <button class="btn btn-primary" onclick="copyEntireMasterDoc()">
+        <span>📑 Copy All for Google Docs</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN BODY -->
+  <div class="app-body">
+    <!-- LEFT SIDEBAR -->
+    <aside class="tabs-sidebar">
+      <div class="sidebar-search-box">
+        <input type="text" id="searchInput" class="search-input" placeholder="Search pages, routes, or assets..." oninput="handleSearch(this.value)">
+      </div>
+      <div class="tabs-nav-scroll" id="tabsListContainer">
+        <!-- Injected via JavaScript -->
+      </div>
+    </aside>
+
+    <!-- RIGHT CONTENT -->
+    <main class="content-view">
+      <div class="content-wrapper" id="contentViewContainer">
+        <!-- Injected via JavaScript -->
+      </div>
+    </main>
+  </div>
+
+  <!-- HOW TO GOOGLE DOCS MODAL -->
+  <div class="modal-overlay" id="guideModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h2>How to Setup Document Tabs in Google Docs</h2>
+        <button class="modal-close" onclick="closeDocsGuideModal()">&times;</button>
+      </div>
+      <div class="modal-steps">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <div class="step-text">
+            <h4>Enable Document Tabs in your Google Doc</h4>
+            <p>Open a blank Google Doc, click the <strong>Document tabs</strong> icon in the left margin (or select <strong>Tools &gt; Document tabs</strong>).</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <div class="step-text">
+            <h4>Create a Tab for each Website Page</h4>
+            <p>Click <strong>+ Add tab</strong> on the left sidebar. Name each tab after the website page (e.g., <em>01. Homepage</em>, <em>04. Altus II</em>, etc.).</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <div class="step-text">
+            <h4>Copy and Paste with Full Formatting Preserved</h4>
+            <p>Select any tab here, click <strong>📋 Copy Current Tab</strong>, then switch to Google Docs and press <code>Ctrl+V</code> (or <code>Cmd+V</code>). All tables, colored priority tags, and shot instructions transfer seamlessly.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">4</div>
+          <div class="step-text">
+            <h4>Or Import the Entire Master Document at Once</h4>
+            <p>You can also click <strong>📑 Copy All for Google Docs</strong> or open <code>MASTER-GOOGLE-DOC.html</code> directly in Google Docs via <strong>File &gt; Open &gt; Upload</strong>.</p>
+          </div>
+        </div>
+      </div>
+      <div style="text-align: right;">
+        <button class="btn btn-primary" onclick="closeDocsGuideModal()">Got It</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast" id="toast">
+    <span id="toastMsg">Copied tab to clipboard!</span>
+  </div>
+
+  <script>
+    const PAGES_DATA = [{"file":"01-homepage.md","num":1,"category":"Core Brand & Governance","title":"Homepage","route":"/","docCode":"IMG-REQ-01","purpose":"Flagship brand portal communicating turnkey EV charging infrastructure across Aviation GSE, Warehouse Logistics, Commercial Fleets, and LSVs. Establishes brand authority, engineering superiority, and social proof.","tableRows":[{"slot":"Hero Carousel - Slide 1 (Aviation GSE)","type":"On-Location Industrial Photography","dimensions":"2560 x 1440 px (16:9 Widescreen)","format":"WebP / 24-bit JPG (Q90+)","priority":"P0 (Launch Critical)"},{"slot":"Hero Carousel - Slide 2 (Warehouse Logistics)","type":"On-Location Industrial Photography","dimensions":"2560 x 1440 px (16:9 Widescreen)","format":"WebP / 24-bit JPG (Q90+)","priority":"P0 (Launch Critical)"},{"slot":"Hero Carousel - Slide 3 (Commercial Fleet Depot)","type":"On-Location Commercial Photography","dimensions":"2560 x 1440 px (16:9 Widescreen)","format":"WebP / 24-bit JPG (Q90+)","priority":"P0 (Launch Critical)"},{"slot":"Hero Carousel - Slide 4 (Low-Speed Vehicles)","type":"On-Location Photography","dimensions":"2560 x 1440 px (16:9 Widescreen)","format":"WebP / 24-bit JPG (Q90+)","priority":"P0 (Launch Critical)"},{"slot":"Problem Framing / Bottleneck Comparison","type":"Industrial Documentary Photo / Composite","dimensions":"1920 x 1080 px (16:9)","format":"WebP / JPG","priority":"P1 (High Impact)"},{"slot":"Featured Hardware Showcase - Momentus Gen 2","type":"3D CAD Studio Product Render","dimensions":"1600 x 1200 px (4:3)","format":"Transparent PNG / WebP","priority":"P0 (Launch Critical)"},{"slot":"Engineered Advantages - SiC Architecture Cutaway","type":"3D Technical Exploded CAD Diagram","dimensions":"1600 x 1200 px (4:3)","format":"Transparent PNG / WebP","priority":"P1 (High Impact)"},{"slot":"Cumulus Cloud Fleet Software Spotlight","type":"High-Resolution UI Mockup / 3D Screen Render","dimensions":"1600 x 1000 px (16:10)","format":"PNG / WebP","priority":"P0 (Launch Critical)"},{"slot":"Customer Social Proof - Client Logos","type":"Vector Brand Logos (Transparent Alpha)","dimensions":"400 x 160 px (Vector preferred)","format":"SVG / PNG","priority":"P1 (Brand Trust)"}],"shots":[{"id":"### Asset 01.1","title":"Hero Carousel - Slide 1 (Aviation GSE)","targetPath":"/assets/homepage/Outdoor eGSE & yards-01.webp","dimensions":"2560 x 1440 px (16:9 Widescreen)","type":"On-Location Industrial Photography","format":"WebP / 24-bit JPG (Q90+)","priority":"P0 (Launch Critical)","directive":"Wide-angle, cinematic photograph of an Altus II fast-charging station installed on an active airport tarmac/apron at dawn or golden hour. An electric baggage tug or belt loader is plugged in with its charging status LED illuminated. A commercial passenger aircraft (e.g. Boeing 737 / Airbus A320) is visible in the background ramp area. Crisp, industrial lighting with high contrast and morning sky glow.","instructions":["Capture in RAW/DNG format at maximum resolution (minimum 24 megapixels).","Avoid distracting clutter in the background; ensure equipment operators wear appropriate PPE (safety vests, eye protection, ear defenders).","Color grade for industrial realism with saturated safety accents (green LED indicators, yellow safety striping, safety-orange equipment)."]},{"id":"01.2","title":"Hero Carousel - Slide 2 (Warehouse Logistics)","targetPath":"/assets/homepage/Indoor material handling-01.webp","dimensions":"2560 x 1440 px (16:9 Widescreen)","type":"On-Location Industrial Photography","format":"WebP / 24-bit JPG (Q90+)","priority":"P0 (Launch Critical)","directive":"Expansive high-bay distribution center with polished concrete floors. A Momentus or Maximus opportunity fast charger is wall/column mounted at an end-of-aisle break station. A modern electric reach truck or counterbalance forklift is connected and charging during a shift break. High-key industrial LED lighting, clean facility aesthetics, and organized inventory racking.","instructions":["Capture in RAW/DNG format at maximum resolution (minimum 24 megapixels).","Avoid distracting clutter in the background; ensure equipment operators wear appropriate PPE (safety vests, eye protection, ear defenders).","Color grade for industrial realism with saturated safety accents (green LED indicators, yellow safety striping, safety-orange equipment)."]},{"id":"01.3","title":"Hero Carousel - Slide 3 (Commercial Fleet Depot)","targetPath":"/assets/homepage/High Power DC Fast-01.webp","dimensions":"2560 x 1440 px (16:9 Widescreen)","type":"On-Location Commercial Photography","format":"WebP / 24-bit JPG (Q90+)","priority":"P0 (Launch Critical)","directive":"Modern commercial transit depot yard at twilight. A Magnus 100–200 kW high-power charger dispenser stands between an electric municipal transit bus and an electric delivery step van, both actively plugged into dual heavy-duty charging cables. Modern LED yard illumination, sleek charging cables, and illuminated digital dispenser displays.","instructions":["Capture in RAW/DNG format at maximum resolution (minimum 24 megapixels).","Avoid distracting clutter in the background; ensure equipment operators wear appropriate PPE (safety vests, eye protection, ear defenders).","Color grade for industrial realism with saturated safety accents (green LED indicators, yellow safety striping, safety-orange equipment)."]},{"id":"01.4","title":"Hero Carousel - Slide 4 (Low-Speed Vehicles)","targetPath":"/assets/homepage/Engineered for LSEVs.webp","dimensions":"2560 x 1440 px (16:9 Widescreen)","type":"On-Location Photography","format":"WebP / 24-bit JPG (Q90+)","priority":"P0 (Launch Critical)","directive":"Scenic university campus, luxury resort, or corporate headquarters charging depot. Multiple electric utility carts, security patrol LSVs, and passenger shuttles parked cleanly in a shaded charging bay. A Durus compact charger is mounted to a slender bollard, showing neat, coiled cables in an upscale landscape setting.","instructions":["Capture in RAW/DNG format at maximum resolution (minimum 24 megapixels).","Avoid distracting clutter in the background; ensure equipment operators wear appropriate PPE (safety vests, eye protection, ear defenders).","Color grade for industrial realism with saturated safety accents (green LED indicators, yellow safety striping, safety-orange equipment)."]},{"id":"01.5","title":"Problem Framing / Bottleneck Comparison","targetPath":"/assets/homepage/Problem Framing Comparison.webp","dimensions":"1920 x 1080 px (16:9)","type":"Industrial Documentary Photo / Composite","format":"WebP / JPG","priority":"P1 (High Impact)","directive":"Split visual or high-impact operational photograph illustrating the chaos of traditional battery swapping rooms: heavy overhead bridge cranes, hazardous battery extraction hoists, dangerous acid wash stations, and congested aisles, contrasting with the clean simplicity of plug-and-play opportunity charging.","instructions":["Deliver clean, scalable vector format with transparent background."]},{"id":"01.6","title":"Featured Hardware Showcase - Momentus Gen 2","targetPath":"/assets/homepage/Meet MOMENTUs-02.webp","dimensions":"1600 x 1200 px (4:3)","type":"3D CAD Studio Product Render","format":"Transparent PNG / WebP","priority":"P0 (Launch Critical)","directive":"Hero 3D studio rendering of the Momentus Gen 2 opportunity charger on an isolated dark background with subtle floor reflections. 3/4 isometric perspective highlighting the rugged industrial enclosure, front 7-inch LCD interface, side cable hook, and top LED status beacon.","instructions":["Export with alpha channel (transparent background) at 300 DPI.","Use neutral, high-key studio lighting with realistic metallic specular reflections and subtle ambient occlusion.","Verify all hardware dimensions match official Minit Charger engineering schematics."]},{"id":"01.7","title":"Engineered Advantages - SiC Architecture Cutaway","targetPath":"/assets/homepage/Engineered Advantages Architecture.webp","dimensions":"1600 x 1200 px (4:3)","type":"3D Technical Exploded CAD Diagram","format":"Transparent PNG / WebP","priority":"P1 (High Impact)","directive":"Detailed 3D exploded engineering CAD render of Minit Charger's Silicon Carbide (SiC) power electronics. Illustrates modular slide-out power cassettes, thermal dissipation airflow channels, dual galvanic isolation barriers, and internal revenue-grade metering CTs.","instructions":["Export with alpha channel (transparent background) at 300 DPI.","Use neutral, high-key studio lighting with realistic metallic specular reflections and subtle ambient occlusion.","Verify all hardware dimensions match official Minit Charger engineering schematics."]},{"id":"01.8","title":"Cumulus Cloud Fleet Software Spotlight","targetPath":"/assets/homepage/Cumulus Software-01.webp","dimensions":"1600 x 1000 px (16:10)","type":"High-Resolution UI Mockup / 3D Screen Render","format":"PNG / WebP","priority":"P0 (Launch Critical)","directive":"Clean 3D perspective display mockup of the Cumulus Cloud Fleet Management platform rendered on a high-resolution dark-mode studio workstation monitor. Displays real-time kW consumption graphs, live facility demand curves, charger status heatmaps, and battery health telemetry.","instructions":["Export with alpha channel (transparent background) at 300 DPI.","Use neutral, high-key studio lighting with realistic metallic specular reflections and subtle ambient occlusion.","Verify all hardware dimensions match official Minit Charger engineering schematics."]},{"id":"01.9","title":"Customer Social Proof - Client Logos","targetPath":"/assets/logos/*.svg","dimensions":"400 x 160 px (Vector preferred)","type":"Vector Brand Logos (Transparent Alpha)","format":"SVG / PNG","priority":"P1 (Brand Trust)","directive":"Vector SVG or high-resolution transparent monochrome PNG logos of key airport authorities, global ground handling agencies (e.g. Swissport, Menzies, dnata), tier-1 logistics operators, and major airline partners.","instructions":["Deliver clean, scalable vector format with transparent background."]}]},{"file":"02-about-us.md","num":2,"category":"Core Brand & Governance","title":"About Us","route":"/about","docCode":"IMG-REQ-02","purpose":"Communicates Minit Charger's 20+ year engineering heritage, domestic manufacturing excellence in Chandler, Arizona, executive leadership vision, and relentless focus on industrial fleet reliability.","tableRows":[{"slot":"Heritage & Engineering R&D Facility Hero","type":"On-Location Corporate Photography","dimensions":"2560 x 1200 px (21:9 Ultra-Wide Banner)","format":"WebP / JPG","priority":"P0 (Launch Critical)"},{"slot":"Executive Leadership Headshot","type":"Executive Studio Portrait","dimensions":"800 x 1000 px (4:5 Portrait)","format":"WebP / JPG","priority":"P1 (High Impact)"},{"slot":"Core Value 1 - Field-Proven Reliability","type":"Engineering Laboratory Photo","dimensions":"1200 x 900 px (4:3)","format":"WebP / JPG","priority":"P1 (High Impact)"},{"slot":"Core Value 2 - Domestic Manufacturing Quality","type":"Manufacturing Detail Photography","dimensions":"1200 x 900 px (4:3)","format":"WebP / JPG","priority":"P2 (Standard)"},{"slot":"Core Value 3 - Client Partnership & Service","type":"Field Operations Photography","dimensions":"1200 x 900 px (4:3)","format":"WebP / JPG","priority":"P2 (Standard)"}],"shots":[{"id":"### Asset 02.1","title":"Heritage & Engineering R&D Facility Hero","targetPath":"/assets/homepage/Engineered for Airports.webp","dimensions":"2560 x 1200 px (21:9 Ultra-Wide Banner)","type":"On-Location Corporate Photography","format":"WebP / JPG","priority":"P0 (Launch Critical)","directive":"Wide environmental photograph of Minit Charger's Chandler, Arizona engineering and assembly facility. Shows state-of-the-art testing bays, technicians in branded gear assembling power cabinets, and electrical test benches with oscilloscopes and calibration meters. High-tech, clean, professional atmosphere.","instructions":["Capture in RAW/DNG format at maximum resolution (minimum 24 megapixels).","Avoid distracting clutter in the background; ensure equipment operators wear appropriate PPE (safety vests, eye protection, ear defenders).","Color grade for industrial realism with saturated safety accents (green LED indicators, yellow safety striping, safety-orange equipment)."]},{"id":"02.2","title":"Executive Leadership Headshot","targetPath":"imageSrc (LeadershipQuote.js)","dimensions":"800 x 1000 px (4:5 Portrait)","type":"Executive Studio Portrait","format":"WebP / JPG","priority":"P1 (High Impact)","directive":"Professional executive studio portrait of Minit Charger leadership (CEO / VP of Engineering). Modern corporate aesthetic: confident, approachable demeanor, crisp dark attire, subtle warm rim lighting against an out-of-focus technical or architectural background.","instructions":["Deliver clean, scalable vector format with transparent background."]},{"id":"02.3","title":"Core Value 1 - Field-Proven Reliability","targetPath":"imageSrc (ValuesBlock.js)","dimensions":"1200 x 900 px (4:3)","type":"Engineering Laboratory Photo","format":"WebP / JPG","priority":"P1 (High Impact)","directive":"High-temperature environmental testing chamber with a Minit Charger undergoing full-load continuous burn-in at 50°C. Digital temperature sensors and test equipment attached to the chassis.","instructions":["Deliver clean, scalable vector format with transparent background."]},{"id":"02.4","title":"Core Value 2 - Domestic Manufacturing Quality","targetPath":"imageSrc (ValuesBlock.js)","dimensions":"1200 x 900 px (4:3)","type":"Manufacturing Detail Photography","format":"WebP / JPG","priority":"P2 (Standard)","directive":"Close-up craftsmanship photograph of an electrical technician securing wiring looms and torque-verifying busbars inside an open power cabinet. Shows strict ISO/UL manufacturing standards.","instructions":["Capture in RAW/DNG format at maximum resolution (minimum 24 megapixels).","Avoid distracting clutter in the background; ensure equipment operators wear appropriate PPE (safety vests, eye protection, ear defenders).","Color grade for industrial realism with saturated safety accents (green LED indicators, yellow safety striping, safety-orange equipment)."]},{"id":"02.5","title":"Core Value 3 - Client Partnership & Service","targetPath":"imageSrc (ValuesBlock.js)","dimensions":"1200 x 900 px (4:3)","type":"Field Operations Photography","format":"WebP / JPG","priority":"P2 (Standard)","directive":"Minit Charger certified field service engineer conducting on-site commissioning with an airport ramp manager beside an installed charging station. Handshake or collaborative review on a tablet.","instructions":["Capture in RAW/DNG format at maximum resolution (minimum 24 megapixels).","Avoid distracting clutter in the background; ensure equipment operators wear appropriate PPE (safety vests, eye protection, ear defenders).","Color grade for industrial realism with saturated safety accents (green LED indicators, yellow safety striping, safety-orange equipment)."]}]},{"file":"03-products-hub.md","num":3,"category":"Hardware Charging Systems","title":"Products Catalog Hub","route":"/products","docCode":"IMG-REQ-03","purpose":"Interactive central hardware catalog allowing fleet operators to filter chargers by sector (Aviation, MHE, EV, LSV) and power level. Requires cohesive, standardized studio rendering cutouts for all 8 products.","tableRows":[{"slot":"Products Hero Lineup Banner","type":"3D CAD Studio Composite","dimensions":"2560 x 1000 px (Panoramic Banner)","format":"WebP / JPG","priority":"P0 (Launch Critical)"},{"slot":"Catalog Card - Altus II","type":"3D Studio Product Cutout (Transparent Alpha)","dimensions":"1000 x 1000 px (1:1 Square)","format":"PNG / WebP","priority":"P0 (Launch Critical)"},{"slot":"Catalog Card - Magnus","type":"3D Studio Product Cutout (Transparent Alpha)","dimensions":"1000 x 1000 px (1:1 Square)","format":"PNG / WebP","priority":"P0 (Launch Critical)"},{"slot":"Catalog Card - Mobilus","type":"3D Studio Product Cutout (Transparent Alpha)","dimensions":"1000 x 1000 px (1:1 Square)","format":"PNG / WebP","priority":"P0 (Launch Critical)"},{"slot":"Catalog Card - Momentus","type":"3D Studio Product Cutout (Transparent Alpha)","dimensions":"1000 x 1000 px (1:1 Square)","format":"PNG / WebP","priority":"P0 (Launch Critical)"},{"slot":"Catalog Card - Maximus","type":"3D Studio Product Cutout (Transparent Alpha)","dimensions":"1000 x 1000 px (1:1 Square)","format":"PNG / WebP","priority":"P0 (Launch Critical)"},{"slot":"Catalog Card - Durus","type":"3D Studio Product Cutout (Transparent Alpha)","dimensions":"1000 x 1000 px (1:1 Square)","format":"PNG / WebP","priority":"P0 (Launch Critical)"},{"slot":"Catalog Card - CellTrac","type":"3D Studio Product Cutout (Transparent Alpha)","dimensions":"1000 x 1000 px (1:1 Square)","format":"PNG / WebP","priority":"P0 (Launch Critical)"},{"slot":"Catalog Card - Cumulus Platform","type":"3D UI Isometric Render (Transparent Alpha)","dimensions":"1000 x 1000 px (1:1 Square)","format":"PNG / WebP","priority":"P0 (Launch Critical)"}],"shots":[{"id":"### Asset 03.1","title":"Products Hero Lineup Banner","targetPath":"/assets/homepage/All Products Lineup.webp","dimensions":"2560 x 1000 px (Panoramic Banner)","type":"3D CAD Studio Composite","format":"WebP / JPG","priority":"P0 (Launch Critical)","directive":"Panoramic studio composite shot displaying all 8 flagship hardware chargers (Altus II, Magnus, Mobilus, Momentus, Maximus, Durus, CellTrac, and Cumulus monitor) standing side-by-side in height order against a sleek graphite studio backdrop with subtle floor reflections.","instructions":["Export with alpha channel (transparent background) at 300 DPI.","Use neutral, high-key studio lighting with realistic metallic specular reflections and subtle ambient occlusion.","Verify all hardware dimensions match official Minit Charger engineering schematics."]},{"id":"03.2","title":"Catalog Card - Altus II","targetPath":"/assets/homepage/Altus II.webp","dimensions":"1000 x 1000 px (1:1 Square)","type":"3D Studio Product Cutout (Transparent Alpha)","format":"PNG / WebP","priority":"P0 (Launch Critical)","directive":"Clean studio cutout render of the Altus II dual-port pedestal charger at a 15-degree front-isometric angle on a pure transparent background. Dual charging cables neatly suspended from spring retractors.","instructions":["Export with alpha channel (transparent background) at 300 DPI.","Use neutral, high-key studio lighting with realistic metallic specular reflections and subtle ambient occlusion.","Verify all hardware dimensions match official Minit Charger engineering schematics."]},{"id":"03.3","title":"Catalog Card - Magnus","targetPath":"/assets/Products/Magnus/Magnus Hardware Listing.webp","dimensions":"1000 x 1000 px (1:1 Square)","type":"3D Studio Product Cutout (Transparent Alpha)","format":"PNG / WebP","priority":"P0 (Launch Critical)","directive":"Clean studio cutout render of the Magnus 100–200 kW fast-charging power cabinet. Front-isometric angle, transparent background, showing dual heavy-duty CCS dispensers and front touch display.","instructions":["Export with alpha channel (transparent background) at 300 DPI.","Use neutral, high-key studio lighting with realistic metallic specular reflections and subtle ambient occlusion.","Verify all hardware dimensions match official Minit Charger engineering schematics."]},{"id":"03.4","title":"Catalog Card - Mobilus","targetPath":"/assets/homepage/Mobilus.webp","dimensions":"1000 x 1000 px (1:1 Square)","type":"3D Studio Product Cutout (Transparent Alpha)","format":"PNG / WebP","priority":"P0 (Launch Critical)","directive":"Clean studio cutout render of the Mobilus mobile trailer charger on transparent background. Angle highlights the rugged dual-axle trailer, integrated BESS battery housing, and dual charging guns.","instructions":["Export with alpha channel (transparent background) at 300 DPI.","Use neutral, high-key studio lighting with realistic metallic specular reflections and subtle ambient occlusion.","Verify all hardware dimensions match official Minit Charger engineering schematics."]},{"id":"03.5","title":"Catalog Card - Momentus","targetPath":"/assets/homepage/Momentus.webp","dimensions":"1000 x 1000 px (1:1 Square)","type":"3D Studio Product Cutout (Transparent Alpha)","format":"PNG / WebP","priority":"P0 (Launch Critical)","directive":"Studio cutout render of Momentus opportunity charger on transparent background. Highlights compact wall/column mount footprint, 7-inch display, and single heavy-duty industrial charging cord.","instructions":["Export with alpha channel (transparent background) at 300 DPI.","Use neutral, high-key studio lighting with realistic metallic specular reflections and subtle ambient occlusion.","Verify all hardware dimensions match official Minit Charger engineering schematics."]},{"id":"03.6","title":"Catalog Card - Maximus","targetPath":"/assets/homepage/Maximus.webp","dimensions":"1000 x 1000 px (1:1 Square)","type":"3D Studio Product Cutout (Transparent Alpha)","format":"PNG / WebP","priority":"P0 (Launch Critical)","directive":"Studio cutout render of Maximus dual-port charger on transparent background. Shows dual 20 kW independent charging cords, high-visibility status tower light, and robust NEMA enclosure.","instructions":["Export with alpha channel (transparent background) at 300 DPI.","Use neutral, high-key studio lighting with realistic metallic specular reflections and subtle ambient occlusion.","Verify all hardware dimensions match official Minit Charger engineering schematics."]},{"id":"03.7","title":"Catalog Card - Durus","targetPath":"/assets/homepage/Durus.webp","dimensions":"1000 x 1000 px (1:1 Square)","type":"3D Studio Product Cutout (Transparent Alpha)","format":"PNG / WebP","priority":"P0 (Launch Critical)","directive":"Studio cutout render of Durus compact sealed charger on transparent background. Angle displays sealed aluminum heatsink fins, IP66 waterproof connectors, and compact mounting bracket.","instructions":["Export with alpha channel (transparent background) at 300 DPI.","Use neutral, high-key studio lighting with realistic metallic specular reflections and subtle ambient occlusion.","Verify all hardware dimensions match official Minit Charger engineering schematics."]},{"id":"03.8","title":"Catalog Card - CellTrac","targetPath":"/assets/homepage/Celltrac.webp","dimensions":"1000 x 1000 px (1:1 Square)","type":"3D Studio Product Cutout (Transparent Alpha)","format":"PNG / WebP","priority":"P0 (Launch Critical)","directive":"Studio cutout render of the CellTrac smart battery telemetry module on transparent background. Displays rugged sensor module, current shunt sensor, and battery terminal wiring harness.","instructions":["Export with alpha channel (transparent background) at 300 DPI.","Use neutral, high-key studio lighting with realistic metallic specular reflections and subtle ambient occlusion.","Verify all hardware dimensions match official Minit Charger engineering schematics."]},{"id":"03.9","title":"Catalog Card - Cumulus Platform","targetPath":"/assets/homepage/Cumulus Software-01.webp","dimensions":"1000 x 1000 px (1:1 Square)","type":"3D UI Isometric Render (Transparent Alpha)","format":"PNG / WebP","priority":"P0 (Launch Critical)","directive":"Perspective 3D floating dashboard render on transparent background showing dark-mode telemetry charts and live fleet charging indicators.","instructions":["Export with alpha channel (transparent background) at 300 DPI.","Use neutral, high-key studio lighting with realistic metallic specular reflections and subtle ambient occlusion.","Verify all hardware dimensions match official Minit Charger engineering schematics."]}]},{"file":"04-product-altus-ii.md","num":4,"category":"Hardware Charging Systems","title":"Altus II Product Deep-Dive","route":"/products/altus-ii","docCode":"IMG-REQ-04","purpose":"Flagship product deep-dive for Minit Charger's premier airport GSE dual-port fast charger. Needs comprehensive, multi-angle CAD renders and real-world tarmac deployment visuals.","tableRows":[{"slot":"Hero Ramp Panoramic Banner","type":"On-Location Aviation Photography","dimensions":"2560 x 1440 px (16:9)","format":"WebP / JPG","priority":"P0 (Launch Critical)"},{"slot":"Product Gallery - Frontal CAD View","type":"3D CAD Studio Render (Transparent)","dimensions":"2000 x 2000 px (1:1 Square)","format":"PNG with Alpha Channel","priority":"P0 (Launch Critical)"},{"slot":"Product Gallery - 3/4 Isometric Perspective","type":"3D CAD Studio Render (Transparent)","dimensions":"2000 x 2000 px (1:1 Square)","format":"PNG with Alpha Channel","priority":"P0 (Launch Critical)"},{"slot":"Product Gallery - Retractor Cable Management Detail","type":"3D CAD Studio Render (Transparent)","dimensions":"2000 x 2000 px (1:1 Square)","format":"PNG with Alpha Channel","priority":"P1 (High Impact)"},{"slot":"Product Gallery - Connector & Receptacle Close-up","type":"3D CAD Studio Render (Transparent)","dimensions":"2000 x 2000 px (1:1 Square)","format":"PNG with Alpha Channel","priority":"P1 (High Impact)"},{"slot":"Hardware Detail - Modular Slide-out Power Trays","type":"Technical CAD Cutaway / Studio Photo","dimensions":"1600 x 1200 px (4:3)","format":"WebP / JPG","priority":"P0 (Launch Critical)"},{"slot":"Gate Power Manager - Integration Schematic","type":"Technical Vector / 3D Isometric Schematic","dimensions":"1600 x 1200 px (4:3)","format":"PNG / WebP","priority":"P0 (Launch Critical)"},{"slot":"Power Usage & Automated Airline Billing Screen","type":"Software UI Screenshot / Mockup","dimensions":"1600 x 1000 px (16:10)","format":"PNG / WebP","priority":"P1 (High Impact)"},{"slot":"Video Module - Poster Thumbnail","type":"Video Still / High-Res Frame Capture","dimensions":"1920 x 1080 px (16:9)","format":"WebP / JPG","priority":"P1 (High Impact)"}],"shots":[{"id":"### Asset 04.1","title":"Hero Ramp Panoramic Banner","targetPath":"/assets/Industries/Aviation-GSE/Why Minit Charger/Banner.webp","dimensions":"2560 x 1440 px (16:9)","type":"On-Location Aviation Photography","format":"WebP / JPG","priority":"P0 (Launch Critical)","directive":"Cinematic wide photography of Altus II deployed directly on an airport apron beside a passenger terminal gate. In the foreground, an electric baggage tractor is plugged into port 1 while a belt loader is parked in port 2. The overhead retractable cable arm holds heavy DC cords safely above the pavement. Late afternoon airport light with glowing runway runway background.","instructions":["Capture in RAW/DNG format at maximum resolution (minimum 24 megapixels).","Avoid distracting clutter in the background; ensure equipment operators wear appropriate PPE (safety vests, eye protection, ear defenders).","Color grade for industrial realism with saturated safety accents (green LED indicators, yellow safety striping, safety-orange equipment)."]},{"id":"04.2","title":"Product Gallery - Frontal CAD View","targetPath":"/assets/Products/Altus II/ALTUSII_FRONT.webp","dimensions":"2000 x 2000 px (1:1 Square)","type":"3D CAD Studio Render (Transparent)","format":"PNG with Alpha Channel","priority":"P0 (Launch Critical)","directive":"High-resolution 4K studio CAD rendering of the Altus II pedestal in direct frontal view. Pure transparent background. Shows dual touchscreen displays, bilingual interface graphics, emergency stop button, and illuminated LED status ring.","instructions":["Export with alpha channel (transparent background) at 300 DPI.","Use neutral, high-key studio lighting with realistic metallic specular reflections and subtle ambient occlusion.","Verify all hardware dimensions match official Minit Charger engineering schematics."]},{"id":"04.3","title":"Product Gallery - 3/4 Isometric Perspective","targetPath":"/assets/Products/Altus II/ALTUSII_3_4_VIEW.webp","dimensions":"2000 x 2000 px (1:1 Square)","type":"3D CAD Studio Render (Transparent)","format":"PNG with Alpha Channel","priority":"P0 (Launch Critical)","directive":"High-resolution 3/4 perspective CAD rendering showing the depth of the NEMA 3R stainless steel enclosure, overhead spring-loaded cable retractor mast, and dual side cable holster receptacles.","instructions":["Export with alpha channel (transparent background) at 300 DPI.","Use neutral, high-key studio lighting with realistic metallic specular reflections and subtle ambient occlusion.","Verify all hardware dimensions match official Minit Charger engineering schematics."]},{"id":"04.4","title":"Product Gallery - Retractor Cable Management Detail","targetPath":"/assets/Products/Altus II/ALTUSII_SIDE_RETRACTOR.webp","dimensions":"2000 x 2000 px (1:1 Square)","type":"3D CAD Studio Render (Transparent)","format":"PNG with Alpha Channel","priority":"P1 (High Impact)","directive":"Side profile rendering illustrating the spring-assisted cable retractor holding 25-foot heavy gauge DC cables elevated 8 feet above ground level, highlighting the quick-release breakaway lanyard.","instructions":["Export with alpha channel (transparent background) at 300 DPI.","Use neutral, high-key studio lighting with realistic metallic specular reflections and subtle ambient occlusion.","Verify all hardware dimensions match official Minit Charger engineering schematics."]},{"id":"04.5","title":"Product Gallery - Connector & Receptacle Close-up","targetPath":"/assets/Products/Altus II/ALTUSII_PORT_DETAIL.webp","dimensions":"2000 x 2000 px (1:1 Square)","type":"3D CAD Studio Render (Transparent)","format":"PNG with Alpha Channel","priority":"P1 (High Impact)","directive":"Macro close-up render of the dual charging ports supporting Anderson, Euro 320, and REMA connectors with silver-plated copper pins and IP54 dust flaps.","instructions":["Export with alpha channel (transparent background) at 300 DPI.","Use neutral, high-key studio lighting with realistic metallic specular reflections and subtle ambient occlusion.","Verify all hardware dimensions match official Minit Charger engineering schematics."]},{"id":"04.6","title":"Hardware Detail - Modular Slide-out Power Trays","targetPath":"/assets/ai_placeholders/altus_hardware_1791407949017.jpg","dimensions":"1600 x 1200 px (4:3)","type":"Technical CAD Cutaway / Studio Photo","format":"WebP / JPG","priority":"P0 (Launch Critical)","directive":"Photograph or realistic 3D CAD cutaway of the open Altus II cabinet showing the modular Silicon Carbide (SiC) power cassettes pulled forward on smooth roller slides, demonstrating rapid 10-minute field swap servicing.","instructions":["Export with alpha channel (transparent background) at 300 DPI.","Use neutral, high-key studio lighting with realistic metallic specular reflections and subtle ambient occlusion.","Verify all hardware dimensions match official Minit Charger engineering schematics."]},{"id":"04.7","title":"Gate Power Manager - Integration Schematic","targetPath":"/assets/Industries/Aviation-GSE/Features/No infrastructure upgrade required.webp","dimensions":"1600 x 1200 px (4:3)","type":"Technical Vector / 3D Isometric Schematic","format":"PNG / WebP","priority":"P0 (Launch Critical)","directive":"Architectural isometric 3D vector diagram showing how the Altus II ties directly into existing Passenger Boarding Bridge (PBB) 480VAC/400Hz power distribution, completely eliminating the need for expensive tarmac trenching.","instructions":["Export with alpha channel (transparent background) at 300 DPI.","Use neutral, high-key studio lighting with realistic metallic specular reflections and subtle ambient occlusion.","Verify all hardware dimensions match official Minit Charger engineering schematics."]},{"id":"04.8","title":"Power Usage & Automated Airline Billing Screen","targetPath":"/assets/homepage/Cumulus Software-01.webp","dimensions":"1600 x 1000 px (16:10)","type":"Software UI Screenshot / Mockup","format":"PNG / WebP","priority":"P1 (High Impact)","directive":"Detailed screenshot of the Cumulus Cloud revenue-grade utility metering interface showing per-airline flight turnaround energy logging, timestamped kWh delivery, and automated invoice PDF generation.","instructions":["Capture at native 2x/Retina pixel density.","Use modern dark-mode aesthetic matching the Cumulus platform design system.","Ensure all displayed data (kWh, vehicle IDs, customer names) uses approved demo figures."]},{"id":"04.9","title":"Video Module - Poster Thumbnail","targetPath":"/assets/Home Page/Solutions/Solutions Page banner - 02.webp","dimensions":"1920 x 1080 px (16:9)","type":"Video Still / High-Res Frame Capture","format":"WebP / JPG","priority":"P1 (High Impact)","directive":"High-contrast action still from the airport ramp video: ground handler connecting the Altus II cable to an electric baggage tractor during a live flight turnaround.","instructions":["Deliver clean, scalable vector format with transparent background."]}]},{"file":"05-product-magnus.md","num":5,"category":"Hardware Charging Systems","title":"Magnus Product Page","route":"/products/magnus","docCode":"IMG-REQ-05","purpose":"Product page for Magnus universal 100–200 kW fast charger designed for mixed fleets, commercial EV trucks, transit buses, and heavy airport pushback tugs.","tableRows":[{"slot":"Hero Mixed-Fleet Depot Shot","type":"On-Location Fleet Depot Photography","dimensions":"2560 x 1440 px (16:9)","format":"WebP / JPG","priority":"P0 (Launch Critical)"},{"slot":"Studio 3/4 CAD Cutout","type":"3D CAD Studio Product Cutout","dimensions":"2000 x 2000 px (1:1 Square)","format":"PNG with Alpha Channel","priority":"P0 (Launch Critical)"},{"slot":"Technical Specifications Hardware Graphic","type":"Technical CAD Render with Callouts","dimensions":"1600 x 1200 px (4:3)","format":"PNG / WebP","priority":"P1 (High Impact)"},{"slot":"Feature Split - Universal Voltage Architecture","type":"Infographic / Technical Graphic","dimensions":"1600 x 1200 px (4:3)","format":"WebP / JPG","priority":"P1 (High Impact)"}],"shots":[{"id":"### Asset 05.1","title":"Hero Mixed-Fleet Depot Shot","targetPath":"/assets/Products/Magnus/Magnus Hardware Listing.webp","dimensions":"2560 x 1440 px (16:9)","type":"On-Location Fleet Depot Photography","format":"WebP / JPG","priority":"P0 (Launch Critical)","directive":"Wide environmental photograph of Magnus deployed in an active transit bus garage or airport heavy GSE zone. An electric pushback tug and an electric transit bus are charging side-by-side from the Magnus unit. Modern depot lighting and clean industrial environment.","instructions":["Capture in RAW/DNG format at maximum resolution (minimum 24 megapixels).","Avoid distracting clutter in the background; ensure equipment operators wear appropriate PPE (safety vests, eye protection, ear defenders).","Color grade for industrial realism with saturated safety accents (green LED indicators, yellow safety striping, safety-orange equipment)."]},{"id":"05.2","title":"Studio 3/4 CAD Cutout","targetPath":"/assets/Products/Magnus/Magnus Studio Cutout.png","dimensions":"2000 x 2000 px (1:1 Square)","type":"3D CAD Studio Product Cutout","format":"PNG with Alpha Channel","priority":"P0 (Launch Critical)","directive":"4K studio CAD rendering of Magnus cabinet on transparent background. Shows dual CCS1/CCS2 charging holsters, 10-inch color touchscreen, RFID badge reader, and heavy-duty ventilation louvers.","instructions":["Export with alpha channel (transparent background) at 300 DPI.","Use neutral, high-key studio lighting with realistic metallic specular reflections and subtle ambient occlusion.","Verify all hardware dimensions match official Minit Charger engineering schematics."]},{"id":"05.3","title":"Technical Specifications Hardware Graphic","targetPath":"/assets/Products/Magnus/Magnus Hardware Listing.webp","dimensions":"1600 x 1200 px (4:3)","type":"Technical CAD Render with Callouts","format":"PNG / WebP","priority":"P1 (High Impact)","directive":"Clean technical studio view showing dimensional callouts (Height: 78\", Width: 32\", Depth: 24\") and internal 100 kW to 200 kW scalable power module bays.","instructions":["Export with alpha channel (transparent background) at 300 DPI.","Use neutral, high-key studio lighting with realistic metallic specular reflections and subtle ambient occlusion.","Verify all hardware dimensions match official Minit Charger engineering schematics."]},{"id":"05.4","title":"Feature Split - Universal Voltage Architecture","targetPath":"/assets/Products/Magnus/Magnus Architecture.webp","dimensions":"1600 x 1200 px (4:3)","type":"Infographic / Technical Graphic","format":"WebP / JPG","priority":"P1 (High Impact)","directive":"Infographic or studio photo showing Magnus's wide 24V to 1000V DC output capability, visually connecting to both low-voltage warehouse gear (80V) and ultra-high-voltage commercial trucks (800V).","instructions":["Deliver clean, scalable vector format with transparent background."]}]},{"file":"06-product-mobilus.md","num":6,"category":"Hardware Charging Systems","title":"Mobilus Product Page","route":"/products/mobilus","docCode":"IMG-REQ-06","purpose":"Product page for Mobilus mobile BESS charger on wheels, providing off-grid rapid deployment power for temporary lots, seasonal flight surges, and delayed utility connections.","tableRows":[{"slot":"Hero Tarmac / Auxiliary Lot Deployment","type":"On-Location Industrial Photography","dimensions":"2560 x 1440 px (16:9)","format":"WebP / JPG","priority":"P0 (Launch Critical)"},{"slot":"Studio 3/4 Trailer CAD Cutout","type":"3D CAD Studio Product Cutout","dimensions":"2000 x 2000 px (1:1 Square)","format":"PNG with Alpha Channel","priority":"P0 (Launch Critical)"},{"slot":"Internal BESS Battery Architecture Cutaway","type":"3D Technical Cutaway Diagram","dimensions":"1600 x 1200 px (4:3)","format":"PNG / WebP","priority":"P1 (High Impact)"},{"slot":"Rapid Mobilization Towing Action Shot","type":"Commercial Action Photography","dimensions":"1600 x 1200 px (4:3)","format":"WebP / JPG","priority":"P1 (High Impact)"}],"shots":[{"id":"### Asset 06.1","title":"Hero Tarmac / Auxiliary Lot Deployment","targetPath":"/assets/ai_placeholders/mobilus_deployment_1789225347110.jpg","dimensions":"2560 x 1440 px (16:9)","type":"On-Location Industrial Photography","format":"WebP / JPG","priority":"P0 (Launch Critical)","directive":"Mobilus mobile trailer charger positioned on a remote aircraft stand or newly expanded commercial vehicle overflow lot. A ground service vehicle is plugged into the trailer while an airline tug tows equipment nearby. Dawn sunlight with airfield towers in background.","instructions":["Capture in RAW/DNG format at maximum resolution (minimum 24 megapixels).","Avoid distracting clutter in the background; ensure equipment operators wear appropriate PPE (safety vests, eye protection, ear defenders).","Color grade for industrial realism with saturated safety accents (green LED indicators, yellow safety striping, safety-orange equipment)."]},{"id":"06.2","title":"Studio 3/4 Trailer CAD Cutout","targetPath":"/assets/Products/Mobilus/Mobilus Trailer Cutout.png","dimensions":"2000 x 2000 px (1:1 Square)","type":"3D CAD Studio Product Cutout","format":"PNG with Alpha Channel","priority":"P0 (Launch Critical)","directive":"Ultra-high-res 3D CAD rendering of the Mobilus heavy-duty trailer assembly on transparent background. Shows dual-axle suspension, all-terrain tires, front pintle hitch, integrated BESS battery pack enclosure, and dual CCS/Anderson charging booms.","instructions":["Export with alpha channel (transparent background) at 300 DPI.","Use neutral, high-key studio lighting with realistic metallic specular reflections and subtle ambient occlusion.","Verify all hardware dimensions match official Minit Charger engineering schematics."]},{"id":"06.3","title":"Internal BESS Battery Architecture Cutaway","targetPath":"/assets/Products/Mobilus/Mobilus BESS Cutaway.webp","dimensions":"1600 x 1200 px (4:3)","type":"3D Technical Cutaway Diagram","format":"PNG / WebP","priority":"P1 (High Impact)","directive":"3D cutaway visualization revealing the internal 150–300 kWh Lithium Iron Phosphate (LFP) battery bank, liquid thermal regulation circuits, and onboard bi-directional inverter system.","instructions":["Export with alpha channel (transparent background) at 300 DPI.","Use neutral, high-key studio lighting with realistic metallic specular reflections and subtle ambient occlusion.","Verify all hardware dimensions match official Minit Charger engineering schematics."]},{"id":"06.4","title":"Rapid Mobilization Towing Action Shot","targetPath":"/assets/Products/Mobilus/Mobilus Towing Action.webp","dimensions":"1600 x 1200 px (4:3)","type":"Commercial Action Photography","format":"WebP / JPG","priority":"P1 (High Impact)","directive":"Action photograph of Mobilus trailer being towed by a standard commercial utility truck across a fleet yard, demonstrating true mobile agility and instant deployment without civil works.","instructions":["Capture in RAW/DNG format at maximum resolution (minimum 24 megapixels).","Avoid distracting clutter in the background; ensure equipment operators wear appropriate PPE (safety vests, eye protection, ear defenders).","Color grade for industrial realism with saturated safety accents (green LED indicators, yellow safety striping, safety-orange equipment)."]}]},{"file":"07-product-momentus.md","num":7,"category":"Hardware Charging Systems","title":"Momentus Product Page","route":"/products/momentus","docCode":"IMG-REQ-07","purpose":"Product page for Momentus opportunity charger, engineered specifically for high-throughput indoor warehouse forklifts and material handling equipment.","tableRows":[{"slot":"Hero Distribution Center Workstation Shot","type":"On-Location Warehouse Photography","dimensions":"2560 x 1440 px (16:9)","format":"WebP / JPG","priority":"P0 (Launch Critical)"},{"slot":"Studio 3/4 Enclosure CAD Cutout","type":"3D CAD Studio Product Cutout","dimensions":"2000 x 2000 px (1:1 Square)","format":"PNG with Alpha Channel","priority":"P0 (Launch Critical)"},{"slot":"Ergonomic Single-Handed Plug-in Detail","type":"Commercial Detail Photography","dimensions":"1600 x 1200 px (4:3)","format":"WebP / JPG","priority":"P1 (High Impact)"},{"slot":"Column & Wall Mounting Flexibility","type":"Technical CAD Installation Diagram","dimensions":"1600 x 1200 px (4:3)","format":"WebP / PNG","priority":"P1 (High Impact)"}],"shots":[{"id":"### Asset 07.1","title":"Hero Distribution Center Workstation Shot","targetPath":"/assets/homepage/Meet MOMENTUs-02.webp","dimensions":"2560 x 1440 px (16:9)","type":"On-Location Warehouse Photography","format":"WebP / JPG","priority":"P0 (Launch Critical)","directive":"Environmental shot of Momentus mounted to a warehouse structural column directly adjacent to a fast-paced pallet staging zone. Forklift driver plugged in during break. High-bay industrial warehouse environment with clean yellow lane striping and high-density racking.","instructions":["Capture in RAW/DNG format at maximum resolution (minimum 24 megapixels).","Avoid distracting clutter in the background; ensure equipment operators wear appropriate PPE (safety vests, eye protection, ear defenders).","Color grade for industrial realism with saturated safety accents (green LED indicators, yellow safety striping, safety-orange equipment)."]},{"id":"07.2","title":"Studio 3/4 Enclosure CAD Cutout","targetPath":"/assets/Products/Momentus/Momentus Studio Cutout.png","dimensions":"2000 x 2000 px (1:1 Square)","type":"3D CAD Studio Product Cutout","format":"PNG with Alpha Channel","priority":"P0 (Launch Critical)","directive":"High-resolution studio CAD rendering of Momentus on transparent background. Shows compact single-port NEMA 12 enclosure, recessed cable cradle, 7-inch full-color touchscreen, and top LED status indicator light.","instructions":["Export with alpha channel (transparent background) at 300 DPI.","Use neutral, high-key studio lighting with realistic metallic specular reflections and subtle ambient occlusion.","Verify all hardware dimensions match official Minit Charger engineering schematics."]},{"id":"07.3","title":"Ergonomic Single-Handed Plug-in Detail","targetPath":"/assets/Products/Momentus/Momentus Connector Ergonomics.webp","dimensions":"1600 x 1200 px (4:3)","type":"Commercial Detail Photography","format":"WebP / JPG","priority":"P1 (High Impact)","directive":"Close-up action photo of an operator easily inserting the Euro 320 / Anderson connector into a reach truck battery port with one hand, demonstrating ergonomic ease and zero operator strain.","instructions":["Capture in RAW/DNG format at maximum resolution (minimum 24 megapixels).","Avoid distracting clutter in the background; ensure equipment operators wear appropriate PPE (safety vests, eye protection, ear defenders).","Color grade for industrial realism with saturated safety accents (green LED indicators, yellow safety striping, safety-orange equipment)."]},{"id":"07.4","title":"Column & Wall Mounting Flexibility","targetPath":"/assets/Products/Momentus/Momentus Mounting Options.webp","dimensions":"1600 x 1200 px (4:3)","type":"Technical CAD Installation Diagram","format":"WebP / PNG","priority":"P1 (High Impact)","directive":"Clean studio composite showing Momentus installed via 3 distinct configurations: slender warehouse I-beam clamp mount, masonry wall mount, and standalone floor pedestal mount.","instructions":["Export with alpha channel (transparent background) at 300 DPI.","Use neutral, high-key studio lighting with realistic metallic specular reflections and subtle ambient occlusion.","Verify all hardware dimensions match official Minit Charger engineering schematics."]}]},{"file":"08-product-maximus.md","num":8,"category":"Hardware Charging Systems","title":"Maximus Product Page","route":"/products/maximus","docCode":"IMG-REQ-08","purpose":"Product page for Maximus dual-port 40 kW high-throughput industrial charger, keeping multi-shift 24/7 forklift fleets running with zero battery room downtime.","tableRows":[{"slot":"Hero High-Throughput Fulfillment Center","type":"On-Location Industrial Photography","dimensions":"2560 x 1440 px (16:9)","format":"WebP / JPG","priority":"P0 (Launch Critical)"},{"slot":"Studio 3/4 Dual-Port CAD Cutout","type":"3D CAD Studio Product Cutout","dimensions":"2000 x 2000 px (1:1 Square)","format":"PNG with Alpha Channel","priority":"P0 (Launch Critical)"},{"slot":"Internal Power Module Hot-Swap Maintenance","type":"Technical Service Photography","dimensions":"1600 x 1200 px (4:3)","format":"WebP / JPG","priority":"P1 (High Impact)"},{"slot":"Simultaneous Dual 20 kW Power Delivery Chart","type":"Technical Infographic / Single-Line Schematic","dimensions":"1600 x 1200 px (4:3)","format":"PNG / WebP","priority":"P1 (High Impact)"}],"shots":[{"id":"### Asset 08.1","title":"Hero High-Throughput Fulfillment Center","targetPath":"/assets/homepage/Indoor material handling-01.webp","dimensions":"2560 x 1440 px (16:9)","type":"On-Location Industrial Photography","format":"WebP / JPG","priority":"P0 (Launch Critical)","directive":"Action shot of Maximus dual-port charger situated between two busy warehouse staging aisles. Two electric forklifts are connected simultaneously to dual 20 kW ports, both charging at full rate during shift crossover. Clean, bustling logistics warehouse environment.","instructions":["Capture in RAW/DNG format at maximum resolution (minimum 24 megapixels).","Avoid distracting clutter in the background; ensure equipment operators wear appropriate PPE (safety vests, eye protection, ear defenders).","Color grade for industrial realism with saturated safety accents (green LED indicators, yellow safety striping, safety-orange equipment)."]},{"id":"08.2","title":"Studio 3/4 Dual-Port CAD Cutout","targetPath":"/assets/Products/Maximus/Maximus Studio Cutout.png","dimensions":"2000 x 2000 px (1:1 Square)","type":"3D CAD Studio Product Cutout","format":"PNG with Alpha Channel","priority":"P0 (Launch Critical)","directive":"4K studio CAD rendering of Maximus cabinet on transparent background. Highlights dual independent cable booms, dual LCD operating panels, front air intake filtration grilles, and heavy steel housing.","instructions":["Export with alpha channel (transparent background) at 300 DPI.","Use neutral, high-key studio lighting with realistic metallic specular reflections and subtle ambient occlusion.","Verify all hardware dimensions match official Minit Charger engineering schematics."]},{"id":"08.3","title":"Internal Power Module Hot-Swap Maintenance","targetPath":"/assets/Products/Maximus/Maximus Power Module.webp","dimensions":"1600 x 1200 px (4:3)","type":"Technical Service Photography","format":"WebP / JPG","priority":"P1 (High Impact)","directive":"Photograph showing a certified technician pulling out an internal Silicon Carbide power cassette from the Maximus front chassis on ball-bearing slide tracks, demonstrating 10-minute field serviceability.","instructions":["Capture in RAW/DNG format at maximum resolution (minimum 24 megapixels).","Avoid distracting clutter in the background; ensure equipment operators wear appropriate PPE (safety vests, eye protection, ear defenders).","Color grade for industrial realism with saturated safety accents (green LED indicators, yellow safety striping, safety-orange equipment)."]},{"id":"08.4","title":"Simultaneous Dual 20 kW Power Delivery Chart","targetPath":"/assets/Products/Maximus/Maximus Dual Port Diagram.webp","dimensions":"1600 x 1200 px (4:3)","type":"Technical Infographic / Single-Line Schematic","format":"PNG / WebP","priority":"P1 (High Impact)","directive":"Technical infographic diagram showing Maximus distributing balanced 20 kW + 20 kW simultaneous DC power from a single 480VAC 3-phase drop without voltage sag.","instructions":["Deliver clean, scalable vector format with transparent background."]}]},{"file":"09-product-durus.md","num":9,"category":"Hardware Charging Systems","title":"Durus Product Page","route":"/products/durus","docCode":"IMG-REQ-09","purpose":"Product page for Durus compact 2.2–3.3 kW sealed charger for low-speed electric vehicles (LSVs), utility carts, and small automated guided vehicles (AGVs).","tableRows":[{"slot":"Hero Onboard Vehicle Installation","type":"On-Location Vehicle Photography","dimensions":"2560 x 1440 px (16:9)","format":"WebP / JPG","priority":"P0 (Launch Critical)"},{"slot":"Studio Cutout CAD Render","type":"3D CAD Studio Product Cutout","dimensions":"2000 x 2000 px (1:1 Square)","format":"PNG with Alpha Channel","priority":"P0 (Launch Critical)"},{"slot":"IP66 Water & Washdown Proofing","type":"Laboratory / Testing Photography","dimensions":"1600 x 1200 px (4:3)","format":"WebP / JPG","priority":"P1 (High Impact)"},{"slot":"Universal Battery Chemistry Compatibility","type":"Technical Infographic","dimensions":"1600 x 1200 px (4:3)","format":"PNG / WebP","priority":"P1 (High Impact)"}],"shots":[{"id":"### Asset 09.1","title":"Hero Onboard Vehicle Installation","targetPath":"/assets/homepage/Engineered for LSEVs.webp","dimensions":"2560 x 1440 px (16:9)","type":"On-Location Vehicle Photography","format":"WebP / JPG","priority":"P0 (Launch Critical)","directive":"Close-up environmental photograph of Durus mounted directly onto the rugged steel frame of an electric campus utility vehicle or burden carrier. Shows sealed aluminum enclosure resisting vibration, dust, and outdoor conditions.","instructions":["Capture in RAW/DNG format at maximum resolution (minimum 24 megapixels).","Avoid distracting clutter in the background; ensure equipment operators wear appropriate PPE (safety vests, eye protection, ear defenders).","Color grade for industrial realism with saturated safety accents (green LED indicators, yellow safety striping, safety-orange equipment)."]},{"id":"09.2","title":"Studio Cutout CAD Render","targetPath":"/assets/Products/Durus/Durus Studio Cutout.png","dimensions":"2000 x 2000 px (1:1 Square)","type":"3D CAD Studio Product Cutout","format":"PNG with Alpha Channel","priority":"P0 (Launch Critical)","directive":"4K studio CAD rendering of Durus on transparent background. Shows extruded anodized aluminum housing with deep cooling fins, sealed IP66 wiring harness, mounting flanges, and multi-color LED diagnostic indicator.","instructions":["Export with alpha channel (transparent background) at 300 DPI.","Use neutral, high-key studio lighting with realistic metallic specular reflections and subtle ambient occlusion.","Verify all hardware dimensions match official Minit Charger engineering schematics."]},{"id":"09.3","title":"IP66 Water & Washdown Proofing","targetPath":"/assets/Products/Durus/Durus IP66 Test.webp","dimensions":"1600 x 1200 px (4:3)","type":"Laboratory / Testing Photography","format":"WebP / JPG","priority":"P1 (High Impact)","directive":"Action photograph showing Durus subjected to high-pressure water spray during washdown testing, highlighting complete environmental sealing against water, mud, fertilizer, and salt air.","instructions":["Capture in RAW/DNG format at maximum resolution (minimum 24 megapixels).","Avoid distracting clutter in the background; ensure equipment operators wear appropriate PPE (safety vests, eye protection, ear defenders).","Color grade for industrial realism with saturated safety accents (green LED indicators, yellow safety striping, safety-orange equipment)."]},{"id":"09.4","title":"Universal Battery Chemistry Compatibility","targetPath":"/assets/Products/Durus/Durus Battery Compatibility.webp","dimensions":"1600 x 1200 px (4:3)","type":"Technical Infographic","format":"PNG / WebP","priority":"P1 (High Impact)","directive":"Technical graphic illustrating Durus pre-programmed charging curves for Flooded Lead-Acid, AGM, Gel, and Lithium-Ion packs with automated chemistry sensing.","instructions":["Deliver clean, scalable vector format with transparent background."]}]},{"file":"10-product-celltrac.md","num":10,"category":"Sensors & Cloud Software","title":"CellTrac Product Page","route":"/products/celltrac","docCode":"IMG-REQ-10","purpose":"Product page for CellTrac smart battery telemetry sensor, delivering real-time battery voltage, current, temperature, electrolyte water level, and GPS tracking to Cumulus Cloud.","tableRows":[{"slot":"Hero Battery Pack Sensor Installation","type":"Macro Industrial Detail Photography","dimensions":"2560 x 1440 px (16:9)","format":"WebP / JPG","priority":"P0 (Launch Critical)"},{"slot":"Studio Cutout CAD Render","type":"3D CAD Studio Product Cutout","dimensions":"2000 x 2000 px (1:1 Square)","format":"PNG with Alpha Channel","priority":"P0 (Launch Critical)"},{"slot":"Electrolyte Water Level & Thermal Sensor Probe","type":"Technical Macro Photography","dimensions":"1600 x 1200 px (4:3)","format":"WebP / JPG","priority":"P1 (High Impact)"},{"slot":"Mobile App & Cloud Diagnostics Screen","type":"Software UI Mockup","dimensions":"1600 x 1200 px (4:3)","format":"PNG / WebP","priority":"P1 (High Impact)"}],"shots":[{"id":"### Asset 10.1","title":"Hero Battery Pack Sensor Installation","targetPath":"/assets/homepage/Celltrac.webp","dimensions":"2560 x 1440 px (16:9)","type":"Macro Industrial Detail Photography","format":"WebP / JPG","priority":"P0 (Launch Critical)","directive":"Detailed macro photograph of CellTrac wireless telemetry module securely bolted across industrial lead-acid or lithium battery terminals. LED status beacon glowing green; sensor wires neatly routed across cell inter-connectors.","instructions":["Capture in RAW/DNG format at maximum resolution (minimum 24 megapixels).","Avoid distracting clutter in the background; ensure equipment operators wear appropriate PPE (safety vests, eye protection, ear defenders).","Color grade for industrial realism with saturated safety accents (green LED indicators, yellow safety striping, safety-orange equipment)."]},{"id":"10.2","title":"Studio Cutout CAD Render","targetPath":"/assets/Products/CellTrac/CellTrac Studio Cutout.png","dimensions":"2000 x 2000 px (1:1 Square)","type":"3D CAD Studio Product Cutout","format":"PNG with Alpha Channel","priority":"P0 (Launch Critical)","directive":"4K studio CAD rendering of CellTrac on transparent background. Highlights ultra-compact epoxy-encapsulated module, integrated high-precision current shunt, electrolyte level probe, and wireless antenna.","instructions":["Export with alpha channel (transparent background) at 300 DPI.","Use neutral, high-key studio lighting with realistic metallic specular reflections and subtle ambient occlusion.","Verify all hardware dimensions match official Minit Charger engineering schematics."]},{"id":"10.3","title":"Electrolyte Water Level & Thermal Sensor Probe","targetPath":"/assets/Products/CellTrac/CellTrac Probe Detail.webp","dimensions":"1600 x 1200 px (4:3)","type":"Technical Macro Photography","format":"WebP / JPG","priority":"P1 (High Impact)","directive":"Close-up photograph of the CellTrac electrolyte level probe inserted into a battery cell vent cap, showing low-water detection optical sensors and thermal thermistor.","instructions":["Capture in RAW/DNG format at maximum resolution (minimum 24 megapixels).","Avoid distracting clutter in the background; ensure equipment operators wear appropriate PPE (safety vests, eye protection, ear defenders).","Color grade for industrial realism with saturated safety accents (green LED indicators, yellow safety striping, safety-orange equipment)."]},{"id":"10.4","title":"Mobile App & Cloud Diagnostics Screen","targetPath":"/assets/Products/CellTrac/CellTrac App Screen.webp","dimensions":"1600 x 1200 px (4:3)","type":"Software UI Mockup","format":"PNG / WebP","priority":"P1 (High Impact)","directive":"High-resolution mockup of the CellTrac mobile technician app on an iPhone/Android screen showing live battery State-of-Charge (SoC), historical equalization logs, and low-water push notifications.","instructions":["Capture at native 2x/Retina pixel density.","Use modern dark-mode aesthetic matching the Cumulus platform design system.","Ensure all displayed data (kWh, vehicle IDs, customer names) uses approved demo figures."]}]},{"file":"11-product-cumulus.md","num":11,"category":"Sensors & Cloud Software","title":"Cumulus Cloud Platform Page","route":"/products/cumulus","docCode":"IMG-REQ-11","purpose":"Dedicated software platform page showcasing Cumulus Cloud fleet energy management, real-time telemetry, automated tenant power billing, and peak demand shaving.","tableRows":[{"slot":"Hero Multi-Device UI Perspective Showcase","type":"3D Multi-Device Hardware/Software Render","dimensions":"2560 x 1440 px (16:9)","format":"WebP / PNG","priority":"P0 (Launch Critical)"},{"slot":"Real-Time Facility Demand Management Dashboard","type":"Direct High-Res UI Screenshot","dimensions":"1920 x 1080 px (16:9)","format":"PNG / WebP","priority":"P0 (Launch Critical)"},{"slot":"Automated Airline & Tenant Billing Invoices","type":"Direct High-Res UI Screenshot","dimensions":"1600 x 1200 px (4:3)","format":"PNG / WebP","priority":"P1 (High Impact)"},{"slot":"Predictive Battery Health & Degradation Analytics","type":"Direct High-Res UI Screenshot","dimensions":"1600 x 1200 px (4:3)","format":"PNG / WebP","priority":"P1 (High Impact)"}],"shots":[{"id":"### Asset 11.1","title":"Hero Multi-Device UI Perspective Showcase","targetPath":"/assets/homepage/Cumulus Software-01.webp","dimensions":"2560 x 1440 px (16:9)","type":"3D Multi-Device Hardware/Software Render","format":"WebP / PNG","priority":"P0 (Launch Critical)","directive":"3D studio perspective render showing Cumulus Cloud running across three synchronized screens: an ultra-wide curved desktop workstation, a MacBook laptop, and an iPad Pro. Displays live fleet maps, energy demand graphs, and charger telemetry in sleek dark mode.","instructions":["Export with alpha channel (transparent background) at 300 DPI.","Use neutral, high-key studio lighting with realistic metallic specular reflections and subtle ambient occlusion.","Verify all hardware dimensions match official Minit Charger engineering schematics."]},{"id":"11.2","title":"Real-Time Facility Demand Management Dashboard","targetPath":"/assets/Products/Cumulus/Cumulus Peak Shaving UI.webp","dimensions":"1920 x 1080 px (16:9)","type":"Direct High-Res UI Screenshot","format":"PNG / WebP","priority":"P0 (Launch Critical)","directive":"Crisp, full-resolution UI screenshot of Cumulus dynamic load balancing module. Displays facility kW demand curve staying beneath utility threshold limit, showing automated throttling of secondary dispensers.","instructions":["Capture at native 2x/Retina pixel density.","Use modern dark-mode aesthetic matching the Cumulus platform design system.","Ensure all displayed data (kWh, vehicle IDs, customer names) uses approved demo figures."]},{"id":"11.3","title":"Automated Airline & Tenant Billing Invoices","targetPath":"/assets/Products/Cumulus/Cumulus Billing UI.webp","dimensions":"1600 x 1200 px (4:3)","type":"Direct High-Res UI Screenshot","format":"PNG / WebP","priority":"P1 (High Impact)","directive":"Detailed UI screen showing automated revenue-grade utility re-billing for airport ground handlers and multi-tenant logistics yards. Displays itemized invoice generation with timestamped kWh delivery tables.","instructions":["Capture at native 2x/Retina pixel density.","Use modern dark-mode aesthetic matching the Cumulus platform design system.","Ensure all displayed data (kWh, vehicle IDs, customer names) uses approved demo figures."]},{"id":"11.4","title":"Predictive Battery Health & Degradation Analytics","targetPath":"/assets/Products/Cumulus/Cumulus Battery Health UI.webp","dimensions":"1600 x 1200 px (4:3)","type":"Direct High-Res UI Screenshot","format":"PNG / WebP","priority":"P1 (High Impact)","directive":"Analytical UI dashboard tracking battery fleet health curves over time, highlighting preemptive alerts for sulfation, cell voltage divergence, and recommended watering schedules.","instructions":["Capture at native 2x/Retina pixel density.","Use modern dark-mode aesthetic matching the Cumulus platform design system.","Ensure all displayed data (kWh, vehicle IDs, customer names) uses approved demo figures."]}]},{"file":"12-product-pharus.md","num":12,"category":"Sensors & Cloud Software","title":"Pharus Product Page","route":"/products/pharus","docCode":"IMG-REQ-12","purpose":"Product page for Pharus commercial Level 2 AC dual-port charger, powering employee parking, rental lots, passenger vehicles, and administrative support transit.","tableRows":[{"slot":"Hero Commercial Parking Lot Deployment","type":"On-Location Commercial Photography","dimensions":"2560 x 1440 px (16:9)","format":"WebP / JPG","priority":"P0 (Launch Critical)"},{"slot":"Studio 3/4 Pedestal CAD Cutout","type":"3D CAD Studio Product Cutout","dimensions":"2000 x 2000 px (1:1 Square)","format":"PNG with Alpha Channel","priority":"P0 (Launch Critical)"},{"slot":"RFID & Mobile Payment Authorization Detail","type":"Commercial Interaction Photography","dimensions":"1600 x 1200 px (4:3)","format":"WebP / JPG","priority":"P1 (High Impact)"},{"slot":"Dual Retractable Cable Holster Mechanism","type":"Technical Product Photography","dimensions":"1600 x 1200 px (4:3)","format":"WebP / JPG","priority":"P1 (High Impact)"}],"shots":[{"id":"### Asset 12.1","title":"Hero Commercial Parking Lot Deployment","targetPath":"/assets/Products/Pharus/Pharus Parking Lot.webp","dimensions":"2560 x 1440 px (16:9)","type":"On-Location Commercial Photography","format":"WebP / JPG","priority":"P0 (Launch Critical)","directive":"Photograph of Pharus dual-port Level 2 chargers installed in a modern airport administration or corporate campus parking plaza. Electric employee sedans and security SUVs plugged in. Clean painted stalls, clear signage, daytime natural lighting.","instructions":["Capture in RAW/DNG format at maximum resolution (minimum 24 megapixels).","Avoid distracting clutter in the background; ensure equipment operators wear appropriate PPE (safety vests, eye protection, ear defenders).","Color grade for industrial realism with saturated safety accents (green LED indicators, yellow safety striping, safety-orange equipment)."]},{"id":"12.2","title":"Studio 3/4 Pedestal CAD Cutout","targetPath":"/assets/Products/Pharus/Pharus Studio Cutout.png","dimensions":"2000 x 2000 px (1:1 Square)","type":"3D CAD Studio Product Cutout","format":"PNG with Alpha Channel","priority":"P0 (Launch Critical)","directive":"4K studio CAD rendering of Pharus dual pedestal on transparent background. Shows slender powder-coated aluminum bollard, dual J1772 holsters with spring-assisted cable management, and RFID reader.","instructions":["Export with alpha channel (transparent background) at 300 DPI.","Use neutral, high-key studio lighting with realistic metallic specular reflections and subtle ambient occlusion.","Verify all hardware dimensions match official Minit Charger engineering schematics."]},{"id":"12.3","title":"RFID & Mobile Payment Authorization Detail","targetPath":"/assets/Products/Pharus/Pharus RFID Tap.webp","dimensions":"1600 x 1200 px (4:3)","type":"Commercial Interaction Photography","format":"WebP / JPG","priority":"P1 (High Impact)","directive":"Close-up photo of user tapping an RFID employee badge or Apple Pay smartphone against the Pharus authorization glass panel, with LED halo turning green for authorized session.","instructions":["Capture in RAW/DNG format at maximum resolution (minimum 24 megapixels).","Avoid distracting clutter in the background; ensure equipment operators wear appropriate PPE (safety vests, eye protection, ear defenders).","Color grade for industrial realism with saturated safety accents (green LED indicators, yellow safety striping, safety-orange equipment)."]},{"id":"12.4","title":"Dual Retractable Cable Holster Mechanism","targetPath":"/assets/Products/Pharus/Pharus Holster Detail.webp","dimensions":"1600 x 1200 px (4:3)","type":"Technical Product Photography","format":"WebP / JPG","priority":"P1 (High Impact)","directive":"Detail photo showing the spring-loaded cable retractor keeping dual 18-foot cables off pavement, preventing trip hazards and connector damage.","instructions":["Capture in RAW/DNG format at maximum resolution (minimum 24 megapixels).","Avoid distracting clutter in the background; ensure equipment operators wear appropriate PPE (safety vests, eye protection, ear defenders).","Color grade for industrial realism with saturated safety accents (green LED indicators, yellow safety striping, safety-orange equipment)."]}]},{"file":"13-industries-hub.md","num":13,"category":"Industry Verticals","title":"Industries Catalog Hub","route":"/industries","docCode":"IMG-REQ-13","purpose":"Central sector landing hub presenting tailored charging infrastructure across Aviation GSE, Warehouse Material Handling, Commercial Fleets, and Low-Speed Vehicles.","tableRows":[{"slot":"Industries Panoramic Banner Hero","type":"Panoramic Composite Photography","dimensions":"2560 x 1000 px (Panoramic Banner)","format":"WebP / JPG","priority":"P0 (Launch Critical)"},{"slot":"Sector Card - Aviation & Airport GSE","type":"Aviation Field Photography","dimensions":"1200 x 800 px (3:2)","format":"WebP / JPG","priority":"P0 (Launch Critical)"},{"slot":"Sector Card - Warehouse & Material Handling","type":"Warehouse Logistics Photography","dimensions":"1200 x 800 px (3:2)","format":"WebP / JPG","priority":"P0 (Launch Critical)"},{"slot":"Sector Card - Commercial Fleets & Transit","type":"Commercial Depot Photography","dimensions":"1200 x 800 px (3:2)","format":"WebP / JPG","priority":"P0 (Launch Critical)"},{"slot":"Sector Card - Low-Speed Vehicles (LSV)","type":"Campus / Resort Photography","dimensions":"1200 x 800 px (3:2)","format":"WebP / JPG","priority":"P0 (Launch Critical)"}],"shots":[{"id":"### Asset 13.1","title":"Industries Panoramic Banner Hero","targetPath":"/assets/homepage/Engineered for Airports.webp","dimensions":"2560 x 1000 px (Panoramic Banner)","type":"Panoramic Composite Photography","format":"WebP / JPG","priority":"P0 (Launch Critical)","directive":"Wide-format composite banner combining atmospheric operational imagery across four sectors: an airport ramp at dawn, a high-bay logistics warehouse, an electric bus transit yard, and an upscale resort campus.","instructions":["Capture in RAW/DNG format at maximum resolution (minimum 24 megapixels).","Avoid distracting clutter in the background; ensure equipment operators wear appropriate PPE (safety vests, eye protection, ear defenders).","Color grade for industrial realism with saturated safety accents (green LED indicators, yellow safety striping, safety-orange equipment)."]},{"id":"13.2","title":"Sector Card - Aviation & Airport GSE","targetPath":"/assets/homepage/Outdoor eGSE & yards-01.webp","dimensions":"1200 x 800 px (3:2)","type":"Aviation Field Photography","format":"WebP / JPG","priority":"P0 (Launch Critical)","directive":"Dynamic action photograph of an electric baggage tractor pulling a train of luggage carts past an active commercial jetliner on a sunlit airport tarmac. Altus II charger visible at the gate.","instructions":["Capture in RAW/DNG format at maximum resolution (minimum 24 megapixels).","Avoid distracting clutter in the background; ensure equipment operators wear appropriate PPE (safety vests, eye protection, ear defenders).","Color grade for industrial realism with saturated safety accents (green LED indicators, yellow safety striping, safety-orange equipment)."]},{"id":"13.3","title":"Sector Card - Warehouse & Material Handling","targetPath":"/assets/homepage/Indoor material handling-01.webp","dimensions":"1200 x 800 px (3:2)","type":"Warehouse Logistics Photography","format":"WebP / JPG","priority":"P0 (Launch Critical)","directive":"High-throughput logistics warehouse with electric reach trucks navigating high-density racking. Momentus opportunity charger mounted at workstation break station.","instructions":["Capture in RAW/DNG format at maximum resolution (minimum 24 megapixels).","Avoid distracting clutter in the background; ensure equipment operators wear appropriate PPE (safety vests, eye protection, ear defenders).","Color grade for industrial realism with saturated safety accents (green LED indicators, yellow safety striping, safety-orange equipment)."]},{"id":"13.4","title":"Sector Card - Commercial Fleets & Transit","targetPath":"/assets/homepage/High Power DC Fast-01.webp","dimensions":"1200 x 800 px (3:2)","type":"Commercial Depot Photography","format":"WebP / JPG","priority":"P0 (Launch Critical)","directive":"Commercial fleet depot at twilight with rows of electric delivery step vans and municipal buses charging at Magnus high-power DC fast-charging dispensers.","instructions":["Capture in RAW/DNG format at maximum resolution (minimum 24 megapixels).","Avoid distracting clutter in the background; ensure equipment operators wear appropriate PPE (safety vests, eye protection, ear defenders).","Color grade for industrial realism with saturated safety accents (green LED indicators, yellow safety striping, safety-orange equipment)."]},{"id":"13.5","title":"Sector Card - Low-Speed Vehicles (LSV)","targetPath":"/assets/homepage/Engineered for LSEVs.webp","dimensions":"1200 x 800 px (3:2)","type":"Campus / Resort Photography","format":"WebP / JPG","priority":"P0 (Launch Critical)","directive":"Scenic resort or university campus setting with electric utility vehicles and security carts charging cleanly at a landscaped outdoor charging station.","instructions":["Capture in RAW/DNG format at maximum resolution (minimum 24 megapixels).","Avoid distracting clutter in the background; ensure equipment operators wear appropriate PPE (safety vests, eye protection, ear defenders).","Color grade for industrial realism with saturated safety accents (green LED indicators, yellow safety striping, safety-orange equipment)."]}]},{"file":"14-industry-aviation-gse.md","num":14,"category":"Industry Verticals","title":"Aviation & Airport GSE Industry Page","route":"/industries/aviation-gse","docCode":"IMG-REQ-14","purpose":"Specialized deep-dive into airport apron charging challenges: rapid turnaround times, extreme weather, diverse fleet voltages, cable drive-over hazards, and gate power allocation.","tableRows":[{"slot":"Hero Tarmac Apron Panoramic","type":"On-Location Aviation Photography","dimensions":"2560 x 1440 px (16:9)","format":"WebP / JPG","priority":"P0 (Launch Critical)"},{"slot":"Signature Solution - Gate Pedestal CAD Integration","type":"3D CAD Architecture Composite","dimensions":"1600 x 1200 px (4:3)","format":"PNG / WebP","priority":"P0 (Launch Critical)"},{"slot":"Benefit 1 - Mixed-Fleet Universal Charging","type":"On-Location Tarmac Photography","dimensions":"1400 x 1050 px (4:3)","format":"WebP / JPG","priority":"P1 (High Impact)"},{"slot":"Benefit 2 - Mobilus Mobile Airport Power","type":"On-Location Tarmac Photography","dimensions":"1400 x 1050 px (4:3)","format":"WebP / JPG","priority":"P1 (High Impact)"},{"slot":"Stakeholder Persona 1 - Airport Authority Director","type":"Executive Environmental Portrait","dimensions":"1000 x 1000 px (1:1)","format":"WebP / JPG","priority":"P1 (High Impact)"},{"slot":"Stakeholder Persona 2 - Ground Handling Operations Lead","type":"Field Operations Portrait","dimensions":"1000 x 1000 px (1:1)","format":"WebP / JPG","priority":"P1 (High Impact)"},{"slot":"Stakeholder Persona 3 - GSE Fleet Maintenance Chief","type":"Industrial Technical Portrait","dimensions":"1000 x 1000 px (1:1)","format":"WebP / JPG","priority":"P1 (High Impact)"}],"shots":[{"id":"### Asset 14.1","title":"Hero Tarmac Apron Panoramic","targetPath":"/assets/homepage/Outdoor eGSE & yards-01.webp","dimensions":"2560 x 1440 px (16:9)","type":"On-Location Aviation Photography","format":"WebP / JPG","priority":"P0 (Launch Critical)","directive":"Cinematic, wide-angle photography of an airport ramp during peak flight bank turnaround. Electric pushback tug connected to a Boeing 787 nose gear; electric belt loaders and baggage tugs clustered around the cargo holds. Altus II chargers installed on gate columns.","instructions":["Capture in RAW/DNG format at maximum resolution (minimum 24 megapixels).","Avoid distracting clutter in the background; ensure equipment operators wear appropriate PPE (safety vests, eye protection, ear defenders).","Color grade for industrial realism with saturated safety accents (green LED indicators, yellow safety striping, safety-orange equipment)."]},{"id":"14.2","title":"Signature Solution - Gate Pedestal CAD Integration","targetPath":"/assets/Products/Altus II/ALTUSII_FRONT.webp","dimensions":"1600 x 1200 px (4:3)","type":"3D CAD Architecture Composite","format":"PNG / WebP","priority":"P0 (Launch Critical)","directive":"Ultra-clean 3D render of the Altus II dual-port charger integrated onto an airport tarmac boarding bridge support column with yellow safety bollards and clear gate markings.","instructions":["Export with alpha channel (transparent background) at 300 DPI.","Use neutral, high-key studio lighting with realistic metallic specular reflections and subtle ambient occlusion.","Verify all hardware dimensions match official Minit Charger engineering schematics."]},{"id":"14.3","title":"Benefit 1 - Mixed-Fleet Universal Charging","targetPath":"/assets/ai_placeholders/gse_ecosystem_1789225330392.jpg","dimensions":"1400 x 1050 px (4:3)","type":"On-Location Tarmac Photography","format":"WebP / JPG","priority":"P1 (High Impact)","directive":"Ramp photo showing a single Minit Charger simultaneously powering an 80V electric baggage tug and an 800V high-voltage container loader, demonstrating universal voltage compatibility.","instructions":["Capture in RAW/DNG format at maximum resolution (minimum 24 megapixels).","Avoid distracting clutter in the background; ensure equipment operators wear appropriate PPE (safety vests, eye protection, ear defenders).","Color grade for industrial realism with saturated safety accents (green LED indicators, yellow safety striping, safety-orange equipment)."]},{"id":"14.4","title":"Benefit 2 - Mobilus Mobile Airport Power","targetPath":"/assets/ai_placeholders/mobilus_deployment_1789225347110.jpg","dimensions":"1400 x 1050 px (4:3)","type":"On-Location Tarmac Photography","format":"WebP / JPG","priority":"P1 (High Impact)","directive":"Mobilus mobile trailer deployed on a remote de-icing pad or seasonal charter flight stand, fast-charging eGSE without requiring tarmac excavation.","instructions":["Capture in RAW/DNG format at maximum resolution (minimum 24 megapixels).","Avoid distracting clutter in the background; ensure equipment operators wear appropriate PPE (safety vests, eye protection, ear defenders).","Color grade for industrial realism with saturated safety accents (green LED indicators, yellow safety striping, safety-orange equipment)."]},{"id":"14.5","title":"Stakeholder Persona 1 - Airport Authority Director","targetPath":"activeData.image (PersonaSplit.js)","dimensions":"1000 x 1000 px (1:1)","type":"Executive Environmental Portrait","format":"WebP / JPG","priority":"P1 (High Impact)","directive":"Airport executive in terminal conference room overlooking active flight apron with digital tablet displaying NetZero carbon reduction metrics.","instructions":["Deliver clean, scalable vector format with transparent background."]},{"id":"14.6","title":"Stakeholder Persona 2 - Ground Handling Operations Lead","targetPath":"activeData.image (PersonaSplit.js)","dimensions":"1000 x 1000 px (1:1)","type":"Field Operations Portrait","format":"WebP / JPG","priority":"P1 (High Impact)","directive":"Ground handler manager in safety vest and ear defenders on active ramp inspecting on-time aircraft departure with baggage tug plugged in.","instructions":["Deliver clean, scalable vector format with transparent background."]},{"id":"14.7","title":"Stakeholder Persona 3 - GSE Fleet Maintenance Chief","targetPath":"activeData.image (PersonaSplit.js)","dimensions":"1000 x 1000 px (1:1)","type":"Industrial Technical Portrait","format":"WebP / JPG","priority":"P1 (High Impact)","directive":"Maintenance lead in airport maintenance hangar holding a digital diagnostic scanner next to a disassembled power cabinet, highlighting fast servicing.","instructions":["Deliver clean, scalable vector format with transparent background."]}]},{"file":"15-industry-warehouse.md","num":15,"category":"Industry Verticals","title":"Warehouse & Logistics Industry Page","route":"/industries/warehouse","docCode":"IMG-REQ-15","purpose":"Demonstrates how Minit Charger eliminates dedicated battery rooms and enables 24/7 continuous multi-shift operations through workstation opportunity charging.","tableRows":[{"slot":"Hero Distribution Center Forklift Staging","type":"On-Location Warehouse Photography","dimensions":"2560 x 1440 px (16:9)","format":"WebP / JPG","priority":"P0 (Launch Critical)"},{"slot":"Benefit 1 - Reclaimed Warehouse Square Footage","type":"Industrial Facility Photography","dimensions":"1400 x 1050 px (4:3)","format":"WebP / JPG","priority":"P0 (Launch Critical)"},{"slot":"Benefit 2 - 24/7 Multi-Shift Opportunity Charging","type":"Commercial Detail Photography","dimensions":"1400 x 1050 px (4:3)","format":"WebP / JPG","priority":"P1 (High Impact)"},{"slot":"Stakeholder Persona 1 - VP of Supply Chain","type":"Executive Environmental Portrait","dimensions":"1000 x 1000 px (1:1)","format":"WebP / JPG","priority":"P1 (High Impact)"},{"slot":"Stakeholder Persona 2 - Facility Operations Director","type":"Industrial Facility Portrait","dimensions":"1000 x 1000 px (1:1)","format":"WebP / JPG","priority":"P1 (High Impact)"},{"slot":"Stakeholder Persona 3 - Shift Maintenance Supervisor","type":"Technical Operations Portrait","dimensions":"1000 x 1000 px (1:1)","format":"WebP / JPG","priority":"P1 (High Impact)"}],"shots":[{"id":"### Asset 15.1","title":"Hero Distribution Center Forklift Staging","targetPath":"/assets/homepage/Indoor material handling-01.webp","dimensions":"2560 x 1440 px (16:9)","type":"On-Location Warehouse Photography","format":"WebP / JPG","priority":"P0 (Launch Critical)","directive":"Dramatic wide-angle photo of a multi-shift logistics distribution center. In the foreground, two electric reach trucks are parked at clean end-of-aisle opportunity charging stations. Background features towering inventory racks with automated guided vehicles.","instructions":["Capture in RAW/DNG format at maximum resolution (minimum 24 megapixels).","Avoid distracting clutter in the background; ensure equipment operators wear appropriate PPE (safety vests, eye protection, ear defenders).","Color grade for industrial realism with saturated safety accents (green LED indicators, yellow safety striping, safety-orange equipment)."]},{"id":"15.2","title":"Benefit 1 - Reclaimed Warehouse Square Footage","targetPath":"/assets/homepage/Engineered for Warehouses.webp","dimensions":"1400 x 1050 px (4:3)","type":"Industrial Facility Photography","format":"WebP / JPG","priority":"P0 (Launch Critical)","directive":"Clean, well-lit photo showing 3,000 sq ft of warehouse floor previously consumed by heavy battery change carousels, now reclaimed with high-density productive pallet racking.","instructions":["Capture in RAW/DNG format at maximum resolution (minimum 24 megapixels).","Avoid distracting clutter in the background; ensure equipment operators wear appropriate PPE (safety vests, eye protection, ear defenders).","Color grade for industrial realism with saturated safety accents (green LED indicators, yellow safety striping, safety-orange equipment)."]},{"id":"15.3","title":"Benefit 2 - 24/7 Multi-Shift Opportunity Charging","targetPath":"/assets/homepage/Indoor material handling-01.webp","dimensions":"1400 x 1050 px (4:3)","type":"Commercial Detail Photography","format":"WebP / JPG","priority":"P1 (High Impact)","directive":"Close-up action shot of a forklift driver plugging in the charger during a scheduled 15-minute break. Digital display shows fast top-off curve recovering 40% battery capacity.","instructions":["Capture in RAW/DNG format at maximum resolution (minimum 24 megapixels).","Avoid distracting clutter in the background; ensure equipment operators wear appropriate PPE (safety vests, eye protection, ear defenders).","Color grade for industrial realism with saturated safety accents (green LED indicators, yellow safety striping, safety-orange equipment)."]},{"id":"15.4","title":"Stakeholder Persona 1 - VP of Supply Chain","targetPath":"activeData.image (PersonaSplit.js)","dimensions":"1000 x 1000 px (1:1)","type":"Executive Environmental Portrait","format":"WebP / JPG","priority":"P1 (High Impact)","directive":"Corporate supply chain executive in modern logistics operations control room reviewing real-time throughput metrics on multiple monitors.","instructions":["Deliver clean, scalable vector format with transparent background."]},{"id":"15.5","title":"Stakeholder Persona 2 - Facility Operations Director","targetPath":"activeData.image (PersonaSplit.js)","dimensions":"1000 x 1000 px (1:1)","type":"Industrial Facility Portrait","format":"WebP / JPG","priority":"P1 (High Impact)","directive":"Operations director wearing hardhat and high-vis vest on warehouse mezzanine overlooking orderly charging bays.","instructions":["Deliver clean, scalable vector format with transparent background."]},{"id":"15.6","title":"Stakeholder Persona 3 - Shift Maintenance Supervisor","targetPath":"activeData.image (PersonaSplit.js)","dimensions":"1000 x 1000 px (1:1)","type":"Technical Operations Portrait","format":"WebP / JPG","priority":"P1 (High Impact)","directive":"Warehouse maintenance technician using a tablet to inspect CellTrac battery state-of-charge readouts next to an opportunity charger.","instructions":["Deliver clean, scalable vector format with transparent background."]}]},{"file":"16-industry-commercial-fleets.md","num":16,"category":"Industry Verticals","title":"Commercial Fleets Industry Page","route":"/industries/commercial-fleets","docCode":"IMG-REQ-16","purpose":"Targeted landing page for municipal transit authorities, delivery van fleets, electric school buses, and heavy commercial vehicle logistics operators.","tableRows":[{"slot":"Hero Commercial Fleet Depot Widescreen","type":"Commercial Fleet Depot Photography","dimensions":"2560 x 1440 px (16:9)","format":"WebP / JPG","priority":"P0 (Launch Critical)"},{"slot":"200 kW High-Power Fast Dispensing Action","type":"Commercial Action Photography","dimensions":"1600 x 1200 px (4:3)","format":"WebP / JPG","priority":"P0 (Launch Critical)"},{"slot":"Off-Grid Mobile BESS Rapid Deployment","type":"On-Location Field Photography","dimensions":"1600 x 1200 px (4:3)","format":"WebP / JPG","priority":"P1 (High Impact)"},{"slot":"Depot Peak Demand Shaving Graphic","type":"Technical Infographic / UI Screen","dimensions":"1600 x 1200 px (4:3)","format":"PNG / WebP","priority":"P1 (High Impact)"}],"shots":[{"id":"### Asset 16.1","title":"Hero Commercial Fleet Depot Widescreen","targetPath":"/assets/homepage/High Power DC Fast-01.webp","dimensions":"2560 x 1440 px (16:9)","type":"Commercial Fleet Depot Photography","format":"WebP / JPG","priority":"P0 (Launch Critical)","directive":"Wide panoramic photo of a large-scale municipal or private fleet depot at nightfall. Parallel charging lanes featuring electric delivery vans, box trucks, and transit buses plugged into high-power Magnus dispensers under industrial canopy lighting.","instructions":["Capture in RAW/DNG format at maximum resolution (minimum 24 megapixels).","Avoid distracting clutter in the background; ensure equipment operators wear appropriate PPE (safety vests, eye protection, ear defenders).","Color grade for industrial realism with saturated safety accents (green LED indicators, yellow safety striping, safety-orange equipment)."]},{"id":"16.2","title":"200 kW High-Power Fast Dispensing Action","targetPath":"/assets/Products/Magnus/Magnus Hardware Listing.webp","dimensions":"1600 x 1200 px (4:3)","type":"Commercial Action Photography","format":"WebP / JPG","priority":"P0 (Launch Critical)","directive":"Close-up action shot of a commercial transit bus driver connecting a liquid-cooled CCS1 fast-charge dispenser to a heavy-duty electric bus charging socket.","instructions":["Capture in RAW/DNG format at maximum resolution (minimum 24 megapixels).","Avoid distracting clutter in the background; ensure equipment operators wear appropriate PPE (safety vests, eye protection, ear defenders).","Color grade for industrial realism with saturated safety accents (green LED indicators, yellow safety striping, safety-orange equipment)."]},{"id":"16.3","title":"Off-Grid Mobile BESS Rapid Deployment","targetPath":"/assets/Products/Mobilus/Mobilus Trailer Cutout.png","dimensions":"1600 x 1200 px (4:3)","type":"On-Location Field Photography","format":"WebP / JPG","priority":"P1 (High Impact)","directive":"Mobilus mobile charger providing instant 150 kW DC fast charging to an electric delivery van in an auxiliary staging lot without waiting for utility service drop upgrades.","instructions":["Capture in RAW/DNG format at maximum resolution (minimum 24 megapixels).","Avoid distracting clutter in the background; ensure equipment operators wear appropriate PPE (safety vests, eye protection, ear defenders).","Color grade for industrial realism with saturated safety accents (green LED indicators, yellow safety striping, safety-orange equipment)."]},{"id":"16.4","title":"Depot Peak Demand Shaving Graphic","targetPath":"/assets/homepage/Cumulus Software-01.webp","dimensions":"1600 x 1200 px (4:3)","type":"Technical Infographic / UI Screen","format":"PNG / WebP","priority":"P1 (High Impact)","directive":"Technical infographic diagram showing Cumulus Cloud orchestrating multi-vehicle charging to prevent utility peak demand surcharges across a 50-bus depot.","instructions":["Capture at native 2x/Retina pixel density.","Use modern dark-mode aesthetic matching the Cumulus platform design system.","Ensure all displayed data (kWh, vehicle IDs, customer names) uses approved demo figures."]}]},{"file":"17-industry-low-speed-vehicles.md","num":17,"category":"Industry Verticals","title":"Low-Speed Vehicles (LSV) Industry Page","route":"/industries/lsv","docCode":"IMG-REQ-17","purpose":"Specialized solutions for college campuses, luxury resorts, industrial plant security, and retirement community low-speed electric vehicle fleets.","tableRows":[{"slot":"Hero Campus / Resort LSV Staging Area","type":"Commercial Scenic Photography","dimensions":"2560 x 1440 px (16:9)","format":"WebP / JPG","priority":"P0 (Launch Critical)"},{"slot":"Benefit 1 - Rugged Onboard Durus Installation","type":"On-Location Vehicle Photography","dimensions":"1400 x 1050 px (4:3)","format":"WebP / JPG","priority":"P0 (Launch Critical)"},{"slot":"Benefit 2 - Centralized Campus GPS Fleet Telemetry","type":"Software UI Screenshot / Mockup","dimensions":"1400 x 1050 px (4:3)","format":"PNG / WebP","priority":"P1 (High Impact)"},{"slot":"Stakeholder Persona 1 - Campus Facilities Director","type":"Corporate Environmental Portrait","dimensions":"1000 x 1000 px (1:1)","format":"WebP / JPG","priority":"P1 (High Impact)"},{"slot":"Stakeholder Persona 2 - Luxury Resort General Manager","type":"Hospitality Environmental Portrait","dimensions":"1000 x 1000 px (1:1)","format":"WebP / JPG","priority":"P1 (High Impact)"},{"slot":"Stakeholder Persona 3 - Security Patrol Fleet Chief","type":"Security Operations Portrait","dimensions":"1000 x 1000 px (1:1)","format":"WebP / JPG","priority":"P1 (High Impact)"}],"shots":[{"id":"### Asset 17.1","title":"Hero Campus / Resort LSV Staging Area","targetPath":"/assets/homepage/Engineered for LSEVs.webp","dimensions":"2560 x 1440 px (16:9)","type":"Commercial Scenic Photography","format":"WebP / JPG","priority":"P0 (Launch Critical)","directive":"Scenic wide-angle photograph of an upscale college campus or luxury resort charging staging area. Multiple electric golf carts, campus maintenance trucks, and passenger shuttles plugged in at charging stations. Lush greenery and modern architecture in background.","instructions":["Capture in RAW/DNG format at maximum resolution (minimum 24 megapixels).","Avoid distracting clutter in the background; ensure equipment operators wear appropriate PPE (safety vests, eye protection, ear defenders).","Color grade for industrial realism with saturated safety accents (green LED indicators, yellow safety striping, safety-orange equipment)."]},{"id":"17.2","title":"Benefit 1 - Rugged Onboard Durus Installation","targetPath":"/assets/homepage/Engineered for LSEVs.webp","dimensions":"1400 x 1050 px (4:3)","type":"On-Location Vehicle Photography","format":"WebP / JPG","priority":"P0 (Launch Critical)","directive":"Detailed shot of Durus compact sealed charger installed inside the battery bay of a rugged utility vehicle, illustrating compact footprint and sealed chassis wiring.","instructions":["Capture in RAW/DNG format at maximum resolution (minimum 24 megapixels).","Avoid distracting clutter in the background; ensure equipment operators wear appropriate PPE (safety vests, eye protection, ear defenders).","Color grade for industrial realism with saturated safety accents (green LED indicators, yellow safety striping, safety-orange equipment)."]},{"id":"17.3","title":"Benefit 2 - Centralized Campus GPS Fleet Telemetry","targetPath":"/assets/homepage/Cumulus Software-01.webp","dimensions":"1400 x 1050 px (4:3)","type":"Software UI Screenshot / Mockup","format":"PNG / WebP","priority":"P1 (High Impact)","directive":"Tablet screen mockup showing Cumulus live GPS map of a 200-acre university campus with real-time location and battery state-of-charge for 45 utility vehicles.","instructions":["Capture at native 2x/Retina pixel density.","Use modern dark-mode aesthetic matching the Cumulus platform design system.","Ensure all displayed data (kWh, vehicle IDs, customer names) uses approved demo figures."]},{"id":"17.4","title":"Stakeholder Persona 1 - Campus Facilities Director","targetPath":"activeData.image (PersonaSplit.js)","dimensions":"1000 x 1000 px (1:1)","type":"Corporate Environmental Portrait","format":"WebP / JPG","priority":"P1 (High Impact)","directive":"University facilities director standing in front of a modern campus building holding an operations clipboard with campus shuttles passing by.","instructions":["Deliver clean, scalable vector format with transparent background."]},{"id":"17.5","title":"Stakeholder Persona 2 - Luxury Resort General Manager","targetPath":"activeData.image (PersonaSplit.js)","dimensions":"1000 x 1000 px (1:1)","type":"Hospitality Environmental Portrait","format":"WebP / JPG","priority":"P1 (High Impact)","directive":"Resort manager in professional resort attire standing beside a premium electric guest shuttle cart at a hotel entrance porte-cochere.","instructions":["Deliver clean, scalable vector format with transparent background."]},{"id":"17.6","title":"Stakeholder Persona 3 - Security Patrol Fleet Chief","targetPath":"activeData.image (PersonaSplit.js)","dimensions":"1000 x 1000 px (1:1)","type":"Security Operations Portrait","format":"WebP / JPG","priority":"P1 (High Impact)","directive":"Security supervisor standing beside a branded security patrol LSV with high-visibility lighting bars outside an industrial complex.","instructions":["Deliver clean, scalable vector format with transparent background."]}]},{"file":"18-knowledge-hub-blogs.md","num":18,"category":"Knowledge Hub & Editorial","title":"Knowledge Hub & Blog Catalog","route":"/blogs","docCode":"IMG-REQ-18","purpose":"Central knowledge hub and fleet technical editorial portal hosting whitepapers, case studies, electrification guides, and executive announcements.","tableRows":[{"slot":"Featured Whitepaper Hero Banner","type":"Editorial Hero Photography","dimensions":"2560 x 1200 px (21:9 Widescreen)","format":"WebP / JPG","priority":"P0 (Launch Critical)"},{"slot":"Card Thumbnail - GSE Electrification Guide","type":"Editorial Article Photography","dimensions":"1200 x 900 px (4:3)","format":"WebP / JPG","priority":"P0 (Launch Critical)"},{"slot":"Card Thumbnail - Warehouse ROI & Downtime Analysis","type":"Editorial Article Photography","dimensions":"1200 x 900 px (4:3)","format":"WebP / JPG","priority":"P0 (Launch Critical)"},{"slot":"Card Thumbnail - Introducing Cumulus Cloud Platform","type":"3D UI Isometric Render","dimensions":"1200 x 900 px (4:3)","format":"WebP / JPG","priority":"P0 (Launch Critical)"},{"slot":"Card Thumbnail - Mixed-Fleet Fast Charging Best Practices","type":"Commercial Depot Photography","dimensions":"1200 x 900 px (4:3)","format":"WebP / JPG","priority":"P1 (High Impact)"}],"shots":[{"id":"### Asset 18.1","title":"Featured Whitepaper Hero Banner","targetPath":"/assets/homepage/Engineered for Airports.webp","dimensions":"2560 x 1200 px (21:9 Widescreen)","type":"Editorial Hero Photography","format":"WebP / JPG","priority":"P0 (Launch Critical)","directive":"Wide-format editorial photograph illustrating fleet electrification leadership: an airport flightline or logistics depot during twilight with bold green charging cables and crisp technical atmosphere.","instructions":["Capture in RAW/DNG format at maximum resolution (minimum 24 megapixels).","Avoid distracting clutter in the background; ensure equipment operators wear appropriate PPE (safety vests, eye protection, ear defenders).","Color grade for industrial realism with saturated safety accents (green LED indicators, yellow safety striping, safety-orange equipment)."]},{"id":"18.2","title":"Card Thumbnail - GSE Electrification Guide","targetPath":"/assets/homepage/Engineered for Airports.webp","dimensions":"1200 x 900 px (4:3)","type":"Editorial Article Photography","format":"WebP / JPG","priority":"P0 (Launch Critical)","directive":"High-contrast editorial thumbnail showing electric baggage tractor plugged into Altus II charger beside commercial jet on airport apron.","instructions":["Capture in RAW/DNG format at maximum resolution (minimum 24 megapixels).","Avoid distracting clutter in the background; ensure equipment operators wear appropriate PPE (safety vests, eye protection, ear defenders).","Color grade for industrial realism with saturated safety accents (green LED indicators, yellow safety striping, safety-orange equipment)."]},{"id":"18.3","title":"Card Thumbnail - Warehouse ROI & Downtime Analysis","targetPath":"/assets/homepage/Engineered for Warehouses.webp","dimensions":"1200 x 900 px (4:3)","type":"Editorial Article Photography","format":"WebP / JPG","priority":"P0 (Launch Critical)","directive":"Editorial photo of high-throughput warehouse reach truck charging at an opportunity station with inventory racking in background.","instructions":["Capture in RAW/DNG format at maximum resolution (minimum 24 megapixels).","Avoid distracting clutter in the background; ensure equipment operators wear appropriate PPE (safety vests, eye protection, ear defenders).","Color grade for industrial realism with saturated safety accents (green LED indicators, yellow safety striping, safety-orange equipment)."]},{"id":"18.4","title":"Card Thumbnail - Introducing Cumulus Cloud Platform","targetPath":"/assets/homepage/Cumulus Software-01.webp","dimensions":"1200 x 900 px (4:3)","type":"3D UI Isometric Render","format":"WebP / JPG","priority":"P0 (Launch Critical)","directive":"Futuristic isometric render of Cumulus Cloud platform dashboard displaying real-time power analytics and fleet telemetry.","instructions":["Export with alpha channel (transparent background) at 300 DPI.","Use neutral, high-key studio lighting with realistic metallic specular reflections and subtle ambient occlusion.","Verify all hardware dimensions match official Minit Charger engineering schematics."]},{"id":"18.5","title":"Card Thumbnail - Mixed-Fleet Fast Charging Best Practices","targetPath":"/assets/homepage/High Power DC Fast-01.webp","dimensions":"1200 x 900 px (4:3)","type":"Commercial Depot Photography","format":"WebP / JPG","priority":"P1 (High Impact)","directive":"Commercial depot photo showing diverse vehicles (delivery truck, airport tug, electric van) sharing charging infrastructure.","instructions":["Capture in RAW/DNG format at maximum resolution (minimum 24 megapixels).","Avoid distracting clutter in the background; ensure equipment operators wear appropriate PPE (safety vests, eye protection, ear defenders).","Color grade for industrial realism with saturated safety accents (green LED indicators, yellow safety striping, safety-orange equipment)."]}]},{"file":"19-single-blog-article.md","num":19,"category":"Knowledge Hub & Editorial","title":"Single Blog Article Layout","route":"/blogs/[slug]","docCode":"IMG-REQ-19","purpose":"Longform technical editorial and case study template requiring high-impact banner imagery, inline technical diagrams, author headshots, and related article links.","tableRows":[{"slot":"Article Header Banner","type":"Editorial Header Photography","dimensions":"2560 x 1200 px (21:9 Widescreen)","format":"WebP / JPG","priority":"P0 (Launch Critical)"},{"slot":"Author Editorial Headshot","type":"Professional Headshot","dimensions":"400 x 400 px (1:1 Circle)","format":"WebP / PNG","priority":"P1 (High Impact)"},{"slot":"Inline Technical Figure / Diagram","type":"Technical Data Chart / Infographic","dimensions":"1600 x 1000 px (16:10)","format":"PNG / WebP","priority":"P1 (High Impact)"},{"slot":"Related Post Thumbnails (x3)","type":"Article Thumbnail Photography","dimensions":"1200 x 900 px (4:3)","format":"WebP / JPG","priority":"P1 (High Impact)"}],"shots":[{"id":"### Asset 19.1","title":"Article Header Banner","targetPath":"blog.heroImage (ArticleHero.js)","dimensions":"2560 x 1200 px (21:9 Widescreen)","type":"Editorial Header Photography","format":"WebP / JPG","priority":"P0 (Launch Critical)","directive":"High-resolution widescreen editorial header image relevant to the article topic (Airport Tarmac, Logistics Warehouse, Cloud Tech, or Mixed Fleet Depot). High contrast with space for dark-gradient overlay and white headline text.","instructions":["Capture in RAW/DNG format at maximum resolution (minimum 24 megapixels).","Avoid distracting clutter in the background; ensure equipment operators wear appropriate PPE (safety vests, eye protection, ear defenders).","Color grade for industrial realism with saturated safety accents (green LED indicators, yellow safety striping, safety-orange equipment)."]},{"id":"19.2","title":"Author Editorial Headshot","targetPath":"author.avatar","dimensions":"400 x 400 px (1:1 Circle)","type":"Professional Headshot","format":"WebP / PNG","priority":"P1 (High Impact)","directive":"Professional circular editorial headshot of article author (Minit Charger Technical Lead or Fleet Director) in crisp business attire against neutral studio backdrop.","instructions":["Deliver clean, scalable vector format with transparent background."]},{"id":"19.3","title":"Inline Technical Figure / Diagram","targetPath":"Inline Article Graphic","dimensions":"1600 x 1000 px (16:10)","type":"Technical Data Chart / Infographic","format":"PNG / WebP","priority":"P1 (High Impact)","directive":"Contextual technical chart or single-line diagram illustrating turnaround charging windows, peak demand savings curves, or battery life extension metrics.","instructions":["Deliver clean, scalable vector format with transparent background."]},{"id":"19.4","title":"Related Post Thumbnails (x3)","targetPath":"related.thumbnailImage (RelatedPosts.js)","dimensions":"1200 x 900 px (4:3)","type":"Article Thumbnail Photography","format":"WebP / JPG","priority":"P1 (High Impact)","directive":"Trio of 4:3 high-contrast article thumbnails directing readers to companion whitepapers, customer case studies, and engineering briefs.","instructions":["Capture in RAW/DNG format at maximum resolution (minimum 24 megapixels).","Avoid distracting clutter in the background; ensure equipment operators wear appropriate PPE (safety vests, eye protection, ear defenders).","Color grade for industrial realism with saturated safety accents (green LED indicators, yellow safety striping, safety-orange equipment)."]}]},{"file":"20-contact-and-consultation.md","num":20,"category":"Core Brand & Governance","title":"Contact & Feasibility Consultation","route":"/contact","docCode":"IMG-REQ-20","purpose":"Primary conversion hub where fleet operators submit electrical specifications, request site audits, and schedule feasibility assessments. Needs strong institutional trust visuals.","tableRows":[{"slot":"Chandler Headquarters & Engineering Lab Exterior","type":"Architectural Facility Photography","dimensions":"1600 x 1200 px (4:3)","format":"WebP / JPG","priority":"P0 (Launch Critical)"},{"slot":"Engineering Feasibility Team at Work","type":"Corporate Collaborative Photography","dimensions":"1600 x 1200 px (4:3)","format":"WebP / JPG","priority":"P1 (High Impact)"},{"slot":"North American Certified Service Network Map","type":"Vector Geographic Infographic","dimensions":"1600 x 1000 px (16:10)","format":"PNG / WebP","priority":"P1 (High Impact)"}],"shots":[{"id":"### Asset 20.1","title":"Chandler Headquarters & Engineering Lab Exterior","targetPath":"/assets/contact/Chandler HQ.webp","dimensions":"1600 x 1200 px (4:3)","type":"Architectural Facility Photography","format":"WebP / JPG","priority":"P0 (Launch Critical)","directive":"High-resolution architectural photograph of Minit Charger's corporate headquarters and manufacturing facility at 7303 W Boston St, Chandler, AZ. Blue sky, clean signage, desert landscaping, modern industrial architecture.","instructions":["Capture in RAW/DNG format at maximum resolution (minimum 24 megapixels).","Avoid distracting clutter in the background; ensure equipment operators wear appropriate PPE (safety vests, eye protection, ear defenders).","Color grade for industrial realism with saturated safety accents (green LED indicators, yellow safety striping, safety-orange equipment)."]},{"id":"20.2","title":"Engineering Feasibility Team at Work","targetPath":"/assets/contact/Engineering Team.webp","dimensions":"1600 x 1200 px (4:3)","type":"Corporate Collaborative Photography","format":"WebP / JPG","priority":"P1 (High Impact)","directive":"Collaborative photo of Minit Charger applications engineers and project managers reviewing an airport single-line electrical schematic over a large consultation table with digital tablets.","instructions":["Capture in RAW/DNG format at maximum resolution (minimum 24 megapixels).","Avoid distracting clutter in the background; ensure equipment operators wear appropriate PPE (safety vests, eye protection, ear defenders).","Color grade for industrial realism with saturated safety accents (green LED indicators, yellow safety striping, safety-orange equipment)."]},{"id":"20.3","title":"North American Certified Service Network Map","targetPath":"/assets/contact/Service Network Map.webp","dimensions":"1600 x 1000 px (16:10)","type":"Vector Geographic Infographic","format":"PNG / WebP","priority":"P1 (High Impact)","directive":"High-resolution vector graphic map of the United States and Canada displaying Minit Charger regional field service dispatch hubs, authorized service depots, and 24/7 technical response zones.","instructions":["Deliver clean, scalable vector format with transparent background."]}]},{"file":"21-legal-and-governance.md","num":21,"category":"Core Brand & Governance","title":"Legal, Privacy & Compliance","route":"/privacy & /terms","docCode":"IMG-REQ-21","purpose":"Institutional governance documents outlining data privacy, telemetry encryption, and commercial equipment terms. Requires security credentials and certification badges.","tableRows":[{"slot":"SOC 2 Type II Compliance Badge","type":"Vector Certification Seal","dimensions":"400 x 400 px (Vector preferred)","format":"SVG / Transparent PNG","priority":"P1 (Institutional Trust)"},{"slot":"Enterprise Encryption Security Graphic","type":"Vector Security Icon / Badge","dimensions":"400 x 400 px (Vector preferred)","format":"SVG / Transparent PNG","priority":"P1 (Institutional Trust)"}],"shots":[{"id":"### Asset 21.1","title":"SOC 2 Type II Compliance Badge","targetPath":"/assets/legal/soc2-badge.svg","dimensions":"400 x 400 px (Vector preferred)","type":"Vector Certification Seal","format":"SVG / Transparent PNG","priority":"P1 (Institutional Trust)","directive":"Vector graphic certification seal verifying SOC 2 Type II data security compliance for Cumulus Cloud fleet management and telemetry storage.","instructions":["Deliver clean, scalable vector format with transparent background."]},{"id":"21.2","title":"Enterprise Encryption Security Graphic","targetPath":"/assets/legal/encryption-seal.svg","dimensions":"400 x 400 px (Vector preferred)","type":"Vector Security Icon / Badge","format":"SVG / Transparent PNG","priority":"P1 (Institutional Trust)","directive":"Vector or transparent graphic highlighting TLS 1.3 in-transit encryption and AES-256 at-rest database protection for fleet charging session data.","instructions":["Deliver clean, scalable vector format with transparent background."]}]}];
+    let activePageNum = 1;
+    let currentFilter = 'all';
+
+    function init() {
+      renderTabsList(PAGES_DATA);
+      renderPageView(activePageNum);
+    }
+
+    function renderTabsList(pages) {
+      const container = document.getElementById('tabsListContainer');
+      container.innerHTML = '';
+
+      const categories = [
+        'Core Brand & Governance',
+        'Hardware Charging Systems',
+        'Sensors & Cloud Software',
+        'Industry Verticals',
+        'Knowledge Hub & Editorial'
+      ];
+
+      categories.forEach(cat => {
+        const catPages = pages.filter(p => p.category === cat);
+        if (catPages.length === 0) return;
+
+        const catHeader = document.createElement('div');
+        catHeader.className = 'tab-category-label';
+        catHeader.textContent = cat;
+        container.appendChild(catHeader);
+
+        catPages.forEach(p => {
+          const item = document.createElement('div');
+          item.className = 'tab-item' + (p.num === activePageNum ? ' active' : '');
+          item.id = 'tab-nav-' + p.num;
+          item.onclick = () => selectTab(p.num);
+
+          item.innerHTML = `
+            <span class="tab-num">${String(p.num).padStart(2, '0')}</span>
+            <span class="tab-label">${p.title}</span>
+            <span class="tab-badge">${p.shots.length}</span>
+          `;
+
+          container.appendChild(item);
+        });
+      });
+    }
+
+    function selectTab(num) {
+      activePageNum = num;
+      document.querySelectorAll('.tab-item').forEach(el => el.classList.remove('active'));
+      const activeEl = document.getElementById('tab-nav-' + num);
+      if (activeEl) activeEl.classList.add('active');
+      renderPageView(num);
+    }
+
+    function renderPageView(num) {
+      const page = PAGES_DATA.find(p => p.num === num) || PAGES_DATA[0];
+      const container = document.getElementById('contentViewContainer');
+
+      const filteredShots = currentFilter === 'all'
+        ? page.shots
+        : page.shots.filter(s => currentFilter === 'P0' ? s.priority.includes('P0') : s.priority.includes('P1'));
+
+      const summaryRows = page.tableRows.map(r => `
+        <tr>
+          <td><strong>${r.slot}</strong></td>
+          <td style="color: var(--text-muted);">${r.type}</td>
+          <td><code style="color: var(--accent-blue); font-family: var(--font-mono); font-size: 12px;">${r.dimensions}</code></td>
+          <td style="color: var(--text-dim);">${r.format}</td>
+          <td style="text-align: center;">
+            <span class="${r.priority.includes('P0') ? 'badge-p0' : 'badge-p1'}">${r.priority}</span>
+          </td>
+        </tr>
+      `).join('');
+
+      const shotsCards = filteredShots.map(s => `
+        <div class="shot-card">
+          <div class="shot-header">
+            <div>
+              <span class="shot-id">ASSET ${s.id}</span>
+              <h3 class="shot-title">${s.title}</h3>
+            </div>
+            <span class="${s.priority.includes('P0') ? 'badge-p0' : 'badge-p1'}">${s.priority}</span>
+          </div>
+
+          <div class="specs-grid">
+            <div class="spec-item">
+              <span class="spec-label">Component Path</span>
+              <span class="spec-value" style="font-family: var(--font-mono); font-size: 12px; color: var(--accent-green); word-break: break-all;">${s.targetPath}</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Dimensions / Ratio</span>
+              <span class="spec-value" style="color: var(--accent-blue);">${s.dimensions}</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Classification</span>
+              <span class="spec-value">${s.type}</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Delivery Format</span>
+              <span class="spec-value">${s.format}</span>
+            </div>
+          </div>
+
+          <div class="directive-box">
+            <div class="directive-label">Creative Shot Description & Framing Directive:</div>
+            <div class="directive-text">"${s.directive}"</div>
+          </div>
+
+          <div class="instructions-box">
+            <div class="instructions-label">Photographer & 3D Artist Instructions:</div>
+            <ul class="instructions-list">
+              ${s.instructions.map(ins => `<li>${ins}</li>`).join('')}
+            </ul>
+          </div>
+        </div>
+      `).join('');
+
+      container.innerHTML = `
+        <div class="tab-hero">
+          <div class="tab-hero-meta">
+            <span class="badge-category">${page.category}</span>
+            <span class="badge-code">Code: ${page.docCode}</span>
+            <span class="badge-code" style="color: var(--accent-green);">${page.shots.length} Total Assets</span>
+          </div>
+          <h1>Tab ${page.num}: ${page.title}</h1>
+          <div class="tab-hero-route">Route: ${page.route}</div>
+          <div class="tab-hero-purpose">
+            <strong>Page Purpose & Visual Direction:</strong> ${page.purpose}
+          </div>
+        </div>
+
+        <div class="view-actions">
+          <div class="filter-group">
+            <button class="filter-btn ${currentFilter === 'all' ? 'active' : ''}" onclick="setFilter('all')">All Assets (${page.shots.length})</button>
+            <button class="filter-btn ${currentFilter === 'P0' ? 'active' : ''}" onclick="setFilter('P0')">P0 Launch Critical (${page.shots.filter(s => s.priority.includes('P0')).length})</button>
+            <button class="filter-btn ${currentFilter === 'P1' ? 'active' : ''}" onclick="setFilter('P1')">P1 High Impact (${page.shots.filter(s => s.priority.includes('P1')).length})</button>
+          </div>
+          <div>
+            <button class="btn btn-secondary" onclick="copyCurrentTabRich()">
+              <span>📋 Copy Tab for Google Docs</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="section-title">
+          <span>1. Required Asset Summary Table</span>
+        </div>
+        <div class="table-container">
+          <table class="summary-table">
+            <thead>
+              <tr>
+                <th>Slot / Location</th>
+                <th>Asset Type</th>
+                <th>Dimensions</th>
+                <th>Format</th>
+                <th style="text-align: center;">Priority</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${summaryRows}
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section-title" style="margin-top: 36px;">
+          <span>2. Detailed Creative Shot Descriptions (${filteredShots.length})</span>
+        </div>
+        <div class="shots-grid">
+          ${shotsCards}
+        </div>
+      `;
+    }
+
+    function setFilter(f) {
+      currentFilter = f;
+      renderPageView(activePageNum);
+    }
+
+    function handleSearch(query) {
+      const q = query.toLowerCase().trim();
+      if (!q) {
+        renderTabsList(PAGES_DATA);
+        return;
+      }
+      const filtered = PAGES_DATA.filter(p => 
+        p.title.toLowerCase().includes(q) ||
+        p.route.toLowerCase().includes(q) ||
+        p.shots.some(s => s.title.toLowerCase().includes(q) || s.directive.toLowerCase().includes(q))
+      );
+      renderTabsList(filtered);
+    }
+
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      document.getElementById('toastMsg').textContent = msg;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 3000);
+    }
+
+    function copyCurrentTabRich() {
+      const page = PAGES_DATA.find(p => p.num === activePageNum);
+      if (!page) return;
+
+      const html = `
+        <div style="font-family: Arial, sans-serif; color: #111827; max-width: 800px;">
+          <h1 style="color: #0F172A; font-size: 24px; border-bottom: 2px solid #0F172A; padding-bottom: 8px;">
+            Tab ${page.num}: ${page.title}
+          </h1>
+          <p><strong>Route:</strong> <code>${page.route}</code> &bull; <strong>Code:</strong> ${page.docCode}</p>
+          <p style="background: #F1F5F9; padding: 12px; border-left: 4px solid #0F172A;">
+            <strong>Purpose:</strong> ${page.purpose}
+          </p>
+          <h2 style="font-size: 18px; margin-top: 20px;">1. Asset Summary Table</h2>
+          <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;" border="1" cellpadding="8">
+            <tr style="background: #F8FAFC;">
+              <th>Slot / Location</th><th>Type</th><th>Dimensions</th><th>Format</th><th>Priority</th>
+            </tr>
+            ${page.tableRows.map(r => `
+              <tr>
+                <td><strong>${r.slot}</strong></td>
+                <td>${r.type}</td>
+                <td><code>${r.dimensions}</code></td>
+                <td>${r.format}</td>
+                <td>${r.priority}</td>
+              </tr>
+            `).join('')}
+          </table>
+          <h2 style="font-size: 18px; margin-top: 24px;">2. Detailed Shot Descriptions</h2>
+          ${page.shots.map(s => `
+            <div style="margin-top: 16px; border: 1px solid #E2E8F0; padding: 16px; background: #FAFAFA;">
+              <h3 style="margin: 0 0 8px 0; color: #0F172A;">Asset ${s.id}: ${s.title} (${s.priority})</h3>
+              <p><strong>Component:</strong> <code>${s.targetPath}</code> | <strong>Size:</strong> ${s.dimensions} | <strong>Format:</strong> ${s.format}</p>
+              <p style="background: #EFF6FF; border-left: 3px solid #3B82F6; padding: 10px; font-style: italic;">
+                "${s.directive}"
+              </p>
+              <p><strong>Photographer / 3D Artist Instructions:</strong></p>
+              <ul>
+                ${s.instructions.map(ins => `<li>${ins}</li>`).join('')}
+              </ul>
+            </div>
+          `).join('')}
+        </div>
+      `;
+
+      const blobHtml = new Blob([html], { type: 'text/html' });
+      const blobText = new Blob([html.replace(/<[^>]+>/g, ' ')], { type: 'text/plain' });
+      const item = new ClipboardItem({
+        'text/html': blobHtml,
+        'text/plain': blobText
+      });
+
+      navigator.clipboard.write([item]).then(() => {
+        showToast(`Copied Tab ${page.num} (${page.title}) for Google Docs!`);
+      }).catch(err => {
+        console.error(err);
+        showToast('Clipboard error. Try copying directly.');
+      });
+    }
+
+    function copyEntireMasterDoc() {
+      window.open('MASTER-GOOGLE-DOC.html', '_blank');
+      showToast('Master document opened in new tab! Use Ctrl+A, Ctrl+C to copy into Google Docs.');
+    }
+
+    function openDocsGuideModal() {
+      document.getElementById('guideModal').classList.add('open');
+    }
+    function closeDocsGuideModal() {
+      document.getElementById('guideModal').classList.remove('open');
+    }
+
+    window.onload = init;
+  </script>
+</body>
+</html>

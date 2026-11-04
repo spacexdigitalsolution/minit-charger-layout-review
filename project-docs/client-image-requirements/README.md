@@ -6,6 +6,15 @@
 
 ---
 
+## Interactive Portals & Google Docs Deliverables
+
+- **[Interactive Google Docs Tab Navigation Portal](index.html)** (`index.html`)  
+  *Full tabbed web application with sidebar navigation, search filters, one-click clipboard copying formatted directly for Google Docs document tabs, and quick category filtering.*
+- **[Master Google Docs Formatted Document](MASTER-GOOGLE-DOC.html)** (`MASTER-GOOGLE-DOC.html`)  
+  *Complete unified document with all 21 pages, 106 asset slots, styled summary tables, and creative framing directives ready to open or import directly into Google Docs.*
+
+---
+
 ## Executive Overview
 
 This directory contains complete, page-by-page image requirements and creative shot descriptions for every page across the Minit Charger website. Each document provides exact photographic, 3D CAD, or UI mockup directives to guide client photographers, 3D render artists, and marketing coordinators.
