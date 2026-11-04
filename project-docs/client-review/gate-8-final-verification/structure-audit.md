@@ -1,6 +1,6 @@
 # Structure & Deliverables Audit (Stage 8)
 
-**Generated:** 2026-10-28 16:29  
+**Generated:** 2026-11-04 10:36  
 **Auditor Engine:** NWW Structure Auditor (`scripts/structure-audit/index.js`)  
 **Project Path:** `C:\code\freelance\minit-charger-layout-review`  
 
@@ -14,25 +14,25 @@
 | Stage 0 | Client Asset Manifest | `client-context/asset-manifest.md` | **Present** (2397 bytes) |
 | Stage 0 | Rolling Open Questions Pool | `client-context/open-questions.md` | **Present** (2866 bytes) |
 | Stage 0 | Root Environment Template | `.env.example` | **Present** (308 bytes) |
-| Stage 1 | Tech Stack Specification | `project-docs/tech-stack.md` | **Present** (2408 bytes) |
+| Stage 1 | Tech Stack Specification | `project-docs/client-review/gate-1-tech-stack/tech-stack.md` | **Present** (2408 bytes) |
 | Stage 2 | Design Theory | `project-docs/design-theory.md` | **Present** (2115 bytes) |
 | Stage 2 | Reference Sources Ledger | `project-docs/design-references/sources.md` | *Optional / Skipped* |
-| Stage 2 | Gate 2 Review Hub | `project-docs/client-review/gate-2-design-theory/index.html` | **Present** (2918 bytes) |
-| Stage 2 | Root Review Portal | `project-docs/client-review/index.html` | **Present** (2736 bytes) |
-| Stage 3 | Page List Tracker | `project-docs/page-list.md` | **Present** (1634 bytes) |
-| Stage 4 | SEO Strategy | `project-docs/seo-strategy.md` | **Present** (1732 bytes) |
-| Stage 5 | Layout System Spec | `project-docs/layout-system.md` | **Present** (2683 bytes) |
+| Stage 2 | Gate 2 Review Hub | `project-docs/client-review/gate-2-design-theory/index.html` | **Present** (4694 bytes) |
+| Stage 2 | Root Review Portal | `project-docs/client-review/index.html` | **Present** (4564 bytes) |
+| Stage 3 | Page List Tracker | `project-docs/client-review/gate-3-page-list/page-list.md` | **Present** (3871 bytes) |
+| Stage 4 | SEO Strategy | `project-docs/client-review/gate-4-seo-strategy/seo-strategy.md` | **Present** (1732 bytes) |
+| Stage 5 | Layout System Spec | `project-docs/client-review/gate-5-page-specs/layout-system.md` | **Present** (2683 bytes) |
 | Stage 5 | CMS Schema Spec | `project-docs/client-review/gate-5-cms-schema/cms-schema.md` | *Optional / Skipped* |
 | Stage 6 | Site Environment Template | `site/.env.example` | **Present** (308 bytes) |
 | Stage 6 | Site Manifest | `site/site.manifest.json` | **Present** (1862 bytes) |
 | Stage 6 | Page Build Checklist | `project-docs/page-checklist.md` | **Present** (1858 bytes) |
-| Stage Router | Pipeline Router State | `project-docs/router-state.md` | **Present** (2682 bytes) |
+| Stage Router | Pipeline Router State | `project-docs/router-state.md` | **Present** (4259 bytes) |
 
 ---
 
 ## 2. Code Standards & Strict Limits Audit
 
-✓ All **86** scanned JavaScript files comply with strict limits (page.js <= 80, sections <= 250, utils <= 500) and contain proper `// section: <id>` comments.
+✓ All **134** scanned JavaScript files comply with strict limits (page.js <= 80, sections <= 250, utils <= 500) and contain proper `// section: <id>` comments.
 
 
 ---

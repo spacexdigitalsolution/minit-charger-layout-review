@@ -1,8 +1,6 @@
 ---
 trigger: glob
-globs:
-  - "app/**/*.js"
-  - "app/**/*.jsx"
+globs: "app/**/*.{js,jsx}"
 ---
 
 # Frontend Conventions: Next.js 16 & Tailwind v4

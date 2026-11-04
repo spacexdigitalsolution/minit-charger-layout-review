@@ -1,8 +1,6 @@
 ---
 trigger: glob
-globs:
-  - "app/**/*.js"
-  - "app/**/*.jsx"
+globs: "app/**/*.{js,jsx}"
 ---
 
 # GSAP & Animation Conventions

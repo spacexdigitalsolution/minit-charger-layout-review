@@ -176,7 +176,7 @@ export default function Navbar() {
               </div>
 
               <Link href="/blogs" onMouseEnter={handleMouseLeaveNav} onClick={() => { setIsMenuOpen(false); setActiveDesktopMenu(null); }} className={`text-sm font-bold uppercase transition-colors duration-300 ${scrolled || activeDesktopMenu || isOpen ? "text-zinc-600 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white" : "text-white/80 hover:text-white"}`}>Blogs</Link>
-              <Link href="#" onMouseEnter={handleMouseLeaveNav} onClick={() => { setIsMenuOpen(false); setActiveDesktopMenu(null); }} className={`text-sm font-bold uppercase transition-colors duration-300 ${scrolled || activeDesktopMenu || isOpen ? "text-zinc-600 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white" : "text-white/80 hover:text-white"}`}>Company</Link>
+              <Link href="/about" onMouseEnter={handleMouseLeaveNav} onClick={() => { setIsMenuOpen(false); setActiveDesktopMenu(null); }} className={`text-sm font-bold uppercase transition-colors duration-300 ${scrolled || activeDesktopMenu || isOpen ? "text-zinc-600 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white" : "text-white/80 hover:text-white"}`}>Company</Link>
             </div>
           </div>
 

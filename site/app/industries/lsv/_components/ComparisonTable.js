@@ -1,3 +1,4 @@
+// section: lsv-comparison
 "use client";
 
 import { useRef } from "react";

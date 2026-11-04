@@ -1,3 +1,4 @@
+// section: warehouse-challenges
 "use client";
 
 import { useRef } from "react";

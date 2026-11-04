@@ -90,7 +90,7 @@ export default function SpecsTable() {
               Everything you need to verify before Altus II goes into service.
             </p>
           </div>
-          <a href="#" className="mt-8 md:mt-0 group inline-flex items-center text-sm font-bold uppercase text-zinc-900 dark:text-white hover:text-green-600 dark:hover:text-green-400 transition-colors">
+          <a href="/assets/downloads/altus-ii-tech-sheet.pdf" download="Altus-II-Tech-Sheet.pdf" className="mt-8 md:mt-0 group inline-flex items-center text-sm font-bold uppercase text-zinc-900 dark:text-white hover:text-green-600 dark:hover:text-green-400 transition-colors">
             Download Tech Sheet
             <Download className="ml-3 h-5 w-5 group-hover:scale-110 transition-transform" />
           </a>

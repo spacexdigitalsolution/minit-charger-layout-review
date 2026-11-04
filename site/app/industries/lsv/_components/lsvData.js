@@ -1,3 +1,4 @@
+// section: lsv-data
 export const lsvFaqs = [
   {
     question: "Can Durus chargers be mounted onboard low-speed vehicles?",

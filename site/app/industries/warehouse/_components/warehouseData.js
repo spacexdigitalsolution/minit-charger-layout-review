@@ -1,3 +1,4 @@
+// section: warehouse-data
 export const warehouseFaqs = [
   {
     question: "How does opportunity charging eliminate warehouse battery change rooms?",

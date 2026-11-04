@@ -144,5 +144,51 @@ export const industries = [
         answer: "CellTrac monitors real-time battery state of charge (SoC) and transmits GPS coordinates to Cumulus, alerting supervisors before a vehicle battery drops below critical levels."
       }
     ]
+  },
+  {
+    id: "commercial-fleets",
+    slug: "commercial-fleets",
+    label: "Commercial Fleets",
+    title: "Commercial & Municipal Fleet EV Infrastructure",
+    headline: "High-Power Turnkey Charging for Electric Buses, Delivery Vans & Heavy Trucks",
+    shortDescription: "Empower your commercial fleet with high-efficiency 100-200 kW fast chargers, mobile battery storage units, and cloud power balancing.",
+    heroImage: "/assets/homepage/High Power DC Fast-01.webp",
+    stats: [
+      { targetValue: 200, unit: " kW", label: "Max High-Power DC Output" },
+      { targetValue: 95, unit: "%", label: "Silicon Carbide Efficiency" },
+      { targetValue: 1000, unit: "V", label: "Wide Voltage Range" },
+      { targetValue: 24, unit: "/7", label: "Cloud Uptime & Telemetry" },
+    ],
+    challenges: [
+      {
+        title: "Diverse Fleet Voltage Architectures",
+        description: "Fleets mix 400V delivery vans with 800V municipal buses and heavy trucks requiring dynamic voltage negotiation."
+      },
+      {
+        title: "Utility Interconnection Delays",
+        description: "Waiting months for grid transformer upgrades can stall fleet electrification and leave new EV trucks parked idle."
+      },
+      {
+        title: "Depot Peak Demand Charges",
+        description: "Simultaneous evening depot plug-ins trigger massive utility demand penalties without intelligent load sequencing."
+      }
+    ],
+    solutions: [
+      "Magnus universal 100–200 kW fast chargers supporting 24–1000 VDC output for light, medium, and heavy-duty vehicles.",
+      "Mobilus mobile battery energy storage systems (BESS) delivering instant off-grid fast charging without waiting for utility service drops.",
+      "Cumulus Cloud smart power balancing dynamically throttling output across depot dispensers to cap total facility demand.",
+      "Automated per-vehicle telemetry logging kWh consumption and charging curve health."
+    ],
+    recommendedProductIds: ["magnus", "mobilus", "altus-ii", "cumulus"],
+    faqs: [
+      {
+        question: "Can Magnus charge both 400V delivery vans and 800V heavy trucks?",
+        answer: "Yes. Magnus features a continuous 24–1000 VDC output range, dynamically adapting voltage and current to each connected vehicle's BMS."
+      },
+      {
+        question: "How does Mobilus help with delayed grid upgrades?",
+        answer: "Mobilus combines an onboard BESS battery with DC fast charging, allowing fleet operators to deploy immediate charging capacity before permanent utility drops are energized."
+      }
+    ]
   }
 ];

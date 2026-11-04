@@ -1,3 +1,4 @@
+// section: lsv-benefits
 "use client";
 
 import { useRef } from "react";

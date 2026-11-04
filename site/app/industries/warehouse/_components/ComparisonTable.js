@@ -1,3 +1,4 @@
+// section: warehouse-comparison
 "use client";
 
 import { useRef } from "react";

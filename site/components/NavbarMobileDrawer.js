@@ -70,7 +70,7 @@ export default function NavbarMobileDrawer({
         </div>
 
         <Link href="/blogs" onClick={() => setIsOpen(false)} className="block px-4 py-4 text-sm font-bold uppercase text-zinc-900 dark:text-white border-b border-zinc-100 dark:border-zinc-800">Blogs</Link>
-        <Link href="#" onClick={() => setIsOpen(false)} className="block px-4 py-4 text-sm font-bold uppercase text-zinc-900 dark:text-white border-b border-zinc-100 dark:border-zinc-800">Company</Link>
+        <Link href="/about" onClick={() => setIsOpen(false)} className="block px-4 py-4 text-sm font-bold uppercase text-zinc-900 dark:text-white border-b border-zinc-100 dark:border-zinc-800">Company</Link>
 
         <div className="p-4 mt-4">
           <Link href="/contact" onClick={() => setIsOpen(false)} className="flex h-12 w-full items-center justify-center rounded-none bg-zinc-900 px-4 py-2 text-sm font-bold uppercase text-white dark:bg-white dark:text-zinc-900 hover:bg-[#8CD34D] hover:text-zinc-900 dark:hover:bg-[#8CD34D] transition-colors">

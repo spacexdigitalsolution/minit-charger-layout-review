@@ -1,3 +1,4 @@
+// section: warehouse-hero
 "use client";
 
 import { useRef } from "react";

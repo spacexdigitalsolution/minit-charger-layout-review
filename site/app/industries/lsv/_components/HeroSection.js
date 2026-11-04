@@ -1,3 +1,4 @@
+// section: lsv-hero
 "use client";
 
 import { useRef } from "react";

@@ -28,8 +28,11 @@ The following routes constitute the master application sitemap and build verific
 ## 2. Industry Solutions
 - [x] **Industries Hub (`/industries`)**: Sector solutions overview (Airport GSE, Commercial Fleets, Warehouses, LSVs).
 - [x] **Aviation GSE Deep Dive (`/industries/aviation-gse`)**: In-depth airport tarmac solutions and fleet challenges.
+- [x] **Aviation GSE Alias (`/industries/airport-gse`)**: Legacy 301 alias route to Aviation GSE.
 - [x] **Warehouse Logistics (`/industries/warehouse`)**: Material handling equipment, opportunity charging, and battery room elimination.
 - [x] **Material Handling Alias (`/industries/material-handling-equipment`)**: Legacy 301 alias route to Warehouse.
+- [x] **Material Handling Short Alias (`/industries/material-handling`)**: Direct alias route to Warehouse.
+- [x] **Commercial Fleets (`/industries/commercial-fleets`)**: High-power depot charging for electric buses, delivery vans & trucks.
 - [x] **Low-Speed Vehicles (`/industries/lsv`)**: Campus, resort, and utility fleet charging systems.
 - [x] **Low-Speed Vehicles Alias (`/industries/low-speed-vehicles`)**: Legacy 301 alias route to LSV.
 - [x] **Dynamic Industry Route (`/industries/[slug]`)**: Dynamic fallback renderer for any industry ID.

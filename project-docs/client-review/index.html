@@ -3,66 +3,111 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Minit Charger — Client Review Portal</title>
+  <title>Client Review Portal</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --bg: #09090b;
-      --surface: #18181b;
-      --border: #27272a;
-      --text: #fafafa;
-      --text-muted: #a1a1aa;
-      --accent: #16a34a;
-      --radius: 8px;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --bg: #F8F9FA;
+      --surface: #FFFFFF;
+      --border: #E2E8F0;
+      --text: #0F172A;
+      --text-muted: #475569;
+      --accent: #D97706;
+      --accent-soft: #FEF3C7;
+      --radius: 12px;
+      --shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
     }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      padding: 40px 20px;
-    }
-    .wrapper { max-width: 900px; margin: 0 auto; }
-    header { margin-bottom: 32px; border-bottom: 1px solid var(--border); padding-bottom: 24px; }
-    h1 { font-size: 28px; font-weight: 800; text-transform: uppercase; letter-spacing: -0.02em; margin-bottom: 8px; }
-    p.subtitle { color: var(--text-muted); font-size: 16px; }
-    .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 24px; }
-    .gate-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 24px;
-      text-decoration: none;
-      color: inherit;
-      transition: border-color 0.2s ease, transform 0.2s ease;
-    }
-    .gate-card:hover { border-color: var(--accent); transform: translateY(-2px); }
-    .badge { display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
-    .gate-card h2 { font-size: 18px; margin-bottom: 8px; }
-    .gate-card p { font-size: 14px; color: var(--text-muted); }
+    body { font-family: var(--font-sans); background: var(--bg); color: var(--text); line-height: 1.6; padding: 48px 20px 80px; }
+    .wrapper { max-width: 860px; margin: 0 auto; }
+    .header { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 36px 32px; box-shadow: var(--shadow); margin-bottom: 32px; }
+    .badge { display: inline-block; background: var(--accent-soft); color: var(--accent); font-size: 13px; font-weight: 700; padding: 4px 12px; border-radius: 999px; margin-bottom: 12px; }
+    h1 { font-size: 32px; font-weight: 800; line-height: 1.25; margin-bottom: 8px; }
+    .lead { font-size: 16px; color: var(--text-muted); }
+    .gates-list { display: flex; flex-direction: column; gap: 16px; }
+    .gate-item { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .gate-info h3 { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+    .gate-info p { font-size: 14px; color: var(--text-muted); }
+    .gate-link { background: var(--accent); color: #FFFFFF; font-weight: 700; font-size: 13px; padding: 10px 18px; border-radius: 6px; text-decoration: none; white-space: nowrap; }
+    .gate-link:hover { opacity: 0.9; }
   </style>
 </head>
 <body>
   <div class="wrapper">
-    <header>
-      <h1>Minit Charger &mdash; Project Review Hub</h1>
-      <p class="subtitle">Client Review Portals &amp; Specifications for NWW Website Pipeline</p>
-    </header>
-    <main>
-      <div class="card-grid">
-        <a href="gate-2-design-theory/index.html" class="gate-card">
-          <span class="badge">Gate 2 &bull; Approved</span>
-          <h2>Design Theory &amp; Visual Direction</h2>
-          <p>Industrial Swiss-engineered brutalist styling, typography hierarchy, high-contrast monochrome palette with electrical green accents.</p>
-        </a>
-        <div class="gate-card">
-          <span class="badge">Pipeline Status</span>
-          <h2>Static Mode Production Website</h2>
-          <p>All 18 Next.js App Router pages prerendered statically with GSAP animations, optimized WebP imagery, and zero CMS dependencies.</p>
+    <div class="header">
+      <span class="badge">Project Review Hub</span>
+      <h1>Client Design & Milestone Portal</h1>
+      <p class="lead">Welcome to your project's visual review portal. Access stage deliverables, review visual direction concepts, and submit milestone sign-offs.</p>
+    </div>
+
+    <div class="gates-list">
+      
+      <div class="gate-item">
+        <div class="gate-info">
+          <h3>Gate 1: Tech Stack Specification</h3>
+          <p>Architecture, framework choices, and rendering strategy.</p>
+        </div>
+        <div>
+          <a href="gate-1-tech-stack/tech-stack.md" class="gate-link">View Deliverable →</a>
         </div>
       </div>
-    </main>
+    
+
+      <div class="gate-item">
+        <div class="gate-info">
+          <h3>Gate 2: Landing Page Variations & Design Review</h3>
+          <p>Full landing page variations, responsive previews, and design theory.</p>
+        </div>
+        <div>
+          <a href="gate-2-design-theory/index.html" class="gate-link">View Deliverable →</a>
+        </div>
+      </div>
+    
+
+      <div class="gate-item">
+        <div class="gate-info">
+          <h3>Gate 3: Page List & Sitemap Scope</h3>
+          <p>Route hierarchy, complete sitemap, and page inventory.</p>
+        </div>
+        <div>
+          <a href="gate-3-page-list/page-list.md" class="gate-link">View Deliverable →</a>
+        </div>
+      </div>
+    
+
+      <div class="gate-item">
+        <div class="gate-info">
+          <h3>Gate 4: SEO Strategy & Keyword Mapping</h3>
+          <p>Metadata, keyword targeting, and structured data specifications.</p>
+        </div>
+        <div>
+          <a href="gate-4-seo-strategy/seo-strategy.md" class="gate-link">View Deliverable →</a>
+        </div>
+      </div>
+    
+
+      <div class="gate-item">
+        <div class="gate-info">
+          <h3>Gate 5: Page Specifications & CMS Schema</h3>
+          <p>Responsive layout blueprints, copywriting, asset slots, and CMS schemas.</p>
+        </div>
+        <div>
+          <a href="gate-5-page-specs/" class="gate-link">View Deliverable →</a>
+        </div>
+      </div>
+    
+
+      <div class="gate-item">
+        <div class="gate-info">
+          <h3>Gate 8: Final Verification & Audit</h3>
+          <p>Automated deliverable compliance audit and production sign-off.</p>
+        </div>
+        <div>
+          <a href="gate-8-final-verification/structure-audit.md" class="gate-link">View Deliverable →</a>
+        </div>
+      </div>
+    
+    </div>
   </div>
 </body>
 </html>
-

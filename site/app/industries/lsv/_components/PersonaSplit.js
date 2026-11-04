@@ -1,3 +1,4 @@
+// section: lsv-persona-split
 "use client";
 
 import { useState, useRef } from "react";
