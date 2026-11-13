@@ -21,11 +21,11 @@ export default function HeroSection() {
   }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} data-section="aviation-hero" className="relative overflow-hidden w-full min-h-[85vh] flex items-center border-b border-zinc-200 dark:border-zinc-800">
+    <section ref={containerRef} data-section="aviation-hero" className="relative overflow-hidden w-full min-h-[580px] lg:min-h-0 lg:aspect-[16/9] flex items-center border-b border-zinc-200 dark:border-zinc-800 bg-zinc-950">
 
       {/* Background Image Layer */}
       <div
-        className="absolute inset-0 w-full h-full bg-cover bg-center z-0"
+        className="absolute inset-0 w-full h-full bg-cover lg:bg-[length:100%_auto] bg-center lg:bg-top bg-no-repeat z-0"
         style={{ backgroundImage: "url('/assets/Industries/Aviation-GSE/Banner/Banner-Aviation-v2.webp')" }}
       />
 
@@ -33,7 +33,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-r from-zinc-950/95 via-zinc-950/70 to-transparent z-10" />
 
       {/* Content Layer */}
-      <div className="relative z-20 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
+      <div className="relative z-20 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full py-16 md:py-20 lg:py-24">
         <div className="max-w-3xl mb-16">
           <p className="hero-subcopy text-green-500 font-bold uppercase  text-xs mb-4">
             Aviation Ground Support Equipment
