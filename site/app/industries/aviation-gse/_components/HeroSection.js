@@ -26,7 +26,7 @@ export default function HeroSection() {
       {/* Background Image Layer */}
       <div
         className="absolute inset-0 w-full h-full bg-cover bg-center z-0"
-        style={{ backgroundImage: "url('/assets/Industries/Aviation/Banner/Banner-Aviation.webp')" }}
+        style={{ backgroundImage: "url('/assets/Industries/Aviation-GSE/Banner/Banner-Aviation-v2.webp')" }}
       />
 
       {/* Legibility Gradient Overlay */}
