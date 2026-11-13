@@ -6,6 +6,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { Check, X } from "lucide-react";
+import SmartImage from "@/components/SmartImage";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -56,8 +57,26 @@ export default function ComparisonTable() {
   }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} data-section="aviation-comparison" className="py-24 bg-zinc-100 dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section
+      ref={containerRef}
+      data-section="aviation-comparison"
+      className="relative py-24 bg-zinc-100 dark:bg-zinc-950 border-b border-zinc-200 dark:border-zinc-800 overflow-hidden"
+    >
+      {/* Faded Background Image Layer */}
+      <div className="absolute inset-0 w-full h-full z-0 overflow-hidden pointer-events-none select-none">
+        <SmartImage
+          src="/assets/Industries/Aviation-GSE/Airport Background/Airport bg view 1.png"
+          alt="Airport Background"
+          fill
+          sizes="100vw"
+          className="object-cover object-center opacity-15 dark:opacity-20"
+        />
+        {/* Soft edge fade overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-zinc-100/90 via-transparent to-zinc-100/90 dark:from-zinc-950/90 dark:via-transparent dark:to-zinc-950/90" />
+      </div>
+
+      {/* Content Layer */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="comp-header text-center mb-16 max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-display font-black text-zinc-900 dark:text-white uppercase mb-6 leading-tight">
