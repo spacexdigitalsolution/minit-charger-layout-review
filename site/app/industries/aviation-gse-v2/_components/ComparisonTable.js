@@ -62,32 +62,32 @@ export default function ComparisonTable() {
       data-section="aviation-comparison"
       className="relative py-24 bg-zinc-100 dark:bg-zinc-950 border-b border-zinc-200 dark:border-zinc-800 overflow-hidden"
     >
-      {/* Faded Background Image Layer */}
+      {/* Background Image Layer */}
       <div className="absolute inset-0 w-full h-full z-0 overflow-hidden pointer-events-none select-none">
         <SmartImage
           src="/assets/Industries/Aviation-GSE/Airport Background/Airport bg view 1.png"
           alt="Airport Background"
           fill
           sizes="100vw"
-          className="object-cover object-center opacity-15 dark:opacity-20"
+          className="object-cover object-center opacity-60 dark:opacity-50"
         />
         {/* Soft edge fade overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-zinc-100/90 via-transparent to-zinc-100/90 dark:from-zinc-950/90 dark:via-transparent dark:to-zinc-950/90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-zinc-100/60 via-transparent to-zinc-100/70 dark:from-zinc-950/70 dark:via-transparent dark:to-zinc-950/80" />
       </div>
 
       {/* Content Layer */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="comp-header text-center mb-16 max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-display font-black text-zinc-900 dark:text-white uppercase mb-6 leading-tight">
+          <h2 className="text-3xl md:text-5xl font-display font-black text-zinc-900 dark:text-white uppercase mb-6 leading-tight drop-shadow-sm">
             Why 10,000+ Minit Chargers Are Already Installed at Airports
           </h2>
-          <p className="text-lg text-zinc-600 dark:text-zinc-400">
+          <p className="text-lg text-zinc-700 dark:text-zinc-300 font-medium">
             Every airport facility has to keep up. Fall behind the others and the image goes with it, because outdated technology alone can ruin the experience for people, staff, and operations.
           </p>
         </div>
 
-        <div className="comp-table max-w-5xl mx-auto bg-white dark:bg-zinc-950 rounded border border-zinc-200 dark:border-zinc-800 overflow-hidden shadow-sm">
+        <div className="comp-table max-w-5xl mx-auto bg-white dark:bg-zinc-950 rounded border border-zinc-200 dark:border-zinc-800 overflow-hidden shadow-xl">
           {/* Table Header */}
           <div className="grid grid-cols-2 divide-x divide-zinc-200 dark:divide-zinc-800 bg-zinc-50 dark:bg-zinc-900/50 border-b border-zinc-200 dark:border-zinc-800">
             <div className="p-6 md:p-8 flex items-center justify-center text-center">
