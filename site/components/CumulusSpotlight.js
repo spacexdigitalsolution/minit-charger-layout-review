@@ -18,10 +18,11 @@ export default function CumulusSpotlight({
     "Deep insights into battery health, temperature, and equalization",
     "Automated energy compliance reports and precise metering"
   ],
-  dashboardImage = "/assets/homepage/Cumulus Software-01.webp",
+  dashboardImage = "/assets/Products/Cumulus/Cumulus Transparent Software.png",
   ctaLabel = "Explore Cumulus",
   ctaHref = "/products/cumulus",
-  imageSide = "right"
+  imageSide = "right",
+  mode = "image"
 }) {
   const containerRef = useRef(null);
 
@@ -68,14 +69,15 @@ export default function CumulusSpotlight({
             </Link>
           </div>
 
-          <div className={`cs-img relative w-full aspect-[4/3] lg:aspect-[16/11] bg-zinc-200 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 flex items-center justify-center overflow-hidden ${imageSide === 'left' ? 'lg:order-1' : 'lg:order-2'}`}>
-            <div className="relative w-[90%] h-[90%]">
+          <div className={`cs-img relative w-full aspect-[4/3] lg:aspect-[16/11] bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 flex items-center justify-center overflow-hidden ${imageSide === 'left' ? 'lg:order-1' : 'lg:order-2'}`}>
+            <div className="relative w-[92%] h-[92%]">
               <SmartImage
                 src={dashboardImage}
                 alt="Cumulus Dashboard Interface"
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-contain drop-shadow-xl"
-                mode="placeholder"
+                mode={mode}
               />
             </div>
           </div>
