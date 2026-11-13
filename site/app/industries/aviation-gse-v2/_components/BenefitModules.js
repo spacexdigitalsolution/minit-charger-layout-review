@@ -44,11 +44,11 @@ export default function BenefitModules() {
         <div className="hd-block-1 lg:grid lg:grid-cols-12 lg:gap-16 items-center mb-32">
           <div className="hd-img-1 lg:col-span-7 relative w-full aspect-[4/3] bg-zinc-200 dark:bg-zinc-800 overflow-hidden rounded-sm">
             <SmartImage
-              // AI-generated placeholder — replace with real photography, approved 2026-09-12
-              src="/assets/ai_placeholders/gse_ecosystem_1789225330392.jpg"
-              alt="Magnus Charger supporting mixed fleet operations"
+              src="/assets/Industries/Aviation-GSE/Minit Charger Attributes/Multiple charging ecosystem.png"
+              alt="Multiple charging ecosystem supporting mixed GSE and EV operations"
               fill
-              mode="placeholder"
+              sizes="(max-width: 1024px) 100vw, 60vw"
+              mode="image"
               className="object-cover"
             />
           </div>
