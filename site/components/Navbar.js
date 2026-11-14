@@ -15,6 +15,7 @@ const DEFAULT_PREVIEW_PRODUCT = products.find(p => p.id === "magnus");
 
 export default function Navbar() {
   const pathname = usePathname();
+  const [prevPathname, setPrevPathname] = useState(pathname);
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(true);
 
@@ -28,21 +29,16 @@ export default function Navbar() {
   const menuContainerRef = useRef(null);
   const previewPanelRef = useRef(null);
 
-  // Close menus on route change
-  useEffect(() => {
+  if (prevPathname !== pathname) {
+    setPrevPathname(pathname);
     setIsOpen(false);
     setActiveDesktopMenu(null);
     setIsMenuOpen(false);
-  }, [pathname]);
+  }
 
-  // Lock body scroll & handle Escape key
+  // Lock body scroll for mobile drawer & handle Escape key
   useEffect(() => {
-    if (isMenuOpen || isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-
+    document.body.style.overflow = isOpen ? 'hidden' : '';
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') {
         setIsMenuOpen(false);
@@ -50,49 +46,56 @@ export default function Navbar() {
         setActiveDesktopMenu(null);
       }
     };
-
     window.addEventListener('keydown', handleKeyDown);
     return () => {
       document.body.style.overflow = '';
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [isMenuOpen, isOpen]);
+  }, [isOpen]);
+
+  // Close desktop mega menu when scrolling down
+  useEffect(() => {
+    if (!isMenuOpen) return;
+    const handleScroll = () => {
+      setIsMenuOpen(false);
+      setActiveDesktopMenu(null);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [isMenuOpen]);
 
   const handleMouseEnterNav = (menu) => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    timeoutRef.current = setTimeout(() => {
+    if (isMenuOpen) {
       setActiveDesktopMenu(menu);
-      setIsMenuOpen(true);
-    }, 120); // 120ms hover intent delay
+    } else {
+      timeoutRef.current = setTimeout(() => {
+        setActiveDesktopMenu(menu);
+        setIsMenuOpen(true);
+      }, 100);
+    }
   };
 
-  const handleNavClick = (menu) => {
-    if (activeDesktopMenu === menu && isMenuOpen) {
-      setIsMenuOpen(false);
-      setActiveDesktopMenu(null);
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    } else {
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
-      setActiveDesktopMenu(menu);
-      setIsMenuOpen(true);
-    }
+  const handleMenuEnter = () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+  };
+
+  const handleNavLinkClick = () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    setIsMenuOpen(false);
+    setActiveDesktopMenu(null);
   };
 
   const handleMouseLeaveNav = () => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
     timeoutRef.current = setTimeout(() => {
       setIsMenuOpen(false);
-      // Wait for close transition (120ms) before clearing the DOM state
       setTimeout(() => setActiveDesktopMenu(null), 120);
     }, 150);
   };
 
   const toggleMobileMenu = (menu) => {
-    if (activeMobileMenu === menu) {
-      setActiveMobileMenu(null);
-    } else {
-      setActiveMobileMenu(menu);
-    }
+    setActiveMobileMenu(activeMobileMenu === menu ? null : menu);
   };
 
   // Staggered column animation on open
@@ -151,37 +154,39 @@ export default function Navbar() {
 
             {/* Desktop Nav Links */}
             <div className="hidden md:flex md:gap-8 items-center h-full">
-              <div
+              <Link
+                href="/products"
                 onMouseEnter={() => handleMouseEnterNav('products')}
-                onClick={() => handleNavClick('products')}
-                className={`group flex items-center h-full cursor-pointer text-sm font-bold uppercase transition-colors duration-300 ${activeDesktopMenu === 'products'
+                onClick={handleNavLinkClick}
+                className={`group flex items-center h-full text-sm font-bold uppercase transition-colors duration-300 ${activeDesktopMenu === 'products'
                   ? "text-[#16a34a]"
                   : scrolled || activeDesktopMenu || isOpen ? "text-zinc-600 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white" : "text-white/80 hover:text-white"
                   }`}
               >
                 Products
                 <ChevronDown className={`ml-1 h-4 w-4 transition-transform duration-300 ${activeDesktopMenu === 'products' ? 'rotate-180 text-[#16a34a]' : ''}`} />
-              </div>
+              </Link>
 
-              <div
+              <Link
+                href="/industries"
                 onMouseEnter={() => handleMouseEnterNav('industries')}
-                onClick={() => handleNavClick('industries')}
-                className={`group flex items-center h-full cursor-pointer text-sm font-bold uppercase transition-colors duration-300 ${activeDesktopMenu === 'industries'
+                onClick={handleNavLinkClick}
+                className={`group flex items-center h-full text-sm font-bold uppercase transition-colors duration-300 ${activeDesktopMenu === 'industries'
                   ? "text-[#16a34a]"
                   : scrolled || activeDesktopMenu || isOpen ? "text-zinc-600 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white" : "text-white/80 hover:text-white"
                   }`}
               >
                 Industries
                 <ChevronDown className={`ml-1 h-4 w-4 transition-transform duration-300 ${activeDesktopMenu === 'industries' ? 'rotate-180 text-[#16a34a]' : ''}`} />
-              </div>
+              </Link>
 
-              <Link href="/blogs" onMouseEnter={handleMouseLeaveNav} onClick={() => { setIsMenuOpen(false); setActiveDesktopMenu(null); }} className={`text-sm font-bold uppercase transition-colors duration-300 ${scrolled || activeDesktopMenu || isOpen ? "text-zinc-600 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white" : "text-white/80 hover:text-white"}`}>Blogs</Link>
-              <Link href="/about" onMouseEnter={handleMouseLeaveNav} onClick={() => { setIsMenuOpen(false); setActiveDesktopMenu(null); }} className={`text-sm font-bold uppercase transition-colors duration-300 ${scrolled || activeDesktopMenu || isOpen ? "text-zinc-600 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white" : "text-white/80 hover:text-white"}`}>Company</Link>
+              <Link href="/blogs" onMouseEnter={handleMouseLeaveNav} onClick={handleNavLinkClick} className={`text-sm font-bold uppercase transition-colors duration-300 ${scrolled || activeDesktopMenu || isOpen ? "text-zinc-600 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white" : "text-white/80 hover:text-white"}`}>Blogs</Link>
+              <Link href="/about" onMouseEnter={handleMouseLeaveNav} onClick={handleNavLinkClick} className={`text-sm font-bold uppercase transition-colors duration-300 ${scrolled || activeDesktopMenu || isOpen ? "text-zinc-600 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white" : "text-white/80 hover:text-white"}`}>Company</Link>
             </div>
           </div>
 
           <div className="hidden md:flex md:items-center md:gap-4 h-full" onMouseEnter={handleMouseLeaveNav}>
-            <Link href="/contact" className={`inline-flex h-10 items-center justify-center rounded-none px-6 py-2 text-sm font-bold uppercase transition-colors duration-300 ${scrolled || activeDesktopMenu || isOpen
+            <Link href="/contact" onClick={handleNavLinkClick} className={`inline-flex h-10 items-center justify-center rounded-none px-6 py-2 text-sm font-bold uppercase transition-colors duration-300 ${scrolled || activeDesktopMenu || isOpen
               ? "bg-zinc-900 text-white hover:bg-[#8CD34D] hover:text-zinc-900 dark:bg-white dark:text-zinc-900 dark:hover:bg-[#8CD34D]"
               : "bg-white text-zinc-900 hover:bg-[#8CD34D]"
               }`}>
@@ -212,6 +217,8 @@ export default function Navbar() {
           hoveredProduct={hoveredProduct}
           handleProductHover={handleProductHover}
           industryCategories={industryCategories}
+          onMenuEnter={handleMenuEnter}
+          onMenuLeave={handleMouseLeaveNav}
         />
 
         {/* Mobile Menu Accordion */}
