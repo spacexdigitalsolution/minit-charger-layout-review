@@ -78,6 +78,7 @@ export default function CumulusSpotlight({
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-contain drop-shadow-xl"
                 mode={mode}
+                optimize={false}
               />
             </div>
           </div>

@@ -33,7 +33,7 @@ export default function AviationGSEPage() {
             "Deep insights into asset location, geofencing, and movement",
             "Automatic billing and compliance reports, ready without extra work"
           ]}
-          dashboardImage="/assets/Industries/Aviation-GSE/Cumulus/Cumulus Software-01.webp"
+          dashboardImage="/assets/Industries/Aviation-GSE/Cumulus/Cumulus-Aviation-Dashboard.webp"
           imageSide="right"
         />
 
