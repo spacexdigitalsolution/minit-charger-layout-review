@@ -1,5 +1,5 @@
 import Link from "next/link";
-import SmartImage from "./SmartImage";
+import SmartImage from "@/components/SmartImage";
 
 export default function BlogCard({ item, imageMode = "cover", isLight = false, paddingClass = "" }) {
   return (

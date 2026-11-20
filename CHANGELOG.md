@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.3] - 2026-11-20
+
+### Changed
+- Standardized repository structure under `/standardize-repo` enforcing direct file density caps (`R-SIZE-2` <= 10 direct files per folder) across all application directories.
+- Sub-grouped `site/components/` into `layout/`, `industry/`, `product/`, `media/`, and `ui/`, leaving only `SmartImage.js` and `AGENTS.md` directly in `components/`.
+- Sub-grouped home route components in `site/app/_components/` into `hero/`, `features/`, and `proof/`.
+- Sub-grouped Altus II product route components in `site/app/products/altus-ii/_components/` into `overview/` and `features/`, and relocated global smooth scroll provider to `components/layout/SmoothScroll.js`.
+- Updated all referencing import paths across all 39 static routes and subcomponents.
+- Formalized `.agents/standards-exceptions.md` for external client asset dumps and root configuration files.
+- Completed comprehensive Vercel React Best Practices audit across all 70 rules with full pass across critical performance tiers.
+
 ## [0.1.2] - 2026-11-20
 
 ### Added

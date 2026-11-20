@@ -7,7 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import Link from "next/link";
 import SmartImage from "@/components/SmartImage";
-import HoverZoomImage from "@/components/HoverZoomImage";
+import HoverZoomImage from "@/components/media/HoverZoomImage";
 import { ArrowRight } from "lucide-react";
 
 import { products } from "@/data/products";

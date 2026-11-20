@@ -1,4 +1,4 @@
-import ProductDetailLayout from "@/components/ProductDetailLayout";
+import ProductDetailLayout from "@/components/product/ProductDetailLayout";
 import { products } from "@/data/products";
 import { mobilusContent, mobilusSeo } from "./_components/mobilusData";
 

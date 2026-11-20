@@ -5,9 +5,9 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import Link from "next/link";
-import ProductCard from "./ProductCard";
-import BlogCard from "./BlogCard";
-import IndustryCard from "./IndustryCard";
+import ProductCard from "@/components/product/ProductCard";
+import BlogCard from "@/components/ui/BlogCard";
+import IndustryCard from "@/components/industry/IndustryCard";
 import { ArrowRight } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);

@@ -1,4 +1,4 @@
-import IndustryDetailLayout from "@/components/IndustryDetailLayout";
+import IndustryDetailLayout from "@/components/industry/IndustryDetailLayout";
 import { industries } from "@/data/industries";
 
 export const metadata = {

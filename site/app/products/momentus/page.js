@@ -1,4 +1,4 @@
-import ProductDetailLayout from "@/components/ProductDetailLayout";
+import ProductDetailLayout from "@/components/product/ProductDetailLayout";
 import { products } from "@/data/products";
 import { momentusContent, momentusSeo } from "./_components/momentusData";
 

@@ -6,7 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import Link from "next/link";
 import { Check } from "lucide-react";
-import SmartImage from "./SmartImage";
+import SmartImage from "@/components/SmartImage";
 
 gsap.registerPlugin(ScrollTrigger);
 

@@ -1,11 +1,11 @@
-import IndustryHero from "./industry/IndustryHero";
-import IndustryChallenges from "./industry/IndustryChallenges";
-import IndustryComparison from "./industry/IndustryComparison";
-import StatModule from "@/components/StatModule";
-import CumulusSpotlight from "@/components/CumulusSpotlight";
-import ImageCardGrid from "@/components/ImageCardGrid";
-import FaqSection from "@/components/FaqSection";
-import ConversionBand from "@/components/ConversionBand";
+import IndustryHero from "./IndustryHero";
+import IndustryChallenges from "./IndustryChallenges";
+import IndustryComparison from "./IndustryComparison";
+import StatModule from "@/components/ui/StatModule";
+import CumulusSpotlight from "@/components/ui/CumulusSpotlight";
+import ImageCardGrid from "@/components/media/ImageCardGrid";
+import FaqSection from "@/components/ui/FaqSection";
+import ConversionBand from "@/components/ui/ConversionBand";
 import { products } from "@/data/products";
 
 export default function IndustryDetailLayout({ industry }) {

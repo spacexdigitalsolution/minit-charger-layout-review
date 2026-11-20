@@ -3,9 +3,9 @@ import ChallengesScroll from "./_components/ChallengesScroll";
 import ComparisonTable from "./_components/ComparisonTable";
 import PersonaSplit from "./_components/PersonaSplit";
 import BenefitModules from "./_components/BenefitModules";
-import CumulusSpotlight from "@/components/CumulusSpotlight";
-import FaqSection from "@/components/FaqSection";
-import ConversionBand from "@/components/ConversionBand";
+import CumulusSpotlight from "@/components/ui/CumulusSpotlight";
+import FaqSection from "@/components/ui/FaqSection";
+import ConversionBand from "@/components/ui/ConversionBand";
 import { lsvFaqs } from "./_components/lsvData";
 
 export const metadata = {

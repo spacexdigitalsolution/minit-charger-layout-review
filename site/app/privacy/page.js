@@ -1,5 +1,5 @@
 import PrivacyContent from "./_components/PrivacyContent";
-import ConversionBand from "@/components/ConversionBand";
+import ConversionBand from "@/components/ui/ConversionBand";
 
 export const metadata = {
   title: "Privacy Policy | Minit Charger",

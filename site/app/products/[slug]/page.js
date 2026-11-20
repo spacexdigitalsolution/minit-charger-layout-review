@@ -1,5 +1,5 @@
-import ProductDetailLayout from "@/components/ProductDetailLayout";
-import UnderDevelopment from "@/components/UnderDevelopment";
+import ProductDetailLayout from "@/components/product/ProductDetailLayout";
+import UnderDevelopment from "@/components/ui/UnderDevelopment";
 import { products } from "@/data/products";
 
 export function generateStaticParams() {

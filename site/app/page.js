@@ -1,15 +1,15 @@
-import HomeHero from "./_components/HomeHero";
-import ProblemFraming from "./_components/ProblemFraming";
-import EnvironmentGrid from "./_components/EnvironmentGrid";
-import EngineeredAdvantages from "./_components/EngineeredAdvantages";
-import InteractiveScenes from "./_components/InteractiveScenes";
-import ImageCardGrid from "@/components/ImageCardGrid";
-import ProcessSteps from "./_components/ProcessSteps";
-import FaqSection from "@/components/FaqSection";
-import ConversionBand from "@/components/ConversionBand";
-import CumulusSpotlight from "@/components/CumulusSpotlight";
-import TabbedProductCatalog from "./_components/TabbedProductCatalog";
-import ConsolidatedProof from "./_components/ConsolidatedProof";
+import HomeHero from "./_components/hero/HomeHero";
+import ProblemFraming from "./_components/features/ProblemFraming";
+import EnvironmentGrid from "./_components/features/EnvironmentGrid";
+import EngineeredAdvantages from "./_components/features/EngineeredAdvantages";
+import InteractiveScenes from "./_components/features/InteractiveScenes";
+import ImageCardGrid from "@/components/media/ImageCardGrid";
+import ProcessSteps from "./_components/features/ProcessSteps";
+import FaqSection from "@/components/ui/FaqSection";
+import ConversionBand from "@/components/ui/ConversionBand";
+import CumulusSpotlight from "@/components/ui/CumulusSpotlight";
+import TabbedProductCatalog from "./_components/features/TabbedProductCatalog";
+import ConsolidatedProof from "./_components/proof/ConsolidatedProof";
 import { featuredBlogs, homeFaqs } from "@/data/homeContent";
 
 export default function Home() {

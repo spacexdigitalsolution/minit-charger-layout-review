@@ -1,5 +1,5 @@
 import BlogCatalogClient from "./_components/BlogCatalogClient";
-import ConversionBand from "@/components/ConversionBand";
+import ConversionBand from "@/components/ui/ConversionBand";
 import { blogs } from "@/data/blogs";
 
 export const metadata = {

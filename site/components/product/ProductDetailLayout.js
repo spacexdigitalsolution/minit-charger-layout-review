@@ -1,13 +1,13 @@
-import ProductHero from "./product/ProductHero";
-import ProductSpecs from "./product/ProductSpecs";
-import ProductBenefits from "./product/ProductBenefits";
-import ProductFeatureSplit from "./product/ProductFeatureSplit";
-import ProductSectionSplit from "./product/ProductSectionSplit";
-import ProductPairing from "./product/ProductPairing";
-import StatModule from "@/components/StatModule";
-import ImageCardGrid from "@/components/ImageCardGrid";
-import FaqSection from "@/components/FaqSection";
-import ConversionBand from "@/components/ConversionBand";
+import ProductHero from "./ProductHero";
+import ProductSpecs from "./ProductSpecs";
+import ProductBenefits from "./ProductBenefits";
+import ProductFeatureSplit from "./ProductFeatureSplit";
+import ProductSectionSplit from "./ProductSectionSplit";
+import ProductPairing from "./ProductPairing";
+import StatModule from "@/components/ui/StatModule";
+import ImageCardGrid from "@/components/media/ImageCardGrid";
+import FaqSection from "@/components/ui/FaqSection";
+import ConversionBand from "@/components/ui/ConversionBand";
 import { products } from "@/data/products";
 
 export default function ProductDetailLayout({ product, content }) {

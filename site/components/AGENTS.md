@@ -1,9 +1,13 @@
 # Shared Components AI Agent Guidance
 
 ## Architecture
-- Flat registry of components reused across 2 or more routes (`components/`).
-- `Navbar.js` and `Footer.js` provide global shell structure wrapped in `app/layout.js`.
-- `SmartImage.js` provides centralized responsive asset resolution using `public/assets/manifest.json`.
+- Sub-grouped registry of components reused across 2 or more routes (`components/`):
+  - `components/layout/`: `Navbar.js`, `Footer.js`, `NavbarMegaMenu.js`, `NavbarMobileDrawer.js` providing global shell structure wrapped in `app/layout.js`.
+  - `components/industry/`: `IndustryDetailLayout.js`, `IndustryCard.js`, and reusable industry section modules.
+  - `components/product/`: `ProductDetailLayout.js`, `ProductCard.js`, and reusable product showcase modules.
+  - `components/media/`: `HoverZoomImage.js`, `ImageCardGrid.js`, and `ImagePlaceholder.js`.
+  - `components/ui/`: Generic reusable UI elements (`BlogCard.js`, `ConversionBand.js`, `CumulusSpotlight.js`, `FaqSection.js`, `StatModule.js`, `StatsBlock.js`, `UnderDevelopment.js`).
+  - `components/SmartImage.js`: Centralized responsive asset resolution using `public/assets/manifest.json`.
 
 ## Conventions
 - Default to React Server Components (RSC) unless interactivity or hooks are strictly required.

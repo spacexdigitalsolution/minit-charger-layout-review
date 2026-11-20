@@ -1,15 +1,15 @@
-import HeroSection from "./_components/HeroSection";
-import SpecsTable from "./_components/SpecsTable";
-import BenefitsGrid from "./_components/BenefitsGrid";
-import PowerUsageBilling from "./_components/PowerUsageBilling";
-import GatePowerManager from "./_components/GatePowerManager";
-import StatModule from "@/components/StatModule";
-import VideoModule from "./_components/VideoModule";
-import PairAltusII from "./_components/PairAltusII";
-import ImageCardGrid from "@/components/ImageCardGrid";
-import FaqSection from "@/components/FaqSection";
-import ConversionBand from "@/components/ConversionBand";
-import { altusFaqs, relatedProducts, altusStats } from "./_components/altusData";
+import HeroSection from "./_components/overview/HeroSection";
+import SpecsTable from "./_components/overview/SpecsTable";
+import BenefitsGrid from "./_components/overview/BenefitsGrid";
+import PowerUsageBilling from "./_components/features/PowerUsageBilling";
+import GatePowerManager from "./_components/features/GatePowerManager";
+import StatModule from "@/components/ui/StatModule";
+import VideoModule from "./_components/overview/VideoModule";
+import PairAltusII from "./_components/features/PairAltusII";
+import ImageCardGrid from "@/components/media/ImageCardGrid";
+import FaqSection from "@/components/ui/FaqSection";
+import ConversionBand from "@/components/ui/ConversionBand";
+import { altusFaqs, relatedProducts, altusStats } from "./_components/overview/altusData";
 
 export const metadata = {
   title: "Altus II Dual-Port DC Fast Charger | Minit Charger",

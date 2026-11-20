@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import ConversionBand from "@/components/ConversionBand";
+import ConversionBand from "@/components/ui/ConversionBand";
 import ArticleHero from "./_components/ArticleHero";
 import ArticleBody from "./_components/ArticleBody";
 import RelatedPosts from "./_components/RelatedPosts";

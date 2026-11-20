@@ -1,6 +1,6 @@
 import Link from "next/link";
-import SmartImage from "./SmartImage";
-import HoverZoomImage from "./HoverZoomImage";
+import SmartImage from "@/components/SmartImage";
+import HoverZoomImage from "@/components/media/HoverZoomImage";
 import { ArrowRight } from "lucide-react";
 
 export default function ProductCard({ item, imageMode = "cover", isLight = false, paddingClass = "" }) {

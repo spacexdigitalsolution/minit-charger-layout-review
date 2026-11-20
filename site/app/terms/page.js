@@ -1,5 +1,5 @@
 import TermsContent from "./_components/TermsContent";
-import ConversionBand from "@/components/ConversionBand";
+import ConversionBand from "@/components/ui/ConversionBand";
 
 export const metadata = {
   title: "Terms & Conditions | Minit Charger",

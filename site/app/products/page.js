@@ -1,4 +1,4 @@
-import ImageCardGrid from "@/components/ImageCardGrid";
+import ImageCardGrid from "@/components/media/ImageCardGrid";
 import { products } from "@/data/products";
 import { productCategories } from "@/data/categories";
 

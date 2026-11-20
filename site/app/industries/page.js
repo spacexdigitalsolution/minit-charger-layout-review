@@ -1,5 +1,5 @@
 import { industryCategories } from "@/data/categories";
-import ConversionBand from "@/components/ConversionBand";
+import ConversionBand from "@/components/ui/ConversionBand";
 import IndustryListClient from "./_components/IndustryListClient";
 
 export const metadata = {

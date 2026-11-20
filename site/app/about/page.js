@@ -1,4 +1,4 @@
-import StatModule from "@/components/StatModule";
+import StatModule from "@/components/ui/StatModule";
 import LeadershipQuote from "./_components/LeadershipQuote";
 import HeroAnimation from "./_components/HeroAnimation";
 import PurposeStatement from "./_components/PurposeStatement";

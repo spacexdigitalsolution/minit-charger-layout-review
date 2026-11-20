@@ -1,4 +1,4 @@
-import ProductDetailLayout from "@/components/ProductDetailLayout";
+import ProductDetailLayout from "@/components/product/ProductDetailLayout";
 import { products } from "@/data/products";
 import { magnusContent, magnusSeo } from "./_components/magnusData";
 

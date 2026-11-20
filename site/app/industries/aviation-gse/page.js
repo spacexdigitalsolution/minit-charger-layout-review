@@ -2,9 +2,9 @@ import HeroSection from "./_components/HeroSection";
 import ChallengesScroll from "./_components/ChallengesScroll";
 import ComparisonTable from "./_components/ComparisonTable";
 import BenefitModules from "./_components/BenefitModules";
-import FaqSection from "@/components/FaqSection";
-import ConversionBand from "@/components/ConversionBand";
-import CumulusSpotlight from "@/components/CumulusSpotlight";
+import FaqSection from "@/components/ui/FaqSection";
+import ConversionBand from "@/components/ui/ConversionBand";
+import CumulusSpotlight from "@/components/ui/CumulusSpotlight";
 import { aviationFaqs } from "./_components/aviationData";
 
 export const metadata = {

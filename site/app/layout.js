@@ -1,8 +1,8 @@
 import { Geist, Geist_Mono, Oswald } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import SmoothScroll from "@/app/products/altus-ii/_components/SmoothScroll";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+import SmoothScroll from "@/components/layout/SmoothScroll";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

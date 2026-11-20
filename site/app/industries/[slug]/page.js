@@ -1,5 +1,5 @@
-import IndustryDetailLayout from "@/components/IndustryDetailLayout";
-import UnderDevelopment from "@/components/UnderDevelopment";
+import IndustryDetailLayout from "@/components/industry/IndustryDetailLayout";
+import UnderDevelopment from "@/components/ui/UnderDevelopment";
 import { industries } from "@/data/industries";
 
 export function generateStaticParams() {
