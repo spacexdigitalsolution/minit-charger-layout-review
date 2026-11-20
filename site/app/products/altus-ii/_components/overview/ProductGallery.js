@@ -134,7 +134,7 @@ export default function ProductGallery({ images }) {
                 src={image.src}
                 alt={`Thumbnail of ${image.alt}`}
                 fill
-                mode="placeholder"
+                mode={image.mode || (index === 0 ? "image" : "placeholder")}
                 sizes="(max-width: 96px) 100vw, 96px"
                 className="object-contain p-2 mix-blend-multiply dark:mix-blend-normal"
               />
