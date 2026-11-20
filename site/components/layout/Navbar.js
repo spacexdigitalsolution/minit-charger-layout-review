@@ -142,18 +142,18 @@ export default function Navbar() {
   const isCompanyActive = pathname.startsWith("/about");
 
   return (
-    <header className="fixed top-4 md:top-6 inset-x-0 mx-auto w-[calc(100%-2rem)] max-w-5xl z-50 pointer-events-none">
+    <header className="fixed top-4 md:top-6 inset-x-0 mx-auto w-[calc(100%-2rem)] max-w-6xl z-50 pointer-events-none">
       <nav
         aria-label="Main Navigation"
         onMouseLeave={handleMouseLeaveNav}
-        className="relative pointer-events-auto rounded-full bg-zinc-950/85 backdrop-blur-md [@media(prefers-reduced-transparency:reduce)]:backdrop-blur-none [@media(prefers-reduced-transparency:reduce)]:bg-zinc-950 border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.36)] h-14 md:h-16 px-4 md:px-6 flex items-center justify-between transition-all duration-300"
+        className="relative pointer-events-auto rounded-full bg-white/90 backdrop-blur-md [@media(prefers-reduced-transparency:reduce)]:backdrop-blur-none [@media(prefers-reduced-transparency:reduce)]:bg-white border border-zinc-200/80 shadow-[0_8px_30px_rgba(0,0,0,0.08)] h-14 md:h-16 px-4 md:px-6 flex items-center justify-between transition-all duration-300"
       >
         {/* Left: Brand Logo */}
         <Link
           href="/"
           onClick={handleNavLinkClick}
           aria-label="Minit Charger Home"
-          className="flex items-center gap-2 shrink-0 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8CD34D]"
+          className="flex items-center gap-2 shrink-0 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16a34a]"
         >
           <div className="relative w-28 md:w-32 h-8">
             <SmartImage
@@ -168,7 +168,7 @@ export default function Navbar() {
         </Link>
 
         {/* Center: Desktop Navigation Links */}
-        <div className="hidden md:flex md:items-center md:gap-7 h-full">
+        <div className="hidden md:flex md:items-center md:gap-8 h-full">
           {/* Products Dropdown Trigger */}
           <Link
             href="/products"
@@ -176,15 +176,15 @@ export default function Navbar() {
             onClick={handleNavLinkClick}
             aria-expanded={isMenuOpen && activeDesktopMenu === "products"}
             aria-haspopup="true"
-            className={`group inline-flex items-center text-xs font-bold uppercase tracking-wider transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8CD34D] rounded-full px-2 py-1 ${
+            className={`group inline-flex items-center text-xs font-bold uppercase tracking-wider transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16a34a] rounded-full px-2.5 py-1 ${
               isProductsActive
-                ? "text-white"
-                : "text-zinc-400 hover:text-white"
+                ? "text-zinc-950 font-black"
+                : "text-zinc-600 hover:text-zinc-950"
             }`}
           >
             <span>Products</span>
-            <ChevronDown className={`ml-1 h-3.5 w-3.5 transition-transform duration-200 ${activeDesktopMenu === "products" ? "rotate-180 text-[#8CD34D]" : "text-zinc-400"}`} />
-            {isProductsActive && <span className="w-1.5 h-1.5 rounded-full bg-[#8CD34D] ml-1.5" aria-hidden="true" />}
+            <ChevronDown className={`ml-1 h-3.5 w-3.5 transition-transform duration-200 ${activeDesktopMenu === "products" ? "rotate-180 text-[#16a34a]" : "text-zinc-400 group-hover:text-zinc-700"}`} />
+            {isProductsActive && <span className="w-1.5 h-1.5 rounded-full bg-[#16a34a] ml-1.5" aria-hidden="true" />}
           </Link>
 
           {/* Industries Dropdown Trigger */}
@@ -194,15 +194,15 @@ export default function Navbar() {
             onClick={handleNavLinkClick}
             aria-expanded={isMenuOpen && activeDesktopMenu === "industries"}
             aria-haspopup="true"
-            className={`group inline-flex items-center text-xs font-bold uppercase tracking-wider transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8CD34D] rounded-full px-2 py-1 ${
+            className={`group inline-flex items-center text-xs font-bold uppercase tracking-wider transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16a34a] rounded-full px-2.5 py-1 ${
               isIndustriesActive
-                ? "text-white"
-                : "text-zinc-400 hover:text-white"
+                ? "text-zinc-950 font-black"
+                : "text-zinc-600 hover:text-zinc-950"
             }`}
           >
             <span>Industries</span>
-            <ChevronDown className={`ml-1 h-3.5 w-3.5 transition-transform duration-200 ${activeDesktopMenu === "industries" ? "rotate-180 text-[#8CD34D]" : "text-zinc-400"}`} />
-            {isIndustriesActive && <span className="w-1.5 h-1.5 rounded-full bg-[#8CD34D] ml-1.5" aria-hidden="true" />}
+            <ChevronDown className={`ml-1 h-3.5 w-3.5 transition-transform duration-200 ${activeDesktopMenu === "industries" ? "rotate-180 text-[#16a34a]" : "text-zinc-400 group-hover:text-zinc-700"}`} />
+            {isIndustriesActive && <span className="w-1.5 h-1.5 rounded-full bg-[#16a34a] ml-1.5" aria-hidden="true" />}
           </Link>
 
           {/* Direct Blogs Link */}
@@ -210,12 +210,12 @@ export default function Navbar() {
             href="/blogs"
             onMouseEnter={handleMouseLeaveNav}
             onClick={handleNavLinkClick}
-            className={`inline-flex items-center text-xs font-bold uppercase tracking-wider transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8CD34D] rounded-full px-2 py-1 ${
-              isBlogsActive ? "text-white" : "text-zinc-400 hover:text-white"
+            className={`inline-flex items-center text-xs font-bold uppercase tracking-wider transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16a34a] rounded-full px-2.5 py-1 ${
+              isBlogsActive ? "text-zinc-950 font-black" : "text-zinc-600 hover:text-zinc-950"
             }`}
           >
             <span>Blogs</span>
-            {isBlogsActive && <span className="w-1.5 h-1.5 rounded-full bg-[#8CD34D] ml-1.5" aria-hidden="true" />}
+            {isBlogsActive && <span className="w-1.5 h-1.5 rounded-full bg-[#16a34a] ml-1.5" aria-hidden="true" />}
           </Link>
 
           {/* Direct Company Link */}
@@ -223,12 +223,12 @@ export default function Navbar() {
             href="/about"
             onMouseEnter={handleMouseLeaveNav}
             onClick={handleNavLinkClick}
-            className={`inline-flex items-center text-xs font-bold uppercase tracking-wider transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8CD34D] rounded-full px-2 py-1 ${
-              isCompanyActive ? "text-white" : "text-zinc-400 hover:text-white"
+            className={`inline-flex items-center text-xs font-bold uppercase tracking-wider transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16a34a] rounded-full px-2.5 py-1 ${
+              isCompanyActive ? "text-zinc-950 font-black" : "text-zinc-600 hover:text-zinc-950"
             }`}
           >
             <span>Company</span>
-            {isCompanyActive && <span className="w-1.5 h-1.5 rounded-full bg-[#8CD34D] ml-1.5" aria-hidden="true" />}
+            {isCompanyActive && <span className="w-1.5 h-1.5 rounded-full bg-[#16a34a] ml-1.5" aria-hidden="true" />}
           </Link>
         </div>
 
@@ -237,7 +237,7 @@ export default function Navbar() {
           <Link
             href="/contact"
             onClick={handleNavLinkClick}
-            className="hidden md:inline-flex items-center justify-center rounded-full px-5 py-2 text-xs font-bold uppercase tracking-wider bg-white text-zinc-950 hover:bg-[#8CD34D] hover:text-zinc-950 transition-colors shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8CD34D]"
+            className="hidden md:inline-flex items-center justify-center rounded-full px-5 py-2 text-xs font-bold uppercase tracking-wider bg-zinc-950 text-white hover:bg-[#8CD34D] hover:text-zinc-950 transition-colors shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16a34a]"
           >
             Contact Us
           </Link>
@@ -246,7 +246,7 @@ export default function Navbar() {
             onClick={() => setIsOpen(!isOpen)}
             aria-expanded={isOpen}
             aria-label="Toggle navigation menu"
-            className="md:hidden text-zinc-300 hover:text-white p-1 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8CD34D]"
+            className="md:hidden text-zinc-700 hover:text-zinc-950 p-1.5 rounded-full hover:bg-zinc-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16a34a] transition-colors"
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>

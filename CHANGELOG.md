@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.5] - 2026-11-20
+
+### Changed
+- Converted floating Navbar pill into light mode (`bg-white/90 backdrop-blur-md`, `border-zinc-200/80`, `shadow-[0_8px_30px_rgba(0,0,0,0.08)]`) with dark typography and black pill CTA.
+- Increased floating pill maximum width from `max-w-5xl` (1024px) to `max-w-6xl` (1152px) for a wider, more spacious desktop layout.
+- Restyled desktop mega-menu dropdown and mobile navigation drawer into floating light glass panels (`bg-white/95 backdrop-blur-xl`, `border-zinc-200/80`).
+- Made white the default theme across the application: removed `@media (prefers-color-scheme: dark)` override in `globals.css` and removed automatic dark classes from `RootLayout` in `app/layout.js`, ensuring the site defaults to white regardless of OS device dark mode preference.
+
 ## [0.1.4] - 2026-11-20
 
 ### Fixed
