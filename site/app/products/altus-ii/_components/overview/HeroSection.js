@@ -31,7 +31,7 @@ export default function HeroSection() {
             alt="Altus II Charging Unit on Tarmac"
             fill
             priority
-            mode="placeholder"
+            mode="image"
             className="object-cover object-center opacity-75 mix-blend-luminosity"
           />
         </div>

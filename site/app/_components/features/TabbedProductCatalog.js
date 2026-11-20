@@ -18,6 +18,7 @@ export default function TabbedProductCatalog() {
   const [activeTab, setActiveTab] = useState(industries[0].id);
   const contentRef = useRef(null);
   const containerRef = useRef(null);
+  const isInitialMount = useRef(true);
 
   useGSAP(() => {
     let mm = gsap.matchMedia();
@@ -52,42 +53,53 @@ export default function TabbedProductCatalog() {
     });
   }, { scope: containerRef });
 
+  useGSAP(() => {
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+      return;
+    }
+
+    gsap.fromTo(
+      ".catalog-card",
+      { y: 20, autoAlpha: 0 },
+      { y: 0, autoAlpha: 1, duration: 0.4, stagger: 0.08, ease: "power2.out", clearProps: "all" }
+    );
+
+    gsap.to(contentRef.current, {
+      autoAlpha: 1,
+      y: 0,
+      duration: 0.3,
+    });
+  }, { dependencies: [activeTab], scope: containerRef });
+
   const handleTabClick = (id) => {
     if (id === activeTab) return;
 
     gsap.to(contentRef.current, {
       autoAlpha: 0,
       y: 10,
-      duration: 0.2,
+      duration: 0.15,
       onComplete: () => {
         setActiveTab(id);
-        gsap.set(contentRef.current, { y: 0 });
-
-        // Setup new stagger
-        gsap.fromTo(".catalog-card",
-          { y: 20, autoAlpha: 0 },
-          { y: 0, autoAlpha: 1, duration: 0.4, stagger: 0.1, ease: "power2.out", clearProps: "all" }
-        );
-
-        gsap.to(contentRef.current, {
-          autoAlpha: 1,
-          duration: 0.4,
-        });
       }
     });
   };
 
   const activeIndustry = industries.find(ind => ind.id === activeTab);
 
-  const filteredProducts = products.filter(p => {
-    if (activeIndustry.matchIndustry) {
-      return p.industries.includes(activeIndustry.matchIndustry);
-    }
-    if (activeIndustry.matchCategory) {
-      return p.categoryTag === activeIndustry.matchCategory;
-    }
-    return false;
-  }).map(p => ({
+  const rawProducts = activeIndustry?.recommendedProductIds
+    ? activeIndustry.recommendedProductIds.map(id => products.find(p => p.id === id)).filter(Boolean)
+    : products.filter(p => {
+        if (activeIndustry?.matchIndustry) {
+          return p.industries?.includes(activeIndustry.matchIndustry);
+        }
+        if (activeIndustry?.matchCategory) {
+          return p.categoryTag === activeIndustry.matchCategory;
+        }
+        return p.industries?.includes(activeIndustry?.id) || p.industries?.includes(activeIndustry?.slug);
+      });
+
+  const filteredProducts = rawProducts.map(p => ({
     ...p,
     kicker: p.categoryTag,
     image: p.cardImage,
@@ -137,19 +149,13 @@ export default function TabbedProductCatalog() {
                 href={product.link}
                 className={`catalog-card group relative block aspect-square overflow-hidden rounded-sm bg-zinc-900 w-full`}
               >
-                {product.image ? (
-                  <SmartImage
-                    src={product.image}
-                    alt={product.name}
-                    fill
-                    mode="placeholder"
-                    className={`object-contain ${paddingClass} opacity-85 group-hover:opacity-100 transition-opacity duration-300`}
-                  />
-                ) : (
-                  <div className={`absolute inset-0 bg-zinc-900 border-zinc-800 border flex items-center justify-center text-zinc-600 text-xs uppercase `}>
-                    Asset Missing
-                  </div>
-                )}
+                <SmartImage
+                  src={product.image || null}
+                  alt={product.name}
+                  fill
+                  mode="placeholder"
+                  className={`object-contain ${paddingClass} opacity-85 group-hover:opacity-100 transition-opacity duration-300`}
+                />
 
                 {/* Gradient Overlay for text legibility */}
                 <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/20 to-transparent opacity-90"></div>

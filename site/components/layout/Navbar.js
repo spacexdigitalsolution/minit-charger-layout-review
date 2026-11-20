@@ -162,7 +162,7 @@ export default function Navbar() {
               fill
               sizes="128px"
               priority
-              mode="placeholder"
+              mode="image"
               className="object-contain object-left"
             />
           </div>

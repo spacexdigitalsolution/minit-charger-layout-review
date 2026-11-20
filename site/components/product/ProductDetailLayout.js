@@ -19,7 +19,7 @@ export default function ProductDetailLayout({ product, content }) {
     .map(p => ({
       name: p.name,
       description: p.shortDescription || p.keyUSP,
-      image: p.cardImage || "/assets/homepage/Altus II.webp",
+      image: p.cardImage || null,
       link: p.productPageUrl,
       tag: p.categoryTag
     }));

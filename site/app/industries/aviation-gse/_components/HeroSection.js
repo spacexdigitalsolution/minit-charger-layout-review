@@ -5,6 +5,7 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ArrowRight } from "lucide-react";
+import SmartImage from "@/components/SmartImage";
 
 export default function HeroSection() {
   const containerRef = useRef(null);
@@ -23,10 +24,17 @@ export default function HeroSection() {
   return (
     <section ref={containerRef} data-section="aviation-hero" className="relative overflow-hidden w-full min-h-[85vh] flex items-center border-b border-zinc-200 dark:border-zinc-800 bg-zinc-950">
 
-      {/* Background Image Layer (Placeholder mode until approved) */}
-      <div
-        className="absolute inset-0 w-full h-full bg-cover bg-center z-0 bg-zinc-900"
-      />
+      {/* Background Image Layer */}
+      <div className="absolute inset-0 w-full h-full z-0 overflow-hidden">
+        <SmartImage
+          src="/assets/Industries/Aviation-GSE/Banner/Banner-Aviation-v3.webp"
+          alt="Airport ground support equipment charging infrastructure on active tarmac"
+          fill
+          priority
+          mode="image"
+          className="object-cover object-center"
+        />
+      </div>
 
       {/* Legibility Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-zinc-950/95 via-zinc-950/70 to-transparent z-10" />

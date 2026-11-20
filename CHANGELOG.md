@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.9] - 2026-11-21
+
+### Fixed
+- Fixed `TabbedProductCatalog` on the homepage: mapped `activeIndustry.recommendedProductIds` correctly across all 4 industry categories so product cards render properly under every tab with smooth GSAP tab-switching staggers.
+- Removed hardcoded fallback asset paths (`/assets/homepage/Altus II.webp`, etc.) from `ProductSpecs`, `ProductGallery`, `ProductHero`, `ProductFeatureSplit`, `ProductSectionSplit`, `ProductDetailLayout`, and `IndustryDetailLayout`.
+- Replaced text-based fallback ("Product Hardware") in `ProductCard` and `ProductCatalogCard` with standard `<SmartImage mode="placeholder" />`.
+
+### Changed
+- Enforced strict placeholder mode as the universal default for `SmartImage`: any image without an explicit approved `mode="image"` or missing an approved `src` strictly renders the mountain placeholder graphic.
+
 ## [0.1.8] - 2026-11-20
 
 ### Added

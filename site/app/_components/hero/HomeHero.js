@@ -120,7 +120,7 @@ export default function HomeHero() {
                 alt="Minit Charger Platform"
                 fill
                 priority={index === 0}
-                mode="placeholder"
+                mode="image"
                 className={`object-cover transition-transform duration-[10000ms] ease-out ${isActive && inView && !prefersReducedMotion ? 'scale-105' : 'scale-100'}`}
               />
             )}

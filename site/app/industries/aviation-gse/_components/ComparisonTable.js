@@ -69,7 +69,7 @@ export default function ComparisonTable() {
           alt="Airport Background"
           fill
           sizes="100vw"
-          mode="placeholder"
+          mode="image"
           className="object-cover object-center opacity-60 dark:opacity-50"
         />
         {/* Soft edge fade overlay */}

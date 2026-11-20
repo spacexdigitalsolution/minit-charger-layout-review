@@ -125,10 +125,10 @@ export default function ProductSectionSplit({
             } ${reverse ? "order-2 lg:order-1" : "order-2"}`}
           >
             <SmartImage
-              src={image || "/assets/homepage/Altus II.webp"}
+              src={image || null}
               alt={imageAlt || heading}
               fill
-              mode="image"
+              mode="placeholder"
               className="object-cover object-center"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />

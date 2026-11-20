@@ -44,11 +44,11 @@ export default function BenefitModules() {
         <div className="hd-block-1 lg:grid lg:grid-cols-12 lg:gap-16 items-center mb-32">
           <div className="hd-img-1 lg:col-span-7 relative w-full aspect-square bg-zinc-200 dark:bg-zinc-800 overflow-hidden rounded-sm">
             <SmartImage
-              src="/assets/Industries/Aviation-GSE/Minit Charger Attributes/Magnus-01.webp"
-              alt="Magnus universal charger supporting mixed GSE and airport operations"
+              src="/assets/Industries/Aviation-GSE/Minit Charger Attributes/Multiple charging ecosystem.png"
+              alt="Multiple charging ecosystem attribute showcase"
               fill
               sizes="(max-width: 1024px) 100vw, 60vw"
-              mode="placeholder"
+              mode="image"
               className="object-cover"
             />
           </div>
@@ -76,11 +76,11 @@ export default function BenefitModules() {
           </div>
           <div className="hd-img-2 order-1 lg:order-2 lg:col-span-7 relative w-full aspect-square bg-zinc-200 dark:bg-zinc-800 overflow-hidden rounded-sm">
             <SmartImage
-              src="/assets/Industries/Aviation-GSE/The Mobilus Vantage/Mobilus-02.webp"
-              alt="Mobilus mobile charging platform deployed in the field"
+              src="/assets/Industries/Aviation-GSE/The Mobilus Vantage/Final Mobilus Charger.png"
+              alt="The Mobilus vantage mobile charger module"
               fill
               sizes="(max-width: 1024px) 100vw, 60vw"
-              mode="placeholder"
+              mode="image"
               className="object-cover"
             />
           </div>

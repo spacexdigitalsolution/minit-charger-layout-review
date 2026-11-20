@@ -58,7 +58,7 @@ export default function ProductGallery({ images }) {
   };
 
   const currentList = images && images.length > 0 ? images : [
-    { src: "/assets/homepage/Altus II.webp", alt: "Hardware Profile" }
+    { src: null, alt: "Hardware Profile", mode: "placeholder" }
   ];
 
   return (
@@ -86,7 +86,7 @@ export default function ProductGallery({ images }) {
               width={800}
               height={800}
               priority={index === 0}
-              mode={image.mode || "image"}
+              mode={image.mode || "placeholder"}
               description={image.desc || image.alt}
               className="object-contain w-full h-full p-6 drop-shadow-2xl mix-blend-multiply dark:mix-blend-normal transition-transform motion-reduce:transition-none"
               style={{
@@ -124,7 +124,7 @@ export default function ProductGallery({ images }) {
                 src={image.src}
                 alt={`Thumbnail of ${image.alt}`}
                 fill
-                mode={image.mode || "image"}
+                mode={image.mode || "placeholder"}
                 description={`Thumbnail ${index + 1}`}
                 className="object-contain p-2 mix-blend-multiply dark:mix-blend-normal"
               />

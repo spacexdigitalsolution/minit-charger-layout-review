@@ -70,22 +70,22 @@ export default function SmartImage({
   displayWidth,
   description,
   className = '',
-  mode = 'image',
+  mode = 'placeholder',
   optimize = true,
   ...props
 }) {
   const [hasError, setHasError] = React.useState(false);
-  const currentMode = hasError ? 'placeholder' : (process.env.NEXT_PUBLIC_IMAGE_MODE || mode);
+  const currentMode = hasError ? 'placeholder' : (process.env.NEXT_PUBLIC_IMAGE_MODE || mode || 'placeholder');
 
   // Resolve src if it's a static import object
   const rawSrc = typeof src === 'object' && src !== null ? src.src : src;
   const imgWidth = typeof src === 'object' && src !== null ? src.width : width;
   const imgHeight = typeof src === 'object' && src !== null ? src.height : height;
 
-  if (currentMode === 'dimensions' || currentMode === 'placeholder') {
+  if (currentMode === 'dimensions' || currentMode === 'placeholder' || !rawSrc) {
     return (
       <ImagePlaceholder
-        currentMode={currentMode}
+        currentMode={currentMode === 'dimensions' ? 'dimensions' : 'placeholder'}
         imgWidth={imgWidth}
         imgHeight={imgHeight}
         displayWidth={displayWidth}
@@ -100,8 +100,6 @@ export default function SmartImage({
       />
     );
   }
-
-  if (!rawSrc) return null;
 
   // --- Responsive Image manifest lookup logic ---
   const srcString = decodeURIComponent(rawSrc);

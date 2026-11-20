@@ -54,19 +54,22 @@ export default function ProductSpecs({ product, specs }) {
 
   const galleryImages = specs?.gallery || product.gallery || [
     {
-      src: product.cardImage || "/assets/homepage/Altus II.webp",
+      src: product.cardImage || null,
       alt: `${product.name} Main Profile View`,
-      desc: `${product.name} Angled Profile`
+      desc: `${product.name} Angled Profile`,
+      mode: "placeholder"
     },
     {
-      src: product.heroImage || product.cardImage || "/assets/homepage/Altus II.webp",
+      src: product.heroImage || product.cardImage || null,
       alt: `${product.name} Front Enclosure`,
-      desc: `${product.name} Front Face & HMI Display`
+      desc: `${product.name} Front Face & HMI Display`,
+      mode: "placeholder"
     },
     {
-      src: "/assets/homepage/Altus II.webp",
+      src: null,
       alt: `${product.name} Connector Bay`,
-      desc: `${product.name} Power Coupler & Cable Bay`
+      desc: `${product.name} Power Coupler & Cable Bay`,
+      mode: "placeholder"
     }
   ];
 

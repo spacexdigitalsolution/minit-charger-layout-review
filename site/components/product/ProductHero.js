@@ -28,7 +28,7 @@ export default function ProductHero({ product, banner }) {
   const bannerHeadline = banner?.headline || product.tagline || product.shortDescription;
   const bannerBody = banner?.body || product.longDescription || product.keyUSP;
   const bannerButtons = banner?.buttons;
-  const bannerImage = banner?.image || product.heroImage || product.cardImage || "/assets/homepage/Altus II.webp";
+  const bannerImage = banner?.image || product.heroImage || product.cardImage || null;
 
   return (
     <section ref={containerRef} data-section="product-hero" className="relative w-full flex flex-col border-b-2 border-white/10 bg-zinc-950">

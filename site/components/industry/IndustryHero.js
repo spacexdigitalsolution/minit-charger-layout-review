@@ -25,7 +25,7 @@ export default function IndustryHero({ industry }) {
       {/* Background Image Layer */}
       <div className="absolute inset-0 w-full h-full z-0 overflow-hidden">
         <SmartImage
-          src={industry.heroImage || "/assets/homepage/Outdoor eGSE & yards-01.webp"}
+          src={industry.heroImage || null}
           alt={industry.title}
           fill
           priority

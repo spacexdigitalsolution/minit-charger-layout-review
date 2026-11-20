@@ -38,23 +38,14 @@ export default function ProductCatalogCard({
           isLight ? "border-zinc-200/80" : "border-zinc-800/80"
         }`}
       >
-        {imageSrc ? (
-          <SmartImage
-            src={imageSrc}
-            alt={item.name}
-            fill
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 320px"
-            className={`object-contain ${paddingClass} transition-opacity duration-300 group-hover:opacity-100 opacity-90`}
-          />
-        ) : (
-          <div
-            className={`w-full h-full flex items-center justify-center text-xs uppercase font-bold tracking-wider ${
-              isLight ? "text-zinc-400" : "text-zinc-600"
-            }`}
-          >
-            Product Hardware
-          </div>
-        )}
+        <SmartImage
+          src={imageSrc || null}
+          alt={item.name}
+          fill
+          mode="placeholder"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 320px"
+          className={`object-contain ${paddingClass} transition-opacity duration-300 group-hover:opacity-100 opacity-90`}
+        />
       </div>
 
       {/* Structured Content Area */}

@@ -67,11 +67,11 @@ export default function ProductFeatureSplit({ product }) {
             {/* Right: Hardware Image */}
             <div className="split-anim-1 lg:col-span-6 relative w-full aspect-4/3 rounded-xl overflow-hidden border border-zinc-200 dark:border-zinc-800 shadow-xl bg-zinc-900">
               <SmartImage
-                src={product.cardImage || "/assets/homepage/Altus II.webp"}
+                src={product.cardImage || null}
                 alt={`${product.name} Power Architecture`}
                 width={800}
                 height={600}
-                mode="image"
+                mode="placeholder"
                 description={`${product.name} Silicon Carbide Power Module Bay Diagram`}
                 className="w-full h-full object-contain p-6"
               />
@@ -87,11 +87,11 @@ export default function ProductFeatureSplit({ product }) {
             {/* Left: Diagram */}
             <div className="split-anim-2 lg:col-span-6 order-2 lg:order-1 relative w-full aspect-4/3 rounded-lg overflow-hidden border border-white/10 shadow-2xl bg-zinc-900">
               <SmartImage
-                src={product.heroImage || product.cardImage || "/assets/homepage/Altus II.webp"}
+                src={product.heroImage || product.cardImage || null}
                 alt={`${product.name} Telematics Integration`}
                 width={800}
                 height={600}
-                mode="image"
+                mode="placeholder"
                 description={`${product.name} Cloud Telematics & Metering Interface`}
                 className="w-full h-full object-contain p-6"
               />
