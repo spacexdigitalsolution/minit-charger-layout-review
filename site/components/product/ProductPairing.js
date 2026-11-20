@@ -134,14 +134,14 @@ export default function ProductPairing({ product, pairing }) {
       <div className="mx-auto max-w-[1600px] px-6 md:px-12">
         <div className="lg:grid lg:grid-cols-12 lg:gap-16 items-center">
           {/* Left Column: Visual Dashboard */}
-          <div className="pai-img lg:col-span-6 order-2 lg:order-1 relative w-full aspect-4/3 rounded-lg overflow-hidden border border-zinc-200 dark:border-zinc-800 shadow-2xl bg-zinc-900">
+          <div className="pai-img lg:col-span-6 order-2 lg:order-1 relative w-full aspect-[16/10] rounded-lg overflow-hidden border border-zinc-200 dark:border-zinc-800 shadow-2xl bg-zinc-900">
             <SmartImage
               src="/assets/homepage/Cumulus Software-01.webp"
               alt="CellTrac & Cumulus Dashboard Integration"
               fill
               mode="placeholder"
               description={`${product.name} paired with CellTrac & Cumulus live dashboard telemetry`}
-              className="object-cover w-full h-full"
+              className="object-contain object-center"
             />
           </div>
 

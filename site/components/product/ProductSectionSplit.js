@@ -130,7 +130,7 @@ export default function ProductSectionSplit({
               alt={imageAlt || heading}
               fill
               mode={imageMode}
-              className="object-cover object-center"
+              className="object-contain object-center p-4"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </div>

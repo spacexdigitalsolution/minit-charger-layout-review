@@ -57,13 +57,13 @@ export default function PairAltusII() {
       <div className="mx-auto max-w-[1600px] px-6 md:px-12">
         <div className="lg:grid lg:grid-cols-12 lg:gap-16 items-center">
           {/* Left Column: Visual Dashboard */}
-          <div className="pai-img lg:col-span-6 order-2 lg:order-1 relative w-full aspect-[4/3] rounded-lg overflow-hidden border border-zinc-200 dark:border-zinc-800 shadow-2xl bg-zinc-900">
+          <div className="pai-img lg:col-span-6 order-2 lg:order-1 relative w-full aspect-[1124/657] rounded-lg overflow-hidden border border-zinc-200 dark:border-zinc-800 shadow-2xl bg-zinc-900">
             <SmartImage
               src="/assets/Industries/Aviation-GSE/Cumulus/Cumulus-Aviation-Dashboard.png"
               alt="Altus II hardware integrated with Cumulus cloud monitoring"
               fill
               mode="image"
-              className="object-cover object-center"
+              className="object-contain object-center"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </div>

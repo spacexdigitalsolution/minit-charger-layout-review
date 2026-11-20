@@ -112,9 +112,9 @@ export default function ProductDetailLayout({ product, content }) {
             subheading={content.internals.subheading}
             body={content.internals.body}
             checkmarks={content.internals.checkmarks}
-            image={content.internals.image || product.cardImage}
+            image={content.internals.image || null}
             imageAlt={content.internals.imageAlt}
-            imageMode={content.internals.imageMode || (product.cardImageMode === "image" ? "image" : "placeholder")}
+            imageMode="placeholder"
             theme="light"
             reverse={false}
             sectionId="internals"

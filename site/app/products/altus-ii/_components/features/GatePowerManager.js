@@ -57,13 +57,13 @@ export default function GatePowerManager() {
       <div className="mx-auto max-w-[1600px] px-6 md:px-12">
         <div className="lg:grid lg:grid-cols-12 lg:gap-16 items-center">
           {/* Left Column: Visual of Gate Power Integration */}
-          <div className="gpm-img lg:col-span-6 order-2 lg:order-1 relative w-full aspect-[4/3] rounded-lg overflow-hidden border border-white/10 shadow-2xl bg-zinc-900">
+          <div className="gpm-img lg:col-span-6 order-2 lg:order-1 relative w-full aspect-[16/9] rounded-lg overflow-hidden border border-white/10 shadow-2xl bg-zinc-900">
             <SmartImage
               src="/assets/Products/Altus II/Features/Turnaround Banner.webp"
               alt="Gate power distribution and peak shaving manager"
               fill
               mode="image"
-              className="object-cover object-center"
+              className="object-contain object-center"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </div>

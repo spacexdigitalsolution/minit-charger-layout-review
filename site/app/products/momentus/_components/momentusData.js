@@ -24,14 +24,16 @@ export const momentusContent = {
     subheading: "Compact charger, complete specs. Here is everything that matters.",
     gallery: [
       {
-        src: "/assets/Home Page/Warehouse & Manufacturing/MOMENTUs Hardware-01.webp",
+        src: "/assets/Products/Momentus/MOMENTUs Hardware Listing.webp",
         alt: "Momentus 20 kW DC Fast Charger Hardware Unit",
-        desc: "Momentus 20 kW DC Fast Charger - Main Unit"
+        desc: "Momentus 20 kW DC Fast Charger - Main Unit",
+        mode: "image"
       },
       {
         src: "/assets/Products/Momentus/Angle 2 transparent.png",
         alt: "Momentus DC Fast Charger - Perspective View",
-        desc: "Momentus Perspective Profile"
+        desc: "Momentus Perspective Profile",
+        mode: "image"
       }
     ],
     tabs: [

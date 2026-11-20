@@ -71,7 +71,7 @@ export default function ProductFeatureSplit({ product }) {
                 alt={`${product.name} Power Architecture`}
                 width={800}
                 height={600}
-                mode={product.cardImageMode || (product.cardImage ? "image" : "placeholder")}
+                mode="placeholder"
                 description={`${product.name} Silicon Carbide Power Module Bay Diagram`}
                 className="w-full h-full object-contain p-6"
               />
