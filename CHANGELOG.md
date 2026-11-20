@@ -5,6 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.4] - 2026-11-20
+
+### Fixed
+- Fixed Navbar logo rendering placeholder by removing hardcoded `mode="placeholder"` on `SmartImage` in `components/layout/Navbar.js`.
+- Fixed Navbar mega-menu product preview rendering placeholder by removing hardcoded `mode="placeholder"` on `SmartImage` in `components/layout/NavbarMegaMenu.js`.
+- Resolved scroll lag and stutter by disabling GSAP lag smoothing (`gsap.ticker.lagSmoothing(0)`) in `SmoothScroll.js`, eliminating delta clamping fighting Lenis lerp.
+- Enforced native touch scrolling (`syncTouch: false`) and respected motion preferences (`respectReducedMotion: true`) in `SmoothScroll.js`.
+- Added `once: true` to entrance ScrollTriggers in `ChallengesScroll.js` to eliminate continuous bidirectional recalculation on scroll.
+- Redesigned product cards in `components/product/ProductCard.js` (including "Meet the rest of the family" section) into a non-overlapping vertical flex architecture with a dedicated 4:3 image frame, responsive Oswald typography (18-20px), 2-line max readable product names, and clean description placement.
+
+### Changed
+- Rebuilt desktop Navbar into a floating, centered, dark glass pill (`rounded-full`, `max-w-5xl`, `backdrop-blur-md`, `border-white/10`) with left-aligned logo, centered navigation links with green active dot indicators, and high-contrast pill CTA.
+- Detached desktop mega-menu into a floating glass dropdown panel directly underneath the pill with active product preview image.
+- Updated mobile navigation drawer to a floating glass sheet with smooth accordion submenus.
+- Removed hardcoded 80px desktop spacer (`h-20 bg-zinc-950`) to restore natural scroll flow.
+
 ## [0.1.3] - 2026-11-20
 
 ### Changed

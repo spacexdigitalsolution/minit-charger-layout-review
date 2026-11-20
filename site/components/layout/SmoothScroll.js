@@ -12,16 +12,23 @@ export default function SmoothScroll({ children }) {
   const lenisRef = useRef(null);
 
   useEffect(() => {
+    // Respect user motion preferences
+    if (typeof window !== "undefined") {
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (prefersReducedMotion) return;
+    }
+
     gsap.registerPlugin(ScrollTrigger);
 
     const lenis = new Lenis({
-      lerp: 0.1, // Smooth and responsive momentum scroll
+      lerp: 0.1, // Responsive momentum scroll
       wheelMultiplier: 1,
       direction: "vertical",
       gestureDirection: "vertical",
-      smooth: true,
-      smoothTouch: false,
-      touchMultiplier: 2,
+      smoothWheel: true,
+      syncTouch: false, // Native touch scroll on mobile devices to prevent touch latency
+      touchMultiplier: 1,
+      respectReducedMotion: true,
     });
     
     lenisRef.current = lenis;
@@ -33,11 +40,13 @@ export default function SmoothScroll({ children }) {
     };
     gsap.ticker.add(rafCallback);
 
-    gsap.ticker.lagSmoothing(500, 33);
+    // Disable GSAP lag smoothing completely to prevent delta-time clamping fighting Lenis lerp
+    gsap.ticker.lagSmoothing(0);
 
     return () => {
       lenis.destroy();
       gsap.ticker.remove(rafCallback);
+      lenisRef.current = null;
     };
   }, []);
 
@@ -48,23 +57,16 @@ export default function SmoothScroll({ children }) {
     }
 
     const resetScroll = () => {
-      // Force native scroll instantly
       window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-      
-      // Force Lenis to reset its internal state to top immediately
       if (lenisRef.current) {
         lenisRef.current.scrollTo(0, { immediate: true, force: true });
-        // Optionally stop and start to clear momentum
         lenisRef.current.stop();
         lenisRef.current.start();
       }
     };
 
-    // Force scroll reset immediately, on next frame, and after DOM paints
     resetScroll();
     requestAnimationFrame(resetScroll);
-    setTimeout(resetScroll, 50);
-
   }, [pathname]);
 
   return <>{children}</>;

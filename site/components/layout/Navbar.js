@@ -11,16 +11,15 @@ import { usePathname } from "next/navigation";
 import NavbarMegaMenu from "./NavbarMegaMenu";
 import NavbarMobileDrawer from "./NavbarMobileDrawer";
 
-const DEFAULT_PREVIEW_PRODUCT = products.find(p => p.id === "magnus");
+const DEFAULT_PREVIEW_PRODUCT = products.find(p => p.id === "magnus") || products[0];
 
 export default function Navbar() {
   const pathname = usePathname();
   const [prevPathname, setPrevPathname] = useState(pathname);
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(true);
 
   const [activeDesktopMenu, setActiveDesktopMenu] = useState(null); // 'products' | 'industries' | null
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // Controls transition states
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const [activeMobileMenu, setActiveMobileMenu] = useState(null);
   const [hoveredProduct, setHoveredProduct] = useState(DEFAULT_PREVIEW_PRODUCT);
@@ -36,33 +35,56 @@ export default function Navbar() {
     setIsMenuOpen(false);
   }
 
-  // Lock body scroll for mobile drawer & handle Escape key
+  // Handle Escape key and mobile scroll lock
   useEffect(() => {
-    document.body.style.overflow = isOpen ? 'hidden' : '';
+    document.body.style.overflow = isOpen ? "hidden" : "";
     const handleKeyDown = (e) => {
-      if (e.key === 'Escape') {
+      if (e.key === "Escape") {
         setIsMenuOpen(false);
         setIsOpen(false);
         setActiveDesktopMenu(null);
       }
     };
-    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener("keydown", handleKeyDown);
     return () => {
-      document.body.style.overflow = '';
-      window.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", handleKeyDown);
     };
   }, [isOpen]);
 
-  // Close desktop mega menu when scrolling down
+  // Close mega menu on scroll
   useEffect(() => {
     if (!isMenuOpen) return;
     const handleScroll = () => {
       setIsMenuOpen(false);
       setActiveDesktopMenu(null);
     };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [isMenuOpen]);
+
+  // Staggered column animation on open
+  useEffect(() => {
+    if (isMenuOpen && activeDesktopMenu && menuContainerRef.current) {
+      const columns = menuContainerRef.current.querySelectorAll(".mega-menu-column");
+      gsap.fromTo(
+        columns,
+        { autoAlpha: 0, y: 8 },
+        { autoAlpha: 1, y: 0, duration: 0.25, stagger: 0.03, ease: "power2.out", overwrite: true }
+      );
+    }
+  }, [isMenuOpen, activeDesktopMenu]);
+
+  // Preview panel crossfade animation
+  useEffect(() => {
+    if (previewPanelRef.current && isMenuOpen) {
+      gsap.fromTo(
+        previewPanelRef.current,
+        { autoAlpha: 0 },
+        { autoAlpha: 1, duration: 0.18, ease: "power1.inOut", overwrite: true }
+      );
+    }
+  }, [hoveredProduct, isMenuOpen]);
 
   const handleMouseEnterNav = (menu) => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -72,7 +94,7 @@ export default function Navbar() {
       timeoutRef.current = setTimeout(() => {
         setActiveDesktopMenu(menu);
         setIsMenuOpen(true);
-      }, 100);
+      }, 80);
     }
   };
 
@@ -91,33 +113,12 @@ export default function Navbar() {
     timeoutRef.current = setTimeout(() => {
       setIsMenuOpen(false);
       setTimeout(() => setActiveDesktopMenu(null), 120);
-    }, 150);
+    }, 120);
   };
 
   const toggleMobileMenu = (menu) => {
     setActiveMobileMenu(activeMobileMenu === menu ? null : menu);
   };
-
-  // Staggered column animation on open
-  useEffect(() => {
-    if (isMenuOpen && activeDesktopMenu && menuContainerRef.current) {
-      const columns = menuContainerRef.current.querySelectorAll('.mega-menu-column');
-      gsap.fromTo(columns,
-        { autoAlpha: 0, y: 10 },
-        { autoAlpha: 1, y: 0, duration: 0.3, stagger: 0.04, ease: "power2.out", overwrite: true }
-      );
-    }
-  }, [isMenuOpen, activeDesktopMenu]);
-
-  // Preview panel crossfade animation
-  useEffect(() => {
-    if (previewPanelRef.current && isMenuOpen) {
-      gsap.fromTo(previewPanelRef.current,
-        { autoAlpha: 0 },
-        { autoAlpha: 1, duration: 0.18, ease: "power1.inOut", overwrite: true }
-      );
-    }
-  }, [hoveredProduct, isMenuOpen]);
 
   const handleProductHover = (product) => {
     if (hoveredProduct?.id !== product.id) {
@@ -135,81 +136,123 @@ export default function Navbar() {
   const colBMSAcc = getProductsByCategories(["bms", "accessories"]);
   const colSoftware = getProductsByCategories(["software"]);
 
+  const isProductsActive = pathname.startsWith("/products") || activeDesktopMenu === "products";
+  const isIndustriesActive = pathname.startsWith("/industries") || activeDesktopMenu === "industries";
+  const isBlogsActive = pathname.startsWith("/blogs");
+  const isCompanyActive = pathname.startsWith("/about");
+
   return (
-    <>
+    <header className="fixed top-4 md:top-6 inset-x-0 mx-auto w-[calc(100%-2rem)] max-w-5xl z-50 pointer-events-none">
       <nav
-        className={`fixed top-0 z-50 w-full transition-colors duration-300 ${scrolled || activeDesktopMenu || isOpen
-          ? "border-b border-zinc-200 bg-white/95 backdrop-blur-md dark:border-zinc-800 dark:bg-zinc-950/95 shadow-sm"
-          : "border-b border-transparent bg-transparent"
-          }`}
+        aria-label="Main Navigation"
         onMouseLeave={handleMouseLeaveNav}
+        className="relative pointer-events-auto rounded-full bg-zinc-950/85 backdrop-blur-md [@media(prefers-reduced-transparency:reduce)]:backdrop-blur-none [@media(prefers-reduced-transparency:reduce)]:bg-zinc-950 border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.36)] h-14 md:h-16 px-4 md:px-6 flex items-center justify-between transition-all duration-300"
       >
-        <div className="mx-auto flex h-20 max-w-[1200px] items-center justify-between">
-          <div className="flex items-center gap-8 h-full">
-            <Link href="/" className="flex items-center gap-2" onClick={() => { setIsMenuOpen(false); setActiveDesktopMenu(null); }}>
-              <div className="relative w-32 h-10">
-                <SmartImage
-                  src="/assets/logo.webp"
-                  alt="Minit Charger Logo"
-                  fill
-                  sizes="128px"
-                  priority
-                  mode="placeholder"
-                  className="object-contain object-left"
-                />
-              </div>
-            </Link>
-
-            {/* Desktop Nav Links */}
-            <div className="hidden md:flex md:gap-8 items-center h-full">
-              <Link
-                href="/products"
-                onMouseEnter={() => handleMouseEnterNav('products')}
-                onClick={handleNavLinkClick}
-                className={`group flex items-center h-full text-sm font-bold uppercase transition-colors duration-300 ${activeDesktopMenu === 'products'
-                  ? "text-[#16a34a]"
-                  : scrolled || activeDesktopMenu || isOpen ? "text-zinc-600 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white" : "text-white/80 hover:text-white"
-                  }`}
-              >
-                Products
-                <ChevronDown className={`ml-1 h-4 w-4 transition-transform duration-300 ${activeDesktopMenu === 'products' ? 'rotate-180 text-[#16a34a]' : ''}`} />
-              </Link>
-
-              <Link
-                href="/industries"
-                onMouseEnter={() => handleMouseEnterNav('industries')}
-                onClick={handleNavLinkClick}
-                className={`group flex items-center h-full text-sm font-bold uppercase transition-colors duration-300 ${activeDesktopMenu === 'industries'
-                  ? "text-[#16a34a]"
-                  : scrolled || activeDesktopMenu || isOpen ? "text-zinc-600 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white" : "text-white/80 hover:text-white"
-                  }`}
-              >
-                Industries
-                <ChevronDown className={`ml-1 h-4 w-4 transition-transform duration-300 ${activeDesktopMenu === 'industries' ? 'rotate-180 text-[#16a34a]' : ''}`} />
-              </Link>
-
-              <Link href="/blogs" onMouseEnter={handleMouseLeaveNav} onClick={handleNavLinkClick} className={`text-sm font-bold uppercase transition-colors duration-300 ${scrolled || activeDesktopMenu || isOpen ? "text-zinc-600 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white" : "text-white/80 hover:text-white"}`}>Blogs</Link>
-              <Link href="/about" onMouseEnter={handleMouseLeaveNav} onClick={handleNavLinkClick} className={`text-sm font-bold uppercase transition-colors duration-300 ${scrolled || activeDesktopMenu || isOpen ? "text-zinc-600 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white" : "text-white/80 hover:text-white"}`}>Company</Link>
-            </div>
+        {/* Left: Brand Logo */}
+        <Link
+          href="/"
+          onClick={handleNavLinkClick}
+          aria-label="Minit Charger Home"
+          className="flex items-center gap-2 shrink-0 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8CD34D]"
+        >
+          <div className="relative w-28 md:w-32 h-8">
+            <SmartImage
+              src="/assets/logo.webp"
+              alt="Minit Charger Logo"
+              fill
+              sizes="128px"
+              priority
+              className="object-contain object-left"
+            />
           </div>
+        </Link>
 
-          <div className="hidden md:flex md:items-center md:gap-4 h-full" onMouseEnter={handleMouseLeaveNav}>
-            <Link href="/contact" onClick={handleNavLinkClick} className={`inline-flex h-10 items-center justify-center rounded-none px-6 py-2 text-sm font-bold uppercase transition-colors duration-300 ${scrolled || activeDesktopMenu || isOpen
-              ? "bg-zinc-900 text-white hover:bg-[#8CD34D] hover:text-zinc-900 dark:bg-white dark:text-zinc-900 dark:hover:bg-[#8CD34D]"
-              : "bg-white text-zinc-900 hover:bg-[#8CD34D]"
-              }`}>
-              Contact Us
-            </Link>
-          </div>
+        {/* Center: Desktop Navigation Links */}
+        <div className="hidden md:flex md:items-center md:gap-7 h-full">
+          {/* Products Dropdown Trigger */}
+          <Link
+            href="/products"
+            onMouseEnter={() => handleMouseEnterNav("products")}
+            onClick={handleNavLinkClick}
+            aria-expanded={isMenuOpen && activeDesktopMenu === "products"}
+            aria-haspopup="true"
+            className={`group inline-flex items-center text-xs font-bold uppercase tracking-wider transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8CD34D] rounded-full px-2 py-1 ${
+              isProductsActive
+                ? "text-white"
+                : "text-zinc-400 hover:text-white"
+            }`}
+          >
+            <span>Products</span>
+            <ChevronDown className={`ml-1 h-3.5 w-3.5 transition-transform duration-200 ${activeDesktopMenu === "products" ? "rotate-180 text-[#8CD34D]" : "text-zinc-400"}`} />
+            {isProductsActive && <span className="w-1.5 h-1.5 rounded-full bg-[#8CD34D] ml-1.5" aria-hidden="true" />}
+          </Link>
 
-          <div className="flex md:hidden">
-            <button onClick={() => setIsOpen(!isOpen)} className={`transition-colors duration-300 ${scrolled || activeDesktopMenu || isOpen ? "text-zinc-600 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white" : "text-white"}`}>
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
-          </div>
+          {/* Industries Dropdown Trigger */}
+          <Link
+            href="/industries"
+            onMouseEnter={() => handleMouseEnterNav("industries")}
+            onClick={handleNavLinkClick}
+            aria-expanded={isMenuOpen && activeDesktopMenu === "industries"}
+            aria-haspopup="true"
+            className={`group inline-flex items-center text-xs font-bold uppercase tracking-wider transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8CD34D] rounded-full px-2 py-1 ${
+              isIndustriesActive
+                ? "text-white"
+                : "text-zinc-400 hover:text-white"
+            }`}
+          >
+            <span>Industries</span>
+            <ChevronDown className={`ml-1 h-3.5 w-3.5 transition-transform duration-200 ${activeDesktopMenu === "industries" ? "rotate-180 text-[#8CD34D]" : "text-zinc-400"}`} />
+            {isIndustriesActive && <span className="w-1.5 h-1.5 rounded-full bg-[#8CD34D] ml-1.5" aria-hidden="true" />}
+          </Link>
+
+          {/* Direct Blogs Link */}
+          <Link
+            href="/blogs"
+            onMouseEnter={handleMouseLeaveNav}
+            onClick={handleNavLinkClick}
+            className={`inline-flex items-center text-xs font-bold uppercase tracking-wider transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8CD34D] rounded-full px-2 py-1 ${
+              isBlogsActive ? "text-white" : "text-zinc-400 hover:text-white"
+            }`}
+          >
+            <span>Blogs</span>
+            {isBlogsActive && <span className="w-1.5 h-1.5 rounded-full bg-[#8CD34D] ml-1.5" aria-hidden="true" />}
+          </Link>
+
+          {/* Direct Company Link */}
+          <Link
+            href="/about"
+            onMouseEnter={handleMouseLeaveNav}
+            onClick={handleNavLinkClick}
+            className={`inline-flex items-center text-xs font-bold uppercase tracking-wider transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8CD34D] rounded-full px-2 py-1 ${
+              isCompanyActive ? "text-white" : "text-zinc-400 hover:text-white"
+            }`}
+          >
+            <span>Company</span>
+            {isCompanyActive && <span className="w-1.5 h-1.5 rounded-full bg-[#8CD34D] ml-1.5" aria-hidden="true" />}
+          </Link>
         </div>
 
-        {/* Desktop Mega Menus */}
+        {/* Right: CTA Pill & Mobile Menu Toggle */}
+        <div className="flex items-center gap-3">
+          <Link
+            href="/contact"
+            onClick={handleNavLinkClick}
+            className="hidden md:inline-flex items-center justify-center rounded-full px-5 py-2 text-xs font-bold uppercase tracking-wider bg-white text-zinc-950 hover:bg-[#8CD34D] hover:text-zinc-950 transition-colors shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8CD34D]"
+          >
+            Contact Us
+          </Link>
+
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            aria-expanded={isOpen}
+            aria-label="Toggle navigation menu"
+            className="md:hidden text-zinc-300 hover:text-white p-1 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8CD34D]"
+          >
+            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
+
+        {/* Desktop Mega Menu Dropdown */}
         <NavbarMegaMenu
           isMenuOpen={isMenuOpen}
           setIsMenuOpen={setIsMenuOpen}
@@ -229,7 +272,7 @@ export default function Navbar() {
           onMenuLeave={handleMouseLeaveNav}
         />
 
-        {/* Mobile Menu Accordion */}
+        {/* Mobile Navigation Drawer */}
         <NavbarMobileDrawer
           isOpen={isOpen}
           setIsOpen={setIsOpen}
@@ -240,10 +283,6 @@ export default function Navbar() {
           products={products}
         />
       </nav>
-
-      {/* Spacer for fixed navigation */}
-      <div className="h-20 bg-zinc-950 hidden md:block" />
-    </>
+    </header>
   );
 }
-

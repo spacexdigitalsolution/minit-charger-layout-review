@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, ArrowRight } from "lucide-react";
 
 export default function NavbarMobileDrawer({
   isOpen,
@@ -14,30 +14,42 @@ export default function NavbarMobileDrawer({
 }) {
   if (!isOpen) return null;
 
-  return (
-    <div className="border-t border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-950 md:hidden absolute top-20 left-0 w-full h-[calc(100vh-80px)] overflow-y-auto pb-20">
-      <div className="flex flex-col">
+  const handleLinkClick = () => {
+    setIsOpen(false);
+  };
 
-        {/* Mobile Products */}
-        <div className="border-b border-zinc-100 dark:border-zinc-800">
+  return (
+    <div
+      role="dialog"
+      aria-modal="true"
+      aria-label="Mobile Navigation Drawer"
+      className="md:hidden absolute top-full left-0 right-0 mt-2 w-full rounded-2xl bg-zinc-950/95 backdrop-blur-xl [@media(prefers-reduced-transparency:reduce)]:backdrop-blur-none [@media(prefers-reduced-transparency:reduce)]:bg-zinc-950 border border-white/10 shadow-2xl p-5 overflow-y-auto max-h-[calc(100vh-100px)] transition-all origin-top"
+    >
+      <div className="flex flex-col gap-2">
+        {/* Mobile Products Accordion */}
+        <div className="border-b border-white/10 pb-2">
           <button
-            onClick={() => toggleMobileMenu('products')}
-            className="w-full flex items-center justify-between px-4 py-4 text-sm font-bold uppercase text-zinc-900 dark:text-white"
+            onClick={() => toggleMobileMenu("products")}
+            aria-expanded={activeMobileMenu === "products"}
+            className="w-full flex items-center justify-between py-2.5 text-xs font-bold uppercase tracking-wider text-white"
           >
-            Products
-            <ChevronDown className={`h-4 w-4 transition-transform ${activeMobileMenu === 'products' ? 'rotate-180 text-[#16a34a]' : ''}`} />
+            <span>Products</span>
+            <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${activeMobileMenu === "products" ? "rotate-180 text-[#8CD34D]" : "text-zinc-400"}`} />
           </button>
-          <div className={`overflow-hidden transition-all duration-300 bg-zinc-50 dark:bg-zinc-900/50 ${activeMobileMenu === 'products' ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'}`}>
-            <div className="px-4 py-4 flex flex-col gap-6">
-              <Link href="/products" onClick={() => setIsOpen(false)} className="text-sm font-bold text-[#16a34a] uppercase">View All Products</Link>
+          <div className={`overflow-hidden transition-all duration-300 ${activeMobileMenu === "products" ? "max-h-[600px] opacity-100 mt-2" : "max-h-0 opacity-0"}`}>
+            <div className="pl-3 py-2 flex flex-col gap-4 border-l border-white/10">
+              <Link href="/products" onClick={handleLinkClick} className="text-xs font-bold text-[#8CD34D] uppercase tracking-wider flex items-center">
+                <span>All Products</span>
+                <ArrowRight className="ml-1 h-3 w-3" />
+              </Link>
               {productCategories.map(cat => {
                 const catProducts = products.filter(p => p.categories?.includes(cat.id));
                 if (catProducts.length === 0) return null;
                 return (
-                  <div key={cat.id} className="flex flex-col gap-3">
-                    <span className="text-md font-bold uppercase text-zinc-500 border-b border-zinc-200 dark:border-zinc-800 pb-2">{cat.name}</span>
+                  <div key={cat.id} className="flex flex-col gap-1.5">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-400">{cat.name}</span>
                     {catProducts.map(p => (
-                      <Link key={p.id} href={p.productPageUrl} onClick={() => setIsOpen(false)} className="text-sm font-medium text-zinc-900 dark:text-zinc-300 flex items-center gap-2 py-1">
+                      <Link key={p.id} href={p.productPageUrl} onClick={handleLinkClick} className="text-xs text-zinc-300 hover:text-white py-0.5">
                         {p.name}
                       </Link>
                     ))}
@@ -48,20 +60,24 @@ export default function NavbarMobileDrawer({
           </div>
         </div>
 
-        {/* Mobile Industries */}
-        <div className="border-b border-zinc-100 dark:border-zinc-800">
+        {/* Mobile Industries Accordion */}
+        <div className="border-b border-white/10 pb-2">
           <button
-            onClick={() => toggleMobileMenu('industries')}
-            className="w-full flex items-center justify-between px-4 py-4 text-sm font-bold uppercase text-zinc-900 dark:text-white"
+            onClick={() => toggleMobileMenu("industries")}
+            aria-expanded={activeMobileMenu === "industries"}
+            className="w-full flex items-center justify-between py-2.5 text-xs font-bold uppercase tracking-wider text-white"
           >
-            Industries
-            <ChevronDown className={`h-4 w-4 transition-transform ${activeMobileMenu === 'industries' ? 'rotate-180 text-[#16a34a]' : ''}`} />
+            <span>Industries</span>
+            <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${activeMobileMenu === "industries" ? "rotate-180 text-[#8CD34D]" : "text-zinc-400"}`} />
           </button>
-          <div className={`overflow-hidden transition-all duration-300 bg-zinc-50 dark:bg-zinc-900/50 ${activeMobileMenu === 'industries' ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}>
-            <div className="px-4 py-4 flex flex-col gap-4">
-              <Link href="/industries" onClick={() => setIsOpen(false)} className="text-sm font-bold text-[#16a34a] uppercase">View All Industries</Link>
+          <div className={`overflow-hidden transition-all duration-300 ${activeMobileMenu === "industries" ? "max-h-[300px] opacity-100 mt-2" : "max-h-0 opacity-0"}`}>
+            <div className="pl-3 py-2 flex flex-col gap-2.5 border-l border-white/10">
+              <Link href="/industries" onClick={handleLinkClick} className="text-xs font-bold text-[#8CD34D] uppercase tracking-wider flex items-center">
+                <span>All Industries</span>
+                <ArrowRight className="ml-1 h-3 w-3" />
+              </Link>
               {industryCategories.map(cat => (
-                <Link key={cat.id} href={cat.slug} onClick={() => setIsOpen(false)} className="text-sm font-medium text-zinc-900 dark:text-zinc-300 py-1">
+                <Link key={cat.id} href={cat.slug} onClick={handleLinkClick} className="text-xs text-zinc-300 hover:text-white py-0.5">
                   {cat.name}
                 </Link>
               ))}
@@ -69,11 +85,21 @@ export default function NavbarMobileDrawer({
           </div>
         </div>
 
-        <Link href="/blogs" onClick={() => setIsOpen(false)} className="block px-4 py-4 text-sm font-bold uppercase text-zinc-900 dark:text-white border-b border-zinc-100 dark:border-zinc-800">Blogs</Link>
-        <Link href="/about" onClick={() => setIsOpen(false)} className="block px-4 py-4 text-sm font-bold uppercase text-zinc-900 dark:text-white border-b border-zinc-100 dark:border-zinc-800">Company</Link>
+        {/* Direct Links */}
+        <Link href="/blogs" onClick={handleLinkClick} className="py-2.5 text-xs font-bold uppercase tracking-wider text-zinc-300 hover:text-white border-b border-white/10">
+          Blogs
+        </Link>
+        <Link href="/about" onClick={handleLinkClick} className="py-2.5 text-xs font-bold uppercase tracking-wider text-zinc-300 hover:text-white border-b border-white/10">
+          Company
+        </Link>
 
-        <div className="p-4 mt-4">
-          <Link href="/contact" onClick={() => setIsOpen(false)} className="flex h-12 w-full items-center justify-center rounded-none bg-zinc-900 px-4 py-2 text-sm font-bold uppercase text-white dark:bg-white dark:text-zinc-900 hover:bg-[#8CD34D] hover:text-zinc-900 dark:hover:bg-[#8CD34D] transition-colors">
+        {/* Mobile CTA */}
+        <div className="pt-4">
+          <Link
+            href="/contact"
+            onClick={handleLinkClick}
+            className="flex h-11 w-full items-center justify-center rounded-full bg-white text-zinc-950 font-bold text-xs uppercase tracking-wider hover:bg-[#8CD34D] transition-colors shadow-sm"
+          >
             Contact Us
           </Link>
         </div>
@@ -81,4 +107,3 @@ export default function NavbarMobileDrawer({
     </div>
   );
 }
-

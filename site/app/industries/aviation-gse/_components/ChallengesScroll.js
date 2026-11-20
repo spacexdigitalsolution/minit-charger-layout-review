@@ -76,7 +76,8 @@ export default function ChallengesScroll() {
           scrollTrigger: {
             trigger: card,
             start: "top 85%",
-            toggleActions: "play none none reverse",
+            toggleActions: "play none none none",
+            once: true,
           },
           y: 30,
           autoAlpha: 0,
