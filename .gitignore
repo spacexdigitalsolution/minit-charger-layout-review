@@ -58,3 +58,6 @@ Thumbs.db
 
 # Agents hooks
 .agents/hooks/.gate-counter
+
+.vercel
+.env*
