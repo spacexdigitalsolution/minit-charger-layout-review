@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.8] - 2026-11-20
+
+### Added
+- Hard-enforced image approval system with 38 on-disk approval artifacts under `site/image-approvals/` across global components, hardware/software products, industry categories, and knowledge hub posts.
+- Always-on rule `.agents/rules/image-approval-guardrails.md` strictly prohibiting agents from picking, suggesting, ranking, previewing, generating, searching for, or assigning images.
+- Interactive skill `.agents/skills/image-approval/SKILL.md` enforcing single-slot human-gated interviews (`/image-approval <page>`) requiring verbatim `"APPROVE <slot-id>"` and `"APPROVE PAGE <page>"` confirmations.
+- PreToolUse security hook `.agents/hooks/image-guard.mjs` registered in `.agents/hooks.json` to hard-deny reading images under `public/`, deny shell sweeps or copies targeting assets, and force explicit user authorization for image path edits.
+
+### Changed
+- Reset all previously agent-assigned images across `site/data/products.js`, `site/data/industries.js`, `site/data/blogs.js`, `Navbar.js`, `NavbarMegaMenu.js`, `HomeHero.js`, `ComparisonTable.js`, `BenefitModules.js`, and `HeroSection.js` to placeholder mode.
+- Stripped automatic component installer from `.agents/skills/optimize-assets/SKILL.md` and added strict asset gating rules.
+- Updated root `AGENTS.md` and `site/AGENTS.md` with explicit image approval policies.
+
+
 ## [0.1.6] - 2026-11-20
 
 ### Changed

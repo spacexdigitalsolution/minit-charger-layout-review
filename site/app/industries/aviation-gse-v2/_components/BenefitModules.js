@@ -48,7 +48,7 @@ export default function BenefitModules() {
               alt="Magnus universal charger supporting mixed GSE and airport operations"
               fill
               sizes="(max-width: 1024px) 100vw, 60vw"
-              mode="image"
+              mode="placeholder"
               className="object-cover"
             />
           </div>
@@ -80,7 +80,7 @@ export default function BenefitModules() {
               alt="Mobilus mobile charging platform deployed in the field"
               fill
               sizes="(max-width: 1024px) 100vw, 60vw"
-              mode="image"
+              mode="placeholder"
               className="object-cover"
             />
           </div>

@@ -40,10 +40,10 @@ When the user asks to optimize assets, you must follow this step-wise thinking w
 - Run `assets-optimize` using the flags resolved from the markdown config.
 - Report the exact command executed and a summary of the result (files processed, output location, any warnings/size threshold hits) before considering the task complete.
 
-### Step 6 — React Component Integration (Optional)
-- If the project is a React or Next.js application, offer to install the bundled `ResponsiveImage.jsx` helper component.
-- The component is located in the skill's bundled resources at: `<skill_dir>/assets/ResponsiveImage.jsx`.
-- If the user accepts, copy this file into their project's components directory and ensure the `manifest.json` import path matches their project structure.
+## Strict Asset Gating & Prohibitions
+- **NO Image Selection**: This skill and tool must NEVER pick, choose, rank, or place images into components, pages, or data files.
+- **NO Unapproved Optimization**: Never optimize, convert, copy, move, or add assets to `manifest.json` on an agent's own initiative.
+- All real image wiring must be preceded by explicit on-disk human sign-off via `/image-approval`. All slots default to placeholders.
 
 ## Base Templates
 

@@ -16,8 +16,7 @@ const personaContent = {
     headline: "Maximize Uptime Across Shared Infrastructure",
     problem: "None of it is yours, not the ramp, the power, or the charging schedule, yet a stall anywhere in a mixed-voltage, mixed-chemistry fleet, mid-shift, is still your delay to explain.",
     solution: "Whatever's plugged in, 24 to 100 volts, lead-acid or lithium, gets read and charged correctly. When something's off, fix it from your phone, not a call to the depot, every session logs itself.",
-    // AI-generated placeholder — replace with real photography, approved 2026-09-12
-    image: "/assets/ai_placeholders/gse_ground_handlers_1789225264394.jpg"
+    image: null
   },
   authorities: {
     id: "authorities",
@@ -25,8 +24,7 @@ const personaContent = {
     headline: "Scale Charging Without New Infrastructure",
     problem: "Airport leadership wants GSE electrified, but there isn't enough power. A new sub-station takes a year or two, costs heavily, and the airfield can't afford to wait.",
     solution: "The charger uses power that's already there but unused, so no new substation is needed. Every bit of energy used gets tracked, so the cost case is ready.",
-    // AI-generated placeholder — replace with real photography, approved 2026-09-12
-    image: "/assets/ai_placeholders/gse_airport_authorities_1789225276868.jpg"
+    image: null
   },
   airlines: {
     id: "airlines",
@@ -34,8 +32,7 @@ const personaContent = {
     headline: "Deliver One Reliable Standard Across Every Hub",
     problem: "Airlines run the same fleet standard at every hub, but airports control the chargers, and hitting turnaround targets still falls on the airline, hub by hub.",
     solution: "The system shows which airline used what, so billing stays fair. Any battery type charges the same way at every gate, and a busy charger doesn't stop the next aircraft.",
-    // AI-generated placeholder — replace with real photography, approved 2026-09-12
-    image: "/assets/ai_placeholders/gse_airlines_1789225313589.jpg"
+    image: null
   }
 };
 

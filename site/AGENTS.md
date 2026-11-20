@@ -11,6 +11,7 @@
 - **Line Ceilings:** `page.js` $\le 80$ lines; section components $\le 250$ lines; utility modules $\le 500$ lines.
 - **Section Headers:** Every section component must declare `// section: <id>` as its first line and attach `data-section="<id>"` to its root element.
 - **Path Aliasing:** Use `@/*` pointing to `site/*` (e.g. `@/components/*`, `@/data/*`).
+- **Image Optimization & Approval Policy:** `SmartImage` stays in placeholder mode. Agents must never pick, browse, preview, generate, or assign images. Real images may be wired ONLY after explicit human approval via `/image-approval`, recorded in `site/image-approvals/`.
 - **Image Optimization:** Always utilize `SmartImage` with explicit `aspectRatio`, `priority` (for LCP), and fallback handling.
 
 ## Anti-patterns

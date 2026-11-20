@@ -6,8 +6,8 @@ export const blogs = [
     category: "Whitepaper",
     publishDate: "2026-09-01",
     readTime: "7 min read",
-    thumbnailImage: "/assets/homepage/Engineered for Airports.webp",
-    heroImage: "/assets/homepage/Engineered for Airports.webp",
+    thumbnailImage: null,
+    heroImage: null,
     excerpt: "A comprehensive guide to electrifying Ground Support Equipment without disrupting tight turnaround windows.",
     author: {
       name: "Marcus Thorne",
@@ -22,8 +22,8 @@ export const blogs = [
     category: "Case Study",
     publishDate: "2026-08-15",
     readTime: "5 min read",
-    thumbnailImage: "/assets/homepage/Engineered for Warehouses.webp",
-    heroImage: "/assets/homepage/Engineered for Warehouses.webp",
+    thumbnailImage: null,
+    heroImage: null,
     excerpt: "How a major logistics provider reduced operational downtime and optimized their high-throughput material handling equipment.",
     author: {
       name: "Sarah Jenkins",
@@ -38,8 +38,8 @@ export const blogs = [
     category: "News",
     publishDate: "2026-09-10",
     readTime: "4 min read",
-    thumbnailImage: "/assets/homepage/Cumulus Software-01.webp",
-    heroImage: "/assets/homepage/Cumulus Software-01.webp",
+    thumbnailImage: null,
+    heroImage: null,
     excerpt: "Connect chargers, batteries, and fleet data on one cloud platform to preemptively manage your charging operations.",
     author: {
       name: "David Chen",
@@ -54,8 +54,8 @@ export const blogs = [
     category: "Guide",
     publishDate: "2026-07-22",
     readTime: "6 min read",
-    thumbnailImage: "/assets/Products/Magnus/Magnus Hardware Listing.webp",
-    heroImage: "/assets/Products/Magnus/Magnus Hardware Listing.webp",
+    thumbnailImage: null,
+    heroImage: null,
     excerpt: "How to design charging infrastructure that supports both legacy electric equipment and high-voltage modern EVs.",
     author: {
       name: "Elena Rodriguez",

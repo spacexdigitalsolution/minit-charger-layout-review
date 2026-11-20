@@ -57,6 +57,7 @@ export default function Var2SplitScreen() {
           src="/assets/Products/Altus II/Altus II Listing.webp"
           alt="Altus II Charging Station"
           fill
+          mode="placeholder"
           className="object-contain p-12 md:p-24"
         />
       </div>

@@ -41,6 +41,7 @@ export default function ComparisonSplit() {
                 src="/assets/homepage/Indoor material handling-01.webp"
                 alt="Indoor Warehouse Environment"
                 fill
+                mode="placeholder"
                 className="object-cover"
               />
             </div>
@@ -58,6 +59,7 @@ export default function ComparisonSplit() {
                 src="/assets/homepage/Outdoor eGSE & yards-01.webp"
                 alt="Outdoor Ramp Environment"
                 fill
+                mode="placeholder"
                 className="object-cover"
               />
             </div>

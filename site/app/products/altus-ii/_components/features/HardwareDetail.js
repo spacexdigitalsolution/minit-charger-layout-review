@@ -63,7 +63,7 @@ export default function HardwareDetail() {
 
           <div className="order-1 lg:order-2 w-full h-[60vh] lg:h-[80vh] relative bg-zinc-900 overflow-hidden hd-reveal">
             <SmartImage
-              src="/assets/ai_placeholders/altus_hardware_1791407949017.jpg"
+              src="/assets/Products/altus-ii/detail/ALTUS II NEW BRACKET CMS 3.webp"
               alt="Heavy duty industrial charging cable macro shot"
               fill
               mode="placeholder"

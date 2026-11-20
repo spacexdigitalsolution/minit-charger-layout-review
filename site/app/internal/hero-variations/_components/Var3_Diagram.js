@@ -58,6 +58,7 @@ export default function Var3Diagram() {
               src="/assets/Products/Altus II/Altus II Listing.webp"
               alt="Altus II Charging Station Diagram"
               fill
+              mode="placeholder"
               className="object-contain"
             />
           </div>

@@ -39,7 +39,12 @@ Execute only verbatim scripts from `package.json`:
 - **Shared Components:** Place in `components/` only when used across multiple routes.
 - **File Size Cap:** Keep components under ~250 lines; split larger components into composable pieces.
 - **Component Boundaries:** Default to React Server Components (RSC). Add `'use client'` only to leaf components needing interactivity or animations.
-- **Images:** Always use `SmartImage` from `components/SmartImage.js` instead of raw `<img>` or direct `next/image`.
+- **Images & Strict Approval Policy:**
+  - `SmartImage` stays in placeholder mode (`mode="placeholder"` or `src=null`).
+  - NO agent may pick, suggest, rank, preview, generate, search for, or assign any image.
+  - Never open, view, browse, list, move, or convert files in `public/assets-src` or `public/assets`.
+  - Real images may only be wired after Devansh explicitly names an exact file path, approved via `/image-approval` and recorded on disk in `site/image-approvals/`.
+  - Batch approvals, "looks good", or silence are NOT approvals.
 - **Animation:** Use `@gsap/react` `useGSAP` hook; never call `contextSafe` directly in component render body.
 
 ## Workflow Discipline

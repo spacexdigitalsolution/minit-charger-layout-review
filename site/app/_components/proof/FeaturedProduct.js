@@ -53,6 +53,7 @@ export default function FeaturedProduct() {
               src="/assets/homepage/Meet MOMENTUs-02.webp"
               alt="Minit Charger Momentus Platform"
               fill
+              mode="placeholder"
               className="object-cover"
             />
           </div>

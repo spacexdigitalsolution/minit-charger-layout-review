@@ -111,6 +111,7 @@ export default function Var5StatLed() {
             src="/assets/Products/Altus II/Altus II Listing.webp"
             alt="Altus II Charging Station"
             fill
+            mode="placeholder"
             className="object-contain p-4"
           />
         </div>

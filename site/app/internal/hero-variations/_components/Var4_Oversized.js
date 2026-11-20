@@ -58,6 +58,7 @@ export default function Var4Oversized() {
           src="/assets/gse/MGNS_GSE_1.png"
           alt="Background Texture"
           fill
+          mode="placeholder"
           className="object-cover grayscale"
         />
         <div className="absolute inset-0 bg-zinc-950/80"></div>

@@ -52,10 +52,10 @@ const specCategories = [
 const galleryImages = [
   { src: "/assets/Products/Altus II/Altus II Listing.webp", alt: "Altus II Hardware Render (Angled)" },
   { src: "/assets/Products/Altus II/ALTUSII_FRONT.webp", alt: "Altus II Hardware Render (Front)" },
-  { src: "/assets/ai_placeholders/altus_side_profile_1789225073213.jpg", alt: "Altus II Side Profile" },
-  { src: "/assets/ai_placeholders/altus_port_closeup_1789225089877.jpg", alt: "Altus II Port Close-up" },
-  { src: "/assets/ai_placeholders/altus_screen_closeup_1789225105457.jpg", alt: "Altus II Screen Close-up" },
-  { src: "/assets/ai_placeholders/altus_deployment_shot_1789225117192.jpg", alt: "Altus II Tarmac Deployment" }
+  { src: "/assets/Products/altus-ii/hero/ALTUS II NEW BRACKET CMS.webp", alt: "Altus II Bracket Configuration" },
+  { src: "/assets/Products/altus-ii/detail/ALTUS II NEW BRACKET CMS 3.webp", alt: "Altus II Dual Port Detail" },
+  { src: "/assets/Products/altus-ii/context/ALTUS_II_GSE_BACKGROUND.webp", alt: "Altus II GSE Tarmac Integration" },
+  { src: "/assets/Products/Altus II/Features/Turnaround Banner.webp", alt: "Altus II Rapid Turnaround Deployment" }
 ];
 
 export default function SpecsTable() {

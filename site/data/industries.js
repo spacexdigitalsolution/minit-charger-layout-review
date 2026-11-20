@@ -6,7 +6,7 @@ export const industries = [
     title: "Aviation & Airport Ground Support Equipment",
     headline: "Fast Charging Engineered for the Demands of the Flightline",
     shortDescription: "Turnkey fast-charging infrastructure for electric ground support equipment (eGSE). Minimize turnaround times, withstand tarmac environments, and achieve NetZero targets.",
-    heroImage: "/assets/homepage/Outdoor eGSE & yards-01.webp",
+    heroImage: null,
     stats: [
       { targetValue: 95, unit: "%", label: "Peak Electrical Efficiency" },
       { targetValue: 1000, unit: "V", label: "Max DC Output Capability" },
@@ -52,7 +52,7 @@ export const industries = [
     title: "Warehouse & Material Handling Equipment",
     headline: "Turbocharging Warehouse Productivity and Forklift Uptime",
     shortDescription: "Eliminate battery change rooms and optimize multi-shift material handling operations with high-efficiency opportunity charging for forklifts, AGVs, and reach trucks.",
-    heroImage: "/assets/homepage/Indoor material handling-01.webp",
+    heroImage: null,
     stats: [
       { targetValue: 100, unit: "%", label: "Battery Room Space Elimination" },
       { targetValue: 3, unit: " hrs", label: "Full Shift Depletion Recovery" },
@@ -102,7 +102,7 @@ export const industries = [
     title: "Low-Speed Electric Vehicle (LSV) Fleet Infrastructure",
     headline: "Reliable, Compact Charging Solutions for Campus & Utility Fleets",
     shortDescription: "Keep utility carts, resort shuttles, airport runabouts, and security vehicles operational with durable, high-efficiency onboard and standalone chargers.",
-    heroImage: "/assets/homepage/Engineered for LSEVs.webp",
+    heroImage: null,
     stats: [
       { targetValue: 2.2, unit: " kW", label: "Compact Onboard Output" },
       { targetValue: 94, unit: "%", label: "High Energy Efficiency" },
@@ -152,7 +152,7 @@ export const industries = [
     title: "Commercial & Municipal Fleet EV Infrastructure",
     headline: "High-Power Turnkey Charging for Electric Buses, Delivery Vans & Heavy Trucks",
     shortDescription: "Empower your commercial fleet with high-efficiency 100-200 kW fast chargers, mobile battery storage units, and cloud power balancing.",
-    heroImage: "/assets/homepage/High Power DC Fast-01.webp",
+    heroImage: null,
     stats: [
       { targetValue: 200, unit: " kW", label: "Max High-Power DC Output" },
       { targetValue: 95, unit: "%", label: "Silicon Carbide Efficiency" },

@@ -7,6 +7,11 @@
           "type": "command",
           "command": "node .agents/hooks/edit-guard.mjs",
           "timeout": 10
+        },
+        {
+          "type": "command",
+          "command": "node .agents/hooks/image-guard.mjs",
+          "timeout": 10
         }
       ]
     },
@@ -16,6 +21,11 @@
         {
           "type": "command",
           "command": "node .agents/hooks/secret-guard.mjs",
+          "timeout": 10
+        },
+        {
+          "type": "command",
+          "command": "node .agents/hooks/image-guard.mjs",
           "timeout": 10
         }
       ]

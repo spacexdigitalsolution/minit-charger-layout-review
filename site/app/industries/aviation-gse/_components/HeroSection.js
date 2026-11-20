@@ -23,10 +23,9 @@ export default function HeroSection() {
   return (
     <section ref={containerRef} data-section="aviation-hero" className="relative overflow-hidden w-full min-h-[85vh] flex items-center border-b border-zinc-200 dark:border-zinc-800 bg-zinc-950">
 
-      {/* Background Image Layer */}
+      {/* Background Image Layer (Placeholder mode until approved) */}
       <div
-        className="absolute inset-0 w-full h-full bg-cover bg-center z-0"
-        style={{ backgroundImage: "url('/assets/Industries/Aviation-GSE/Banner/Banner-Aviation-v3.webp')" }}
+        className="absolute inset-0 w-full h-full bg-cover bg-center z-0 bg-zinc-900"
       />
 
       {/* Legibility Gradient Overlay */}

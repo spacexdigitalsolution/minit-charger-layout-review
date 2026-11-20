@@ -121,7 +121,7 @@ export const mobilusContent = {
       "Scheduled charging moves sessions into off-peak hours",
       "Helps one unit cover more vehicles on site"
     ],
-    image: "/assets/ai_placeholders/mobilus_deployment_1789225347110.jpg",
+    image: null,
     imageAlt: "Mobilus Temporary Site Intelligent Power Sharing"
   },
   builtForConditions: {
