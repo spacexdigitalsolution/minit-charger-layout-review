@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.6] - 2026-11-20
+
+### Changed
+- Rendered floating Navbar pill in a frosted translucent glass aesthetic (`bg-white/70 backdrop-blur-xl`, `border-white/60`, specular inner bevel highlight, and deep ambient shadow).
+- Set open navigation menus (`NavbarMegaMenu` and `NavbarMobileDrawer`) to an opaque solid white background (`bg-white border-zinc-200/90`) for maximum legibility.
+- Increased Home Hero background height from `90vh` to `95vh` (`min-h-[95vh]`) in `HomeHero.js`.
+
 ## [0.1.5] - 2026-11-20
 
 ### Changed

@@ -146,7 +146,7 @@ export default function Navbar() {
       <nav
         aria-label="Main Navigation"
         onMouseLeave={handleMouseLeaveNav}
-        className="relative pointer-events-auto rounded-full bg-white/90 backdrop-blur-md [@media(prefers-reduced-transparency:reduce)]:backdrop-blur-none [@media(prefers-reduced-transparency:reduce)]:bg-white border border-zinc-200/80 shadow-[0_8px_30px_rgba(0,0,0,0.08)] h-14 md:h-16 px-4 md:px-6 flex items-center justify-between transition-all duration-300"
+        className="relative pointer-events-auto rounded-full bg-white/70 backdrop-blur-xl [@media(prefers-reduced-transparency:reduce)]:backdrop-blur-none [@media(prefers-reduced-transparency:reduce)]:bg-white border border-white/60 ring-1 ring-zinc-950/5 shadow-[0_10px_35px_rgba(0,0,0,0.1),inset_0_1px_1px_rgba(255,255,255,0.9),inset_0_-1px_1px_rgba(0,0,0,0.04)] h-14 md:h-16 px-4 md:px-6 flex items-center justify-between transition-all duration-300"
       >
         {/* Left: Brand Logo */}
         <Link

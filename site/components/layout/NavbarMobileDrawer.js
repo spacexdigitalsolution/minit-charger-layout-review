@@ -23,7 +23,7 @@ export default function NavbarMobileDrawer({
       role="dialog"
       aria-modal="true"
       aria-label="Mobile Navigation Drawer"
-      className="md:hidden absolute top-full left-0 right-0 mt-2 w-full rounded-2xl bg-white/95 backdrop-blur-xl [@media(prefers-reduced-transparency:reduce)]:backdrop-blur-none [@media(prefers-reduced-transparency:reduce)]:bg-white border border-zinc-200/80 shadow-2xl p-5 overflow-y-auto max-h-[calc(100vh-100px)] transition-all origin-top"
+      className="md:hidden absolute top-full left-0 right-0 mt-2 w-full rounded-2xl bg-white border border-zinc-200/90 shadow-2xl p-5 overflow-y-auto max-h-[calc(100vh-100px)] transition-all origin-top"
     >
       <div className="flex flex-col gap-2">
         {/* Mobile Products Accordion */}

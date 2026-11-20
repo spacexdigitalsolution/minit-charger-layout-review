@@ -93,7 +93,7 @@ export default function HomeHero() {
     <section
       ref={containerRef}
       data-section="home-hero"
-      className="relative min-h-[90vh]  bg-black overflow-hidden flex items-center"
+      className="relative min-h-[95vh]  bg-black overflow-hidden flex items-center"
       onMouseEnter={() => !prefersReducedMotion && setIsHoverPaused(true)}
       onMouseLeave={() => !prefersReducedMotion && setIsHoverPaused(false)}
     >
