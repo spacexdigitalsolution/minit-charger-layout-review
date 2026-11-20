@@ -26,11 +26,11 @@ export default function HeroSection() {
       {/* Background Image Layer */}
       <div className="absolute inset-0 w-full h-full z-0 overflow-hidden">
         <SmartImage
-          src="/assets/homepage/Indoor material handling-01.webp"
-          alt="Warehouse Forklift & Material Handling Charging"
+          src="/assets/Industries/Warehouse/Banner/Banner-Warehouse-Page.webp"
+          alt="Indoor material handling and forklift opportunity charging depot"
           fill
           priority
-          mode="placeholder"
+          mode="image"
           description="Warehouse Logistics Forklift Staging Area Background"
           className="object-cover object-center opacity-70 mix-blend-luminosity"
         />
