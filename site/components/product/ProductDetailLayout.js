@@ -67,6 +67,7 @@ export default function ProductDetailLayout({ product, content }) {
             checkmarks={content.billingData.checkmarks}
             image={content.billingData.image || product.cardImage}
             imageAlt={content.billingData.imageAlt}
+            imageMode={content.billingData.imageMode || "placeholder"}
             theme="light"
             reverse={false}
             sectionId="billing-data"
@@ -82,6 +83,7 @@ export default function ProductDetailLayout({ product, content }) {
             checkmarks={content.powerSharing.checkmarks}
             image={content.powerSharing.image || product.heroImage || product.cardImage}
             imageAlt={content.powerSharing.imageAlt}
+            imageMode={content.powerSharing.imageMode || "placeholder"}
             theme="dark"
             reverse={true}
             sectionId="power-sharing"
@@ -112,6 +114,7 @@ export default function ProductDetailLayout({ product, content }) {
             checkmarks={content.internals.checkmarks}
             image={content.internals.image || product.cardImage}
             imageAlt={content.internals.imageAlt}
+            imageMode={content.internals.imageMode || (product.cardImageMode === "image" ? "image" : "placeholder")}
             theme="light"
             reverse={false}
             sectionId="internals"

@@ -17,6 +17,7 @@ export default function ProductSectionSplit({
   checkmarks = [],
   image,
   imageAlt,
+  imageMode = "placeholder",
   theme = "light",
   reverse = false,
   sectionId
@@ -128,7 +129,7 @@ export default function ProductSectionSplit({
               src={image || null}
               alt={imageAlt || heading}
               fill
-              mode="placeholder"
+              mode={imageMode}
               className="object-cover object-center"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />

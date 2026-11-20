@@ -57,13 +57,13 @@ export default function ProductSpecs({ product, specs }) {
       src: product.cardImage || null,
       alt: `${product.name} Main Profile View`,
       desc: `${product.name} Angled Profile`,
-      mode: "placeholder"
+      mode: product.cardImageMode || "placeholder"
     },
     {
       src: product.heroImage || product.cardImage || null,
       alt: `${product.name} Front Enclosure`,
       desc: `${product.name} Front Face & HMI Display`,
-      mode: "placeholder"
+      mode: product.heroImageMode || "placeholder"
     },
     {
       src: null,

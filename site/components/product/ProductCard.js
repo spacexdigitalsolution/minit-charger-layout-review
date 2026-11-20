@@ -42,7 +42,7 @@ export default function ProductCard({
           src={imageSrc || null}
           alt={item.name}
           fill
-          mode="placeholder"
+          mode={item.cardImageMode || (item.cardImage ? "image" : "placeholder")}
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 320px"
           className={`object-contain ${paddingClass} transition-opacity duration-300 group-hover:opacity-100 opacity-90`}
         />

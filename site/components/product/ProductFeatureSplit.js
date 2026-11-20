@@ -71,7 +71,7 @@ export default function ProductFeatureSplit({ product }) {
                 alt={`${product.name} Power Architecture`}
                 width={800}
                 height={600}
-                mode="placeholder"
+                mode={product.cardImageMode || (product.cardImage ? "image" : "placeholder")}
                 description={`${product.name} Silicon Carbide Power Module Bay Diagram`}
                 className="w-full h-full object-contain p-6"
               />
@@ -91,7 +91,7 @@ export default function ProductFeatureSplit({ product }) {
                 alt={`${product.name} Telematics Integration`}
                 width={800}
                 height={600}
-                mode="placeholder"
+                mode={product.heroImageMode || (product.heroImage ? "image" : "placeholder")}
                 description={`${product.name} Cloud Telematics & Metering Interface`}
                 className="w-full h-full object-contain p-6"
               />

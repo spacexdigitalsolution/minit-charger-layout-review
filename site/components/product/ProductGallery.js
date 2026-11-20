@@ -57,9 +57,18 @@ export default function ProductGallery({ images }) {
     }
   };
 
-  const currentList = images && images.length > 0 ? images : [
+  const currentList = (images && images.length > 0 ? images : [
     { src: null, alt: "Hardware Profile", mode: "placeholder" }
-  ];
+  ]).map((item, idx) => {
+    if (typeof item === "string") {
+      return {
+        src: item,
+        alt: `Hardware Render ${idx + 1}`,
+        mode: "image"
+      };
+    }
+    return item;
+  });
 
   return (
     <div data-section="product-gallery" className="flex flex-col space-y-4 w-full">
