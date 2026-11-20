@@ -1,12 +1,13 @@
 import ProductDetailLayout from "@/components/product/ProductDetailLayout";
 import { products } from "@/data/products";
+import { cumulusContent, cumulusSeo } from "./_components/cumulusData";
 
 export const metadata = {
-  title: "Cumulus Fleet Telematics & Cloud Platform | Minit Charger",
-  description: "Enterprise cloud intelligence connecting chargers, batteries, and vehicles. Real-time KPI dashboards, automated power billing, and predictive maintenance.",
+  title: cumulusSeo.title,
+  description: cumulusSeo.description,
 };
 
 export default function CumulusProductPage() {
   const product = products.find(p => p.id === "cumulus");
-  return <ProductDetailLayout product={product} />;
+  return <ProductDetailLayout product={product} content={cumulusContent} />;
 }

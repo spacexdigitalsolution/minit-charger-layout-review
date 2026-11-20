@@ -66,7 +66,7 @@ export default function ProductsPage() {
               items={categoryProducts}
               imageMode="contain"
               theme="light"
-              cardType="product"
+              cardType="catalog"
             />
           </div>
         );

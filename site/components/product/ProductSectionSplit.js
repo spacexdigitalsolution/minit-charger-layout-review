@@ -128,7 +128,7 @@ export default function ProductSectionSplit({
               src={image || "/assets/homepage/Altus II.webp"}
               alt={imageAlt || heading}
               fill
-              mode="placeholder"
+              mode="image"
               className="object-cover object-center"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />

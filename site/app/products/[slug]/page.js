@@ -5,12 +5,20 @@ import { magnusContent, magnusSeo } from "../magnus/_components/magnusData";
 import { momentusContent, momentusSeo } from "../momentus/_components/momentusData";
 import { maximusContent, maximusSeo } from "../maximus/_components/maximusData";
 import { mobilusContent, mobilusSeo } from "../mobilus/_components/mobilusData";
+import { pharusContent, pharusSeo } from "../pharus/_components/pharusData";
+import { celltracContent, celltracSeo } from "../celltrac/_components/celltracData";
+import { cumulusContent, cumulusSeo } from "../cumulus/_components/cumulusData";
+import { durusContent, durusSeo } from "../durus/_components/durusData";
 
 const productContentMap = {
   magnus: { content: magnusContent, seo: magnusSeo },
   momentus: { content: momentusContent, seo: momentusSeo },
   maximus: { content: maximusContent, seo: maximusSeo },
   mobilus: { content: mobilusContent, seo: mobilusSeo },
+  pharus: { content: pharusContent, seo: pharusSeo },
+  celltrac: { content: celltracContent, seo: celltracSeo },
+  cumulus: { content: cumulusContent, seo: cumulusSeo },
+  durus: { content: durusContent, seo: durusSeo },
 };
 
 export function generateStaticParams() {

@@ -11,6 +11,9 @@ export const momentusContent = {
   banner: {
     headline: "Fast Forklift Charging, Not Floor Space.",
     body: "Momentus (our compact 20 kW DC fast charger) mounts on a wall or pedestal and opportunity charges forklifts during breaks, so equipment gets back to moving pallets sooner.",
+    image: "/assets/Products/Momentus/momentus banner.png",
+    imageAlt: "Momentus 20 kW DC Fast Charger Banner",
+    imageMode: "image",
     buttons: [
       { label: "Request a Quote", href: "/contact", primary: true },
       { label: "Download Spec Sheet", href: "/contact", primary: false }
@@ -19,6 +22,18 @@ export const momentusContent = {
   specs: {
     heading: "The Numbers Behind Momentus",
     subheading: "Compact charger, complete specs. Here is everything that matters.",
+    gallery: [
+      {
+        src: "/assets/Home Page/Warehouse & Manufacturing/MOMENTUs Hardware-01.webp",
+        alt: "Momentus 20 kW DC Fast Charger Hardware Unit",
+        desc: "Momentus 20 kW DC Fast Charger - Main Unit"
+      },
+      {
+        src: "/assets/Products/Momentus/Angle 2 transparent.png",
+        alt: "Momentus DC Fast Charger - Perspective View",
+        desc: "Momentus Perspective Profile"
+      }
+    ],
     tabs: [
       {
         name: "Power",
@@ -134,8 +149,8 @@ export const momentusContent = {
       "Listed to UL 1564 for industrial battery chargers",
       "Over-the-air updates keep charger software current"
     ],
-    image: "/assets/Products/Momentus/MOMENTUs Hardware Listing.webp",
-    imageAlt: "Momentus Silicon Carbide Internal Architecture"
+    image: "/assets/Products/Momentus/Angle 1 transparent.png",
+    imageAlt: "Momentus Silicon Carbide Internal Architecture & Enclosure"
   },
   pairing: {
     heading: "Pairs With CellTrac and Cumulus",

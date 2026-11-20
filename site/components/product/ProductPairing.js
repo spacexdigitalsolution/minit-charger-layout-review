@@ -139,7 +139,7 @@ export default function ProductPairing({ product, pairing }) {
               src="/assets/homepage/Cumulus Software-01.webp"
               alt="CellTrac & Cumulus Dashboard Integration"
               fill
-              mode="placeholder"
+              mode="image"
               description={`${product.name} paired with CellTrac & Cumulus live dashboard telemetry`}
               className="object-cover w-full h-full"
             />

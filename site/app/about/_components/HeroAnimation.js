@@ -23,7 +23,7 @@ export default function HeroAnimation() {
   }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} data-section="about-hero" className="relative pb-24  md:pb-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
+    <section ref={containerRef} data-section="about-hero" className="relative pt-28 md:pt-36 pb-24 md:pb-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
       <div className="relative z-10 w-full max-w-4xl">
         <h1 className="hero-anim font-display text-5xl md:text-5xl font-black text-white   uppercase mb-8">
           We Are<br />

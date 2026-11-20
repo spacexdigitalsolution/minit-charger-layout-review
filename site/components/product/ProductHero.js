@@ -14,8 +14,8 @@ export default function ProductHero({ product, banner }) {
     mm.add("(prefers-reduced-motion: no-preference)", () => {
       const tl = gsap.timeline({ defaults: { ease: "power2.out", clearProps: "all" } });
 
-      tl.fromTo(".hero-bg-scale", { scale: 1.05 }, { scale: 1, duration: 2, ease: "power2.out" }, 0)
-        .from(".hero-title", { autoAlpha: 0, y: 30, duration: 1 }, 0.2)
+      tl.from(".hero-bg-scale", { autoAlpha: 0.85, duration: 1.5, ease: "power2.out" }, 0)
+        .from(".hero-title", { autoAlpha: 0, y: 25, duration: 1 }, 0.2)
         .from(".hero-subtext", { autoAlpha: 0, duration: 1 }, 0.4)
         .from(".hero-data-bar > div", { autoAlpha: 0, y: 20, duration: 0.8, stagger: 0.1 }, 0.5);
     });
@@ -28,67 +28,70 @@ export default function ProductHero({ product, banner }) {
   const bannerHeadline = banner?.headline || product.tagline || product.shortDescription;
   const bannerBody = banner?.body || product.longDescription || product.keyUSP;
   const bannerButtons = banner?.buttons;
+  const bannerImage = banner?.image || product.heroImage || product.cardImage || "/assets/homepage/Altus II.webp";
 
   return (
-    <section ref={containerRef} data-section="product-hero" className="relative overflow-hidden w-full min-h-[95vh] flex flex-col justify-between border-b-2 border-white/10 bg-zinc-950">
-      {/* Cinematic Background Layer */}
-      <div className="absolute inset-0 w-full h-full z-0 overflow-hidden">
-        <div className="hero-bg-scale absolute inset-0 w-full h-full">
-          <SmartImage
-            src={product.heroImage || product.cardImage || "/assets/homepage/Altus II.webp"}
-            alt={`${product.name} Industrial Deployment`}
-            fill
-            priority
-            mode="placeholder"
-            description={`${product.name} Cinematic Background`}
-            className="object-cover object-center opacity-75 mix-blend-luminosity"
-          />
+    <section ref={containerRef} data-section="product-hero" className="relative w-full flex flex-col border-b-2 border-white/10 bg-zinc-950">
+      {/* Cinematic Banner Visual Stage (Increased height so banner hardware is fully visible) */}
+      <div className="relative overflow-hidden w-full min-h-[90vh] md:min-h-[96vh] lg:min-h-[100vh] min-h-[640px] md:min-h-[820px] lg:min-h-[940px] flex flex-col justify-between">
+        {/* Background Image Layer */}
+        <div className="absolute inset-0 w-full h-full z-0 overflow-hidden">
+          <div className="hero-bg-scale absolute inset-0 w-full h-full">
+            <SmartImage
+              src={bannerImage}
+              alt={banner?.imageAlt || `${product.name} Industrial Deployment`}
+              fill
+              priority
+              mode={banner?.imageMode || product.heroImageMode || "placeholder"}
+              description={`${product.name} Cinematic Background`}
+              className="object-cover object-center opacity-90"
+            />
+          </div>
+        </div>
+
+        {/* Directional Scrim: Dark on left for text legibility, transparent on right so vehicle & charger are 100% visible */}
+        <div className="absolute inset-0 bg-gradient-to-r from-zinc-950/90 via-zinc-950/45 to-transparent z-10" />
+
+        {/* Top Nav Spacer */}
+        <div className="pt-28 md:pt-36" />
+
+        {/* Main Content Area: Left-aligned with constrained width so it never covers the product */}
+        <div className="relative z-20 flex-grow flex flex-col justify-center px-6 md:px-12 w-full max-w-[1600px] mx-auto py-10 md:py-16">
+          <div className="max-w-xl">
+            <span className="hero-subtext text-xs tracking-widest uppercase font-bold text-emerald-400 mb-4 block">
+              {product.categoryTag || "Industrial Fleet Hardware"}
+            </span>
+            <h1 className="hero-title font-display text-5xl md:text-6xl lg:text-7xl font-black text-white uppercase leading-[0.95] tracking-tight mb-4">
+              {product.name}
+            </h1>
+            <h2 className="hero-subtext text-xl md:text-2xl lg:text-3xl font-display font-bold text-zinc-200 uppercase tracking-tight mb-4">
+              {bannerHeadline}
+            </h2>
+            <p className="hero-subtext text-base md:text-lg text-zinc-300 font-light max-w-lg leading-relaxed mb-8">
+              {bannerBody}
+            </p>
+            {bannerButtons && bannerButtons.length > 0 && (
+              <div className="hero-subtext flex flex-wrap gap-4 items-center">
+                {bannerButtons.map((btn, idx) => (
+                  <Link
+                    key={idx}
+                    href={btn.href}
+                    className={`px-8 py-4 font-bold uppercase tracking-wider text-xs transition-colors rounded ${btn.primary
+                        ? "bg-white text-zinc-950 hover:bg-zinc-200 shadow-lg"
+                        : "border border-white/30 text-white hover:bg-white/10 backdrop-blur-sm"
+                      }`}
+                  >
+                    {btn.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
       </div>
 
-      {/* Editorial Gradient / Vignette */}
-      <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent z-10" />
-
-      {/* Top Nav Spacer */}
-      <div className="pt-24 md:pt-32" />
-
-      {/* Main Content Area */}
-      <div className="relative z-20 flex-grow flex flex-col justify-center px-6 md:px-12 w-full max-w-[1600px] mx-auto">
-        <div className="max-w-4xl">
-          <span className="hero-subtext text-xs tracking-widest uppercase font-bold text-zinc-400 mb-6 block">
-            {product.categoryTag || "Industrial Fleet Hardware"}
-          </span>
-          <h1 className="hero-title font-display text-7xl md:text-8xl lg:text-[10rem] font-black text-white uppercase leading-[0.9] tracking-tighter mb-4">
-            {product.name}
-          </h1>
-          <h2 className="hero-subtext text-2xl md:text-3xl lg:text-4xl font-display font-bold text-zinc-200 uppercase tracking-tight mb-6">
-            {bannerHeadline}
-          </h2>
-          <p className="hero-subtext text-xl md:text-2xl text-zinc-300 font-light max-w-2xl leading-relaxed mb-8">
-            {bannerBody}
-          </p>
-          {bannerButtons && bannerButtons.length > 0 && (
-            <div className="hero-subtext flex flex-wrap gap-4 items-center">
-              {bannerButtons.map((btn, idx) => (
-                <Link
-                  key={idx}
-                  href={btn.href}
-                  className={`px-8 py-4 font-bold uppercase tracking-wider text-xs transition-colors rounded ${
-                    btn.primary
-                      ? "bg-white text-zinc-950 hover:bg-zinc-200"
-                      : "border border-white/20 text-white hover:bg-white/10"
-                  }`}
-                >
-                  {btn.label}
-                </Link>
-              ))}
-            </div>
-          )}
-        </div>
-      </div>
-
-      {/* Data-Forward Bottom Bar */}
-      <div className="relative z-20 hero-data-bar grid grid-cols-2 md:grid-cols-4 border-t border-white/10 bg-zinc-950/80 backdrop-blur-xl">
+      {/* Data-Forward Bottom Bar (Placed BELOW the banner stage so it NEVER cuts off the charger or vehicle) */}
+      <div className="relative z-20 hero-data-bar grid grid-cols-2 md:grid-cols-4 border-t border-white/10 bg-zinc-950">
         <div className="p-6 md:p-8 border-r border-white/10 flex flex-col justify-center">
           <dt className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest mb-1">Max Power</dt>
           <dd className="text-3xl md:text-4xl font-display font-black text-white">{powerDisplay}</dd>
@@ -113,4 +116,3 @@ export default function ProductHero({ product, banner }) {
     </section>
   );
 }
-

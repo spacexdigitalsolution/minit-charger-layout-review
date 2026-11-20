@@ -9,6 +9,7 @@ export const magnusSeo = {
 
 export const magnusContent = {
   banner: {
+
     headline: "One Charger. Every Fleet You Run.",
     body: "Magnus (our universal high-power DC fast charger) delivers 100–200 kW across 24–1000 VDC, so tugs, forklifts, buses and passenger EVs can share one platform instead of separate chargers.",
     buttons: [

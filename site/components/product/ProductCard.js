@@ -1,93 +1,112 @@
 import Link from "next/link";
 import SmartImage from "@/components/SmartImage";
-import HoverZoomImage from "@/components/media/HoverZoomImage";
 import { ArrowRight } from "lucide-react";
 
-export default function ProductCard({ item, imageMode = "contain", isLight = false, paddingClass = "" }) {
+/**
+ * ProductCard
+ * Purpose-built for ecosystem grids ("Meet the rest of the family") & general product showcases.
+ * Clean 5-level vertical architecture with zero overlap:
+ * Level 1: Dedicated Image Area (Fixed 4:3 Aspect Ratio, Static Contain, No Zoom, Generous Hardware Sizing)
+ * Level 2: Category Kicker Tag (Rendered only when tags exist)
+ * Level 3: Product Heading (Responsive Oswald, max 2 lines, full name visible with zero truncation/ellipsis)
+ * Level 4: Short Description (3 lines max, comfortable line height)
+ * Level 5: Action Footer (pinned to bottom with mt-auto)
+ */
+export default function ProductCard({
+  item,
+  isLight = false,
+  paddingClass = "p-3 sm:p-4",
+}) {
+  const href = item.link || item.productPageUrl || `/products/${item.id}`;
+  const imageSrc = item.cardImage || item.image;
+  const hasTags = Boolean(item.kicker || item.categoryTag || item.tag || item.secondaryTag);
+
   return (
     <Link
-      href={item.link || item.productPageUrl || "#"}
+      href={href}
       className={`rp-card group flex flex-col rounded-xl overflow-hidden border transition-all duration-300 h-full ${
         isLight
-          ? "bg-white border-zinc-200 hover:border-zinc-400 hover:shadow-lg"
+          ? "bg-white border-zinc-200 hover:border-zinc-400 hover:shadow-xl"
           : "bg-zinc-900 border-zinc-800 hover:border-zinc-700 hover:shadow-2xl"
       }`}
     >
-      {/* 1. Dedicated, non-overlapping image area with fixed aspect ratio */}
+      {/* Level 1: Dedicated Non-Overlapping Image Stage (No Zoom, Generous Hardware Sizing) */}
       <div
         className={`relative w-full aspect-[4/3] ${
-          isLight ? "bg-zinc-100" : "bg-zinc-950/60"
-        } p-4 flex items-center justify-center overflow-hidden shrink-0 border-b ${
-          isLight ? "border-zinc-200" : "border-zinc-800/80"
+          isLight ? "bg-zinc-50" : "bg-zinc-950/60"
+        } flex items-center justify-center overflow-hidden shrink-0 border-b ${
+          isLight ? "border-zinc-200/80" : "border-zinc-800/80"
         }`}
       >
-        {(item.image || item.cardImage) ? (
-          <HoverZoomImage>
-            <SmartImage
-              src={item.image || item.cardImage}
-              alt={item.name}
-              fill
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 300px"
-              className={`object-contain ${paddingClass || "p-3"} opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500`}
-            />
-          </HoverZoomImage>
+        {imageSrc ? (
+          <SmartImage
+            src={imageSrc}
+            alt={item.name}
+            fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 320px"
+            className={`object-contain ${paddingClass} transition-opacity duration-300 group-hover:opacity-100 opacity-90`}
+          />
         ) : (
           <div
             className={`w-full h-full flex items-center justify-center text-xs uppercase font-bold tracking-wider ${
               isLight ? "text-zinc-400" : "text-zinc-600"
             }`}
           >
-            Product Image
+            Product Hardware
           </div>
         )}
       </div>
 
-      {/* 2. Structured text content below the image (no overlap) */}
-      <div className="flex flex-col flex-grow p-5 sm:p-6 pt-4">
-        {/* Category kicker */}
-        {(item.kicker || item.categoryTag) && (
-          <span className="text-[10px] font-bold text-[#8CD34D] uppercase tracking-wider mb-1">
-            {item.kicker || item.categoryTag}
-          </span>
+      {/* Structured Content Area */}
+      <div className="flex flex-col flex-grow p-5 sm:p-6">
+        {/* Level 2: Category Kicker & Tags (Rendered ONLY when tags exist to prevent empty gaps) */}
+        {hasTags && (
+          <div className="flex flex-wrap items-center gap-1.5 mb-2.5">
+            {(item.kicker || item.categoryTag || item.tag) && (
+              <span className="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-emerald-50 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800/50">
+                {item.kicker || item.categoryTag || item.tag}
+              </span>
+            )}
+
+            {item.secondaryTag && (
+              <span className="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium tracking-wide bg-zinc-100 text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400 border border-zinc-200 dark:border-zinc-700">
+                {item.secondaryTag}
+              </span>
+            )}
+          </div>
         )}
 
-        {/* Optional secondary tag */}
-        {item.secondaryTag && (
-          <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider mb-1">
-            {item.secondaryTag}
-          </span>
-        )}
-
-        {/* Product Name: responsive sizing, 2 lines max, full name readable */}
+        {/* Level 3: Product Heading - Responsive Oswald, max 2 lines, full name completely visible without ellipsis */}
         <h3
-          className={`font-oswald text-base sm:text-lg font-bold uppercase tracking-wide leading-snug line-clamp-2 ${
+          className={`font-oswald text-sm sm:text-base font-bold uppercase tracking-wide leading-snug line-clamp-2 min-h-[2.5rem] sm:min-h-[2.75rem] flex items-center ${
             isLight ? "text-zinc-900" : "text-white"
           }`}
+          title={item.name}
         >
           {item.name}
         </h3>
 
-        {/* Short description */}
+        {/* Level 4: Description (3 lines max for comfortable reading) */}
         {(item.description || item.shortDescription) && (
           <p
-            className={`mt-2 font-sans text-xs sm:text-sm line-clamp-3 leading-relaxed transition-colors ${
-              isLight ? "text-zinc-600 group-hover:text-zinc-900" : "text-zinc-400 group-hover:text-zinc-200"
+            className={`mt-2 font-sans text-xs sm:text-sm line-clamp-3 leading-relaxed ${
+              isLight ? "text-zinc-600" : "text-zinc-400"
             }`}
           >
             {item.description || item.shortDescription}
           </p>
         )}
 
-        {/* Bottom CTA affordance */}
+        {/* Level 5: Action Footer Pinned to Bottom */}
         <div
           className={`mt-auto pt-4 border-t flex items-center justify-between text-xs font-bold uppercase tracking-wider transition-colors ${
             isLight
-              ? "border-zinc-100 text-zinc-600 group-hover:text-zinc-950"
-              : "border-zinc-800/80 text-zinc-400 group-hover:text-white"
+              ? "border-zinc-100 text-zinc-700 group-hover:text-emerald-600"
+              : "border-zinc-800/80 text-zinc-300 group-hover:text-emerald-400"
           }`}
         >
           <span>Explore Details</span>
-          <ArrowRight className="h-4 w-4 text-[#8CD34D] group-hover:translate-x-1 transition-transform" />
+          <ArrowRight className="h-4 w-4 text-emerald-500 group-hover:translate-x-1 transition-transform" />
         </div>
       </div>
     </Link>

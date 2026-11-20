@@ -86,7 +86,7 @@ export default function ProductGallery({ images }) {
               width={800}
               height={800}
               priority={index === 0}
-              mode="placeholder"
+              mode={image.mode || "image"}
               description={image.desc || image.alt}
               className="object-contain w-full h-full p-6 drop-shadow-2xl mix-blend-multiply dark:mix-blend-normal transition-transform motion-reduce:transition-none"
               style={{
@@ -124,7 +124,7 @@ export default function ProductGallery({ images }) {
                 src={image.src}
                 alt={`Thumbnail of ${image.alt}`}
                 fill
-                mode="placeholder"
+                mode={image.mode || "image"}
                 description={`Thumbnail ${index + 1}`}
                 className="object-contain p-2 mix-blend-multiply dark:mix-blend-normal"
               />

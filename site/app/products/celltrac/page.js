@@ -1,12 +1,13 @@
 import ProductDetailLayout from "@/components/product/ProductDetailLayout";
 import { products } from "@/data/products";
+import { celltracContent, celltracSeo } from "./_components/celltracData";
 
 export const metadata = {
-  title: "CellTrac Smart Battery Management System | Minit Charger",
-  description: "Advanced onboard battery monitoring and telematics. Extends battery life by up to 2 years with real-time SoC and anomaly alerts.",
+  title: celltracSeo.title,
+  description: celltracSeo.description,
 };
 
 export default function CelltracProductPage() {
   const product = products.find(p => p.id === "celltrac");
-  return <ProductDetailLayout product={product} />;
+  return <ProductDetailLayout product={product} content={celltracContent} />;
 }

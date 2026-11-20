@@ -7,7 +7,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import Link from "next/link";
 import SmartImage from "@/components/SmartImage";
-import HoverZoomImage from "@/components/media/HoverZoomImage";
 import { ArrowRight } from "lucide-react";
 
 import { products } from "@/data/products";
@@ -130,7 +129,7 @@ export default function TabbedProductCatalog() {
         {/* Dynamic Content */}
         <div ref={contentRef} className={`grid grid-cols-1 ${gridColsClass} gap-4`}>
           {filteredProducts.map((product) => {
-            const paddingClass = product.imagePadding || 'p-4 pb-32';
+            const paddingClass = product.imagePadding || "p-6";
 
             return (
               <Link
@@ -139,14 +138,12 @@ export default function TabbedProductCatalog() {
                 className={`catalog-card group relative block aspect-square overflow-hidden rounded-sm bg-zinc-900 w-full`}
               >
                 {product.image ? (
-                  <HoverZoomImage>
-                    <SmartImage
-                      src={product.image}
-                      alt={product.name}
-                      fill
-                      className={`object-contain ${paddingClass} opacity-80 group-hover:opacity-100 transition-opacity duration-300`}
-                    />
-                  </HoverZoomImage>
+                  <SmartImage
+                    src={product.image}
+                    alt={product.name}
+                    fill
+                    className={`object-contain ${paddingClass} opacity-85 group-hover:opacity-100 transition-opacity duration-300`}
+                  />
                 ) : (
                   <div className={`absolute inset-0 bg-zinc-900 border-zinc-800 border flex items-center justify-center text-zinc-600 text-xs uppercase `}>
                     Asset Missing

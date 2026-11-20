@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import Link from "next/link";
 import ProductCard from "@/components/product/ProductCard";
+import ProductCatalogCard from "@/components/product/ProductCatalogCard";
 import BlogCard from "@/components/ui/BlogCard";
 import IndustryCard from "@/components/industry/IndustryCard";
 import { ArrowRight } from "lucide-react";
@@ -69,14 +70,16 @@ export default function ImageCardGrid({
 
         <div className={`grid grid-cols-1 ${gridColsClass} gap-4`}>
           {items.map((product) => {
-            const paddingClass = product.imagePadding || 'p-4 pb-32';
+            const paddingClass = product.imagePadding || "p-3 sm:p-4";
 
             if (cardType === "blog") {
               return <BlogCard key={product.id} item={product} imageMode={imageMode} isLight={isLight} paddingClass={paddingClass} />;
             } else if (cardType === "industry") {
               return <IndustryCard key={product.id} item={product} imageMode={imageMode} isLight={isLight} paddingClass={paddingClass} />;
+            } else if (cardType === "catalog") {
+              return <ProductCatalogCard key={product.id} item={product} isLight={isLight} paddingClass={paddingClass} />;
             } else {
-              return <ProductCard key={product.id} item={product} imageMode={imageMode} isLight={isLight} paddingClass={paddingClass} />;
+              return <ProductCard key={product.id} item={product} isLight={isLight} paddingClass={paddingClass} />;
             }
           })}
         </div>
