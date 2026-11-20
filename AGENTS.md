@@ -56,14 +56,12 @@ Execute only verbatim scripts from `package.json`:
 - Executing production deployment commands (`vercel --prod`).
 
 ## Verification & Definition of Done
-1. **Lint Check:** Run `pnpm lint` and ensure no new lint or syntax errors were introduced. Baseline is 30 problems (27 errors, 3 warnings); your changes must not increase this count or introduce new failing files.
-2. **Visual Verification:** Check modified UI in the browser when changes affect layout or styling.
-3. **Git Hygiene:** Verify `git status` contains only files intended for the task.
-4. **Evidence:** Always document evidence of verification in a closing walkthrough before claiming done.
+1. **Lint Check:** Run `pnpm lint` and ensure zero errors are introduced. Verified baseline is 0 errors, 1 pre-existing warning (`SmartImage.js` img fallback); `pnpm lint` must exit cleanly with code 0.
+2. **Build Check:** Run `pnpm build` to verify all routes compile cleanly.
+3. **Visual Verification:** Check modified UI in the browser when changes affect layout or styling.
+4. **Git Hygiene:** Verify `git status` contains only files intended for the task.
+5. **Evidence:** Always document evidence of verification in a closing walkthrough before claiming done.
 
-## Optional Stop Gate
-`verify-gate` (.agents/hooks/verify-gate.mjs) is unregistered in `hooks.json` due to 30 pre-existing lint issues. To enable once clean, add to `.agents/hooks.json`:
-```json
-"Stop": [{ "type": "command", "command": "node .agents/hooks/verify-gate.mjs", "timeout": 60 }]
-```
+## Automated Verification Gate
+`verify-gate` (`.agents/hooks/verify-gate.mjs`) is registered under the `Stop` hook in `.agents/hooks.json`. It automatically runs `pnpm lint` when source files are modified, keeping the agent loop open if errors are detected (capped at 2 re-entries).
 

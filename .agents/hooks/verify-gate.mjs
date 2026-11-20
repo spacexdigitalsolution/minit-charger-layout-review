@@ -5,20 +5,8 @@
  *
  * NOTE: Verification script execution is a safety guardrail.
  *
- * IMPORTANT: This script is currently UNREGISTERED in .agents/hooks.json because
- * the repository has 30 pre-existing ESLint problems (commit 3c6eca5).
- * If registered right now, it will block agent completion on those pre-existing errors.
- *
- * To register and enable this gate once pre-existing lint issues are resolved,
- * add the following to `.agents/hooks.json`:
- *
- * "Stop": [
- *   {
- *     "type": "command",
- *     "command": "node .agents/hooks/verify-gate.mjs",
- *     "timeout": 60
- *   }
- * ]
+ * Registered in `.agents/hooks.json` under the `Stop` hook.
+ * Verified baseline: 0 errors, 1 pre-existing warning (`SmartImage.js`).
  *
  * Stop Hook Semantics:
  * - When lint fails, returns `decision: "continue"` to keep the agent loop open.

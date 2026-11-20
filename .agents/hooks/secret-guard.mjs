@@ -2,7 +2,7 @@
 /**
  * secret-guard.mjs
  * PreToolUse hook for file editing and viewing tools:
- * write_to_file, replace_file_content, multi_replace_file_content, view_file.
+ * write_file, edit_file, read_file, write_to_file, replace_file_content, multi_replace_file_content, view_file.
  *
  * NOTE: Regex path inspection is a heuristic and safety guardrail;
  * repository secret guidelines in AGENTS.md remain the primary policy.
@@ -33,6 +33,8 @@ try {
 
   const data = JSON.parse(input);
   const targetPath = (
+    data?.toolCall?.args?.Path ||
+    data?.args?.Path ||
     data?.toolCall?.args?.TargetFile ||
     data?.toolCall?.args?.AbsolutePath ||
     data?.args?.TargetFile ||

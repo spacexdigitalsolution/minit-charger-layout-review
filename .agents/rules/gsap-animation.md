@@ -1,6 +1,6 @@
 ---
 trigger: glob
-globs: "app/**/*.{js,jsx}"
+globs: "{app,site/app,site/components}/**/*.{js,jsx}"
 ---
 
 # GSAP & Animation Conventions
@@ -27,7 +27,13 @@ globs: "app/**/*.{js,jsx}"
 
 ## 2. Critical: Avoid Ref Access During Render
 - In React 19 / ESLint 9, calling `contextSafe` directly in the component body (e.g., `const handleClick = contextSafe(...)`) causes the `react-hooks/refs` lint error because it accesses refs during render.
-- **Solution:** Wrap event handlers in `useCallback` or construct callbacks inside `useGSAP`:
+- **Solution A (State-Driven Animations):** Pass state dependencies directly to `useGSAP`:
+  ```jsx
+  useGSAP(() => {
+    gsap.fromTo(".card", { y: 20, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.4 });
+  }, { scope: containerRef, dependencies: [activeTab] });
+  ```
+- **Solution B (Event-Driven Callbacks):** Construct callbacks inside event handlers or wrap in `useCallback`:
   ```jsx
   const { contextSafe } = useGSAP({ scope: containerRef });
 

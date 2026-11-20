@@ -14,8 +14,8 @@ This skill defines the verification process required after making modifications 
    ```bash
    pnpm lint
    ```
-2. **Recorded Lint Baseline:** As of commit `3c6eca5`, `pnpm lint` reports **30 problems (27 errors, 3 warnings)** due to pre-existing React 19 ESLint rules in untouched files.
-3. **Definition of "Done":** "Done" means the lint problem count has not increased above 30, and no new file appears in the lint output. Any new lint errors or warnings introduced by your changes must be fixed immediately using native editor tools.
+2. **Recorded Lint Baseline:** `pnpm lint` reports **0 errors, 1 warning** (`SmartImage.js` img fallback), exiting cleanly with status code 0.
+3. **Definition of "Done":** "Done" means zero lint errors are introduced, and `pnpm lint` exits with status code 0. Any new lint errors introduced by your changes must be fixed immediately using native editor tools.
 
 
 ### Step 2: Browser & Visual UI Verification

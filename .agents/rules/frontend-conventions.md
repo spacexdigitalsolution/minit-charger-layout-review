@@ -1,6 +1,6 @@
 ---
 trigger: glob
-globs: "app/**/*.{js,jsx}"
+globs: "{app,site/app,site/components}/**/*.{js,jsx}"
 ---
 
 # Frontend Conventions: Next.js 16 & Tailwind v4
@@ -13,13 +13,13 @@ globs: "app/**/*.{js,jsx}"
 ## 2. Feature Colocation & Splitting
 - Keep components under ~250 lines. Split large components into focused, composable parts.
 - Colocate feature-specific components in a sibling `_components/` directory (e.g., `app/products/altus-ii/_components/`).
-- Place components in `app/components/` ONLY if they are genuinely reused across two or more separate routes (e.g., `Navbar.js`, `Footer.js`, `SmartImage.js`, `FaqSection.js`).
+- Place components in `components/` ONLY if they are genuinely reused across two or more separate routes (e.g., `Navbar.js`, `Footer.js`, `SmartImage.js`, `FaqSection.js`).
 
 ## 3. Image Optimization with `SmartImage`
 - Never use raw `<img>` or direct `next/image` in page components.
-- Always import and use `SmartImage` from `@/app/components/SmartImage`:
+- Always import and use `SmartImage` from `@/components/SmartImage`:
   ```jsx
-  import SmartImage from "@/app/components/SmartImage";
+  import SmartImage from "@/components/SmartImage";
 
   <SmartImage
     src="/assets/Products/altus-ii/hardware.webp"
