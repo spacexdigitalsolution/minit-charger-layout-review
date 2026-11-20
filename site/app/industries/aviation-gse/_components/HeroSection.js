@@ -27,7 +27,7 @@ export default function HeroSection() {
       {/* Background Image Layer */}
       <div className="absolute inset-0 w-full h-full z-0 overflow-hidden">
         <SmartImage
-          src="/assets/Industries/Aviation-GSE/Banner/Banner-Aviation-v3.webp"
+          src="/assets/industries/aviation-gse/hero/airport-ground-support-equipment-charging-infrastructure-on.png"
           alt="Airport ground support equipment charging infrastructure on active tarmac"
           fill
           priority

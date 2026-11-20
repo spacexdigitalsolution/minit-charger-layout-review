@@ -165,25 +165,25 @@ export const cumulusContent = {
         title: "Altus II (our dual-port charger for airport GSE)",
         text: "Airport GSE charging with live status, charge history and alarms in Cumulus.",
         link: "/products/altus-ii",
-        image: "/assets/homepage/Altus II.webp"
+        image: "/assets/products/altus-ii/overview/altus-ii-main-perspective-angle-render.png"
       },
       {
         title: "Momentus (our compact 20 kW forklift charger)",
         text: "Forklift opportunity charging monitored over cellular or Wi-Fi in Cumulus.",
         link: "/products/momentus",
-        image: "/assets/Home Page/Warehouse & Manufacturing/MOMENTUs Hardware-01.webp"
+        image: "/assets/products/momentus/catalog/momentus-mhe-logistics-charger-hardware-card.png"
       },
       {
         title: "Maximus (our 40 kW dual-port industrial charger)",
         text: "Dual-port warehouse charging with predictive maintenance alerts in Cumulus.",
         link: "/products/maximus",
-        image: "/assets/Products/Maximus/Maximus Hardware Listing.webp"
+        image: "/assets/products/maximus/catalog/maximus-dual-port-mhe-hardware-card.webp"
       },
       {
         title: "Magnus (our universal high-power DC fast charger)",
         text: "100–200 kW fast charging with remote configuration and certified metering in Cumulus.",
         link: "/products/magnus",
-        image: "/assets/Products/Magnus/Magnus Hardware Listing.webp"
+        image: "/assets/products/magnus/catalog/magnus-universal-fleet-charger-hardware-card-listing.png"
       }
     ]
   },

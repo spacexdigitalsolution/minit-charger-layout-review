@@ -18,7 +18,7 @@ client-approval-date: "2026-11-21"
 - **Proposed Alt Text**: "Magnus Universal 100-200 kW Fleet & Airport Fast Charger Hero"
 - **Alt Text Sign-off**: `approved`
 - **Slot Status**: `approved`
-- **Approved Source File**: `site/public/assets-src/Magnus/Banner.png`
+- **Approved Source File**: `site/public/assets/products/magnus/hero/magnus-universal-100-200-kw-fleet-airport-fast-charger-hero.png`
 - **Pixel Dimensions Found**: 1672x941
 - **Client Approval**: `approved`
 - **Approval Evidence**: "APPROVE PAGE products/magnus" received from Devansh at 2026-11-21T00:58:12+05:30
@@ -33,7 +33,7 @@ client-approval-date: "2026-11-21"
 - **Proposed Alt Text**: "Magnus Universal Fleet Charger Hardware Card Listing"
 - **Alt Text Sign-off**: `approved`
 - **Slot Status**: `approved`
-- **Approved Source File**: `site/public/assets-src/Products/Magnus/Magnus Hardware Listing.png`
+- **Approved Source File**: `site/public/assets/products/magnus/catalog/magnus-universal-fleet-charger-hardware-card-listing.png`
 - **Pixel Dimensions Found**: 2084x2084
 - **Client Approval**: `approved`
 - **Approval Evidence**: "APPROVE PAGE products/magnus" received from Devansh at 2026-11-21T00:58:12+05:30
@@ -48,7 +48,7 @@ client-approval-date: "2026-11-21"
 - **Proposed Alt Text**: "Magnus gallery perspective view 01"
 - **Alt Text Sign-off**: `approved`
 - **Slot Status**: `approved`
-- **Approved Source File**: `site/public/assets-src/Magnus/01.png`
+- **Approved Source File**: `site/public/assets/products/magnus/gallery/magnus-gallery-perspective-view-01.png`
 - **Pixel Dimensions Found**: 2000x2000
 - **Client Approval**: `approved`
 - **Approval Evidence**: "APPROVE PAGE products/magnus" received from Devansh at 2026-11-21T00:58:12+05:30
@@ -63,7 +63,7 @@ client-approval-date: "2026-11-21"
 - **Proposed Alt Text**: "Magnus gallery perspective view 02"
 - **Alt Text Sign-off**: `approved`
 - **Slot Status**: `approved`
-- **Approved Source File**: `site/public/assets-src/Magnus/02.png`
+- **Approved Source File**: `site/public/assets/products/magnus/gallery/magnus-gallery-perspective-view-02.png`
 - **Pixel Dimensions Found**: 2000x2000
 - **Client Approval**: `approved`
 - **Approval Evidence**: "APPROVE PAGE products/magnus" received from Devansh at 2026-11-21T00:58:12+05:30
@@ -78,7 +78,7 @@ client-approval-date: "2026-11-21"
 - **Proposed Alt Text**: "Magnus gallery perspective view 03"
 - **Alt Text Sign-off**: `approved`
 - **Slot Status**: `approved`
-- **Approved Source File**: `site/public/assets-src/Magnus/03.png`
+- **Approved Source File**: `site/public/assets/products/magnus/gallery/magnus-gallery-perspective-view-03.png`
 - **Pixel Dimensions Found**: 2000x2000
 - **Client Approval**: `approved`
 - **Approval Evidence**: "APPROVE PAGE products/magnus" received from Devansh at 2026-11-21T00:58:12+05:30
@@ -93,7 +93,7 @@ client-approval-date: "2026-11-21"
 - **Proposed Alt Text**: "Magnus gallery perspective view 04"
 - **Alt Text Sign-off**: `approved`
 - **Slot Status**: `approved`
-- **Approved Source File**: `site/public/assets-src/Magnus/04.png`
+- **Approved Source File**: `site/public/assets/products/magnus/gallery/magnus-gallery-perspective-view-04.png`
 - **Pixel Dimensions Found**: 2000x2000
 - **Client Approval**: `approved`
 - **Approval Evidence**: "APPROVE PAGE products/magnus" received from Devansh at 2026-11-21T00:58:12+05:30

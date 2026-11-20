@@ -143,25 +143,25 @@ export const celltracContent = {
         title: "Altus II (our dual-port charger for airport GSE)",
         text: "30–80 kW dual-port charging for airport GSE fleets, with CellTrac battery profiles and GPS tracking.",
         link: "/products/altus-ii",
-        image: "/assets/homepage/Altus II.webp"
+        image: "/assets/products/altus-ii/overview/altus-ii-main-perspective-angle-render.png"
       },
       {
         title: "Momentus (our compact 20 kW forklift charger)",
         text: "Compact wall or pedestal charging for forklift fleets, with CellTrac data sent straight to Cumulus.",
         link: "/products/momentus",
-        image: "/assets/Home Page/Warehouse & Manufacturing/MOMENTUs Hardware-01.webp"
+        image: "/assets/products/momentus/catalog/momentus-mhe-logistics-charger-hardware-card.png"
       },
       {
         title: "Maximus (our 40 kW dual-port industrial charger)",
         text: "Charges two forklifts at once, using CellTrac battery profiles to keep opportunity charging accurate.",
         link: "/products/maximus",
-        image: "/assets/Products/Maximus/Maximus Hardware Listing.webp"
+        image: "/assets/products/maximus/catalog/maximus-dual-port-mhe-hardware-card.webp"
       },
       {
         title: "Magnus (our universal high-power DC fast charger)",
         text: "100–200 kW charging across 24–1000 VDC for mixed fleets, with CellTrac telematics on every port.",
         link: "/products/magnus",
-        image: "/assets/Products/Magnus/Magnus Hardware Listing.webp"
+        image: "/assets/products/magnus/catalog/magnus-universal-fleet-charger-hardware-card-listing.png"
       }
     ]
   },

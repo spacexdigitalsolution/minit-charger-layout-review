@@ -33,7 +33,7 @@ client-approval-date: "2026-11-21"
 - **Proposed Alt Text**: "Durus Small Electric Equipment Charger Hardware Card"
 - **Alt Text Sign-off**: `approved`
 - **Slot Status**: `approved`
-- **Approved Source File**: `site/public/assets-src/Products/Durus/Durus Listing.png`
+- **Approved Source File**: `site/public/assets/products/durus/catalog/durus-small-electric-equipment-charger-hardware-card.png`
 - **Pixel Dimensions Found**: 2250x1500
 - **Client Approval**: `approved`
 - **Approval Evidence**: "APPROVE PAGE products/durus" received from Devansh at 2026-11-21T01:07:47+05:30

@@ -59,7 +59,7 @@ export default function PairAltusII() {
           {/* Left Column: Visual Dashboard */}
           <div className="pai-img lg:col-span-6 order-2 lg:order-1 relative w-full aspect-[1124/657] rounded-lg overflow-hidden border border-zinc-200 dark:border-zinc-800 shadow-2xl bg-zinc-900">
             <SmartImage
-              src="/assets/Industries/Aviation-GSE/Cumulus/Cumulus-Aviation-Dashboard.png"
+              src="/assets/products/altus-ii/features/altus-ii-hardware-integrated-with-cumulus-cloud-monitoring.png"
               alt="Altus II hardware integrated with Cumulus cloud monitoring"
               fill
               mode="image"

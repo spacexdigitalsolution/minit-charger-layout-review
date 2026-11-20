@@ -27,7 +27,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 w-full h-full z-0 overflow-hidden">
         <div className="hero-bg-scale absolute inset-0 w-full h-full">
           <SmartImage
-            src="/assets/Industries/Aviation-GSE/Why Minit Charger/Banner.webp"
+            src="/assets/products/altus-ii/hero/altus-ii-dual-port-rapid-airport-gse-charging-unit-deployed.png"
             alt="Altus II Charging Unit on Tarmac"
             fill
             priority

@@ -33,7 +33,7 @@ client-approval-date: "2026-11-21"
 - **Proposed Alt Text**: "Mobilus Heavy-Duty Mobile BESS Trailer Hardware Card"
 - **Alt Text Sign-off**: `approved`
 - **Slot Status**: `approved`
-- **Approved Source File**: `site/public/assets-src/Products/Mobilus/MOBILUS Hardware Listing.png`
+- **Approved Source File**: `site/public/assets/products/mobilus/catalog/mobilus-heavy-duty-mobile-bess-trailer-hardware-card.png`
 - **Pixel Dimensions Found**: 2084x2084
 - **Client Approval**: `approved`
 - **Approval Evidence**: "APPROVE PAGE products/mobilus" received from Devansh at 2026-11-21T01:01:16+05:30

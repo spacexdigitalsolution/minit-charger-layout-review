@@ -134,7 +134,7 @@ export const magnusContent = {
       "Scheduled charging moves sessions into off-peak hours",
       "Helps you get more from existing electrical capacity"
     ],
-    image: "/assets/Industries/Aviation-GSE/Features/No infrastructure upgrade required.webp",
+    image: null,
     imageAlt: "Magnus Intelligent Power Sharing and Load Management"
   },
   builtForConditions: {
@@ -156,7 +156,7 @@ export const magnusContent = {
       "Accepts 323–530 VAC three-phase input power",
       "Single power feed keeps site installation simple"
     ],
-    image: "/assets/Products/Magnus/Magnus Hardware Listing.webp",
+    image: "/assets/products/magnus/catalog/magnus-universal-fleet-charger-hardware-card-listing.png",
     imageAlt: "Magnus Internal Power Electronics and Pedestal Architecture"
   },
   pairing: {
@@ -183,31 +183,31 @@ export const magnusContent = {
         title: "Altus II (our dual-port charger for airport GSE)",
         text: "Dual-port 30–80 kW charging for standard airport GSE fleets that need a proven, compact charger for everyday work.",
         link: "/products/altus-ii",
-        image: "/assets/homepage/Altus II.webp"
+        image: "/assets/products/altus-ii/overview/altus-ii-main-perspective-angle-render.png"
       },
       {
         title: "Maximus (our 40 kW dual-port industrial charger)",
         text: "Charges two forklifts at once for multi-shift warehouses that have outgrown a single-port charger.",
         link: "/products/maximus",
-        image: "/assets/Products/Maximus/Maximus Hardware Listing.webp"
+        image: "/assets/products/maximus/catalog/maximus-dual-port-mhe-hardware-card.webp"
       },
       {
         title: "Momentus (our compact 20 kW forklift charger)",
         text: "Wall or pedestal opportunity charging for indoor forklift fleets where every square foot of floor counts.",
         link: "/products/momentus",
-        image: "/assets/Products/Momentus/MOMENTUs Hardware Listing.webp"
+        image: "/assets/products/momentus/catalog/momentus-mhe-logistics-charger-hardware-card.png"
       },
       {
         title: "Mobilus (our mobile DC fast charger)",
         text: "Trailer or skid-mounted fast charging for temporary, remote or emergency sites beyond the reach of fixed charging.",
         link: "/products/mobilus",
-        image: "/assets/Products/Mobilus/MOBILUS Hardware Listing.webp"
+        image: "/assets/products/mobilus/catalog/mobilus-heavy-duty-mobile-bess-trailer-hardware-card.png"
       },
       {
         title: "Pharus (our Level 2 AC charger)",
         text: "Workplace and public Level 2 charging for passenger EVs, monitored in the same Cumulus dashboard as your fleet.",
         link: "/products/pharus",
-        image: "/assets/homepage/Meet MOMENTUs-02.webp"
+        image: null
       }
     ]
   },

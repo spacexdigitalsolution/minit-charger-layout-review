@@ -33,7 +33,7 @@ client-approval-date: "2026-11-21"
 - **Proposed Alt Text**: "Heavy-duty electric fleet charging in demanding weather conditions"
 - **Alt Text Sign-off**: `approved`
 - **Slot Status**: `approved`
-- **Approved Source File**: `site/public/assets-src/Home Page/Banner/Home banner - 01-04.png`
+- **Approved Source File**: `site/public/assets/home/hero/heavy-duty-electric-fleet-charging-in-demanding-weather-cond.png`
 - **Pixel Dimensions Found**: 4000x2250 (16:9)
 - **Client Approval**: `approved`
 - **Approval Evidence**: "Current is correct" confirmed by Devansh at 2026-11-21T00:25:41+05:30

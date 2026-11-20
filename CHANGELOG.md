@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.10] - 2026-11-21
+
+### Changed
+- Reorganized image library: moved all 28 approved (tagged) images into deterministic, semantic paths matching `<route>/<slug>/<section>/<alt>.<ext>` across both `site/public/assets` and `site/public/assets-src`.
+- Quarantined 492 untagged legacy and unused images out of `site/public/assets` and into `site/_untagged-images/` outside the public serving directory, preserving 5 functional hero video MP4s and the Altus II tech sheet PDF.
+- Rebuilt `site/public/assets/manifest.json` with 56 validated entries covering all approved assets and responsive WebP variants.
+- Updated all code references across data models (`site/data/products.js`), components (`HeroSection.js`, `BenefitModules.js`, `ComparisonTable.js`, `Navbar.js`, `heroSlides.js`), product pairing data models, and `app/layout.js` favicons/icons to point strictly to the new deterministic paths.
+- Reset unapproved or experimental image slots in `aviation-gse/page.js`, `warehouse/page.js`, and internal hero variation prototypes to standard placeholder mode.
+- Synced all 12 affected on-disk approval records under `site/image-approvals/` with updated source file paths while preserving verbatim approval evidence.
+
 ## [0.1.9] - 2026-11-21
 
 ### Fixed

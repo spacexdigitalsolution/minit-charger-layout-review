@@ -1,107 +1,170 @@
 {
-  "Altus II.webp": {
-    "480": "/assets/homepage/Altus II-480.webp",
-    "768": "/assets/homepage/Altus II-768.webp",
-    "1200": "/assets/homepage/Altus II-1200.webp",
-    "1600": "/assets/homepage/Altus II-1600.webp",
-    "original": "/assets/homepage/Altus II.webp"
+  "/assets/home/hero/heavy-duty-electric-fleet-charging-in-demanding-weather-cond.png": {
+    "original": "/assets/home/hero/heavy-duty-electric-fleet-charging-in-demanding-weather-cond.png"
   },
-  "Cumulus Software-01.webp": {
-    "480": "/assets/homepage/Cumulus Software-01-480.webp",
-    "768": "/assets/homepage/Cumulus Software-01-768.webp",
-    "1200": "/assets/homepage/Cumulus Software-01-1200.webp",
-    "1600": "/assets/homepage/Cumulus Software-01-1600.webp",
-    "original": "/assets/homepage/Cumulus Software-01.webp"
+  "heavy-duty-electric-fleet-charging-in-demanding-weather-cond.png": {
+    "original": "/assets/home/hero/heavy-duty-electric-fleet-charging-in-demanding-weather-cond.png"
   },
-  "Engineered for Airports.webp": {
-    "480": "/assets/homepage/Engineered for Airports-480.webp",
-    "768": "/assets/homepage/Engineered for Airports-768.webp",
-    "1200": "/assets/homepage/Engineered for Airports-1200.webp",
-    "1600": "/assets/homepage/Engineered for Airports-1600.webp",
-    "original": "/assets/homepage/Engineered for Airports.webp"
+  "/assets/industries/aviation-gse/hero/airport-ground-support-equipment-charging-infrastructure-on.png": {
+    "original": "/assets/industries/aviation-gse/hero/airport-ground-support-equipment-charging-infrastructure-on.png"
   },
-  "Engineered for Industrial & Commercial.webp": {
-    "480": "/assets/homepage/Engineered for Industrial & Commercial-480.webp",
-    "768": "/assets/homepage/Engineered for Industrial & Commercial-768.webp",
-    "1200": "/assets/homepage/Engineered for Industrial & Commercial-1200.webp",
-    "1600": "/assets/homepage/Engineered for Industrial & Commercial-1600.webp",
-    "original": "/assets/homepage/Engineered for Industrial & Commercial.webp"
+  "airport-ground-support-equipment-charging-infrastructure-on.png": {
+    "original": "/assets/industries/aviation-gse/hero/airport-ground-support-equipment-charging-infrastructure-on.png"
   },
-  "Engineered for LSEVs.webp": {
-    "480": "/assets/homepage/Engineered for LSEVs-480.webp",
-    "768": "/assets/homepage/Engineered for LSEVs-768.webp",
-    "1200": "/assets/homepage/Engineered for LSEVs-1200.webp",
-    "1600": "/assets/homepage/Engineered for LSEVs-1600.webp",
-    "original": "/assets/homepage/Engineered for LSEVs.webp"
+  "/assets/industries/aviation-gse/comparison/faded-airport-tarmac-background-in-10k-chargers-comparison-s.png": {
+    "original": "/assets/industries/aviation-gse/comparison/faded-airport-tarmac-background-in-10k-chargers-comparison-s.png"
   },
-  "Engineered for Warehouses.webp": {
-    "480": "/assets/homepage/Engineered for Warehouses-480.webp",
-    "768": "/assets/homepage/Engineered for Warehouses-768.webp",
-    "1200": "/assets/homepage/Engineered for Warehouses-1200.webp",
-    "1600": "/assets/homepage/Engineered for Warehouses-1600.webp",
-    "original": "/assets/homepage/Engineered for Warehouses.webp"
+  "faded-airport-tarmac-background-in-10k-chargers-comparison-s.png": {
+    "original": "/assets/industries/aviation-gse/comparison/faded-airport-tarmac-background-in-10k-chargers-comparison-s.png"
   },
-  "Footer CTA-02.webp": {
-    "480": "/assets/homepage/Footer CTA-02-480.webp",
-    "768": "/assets/homepage/Footer CTA-02-768.webp",
-    "1200": "/assets/homepage/Footer CTA-02-1200.webp",
-    "1600": "/assets/homepage/Footer CTA-02-1600.webp",
-    "original": "/assets/homepage/Footer CTA-02.webp"
+  "/assets/industries/aviation-gse/benefit/multiple-charging-ecosystem-attribute-showcase.png": {
+    "original": "/assets/industries/aviation-gse/benefit/multiple-charging-ecosystem-attribute-showcase.png"
   },
-  "Home banner - 01-05.webp": {
-    "480": "/assets/homepage/Home banner - 01-05-480.webp",
-    "768": "/assets/homepage/Home banner - 01-05-768.webp",
-    "1200": "/assets/homepage/Home banner - 01-05-1200.webp",
-    "1600": "/assets/homepage/Home banner - 01-05-1600.webp",
-    "original": "/assets/homepage/Home banner - 01-05.webp"
+  "multiple-charging-ecosystem-attribute-showcase.png": {
+    "original": "/assets/industries/aviation-gse/benefit/multiple-charging-ecosystem-attribute-showcase.png"
   },
-  "Indoor material handling-01.webp": {
-    "480": "/assets/homepage/Indoor material handling-01-480.webp",
-    "768": "/assets/homepage/Indoor material handling-01-768.webp",
-    "1200": "/assets/homepage/Indoor material handling-01-1200.webp",
-    "1600": "/assets/homepage/Indoor material handling-01-1600.webp",
-    "original": "/assets/homepage/Indoor material handling-01.webp"
+  "/assets/industries/aviation-gse/benefit/the-mobilus-vantage-mobile-charger-module.png": {
+    "original": "/assets/industries/aviation-gse/benefit/the-mobilus-vantage-mobile-charger-module.png"
   },
-  "Interactive Charging Scenes- Airport-02.webp": {
-    "480": "/assets/homepage/Interactive Charging Scenes- Airport-02-480.webp",
-    "768": "/assets/homepage/Interactive Charging Scenes- Airport-02-768.webp",
-    "1200": "/assets/homepage/Interactive Charging Scenes- Airport-02-1200.webp",
-    "1600": "/assets/homepage/Interactive Charging Scenes- Airport-02-1600.webp",
-    "original": "/assets/homepage/Interactive Charging Scenes- Airport-02.webp"
+  "the-mobilus-vantage-mobile-charger-module.png": {
+    "original": "/assets/industries/aviation-gse/benefit/the-mobilus-vantage-mobile-charger-module.png"
   },
-  "Interactive Charging Scenes- warehouse-01.webp": {
-    "480": "/assets/homepage/Interactive Charging Scenes- warehouse-01-480.webp",
-    "768": "/assets/homepage/Interactive Charging Scenes- warehouse-01-768.webp",
-    "1200": "/assets/homepage/Interactive Charging Scenes- warehouse-01-1200.webp",
-    "1600": "/assets/homepage/Interactive Charging Scenes- warehouse-01-1600.webp",
-    "original": "/assets/homepage/Interactive Charging Scenes- warehouse-01.webp"
+  "/assets/industries/warehouse/hero/indoor-material-handling-and-forklift-opportunity-charging-d.png": {
+    "original": "/assets/industries/warehouse/hero/indoor-material-handling-and-forklift-opportunity-charging-d.png"
   },
-  "Magnus Hardware-01.webp": {
-    "480": "/assets/homepage/Magnus Hardware-01-480.webp",
-    "768": "/assets/homepage/Magnus Hardware-01-768.webp",
-    "1200": "/assets/homepage/Magnus Hardware-01-1200.webp",
-    "1600": "/assets/homepage/Magnus Hardware-01-1600.webp",
-    "original": "/assets/homepage/Magnus Hardware-01.webp"
+  "indoor-material-handling-and-forklift-opportunity-charging-d.png": {
+    "original": "/assets/industries/warehouse/hero/indoor-material-handling-and-forklift-opportunity-charging-d.png"
   },
-  "Meet MOMENTUs-02.webp": {
-    "480": "/assets/homepage/Meet MOMENTUs-02-480.webp",
-    "768": "/assets/homepage/Meet MOMENTUs-02-768.webp",
-    "1200": "/assets/homepage/Meet MOMENTUs-02-1200.webp",
-    "1600": "/assets/homepage/Meet MOMENTUs-02-1600.webp",
-    "original": "/assets/homepage/Meet MOMENTUs-02.webp"
+  "/assets/products/altus-ii/hero/altus-ii-dual-port-rapid-airport-gse-charging-unit-deployed.png": {
+    "original": "/assets/products/altus-ii/hero/altus-ii-dual-port-rapid-airport-gse-charging-unit-deployed.png"
   },
-  "MOBILUS Hardware-01.webp": {
-    "480": "/assets/homepage/MOBILUS Hardware-01-480.webp",
-    "768": "/assets/homepage/MOBILUS Hardware-01-768.webp",
-    "1200": "/assets/homepage/MOBILUS Hardware-01-1200.webp",
-    "1600": "/assets/homepage/MOBILUS Hardware-01-1600.webp",
-    "original": "/assets/homepage/MOBILUS Hardware-01.webp"
+  "altus-ii-dual-port-rapid-airport-gse-charging-unit-deployed.png": {
+    "original": "/assets/products/altus-ii/hero/altus-ii-dual-port-rapid-airport-gse-charging-unit-deployed.png"
   },
-  "Outdoor eGSE & yards-01.webp": {
-    "480": "/assets/homepage/Outdoor eGSE & yards-01-480.webp",
-    "768": "/assets/homepage/Outdoor eGSE & yards-01-768.webp",
-    "1200": "/assets/homepage/Outdoor eGSE & yards-01-1200.webp",
-    "1600": "/assets/homepage/Outdoor eGSE & yards-01-1600.webp",
-    "original": "/assets/homepage/Outdoor eGSE & yards-01.webp"
+  "/assets/products/altus-ii/overview/altus-ii-main-perspective-angle-render.png": {
+    "original": "/assets/products/altus-ii/overview/altus-ii-main-perspective-angle-render.png"
+  },
+  "altus-ii-main-perspective-angle-render.png": {
+    "original": "/assets/products/altus-ii/overview/altus-ii-main-perspective-angle-render.png"
+  },
+  "/assets/products/altus-ii/features/gate-power-distribution-and-peak-shaving-manager.png": {
+    "original": "/assets/products/altus-ii/features/gate-power-distribution-and-peak-shaving-manager.png"
+  },
+  "gate-power-distribution-and-peak-shaving-manager.png": {
+    "original": "/assets/products/altus-ii/features/gate-power-distribution-and-peak-shaving-manager.png"
+  },
+  "/assets/products/altus-ii/features/altus-ii-hardware-integrated-with-cumulus-cloud-monitoring.png": {
+    "original": "/assets/products/altus-ii/features/altus-ii-hardware-integrated-with-cumulus-cloud-monitoring.png"
+  },
+  "altus-ii-hardware-integrated-with-cumulus-cloud-monitoring.png": {
+    "original": "/assets/products/altus-ii/features/altus-ii-hardware-integrated-with-cumulus-cloud-monitoring.png"
+  },
+  "/assets/products/durus/catalog/durus-small-electric-equipment-charger-hardware-card.png": {
+    "original": "/assets/products/durus/catalog/durus-small-electric-equipment-charger-hardware-card.png"
+  },
+  "durus-small-electric-equipment-charger-hardware-card.png": {
+    "original": "/assets/products/durus/catalog/durus-small-electric-equipment-charger-hardware-card.png"
+  },
+  "/assets/products/magnus/hero/magnus-universal-100-200-kw-fleet-airport-fast-charger-hero.png": {
+    "original": "/assets/products/magnus/hero/magnus-universal-100-200-kw-fleet-airport-fast-charger-hero.png"
+  },
+  "magnus-universal-100-200-kw-fleet-airport-fast-charger-hero.png": {
+    "original": "/assets/products/magnus/hero/magnus-universal-100-200-kw-fleet-airport-fast-charger-hero.png"
+  },
+  "/assets/products/magnus/catalog/magnus-universal-fleet-charger-hardware-card-listing.png": {
+    "original": "/assets/products/magnus/catalog/magnus-universal-fleet-charger-hardware-card-listing.png"
+  },
+  "magnus-universal-fleet-charger-hardware-card-listing.png": {
+    "original": "/assets/products/magnus/catalog/magnus-universal-fleet-charger-hardware-card-listing.png"
+  },
+  "/assets/products/magnus/gallery/magnus-gallery-perspective-view-01.png": {
+    "original": "/assets/products/magnus/gallery/magnus-gallery-perspective-view-01.png"
+  },
+  "magnus-gallery-perspective-view-01.png": {
+    "original": "/assets/products/magnus/gallery/magnus-gallery-perspective-view-01.png"
+  },
+  "/assets/products/magnus/gallery/magnus-gallery-perspective-view-02.png": {
+    "original": "/assets/products/magnus/gallery/magnus-gallery-perspective-view-02.png"
+  },
+  "magnus-gallery-perspective-view-02.png": {
+    "original": "/assets/products/magnus/gallery/magnus-gallery-perspective-view-02.png"
+  },
+  "/assets/products/magnus/gallery/magnus-gallery-perspective-view-03.png": {
+    "original": "/assets/products/magnus/gallery/magnus-gallery-perspective-view-03.png"
+  },
+  "magnus-gallery-perspective-view-03.png": {
+    "original": "/assets/products/magnus/gallery/magnus-gallery-perspective-view-03.png"
+  },
+  "/assets/products/magnus/gallery/magnus-gallery-perspective-view-04.png": {
+    "original": "/assets/products/magnus/gallery/magnus-gallery-perspective-view-04.png"
+  },
+  "magnus-gallery-perspective-view-04.png": {
+    "original": "/assets/products/magnus/gallery/magnus-gallery-perspective-view-04.png"
+  },
+  "/assets/products/maximus/catalog/maximus-dual-port-mhe-hardware-card.webp": {
+    "original": "/assets/products/maximus/catalog/maximus-dual-port-mhe-hardware-card.webp"
+  },
+  "maximus-dual-port-mhe-hardware-card.webp": {
+    "original": "/assets/products/maximus/catalog/maximus-dual-port-mhe-hardware-card.webp"
+  },
+  "/assets/products/mobilus/catalog/mobilus-heavy-duty-mobile-bess-trailer-hardware-card.png": {
+    "original": "/assets/products/mobilus/catalog/mobilus-heavy-duty-mobile-bess-trailer-hardware-card.png"
+  },
+  "mobilus-heavy-duty-mobile-bess-trailer-hardware-card.png": {
+    "original": "/assets/products/mobilus/catalog/mobilus-heavy-duty-mobile-bess-trailer-hardware-card.png"
+  },
+  "/assets/products/momentus/hero/momentus-20-kw-single-port-opportunity-charger-hero-banner.png": {
+    "original": "/assets/products/momentus/hero/momentus-20-kw-single-port-opportunity-charger-hero-banner.png"
+  },
+  "momentus-20-kw-single-port-opportunity-charger-hero-banner.png": {
+    "original": "/assets/products/momentus/hero/momentus-20-kw-single-port-opportunity-charger-hero-banner.png"
+  },
+  "/assets/products/momentus/catalog/momentus-mhe-logistics-charger-hardware-card.png": {
+    "original": "/assets/products/momentus/catalog/momentus-mhe-logistics-charger-hardware-card.png"
+  },
+  "momentus-mhe-logistics-charger-hardware-card.png": {
+    "original": "/assets/products/momentus/catalog/momentus-mhe-logistics-charger-hardware-card.png"
+  },
+  "/assets/products/momentus/gallery/momentus-perspective-profile-angle.png": {
+    "original": "/assets/products/momentus/gallery/momentus-perspective-profile-angle.png"
+  },
+  "momentus-perspective-profile-angle.png": {
+    "original": "/assets/products/momentus/gallery/momentus-perspective-profile-angle.png"
+  },
+  "/assets/products/cumulus/catalog/cumulus-cloud-software-platform-dashboard-card.png": {
+    "original": "/assets/products/cumulus/catalog/cumulus-cloud-software-platform-dashboard-card.png"
+  },
+  "cumulus-cloud-software-platform-dashboard-card.png": {
+    "original": "/assets/products/cumulus/catalog/cumulus-cloud-software-platform-dashboard-card.png"
+  },
+  "/assets/_global/navbar/brand/minit-charger-logo.png": {
+    "original": "/assets/_global/navbar/brand/minit-charger-logo.png"
+  },
+  "minit-charger-logo.png": {
+    "original": "/assets/_global/navbar/brand/minit-charger-logo.png"
+  },
+  "/assets/_global/root-layout/icons/minit-charger-browser-shortcut-icon.ico": {
+    "original": "/assets/_global/root-layout/icons/minit-charger-browser-shortcut-icon.ico"
+  },
+  "minit-charger-browser-shortcut-icon.ico": {
+    "original": "/assets/_global/root-layout/icons/minit-charger-browser-shortcut-icon.ico"
+  },
+  "/assets/_global/root-layout/icons/minit-charger-browser-favicon-16x16.png": {
+    "original": "/assets/_global/root-layout/icons/minit-charger-browser-favicon-16x16.png"
+  },
+  "minit-charger-browser-favicon-16x16.png": {
+    "original": "/assets/_global/root-layout/icons/minit-charger-browser-favicon-16x16.png"
+  },
+  "/assets/_global/root-layout/icons/minit-charger-browser-favicon-32x32.png": {
+    "original": "/assets/_global/root-layout/icons/minit-charger-browser-favicon-32x32.png"
+  },
+  "minit-charger-browser-favicon-32x32.png": {
+    "original": "/assets/_global/root-layout/icons/minit-charger-browser-favicon-32x32.png"
+  },
+  "/assets/_global/root-layout/icons/minit-charger-ios-home-screen-icon.png": {
+    "original": "/assets/_global/root-layout/icons/minit-charger-ios-home-screen-icon.png"
+  },
+  "minit-charger-ios-home-screen-icon.png": {
+    "original": "/assets/_global/root-layout/icons/minit-charger-ios-home-screen-icon.png"
   }
 }

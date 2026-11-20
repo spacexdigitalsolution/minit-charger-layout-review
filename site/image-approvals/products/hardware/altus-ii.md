@@ -33,7 +33,7 @@ client-approval-date: "2026-11-21"
 - **Proposed Alt Text**: "Altus II dual-port rapid airport GSE charging unit deployed on active flightline apron"
 - **Alt Text Sign-off**: `approved`
 - **Slot Status**: `approved`
-- **Approved Source File**: `site/public/assets-src/Industries/Aviation-GSE/Why Minit Charger/Banner.png`
+- **Approved Source File**: `site/public/assets/products/altus-ii/hero/altus-ii-dual-port-rapid-airport-gse-charging-unit-deployed.png`
 - **Pixel Dimensions Found**: 4001x1875
 - **Client Approval**: `approved`
 - **Approval Evidence**: "see last used" verified as Banner.png / Banner.webp, confirmed by Devansh at 2026-11-21T00:37:55+05:30
@@ -48,7 +48,7 @@ client-approval-date: "2026-11-21"
 - **Proposed Alt Text**: "Altus II main perspective angle render"
 - **Alt Text Sign-off**: `approved`
 - **Slot Status**: `approved`
-- **Approved Source File**: `site/public/assets-src/Products/Altus II/Altus II Listing.png`
+- **Approved Source File**: `site/public/assets/products/altus-ii/overview/altus-ii-main-perspective-angle-render.png`
 - **Pixel Dimensions Found**: 2250x1500
 - **Client Approval**: `approved`
 - **Approval Evidence**: Path provided by Devansh at 2026-11-21T00:37:55+05:30
@@ -78,7 +78,7 @@ client-approval-date: "2026-11-21"
 - **Proposed Alt Text**: "Gate power distribution and peak shaving manager"
 - **Alt Text Sign-off**: `approved`
 - **Slot Status**: `approved`
-- **Approved Source File**: `site/public/assets-src/Products/Altus II/Features/Turnaround Banner.png`
+- **Approved Source File**: `site/public/assets/products/altus-ii/features/gate-power-distribution-and-peak-shaving-manager.png`
 - **Pixel Dimensions Found**: 1672x941
 - **Client Approval**: `approved`
 - **Approval Evidence**: Path provided by Devansh at 2026-11-21T00:37:55+05:30
@@ -108,7 +108,7 @@ client-approval-date: "2026-11-21"
 - **Proposed Alt Text**: "Altus II hardware integrated with Cumulus cloud monitoring"
 - **Alt Text Sign-off**: `approved`
 - **Slot Status**: `approved`
-- **Approved Source File**: `site/public/assets/Industries/Aviation-GSE/Cumulus/Cumulus-Aviation-Dashboard.png`
+- **Approved Source File**: `site/public/assets/products/altus-ii/features/altus-ii-hardware-integrated-with-cumulus-cloud-monitoring.png`
 - **Pixel Dimensions Found**: 1124x657
 - **Client Approval**: `approved`
 - **Approval Evidence**: Path provided by Devansh at 2026-11-21T00:37:55+05:30

@@ -14,19 +14,19 @@ const personaData = {
     id: "handlers",
     label: "Ground Handlers",
     headline: "Maximize Uptime on the Ramp",
-    image: "/assets/gse/MGNS_GSE_2.png"
+    image: null
   },
   authorities: {
     id: "authorities",
     label: "Airport Authorities",
     headline: "Electrify Without Grid Constraints",
-    image: "/assets/gse/ALTUS_II_GSE_BACKGROUND.png"
+    image: null
   },
   airlines: {
     id: "airlines",
     label: "Airlines",
     headline: "Protect Turnarounds & TCO",
-    image: "/assets/gse/MOB_GSE_1.jpg"
+    image: null
   }
 };
 

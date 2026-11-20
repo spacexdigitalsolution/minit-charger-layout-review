@@ -148,19 +148,19 @@ export const pharusContent = {
         title: "Magnus (our universal high-power DC fast charger)",
         text: "100–200 kW DC fast charging for sites that need to charge passenger EVs, buses and GSE on one platform.",
         link: "/products/magnus",
-        image: "/assets/Products/Magnus/Magnus Hardware Listing.webp"
+        image: "/assets/products/magnus/catalog/magnus-universal-fleet-charger-hardware-card-listing.png"
       },
       {
         title: "Mobilus (our mobile DC fast charger)",
         text: "Trailer or skid-mounted fast charging for temporary, remote or emergency sites where fixed chargers cannot reach.",
         link: "/products/mobilus",
-        image: "/assets/Products/Mobilus/MOBILUS Hardware Listing.webp"
+        image: "/assets/products/mobilus/catalog/mobilus-heavy-duty-mobile-bess-trailer-hardware-card.png"
       },
       {
         title: "Altus II (our dual-port charger for airport GSE)",
         text: "Dual-port 30–80 kW charging for airport ground support equipment fleets that need everyday reliability.",
         link: "/products/altus-ii",
-        image: "/assets/homepage/Altus II.webp"
+        image: "/assets/products/altus-ii/overview/altus-ii-main-perspective-angle-render.png"
       }
     ]
   },

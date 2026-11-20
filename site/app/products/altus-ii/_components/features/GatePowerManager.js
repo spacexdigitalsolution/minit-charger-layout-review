@@ -59,7 +59,7 @@ export default function GatePowerManager() {
           {/* Left Column: Visual of Gate Power Integration */}
           <div className="gpm-img lg:col-span-6 order-2 lg:order-1 relative w-full aspect-[16/9] rounded-lg overflow-hidden border border-white/10 shadow-2xl bg-zinc-900">
             <SmartImage
-              src="/assets/Products/Altus II/Features/Turnaround Banner.webp"
+              src="/assets/products/altus-ii/features/gate-power-distribution-and-peak-shaving-manager.png"
               alt="Gate power distribution and peak shaving manager"
               fill
               mode="image"

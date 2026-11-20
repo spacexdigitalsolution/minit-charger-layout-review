@@ -33,7 +33,7 @@ client-approval-date: "2026-11-21"
 - **Proposed Alt Text**: "Maximus Dual-Port MHE Hardware Card"
 - **Alt Text Sign-off**: `approved`
 - **Slot Status**: `approved`
-- **Approved Source File**: `site/public/assets/Products/Maximus/Maximus Hardware Listing.webp`
+- **Approved Source File**: `site/public/assets/products/maximus/catalog/maximus-dual-port-mhe-hardware-card.webp`
 - **Pixel Dimensions Found**: 2250x1500
 - **Client Approval**: `approved`
 - **Approval Evidence**: "APPROVE PAGE products/maximus" received from Devansh at 2026-11-21T01:06:03+05:30

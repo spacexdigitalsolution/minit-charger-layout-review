@@ -18,7 +18,7 @@ client-approval-date: "2026-11-21"
 - **Proposed Alt Text**: "Momentus 20 kW Single-Port Opportunity Charger Hero Banner"
 - **Alt Text Sign-off**: `approved`
 - **Slot Status**: `approved`
-- **Approved Source File**: `site/public/assets/Products/Momentus/momentus banner.png`
+- **Approved Source File**: `site/public/assets/products/momentus/hero/momentus-20-kw-single-port-opportunity-charger-hero-banner.png`
 - **Pixel Dimensions Found**: 1672x941
 - **Client Approval**: `approved`
 - **Approval Evidence**: "APPROVE PAGE products/momentus" received from Devansh at 2026-11-21T01:03:36+05:30
@@ -33,7 +33,7 @@ client-approval-date: "2026-11-21"
 - **Proposed Alt Text**: "Momentus MHE & Logistics Charger Hardware Card"
 - **Alt Text Sign-off**: `approved`
 - **Slot Status**: `approved`
-- **Approved Source File**: `site/public/assets-src/Products/Momentus/MOMENTUs Hardware Listing.png`
+- **Approved Source File**: `site/public/assets/products/momentus/catalog/momentus-mhe-logistics-charger-hardware-card.png`
 - **Pixel Dimensions Found**: 2084x2084
 - **Client Approval**: `approved`
 - **Approval Evidence**: "APPROVE PAGE products/momentus" received from Devansh at 2026-11-21T01:03:36+05:30
@@ -63,7 +63,7 @@ client-approval-date: "2026-11-21"
 - **Proposed Alt Text**: "Momentus Perspective Profile Angle"
 - **Alt Text Sign-off**: `approved`
 - **Slot Status**: `approved`
-- **Approved Source File**: `site/public/assets/Products/Momentus/Angle 2 transparent.png`
+- **Approved Source File**: `site/public/assets/products/momentus/gallery/momentus-perspective-profile-angle.png`
 - **Pixel Dimensions Found**: 1254x1254
 - **Client Approval**: `approved`
 - **Approval Evidence**: "APPROVE PAGE products/momentus" received from Devansh at 2026-11-21T01:03:36+05:30

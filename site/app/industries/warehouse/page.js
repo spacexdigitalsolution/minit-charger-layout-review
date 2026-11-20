@@ -45,7 +45,7 @@ export default function WarehouseIndustryPage() {
           subheadline="Adopt modern opportunity fast charging to maximize picking uptime, reclaim floor space, and protect your bottom line."
           primaryCTA={{ label: "Speak to a Warehouse Expert", href: "/contact" }}
           secondaryCTA={{ label: "Request a Facility Assessment", href: "/contact" }}
-          bgImage="/assets/homepage/Indoor material handling-01.webp"
+          bgImage={null}
         />
       </div>
     </>

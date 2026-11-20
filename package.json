@@ -1,6 +1,6 @@
 {
   "name": "minit-charger-workspace",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "private": true,
   "scripts": {
     "dev": "pnpm --dir site dev",

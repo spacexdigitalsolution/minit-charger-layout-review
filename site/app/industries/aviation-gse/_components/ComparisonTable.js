@@ -65,7 +65,7 @@ export default function ComparisonTable() {
       {/* Background Image Layer */}
       <div className="absolute inset-0 w-full h-full z-0 overflow-hidden pointer-events-none select-none">
         <SmartImage
-          src="/assets/Industries/Aviation-GSE/Airport Background/Airport bg view 1.png"
+          src="/assets/industries/aviation-gse/comparison/faded-airport-tarmac-background-in-10k-chargers-comparison-s.png"
           alt="Airport Background"
           fill
           sizes="100vw"

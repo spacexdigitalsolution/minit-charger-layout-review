@@ -150,19 +150,19 @@ export const durusContent = {
         title: "Momentus (our compact 20 kW forklift charger)",
         text: "Stationary DC fast opportunity charging for indoor forklift fleets where floor space counts.",
         link: "/products/momentus",
-        image: "/assets/Home Page/Warehouse & Manufacturing/MOMENTUs Hardware-01.webp"
+        image: "/assets/products/momentus/catalog/momentus-mhe-logistics-charger-hardware-card.png"
       },
       {
         title: "Maximus (our 40 kW dual-port industrial charger)",
         text: "Dual-port DC fast charging for high-throughput forklift fleets charging two trucks at once.",
         link: "/products/maximus",
-        image: "/assets/Products/Maximus/Maximus Hardware Listing.webp"
+        image: "/assets/products/maximus/catalog/maximus-dual-port-mhe-hardware-card.webp"
       },
       {
         title: "Pharus (our Level 2 AC charger)",
         text: "Commercial Level 2 AC charging for passenger and utility EVs at workplaces and parking areas.",
         link: "/products/pharus",
-        image: "/assets/homepage/Meet MOMENTUs-02.webp"
+        image: null
       }
     ]
   },

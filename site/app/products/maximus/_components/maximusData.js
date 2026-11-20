@@ -135,7 +135,7 @@ export const maximusContent = {
       "Listed to UL 1564 for industrial battery chargers",
       "Over-the-air updates keep charger software current"
     ],
-    image: "/assets/Products/Maximus/Maximus Hardware Listing.webp",
+    image: "/assets/products/maximus/catalog/maximus-dual-port-mhe-hardware-card.webp",
     imageAlt: "Maximus 40 kW Dual-Port Electronics Enclosure"
   },
   pairing: {
@@ -162,25 +162,25 @@ export const maximusContent = {
         title: "Momentus (our compact 20 kW forklift charger)",
         text: "Single-port 20 kW opportunity charging in a compact enclosure, for smaller fleets and tighter corners of the floor.",
         link: "/products/momentus",
-        image: "/assets/Products/Momentus/MOMENTUs Hardware Listing.webp"
+        image: "/assets/products/momentus/catalog/momentus-mhe-logistics-charger-hardware-card.png"
       },
       {
         title: "Magnus (our universal high-power DC fast charger)",
         text: "100–200 kW across 24–1000 VDC, for sites adding buses, trucks or passenger EVs alongside forklifts.",
         link: "/products/magnus",
-        image: "/assets/Products/Magnus/Magnus Hardware Listing.webp"
+        image: "/assets/products/magnus/catalog/magnus-universal-fleet-charger-hardware-card-listing.png"
       },
       {
         title: "Altus II (our dual-port charger for airport GSE)",
         text: "Dual-port 30–80 kW charging for airport GSE fleets that need a proven, compact pedestal charger.",
         link: "/products/altus-ii",
-        image: "/assets/homepage/Altus II.webp"
+        image: "/assets/products/altus-ii/overview/altus-ii-main-perspective-angle-render.png"
       },
       {
         title: "Mobilus (our mobile DC fast charger)",
         text: "Trailer or skid-mounted fast charging for temporary, remote or emergency sites beyond fixed charging.",
         link: "/products/mobilus",
-        image: "/assets/Products/Mobilus/MOBILUS Hardware Listing.webp"
+        image: "/assets/products/mobilus/catalog/mobilus-heavy-duty-mobile-bess-trailer-hardware-card.png"
       }
     ]
   },

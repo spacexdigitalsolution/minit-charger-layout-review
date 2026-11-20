@@ -6,9 +6,9 @@ export const products = [
     categories: ["aviation"],
     industries: ["aviation-gse", "commercial-fleets"],
     heroImage: null,
-    cardImage: "/assets/Products/Altus II/Altus II Listing.webp",
+    cardImage: "/assets/products/altus-ii/overview/altus-ii-main-perspective-angle-render.png",
     gallery: [
-      { src: "/assets/Products/Altus II/Altus II Listing.webp", alt: "Altus II Hardware Listing", mode: "image" }
+      { src: "/assets/products/altus-ii/overview/altus-ii-main-perspective-angle-render.png", alt: "Altus II Hardware Listing", mode: "image" }
     ],
     shortDescription: "Reliable everyday fleet charging.",
     keyUSP: "More charging capability in less space.",
@@ -40,16 +40,16 @@ export const products = [
     categoryTag: "Universal Mixed Fleet",
     categories: ["aviation", "ev"],
     industries: ["aviation-gse", "warehouse", "commercial-fleets"],
-    heroImage: "/assets-src/Magnus/Banner.png",
+    heroImage: "/assets/products/magnus/hero/magnus-universal-100-200-kw-fleet-airport-fast-charger-hero.png",
     heroImageMode: "image",
-    cardImage: "/assets/Products/Magnus/Magnus Hardware Listing.webp",
+    cardImage: "/assets/products/magnus/catalog/magnus-universal-fleet-charger-hardware-card-listing.png",
     cardImageMode: "image",
     gallery: [
-      { src: "/assets/Products/Magnus/Magnus Hardware Listing.webp", alt: "Magnus Hardware Listing", mode: "image" },
-      { src: "/assets-src/Magnus/01.png", alt: "Magnus Hardware Render (Angle 1)", mode: "image" },
-      { src: "/assets-src/Magnus/02.png", alt: "Magnus Hardware Render (Angle 2)", mode: "image" },
-      { src: "/assets-src/Magnus/03.png", alt: "Magnus Hardware Render (Front)", mode: "image" },
-      { src: "/assets-src/Magnus/04.png", alt: "Magnus Hardware Render (Rear)", mode: "image" }
+      { src: "/assets/products/magnus/catalog/magnus-universal-fleet-charger-hardware-card-listing.png", alt: "Magnus Hardware Listing", mode: "image" },
+      { src: "/assets/products/magnus/gallery/magnus-gallery-perspective-view-01.png", alt: "Magnus Hardware Render (Angle 1)", mode: "image" },
+      { src: "/assets/products/magnus/gallery/magnus-gallery-perspective-view-02.png", alt: "Magnus Hardware Render (Angle 2)", mode: "image" },
+      { src: "/assets/products/magnus/gallery/magnus-gallery-perspective-view-03.png", alt: "Magnus Hardware Render (Front)", mode: "image" },
+      { src: "/assets/products/magnus/gallery/magnus-gallery-perspective-view-04.png", alt: "Magnus Hardware Render (Rear)", mode: "image" }
     ],
     shortDescription: "One charger for virtually any fleet.",
     keyUSP: "One platform can support both traditional GSE and high-voltage EV applications.",
@@ -85,10 +85,10 @@ export const products = [
     industries: ["aviation-gse", "warehouse", "commercial-fleets"],
     heroImage: null,
     heroImageMode: "placeholder",
-    cardImage: "/assets/Products/Mobilus/MOBILUS Hardware Listing.webp",
+    cardImage: "/assets/products/mobilus/catalog/mobilus-heavy-duty-mobile-bess-trailer-hardware-card.png",
     cardImageMode: "image",
     gallery: [
-      { src: "/assets/Products/Mobilus/MOBILUS Hardware Listing.webp", alt: "Mobilus Hardware Listing", mode: "image" }
+      { src: "/assets/products/mobilus/catalog/mobilus-heavy-duty-mobile-bess-trailer-hardware-card.png", alt: "Mobilus Hardware Listing", mode: "image" }
     ],
     shortDescription: "Charge anywhere power is needed.",
     keyUSP: "Use existing infrastructure more intelligently.",
@@ -122,13 +122,13 @@ export const products = [
     categoryTag: "Industrial / Forklift",
     categories: ["mhe", "lsv"],
     industries: ["aviation-gse", "warehouse", "commercial-fleets"],
-    heroImage: "/assets/Products/Momentus/momentus banner.png",
+    heroImage: "/assets/products/momentus/hero/momentus-20-kw-single-port-opportunity-charger-hero-banner.png",
     heroImageMode: "image",
-    cardImage: "/assets/Products/Momentus/MOMENTUs Hardware Listing.webp",
+    cardImage: "/assets/products/momentus/catalog/momentus-mhe-logistics-charger-hardware-card.png",
     cardImageMode: "image",
     gallery: [
-      { src: "/assets/Products/Momentus/MOMENTUs Hardware Listing.webp", alt: "Momentus Hardware Listing", mode: "image" },
-      { src: "/assets/Products/Momentus/Angle 2 transparent.png", alt: "Momentus Hardware Render", mode: "image" }
+      { src: "/assets/products/momentus/catalog/momentus-mhe-logistics-charger-hardware-card.png", alt: "Momentus Hardware Listing", mode: "image" },
+      { src: "/assets/products/momentus/gallery/momentus-perspective-profile-angle.png", alt: "Momentus Hardware Render", mode: "image" }
     ],
     shortDescription: "Compact opportunity charging.",
     keyUSP: "More charging capability in less space.",
@@ -164,10 +164,10 @@ export const products = [
     industries: ["aviation-gse", "warehouse", "commercial-fleets"],
     heroImage: null,
     heroImageMode: "placeholder",
-    cardImage: "/assets/Products/Maximus/Maximus Hardware Listing.webp",
+    cardImage: "/assets/products/maximus/catalog/maximus-dual-port-mhe-hardware-card.webp",
     cardImageMode: "image",
     gallery: [
-      { src: "/assets/Products/Maximus/Maximus Hardware Listing.webp", alt: "Maximus Hardware Listing", mode: "image" }
+      { src: "/assets/products/maximus/catalog/maximus-dual-port-mhe-hardware-card.webp", alt: "Maximus Hardware Listing", mode: "image" }
     ],
     shortDescription: "High-throughput dual-port charging.",
     keyUSP: "Modern SiC power electronics. Compact by design.",
@@ -202,9 +202,9 @@ export const products = [
     categories: ["mhe", "lsv"],
     industries: ["aviation-gse", "warehouse", "commercial-fleets"],
     heroImage: null,
-    cardImage: "/assets/Products/Durus/Durus Listing.webp",
+    cardImage: "/assets/products/durus/catalog/durus-small-electric-equipment-charger-hardware-card.png",
     gallery: [
-      { src: "/assets/Products/Durus/Durus Listing.webp", alt: "Durus Hardware Listing", mode: "image" }
+      { src: "/assets/products/durus/catalog/durus-small-electric-equipment-charger-hardware-card.png", alt: "Durus Hardware Listing", mode: "image" }
     ],
     shortDescription: "Compact onboard charger with built-in battery management.",
     keyUSP: "Charger, battery manager and tracker onboard.",
@@ -274,10 +274,10 @@ export const products = [
     industries: ["aviation-gse", "warehouse", "commercial-fleets"],
     heroImage: null,
     heroImageMode: "placeholder",
-    cardImage: "/assets/Industries/Aviation-GSE/Cumulus/Cumulus Software-01.png",
+    cardImage: "/assets/products/cumulus/catalog/cumulus-cloud-software-platform-dashboard-card.png",
     cardImageMode: "image",
     gallery: [
-      { src: "/assets/Industries/Aviation-GSE/Cumulus/Cumulus Software-01.png", alt: "Cumulus Cloud Software Platform Dashboard Card", mode: "image" }
+      { src: "/assets/products/cumulus/catalog/cumulus-cloud-software-platform-dashboard-card.png", alt: "Cumulus Cloud Software Platform Dashboard Card", mode: "image" }
     ],
     shortDescription: "Cloud fleet and charger management platform.",
     keyUSP: "Every charger. Every battery. One screen.",

@@ -3,6 +3,9 @@
 **/assets-source/
 **/assets-src/
 previous-site/
+_untagged-images/
+site/_untagged-images/
+**/_untagged-images/
 
 # Dependencies
 node_modules/

@@ -18,7 +18,7 @@ client-approval-date: "2026-11-21"
 - **Proposed Alt Text**: "Airport ground support equipment charging infrastructure on active tarmac"
 - **Alt Text Sign-off**: `approved`
 - **Slot Status**: `approved`
-- **Approved Source File**: `site/public/assets-src/Industries/Aviation-GSE/Banner/Banner-Aviation-v3.png`
+- **Approved Source File**: `site/public/assets/industries/aviation-gse/hero/airport-ground-support-equipment-charging-infrastructure-on.png`
 - **Pixel Dimensions Found**: 4000x2250
 - **Client Approval**: `approved`
 - **Approval Evidence**: Provided by Devansh at 2026-11-21T00:46:30+05:30
@@ -33,7 +33,7 @@ client-approval-date: "2026-11-21"
 - **Proposed Alt Text**: "Faded airport tarmac background in 10k chargers comparison section"
 - **Alt Text Sign-off**: `approved`
 - **Slot Status**: `approved`
-- **Approved Source File**: `site/public/assets-src/Industries/Aviation-GSE/Airport Background/Airport bg view 1.png`
+- **Approved Source File**: `site/public/assets/industries/aviation-gse/comparison/faded-airport-tarmac-background-in-10k-chargers-comparison-s.png`
 - **Pixel Dimensions Found**: 1673x940
 - **Client Approval**: `approved`
 - **Approval Evidence**: Provided by Devansh at 2026-11-21T00:46:30+05:30
@@ -48,7 +48,7 @@ client-approval-date: "2026-11-21"
 - **Proposed Alt Text**: "Multiple charging ecosystem attribute showcase"
 - **Alt Text Sign-off**: `approved`
 - **Slot Status**: `approved`
-- **Approved Source File**: `site/public/assets-src/Industries/Aviation-GSE/Minit Charger Attributes/Multiple charging ecosystem.png`
+- **Approved Source File**: `site/public/assets/industries/aviation-gse/benefit/multiple-charging-ecosystem-attribute-showcase.png`
 - **Pixel Dimensions Found**: 1417x1110
 - **Client Approval**: `approved`
 - **Approval Evidence**: Provided by Devansh at 2026-11-21T00:46:30+05:30
@@ -63,7 +63,7 @@ client-approval-date: "2026-11-21"
 - **Proposed Alt Text**: "The Mobilus vantage mobile charger module"
 - **Alt Text Sign-off**: `approved`
 - **Slot Status**: `approved`
-- **Approved Source File**: `site/public/assets-src/Industries/Aviation-GSE/The Mobilus Vantage/Final Mobilus Charger.png`
+- **Approved Source File**: `site/public/assets/industries/aviation-gse/benefit/the-mobilus-vantage-mobile-charger-module.png`
 - **Pixel Dimensions Found**: 812x609
 - **Client Approval**: `approved`
 - **Approval Evidence**: Provided by Devansh at 2026-11-21T00:46:30+05:30

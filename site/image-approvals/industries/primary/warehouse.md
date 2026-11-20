@@ -18,7 +18,7 @@ client-approval-date: "2026-11-21"
 - **Proposed Alt Text**: "Indoor material handling and forklift opportunity charging depot"
 - **Alt Text Sign-off**: `approved`
 - **Slot Status**: `approved`
-- **Approved Source File**: `site/public/assets-src/Industries/Warehouse/Banner/Banner-Warehouse-Page.png`
+- **Approved Source File**: `site/public/assets/industries/warehouse/hero/indoor-material-handling-and-forklift-opportunity-charging-d.png`
 - **Pixel Dimensions Found**: 1920x1080
 - **Client Approval**: `approved`
 - **Approval Evidence**: "APPROVE PAGE industries/warehouse" received from Devansh at 2026-11-21T01:17:27+05:30

@@ -55,7 +55,7 @@ export default function Var4Oversized() {
       {/* Subtle Background Texture */}
       <div className="absolute inset-0 w-full h-full opacity-20 pointer-events-none">
         <SmartImage
-          src="/assets/gse/MGNS_GSE_1.png"
+          src={null}
           alt="Background Texture"
           fill
           mode="placeholder"

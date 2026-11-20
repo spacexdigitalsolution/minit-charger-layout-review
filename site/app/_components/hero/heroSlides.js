@@ -30,7 +30,7 @@ export const slides = [
   {
     id: "img4",
     type: "image",
-    src: "/assets/Home Page/Banner/Home banner - 01-04.webp",
+    src: "/assets/home/hero/heavy-duty-electric-fleet-charging-in-demanding-weather-cond.png",
     duration: 6000,
     headline: "Access Real-Time Data Instead of Guesswork",
     subcopy: "See charging activity, energy usage, asset status, battery health, and maintenance needs across your operation through connected Minit intelligence.",

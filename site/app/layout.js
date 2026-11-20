@@ -24,12 +24,12 @@ export const metadata = {
   description: "One charger for your entire fleet. Eliminating daily operational bottlenecks from airport ramps to warehouse floors.",
   icons: {
     icon: [
-      { url: "/assets/icons/favicon.ico" },
-      { url: "/assets/icons/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/assets/icons/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/assets/_global/root-layout/icons/minit-charger-browser-shortcut-icon.ico" },
+      { url: "/assets/_global/root-layout/icons/minit-charger-browser-favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/assets/_global/root-layout/icons/minit-charger-browser-favicon-32x32.png", sizes: "32x32", type: "image/png" },
     ],
     apple: [
-      { url: "/assets/icons/apple-touch-icon.png" },
+      { url: "/assets/_global/root-layout/icons/minit-charger-ios-home-screen-icon.png" },
     ],
   },
 };

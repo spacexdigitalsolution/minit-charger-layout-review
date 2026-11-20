@@ -33,7 +33,7 @@ client-approval-date: "2026-11-21"
 - **Proposed Alt Text**: "Cumulus Cloud Software Platform Dashboard Card"
 - **Alt Text Sign-off**: `approved`
 - **Slot Status**: `approved`
-- **Approved Source File**: `site/public/assets/Industries/Aviation-GSE/Cumulus/Cumulus Software-01.png`
+- **Approved Source File**: `site/public/assets/products/cumulus/catalog/cumulus-cloud-software-platform-dashboard-card.png`
 - **Pixel Dimensions Found**: 1124x657
 - **Client Approval**: `approved`
 - **Approval Evidence**: Path provided by Devansh at 2026-11-21T01:09:56+05:30; gallery card confirmed at 2026-11-21T01:11:19+05:30

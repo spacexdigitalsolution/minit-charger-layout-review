@@ -18,7 +18,7 @@ client-approval-date: "2026-11-21"
 - **Proposed Alt Text**: "Minit Charger Logo"
 - **Alt Text Sign-off**: `approved`
 - **Slot Status**: `approved`
-- **Approved Source File**: `site/public/assets-src/logo.png`
+- **Approved Source File**: `site/public/assets/_global/navbar/brand/minit-charger-logo.png`
 - **Pixel Dimensions Found**: 1024x359
 - **Client Approval**: `approved`
 - **Approval Evidence**: "APPROVE navbar.brand.logo" at 2026-11-21T00:19:18+05:30; "APPROVE PAGE _global/navbar" at 2026-11-21T00:21:15+05:30

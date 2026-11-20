@@ -18,7 +18,7 @@ client-approval-date: "2026-11-21"
 - **Proposed Alt Text**: "Minit Charger browser shortcut icon"
 - **Alt Text Sign-off**: `approved`
 - **Slot Status**: `approved`
-- **Approved Source File**: `site/public/assets/icons/favicon.ico`
+- **Approved Source File**: `site/public/assets/_global/root-layout/icons/minit-charger-browser-shortcut-icon.ico`
 - **Pixel Dimensions Found**: 48x48 multi-res
 - **Client Approval**: `approved`
 - **Approval Evidence**: "APPROVE PAGE _global/root-layout" received from Devansh at 2026-11-21T00:49:57+05:30
@@ -33,7 +33,7 @@ client-approval-date: "2026-11-21"
 - **Proposed Alt Text**: "Minit Charger browser favicon 16x16"
 - **Alt Text Sign-off**: `approved`
 - **Slot Status**: `approved`
-- **Approved Source File**: `site/public/assets/icons/favicon-16x16.png`
+- **Approved Source File**: `site/public/assets/_global/root-layout/icons/minit-charger-browser-favicon-16x16.png`
 - **Pixel Dimensions Found**: 16x16
 - **Client Approval**: `approved`
 - **Approval Evidence**: "APPROVE PAGE _global/root-layout" received from Devansh at 2026-11-21T00:49:57+05:30
@@ -48,7 +48,7 @@ client-approval-date: "2026-11-21"
 - **Proposed Alt Text**: "Minit Charger browser favicon 32x32"
 - **Alt Text Sign-off**: `approved`
 - **Slot Status**: `approved`
-- **Approved Source File**: `site/public/assets/icons/favicon-32x32.png`
+- **Approved Source File**: `site/public/assets/_global/root-layout/icons/minit-charger-browser-favicon-32x32.png`
 - **Pixel Dimensions Found**: 32x32
 - **Client Approval**: `approved`
 - **Approval Evidence**: "APPROVE PAGE _global/root-layout" received from Devansh at 2026-11-21T00:49:57+05:30
@@ -63,7 +63,7 @@ client-approval-date: "2026-11-21"
 - **Proposed Alt Text**: "Minit Charger iOS home screen icon"
 - **Alt Text Sign-off**: `approved`
 - **Slot Status**: `approved`
-- **Approved Source File**: `site/public/assets/icons/apple-touch-icon.png`
+- **Approved Source File**: `site/public/assets/_global/root-layout/icons/minit-charger-ios-home-screen-icon.png`
 - **Pixel Dimensions Found**: 180x180
 - **Client Approval**: `approved`
 - **Approval Evidence**: "APPROVE PAGE _global/root-layout" received from Devansh at 2026-11-21T00:49:57+05:30

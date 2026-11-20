@@ -157,7 +157,7 @@ export default function Navbar() {
         >
           <div className="relative w-28 md:w-32 h-8">
             <SmartImage
-              src="/assets/logo.webp"
+              src="/assets/_global/navbar/brand/minit-charger-logo.png"
               alt="Minit Charger Logo"
               fill
               sizes="128px"

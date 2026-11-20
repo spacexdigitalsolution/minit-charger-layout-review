@@ -11,7 +11,7 @@ export const momentusContent = {
   banner: {
     headline: "Fast Forklift Charging, Not Floor Space.",
     body: "Momentus (our compact 20 kW DC fast charger) mounts on a wall or pedestal and opportunity charges forklifts during breaks, so equipment gets back to moving pallets sooner.",
-    image: "/assets/Products/Momentus/momentus banner.png",
+    image: "/assets/products/momentus/hero/momentus-20-kw-single-port-opportunity-charger-hero-banner.png",
     imageAlt: "Momentus 20 kW DC Fast Charger Banner",
     imageMode: "image",
     buttons: [
@@ -24,13 +24,13 @@ export const momentusContent = {
     subheading: "Compact charger, complete specs. Here is everything that matters.",
     gallery: [
       {
-        src: "/assets/Products/Momentus/MOMENTUs Hardware Listing.webp",
+        src: "/assets/products/momentus/catalog/momentus-mhe-logistics-charger-hardware-card.png",
         alt: "Momentus 20 kW DC Fast Charger Hardware Unit",
         desc: "Momentus 20 kW DC Fast Charger - Main Unit",
         mode: "image"
       },
       {
-        src: "/assets/Products/Momentus/Angle 2 transparent.png",
+        src: "/assets/products/momentus/gallery/momentus-perspective-profile-angle.png",
         alt: "Momentus DC Fast Charger - Perspective View",
         desc: "Momentus Perspective Profile",
         mode: "image"
@@ -178,25 +178,25 @@ export const momentusContent = {
         title: "Maximus (our 40 kW dual-port industrial charger)",
         text: "Twice the output and two ports in a compact enclosure, for multi-shift sites where one port is no longer enough.",
         link: "/products/maximus",
-        image: "/assets/Products/Maximus/Maximus Hardware Listing.webp"
+        image: "/assets/products/maximus/catalog/maximus-dual-port-mhe-hardware-card.webp"
       },
       {
         title: "Magnus (our universal high-power DC fast charger)",
         text: "100–200 kW across 24–1000 VDC for sites charging forklifts, GSE, buses and passenger EVs on one platform.",
         link: "/products/magnus",
-        image: "/assets/Products/Magnus/Magnus Hardware Listing.webp"
+        image: "/assets/products/magnus/catalog/magnus-universal-fleet-charger-hardware-card-listing.png"
       },
       {
         title: "Altus II (our dual-port charger for airport GSE)",
         text: "Dual-port 30–80 kW charging for airport GSE fleets that need a proven, compact pedestal charger.",
         link: "/products/altus-ii",
-        image: "/assets/homepage/Altus II.webp"
+        image: "/assets/products/altus-ii/overview/altus-ii-main-perspective-angle-render.png"
       },
       {
         title: "Mobilus (our mobile DC fast charger)",
         text: "Trailer or skid-mounted fast charging for temporary or remote sites where fixed charging cannot reach.",
         link: "/products/mobilus",
-        image: "/assets/Products/Mobilus/MOBILUS Hardware Listing.webp"
+        image: "/assets/products/mobilus/catalog/mobilus-heavy-duty-mobile-bess-trailer-hardware-card.png"
       }
     ]
   },

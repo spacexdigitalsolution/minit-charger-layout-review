@@ -29,7 +29,7 @@ export default function AviationGSEPage() {
             "Deep insights into asset location, geofencing, and movement",
             "Automatic billing and compliance reports, ready without extra work"
           ]}
-          dashboardImage="/assets/Industries/Aviation-GSE/Cumulus/Cumulus-Aviation-Dashboard.webp"
+          dashboardImage="/assets/products/altus-ii/features/altus-ii-hardware-integrated-with-cumulus-cloud-monitoring.png"
           imageSide="right"
         />
 
@@ -44,7 +44,7 @@ export default function AviationGSEPage() {
           subheadline="Adapt the modern ecosystem to maximize uptime, efficiency, and your bottom line"
           primaryCTA={{ label: "Speak to a GSE Expert", href: "/contact" }}
           secondaryCTA={{ label: "Request an Assessment", href: "/contact" }}
-          bgImage="/assets/gse/MOB_GSE_2.png"
+          bgImage={null}
         />
       </div>
     </>

@@ -26,7 +26,7 @@ export default function HeroSection() {
       {/* Background Image Layer */}
       <div className="absolute inset-0 w-full h-full z-0 overflow-hidden">
         <SmartImage
-          src="/assets/Industries/Warehouse/Banner/Banner-Warehouse-Page.webp"
+          src="/assets/industries/warehouse/hero/indoor-material-handling-and-forklift-opportunity-charging-d.png"
           alt="Indoor material handling and forklift opportunity charging depot"
           fill
           priority
