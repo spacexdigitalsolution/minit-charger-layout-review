@@ -6,7 +6,10 @@ export const products = [
     categories: ["aviation"],
     industries: ["aviation-gse", "commercial-fleets"],
     heroImage: null,
-    cardImage: null,
+    cardImage: "/assets/Products/Altus II/Altus II Listing.webp",
+    gallery: [
+      { src: "/assets/Products/Altus II/Altus II Listing.webp", alt: "Altus II Hardware Listing", mode: "image" }
+    ],
     shortDescription: "Reliable everyday fleet charging.",
     keyUSP: "More charging capability in less space.",
     tagline: "High-Throughput Dual-Port Airport GSE Charger",
@@ -42,6 +45,7 @@ export const products = [
     cardImage: "/assets/Products/Magnus/Magnus Hardware Listing.webp",
     cardImageMode: "image",
     gallery: [
+      { src: "/assets/Products/Magnus/Magnus Hardware Listing.webp", alt: "Magnus Hardware Listing", mode: "image" },
       { src: "/assets-src/Magnus/01.png", alt: "Magnus Hardware Render (Angle 1)", mode: "image" },
       { src: "/assets-src/Magnus/02.png", alt: "Magnus Hardware Render (Angle 2)", mode: "image" },
       { src: "/assets-src/Magnus/03.png", alt: "Magnus Hardware Render (Front)", mode: "image" },
@@ -83,6 +87,9 @@ export const products = [
     heroImageMode: "placeholder",
     cardImage: "/assets/Products/Mobilus/MOBILUS Hardware Listing.webp",
     cardImageMode: "image",
+    gallery: [
+      { src: "/assets/Products/Mobilus/MOBILUS Hardware Listing.webp", alt: "Mobilus Hardware Listing", mode: "image" }
+    ],
     shortDescription: "Charge anywhere power is needed.",
     keyUSP: "Use existing infrastructure more intelligently.",
     tagline: "Mobile BESS Fast Charger & Clean Generator in One",
@@ -120,6 +127,7 @@ export const products = [
     cardImage: "/assets/Products/Momentus/MOMENTUs Hardware Listing.webp",
     cardImageMode: "image",
     gallery: [
+      { src: "/assets/Products/Momentus/MOMENTUs Hardware Listing.webp", alt: "Momentus Hardware Listing", mode: "image" },
       { src: "/assets/Products/Momentus/Angle 2 transparent.png", alt: "Momentus Hardware Render", mode: "image" }
     ],
     shortDescription: "Compact opportunity charging.",
@@ -158,6 +166,9 @@ export const products = [
     heroImageMode: "placeholder",
     cardImage: "/assets/Products/Maximus/Maximus Hardware Listing.webp",
     cardImageMode: "image",
+    gallery: [
+      { src: "/assets/Products/Maximus/Maximus Hardware Listing.webp", alt: "Maximus Hardware Listing", mode: "image" }
+    ],
     shortDescription: "High-throughput dual-port charging.",
     keyUSP: "Modern SiC power electronics. Compact by design.",
     tagline: "40 kW Dual-Port Industrial MHE Charger",
@@ -192,6 +203,9 @@ export const products = [
     industries: ["aviation-gse", "warehouse", "commercial-fleets"],
     heroImage: null,
     cardImage: "/assets/Products/Durus/Durus Listing.webp",
+    gallery: [
+      { src: "/assets/Products/Durus/Durus Listing.webp", alt: "Durus Hardware Listing", mode: "image" }
+    ],
     shortDescription: "Compact onboard charger with built-in battery management.",
     keyUSP: "Charger, battery manager and tracker onboard.",
     tagline: "Onboard Charger With Built-In Battery Management",
@@ -224,7 +238,9 @@ export const products = [
     categories: ["bms"],
     industries: ["warehouse", "aviation-gse", "lsv"],
     heroImage: null,
+    heroImageMode: "placeholder",
     cardImage: null,
+    cardImageMode: "placeholder",
     shortDescription: "Battery monitoring and telematics for fleets.",
     keyUSP: "See battery trouble before it strands you.",
     tagline: "Battery Monitoring & Telematics System",
@@ -257,7 +273,12 @@ export const products = [
     categories: ["software"],
     industries: ["aviation-gse", "warehouse", "commercial-fleets"],
     heroImage: null,
-    cardImage: null,
+    heroImageMode: "placeholder",
+    cardImage: "/assets/Industries/Aviation-GSE/Cumulus/Cumulus Software-01.png",
+    cardImageMode: "image",
+    gallery: [
+      { src: "/assets/Industries/Aviation-GSE/Cumulus/Cumulus Software-01.png", alt: "Cumulus Cloud Software Platform Dashboard Card", mode: "image" }
+    ],
     shortDescription: "Cloud fleet and charger management platform.",
     keyUSP: "Every charger. Every battery. One screen.",
     tagline: "Cloud Fleet & Charger Management Platform",
@@ -290,7 +311,9 @@ export const products = [
     categories: ["ev"],
     industries: ["aviation-gse", "commercial-fleets"],
     heroImage: null,
+    heroImageMode: "placeholder",
     cardImage: null,
+    cardImageMode: "placeholder",
     shortDescription: "Commercial Level 2 AC charging.",
     keyUSP: "Workplace charging without the headaches.",
     tagline: "Commercial Level 2 AC EV Charger, 9.6–22.1 kW",
