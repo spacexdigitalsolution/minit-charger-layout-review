@@ -39,7 +39,7 @@ export default function ValuesBlock({ title, description, imageSrc, imageAlt, al
       <div className="w-full md:w-1/2 value-anim">
         {isGap || !imageSrc ? (
           <div className={`w-full aspect-video flex items-center justify-center p-8 text-center relative overflow-hidden border ${theme === 'dark' ? 'bg-zinc-900 border-zinc-800' : 'bg-zinc-100 border-zinc-200'}`}>
-            <span className="text-zinc-500 font-mono text-sm relative z-10">[CONTENT GAP: Missing real photography for value "{title}"]</span>
+            <span className="text-zinc-500 font-mono text-sm relative z-10">[CONTENT GAP: Missing real photography for value &quot;{title}&quot;]</span>
             <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: `linear-gradient(${theme === 'dark' ? '#fff' : '#000'} 1px, transparent 1px), linear-gradient(90deg, ${theme === 'dark' ? '#fff' : '#000'} 1px, transparent 1px)`, backgroundSize: "32px 32px" }}></div>
           </div>
         ) : (
@@ -51,7 +51,7 @@ export default function ValuesBlock({ title, description, imageSrc, imageAlt, al
       <div className="w-full md:w-1/2 value-anim">
         <h3 className={`font-display text-4xl font-bold mb-6  ${theme === 'dark' ? 'text-white' : 'text-zinc-950'}`}>{title}</h3>
         {isGap || !description ? (
-          <p className="text-zinc-500 font-mono text-sm">[CONTENT GAP: Missing definition for value "{title}"]</p>
+          <p className="text-zinc-500 font-mono text-sm">[CONTENT GAP: Missing definition for value &quot;{title}&quot;]</p>
         ) : (
           <p className={`text-xl font-light  ${theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600'}`}>{description}</p>
         )}

@@ -37,7 +37,7 @@ export default function LeadershipQuote({ quote, name, title, imageSrc, isGap = 
         <blockquote className="text-center">
           <div className="quote-anim mb-12">
             <p className="font-display text-4xl md:text-5xl font-medium text-white  ">
-              "{quote}"
+              &ldquo;{quote}&rdquo;
             </p>
           </div>
           <footer className="quote-anim flex flex-col items-center justify-center space-y-4">

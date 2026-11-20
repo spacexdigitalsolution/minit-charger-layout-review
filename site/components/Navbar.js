@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
+import SmartImage from "@/components/SmartImage";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { productCategories, industryCategories } from "@/data/categories";
@@ -148,7 +148,15 @@ export default function Navbar() {
           <div className="flex items-center gap-8 h-full">
             <Link href="/" className="flex items-center gap-2" onClick={() => { setIsMenuOpen(false); setActiveDesktopMenu(null); }}>
               <div className="relative w-32 h-10">
-                <Image src="/assets/logo.webp" alt="Minit Charger Logo" fill className="object-contain object-left" />
+                <SmartImage
+                  src="/assets/logo.webp"
+                  alt="Minit Charger Logo"
+                  fill
+                  sizes="128px"
+                  priority
+                  mode="placeholder"
+                  className="object-contain object-left"
+                />
               </div>
             </Link>
 

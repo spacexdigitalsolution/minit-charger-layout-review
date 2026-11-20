@@ -1,29 +1,36 @@
 {
-  "version": 1,
+  "version": 2,
   "skills": {
     "create-nextjs-website": {
       "source": "devanshdeveloper/skills-by-devansh",
       "sourceType": "github",
       "skillPath": "skills/create-nextjs-website/SKILL.md",
-      "computedHash": "b88a0e1dc71843d789eea03206812a51844d510c1fc4a7bee5d7564aa4b920d6"
+      "computedHash": "7b43b990e0be9d3c6427f0c6a6733b8427ff3c52db9da9041c976b90cdd4a24f"
     },
     "create-nww-website": {
       "source": "devanshdeveloper/skills-by-devansh",
       "sourceType": "github",
       "skillPath": "skills/create-nww-website/SKILL.md",
-      "computedHash": "9df92d5218370ab6349a6aaea7773cba98360c8a470b9b7ce1dab9f5d3760dea"
+      "computedHash": "48ff39562064bffeab212f64845c6e3ec28a58e6daa0fdb857be2dd0ad0c1ab6"
     },
     "find-skills": {
       "source": "vercel-labs/skills",
       "sourceType": "github",
       "skillPath": "skills/find-skills/SKILL.md",
-      "computedHash": "d6cb30212b3b19f531378574784af1da09928b2e5078f299eaeaedd50191a4af"
+      "computedHash": "7bc223e2aafbdbf6e50ea243ba6ef67fe432bb069ab439fea0390795dac0bf7f"
     },
     "nww": {
       "source": "devanshdeveloper/skills-by-devansh",
       "sourceType": "github",
       "skillPath": "skills/nww/SKILL.md",
-      "computedHash": "e8e9e1c2dc615aa2f1ffb0850539a1144abe0ae2c3a19c24dbfa5332f9fb1505"
+      "computedHash": "d29c8619a1ad34d8b583348d4447f89add49342cbb9b44e688a15bd405e24d0e"
+    },
+    "vercel-react-best-practices": {
+      "source": "vercel-labs/agent-skills",
+      "commit": "1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62",
+      "sourceType": "github",
+      "skillPath": "skills/react-best-practices/SKILL.md",
+      "computedHash": "7991ed4fbecdac23f47c1a40c243e00a212a9e7f3604db93959b3ae11dffe299"
     }
   }
 }

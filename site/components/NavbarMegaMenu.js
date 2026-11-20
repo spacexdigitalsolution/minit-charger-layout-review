@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
+import SmartImage from "@/components/SmartImage";
 import { Cloud, ArrowRight } from "lucide-react";
 
 const ProductLinkItem = ({ product, onLinkClick, onHover }) => (
@@ -92,7 +92,14 @@ export default function NavbarMegaMenu({
                       {hoveredProduct?.id === 'cumulus' ? (
                         <Cloud className="w-24 h-24 text-zinc-300 dark:text-zinc-700" strokeWidth={1} />
                       ) : hoveredProduct?.cardImage ? (
-                        <Image src={hoveredProduct.cardImage} alt={hoveredProduct.name} fill className="object-contain p-6" />
+                        <SmartImage
+                          src={hoveredProduct.cardImage}
+                          alt={hoveredProduct.name}
+                          fill
+                          sizes="(max-width: 1600px) 25vw, 400px"
+                          mode="placeholder"
+                          className="object-contain p-6"
+                        />
                       ) : null}
                     </div>
 

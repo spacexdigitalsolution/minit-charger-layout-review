@@ -22,8 +22,7 @@ export default function VideoModule() {
         }
       });
 
-      tl.from(".vid-anim", { y: 30, autoAlpha: 0, duration: 0.8, stagger: 0.1, ease: "power2.out", clearProps: "y,opacity,visibility" }, 0)
-        .from("video", { scale: 1.05, duration: 1.2, ease: "power2.out", clearProps: "all" }, 0);
+      tl.from(".vid-anim", { y: 30, autoAlpha: 0, duration: 0.8, stagger: 0.1, ease: "power2.out", clearProps: "y,opacity,visibility" }, 0);
     });
   }, { scope: containerRef });
 
@@ -35,7 +34,7 @@ export default function VideoModule() {
             The X-Ray of Our Engineering
           </h2>
           <p className="text-xl text-zinc-400 max-w-2xl mx-auto font-light">
-            Never judge a charger by its cover. Let's look at what's inside.
+            Never judge a charger by its cover. Let&apos;s look at what&apos;s inside.
           </p>
         </div>
         <div className="vid-anim relative w-full aspect-video bg-zinc-900 border border-zinc-800 shadow-2xl">

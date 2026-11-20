@@ -36,7 +36,7 @@ export default function Var7Persona() {
   const contentRef = useRef(null);
   const bgRef = useRef(null);
 
-  const { contextSafe } = useGSAP(() => {
+  useGSAP(() => {
     let mm = gsap.matchMedia();
     mm.add("(prefers-reduced-motion: no-preference)", () => {
       const tl = gsap.timeline({
@@ -57,7 +57,7 @@ export default function Var7Persona() {
     });
   }, { scope: containerRef });
 
-  const handleTabClick = contextSafe((id) => {
+  const handleTabClick = (id) => {
     if (id === activePersona) return;
 
     // Crossfade background and text
@@ -73,7 +73,7 @@ export default function Var7Persona() {
         });
       }
     });
-  });
+  };
 
   const activeData = personaData[activePersona];
 

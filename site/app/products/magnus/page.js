@@ -1,12 +1,13 @@
 import ProductDetailLayout from "@/components/ProductDetailLayout";
 import { products } from "@/data/products";
+import { magnusContent, magnusSeo } from "./_components/magnusData";
 
 export const metadata = {
-  title: "Magnus 100–200 kW Fast Charger | Minit Charger",
-  description: "Universal multi-voltage EV and GSE charger. Supports eGSE, electric buses, delivery trucks, and high-voltage fleet EVs.",
+  title: magnusSeo.title,
+  description: magnusSeo.description,
 };
 
 export default function MagnusProductPage() {
   const product = products.find(p => p.id === "magnus");
-  return <ProductDetailLayout product={product} />;
+  return <ProductDetailLayout product={product} content={magnusContent} />;
 }

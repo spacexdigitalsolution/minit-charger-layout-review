@@ -6,11 +6,15 @@ export default function HoverZoomImage({ children, className = "" }) {
   const containerRef = useRef(null);
   const [position, setPosition] = useState({ x: 50, y: 50 });
   const [isHovered, setIsHovered] = useState(false);
-  const [reducedMotion, setReducedMotion] = useState(false);
+  const [reducedMotion, setReducedMotion] = useState(() => {
+    if (typeof window !== "undefined") {
+      return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    }
+    return false;
+  });
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setReducedMotion(mediaQuery.matches);
     const handler = (e) => setReducedMotion(e.matches);
     mediaQuery.addEventListener("change", handler);
     return () => mediaQuery.removeEventListener("change", handler);

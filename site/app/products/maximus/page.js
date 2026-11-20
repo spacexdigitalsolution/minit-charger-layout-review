@@ -1,12 +1,13 @@
 import ProductDetailLayout from "@/components/ProductDetailLayout";
 import { products } from "@/data/products";
+import { maximusContent, maximusSeo } from "./_components/maximusData";
 
 export const metadata = {
-  title: "Maximus 40 kW Dual-Port Industrial Charger | Minit Charger",
-  description: "High-throughput dual-port 40 kW indoor MHE fast charger for high-density warehouse and logistics operations.",
+  title: maximusSeo.title,
+  description: maximusSeo.description,
 };
 
 export default function MaximusProductPage() {
   const product = products.find(p => p.id === "maximus");
-  return <ProductDetailLayout product={product} />;
+  return <ProductDetailLayout product={product} content={maximusContent} />;
 }

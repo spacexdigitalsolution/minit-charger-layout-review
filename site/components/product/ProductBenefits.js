@@ -7,7 +7,7 @@ import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function ProductBenefits({ product }) {
+export default function ProductBenefits({ product, salientFeatures }) {
   const containerRef = useRef(null);
 
   useGSAP(() => {
@@ -24,7 +24,7 @@ export default function ProductBenefits({ product }) {
     });
   }, { scope: containerRef });
 
-  const benefits = [
+  const defaultBenefits = [
     {
       num: "01",
       title: "Engineered for High Uptime",
@@ -47,30 +47,42 @@ export default function ProductBenefits({ product }) {
     }
   ];
 
+  const items = salientFeatures?.features || defaultBenefits;
+
   return (
     <section ref={containerRef} data-section="product-benefits" className="py-32 bg-zinc-950 border-b-2 border-white/10 overflow-hidden relative">
       <div className="mx-auto max-w-[1600px] px-6 md:px-12">
         <div className="bg-header max-w-4xl mb-24">
           <span className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest mb-6 block">
-            Operational Superiority
+            {salientFeatures?.subheading || "Operational Superiority"}
           </span>
           <h2 className="font-display text-4xl md:text-6xl lg:text-7xl font-black text-white uppercase leading-[0.9] tracking-tighter">
-            Engineered Beyond Standard
+            {salientFeatures?.heading || "Engineered Beyond Standard"}
           </h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
-          {benefits.map((b) => (
+          {items.map((b) => (
             <div key={b.num} className="bg-card flex flex-col border-t-4 border-zinc-800 pt-8 group hover:border-white transition-colors duration-500">
               <span className="font-display text-6xl md:text-7xl font-black text-zinc-800 group-hover:text-zinc-600 transition-colors duration-500 leading-none mb-6">
                 {b.num}
               </span>
               <h3 className="font-display text-xl md:text-2xl font-bold text-white uppercase tracking-tight mb-4">
-                {b.title}
+                {b.heading || b.title}
               </h3>
-              <p className="text-sm md:text-base text-zinc-400 font-light leading-relaxed">
-                {b.description}
+              <p className="text-sm md:text-base text-zinc-400 font-light leading-relaxed mb-4">
+                {b.text || b.description}
               </p>
+              {b.checkmarks && b.checkmarks.length > 0 && (
+                <ul className="mt-auto space-y-2 pt-4 border-t border-zinc-900">
+                  {b.checkmarks.map((chk, i) => (
+                    <li key={i} className="text-xs text-zinc-400 flex items-start gap-2">
+                      <span className="text-emerald-500 font-bold shrink-0">✓</span>
+                      <span>{chk}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
           ))}
         </div>

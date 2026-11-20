@@ -44,7 +44,7 @@ export default function PersonaSplit() {
   const contentRef = useRef(null);
   const containerRef = useRef(null);
 
-  const { contextSafe } = useGSAP(() => {
+  useGSAP(() => {
     let mm = gsap.matchMedia();
     mm.add("(prefers-reduced-motion: no-preference)", () => {
       gsap.from(".persona-nav", {
@@ -73,7 +73,7 @@ export default function PersonaSplit() {
     });
   }, { scope: containerRef });
 
-  const handleTabClick = contextSafe((id) => {
+  const handleTabClick = (id) => {
     if (id === activePersona) return;
 
     gsap.to(contentRef.current, {
@@ -90,7 +90,7 @@ export default function PersonaSplit() {
         });
       }
     });
-  });
+  };
 
   const activeData = personaContent[activePersona];
 

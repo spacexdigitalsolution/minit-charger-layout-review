@@ -2,6 +2,7 @@ import ProductHero from "./product/ProductHero";
 import ProductSpecs from "./product/ProductSpecs";
 import ProductBenefits from "./product/ProductBenefits";
 import ProductFeatureSplit from "./product/ProductFeatureSplit";
+import ProductSectionSplit from "./product/ProductSectionSplit";
 import ProductPairing from "./product/ProductPairing";
 import StatModule from "@/components/StatModule";
 import ImageCardGrid from "@/components/ImageCardGrid";
@@ -9,7 +10,7 @@ import FaqSection from "@/components/FaqSection";
 import ConversionBand from "@/components/ConversionBand";
 import { products } from "@/data/products";
 
-export default function ProductDetailLayout({ product }) {
+export default function ProductDetailLayout({ product, content }) {
   if (!product) return null;
 
   const relatedProducts = products
@@ -51,40 +52,107 @@ export default function ProductDetailLayout({ product }) {
 
   return (
     <>
-      <ProductHero product={product} />
+      <ProductHero product={product} banner={content?.banner} />
 
       <div className="relative z-10 bg-white dark:bg-zinc-950">
-        <ProductSpecs product={product} />
-        <ProductBenefits product={product} />
-        <ProductFeatureSplit product={product} />
+        <ProductSpecs product={product} specs={content?.specs} />
+        <ProductBenefits product={product} salientFeatures={content?.salientFeatures} />
 
-        <StatModule
-          title={`Extreme Conditions,\nBuilt-In Protection`}
-          description={`From high-ambient warehouse environments to freezing flightline aprons, ${product.name} delivers dependable charging performance. Next-generation electronics handle thermal stress better, auto-derating safely instead of tripping offline.`}
-          stats={productStats}
-        />
+        {content?.billingData && (
+          <ProductSectionSplit
+            kicker="Billing & Data"
+            heading={content.billingData.heading}
+            subheading={content.billingData.subheading}
+            body={content.billingData.body}
+            checkmarks={content.billingData.checkmarks}
+            image={content.billingData.image || product.cardImage}
+            imageAlt={content.billingData.imageAlt}
+            theme="light"
+            reverse={false}
+            sectionId="billing-data"
+          />
+        )}
 
-        <ProductPairing product={product} />
+        {content?.powerSharing && (
+          <ProductSectionSplit
+            kicker="Power Sharing"
+            heading={content.powerSharing.heading}
+            subheading={content.powerSharing.subheading}
+            body={content.powerSharing.body}
+            checkmarks={content.powerSharing.checkmarks}
+            image={content.powerSharing.image || product.heroImage || product.cardImage}
+            imageAlt={content.powerSharing.imageAlt}
+            theme="dark"
+            reverse={true}
+            sectionId="power-sharing"
+          />
+        )}
+
+        {content?.builtForConditions ? (
+          <StatModule
+            title={content.builtForConditions.heading}
+            description={content.builtForConditions.body}
+            stats={content.builtForConditions.stats}
+            theme="dark"
+          />
+        ) : (
+          <StatModule
+            title={`Extreme Conditions,\nBuilt-In Protection`}
+            description={`From high-ambient warehouse environments to freezing flightline aprons, ${product.name} delivers dependable charging performance. Next-generation electronics handle thermal stress better, auto-derating safely instead of tripping offline.`}
+            stats={productStats}
+          />
+        )}
+
+        {content?.internals ? (
+          <ProductSectionSplit
+            kicker="Engineering Internals"
+            heading={content.internals.heading}
+            subheading={content.internals.subheading}
+            body={content.internals.body}
+            checkmarks={content.internals.checkmarks}
+            image={content.internals.image || product.cardImage}
+            imageAlt={content.internals.imageAlt}
+            theme="light"
+            reverse={false}
+            sectionId="internals"
+          />
+        ) : (
+          <ProductFeatureSplit product={product} />
+        )}
+
+        <ProductPairing product={product} pairing={content?.pairing} />
 
         <ImageCardGrid
-          title="Minit Charger for Every Bottleneck You Run Into"
-          description="The problem does not stop at one fleet. Airports, warehouses, transit, every operation has its own. Explore what solves yours."
+          title={content?.ecosystem?.heading || "Minit Charger for Every Bottleneck You Run Into"}
+          description={content?.ecosystem?.subheading || "The problem does not stop at one fleet. Airports, warehouses, transit, every operation has its own. Explore what solves yours."}
           linkText="View All Products"
           linkHref="/products"
-          items={relatedProducts}
+          items={content?.ecosystem?.items || (content?.ecosystem?.cards ? content.ecosystem.cards.map((c, i) => ({
+            id: `card-${i}`,
+            name: c.title,
+            shortDescription: c.text,
+            cardImage: c.image,
+            productPageUrl: c.link || "/products"
+          })) : relatedProducts)}
         />
 
         <FaqSection
-          title="Some Questions You May Have"
-          description={`Here is generally what fleet managers and facility directors ask before deploying ${product.name}.`}
-          faqs={defaultFaqs}
+          title={content?.faqs?.heading || "Some Questions You May Have"}
+          description={content?.faqs?.subheading || `Here is generally what fleet managers and facility directors ask before deploying ${product.name}.`}
+          faqs={Array.isArray(content?.faqs) ? content.faqs : (content?.faqs?.questions || defaultFaqs)}
         />
 
         <ConversionBand
-          headline={`Space. Power. Damage. Downtime. ${product.name} Solves It All.`}
-          subheadline="Consult with a Minit Charger infrastructure specialist to calculate charge turnaround times and electrical service sizing."
-          primaryCTA={{ label: "Speak to an Expert", href: "/contact" }}
-          secondaryCTA={{ label: "Request a Quote", href: "/contact" }}
+          headline={content?.closingCTA?.headline || (content?.closingCTA?.headlineFragments ? `${content.closingCTA.headlineFragments.join(" ")} ${content.closingCTA.headlineClosing}` : `Space. Power. Damage. Downtime. ${product.name} Solves It All.`)}
+          subheadline={content?.closingCTA?.subheadline || content?.closingCTA?.subline || "Consult with a Minit Charger infrastructure specialist to calculate charge turnaround times and electrical service sizing."}
+          primaryCTA={{
+            label: content?.closingCTA?.primaryCtaText || content?.closingCTA?.buttonText || "Speak to an Expert",
+            href: content?.closingCTA?.primaryCtaHref || content?.closingCTA?.buttonHref || "/contact"
+          }}
+          secondaryCTA={{
+            label: content?.closingCTA?.secondaryCtaText || "Request a Quote",
+            href: content?.closingCTA?.secondaryCtaHref || "/contact"
+          }}
           bgImage={null}
         />
       </div>

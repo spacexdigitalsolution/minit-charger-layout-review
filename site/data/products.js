@@ -273,7 +273,7 @@ export const products = [
     categories: ["ev"],
     industries: ["aviation-gse", "commercial-fleets"],
     heroImage: null,
-    cardImage: "/assets/homepage/Meet MOMENTUs-02.webp",
+    cardImage: null,
     shortDescription: "Reliable passenger EV charging.",
     keyUSP: "Built for today's fleet. Designed for what's next.",
     tagline: "Commercial Level 2 AC Fleet Charger",

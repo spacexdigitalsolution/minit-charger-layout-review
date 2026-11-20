@@ -44,7 +44,7 @@ export default function ProblemFraming() {
               One Fleet, Multiple Voltage Requirements
             </h3>
             <p className="text-zinc-600 dark:text-zinc-400 font-light text-sm ">
-              Low-voltage GSE and high-voltage EVs don't have to run on separate systems, one charger now handles both, so your infrastructure grows with your fleet instead of holding it back.
+              Low-voltage GSE and high-voltage EVs don&apos;t have to run on separate systems, one charger now handles both, so your infrastructure grows with your fleet instead of holding it back.
             </p>
           </div>
 
@@ -53,7 +53,7 @@ export default function ProblemFraming() {
               Outdoor GSE, Harsh Conditions
             </h3>
             <p className="text-zinc-600 dark:text-zinc-400 font-light text-sm ">
-              Apron conditions don't forgive equipment that wasn't built for them. Outdoor-rated, dual-port charging with remote diagnostics keeps ground support fleets moving regardless.
+              Apron conditions don&apos;t forgive equipment that wasn&apos;t built for them. Outdoor-rated, dual-port charging with remote diagnostics keeps ground support fleets moving regardless.
             </p>
           </div>
 
@@ -62,7 +62,7 @@ export default function ProblemFraming() {
               Charger-Related Downtime
             </h3>
             <p className="text-zinc-600 dark:text-zinc-400 font-light text-sm ">
-              Slow or failed charges stall shift plans, and it's rarely clear if the charger or the battery is to blame. Real-time diagnostics pinpoint the cause instantly.
+              Slow or failed charges stall shift plans, and it&apos;s rarely clear if the charger or the battery is to blame. Real-time diagnostics pinpoint the cause instantly.
             </p>
           </div>
 
@@ -80,7 +80,7 @@ export default function ProblemFraming() {
               Different Sites, Different Charging Systems
             </h3>
             <p className="text-zinc-600 dark:text-zinc-400 font-light text-sm ">
-              3PL and distribution networks often run different fleet charging solutions at every location. You'll need one industrial charging stack, configured once, to bring the same standard to every site.
+              3PL and distribution networks often run different fleet charging solutions at every location. You&apos;ll need one industrial charging stack, configured once, to bring the same standard to every site.
             </p>
           </div>
 
@@ -89,7 +89,7 @@ export default function ProblemFraming() {
               CapEx Without Clear ROI
             </h3>
             <p className="text-zinc-600 dark:text-zinc-400 font-light text-sm ">
-              Procurement teams get pricing pages, not real answers. You'll need a quote scoped to fleet size, duty cycles, and install constraints, so every dollar maps to uptime.
+              Procurement teams get pricing pages, not real answers. You&apos;ll need a quote scoped to fleet size, duty cycles, and install constraints, so every dollar maps to uptime.
             </p>
           </div>
 

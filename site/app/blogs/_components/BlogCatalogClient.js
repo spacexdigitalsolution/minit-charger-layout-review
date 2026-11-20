@@ -18,7 +18,7 @@ export default function BlogCatalogClient({ blogs }) {
 
   const categories = ["All", ...Array.from(new Set(blogs.map((b) => b.category)))];
 
-  const { contextSafe } = useGSAP(() => {
+  useGSAP(() => {
     let mm = gsap.matchMedia();
     mm.add("(prefers-reduced-motion: no-preference)", () => {
       gsap.from(".blog-header", {
@@ -43,7 +43,7 @@ export default function BlogCatalogClient({ blogs }) {
     });
   }, { scope: containerRef });
 
-  const handleTabClick = contextSafe((cat) => {
+  const handleTabClick = (cat) => {
     if (cat === activeCategory) return;
 
     gsap.to(contentRef.current, {
@@ -65,7 +65,7 @@ export default function BlogCatalogClient({ blogs }) {
         });
       }
     });
-  });
+  };
 
   const filteredBlogs = activeCategory === "All"
     ? blogs

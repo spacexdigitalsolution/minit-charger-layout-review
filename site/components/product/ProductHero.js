@@ -6,7 +6,7 @@ import { useGSAP } from "@gsap/react";
 import Link from "next/link";
 import SmartImage from "@/components/SmartImage";
 
-export default function ProductHero({ product }) {
+export default function ProductHero({ product, banner }) {
   const containerRef = useRef(null);
 
   useGSAP(() => {
@@ -23,7 +23,11 @@ export default function ProductHero({ product }) {
 
   const powerDisplay = product.specs?.powerOutput || "High Output";
   const archDisplay = product.specs?.portConfiguration || "Dual Port";
-  const envDisplay = product.specs?.ingressProtection || "IP54 Rated";
+  const envDisplay = product.specs?.ingressProtection || product.specs?.operatingTemp || "IP54 Rated";
+
+  const bannerHeadline = banner?.headline || product.tagline || product.shortDescription;
+  const bannerBody = banner?.body || product.longDescription || product.keyUSP;
+  const bannerButtons = banner?.buttons;
 
   return (
     <section ref={containerRef} data-section="product-hero" className="relative overflow-hidden w-full min-h-[95vh] flex flex-col justify-between border-b-2 border-white/10 bg-zinc-950">
@@ -58,11 +62,28 @@ export default function ProductHero({ product }) {
             {product.name}
           </h1>
           <h2 className="hero-subtext text-2xl md:text-3xl lg:text-4xl font-display font-bold text-zinc-200 uppercase tracking-tight mb-6">
-            {product.tagline || product.shortDescription}
+            {bannerHeadline}
           </h2>
-          <p className="hero-subtext text-xl md:text-2xl text-zinc-300 font-light max-w-2xl leading-relaxed">
-            {product.longDescription || product.keyUSP}
+          <p className="hero-subtext text-xl md:text-2xl text-zinc-300 font-light max-w-2xl leading-relaxed mb-8">
+            {bannerBody}
           </p>
+          {bannerButtons && bannerButtons.length > 0 && (
+            <div className="hero-subtext flex flex-wrap gap-4 items-center">
+              {bannerButtons.map((btn, idx) => (
+                <Link
+                  key={idx}
+                  href={btn.href}
+                  className={`px-8 py-4 font-bold uppercase tracking-wider text-xs transition-colors rounded ${
+                    btn.primary
+                      ? "bg-white text-zinc-950 hover:bg-zinc-200"
+                      : "border border-white/20 text-white hover:bg-white/10"
+                  }`}
+                >
+                  {btn.label}
+                </Link>
+              ))}
+            </div>
+          )}
         </div>
       </div>
 

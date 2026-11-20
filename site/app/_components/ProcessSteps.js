@@ -57,7 +57,7 @@ export default function ProcessSteps() {
             From First Call to Fully Installed
           </h2>
           <p className="text-xl text-zinc-600 dark:text-zinc-400 font-light ">
-            Charging infrastructure isn't a fixed price, it's an engineering decision. We start by understanding your fleet, not by quoting a number that has nothing to do with how you operate.
+            Charging infrastructure isn&apos;t a fixed price, it&apos;s an engineering decision. We start by understanding your fleet, not by quoting a number that has nothing to do with how you operate.
           </p>
         </div>
 

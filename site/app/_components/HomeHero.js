@@ -20,15 +20,16 @@ export default function HomeHero() {
   const [isUserPaused, setIsUserPaused] = useState(false);
   const [isHoverPaused, setIsHoverPaused] = useState(false);
   const isPaused = isUserPaused || isHoverPaused;
-  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(() => {
+    if (typeof window !== "undefined") {
+      return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    }
+    return false;
+  });
   const [inView, setInView] = useState(true);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setPrefersReducedMotion(mediaQuery.matches);
-    if (mediaQuery.matches) {
-      setIsUserPaused(true);
-    }
     const handler = (e) => {
       setPrefersReducedMotion(e.matches);
       if (e.matches) setIsUserPaused(true);
@@ -49,20 +50,15 @@ export default function HomeHero() {
     };
   }, []);
 
-  const { contextSafe } = useGSAP(() => { }, { scope: containerRef });
-
-  useEffect(() => {
-    const triggerAnim = contextSafe(() => {
-      let mm = gsap.matchMedia();
-      mm.add("(prefers-reduced-motion: no-preference)", () => {
-        gsap.fromTo(".hero-anim",
-          { y: 20, autoAlpha: 0 },
-          { y: 0, autoAlpha: 1, duration: 0.7, stagger: 0.1, ease: "power2.out", delay: 0.2, overwrite: "auto" }
-        );
-      });
+  useGSAP(() => {
+    let mm = gsap.matchMedia();
+    mm.add("(prefers-reduced-motion: no-preference)", () => {
+      gsap.fromTo(".hero-anim",
+        { y: 20, autoAlpha: 0 },
+        { y: 0, autoAlpha: 1, duration: 0.7, stagger: 0.1, ease: "power2.out", delay: 0.2, overwrite: "auto" }
+      );
     });
-    triggerAnim();
-  }, [activeSlide, contextSafe]);
+  }, { scope: containerRef, dependencies: [activeSlide] });
 
   useEffect(() => {
     if (isPaused || !inView) return;
@@ -113,7 +109,7 @@ export default function HomeHero() {
               <video
                 ref={el => videoRefs.current[index] = el}
                 src={slide.src}
-                className={`absolute inset-0 w-full h-full object-cover transition-transform duration-[10000ms] ease-out ${isActive && !prefersReducedMotion ? 'scale-105' : 'scale-100'}`}
+                className={`absolute inset-0 w-full h-full object-cover transition-transform duration-[10000ms] ease-out ${isActive && inView && !prefersReducedMotion ? 'scale-105' : 'scale-100'}`}
                 muted={isMuted}
                 playsInline
                 loop
@@ -124,7 +120,7 @@ export default function HomeHero() {
                 alt="Minit Charger Platform"
                 fill
                 priority={index === 0}
-                className={`object-cover transition-transform duration-[10000ms] ease-out ${isActive && !prefersReducedMotion ? 'scale-105' : 'scale-100'}`}
+                className={`object-cover transition-transform duration-[10000ms] ease-out ${isActive && inView && !prefersReducedMotion ? 'scale-105' : 'scale-100'}`}
               />
             )}
           </div>

@@ -9,11 +9,11 @@ import ProductGallery from "./ProductGallery";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function ProductSpecs({ product }) {
+export default function ProductSpecs({ product, specs }) {
   const containerRef = useRef(null);
   const [activeTab, setActiveTab] = useState(0);
 
-  const specCategories = [
+  const defaultCategories = [
     {
       name: "Output Power",
       specs: [
@@ -49,6 +49,8 @@ export default function ProductSpecs({ product }) {
       ]
     }
   ];
+
+  const categories = specs?.tabs && specs.tabs.length > 0 ? specs.tabs : defaultCategories;
 
   const galleryImages = [
     {
@@ -94,10 +96,10 @@ export default function ProductSpecs({ product }) {
             Engineering Precision
           </span>
           <h2 className="font-display text-4xl md:text-6xl lg:text-7xl font-black text-zinc-900 dark:text-white uppercase leading-[0.9] tracking-tighter mb-6">
-            Technical Specifications
+            {specs?.heading || "Technical Specifications"}
           </h2>
           <p className="text-lg md:text-xl text-zinc-600 dark:text-zinc-400 font-light max-w-2xl">
-            Detailed electrical, mechanical, and environmental parameters for {product.name} fleet deployments.
+            {specs?.subheading || `Detailed electrical, mechanical, and environmental parameters for ${product.name} fleet deployments.`}
           </p>
         </div>
 
@@ -105,7 +107,7 @@ export default function ProductSpecs({ product }) {
           {/* Left Column: Spec Categories & Rows */}
           <div className="specs-anim lg:col-span-7">
             <div className="flex flex-wrap gap-2 mb-8 border-b border-zinc-200 dark:border-zinc-800 pb-4">
-              {specCategories.map((cat, idx) => (
+              {categories.map((cat, idx) => (
                 <button
                   key={cat.name}
                   onClick={() => setActiveTab(idx)}
@@ -121,7 +123,7 @@ export default function ProductSpecs({ product }) {
             </div>
 
             <div className="divide-y divide-zinc-200 dark:divide-zinc-800">
-              {specCategories[activeTab].specs.map((spec) => (
+              {(categories[activeTab] || categories[0])?.specs?.map((spec) => (
                 <div key={spec.label} className="py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                   <dt className="text-xs uppercase font-mono tracking-wider text-zinc-500">
                     {spec.label}
@@ -132,6 +134,12 @@ export default function ProductSpecs({ product }) {
                 </div>
               ))}
             </div>
+
+            {specs?.note && (
+              <p className="mt-4 text-xs italic text-zinc-500 dark:text-zinc-400">
+                {specs.note}
+              </p>
+            )}
 
             <div className="mt-8 pt-6 border-t border-zinc-200 dark:border-zinc-800 flex items-center justify-between">
               <a

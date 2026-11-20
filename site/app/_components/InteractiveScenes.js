@@ -33,7 +33,7 @@ export default function InteractiveScenes() {
   const contentRef = useRef(null);
   const containerRef = useRef(null);
 
-  const { contextSafe } = useGSAP(() => {
+  useGSAP(() => {
     let mm = gsap.matchMedia();
     mm.add("(prefers-reduced-motion: no-preference)", () => {
       gsap.from(".scene-nav", {
@@ -62,10 +62,10 @@ export default function InteractiveScenes() {
     });
   }, { scope: containerRef });
 
-  const handleTabClick = contextSafe((id) => {
+  const handleTabClick = (id) => {
     if (id === activeScene) return;
     setActiveScene(id);
-  });
+  };
 
   return (
     <section ref={containerRef} data-section="interactive-scenes" className="py-24 bg-zinc-50 dark:bg-black border-b border-zinc-200 dark:border-zinc-800 overflow-hidden">

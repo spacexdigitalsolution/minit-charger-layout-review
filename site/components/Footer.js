@@ -32,7 +32,7 @@ export default function Footer() {
               <li><Link href="/about" className="text-sm text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white">About Us</Link></li>
               <li><Link href="/contact" className="text-sm text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white">Contact & Feasibility</Link></li>
               <li><Link href="/blogs" className="text-sm text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white">Knowledge Hub & Insights</Link></li>
-              <li><Link href="/internal/hero-variations" className="text-sm text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white">Hero Variations Review</Link></li>
+              <li><Link href="/internal/hero-variations" prefetch={false} className="text-sm text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white">Hero Variations Review</Link></li>
             </ul>
           </div>
           <div>
