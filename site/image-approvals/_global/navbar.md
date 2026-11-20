@@ -31,11 +31,11 @@ client-approval-date: "2026-11-21"
 - **Required Dimensions / Aspect Ratio**: 400x300 (4:3), sizes: `(max-width: 768px) 100vw, 300px`
 - **Priority / LCP**: `false`
 - **Proposed Alt Text**: "Minit Charger product catalog hardware preview"
-- **Alt Text Sign-off**: `placeholder-kept`
-- **Slot Status**: `placeholder-kept`
-- **Approved Source File**: null
-- **Pixel Dimensions Found**: null
-- **Client Approval**: `placeholder-kept`
-- **Approval Evidence**: "Confirmed keep placeholder by Devansh at 2026-11-21T00:20:46+05:30"
-- **Current Render**: `placeholder`
-- **Provenance Note**: Assigned hoveredProduct.cardImage in commit 45444ea; reset to placeholder; placeholder retained.
+- **Alt Text Sign-off**: `approved`
+- **Slot Status**: `approved`
+- **Approved Source File**: `inherited:hoveredProduct.cardImage`
+- **Pixel Dimensions Found**: Dynamic (inherited from hovered product card)
+- **Client Approval**: `approved`
+- **Approval Evidence**: Inherits approved cardImage and cardImageMode per hovered product
+- **Current Render**: `wired`
+- **Provenance Note**: Assigned hoveredProduct.cardImage; updated to inherit hoveredProduct.cardImageMode dynamically.

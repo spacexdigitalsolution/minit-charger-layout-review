@@ -103,7 +103,7 @@ export default function NavbarMegaMenu({
                         alt={hoveredProduct.name}
                         fill
                         sizes="(max-width: 1200px) 25vw, 320px"
-                        mode="placeholder"
+                        mode={hoveredProduct.cardImageMode || (hoveredProduct.cardImage ? "image" : "placeholder")}
                         className="object-contain p-3 transition-transform duration-300 group-hover:scale-105"
                       />
                     ) : (
