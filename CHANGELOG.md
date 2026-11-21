@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.13] - 2026-11-21
+
+### Fixed
+- Fixed product card layout in `TabbedProductCatalog.js`: eliminated text overlapping on product hardware renders by converting cards from absolute overlay squares into a clean, 5-level vertical flex architecture with a dedicated 4:3 image stage, separate kicker tag, responsive typography, and bottom-pinned action footer.
+
 ## [0.1.12] - 2026-11-21
 
 ### Fixed

@@ -147,39 +147,44 @@ export default function TabbedProductCatalog() {
               <Link
                 key={product.id}
                 href={product.link}
-                className={`catalog-card group relative block aspect-square overflow-hidden rounded-sm bg-zinc-900 w-full`}
+                className="catalog-card group flex flex-col rounded-xl overflow-hidden border border-zinc-800 bg-zinc-900/90 hover:border-zinc-700 hover:shadow-2xl transition-all duration-300 h-full w-full"
               >
-                <SmartImage
-                  src={product.image || null}
-                  alt={product.name}
-                  fill
-                  mode={product.image ? "image" : "placeholder"}
-                  className={`object-contain ${paddingClass} opacity-85 group-hover:opacity-100 transition-opacity duration-300`}
-                />
+                {/* Level 1: Dedicated Non-Overlapping Image Stage */}
+                <div className="relative w-full aspect-[4/3] bg-zinc-950/70 flex items-center justify-center overflow-hidden shrink-0 border-b border-zinc-800/80">
+                  <SmartImage
+                    src={product.image || null}
+                    alt={product.name}
+                    fill
+                    mode={product.image ? "image" : "placeholder"}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 360px"
+                    className={`object-contain ${paddingClass} opacity-90 group-hover:opacity-100 transition-opacity duration-300`}
+                  />
+                </div>
 
-                {/* Gradient Overlay for text legibility */}
-                <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/20 to-transparent opacity-90"></div>
-
-                {/* Text Content overlay */}
-                <div className="absolute inset-0 p-8 pr-16 flex flex-col justify-end pointer-events-none">
+                {/* Level 2-5: Structured Content Area Completely Below Image */}
+                <div className="flex flex-col flex-grow p-5 sm:p-6">
                   {product.kicker && (
-                    <span className="text-[10px] font-bold text-green-500 uppercase  mb-2 pointer-events-auto">
-                      {product.kicker}
-                    </span>
+                    <div className="mb-2.5">
+                      <span className="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-emerald-950/40 text-emerald-400 border border-emerald-800/50">
+                        {product.kicker}
+                      </span>
+                    </div>
                   )}
-                  <h3 className="font-display text-3xl font-bold uppercase  text-white pointer-events-auto">
+
+                  <h3 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-wide text-white">
                     {product.name}
                   </h3>
+
                   {product.description && (
-                    <p className="mt-2 text-sm text-zinc-300 line-clamp-2 group-hover:text-white transition-colors pointer-events-auto">
+                    <p className="mt-2 text-xs sm:text-sm text-zinc-400 line-clamp-2 leading-relaxed">
                       {product.description}
                     </p>
                   )}
-                </div>
 
-                {/* Arrow Icon */}
-                <div className="absolute bottom-8 right-8 w-10 h-10 rounded-full border border-white/30 flex items-center justify-center transition-colors group-hover:bg-white group-hover:border-white shrink-0">
-                  <ArrowRight className="h-4 w-4 text-white group-hover:text-zinc-950 transition-colors" />
+                  <div className="mt-auto pt-4 border-t border-zinc-800/80 flex items-center justify-between text-xs font-bold uppercase tracking-wider text-zinc-300 group-hover:text-emerald-400 transition-colors">
+                    <span>Explore Details</span>
+                    <ArrowRight className="h-4 w-4 text-emerald-500 group-hover:translate-x-1 transition-transform" />
+                  </div>
                 </div>
               </Link>
             );
