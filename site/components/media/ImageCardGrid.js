@@ -16,15 +16,28 @@ gsap.registerPlugin(ScrollTrigger);
 export default function ImageCardGrid({
   title = "One Connected Ecosystem",
   description = "Purpose-built platforms for aviation ground support operations.",
-  linkText = "View All Products",
-  linkHref = "/products",
-  items = [],
+  linkText,
+  linkHref,
+  items,
+  cards,
+  viewAllLink,
+  viewAllText,
   imageMode = "contain",
   theme = "dark",
   cardType = "product"
 }) {
   const containerRef = useRef(null);
   const isLight = theme === "light";
+
+  const resolvedItems = items || cards || [];
+  const resolvedLinkText = linkText || viewAllText || "View All Products";
+  const resolvedLinkHref = linkHref || viewAllLink || "/products";
+  const resolvedCardType =
+    cardType !== "product"
+      ? cardType
+      : cards || resolvedLinkHref === "/blogs" || resolvedLinkText.toLowerCase().includes("article")
+      ? "blog"
+      : "product";
 
   useGSAP(() => {
     let mm = gsap.matchMedia();
@@ -44,9 +57,9 @@ export default function ImageCardGrid({
   // Dynamically determine grid columns and max-width based on number of items
   // This prevents 1 or 2 items from stretching across the entire 4-column span
   let gridColsClass = "md:grid-cols-2 lg:grid-cols-4";
-  if (items.length === 1) gridColsClass = "md:grid-cols-1 max-w-sm";
-  else if (items.length === 2) gridColsClass = "md:grid-cols-2 max-w-3xl";
-  else if (items.length === 3) gridColsClass = "md:grid-cols-3 max-w-5xl";
+  if (resolvedItems.length === 1) gridColsClass = "md:grid-cols-1 max-w-sm mx-auto";
+  else if (resolvedItems.length === 2) gridColsClass = "md:grid-cols-2 max-w-3xl mx-auto";
+  else if (resolvedItems.length === 3) gridColsClass = "md:grid-cols-3 max-w-5xl mx-auto";
 
   return (
     <section ref={containerRef} className={`py-24 overflow-hidden ${isLight ? "bg-white text-zinc-900" : "bg-zinc-950 text-white"}`}>
@@ -61,22 +74,22 @@ export default function ImageCardGrid({
               {description}
             </p>
           </div>
-          {linkText && linkHref && (
-            <Link href={linkHref} className={`mt-6 md:mt-0 inline-flex items-center font-bold border-b pb-1 transition-colors uppercase r text-sm group ${isLight ? "text-zinc-900 border-zinc-900 hover:text-zinc-600 hover:border-zinc-600" : "text-white border-white hover:text-zinc-300 hover:border-zinc-300"}`}>
-              {linkText} <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+          {resolvedLinkText && resolvedLinkHref && (
+            <Link href={resolvedLinkHref} className={`mt-6 md:mt-0 inline-flex items-center font-bold border-b pb-1 transition-colors uppercase r text-sm group ${isLight ? "text-zinc-900 border-zinc-900 hover:text-zinc-600 hover:border-zinc-600" : "text-white border-white hover:text-zinc-300 hover:border-zinc-300"}`}>
+              {resolvedLinkText} <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Link>
           )}
         </div>
 
         <div className={`grid grid-cols-1 ${gridColsClass} gap-4`}>
-          {items.map((product) => {
+          {resolvedItems.map((product) => {
             const paddingClass = product.imagePadding || "p-3 sm:p-4";
 
-            if (cardType === "blog") {
+            if (resolvedCardType === "blog") {
               return <BlogCard key={product.id} item={product} imageMode={imageMode} isLight={isLight} paddingClass={paddingClass} />;
-            } else if (cardType === "industry") {
+            } else if (resolvedCardType === "industry") {
               return <IndustryCard key={product.id} item={product} imageMode={imageMode} isLight={isLight} paddingClass={paddingClass} />;
-            } else if (cardType === "catalog") {
+            } else if (resolvedCardType === "catalog") {
               return <ProductCatalogCard key={product.id} item={product} isLight={isLight} paddingClass={paddingClass} />;
             } else {
               return <ProductCard key={product.id} item={product} isLight={isLight} paddingClass={paddingClass} />;

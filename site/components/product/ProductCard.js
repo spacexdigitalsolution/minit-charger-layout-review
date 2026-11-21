@@ -54,22 +54,34 @@ export default function ProductCard({
         {hasTags && (
           <div className="flex flex-wrap items-center gap-1.5 mb-2.5">
             {(item.kicker || item.categoryTag || item.tag) && (
-              <span className="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-emerald-50 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800/50">
+              <span
+                className={`inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider ${
+                  isLight
+                    ? "bg-emerald-50 text-emerald-700 border border-emerald-200"
+                    : "bg-emerald-950/40 text-emerald-400 border border-emerald-800/50"
+                }`}
+              >
                 {item.kicker || item.categoryTag || item.tag}
               </span>
             )}
 
             {item.secondaryTag && (
-              <span className="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium tracking-wide bg-zinc-100 text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400 border border-zinc-200 dark:border-zinc-700">
+              <span
+                className={`inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium tracking-wide ${
+                  isLight
+                    ? "bg-zinc-100 text-zinc-600 border border-zinc-200"
+                    : "bg-zinc-800 text-zinc-400 border border-zinc-700"
+                }`}
+              >
                 {item.secondaryTag}
               </span>
             )}
           </div>
         )}
 
-        {/* Level 3: Product Heading - Responsive Oswald, max 2 lines, full name completely visible without ellipsis */}
+        {/* Level 3: Product Heading - Consistent font-display Oswald matching website cards */}
         <h3
-          className={`font-oswald text-sm sm:text-base font-bold uppercase tracking-wide leading-snug line-clamp-2 min-h-[2.5rem] sm:min-h-[2.75rem] flex items-center ${
+          className={`font-display text-xl sm:text-2xl font-bold uppercase tracking-wide leading-tight ${
             isLight ? "text-zinc-900" : "text-white"
           }`}
           title={item.name}

@@ -144,3 +144,18 @@ client-approval-date: "2026-11-21"
 - **Approval Evidence**: "placeholder" selected by Devansh at 2026-11-21T00:37:55+05:30
 - **Current Render**: `placeholder`
 - **Provenance Note**: Assigned in commit a37799e; reset to placeholder; placeholder retained.
+
+## Slot: altus-ii.cta.banner
+- **Slot ID**: `altus-ii.cta.banner`
+- **Location**: `site/app/products/altus-ii/page.js:48` (`page.js`, prop `bgImage`)
+- **Required Dimensions / Aspect Ratio**: 1672x941 (16:9)
+- **Priority / LCP**: `false`
+- **Proposed Alt Text**: "Airport ramp operations beneath snowy mountain peaks"
+- **Alt Text Sign-off**: `approved`
+- **Slot Status**: `approved`
+- **Approved Source File**: `site/public/assets/products/altus-ii/cta/airport-ramp-operations-beneath-snowy-peaks.png`
+- **Pixel Dimensions Found**: 1672x941
+- **Client Approval**: `approved`
+- **Approval Evidence**: "APPROVE altus-ii.cta.banner" received from Devansh at 2026-11-21T12:09:50+05:30
+- **Current Render**: `wired`
+- **Provenance Note**: Promoted from site/_untagged-images/assets-src/CTA Banner/Airport Ramp Operations Beneath Snowy Peaks-3.png per client approval.

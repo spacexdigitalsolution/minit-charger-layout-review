@@ -99,3 +99,18 @@ client-approval-date: "2026-11-21"
 - **Approval Evidence**: "placeholder" selected by Devansh at 2026-11-21T00:46:30+05:30
 - **Current Render**: `placeholder`
 - **Provenance Note**: Initial placeholder in commit 5c91b52; placeholder retained.
+
+## Slot: aviation-gse.cta.banner
+- **Slot ID**: `aviation-gse.cta.banner`
+- **Location**: `site/app/industries/aviation-gse/page.js:42` (`page.js`, prop `bgImage`)
+- **Required Dimensions / Aspect Ratio**: 1672x941 (16:9)
+- **Priority / LCP**: `false`
+- **Proposed Alt Text**: "Sunrise airport apron and tarmac in mountain backdrop"
+- **Alt Text Sign-off**: `approved`
+- **Slot Status**: `approved`
+- **Approved Source File**: `site/public/assets/industries/aviation-gse/cta/sunrise-airport-apron-in-the-mountains.png`
+- **Pixel Dimensions Found**: 1672x941
+- **Client Approval**: `approved`
+- **Approval Evidence**: "APPROVE aviation-gse.cta.banner" received from Devansh at 2026-11-21T12:09:50+05:30
+- **Current Render**: `wired`
+- **Provenance Note**: Promoted from site/_untagged-images/assets-src/CTA Banner/Sunrise Airport Apron in the Mountains-1.png per client approval.

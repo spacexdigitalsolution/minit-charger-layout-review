@@ -6,7 +6,7 @@ import GatePowerManager from "./_components/features/GatePowerManager";
 import StatModule from "@/components/ui/StatModule";
 import VideoModule from "./_components/overview/VideoModule";
 import PairAltusII from "./_components/features/PairAltusII";
-import ImageCardGrid from "@/components/media/ImageCardGrid";
+import RelatedProductsSection from "@/components/product/RelatedProductsSection";
 import FaqSection from "@/components/ui/FaqSection";
 import ConversionBand from "@/components/ui/ConversionBand";
 import { altusFaqs, relatedProducts, altusStats } from "./_components/overview/altusData";
@@ -33,7 +33,7 @@ export default function AltusIIProductPage() {
         />
         <VideoModule />
         <PairAltusII />
-        <ImageCardGrid
+        <RelatedProductsSection
           title="Minit Charger for Every Bottleneck You Run Into"
           description="The problem doesn't stop at one fleet. Airports, warehouses, transit, every operation has its own. Explore what solves yours."
           linkText="View All Products"
@@ -49,7 +49,7 @@ export default function AltusIIProductPage() {
           headline="Space. Power. Damage. Downtime. Altus II Solves It All."
           primaryCTA={{ label: "Speak to an Expert", href: "/contact" }}
           secondaryCTA={{ label: "Request a Quote", href: "/contact" }}
-          bgImage={null}
+          bgImage="/assets/products/altus-ii/cta/airport-ramp-operations-beneath-snowy-peaks.png"
         />
       </div>
     </>

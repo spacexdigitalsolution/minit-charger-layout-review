@@ -55,6 +55,21 @@ client-approval-date: "2026-11-21"
 - **Current Render**: `wired`
 - **Provenance Note**: Approved by Devansh as gallery image.
 
+## Slot: magnus.cta.banner
+- **Slot ID**: `magnus.cta.banner`
+- **Location**: `site/app/products/magnus/_components/magnusData.js:242` (`magnusData.js`, key `closingCTA.bgImage`)
+- **Required Dimensions / Aspect Ratio**: 1672x941 (16:9)
+- **Priority / LCP**: `false`
+- **Proposed Alt Text**: "Mountain airport tarmac with airliner and ground fleet charging"
+- **Alt Text Sign-off**: `approved`
+- **Slot Status**: `approved`
+- **Approved Source File**: `site/public/assets/products/magnus/cta/mountain-airport-tarmac-with-airliner.png`
+- **Pixel Dimensions Found**: 1672x941
+- **Client Approval**: `approved`
+- **Approval Evidence**: "you can add this in Magnus cta" received from Devansh at 2026-11-21T12:09:50+05:30
+- **Current Render**: `wired`
+- **Provenance Note**: Promoted from site/_untagged-images/assets-src/CTA Banner/Mountain Airport Tarmac with Airliner-2.png per client approval.
+
 ## Slot: magnus.gallery.02
 - **Slot ID**: `magnus.gallery.02`
 - **Location**: `site/data/products.js` (key `gallery[1]`)
@@ -99,3 +114,18 @@ client-approval-date: "2026-11-21"
 - **Approval Evidence**: "APPROVE PAGE products/magnus" received from Devansh at 2026-11-21T00:58:12+05:30
 - **Current Render**: `wired`
 - **Provenance Note**: Approved by Devansh as gallery image.
+
+## Slot: magnus.cta.banner
+- **Slot ID**: `magnus.cta.banner`
+- **Location**: `site/app/products/magnus/_components/magnusData.js:242` (`magnusData.js`, key `closingCTA.bgImage`)
+- **Required Dimensions / Aspect Ratio**: 1672x941 (16:9)
+- **Priority / LCP**: `false`
+- **Proposed Alt Text**: "Mountain airport tarmac with airliner and ground fleet charging"
+- **Alt Text Sign-off**: `approved`
+- **Slot Status**: `approved`
+- **Approved Source File**: `site/public/assets/products/magnus/cta/mountain-airport-tarmac-with-airliner.png`
+- **Pixel Dimensions Found**: 1672x941
+- **Client Approval**: `approved`
+- **Approval Evidence**: "you can add this in Magnus cta" received from Devansh at 2026-11-21T12:09:50+05:30
+- **Current Render**: `wired`
+- **Provenance Note**: Promoted from site/_untagged-images/assets-src/CTA Banner/Mountain Airport Tarmac with Airliner-2.png per client approval.

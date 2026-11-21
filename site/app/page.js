@@ -3,7 +3,7 @@ import ProblemFraming from "./_components/features/ProblemFraming";
 import EnvironmentGrid from "./_components/features/EnvironmentGrid";
 import EngineeredAdvantages from "./_components/features/EngineeredAdvantages";
 import InteractiveScenes from "./_components/features/InteractiveScenes";
-import ImageCardGrid from "@/components/media/ImageCardGrid";
+import HomeBlogGrid from "./_components/features/HomeBlogGrid";
 import ProcessSteps from "./_components/features/ProcessSteps";
 import FaqSection from "@/components/ui/FaqSection";
 import ConversionBand from "@/components/ui/ConversionBand";
@@ -24,12 +24,12 @@ export default function Home() {
       <CumulusSpotlight />
       <ConsolidatedProof />
       <ProcessSteps />
-      <ImageCardGrid
+      <HomeBlogGrid
         title="Knowledge Hub & Field Updates"
         description="Insights from active airport ramps, high-throughput distribution centers, and fleet charging deployments."
-        cards={featuredBlogs}
-        viewAllLink="/blogs"
-        viewAllText="View All Articles"
+        blogs={featuredBlogs}
+        linkHref="/blogs"
+        linkText="View All Articles"
       />
       <FaqSection
         title="Frequently Answered Questions"
@@ -41,6 +41,7 @@ export default function Home() {
         description="Review fleet duty cycles, charger placement, and power requirements with our engineering team."
         buttonText="Request Consultation"
         buttonLink="/contact"
+        bgImage="/assets/home/cta/golden-hour-airport-overlook.png"
       />
     </div>
   );

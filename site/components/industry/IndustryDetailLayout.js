@@ -3,7 +3,7 @@ import IndustryChallenges from "./IndustryChallenges";
 import IndustryComparison from "./IndustryComparison";
 import StatModule from "@/components/ui/StatModule";
 import CumulusSpotlight from "@/components/ui/CumulusSpotlight";
-import ImageCardGrid from "@/components/media/ImageCardGrid";
+import IndustryHardwareSection from "./IndustryHardwareSection";
 import FaqSection from "@/components/ui/FaqSection";
 import ConversionBand from "@/components/ui/ConversionBand";
 import { products } from "@/data/products";
@@ -55,12 +55,12 @@ export default function IndustryDetailLayout({ industry }) {
         />
 
         {recommendedProducts.length > 0 && (
-          <ImageCardGrid
+          <IndustryHardwareSection
             title={`Recommended Hardware for ${industry.label}`}
             description={`Chargers and telemetry systems engineered specifically for the operational run-cycles of ${industry.label}.`}
             linkText="View Complete Hardware Lineup"
             linkHref="/products"
-            items={recommendedProducts}
+            products={recommendedProducts}
           />
         )}
 

@@ -144,3 +144,18 @@ client-approval-date: "2026-11-21"
 - **Approval Evidence**: "also check for client testimonial" confirmed by Devansh
 - **Current Render**: `wired`
 - **Provenance Note**: Assigned in commit 5ec399b; wired per client approval.
+
+## Slot: home.cta.banner
+- **Slot ID**: `home.cta.banner`
+- **Location**: `site/app/page.js:41` (`page.js`, prop `bgImage`)
+- **Required Dimensions / Aspect Ratio**: 1832x858 (2.13:1)
+- **Priority / LCP**: `false`
+- **Proposed Alt Text**: "Golden hour airport overlook with active flightline and charging infrastructure"
+- **Alt Text Sign-off**: `approved`
+- **Slot Status**: `approved`
+- **Approved Source File**: `site/public/assets/home/cta/golden-hour-airport-overlook.png`
+- **Pixel Dimensions Found**: 1832x858
+- **Client Approval**: `approved`
+- **Approval Evidence**: "APPROVE home.cta.banner" received from Devansh at 2026-11-21T12:09:50+05:30
+- **Current Render**: `wired`
+- **Provenance Note**: Promoted from site/_untagged-images/assets-src/CTA Banner/Golden Hour Airport Overlook.png per client approval.

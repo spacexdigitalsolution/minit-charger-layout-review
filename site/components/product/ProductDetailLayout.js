@@ -5,7 +5,7 @@ import ProductFeatureSplit from "./ProductFeatureSplit";
 import ProductSectionSplit from "./ProductSectionSplit";
 import ProductPairing from "./ProductPairing";
 import StatModule from "@/components/ui/StatModule";
-import ImageCardGrid from "@/components/media/ImageCardGrid";
+import RelatedProductsSection from "./RelatedProductsSection";
 import FaqSection from "@/components/ui/FaqSection";
 import ConversionBand from "@/components/ui/ConversionBand";
 import { products } from "@/data/products";
@@ -127,18 +127,31 @@ export default function ProductDetailLayout({ product, content }) {
 
         <ProductPairing product={product} pairing={content?.pairing} />
 
-        <ImageCardGrid
-          title={content?.ecosystem?.heading || "Minit Charger for Every Bottleneck You Run Into"}
+        <RelatedProductsSection
+          title={content?.ecosystem?.heading || "Meet the Rest of the Family"}
           description={content?.ecosystem?.subheading || "The problem does not stop at one fleet. Airports, warehouses, transit, every operation has its own. Explore what solves yours."}
           linkText="View All Products"
           linkHref="/products"
-          items={content?.ecosystem?.items || (content?.ecosystem?.cards ? content.ecosystem.cards.map((c, i) => ({
-            id: `card-${i}`,
-            name: c.title,
-            shortDescription: c.text,
-            cardImage: c.image,
-            productPageUrl: c.link || "/products"
-          })) : relatedProducts)}
+          items={content?.ecosystem?.items || (content?.ecosystem?.cards ? content.ecosystem.cards.map((c, i) => {
+            const slug = c.link?.replace("/products/", "") || "";
+            const matchedProduct = products.find(p => p.id === slug || p.productPageUrl === c.link);
+            const titleMatch = c.title?.match(/^([^(]+)(?:\s*\((.*)\))?$/);
+            const cleanTitle = titleMatch ? titleMatch[1].trim() : c.title;
+            const subtitleTag = titleMatch && titleMatch[2] ? titleMatch[2].trim() : null;
+
+            return {
+              id: matchedProduct?.id || `card-${i}`,
+              name: matchedProduct?.name || cleanTitle,
+              kicker: matchedProduct?.categoryTag || subtitleTag,
+              categoryTag: matchedProduct?.categoryTag || subtitleTag,
+              shortDescription: c.text || matchedProduct?.shortDescription || matchedProduct?.keyUSP,
+              description: c.text || matchedProduct?.shortDescription || matchedProduct?.keyUSP,
+              cardImage: c.image || matchedProduct?.cardImage,
+              cardImageMode: matchedProduct?.cardImageMode || (c.image || matchedProduct?.cardImage ? "image" : "placeholder"),
+              link: c.link || matchedProduct?.productPageUrl || "/products",
+              productPageUrl: c.link || matchedProduct?.productPageUrl || "/products"
+            };
+          }) : relatedProducts)}
         />
 
         <FaqSection
@@ -158,7 +171,7 @@ export default function ProductDetailLayout({ product, content }) {
             label: content?.closingCTA?.secondaryCtaText || "Request a Quote",
             href: content?.closingCTA?.secondaryCtaHref || "/contact"
           }}
-          bgImage={null}
+          bgImage={content?.closingCTA?.bgImage || null}
         />
       </div>
     </>

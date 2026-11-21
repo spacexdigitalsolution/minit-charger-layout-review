@@ -238,6 +238,7 @@ export const magnusContent = {
     headlineClosing: "One charger runs them all.",
     subline: "Tell us your fleet mix and we will size Magnus.",
     buttonText: "Request a Quote",
-    buttonHref: "/contact"
+    buttonHref: "/contact",
+    bgImage: "/assets/products/magnus/cta/mountain-airport-tarmac-with-airliner.png"
   }
 };

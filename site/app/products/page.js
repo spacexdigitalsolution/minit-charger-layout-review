@@ -1,4 +1,4 @@
-import ImageCardGrid from "@/components/media/ImageCardGrid";
+import ProductCategorySection from "./_components/ProductCategorySection";
 import { products } from "@/data/products";
 import { productCategories } from "@/data/categories";
 
@@ -58,15 +58,9 @@ export default function ProductsPage() {
 
         return (
           <div key={category.id} id={`cat-${category.id}`} className="border-t border-zinc-200 first:border-0 scroll-mt-36">
-            <ImageCardGrid
-              title={category.name}
-              description=""
-              linkText=""
-              linkHref=""
+            <ProductCategorySection
+              category={category}
               items={categoryProducts}
-              imageMode="contain"
-              theme="light"
-              cardType="catalog"
             />
           </div>
         );

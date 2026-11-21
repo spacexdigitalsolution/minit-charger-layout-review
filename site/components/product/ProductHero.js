@@ -32,8 +32,8 @@ export default function ProductHero({ product, banner }) {
 
   return (
     <section ref={containerRef} data-section="product-hero" className="relative w-full flex flex-col border-b-2 border-white/10 bg-zinc-950">
-      {/* Cinematic Banner Visual Stage (Increased height so banner hardware is fully visible) */}
-      <div className="relative overflow-hidden w-full min-h-[90vh] md:min-h-[96vh] lg:min-h-[100vh] min-h-[640px] md:min-h-[820px] lg:min-h-[940px] flex flex-col justify-between">
+      {/* Cinematic Banner Visual Stage (Capped at 97vh) */}
+      <div className="relative overflow-hidden w-full h-[97vh] max-h-[97vh] flex flex-col justify-between">
         {/* Background Image Layer */}
         <div className="absolute inset-0 w-full h-full z-0 overflow-hidden">
           <div className="hero-bg-scale absolute inset-0 w-full h-full">
@@ -44,7 +44,7 @@ export default function ProductHero({ product, banner }) {
               priority
               mode={banner?.imageMode || product.heroImageMode || "placeholder"}
               description={`${product.name} Cinematic Background`}
-              className="object-cover object-center opacity-90"
+              className="object-cover object-top opacity-95"
             />
           </div>
         </div>
@@ -53,30 +53,30 @@ export default function ProductHero({ product, banner }) {
         <div className="absolute inset-0 bg-gradient-to-r from-zinc-950/90 via-zinc-950/45 to-transparent z-10" />
 
         {/* Top Nav Spacer */}
-        <div className="pt-28 md:pt-36" />
+        <div className="pt-16 sm:pt-18 md:pt-20 shrink-0" />
 
         {/* Main Content Area: Left-aligned with constrained width so it never covers the product */}
-        <div className="relative z-20 flex-grow flex flex-col justify-center px-6 md:px-12 w-full max-w-[1600px] mx-auto py-10 md:py-16">
+        <div className="relative z-20 flex-grow flex flex-col justify-center px-6 md:px-12 w-full max-w-[1600px] mx-auto py-2 sm:py-3 md:py-4">
           <div className="max-w-xl">
-            <span className="hero-subtext text-xs tracking-widest uppercase font-bold text-emerald-400 mb-4 block">
+            <span className="hero-subtext text-[11px] sm:text-xs tracking-widest uppercase font-bold text-emerald-400 mb-1.5 md:mb-2 block">
               {product.categoryTag || "Industrial Fleet Hardware"}
             </span>
-            <h1 className="hero-title font-display text-5xl md:text-6xl lg:text-7xl font-black text-white uppercase leading-[0.95] tracking-tight mb-4">
+            <h1 className="hero-title font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white uppercase leading-[0.95] tracking-tight mb-1.5 md:mb-2">
               {product.name}
             </h1>
-            <h2 className="hero-subtext text-xl md:text-2xl lg:text-3xl font-display font-bold text-zinc-200 uppercase tracking-tight mb-4">
+            <h2 className="hero-subtext text-base sm:text-lg md:text-xl lg:text-2xl font-display font-bold text-zinc-200 uppercase tracking-tight mb-1.5 md:mb-2">
               {bannerHeadline}
             </h2>
-            <p className="hero-subtext text-base md:text-lg text-zinc-300 font-light max-w-lg leading-relaxed mb-8">
+            <p className="hero-subtext text-xs sm:text-sm md:text-base text-zinc-300 font-light max-w-lg leading-relaxed mb-4">
               {bannerBody}
             </p>
             {bannerButtons && bannerButtons.length > 0 && (
-              <div className="hero-subtext flex flex-wrap gap-4 items-center">
+              <div className="hero-subtext flex flex-wrap gap-3 items-center">
                 {bannerButtons.map((btn, idx) => (
                   <Link
                     key={idx}
                     href={btn.href}
-                    className={`px-8 py-4 font-bold uppercase tracking-wider text-xs transition-colors rounded ${btn.primary
+                    className={`px-6 py-2.5 font-bold uppercase tracking-wider text-xs transition-colors rounded ${btn.primary
                         ? "bg-white text-zinc-950 hover:bg-zinc-200 shadow-lg"
                         : "border border-white/30 text-white hover:bg-white/10 backdrop-blur-sm"
                       }`}

@@ -5,16 +5,13 @@ export default function BlogCard({ item, imageMode = "cover", isLight = false, p
   return (
     <Link href={item.link} className={`rp-card group flex flex-col h-full`}>
       <div className={`relative w-full aspect-[4/3] overflow-hidden rounded-sm mb-6 ${isLight ? "bg-zinc-100" : "bg-zinc-900"}`}>
-        {item.image ? (
-          <SmartImage
-            src={item.image}
-            alt={item.name}
-            fill
-            className={`${imageMode === 'contain' ? `object-contain ${paddingClass}` : 'object-cover'} transition-all duration-500`}
-          />
-        ) : (
-          <div className={`absolute inset-0 ${isLight ? "bg-zinc-200 border-zinc-300" : "bg-zinc-900 border-zinc-800"} border`}></div>
-        )}
+        <SmartImage
+          src={item.image || null}
+          alt={item.name}
+          fill
+          mode={item.image ? (imageMode === 'contain' ? 'contain' : 'image') : 'placeholder'}
+          className={`${imageMode === 'contain' ? `object-contain ${paddingClass}` : 'object-cover'} transition-all duration-500`}
+        />
       </div>
 
       <div className="flex flex-col flex-grow">

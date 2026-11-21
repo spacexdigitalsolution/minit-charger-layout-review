@@ -21,7 +21,7 @@ export default function IndustryHero({ industry }) {
   }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} data-section="industry-hero" className="relative overflow-hidden w-full min-h-[85vh] flex items-center border-b border-zinc-200 dark:border-zinc-800 bg-zinc-950">
+    <section ref={containerRef} data-section="industry-hero" className="relative overflow-hidden w-full h-[97vh] max-h-[97vh] flex flex-col justify-between border-b border-zinc-800 bg-zinc-950">
       {/* Background Image Layer */}
       <div className="absolute inset-0 w-full h-full z-0 overflow-hidden">
         <SmartImage
@@ -31,39 +31,43 @@ export default function IndustryHero({ industry }) {
           priority
           mode="placeholder"
           description={`${industry.label} Cinematic Background`}
-          className="object-cover object-center opacity-70 mix-blend-luminosity"
+          className="object-cover object-top opacity-80 mix-blend-luminosity"
         />
       </div>
 
       {/* Legibility Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-zinc-950/95 via-zinc-950/75 to-transparent z-10" />
+      <div className="absolute inset-0 bg-gradient-to-r from-zinc-950/95 via-zinc-950/70 to-transparent z-10" />
+      <div className="absolute inset-x-0 bottom-0 h-32 md:h-44 bg-gradient-to-t from-zinc-950/80 to-transparent z-10" />
+
+      {/* Top Nav Spacer: Clearance strictly for floating navbar fill */}
+      <div className="pt-20 md:pt-24 shrink-0" />
 
       {/* Content Layer */}
-      <div className="relative z-20 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full pt-28 pb-16">
-        <div className="max-w-3xl mb-16">
-          <p className="hero-subcopy text-emerald-400 font-bold uppercase tracking-wider text-xs mb-4">
+      <div className="relative z-20 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full flex-grow flex flex-col justify-center py-4 md:py-6">
+        <div className="max-w-3xl">
+          <p className="hero-subcopy text-emerald-400 font-bold uppercase tracking-wider text-xs mb-2 md:mb-3">
             {industry.label} Solutions
           </p>
-          <h1 className="hero-headline font-display text-5xl md:text-7xl font-black text-white uppercase leading-[0.95] tracking-tight mb-6">
+          <h1 className="hero-headline font-display text-4xl sm:text-5xl md:text-6xl font-black text-white uppercase leading-[0.95] tracking-tight mb-3 md:mb-4">
             {industry.headline}
           </h1>
-          <div className="hero-subcopy text-lg text-zinc-300 font-light mb-10 max-w-2xl space-y-4">
-            <p className="font-bold text-white text-xl">
+          <div className="hero-subcopy text-base sm:text-lg text-zinc-300 font-light mb-6 md:mb-8 max-w-2xl space-y-2 md:space-y-3">
+            <p className="font-bold text-white text-lg sm:text-xl leading-snug">
               Minit Charger solves {industry.label} bottlenecks BEYOND just &quot;charging&quot;.
             </p>
-            <p className="text-zinc-300 leading-relaxed">
+            <p className="text-xs sm:text-sm md:text-base leading-relaxed text-zinc-300">
               {industry.shortDescription}
             </p>
           </div>
 
-          <div className="hero-buttons flex flex-wrap items-center gap-6">
+          <div className="hero-buttons flex flex-wrap items-center gap-4 sm:gap-6">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center rounded border border-white px-8 py-4 text-sm font-bold text-white hover:bg-white hover:text-zinc-950 transition-colors uppercase tracking-wider backdrop-blur-sm"
+              className="inline-flex items-center justify-center rounded border border-white px-6 sm:px-8 py-3 sm:py-3.5 text-xs sm:text-sm font-bold text-white hover:bg-white hover:text-zinc-950 transition-colors uppercase tracking-wider backdrop-blur-sm"
             >
               Talk to an Expert
             </Link>
-            <span className="text-zinc-400 text-sm italic hidden sm:inline-block">
+            <span className="text-zinc-400 text-xs sm:text-sm italic hidden sm:inline-block">
               Need a fleet feasibility study right away?
             </span>
           </div>

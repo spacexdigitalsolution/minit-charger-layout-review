@@ -44,7 +44,7 @@ export default function AviationGSEPage() {
           subheadline="Adapt the modern ecosystem to maximize uptime, efficiency, and your bottom line"
           primaryCTA={{ label: "Speak to a GSE Expert", href: "/contact" }}
           secondaryCTA={{ label: "Request an Assessment", href: "/contact" }}
-          bgImage={null}
+          bgImage="/assets/industries/aviation-gse/cta/sunrise-airport-apron-in-the-mountains.png"
         />
       </div>
     </>

@@ -1,10 +1,11 @@
 import { blogs } from "@/data/blogs";
 
-export const featuredBlogs = blogs.slice(0, 2).map((blog) => ({
+export const featuredBlogs = blogs.slice(0, 4).map((blog) => ({
   id: blog.id,
   name: blog.title,
   kicker: blog.category,
   image: blog.thumbnailImage,
+  description: blog.excerpt,
   link: `/blogs/${blog.slug}`
 }));
 
