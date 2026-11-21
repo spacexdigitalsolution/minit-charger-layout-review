@@ -136,11 +136,11 @@ client-approval-date: "2026-11-21"
 - **Required Dimensions / Aspect Ratio**: 240x80 (3:1)
 - **Priority / LCP**: `false`
 - **Proposed Alt Text**: "Trusted enterprise fleet client logo"
-- **Alt Text Sign-off**: `placeholder-kept`
-- **Slot Status**: `placeholder-kept`
-- **Approved Source File**: null
-- **Pixel Dimensions Found**: null
-- **Client Approval**: `placeholder-kept`
-- **Approval Evidence**: Skipped / placeholder-kept confirmed by Devansh at 2026-11-21T00:25:41+05:30
-- **Current Render**: `placeholder`
-- **Provenance Note**: Assigned in commit 5ec399b; reset to placeholder; placeholder retained.
+- **Alt Text Sign-off**: `approved`
+- **Slot Status**: `approved`
+- **Approved Source File**: `site/public/assets/home/logos/`
+- **Pixel Dimensions Found**: Multi-logo client strip
+- **Client Approval**: `approved`
+- **Approval Evidence**: "also check for client testimonial" confirmed by Devansh
+- **Current Render**: `wired`
+- **Provenance Note**: Assigned in commit 5ec399b; wired per client approval.

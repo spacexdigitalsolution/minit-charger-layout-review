@@ -10,14 +10,14 @@ import SmartImage from "@/components/SmartImage";
 gsap.registerPlugin(ScrollTrigger);
 
 const logos = [
-  { name: "Air China", src: "/assets/Home Page/Trusted by Industry Leaders Optimized/Air China.webp" },
-  { name: "Americold", src: "/assets/Home Page/Trusted by Industry Leaders Optimized/Americold.webp" },
-  { name: "Boeing", src: "/assets/Home Page/Trusted by Industry Leaders Optimized/Boeing.webp" },
-  { name: "Coca Cola", src: "/assets/Home Page/Trusted by Industry Leaders Optimized/Coco cola.webp" },
-  { name: "General Mills", src: "/assets/Home Page/Trusted by Industry Leaders Optimized/General Mills.webp" },
-  { name: "Nestle", src: "/assets/Home Page/Trusted by Industry Leaders Optimized/Nestle.webp" },
-  { name: "Southwest", src: "/assets/Home Page/Trusted by Industry Leaders Optimized/Southwest.webp" },
-  { name: "United", src: "/assets/Home Page/Trusted by Industry Leaders Optimized/United.webp" }
+  { name: "Air China", src: "/assets/home/logos/air-china-logo.png" },
+  { name: "Americold", src: "/assets/home/logos/americold-logo.png" },
+  { name: "Boeing", src: "/assets/home/logos/boeing-logo.png" },
+  { name: "Coca Cola", src: "/assets/home/logos/coca-cola-logo.png" },
+  { name: "General Mills", src: "/assets/home/logos/general-mills-logo.png" },
+  { name: "Nestle", src: "/assets/home/logos/nestle-logo.png" },
+  { name: "Southwest", src: "/assets/home/logos/southwest-logo.png" },
+  { name: "United", src: "/assets/home/logos/united-logo.png" }
 ];
 
 const testimonials = [
@@ -140,6 +140,7 @@ export default function ConsolidatedProof({
                   src={logo.src}
                   alt={`${logo.name} logo`}
                   fill
+                  mode="image"
                   className="object-contain filter grayscale opacity-40 hover:opacity-100 transition-opacity duration-500 dark:brightness-0 dark:invert dark:opacity-60 dark:hover:opacity-100"
                   sizes="(max-width: 768px) 120px, 160px"
                 />
