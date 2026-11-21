@@ -162,8 +162,8 @@ export const products = [
     categoryTag: "High-Throughput Industrial",
     categories: ["mhe"],
     industries: ["aviation-gse", "warehouse", "commercial-fleets"],
-    heroImage: null,
-    heroImageMode: "placeholder",
+    heroImage: "/assets/products/maximus/hero/mid-morning-warehouse-forklifts-and-maximus-charger.png",
+    heroImageMode: "image",
     cardImage: "/assets/products/maximus/catalog/maximus-dual-port-mhe-hardware-card.webp",
     cardImageMode: "image",
     gallery: [

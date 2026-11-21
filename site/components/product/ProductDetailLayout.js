@@ -114,7 +114,7 @@ export default function ProductDetailLayout({ product, content }) {
             checkmarks={content.internals.checkmarks}
             image={content.internals.image || null}
             imageAlt={content.internals.imageAlt}
-            imageMode="placeholder"
+            imageMode={content.internals.imageMode || "placeholder"}
             theme="light"
             reverse={false}
             sectionId="internals"

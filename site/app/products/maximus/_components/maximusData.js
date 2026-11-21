@@ -135,8 +135,9 @@ export const maximusContent = {
       "Listed to UL 1564 for industrial battery chargers",
       "Over-the-air updates keep charger software current"
     ],
-    image: "/assets/products/maximus/catalog/maximus-dual-port-mhe-hardware-card.webp",
-    imageAlt: "Maximus 40 kW Dual-Port Electronics Enclosure"
+    image: "/assets/products/maximus/internals/wall-mounted-maximus-charger-in-warehouse.png",
+    imageAlt: "Wall-Mounted Maximus 40 kW Dual-Port Charger in Warehouse Facility",
+    imageMode: "image"
   },
   pairing: {
     heading: "Pairs With CellTrac and Cumulus",
