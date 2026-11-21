@@ -18,6 +18,8 @@ export default function ProductSectionSplit({
   image,
   imageAlt,
   imageMode = "placeholder",
+  imageFit = "cover",
+  aspectRatio = "aspect-[4/3]",
   theme = "light",
   reverse = false,
   sectionId
@@ -119,10 +121,10 @@ export default function ProductSectionSplit({
 
           {/* Media Column */}
           <div
-            className={`split-media lg:col-span-6 relative w-full aspect-[4/3] rounded-lg overflow-hidden border shadow-2xl bg-zinc-900 ${
+            className={`split-media lg:col-span-6 relative w-full ${aspectRatio} rounded-lg overflow-hidden border shadow-2xl ${
               isDark
-                ? "border-white/10"
-                : "border-zinc-200 dark:border-zinc-800"
+                ? "bg-zinc-900 border-white/10"
+                : "bg-zinc-100 dark:bg-zinc-900 border-zinc-200 dark:border-zinc-800"
             } ${reverse ? "order-2 lg:order-1" : "order-2"}`}
           >
             <SmartImage
@@ -130,7 +132,11 @@ export default function ProductSectionSplit({
               alt={imageAlt || heading}
               fill
               mode={imageMode}
-              className="object-contain object-center p-4"
+              className={`${
+                imageFit === "contain"
+                  ? "object-contain object-center p-4"
+                  : "object-cover object-center"
+              }`}
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </div>

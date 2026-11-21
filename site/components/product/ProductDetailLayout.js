@@ -115,6 +115,8 @@ export default function ProductDetailLayout({ product, content }) {
             image={content.internals.image || null}
             imageAlt={content.internals.imageAlt}
             imageMode={content.internals.imageMode || "placeholder"}
+            imageFit={content.internals.imageFit || "cover"}
+            aspectRatio={content.internals.aspectRatio || "aspect-[4/3]"}
             theme="light"
             reverse={false}
             sectionId="internals"
