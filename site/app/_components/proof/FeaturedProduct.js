@@ -50,10 +50,10 @@ export default function FeaturedProduct() {
 
           <div className="fp-img lg:order-1 relative w-full aspect-square bg-zinc-200 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 flex items-center justify-center overflow-hidden">
             <SmartImage
-              src="/assets/homepage/Meet MOMENTUs-02.webp"
+              src="/assets/home/featured/meet-momentus.png"
               alt="Minit Charger Momentus Platform"
               fill
-              mode="placeholder"
+              mode="image"
               className="object-cover"
             />
           </div>

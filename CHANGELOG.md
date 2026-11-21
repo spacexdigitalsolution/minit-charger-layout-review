@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.11] - 2026-11-21
+
+### Fixed
+- Fixed Altus II product gallery in `SpecsTable.js`: updated main render to `/assets/products/altus-ii/overview/altus-ii-main-perspective-angle-render.png` and wired 5 multi-angle gallery assets under `/assets/products/altus-ii/gallery/` with `mode: "image"`.
+- Restored full approved homepage sections from git history: wired deterministic assets in `EnvironmentGrid.js`, `InteractiveScenes.js`, `ComparisonSplit.js`, `FeaturedProduct.js`, and `CumulusSpotlight.js`.
+- Enabled live card image rendering in `TabbedProductCatalog.js` via `mode={product.image ? "image" : "placeholder"}`.
+- Updated `home.md` and `altus-ii.md` approval artifacts and registered all 14 assets in `manifest.json`.
+
 ## [0.1.10] - 2026-11-21
 
 ### Changed

@@ -61,14 +61,14 @@ client-approval-date: "2026-11-21"
 - **Required Dimensions / Aspect Ratio**: 200x150 (4:3)
 - **Priority / LCP**: `false`
 - **Proposed Alt Text**: "Altus II gallery thumbnail view"
-- **Alt Text Sign-off**: `placeholder-kept`
-- **Slot Status**: `placeholder-kept`
-- **Approved Source File**: null
-- **Pixel Dimensions Found**: null
-- **Client Approval**: `placeholder-kept`
-- **Approval Evidence**: "leave" selected by Devansh at 2026-11-21T00:37:55+05:30
-- **Current Render**: `placeholder`
-- **Provenance Note**: Initial placeholder in commit 3c6eca5; placeholder retained.
+- **Alt Text Sign-off**: `approved`
+- **Slot Status**: `approved`
+- **Approved Source File**: `site/public/assets/products/altus-ii/gallery/`
+- **Pixel Dimensions Found**: Verified multi-angle gallery set
+- **Client Approval**: `approved`
+- **Approval Evidence**: "yes" confirmed by Devansh for Altus gallery images
+- **Current Render**: `wired`
+- **Provenance Note**: Initial placeholder in commit 3c6eca5; wired per client approval.
 
 ## Slot: altus-ii.features.gate-power
 - **Slot ID**: `altus-ii.features.gate-power`

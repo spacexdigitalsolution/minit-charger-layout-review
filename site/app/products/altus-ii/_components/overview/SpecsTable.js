@@ -50,12 +50,12 @@ const specCategories = [
 ];
 
 const galleryImages = [
-  { src: "/assets/Products/Altus II/Altus II Listing.webp", alt: "Altus II Hardware Render (Angled)", mode: "image" },
-  { src: "/assets/Products/Altus II/ALTUSII_FRONT.webp", alt: "Altus II Hardware Render (Front)", mode: "placeholder" },
-  { src: "/assets/Products/altus-ii/hero/ALTUS II NEW BRACKET CMS.webp", alt: "Altus II Bracket Configuration", mode: "placeholder" },
-  { src: "/assets/Products/altus-ii/detail/ALTUS II NEW BRACKET CMS 3.webp", alt: "Altus II Dual Port Detail", mode: "placeholder" },
-  { src: "/assets/Products/altus-ii/context/ALTUS_II_GSE_BACKGROUND.webp", alt: "Altus II GSE Tarmac Integration", mode: "placeholder" },
-  { src: "/assets/Products/Altus II/Features/Turnaround Banner.webp", alt: "Altus II Rapid Turnaround Deployment", mode: "placeholder" }
+  { src: "/assets/products/altus-ii/overview/altus-ii-main-perspective-angle-render.png", alt: "Altus II Hardware Render (Angled)", mode: "image" },
+  { src: "/assets/products/altus-ii/gallery/altus-ii-front-hardware-render.png", alt: "Altus II Hardware Render (Front)", mode: "image" },
+  { src: "/assets/products/altus-ii/gallery/altus-ii-bracket-configuration.png", alt: "Altus II Bracket Configuration", mode: "image" },
+  { src: "/assets/products/altus-ii/gallery/altus-ii-dual-port-detail.png", alt: "Altus II Dual Port Detail", mode: "image" },
+  { src: "/assets/products/altus-ii/gallery/altus-ii-gse-tarmac-integration.png", alt: "Altus II GSE Tarmac Integration", mode: "image" },
+  { src: "/assets/products/altus-ii/gallery/altus-ii-rapid-turnaround-deployment.png", alt: "Altus II Rapid Turnaround Deployment", mode: "image" }
 ];
 
 export default function SpecsTable() {

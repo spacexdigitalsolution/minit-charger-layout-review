@@ -153,7 +153,7 @@ export default function TabbedProductCatalog() {
                   src={product.image || null}
                   alt={product.name}
                   fill
-                  mode="placeholder"
+                  mode={product.image ? "image" : "placeholder"}
                   className={`object-contain ${paddingClass} opacity-85 group-hover:opacity-100 transition-opacity duration-300`}
                 />
 

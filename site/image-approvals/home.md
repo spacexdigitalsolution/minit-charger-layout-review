@@ -46,14 +46,14 @@ client-approval-date: "2026-11-21"
 - **Required Dimensions / Aspect Ratio**: 600x450 (4:3), sizes: `(max-width: 768px) 100vw, 400px`
 - **Priority / LCP**: `false`
 - **Proposed Alt Text**: "Minit Charger industrial charging hardware showcase"
-- **Alt Text Sign-off**: `placeholder-kept`
-- **Slot Status**: `placeholder-kept`
-- **Approved Source File**: null
-- **Pixel Dimensions Found**: null
-- **Client Approval**: `placeholder-kept`
-- **Approval Evidence**: Skipped / placeholder-kept confirmed by Devansh at 2026-11-21T00:25:41+05:30
-- **Current Render**: `placeholder`
-- **Provenance Note**: Assigned in commit 0e8544c; reset to placeholder; placeholder retained.
+- **Alt Text Sign-off**: `approved`
+- **Slot Status**: `approved`
+- **Approved Source File**: `dynamic inheritance from products.js cardImage`
+- **Pixel Dimensions Found**: Dynamic (product cardImage renders)
+- **Client Approval**: `approved`
+- **Approval Evidence**: "I am approving full home page" confirmed by Devansh
+- **Current Render**: `wired`
+- **Provenance Note**: Assigned in commit 0e8544c; wired per client approval.
 
 ## Slot: home.features.environments
 - **Slot ID**: `home.features.environments`
@@ -61,14 +61,14 @@ client-approval-date: "2026-11-21"
 - **Required Dimensions / Aspect Ratio**: 800x600 (4:3)
 - **Priority / LCP**: `false`
 - **Proposed Alt Text**: "Industrial charging environments across harsh tarmac and warehouse layouts"
-- **Alt Text Sign-off**: `placeholder-kept`
-- **Slot Status**: `placeholder-kept`
-- **Approved Source File**: null
-- **Pixel Dimensions Found**: null
-- **Client Approval**: `placeholder-kept`
-- **Approval Evidence**: Skipped / placeholder-kept confirmed by Devansh at 2026-11-21T00:25:41+05:30
-- **Current Render**: `placeholder`
-- **Provenance Note**: Assigned in commit dec56c5; reset to placeholder; placeholder retained.
+- **Alt Text Sign-off**: `approved`
+- **Slot Status**: `approved`
+- **Approved Source File**: `site/public/assets/home/environments/engineered-for-warehouses.png`
+- **Pixel Dimensions Found**: 1200x1200
+- **Client Approval**: `approved`
+- **Approval Evidence**: "I am approving full home page" confirmed by Devansh
+- **Current Render**: `wired`
+- **Provenance Note**: Assigned in commit dec56c5; wired per client approval.
 
 ## Slot: home.features.interactive-scenes
 - **Slot ID**: `home.features.interactive-scenes`
@@ -76,14 +76,14 @@ client-approval-date: "2026-11-21"
 - **Required Dimensions / Aspect Ratio**: 1200x800 (3:2)
 - **Priority / LCP**: `false`
 - **Proposed Alt Text**: "Interactive charging scenes across flightline and logistics depot"
-- **Alt Text Sign-off**: `placeholder-kept`
-- **Slot Status**: `placeholder-kept`
-- **Approved Source File**: null
-- **Pixel Dimensions Found**: null
-- **Client Approval**: `placeholder-kept`
-- **Approval Evidence**: Skipped / placeholder-kept confirmed by Devansh at 2026-11-21T00:25:41+05:30
-- **Current Render**: `placeholder`
-- **Provenance Note**: Assigned in commit 5ec399b; reset to placeholder; placeholder retained.
+- **Alt Text Sign-off**: `approved`
+- **Slot Status**: `approved`
+- **Approved Source File**: `site/public/assets/home/scenes/interactive-charging-scenes-warehouse.png`
+- **Pixel Dimensions Found**: 1200x900
+- **Client Approval**: `approved`
+- **Approval Evidence**: "I am approving full home page" confirmed by Devansh
+- **Current Render**: `wired`
+- **Provenance Note**: Assigned in commit 5ec399b; wired per client approval.
 
 ## Slot: home.proof.comparison-indoor
 - **Slot ID**: `home.proof.comparison-indoor`
@@ -91,14 +91,14 @@ client-approval-date: "2026-11-21"
 - **Required Dimensions / Aspect Ratio**: 800x600 (4:3)
 - **Priority / LCP**: `false`
 - **Proposed Alt Text**: "High-throughput indoor warehouse material handling equipment charging"
-- **Alt Text Sign-off**: `placeholder-kept`
-- **Slot Status**: `placeholder-kept`
-- **Approved Source File**: null
-- **Pixel Dimensions Found**: null
-- **Client Approval**: `placeholder-kept`
-- **Approval Evidence**: Skipped / placeholder-kept confirmed by Devansh at 2026-11-21T00:25:41+05:30
-- **Current Render**: `placeholder`
-- **Provenance Note**: Assigned in commit dec56c5; reset to placeholder; placeholder retained.
+- **Alt Text Sign-off**: `approved`
+- **Slot Status**: `approved`
+- **Approved Source File**: `site/public/assets/home/comparison/indoor-material-handling.png`
+- **Pixel Dimensions Found**: 1200x900
+- **Client Approval**: `approved`
+- **Approval Evidence**: "I am approving full home page" confirmed by Devansh
+- **Current Render**: `wired`
+- **Provenance Note**: Assigned in commit dec56c5; wired per client approval.
 
 ## Slot: home.proof.comparison-outdoor
 - **Slot ID**: `home.proof.comparison-outdoor`
@@ -106,14 +106,14 @@ client-approval-date: "2026-11-21"
 - **Required Dimensions / Aspect Ratio**: 800x600 (4:3)
 - **Priority / LCP**: `false`
 - **Proposed Alt Text**: "Rugged outdoor flightline and yard fast charging station"
-- **Alt Text Sign-off**: `placeholder-kept`
-- **Slot Status**: `placeholder-kept`
-- **Approved Source File**: null
-- **Pixel Dimensions Found**: null
-- **Client Approval**: `placeholder-kept`
-- **Approval Evidence**: Skipped / placeholder-kept confirmed by Devansh at 2026-11-21T00:25:41+05:30
-- **Current Render**: `placeholder`
-- **Provenance Note**: Assigned in commit dec56c5; reset to placeholder; placeholder retained.
+- **Alt Text Sign-off**: `approved`
+- **Slot Status**: `approved`
+- **Approved Source File**: `site/public/assets/home/comparison/outdoor-egse-and-yards.png`
+- **Pixel Dimensions Found**: 1200x900
+- **Client Approval**: `approved`
+- **Approval Evidence**: "I am approving full home page" confirmed by Devansh
+- **Current Render**: `wired`
+- **Provenance Note**: Assigned in commit dec56c5; wired per client approval.
 
 ## Slot: home.proof.featured-product
 - **Slot ID**: `home.proof.featured-product`
@@ -121,14 +121,14 @@ client-approval-date: "2026-11-21"
 - **Required Dimensions / Aspect Ratio**: 800x600 (4:3)
 - **Priority / LCP**: `false`
 - **Proposed Alt Text**: "Featured industrial EV fast charger unit"
-- **Alt Text Sign-off**: `placeholder-kept`
-- **Slot Status**: `placeholder-kept`
-- **Approved Source File**: null
-- **Pixel Dimensions Found**: null
-- **Client Approval**: `placeholder-kept`
-- **Approval Evidence**: Skipped / placeholder-kept confirmed by Devansh at 2026-11-21T00:25:41+05:30
-- **Current Render**: `placeholder`
-- **Provenance Note**: Assigned in commit dec56c5; reset to placeholder; placeholder retained.
+- **Alt Text Sign-off**: `approved`
+- **Slot Status**: `approved`
+- **Approved Source File**: `site/public/assets/home/featured/meet-momentus.png`
+- **Pixel Dimensions Found**: 1200x1200
+- **Client Approval**: `approved`
+- **Approval Evidence**: "I am approving full home page" confirmed by Devansh
+- **Current Render**: `wired`
+- **Provenance Note**: Assigned in commit dec56c5; wired per client approval.
 
 ## Slot: home.proof.client-logos
 - **Slot ID**: `home.proof.client-logos`

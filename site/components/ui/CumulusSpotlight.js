@@ -18,7 +18,7 @@ export default function CumulusSpotlight({
     "Deep insights into battery health, temperature, and equalization",
     "Automated energy compliance reports and precise metering"
   ],
-  dashboardImage = "/assets/Products/Cumulus/Cumulus Transparent Software.png",
+  dashboardImage = "/assets/products/cumulus/catalog/cumulus-cloud-software-platform-dashboard-card.png",
   ctaLabel = "Explore Cumulus",
   ctaHref = "/products/cumulus",
   imageSide = "right",

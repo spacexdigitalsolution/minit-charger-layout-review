@@ -38,10 +38,10 @@ export default function ComparisonSplit() {
           <div className="cs-left flex flex-col">
             <div className="relative w-full aspect-[4/3] bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 mb-6 flex items-center justify-center overflow-hidden">
               <SmartImage
-                src="/assets/homepage/Indoor material handling-01.webp"
+                src="/assets/home/comparison/indoor-material-handling.png"
                 alt="Indoor Warehouse Environment"
                 fill
-                mode="placeholder"
+                mode="image"
                 className="object-cover"
               />
             </div>
@@ -56,10 +56,10 @@ export default function ComparisonSplit() {
           <div className="cs-right flex flex-col">
             <div className="relative w-full aspect-[4/3] bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 mb-6 flex items-center justify-center overflow-hidden">
               <SmartImage
-                src="/assets/homepage/Outdoor eGSE & yards-01.webp"
+                src="/assets/home/comparison/outdoor-egse-and-yards.png"
                 alt="Outdoor Ramp Environment"
                 fill
-                mode="placeholder"
+                mode="image"
                 className="object-cover"
               />
             </div>

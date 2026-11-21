@@ -10,10 +10,10 @@ import SmartImage from "@/components/SmartImage";
 gsap.registerPlugin(ScrollTrigger);
 
 const environments = [
-  { name: "Warehouse & Logistics", image: "/assets/homepage/Engineered for Warehouses.webp" },
-  { name: "Airport & GSE", image: "/assets/homepage/Engineered for Airports.webp" },
-  { name: "Industrial & Manufacturing", image: "/assets/homepage/Engineered for Industrial & Commercial.webp" },
-  { name: "Commercial Fleets", image: "/assets/homepage/Engineered for LSEVs.webp" }
+  { name: "Warehouse & Logistics", image: "/assets/home/environments/engineered-for-warehouses.png" },
+  { name: "Airport & GSE", image: "/assets/home/environments/engineered-for-airports.png" },
+  { name: "Industrial & Manufacturing", image: "/assets/home/environments/engineered-for-industrial-and-commercial.png" },
+  { name: "Commercial Fleets", image: "/assets/home/environments/engineered-for-lsevs.png" }
 ];
 
 export default function EnvironmentGrid() {
@@ -51,6 +51,7 @@ export default function EnvironmentGrid() {
                     src={env.image}
                     alt={env.name}
                     fill
+                    mode="image"
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 ) : (

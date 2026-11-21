@@ -16,7 +16,7 @@ const scenes = {
     headline: "Unify Your Material Handling",
     problem: "Forklifts, reach trucks, and pallet jacks running on different chemistries require disparate charging stations, eating up valuable floor space.",
     solution: "A single, multi-port station capable of charging lead-acid and lithium-ion assets simultaneously, freeing up square footage and simplifying operations.",
-    image: "/assets/homepage/Interactive Charging Scenes- warehouse-01.webp"
+    image: "/assets/home/scenes/interactive-charging-scenes-warehouse.png"
   },
   airport: {
     id: "airport",
@@ -24,7 +24,7 @@ const scenes = {
     headline: "Keep the Ramp Moving",
     problem: "Strict SLA windows and constrained electrical capacity make electrifying ground support equipment incredibly challenging.",
     solution: "Weather-resistant, high-throughput charging with dynamic power sharing that charges your GSE faster without blowing past peak demand limits.",
-    image: "/assets/homepage/Interactive Charging Scenes- Airport-02.webp"
+    image: "/assets/home/scenes/interactive-charging-scenes-airport.png"
   }
 };
 
@@ -126,6 +126,7 @@ export default function InteractiveScenes() {
                       src={data.image}
                       alt={data.label}
                       fill
+                      mode="image"
                       className="object-cover"
                     />
                   ) : (
