@@ -216,3 +216,43 @@ export const maximusContent = {
     buttonHref: "/contact"
   }
 };
+
+export const maximusProduct = {
+  id: "maximus",
+  name: "Maximus",
+  categoryTag: "High-Throughput Industrial",
+  categories: ["mhe"],
+  industries: ["aviation-gse", "warehouse", "commercial-fleets"],
+  heroImage: "/assets/products/maximus/hero/mid-morning-warehouse-forklifts-and-maximus-charger.png",
+  heroImageMode: "image",
+  cardImage: "/assets/products/maximus/catalog/maximus-dual-port-mhe-hardware-card.webp",
+  cardImageMode: "image",
+  gallery: [
+    { src: "/assets/products/maximus/catalog/maximus-dual-port-mhe-hardware-card.webp", alt: "Maximus Hardware Listing", mode: "image" }
+  ],
+  shortDescription: "High-throughput dual-port charging.",
+  keyUSP: "Modern SiC power electronics. Compact by design.",
+  tagline: "40 kW Dual-Port Industrial MHE Charger",
+  longDescription: "Featuring dual 20 kW charging ports, Maximus is the premier indoor MHE charging solution for high-throughput distribution centers. It powers two industrial vehicles simultaneously, slashing queue times and maximizing fleet utilization.",
+  specs: {
+    chargingType: "Dual DC Fast / Opportunity",
+    powerOutput: "40 kW Total (Dual 20 kW Ports)",
+    inputVoltage: "208–480 VAC, 3Ø, 50/60 Hz",
+    outputVoltage: "24–100 VDC",
+    portConfiguration: "Dual Independent Ports",
+    maxEfficiency: "94%",
+    operatingTemp: "-10°C to 45°C",
+    ingressProtection: "IP21 Heavy Industrial Enclosure"
+  },
+  features: [
+    "Dual independent 20 kW charging ports powering two forklifts simultaneously",
+    "Charges two fully depleted battery packs in approximately three hours",
+    "Universal AC Input (208 to 480 VAC, 3-Phase) for rapid deployment",
+    "Wall mount or heavy-duty floor pedestal configuration",
+    "Supports lithium-ion, lead-acid, and AGM chemistries seamlessly",
+    "Silicon carbide power modules delivering lower thermal loss and higher efficiency",
+    "Comprehensive diagnostic LCD panel with quick error code reporting",
+    "Direct link to Cumulus for enterprise energy usage reporting"
+  ],
+  productPageUrl: "/products/maximus"
+};

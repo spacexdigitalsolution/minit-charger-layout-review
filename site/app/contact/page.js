@@ -1,4 +1,5 @@
 import DynamicForm from "./_components/DynamicForm";
+import ConversionBand from "@/components/ui/ConversionBand";
 
 export const metadata = {
   title: "Contact Us | Minit Charger",
@@ -71,6 +72,14 @@ export default function ContactPage() {
 
         </div>
 
+      </div>
+
+      <div className="mt-20">
+        <ConversionBand
+          headline="Need Specifications Before Reaching Out?"
+          description="Explore our full lineup of DC fast chargers, battery telematics, and cloud management software."
+          primaryCTA={{ label: "Browse All Products", href: "/products" }}
+        />
       </div>
     </main>
   );

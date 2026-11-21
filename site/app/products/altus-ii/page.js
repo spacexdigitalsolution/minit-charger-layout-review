@@ -9,7 +9,8 @@ import PairAltusII from "./_components/features/PairAltusII";
 import RelatedProductsSection from "@/components/product/RelatedProductsSection";
 import FaqSection from "@/components/ui/FaqSection";
 import ConversionBand from "@/components/ui/ConversionBand";
-import { altusFaqs, relatedProducts, altusStats } from "./_components/overview/altusData";
+import { altusFaqs, altusStats } from "./_components/overview/altusData";
+import { products } from "@/data/products";
 
 export const metadata = {
   title: "Altus II Dual-Port DC Fast Charger | Minit Charger",
@@ -17,6 +18,16 @@ export const metadata = {
 };
 
 export default function AltusIIProductPage() {
+  const relatedProductIds = ["magnus", "momentus", "maximus"];
+  const relatedProducts = products
+    .filter(p => relatedProductIds.includes(p.id))
+    .map(p => ({
+      ...p,
+      kicker: p.categoryTag,
+      image: p.cardImage,
+      link: p.productPageUrl,
+      description: p.keyUSP
+    }));
   return (
     <>
       <HeroSection />

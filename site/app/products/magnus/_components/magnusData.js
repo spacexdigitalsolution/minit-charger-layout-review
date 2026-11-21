@@ -242,3 +242,47 @@ export const magnusContent = {
     bgImage: "/assets/products/magnus/cta/mountain-airport-tarmac-with-airliner.png"
   }
 };
+
+export const magnusProduct = {
+  id: "magnus",
+  name: "Magnus",
+  categoryTag: "Universal Mixed Fleet",
+  categories: ["aviation", "ev"],
+  industries: ["aviation-gse", "warehouse", "commercial-fleets"],
+  heroImage: "/assets/products/magnus/hero/magnus-universal-100-200-kw-fleet-airport-fast-charger-hero.png",
+  heroImageMode: "image",
+  cardImage: "/assets/products/magnus/catalog/magnus-universal-fleet-charger-hardware-card-listing.png",
+  cardImageMode: "image",
+  gallery: [
+    { src: "/assets/products/magnus/catalog/magnus-universal-fleet-charger-hardware-card-listing.png", alt: "Magnus Hardware Listing", mode: "image" },
+    { src: "/assets/products/magnus/gallery/magnus-gallery-perspective-view-01.png", alt: "Magnus Hardware Render (Angle 1)", mode: "image" },
+    { src: "/assets/products/magnus/gallery/magnus-gallery-perspective-view-02.png", alt: "Magnus Hardware Render (Angle 2)", mode: "image" },
+    { src: "/assets/products/magnus/gallery/magnus-gallery-perspective-view-03.png", alt: "Magnus Hardware Render (Front)", mode: "image" },
+    { src: "/assets/products/magnus/gallery/magnus-gallery-perspective-view-04.png", alt: "Magnus Hardware Render (Rear)", mode: "image" }
+  ],
+  shortDescription: "One charger for virtually any fleet.",
+  keyUSP: "One platform can support both traditional GSE and high-voltage EV applications.",
+  tagline: "Universal 100–200 kW Fleet & Airport Fast Charger",
+  longDescription: "Magnus is a future-proof EV charger designed for airports, fleets, and commercial depots. Supporting eGSE, buses, trucks, and commercial EVs, it unifies charging infrastructure, lowers capital expenditure, and ensures long-term scalability across any voltage architecture.",
+  specs: {
+    chargingType: "DC Fast",
+    powerOutput: "100–200 kW",
+    inputVoltage: "323–530 VAC, 3Ø",
+    outputVoltage: "24–1000 VDC",
+    portConfiguration: "Dual Port",
+    maxEfficiency: "95%",
+    operatingTemp: "-30°C to 55°C",
+    ingressProtection: "NEMA 4 / IP65"
+  },
+  features: [
+    "One charging platform for entire depot: eGSE, transit buses, delivery trucks, and EVs",
+    "Wide 24–1000 VDC output to charge low-voltage industrial batteries or 800V EV architectures",
+    "Universal connector compatibility: CCS1, CCS2, NACS, J1772, GB/T, and Euro",
+    "Integrated cable management arm reducing ground clutter and cord wear",
+    "Chemistry agnostic: safely charges lead-acid, lithium-ion, and sodium-ion chemistries",
+    "Certified utility metering with automated tenant billing protocols",
+    "Dynamic power sharing, SoC-based ramp, and off-peak load optimization",
+    "Real-time telemetry and SCADA integration via Cumulus Cloud"
+  ],
+  productPageUrl: "/products/magnus"
+};

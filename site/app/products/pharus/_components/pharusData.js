@@ -194,3 +194,36 @@ export const pharusContent = {
     buttonHref: "/contact"
   }
 };
+
+export const pharusProduct = {
+  id: "pharus",
+  name: "Pharus",
+  categoryTag: "Passenger EV",
+  categories: ["ev"],
+  industries: ["aviation-gse", "commercial-fleets"],
+  heroImage: null,
+  heroImageMode: "placeholder",
+  cardImage: null,
+  cardImageMode: "placeholder",
+  shortDescription: "Commercial Level 2 AC charging.",
+  keyUSP: "Workplace charging without the headaches.",
+  tagline: "Commercial Level 2 AC EV Charger, 9.6–22.1 kW",
+  longDescription: "Pharus delivers 9.6–22.1 kW to employee, fleet and visitor EVs, monitored and managed like the rest of your Minit charging fleet.",
+  specs: {
+    chargingType: "Level 2 AC",
+    powerOutput: "9.6–22.1 kW",
+    inputVoltage: "240 VAC 1Ø / 400 VAC 3Ø",
+    outputVoltage: "AC Output",
+    portConfiguration: "Single / Dual Ports",
+    maxEfficiency: "96%",
+    operatingTemp: "-30°C to 50°C",
+    ingressProtection: "NEMA 4 Outdoor Rated"
+  },
+  features: [
+    "High-power AC charging up to 22.1 kW for overnight and depot dwell cycles",
+    "Single or dual-port pedestals with retractable cord management",
+    "OCPP 1.6J compliant with RFID and smartphone authorization",
+    "NEMA 4 weather-resistant enclosure for long-term outdoor reliability"
+  ],
+  productPageUrl: "/products/pharus"
+};

@@ -1,4 +1,5 @@
 import ProductCategorySection from "./_components/ProductCategorySection";
+import ConversionBand from "@/components/ui/ConversionBand";
 import { products } from "@/data/products";
 import { productCategories } from "@/data/categories";
 
@@ -65,6 +66,12 @@ export default function ProductsPage() {
           </div>
         );
       })}
+
+      <ConversionBand
+        headline="Ready to Electrify Your Fleet Operations?"
+        description="Talk to our team of charging engineers to spec the ideal hardware and cloud architecture for your facility."
+        primaryCTA={{ label: "Speak to an Expert", href: "/contact" }}
+      />
     </main>
   );
 }

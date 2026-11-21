@@ -4,6 +4,7 @@ import HeroAnimation from "./_components/HeroAnimation";
 import PurposeStatement from "./_components/PurposeStatement";
 import ValuesSection from "./_components/ValuesSection";
 import AboutBridges from "./_components/AboutBridges";
+import ConversionBand from "@/components/ui/ConversionBand";
 
 export const metadata = {
   title: 'About Us | Minit Charger',
@@ -36,6 +37,11 @@ export default function AboutPage() {
         title="Chief Executive Officer"
       />
       <AboutBridges />
+      <ConversionBand
+        headline="Join the Future of Industrial Fleet Electrification."
+        description="Connect with our charging specialists to evaluate feasibility, demand management, and infrastructure deployment."
+        primaryCTA={{ label: "Contact Us", href: "/contact" }}
+      />
     </main>
   );
 }

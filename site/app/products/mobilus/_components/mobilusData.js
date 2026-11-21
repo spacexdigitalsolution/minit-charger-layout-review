@@ -222,3 +222,43 @@ export const mobilusContent = {
     buttonHref: "/contact"
   }
 };
+
+export const mobilusProduct = {
+  id: "mobilus",
+  name: "Mobilus",
+  categoryTag: "Mobile Charging",
+  categories: ["aviation"],
+  industries: ["aviation-gse", "warehouse", "commercial-fleets"],
+  heroImage: null,
+  heroImageMode: "placeholder",
+  cardImage: "/assets/products/mobilus/catalog/mobilus-heavy-duty-mobile-bess-trailer-hardware-card.png",
+  cardImageMode: "image",
+  gallery: [
+    { src: "/assets/products/mobilus/catalog/mobilus-heavy-duty-mobile-bess-trailer-hardware-card.png", alt: "Mobilus Hardware Listing", mode: "image" }
+  ],
+  shortDescription: "Charge anywhere power is needed.",
+  keyUSP: "Use existing infrastructure more intelligently.",
+  tagline: "Mobile BESS Fast Charger & Clean Generator in One",
+  longDescription: "Mobilus combines high-power DC fast charging with an onboard Battery Energy Storage System (BESS) and AC generator capabilities. Built for flightline aprons, remote staging areas, and temporary depot surges where grid connections are constrained.",
+  specs: {
+    chargingType: "Mobile DC Fast & BESS",
+    powerOutput: "Up to 180 kW Total (Dual 90 kW DC)",
+    inputVoltage: "208–480 VAC, 3Ø (Fast Recharge)",
+    outputVoltage: "24–1000 VDC & 400/480 VAC 3Ø",
+    portConfiguration: "Dual DC + AC Outlets (Up to 4 GSE Units)",
+    maxEfficiency: "Up to 95%",
+    operatingTemp: "-20°C to 50°C",
+    ingressProtection: "Weatherproof Heavy-Duty Trailer"
+  },
+  features: [
+    "Charger and clean generator combined for total deployment flexibility",
+    "High-density Battery Energy Storage System (BESS) for grid-independent charging",
+    "Powers up to 4 GSE units simultaneously across DC and AC outlets",
+    "Dual DC fast ports delivering 90 kW each (CCS1 or CCS2 compatible)",
+    "400/480V 3-phase outlets delivering up to 128 amps auxiliary power",
+    "Built-in GPS cellular tracking for live asset location and security geofencing",
+    "OCPP 1.6J+ compliant for seamless network interoperability",
+    "Cloud telemetry tracking energy storage depletion, throughput, and recharge cycles"
+  ],
+  productPageUrl: "/products/mobilus"
+};

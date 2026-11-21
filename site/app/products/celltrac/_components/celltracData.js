@@ -195,3 +195,39 @@ export const celltracContent = {
     buttonHref: "/contact"
   }
 };
+
+export const celltracProduct = {
+  id: "celltrac",
+  name: "CellTrac",
+  categoryTag: "Battery Management & Telematics",
+  categories: ["bms"],
+  industries: ["warehouse", "aviation-gse", "lsv"],
+  heroImage: null,
+  heroImageMode: "placeholder",
+  cardImage: null,
+  cardImageMode: "placeholder",
+  shortDescription: "Battery monitoring and telematics for fleets.",
+  keyUSP: "See battery trouble before it strands you.",
+  tagline: "Battery Monitoring & Telematics System",
+  longDescription: "CellTrac watches battery health on every vehicle, shares each battery's profile with your Minit charger and records fleet data, so failing batteries surface early.",
+  specs: {
+    chargingType: "Telematics & BMS",
+    powerOutput: "Ultra-Low Power Draw (< 1W)",
+    inputVoltage: "12–120 VDC Operating Range",
+    outputVoltage: "Cellular / BLE Telemetry",
+    portConfiguration: "Integrated Shunt & Sensor Loom",
+    maxEfficiency: "Real-Time Sampling",
+    operatingTemp: "-30°C to 65°C",
+    ingressProtection: "IP67 Submersible Enclosure"
+  },
+  features: [
+    "Extends battery service lifespan by up to two years through anomaly alerts",
+    "Universal battery compatibility: flooded lead-acid, gel, AGM, and lithium packs",
+    "Continuous State-of-Charge (SoC), temperature, and low-water alarm logging",
+    "Integrated GPS transceiver for equipment geofencing and real-time locating",
+    "Automated hour-meter capture enabling condition-based preventative maintenance",
+    "Direct cellular bridge to Cumulus Cloud with real-time push notification alarms",
+    "Zero-maintenance solid-state design with IP67 ruggedized sealing"
+  ],
+  productPageUrl: "/products/celltrac"
+};

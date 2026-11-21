@@ -217,3 +217,42 @@ export const cumulusContent = {
     buttonHref: "/contact"
   }
 };
+
+export const cumulusProduct = {
+  id: "cumulus",
+  name: "Cumulus",
+  categoryTag: "Enterprise Software",
+  categories: ["software"],
+  industries: ["aviation-gse", "warehouse", "commercial-fleets"],
+  heroImage: null,
+  heroImageMode: "placeholder",
+  cardImage: "/assets/products/cumulus/catalog/cumulus-cloud-software-platform-dashboard-card.png",
+  cardImageMode: "image",
+  gallery: [
+    { src: "/assets/products/cumulus/catalog/cumulus-cloud-software-platform-dashboard-card.png", alt: "Cumulus Cloud Software Platform Dashboard Card", mode: "image" }
+  ],
+  shortDescription: "Cloud fleet and charger management platform.",
+  keyUSP: "Every charger. Every battery. One screen.",
+  tagline: "Cloud Fleet & Charger Management Platform",
+  longDescription: "Cumulus connects your chargers, batteries and vehicles in one place, showing status, battery health, energy use and alarms across one site or many.",
+  specs: {
+    chargingType: "Cloud Platform (SaaS)",
+    powerOutput: "N/A (Cloud Hosted)",
+    inputVoltage: "REST API / OCPP 1.6J / 2.0.1",
+    outputVoltage: "SOC 2 Type II Certified",
+    portConfiguration: "Enterprise Multi-Tenant",
+    maxEfficiency: "99.9% Cloud Availability",
+    operatingTemp: "Global CDN",
+    ingressProtection: "Encrypted In-Transit & At-Rest"
+  },
+  features: [
+    "Centralized real-time dashboard tracking all chargers, batteries, and vehicles",
+    "Automated tenant & airline power billing calculation with certified audit logs",
+    "Smart load balancing and peak shaving to avoid utility demand surcharges",
+    "Instant push alerts for hardware exceptions, disconnected cables, and low SoC",
+    "Over-the-air (OTA) firmware deployment and remote charger configuration",
+    "Open API and SCADA integration for enterprise ERP and airport management systems",
+    "Predictive analytics forecasting battery replacement timelines and maintenance needs"
+  ],
+  productPageUrl: "/products/cumulus"
+};

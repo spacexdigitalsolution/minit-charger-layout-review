@@ -196,3 +196,40 @@ export const durusContent = {
     buttonHref: "/contact"
   }
 };
+
+export const durusProduct = {
+  id: "durus",
+  name: "Durus",
+  categoryTag: "Small Electric Equipment",
+  categories: ["mhe", "lsv"],
+  industries: ["aviation-gse", "warehouse", "commercial-fleets"],
+  heroImage: null,
+  cardImage: "/assets/products/durus/catalog/durus-small-electric-equipment-charger-hardware-card.png",
+  gallery: [
+    { src: "/assets/products/durus/catalog/durus-small-electric-equipment-charger-hardware-card.png", alt: "Durus Hardware Listing", mode: "image" }
+  ],
+  shortDescription: "Compact onboard charger with built-in battery management.",
+  keyUSP: "Charger, battery manager and tracker onboard.",
+  tagline: "Onboard Charger With Built-In Battery Management",
+  longDescription: "Durus rides on the vehicle itself and combines 2.2–3.3 kW charging with built-in battery management, GPS tracking and cloud connectivity for small electric equipment.",
+  specs: {
+    chargingType: "Onboard AC/DC or Standalone",
+    powerOutput: "2.2–3.3 kW",
+    inputVoltage: "90–264 VAC, 1Ø, 50/60 Hz",
+    outputVoltage: "24–80 VDC",
+    portConfiguration: "Single Port",
+    maxEfficiency: "Up to 94%",
+    operatingTemp: "-25°C to 55°C",
+    ingressProtection: "IP66 Sealed Rugged Enclosure"
+  },
+  features: [
+    "Dual functionality: vehicle onboard mounting or standalone bench/wall unit",
+    "Ultra-compact and lightweight design built with vibration-resistant materials",
+    "Universal 90–264 VAC single-phase input connects to standard wall receptacles",
+    "IP66 sealed enclosure withstands washdowns, dust, and rain",
+    "Engineered for low-speed electric vehicles, golf carts, pallet jacks, and sweepers",
+    "Patented charging curve minimizes water loss in lead-acid and balances lithium cells",
+    "Smart thermal management with automatic derating under extreme heat"
+  ],
+  productPageUrl: "/products/durus"
+};

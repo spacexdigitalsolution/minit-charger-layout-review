@@ -230,3 +230,44 @@ export const momentusContent = {
     buttonHref: "/contact"
   }
 };
+
+export const momentusProduct = {
+  id: "momentus",
+  name: "Momentus",
+  categoryTag: "Industrial / Forklift",
+  categories: ["mhe", "lsv"],
+  industries: ["aviation-gse", "warehouse", "commercial-fleets"],
+  heroImage: "/assets/products/momentus/hero/momentus-20-kw-single-port-opportunity-charger-hero-banner.png",
+  heroImageMode: "image",
+  cardImage: "/assets/products/momentus/catalog/momentus-mhe-logistics-charger-hardware-card.png",
+  cardImageMode: "image",
+  gallery: [
+    { src: "/assets/products/momentus/catalog/momentus-mhe-logistics-charger-hardware-card.png", alt: "Momentus Hardware Listing", mode: "image" },
+    { src: "/assets/products/momentus/gallery/momentus-perspective-profile-angle.png", alt: "Momentus Hardware Render", mode: "image" }
+  ],
+  shortDescription: "Compact opportunity charging.",
+  keyUSP: "More charging capability in less space.",
+  tagline: "20 kW Single-Port Opportunity Charger for MHE & Logistics",
+  longDescription: "The Momentus is a robust and reliable mid-level material handling equipment (MHE) charger designed for intensive warehouse shifts. With a single high-efficiency port and adaptive charge algorithms, it provides rapid turnaround during operator rest breaks.",
+  specs: {
+    chargingType: "DC Fast / Opportunity",
+    powerOutput: "20 kW",
+    inputVoltage: "208–480 VAC, 3Ø, 50/60 Hz",
+    outputVoltage: "24–100 VDC",
+    portConfiguration: "Single Port",
+    maxEfficiency: "94%",
+    operatingTemp: "-10°C to 45°C",
+    ingressProtection: "IP21 Industrial Enclosure"
+  },
+  features: [
+    "Optimized for indoor warehouse opportunity charging at workstations",
+    "Universal AC Input (208 to 480 VAC, 3-Phase) with minimal wiring reconfiguration",
+    "Charges a fully depleted battery pack in approximately three hours",
+    "Chemistry agnostic: charges lithium-ion, lead-acid, and AGM batteries",
+    "Flexible mounting: compact wall mount or freestanding pedestal",
+    "On-screen diagnostic readout for rapid shift troubleshooting",
+    "Patented adaptive charging algorithms extend battery service life",
+    "Seamless integration with CellTrac battery monitors and Cumulus Cloud"
+  ],
+  productPageUrl: "/products/momentus"
+};

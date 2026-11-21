@@ -1,5 +1,39 @@
 // section: altus-data
-import { products as allProducts } from "@/data/products";
+export const altusProduct = {
+  id: "altus-ii",
+  name: "Altus II",
+  categoryTag: "Airport GSE",
+  categories: ["aviation"],
+  industries: ["aviation-gse", "commercial-fleets"],
+  heroImage: null,
+  cardImage: "/assets/products/altus-ii/overview/altus-ii-main-perspective-angle-render.png",
+  gallery: [
+    { src: "/assets/products/altus-ii/overview/altus-ii-main-perspective-angle-render.png", alt: "Altus II Hardware Listing", mode: "image" }
+  ],
+  shortDescription: "Reliable everyday fleet charging.",
+  keyUSP: "More charging capability in less space.",
+  tagline: "High-Throughput Dual-Port Airport GSE Charger",
+  longDescription: "The Altus II is engineered specifically for demanding airport tarmac environments. Featuring dual independent ports, wide 24–1000 VDC output, and an integrated overhead spring-assisted cable management system, it keeps ramp operations safe and on schedule.",
+  specs: {
+    chargingType: "DC Fast",
+    powerOutput: "30–80 kW",
+    inputVoltage: "208–480 VAC, 3Ø",
+    outputVoltage: "24–1000 VDC",
+    portConfiguration: "Dual Port",
+    maxEfficiency: "Up to 95%",
+    operatingTemp: "-25°C to 50°C",
+    ingressProtection: "NEMA 3R / IP54"
+  },
+  features: [
+    "Dual independent charging ports with simultaneous power delivery",
+    "Wide 24–1000 VDC output range charging belt loaders to heavy tugs",
+    "Overhead retractable cable management preventing tarmac drive-overs",
+    "Silicon carbide (SiC) power electronics with thermal auto-derating",
+    "Integrated revenue-grade power metering for airline re-billing",
+    "Cumulus cloud integration for remote monitoring and diagnostics"
+  ],
+  productPageUrl: "/products/altus-ii"
+};
 
 export const altusFaqs = [
   {
@@ -23,17 +57,6 @@ export const altusFaqs = [
     answer: "Yes, deployed at airports worldwide. It's pedestal-mounted for flexible ramp placement, no wall space or structural changes required to install it."
   }
 ];
-
-const relatedProductIds = ["magnus", "momentus", "maximus"];
-export const relatedProducts = allProducts
-  .filter(p => relatedProductIds.includes(p.id))
-  .map(p => ({
-    ...p,
-    kicker: p.categoryTag,
-    image: p.cardImage,
-    link: p.productPageUrl,
-    description: p.keyUSP
-  }));
 
 export const altusStats = [
   { targetValue: 95, unit: "%", label: "Max Efficiency" },
