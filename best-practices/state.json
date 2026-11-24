@@ -8,7 +8,7 @@
   "status": "awaiting_approval",
   "branch": "best-practices/2026-11-24",
   "createdAt": "2026-11-24T21:58:00.000Z",
-  "updatedAt": "2026-11-24T22:12:50.000Z",
+  "updatedAt": "2026-11-24T22:17:55.000Z",
   "detectedStack": {
     "framework": "Next.js 16.3.4 (App Router) + React 19.2.8",
     "styling": "Tailwind CSS v4 (@tailwindcss/postcss ^4)",
@@ -110,8 +110,9 @@
       "reason": "Optimize React 19 component rendering, client/server boundaries, and bundle tree",
       "applyOrder": 1,
       "status": "applied",
-      "commit": "680096e",
-      "appliedAt": "2026-11-24T22:12:43.000Z"
+      "passes": 3,
+      "commits": ["680096e", "96b8bc4", "533b759"],
+      "appliedAt": "2026-11-24T22:17:46.000Z"
     },
     {
       "skill": "nextjs-app-router-patterns",
@@ -184,6 +185,18 @@
       "commit": "680096e",
       "message": "best-practices: apply vercel-react-best-practices@1a2c79d4",
       "timestamp": "2026-11-24T22:12:43.000Z"
+    },
+    {
+      "skill": "vercel-react-best-practices",
+      "commit": "96b8bc4",
+      "message": "best-practices: apply vercel-react-best-practices@1a2c79d4 (pass 2)",
+      "timestamp": "2026-11-24T22:16:13.000Z"
+    },
+    {
+      "skill": "vercel-react-best-practices",
+      "commit": "533b759",
+      "message": "best-practices: apply vercel-react-best-practices@1a2c79d4 (pass 3)",
+      "timestamp": "2026-11-24T22:17:46.000Z"
     }
   ],
   "approvals": [
@@ -210,7 +223,17 @@
     {
       "gate": "4.1",
       "approvedAt": "2026-11-24T22:09:57.000Z",
-      "comment": "APPROVE CHANGES (skill 1)"
+      "comment": "APPROVE CHANGES (Pass 1)"
+    },
+    {
+      "gate": "4.1.2",
+      "approvedAt": "2026-11-24T22:15:02.000Z",
+      "comment": "APPROVE CHANGES (Pass 2)"
+    },
+    {
+      "gate": "4.1.3",
+      "approvedAt": "2026-11-24T22:15:18.000Z",
+      "comment": "APPROVE CHANGES (Pass 3)"
     }
   ]
 }

@@ -19,6 +19,14 @@
       "skillPath": "skills/find-skills/SKILL.md",
       "computedHash": "7bc223e2aafbdbf6e50ea243ba6ef67fe432bb069ab439fea0390795dac0bf7f"
     },
+    "nextjs-app-router-patterns": {
+      "source": "wshobson/agents",
+      "ref": "c96b5f6552dba32e4492307493ee613581430715",
+      "commit": "c96b5f6552dba32e4492307493ee613581430715",
+      "sourceType": "github",
+      "skillPath": "plugins/frontend-mobile-development/skills/nextjs-app-router-patterns/SKILL.md",
+      "computedHash": "39b84480d3a62355fd1199173dc70b97efe1daf6dbfae560cc7b85e127934a98"
+    },
     "nww": {
       "source": "devanshdeveloper/skills-by-devansh",
       "sourceType": "github",

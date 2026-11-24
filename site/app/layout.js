@@ -20,7 +20,11 @@ const oswald = Oswald({
 });
 
 export const metadata = {
-  title: "Minit Charger | Fleet EV Charging Infrastructure",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://minitcharger.com"),
+  title: {
+    default: "Minit Charger | Fleet EV Charging Infrastructure",
+    template: "%s | Minit Charger",
+  },
   description: "One charger for your entire fleet. Eliminating daily operational bottlenecks from airport ramps to warehouse floors.",
   icons: {
     icon: [
