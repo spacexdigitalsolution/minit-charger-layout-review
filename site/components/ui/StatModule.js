@@ -54,7 +54,7 @@ function StatItem({ targetValue, unit = "", label, index, theme = "dark", fontSi
       <div className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest mb-4">{label}</div>
       <div
         ref={valueRef}
-        className={`font-display font-black leading-none tracking-tight ${theme === 'dark' ? 'text-white' : 'text-zinc-950'} ${sizeClass}`}
+        className={`font-display font-black leading-none tracking-tight tabular-nums ${theme === 'dark' ? 'text-white' : 'text-zinc-950'} ${sizeClass}`}
       >
         {displayString}
       </div>

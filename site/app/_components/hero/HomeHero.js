@@ -109,6 +109,7 @@ export default function HomeHero() {
               <video
                 ref={el => videoRefs.current[index] = el}
                 src={slide.src}
+                preload={index === 0 ? "auto" : "none"}
                 className={`absolute inset-0 w-full h-full object-cover transition-transform duration-[10000ms] ease-out ${isActive && inView && !prefersReducedMotion ? 'scale-105' : 'scale-100'}`}
                 muted={isMuted}
                 playsInline
