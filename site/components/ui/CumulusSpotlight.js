@@ -10,14 +10,16 @@ import SmartImage from "@/components/SmartImage";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const DEFAULT_FEATURE_BULLETS = [
+  "Real-time charger status and remote session management",
+  "Deep insights into battery health, temperature, and equalization",
+  "Automated energy compliance reports and precise metering"
+];
+
 export default function CumulusSpotlight({
   headline = "Total Fleet Visibility",
   supportingCopy = "Manage the complete charging operation, not only the charger. Connect your hardware to the Cumulus cloud platform.",
-  featureBullets = [
-    "Real-time charger status and remote session management",
-    "Deep insights into battery health, temperature, and equalization",
-    "Automated energy compliance reports and precise metering"
-  ],
+  featureBullets = DEFAULT_FEATURE_BULLETS,
   dashboardImage = "/assets/products/cumulus/catalog/cumulus-cloud-software-platform-dashboard-card.png",
   ctaLabel = "Explore Cumulus",
   ctaHref = "/products/cumulus",

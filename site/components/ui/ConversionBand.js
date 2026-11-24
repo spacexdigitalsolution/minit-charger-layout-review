@@ -9,6 +9,8 @@ import { ArrowRight } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const DEFAULT_SECONDARY_CTA = { label: "Request a Quote", href: "/contact" };
+
 export default function ConversionBand({
   headline,
   title,
@@ -17,7 +19,7 @@ export default function ConversionBand({
   primaryCTA,
   buttonText,
   buttonLink,
-  secondaryCTA = { label: "Request a Quote", href: "/contact" },
+  secondaryCTA = DEFAULT_SECONDARY_CTA,
   bgImage = null // Optional background image
 }) {
   const containerRef = useRef(null);

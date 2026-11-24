@@ -53,7 +53,7 @@ export default function FaqSection({
                 return (
                   <div key={index} className="faq-anim">
                     <button
-                      onClick={() => setOpenIndex(isOpen ? null : index)}
+                      onClick={() => setOpenIndex(prev => prev === index ? null : index)}
                       className="w-full flex items-center justify-between py-6 text-left focus:outline-none group"
                     >
                       <span className="font-bold text-lg text-zinc-900 dark:text-white group-hover:text-zinc-600 dark:group-hover:text-zinc-300 transition-colors pr-8">
