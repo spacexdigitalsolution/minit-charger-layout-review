@@ -5,7 +5,6 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import SmartImage from "@/components/SmartImage";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -38,27 +37,17 @@ export default function VideoModule() {
           </p>
         </div>
         <div className="vid-anim relative w-full aspect-video bg-zinc-900 border border-zinc-800 shadow-2xl">
-          <SmartImage
-            src="/assets/Home Page/Solutions/Solutions Page banner - 02.webp"
-            alt="Smart Solutions for Every Industry"
-            className="absolute inset-0 object-cover z-10 pointer-events-none"
-            fill
-            mode="placeholder"
-            sizes="100vw"
-          />
-
-
-          {/* <video
+          <video
             className="w-full h-full object-cover"
             autoPlay
             muted
             loop
             playsInline
-            poster="/assets/Products/altus-ii/context/altus_cta_bg.webp"
+            poster="/assets/products/altus-ii/context/altus_cta_bg.webp"
           >
             <source src="/assets/videos/ALTUS_II.mp4" type="video/mp4" />
             Your browser does not support the video tag.
-          </video> */}
+          </video>
         </div>
       </div>
     </section>

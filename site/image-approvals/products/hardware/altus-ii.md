@@ -135,15 +135,15 @@ client-approval-date: "2026-11-21"
 - **Location**: `site/app/products/altus-ii/_components/overview/VideoModule.js:57` (`VideoModule.js`, prop `poster`)
 - **Required Dimensions / Aspect Ratio**: 1920x1080 (16:9)
 - **Priority / LCP**: `false`
-- **Proposed Alt Text**: "Altus II tarmac operation video walkthrough poster"
-- **Alt Text Sign-off**: `placeholder-kept`
-- **Slot Status**: `placeholder-kept`
-- **Approved Source File**: null
-- **Pixel Dimensions Found**: null
-- **Client Approval**: `placeholder-kept`
-- **Approval Evidence**: "placeholder" selected by Devansh at 2026-11-21T00:37:55+05:30
-- **Current Render**: `placeholder`
-- **Provenance Note**: Assigned in commit a37799e; reset to placeholder; placeholder retained.
+- **Proposed Alt Text**: "Altus II engineering x-ray video walkthrough poster"
+- **Alt Text Sign-off**: `approved`
+- **Slot Status**: `approved`
+- **Approved Source File**: `site/public/assets/products/altus-ii/context/altus_cta_bg.webp`
+- **Pixel Dimensions Found**: 1920x1080
+- **Client Approval**: `approved`
+- **Approval Evidence**: "find image from preview commits for each section also" requested by Devansh with screenshot of The X-Ray of Our Engineering at 2026-11-24T23:25:30+05:30
+- **Current Render**: `wired`
+- **Provenance Note**: Restored from commit a672ccf / a37799e with active ALTUS_II.mp4 video asset per client directive.
 
 ## Slot: altus-ii.cta.banner
 - **Slot ID**: `altus-ii.cta.banner`
