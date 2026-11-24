@@ -5,7 +5,6 @@ import PowerUsageBilling from "./_components/features/PowerUsageBilling";
 import GatePowerManager from "./_components/features/GatePowerManager";
 import StatModule from "@/components/ui/StatModule";
 import VideoModule from "./_components/overview/VideoModule";
-import PairAltusII from "./_components/features/PairAltusII";
 import RelatedProductsSection from "@/components/product/RelatedProductsSection";
 import FaqSection from "@/components/ui/FaqSection";
 import ConversionBand from "@/components/ui/ConversionBand";
@@ -61,7 +60,6 @@ export default function AltusIIProductPage() {
           stats={altusStats}
         />
         <VideoModule />
-        <PairAltusII />
         <RelatedProductsSection
           title="Minit Charger for Every Bottleneck You Run Into"
           description="The problem doesn't stop at one fleet. Airports, warehouses, transit, every operation has its own. Explore what solves yours."

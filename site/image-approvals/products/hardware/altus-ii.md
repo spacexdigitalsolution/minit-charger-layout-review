@@ -106,14 +106,14 @@ client-approval-date: "2026-11-21"
 - **Required Dimensions / Aspect Ratio**: 800x600 (4:3)
 - **Priority / LCP**: `false`
 - **Proposed Alt Text**: "Altus II hardware integrated with Cumulus cloud monitoring"
-- **Alt Text Sign-off**: `approved`
-- **Slot Status**: `approved`
+- **Alt Text Sign-off**: `section-removed`
+- **Slot Status**: `section-removed`
 - **Approved Source File**: `site/public/assets/products/altus-ii/features/altus-ii-hardware-integrated-with-cumulus-cloud-monitoring.png`
 - **Pixel Dimensions Found**: 1124x657
-- **Client Approval**: `approved`
-- **Approval Evidence**: Path provided by Devansh at 2026-11-21T00:37:55+05:30
-- **Current Render**: `wired`
-- **Provenance Note**: Initial placeholder in commit fe38942; approved by Devansh.
+- **Client Approval**: `section-removed`
+- **Approval Evidence**: "do not show culums spotlight in altus page" requested by Devansh at 2026-11-25T00:25:47+05:30
+- **Current Render**: `unmounted`
+- **Provenance Note**: Section removed from active Altus II page rendering per client directive.
 
 ## Slot: altus-ii.features.power-billing
 - **Slot ID**: `altus-ii.features.power-billing`
