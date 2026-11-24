@@ -118,17 +118,17 @@ client-approval-date: "2026-11-21"
 ## Slot: altus-ii.features.power-billing
 - **Slot ID**: `altus-ii.features.power-billing`
 - **Location**: `site/app/products/altus-ii/_components/features/PowerUsageBilling.js:90` (`PowerUsageBilling.js`, prop `src`)
-- **Required Dimensions / Aspect Ratio**: 800x600 (4:3)
+- **Required Dimensions / Aspect Ratio**: 1124x657 (16:10)
 - **Priority / LCP**: `false`
 - **Proposed Alt Text**: "Automated revenue-grade airline power billing reports"
-- **Alt Text Sign-off**: `placeholder-kept`
-- **Slot Status**: `placeholder-kept`
-- **Approved Source File**: null
-- **Pixel Dimensions Found**: null
-- **Client Approval**: `placeholder-kept`
-- **Approval Evidence**: "placeholder" selected by Devansh at 2026-11-21T00:37:55+05:30
-- **Current Render**: `placeholder`
-- **Provenance Note**: Initial placeholder in commit fe38942; placeholder retained.
+- **Alt Text Sign-off**: `approved`
+- **Slot Status**: `approved`
+- **Approved Source File**: `site/public/assets/products/altus-ii/features/altus-ii-hardware-integrated-with-cumulus-cloud-monitoring.png`
+- **Pixel Dimensions Found**: 1124x657
+- **Client Approval**: `approved`
+- **Approval Evidence**: "find which image was there in the last commits and apply it" requested by Devansh at 2026-11-24T21:36:59+05:30
+- **Current Render**: `wired`
+- **Provenance Note**: Reconnected to Cumulus Software UI asset (renamed from Cumulus Software-01.png in commit a180d39) per client instruction.
 
 ## Slot: altus-ii.overview.video-poster
 - **Slot ID**: `altus-ii.overview.video-poster`

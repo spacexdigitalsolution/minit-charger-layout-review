@@ -2,7 +2,7 @@
 page: "Aviation & Airport GSE Industry"
 route: "/industries/aviation-gse"
 status: approved
-last-reviewed: "2026-11-21"
+last-reviewed: "2026-11-24"
 reviewer: "Devansh"
 client-approval-status: approved
 client-approval-date: "2026-11-21"
@@ -58,17 +58,17 @@ client-approval-date: "2026-11-21"
 ## Slot: aviation-gse.benefit.vantage
 - **Slot ID**: `aviation-gse.benefit.vantage`
 - **Location**: `site/app/industries/aviation-gse/_components/BenefitModules.js:78` (`BenefitModules.js`, prop `src`)
-- **Required Dimensions / Aspect Ratio**: 800x600 (4:3)
+- **Required Dimensions / Aspect Ratio**: 1254x1254 (1:1 Square)
 - **Priority / LCP**: `false`
 - **Proposed Alt Text**: "The Mobilus vantage mobile charger module"
 - **Alt Text Sign-off**: `approved`
 - **Slot Status**: `approved`
-- **Approved Source File**: `site/public/assets/industries/aviation-gse/benefit/the-mobilus-vantage-mobile-charger-module.png`
-- **Pixel Dimensions Found**: 812x609
+- **Approved Source File**: `C:\code\freelance\minit-charger-layout-review\tasks\24.11.2026\Mobilus-02.png`
+- **Pixel Dimensions Found**: 1254x1254
 - **Client Approval**: `approved`
-- **Approval Evidence**: Provided by Devansh at 2026-11-21T00:46:30+05:30
+- **Approval Evidence**: "APPROVE aviation-gse.benefit.vantage" received from Devansh at 2026-11-24T21:40:58+05:30
 - **Current Render**: `wired`
-- **Provenance Note**: Assigned in commit 5ec399b; reset to placeholder; approved by Devansh.
+- **Provenance Note**: Updated from 812x609 asset to 1254x1254 Mobilus-02.png per client approval; container promoted to aspect-square from v2.
 
 ## Slot: aviation-gse.persona.split
 - **Slot ID**: `aviation-gse.persona.split`

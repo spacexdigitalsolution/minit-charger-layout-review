@@ -88,10 +88,10 @@ export default function PowerUsageBilling() {
           {/* Right Column: Visual Dashboard */}
           <div className="pub-img lg:col-span-6 relative w-full aspect-[16/10] rounded-lg overflow-hidden border border-zinc-200 dark:border-zinc-800 shadow-2xl bg-zinc-900">
             <SmartImage
-              src="/assets/homepage/Cumulus Software-01.webp"
+              src="/assets/products/altus-ii/features/altus-ii-hardware-integrated-with-cumulus-cloud-monitoring.png"
               alt="Power Usage Billing and Metering Dashboard"
               fill
-              mode="placeholder"
+              mode="image"
               className="object-contain object-center"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
