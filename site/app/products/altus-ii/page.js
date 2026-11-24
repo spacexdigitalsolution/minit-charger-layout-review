@@ -12,22 +12,23 @@ import ConversionBand from "@/components/ui/ConversionBand";
 import { altusFaqs, altusStats } from "./_components/overview/altusData";
 import { products } from "@/data/products";
 
+const RELATED_PRODUCT_IDS = ["magnus", "momentus", "maximus"];
+const RELATED_PRODUCTS = products
+  .filter(p => RELATED_PRODUCT_IDS.includes(p.id))
+  .map(p => ({
+    ...p,
+    kicker: p.categoryTag,
+    image: p.cardImage,
+    link: p.productPageUrl,
+    description: p.keyUSP
+  }));
+
 export const metadata = {
   title: "Altus II Dual-Port DC Fast Charger | Minit Charger",
   description: "High-throughput airport GSE charger with dual independent ports, retractable cables, and 480VAC 3-phase efficiency.",
 };
 
 export default function AltusIIProductPage() {
-  const relatedProductIds = ["magnus", "momentus", "maximus"];
-  const relatedProducts = products
-    .filter(p => relatedProductIds.includes(p.id))
-    .map(p => ({
-      ...p,
-      kicker: p.categoryTag,
-      image: p.cardImage,
-      link: p.productPageUrl,
-      description: p.keyUSP
-    }));
   return (
     <>
       <HeroSection />
@@ -49,7 +50,7 @@ export default function AltusIIProductPage() {
           description="The problem doesn't stop at one fleet. Airports, warehouses, transit, every operation has its own. Explore what solves yours."
           linkText="View All Products"
           linkHref="/products"
-          items={relatedProducts}
+          items={RELATED_PRODUCTS}
         />
         <FaqSection
           title="Some Questions You May Have"

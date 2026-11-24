@@ -1,7 +1,7 @@
 // section: blog-catalog
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useMemo } from "react";
 import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -16,7 +16,10 @@ export default function BlogCatalogClient({ blogs }) {
   const contentRef = useRef(null);
   const containerRef = useRef(null);
 
-  const categories = ["All", ...Array.from(new Set(blogs.map((b) => b.category)))];
+  const categories = useMemo(
+    () => ["All", ...Array.from(new Set(blogs.map((b) => b.category)))],
+    [blogs]
+  );
 
   useGSAP(() => {
     let mm = gsap.matchMedia();

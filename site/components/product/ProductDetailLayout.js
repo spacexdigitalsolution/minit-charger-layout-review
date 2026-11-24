@@ -10,6 +10,13 @@ import FaqSection from "@/components/ui/FaqSection";
 import ConversionBand from "@/components/ui/ConversionBand";
 import { products } from "@/data/products";
 
+const DEFAULT_PRODUCT_STATS = [
+  { targetValue: 95, unit: "%", label: "Peak Electrical Efficiency" },
+  { targetValue: 3, unit: " hrs", label: "Typical Full Battery Recovery" },
+  { targetValue: 100, unit: "%", label: "Lead-Acid & Lithium Compatible" },
+  { targetValue: 24, unit: "/7", label: "Continuous Multi-Shift Uptime" },
+];
+
 export default function ProductDetailLayout({ product, content }) {
   if (!product) return null;
 
@@ -24,12 +31,6 @@ export default function ProductDetailLayout({ product, content }) {
       tag: p.categoryTag
     }));
 
-  const productStats = [
-    { targetValue: 95, unit: "%", label: "Peak Electrical Efficiency" },
-    { targetValue: 3, unit: " hrs", label: "Typical Full Battery Recovery" },
-    { targetValue: 100, unit: "%", label: "Lead-Acid & Lithium Compatible" },
-    { targetValue: 24, unit: "/7", label: "Continuous Multi-Shift Uptime" },
-  ];
 
   const defaultFaqs = [
     {
@@ -101,7 +102,7 @@ export default function ProductDetailLayout({ product, content }) {
           <StatModule
             title={`Extreme Conditions,\nBuilt-In Protection`}
             description={`From high-ambient warehouse environments to freezing flightline aprons, ${product.name} delivers dependable charging performance. Next-generation electronics handle thermal stress better, auto-derating safely instead of tripping offline.`}
-            stats={productStats}
+            stats={DEFAULT_PRODUCT_STATS}
           />
         )}
 
