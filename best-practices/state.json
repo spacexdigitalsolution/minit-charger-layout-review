@@ -3,12 +3,12 @@
   "targetWorkspace": "site",
   "mode": "full",
   "focus": null,
-  "currentGate": 4,
+  "currentGate": 5,
   "currentSkillIndex": 7,
-  "status": "awaiting_approval",
+  "status": "completed",
   "branch": "best-practices/2026-11-24",
   "createdAt": "2026-11-24T21:58:00.000Z",
-  "updatedAt": "2026-11-24T22:40:15.000Z",
+  "updatedAt": "2026-11-24T22:45:00.000Z",
   "detectedStack": {
     "framework": "Next.js 16.3.4 (App Router) + React 19.2.8",
     "styling": "Tailwind CSS v4 (@tailwindcss/postcss ^4)",
@@ -172,7 +172,7 @@
       "reason": "Audit client-side data leaks, security headers, and static code guardrails",
       "applyOrder": 6,
       "status": "applied",
-      "commit": "PLACEHOLDER",
+      "commit": "d316b5d",
       "appliedAt": "2026-11-24T22:40:15.000Z"
     },
     {
@@ -240,9 +240,15 @@
     },
     {
       "skill": "security-best-practices",
-      "commit": "PLACEHOLDER",
+      "commit": "d316b5d",
       "message": "best-practices: apply security-best-practices@49f948fa",
       "timestamp": "2026-11-24T22:40:15.000Z"
+    },
+    {
+      "skill": "schema",
+      "commit": "663787e",
+      "message": "best-practices: apply schema@8fd2fcad",
+      "timestamp": "2026-11-24T22:45:00.000Z"
     }
   ],
   "approvals": [
@@ -305,6 +311,11 @@
       "gate": "4.6",
       "approvedAt": "2026-11-24T22:39:15.000Z",
       "comment": "APPROVE CHANGES (security-best-practices)"
+    },
+    {
+      "gate": "4.7",
+      "approvedAt": "2026-11-24T22:43:57.000Z",
+      "comment": "APPROVE CHANGES (schema)"
     }
   ]
 }
