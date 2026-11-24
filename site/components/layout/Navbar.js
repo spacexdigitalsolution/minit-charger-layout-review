@@ -15,7 +15,6 @@ const DEFAULT_PREVIEW_PRODUCT = products.find(p => p.id === "magnus") || product
 
 export default function Navbar() {
   const pathname = usePathname();
-  const [prevPathname, setPrevPathname] = useState(pathname);
   const [isOpen, setIsOpen] = useState(false);
 
   const [activeDesktopMenu, setActiveDesktopMenu] = useState(null); // 'products' | 'industries' | null
@@ -24,40 +23,52 @@ export default function Navbar() {
   const [activeMobileMenu, setActiveMobileMenu] = useState(null);
   const [hoveredProduct, setHoveredProduct] = useState(DEFAULT_PREVIEW_PRODUCT);
 
-  const timeoutRef = useRef(null);
+  const openTimeoutRef = useRef(null);
+  const closeTimeoutRef = useRef(null);
   const menuContainerRef = useRef(null);
   const previewPanelRef = useRef(null);
 
-  if (prevPathname !== pathname) {
-    setPrevPathname(pathname);
-    setIsOpen(false);
-    setActiveDesktopMenu(null);
-    setIsMenuOpen(false);
-  }
+  const clearAllTimeouts = () => {
+    if (openTimeoutRef.current) clearTimeout(openTimeoutRef.current);
+    if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current);
+  };
 
-  // Handle Escape key and mobile scroll lock
+  // Handle Escape key, mobile scroll lock, and browser history navigation
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "";
     const handleKeyDown = (e) => {
       if (e.key === "Escape") {
+        clearAllTimeouts();
         setIsMenuOpen(false);
         setIsOpen(false);
         setActiveDesktopMenu(null);
       }
     };
+    const handlePopState = () => {
+      clearAllTimeouts();
+      setIsMenuOpen(false);
+      setIsOpen(false);
+      setActiveDesktopMenu(null);
+    };
     window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener("popstate", handlePopState);
     return () => {
       document.body.style.overflow = "";
       window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("popstate", handlePopState);
     };
   }, [isOpen]);
 
-  // Close mega menu on scroll
+  // Close mega menu on scroll with distance threshold to ignore micro-jitters
   useEffect(() => {
     if (!isMenuOpen) return;
+    const initialScrollY = window.scrollY;
     const handleScroll = () => {
-      setIsMenuOpen(false);
-      setActiveDesktopMenu(null);
+      if (Math.abs(window.scrollY - initialScrollY) > 30) {
+        clearAllTimeouts();
+        setIsMenuOpen(false);
+        setActiveDesktopMenu(null);
+      }
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
@@ -87,33 +98,48 @@ export default function Navbar() {
   }, [hoveredProduct, isMenuOpen]);
 
   const handleMouseEnterNav = (menu) => {
-    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    clearAllTimeouts();
     if (isMenuOpen) {
       setActiveDesktopMenu(menu);
     } else {
-      timeoutRef.current = setTimeout(() => {
+      openTimeoutRef.current = setTimeout(() => {
         setActiveDesktopMenu(menu);
         setIsMenuOpen(true);
-      }, 80);
+      }, 50);
     }
   };
 
   const handleMenuEnter = () => {
-    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    clearAllTimeouts();
+    setIsMenuOpen(true);
   };
 
   const handleNavLinkClick = () => {
-    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    clearAllTimeouts();
     setIsMenuOpen(false);
     setActiveDesktopMenu(null);
+    setIsOpen(false);
+  };
+
+  const handleDropdownTriggerClick = (e, menu) => {
+    clearAllTimeouts();
+    if (!isMenuOpen || activeDesktopMenu !== menu) {
+      e.preventDefault();
+      setActiveDesktopMenu(menu);
+      setIsMenuOpen(true);
+    } else {
+      handleNavLinkClick();
+    }
   };
 
   const handleMouseLeaveNav = () => {
-    if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    timeoutRef.current = setTimeout(() => {
+    clearAllTimeouts();
+    closeTimeoutRef.current = setTimeout(() => {
       setIsMenuOpen(false);
-      setTimeout(() => setActiveDesktopMenu(null), 120);
-    }, 120);
+      closeTimeoutRef.current = setTimeout(() => {
+        setActiveDesktopMenu(null);
+      }, 150);
+    }, 280);
   };
 
   const toggleMobileMenu = (menu) => {
@@ -174,14 +200,13 @@ export default function Navbar() {
           <Link
             href="/products"
             onMouseEnter={() => handleMouseEnterNav("products")}
-            onClick={handleNavLinkClick}
+            onClick={(e) => handleDropdownTriggerClick(e, "products")}
             aria-expanded={isMenuOpen && activeDesktopMenu === "products"}
             aria-haspopup="true"
-            className={`group inline-flex items-center text-xs font-bold uppercase tracking-wider transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16a34a] rounded-full px-2.5 py-1 ${
-              isProductsActive
-                ? "text-zinc-950 font-black"
-                : "text-zinc-600 hover:text-zinc-950"
-            }`}
+            className={`group inline-flex items-center text-xs font-bold uppercase tracking-wider transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16a34a] rounded-full px-2.5 py-1 ${isProductsActive
+              ? "text-zinc-950 font-black"
+              : "text-zinc-600 hover:text-zinc-950"
+              }`}
           >
             <span>Products</span>
             <ChevronDown className={`ml-1 h-3.5 w-3.5 transition-transform duration-200 ${activeDesktopMenu === "products" ? "rotate-180 text-[#16a34a]" : "text-zinc-400 group-hover:text-zinc-700"}`} />
@@ -192,14 +217,13 @@ export default function Navbar() {
           <Link
             href="/industries"
             onMouseEnter={() => handleMouseEnterNav("industries")}
-            onClick={handleNavLinkClick}
+            onClick={(e) => handleDropdownTriggerClick(e, "industries")}
             aria-expanded={isMenuOpen && activeDesktopMenu === "industries"}
             aria-haspopup="true"
-            className={`group inline-flex items-center text-xs font-bold uppercase tracking-wider transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16a34a] rounded-full px-2.5 py-1 ${
-              isIndustriesActive
-                ? "text-zinc-950 font-black"
-                : "text-zinc-600 hover:text-zinc-950"
-            }`}
+            className={`group inline-flex items-center text-xs font-bold uppercase tracking-wider transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16a34a] rounded-full px-2.5 py-1 ${isIndustriesActive
+              ? "text-zinc-950 font-black"
+              : "text-zinc-600 hover:text-zinc-950"
+              }`}
           >
             <span>Industries</span>
             <ChevronDown className={`ml-1 h-3.5 w-3.5 transition-transform duration-200 ${activeDesktopMenu === "industries" ? "rotate-180 text-[#16a34a]" : "text-zinc-400 group-hover:text-zinc-700"}`} />
@@ -211,9 +235,8 @@ export default function Navbar() {
             href="/blogs"
             onMouseEnter={handleMouseLeaveNav}
             onClick={handleNavLinkClick}
-            className={`inline-flex items-center text-xs font-bold uppercase tracking-wider transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16a34a] rounded-full px-2.5 py-1 ${
-              isBlogsActive ? "text-zinc-950 font-black" : "text-zinc-600 hover:text-zinc-950"
-            }`}
+            className={`inline-flex items-center text-xs font-bold uppercase tracking-wider transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16a34a] rounded-full px-2.5 py-1 ${isBlogsActive ? "text-zinc-950 font-black" : "text-zinc-600 hover:text-zinc-950"
+              }`}
           >
             <span>Blogs</span>
             {isBlogsActive && <span className="w-1.5 h-1.5 rounded-full bg-[#16a34a] ml-1.5" aria-hidden="true" />}
@@ -224,9 +247,8 @@ export default function Navbar() {
             href="/about"
             onMouseEnter={handleMouseLeaveNav}
             onClick={handleNavLinkClick}
-            className={`inline-flex items-center text-xs font-bold uppercase tracking-wider transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16a34a] rounded-full px-2.5 py-1 ${
-              isCompanyActive ? "text-zinc-950 font-black" : "text-zinc-600 hover:text-zinc-950"
-            }`}
+            className={`inline-flex items-center text-xs font-bold uppercase tracking-wider transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16a34a] rounded-full px-2.5 py-1 ${isCompanyActive ? "text-zinc-950 font-black" : "text-zinc-600 hover:text-zinc-950"
+              }`}
           >
             <span>Company</span>
             {isCompanyActive && <span className="w-1.5 h-1.5 rounded-full bg-[#16a34a] ml-1.5" aria-hidden="true" />}

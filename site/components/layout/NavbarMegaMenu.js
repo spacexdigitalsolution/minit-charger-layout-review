@@ -75,13 +75,14 @@ export default function NavbarMegaMenu({
         aria-label="Desktop mega menu"
         onMouseEnter={onMenuEnter}
         onMouseLeave={onMenuLeave}
-        className={`hidden md:block absolute top-full left-0 right-0 mt-3 w-full rounded-2xl bg-white border border-zinc-200/90 shadow-[0_20px_50px_rgba(0,0,0,0.15)] overflow-hidden transition-all origin-top ${
+        className={`hidden md:block absolute top-full left-0 right-0 pt-3 w-full transition-all origin-top ${
           isMenuOpen
             ? "opacity-100 scale-100 translate-y-0 duration-200 ease-out pointer-events-auto"
             : "opacity-0 scale-98 -translate-y-2 duration-150 ease-in pointer-events-none"
         }`}
       >
-        <div ref={menuContainerRef} className="p-6 lg:p-8">
+        <div className="w-full rounded-2xl bg-white border border-zinc-200/90 shadow-[0_20px_50px_rgba(0,0,0,0.15)] overflow-hidden">
+          <div ref={menuContainerRef} className="p-6 lg:p-8">
           {/* Products Menu */}
           {activeDesktopMenu === "products" && (
             <div className="grid grid-cols-[repeat(5,1fr)_280px] gap-6 items-start">
@@ -181,6 +182,7 @@ export default function NavbarMegaMenu({
               </div>
             </div>
           )}
+        </div>
         </div>
       </div>
     </>
