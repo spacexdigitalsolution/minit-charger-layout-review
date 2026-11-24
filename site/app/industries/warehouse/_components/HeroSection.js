@@ -6,6 +6,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import Link from "next/link";
 import SmartImage from "@/components/SmartImage";
+import { warehouseBanner } from "./warehouseData";
 
 export default function HeroSection() {
   const containerRef = useRef(null);
@@ -22,7 +23,11 @@ export default function HeroSection() {
   }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} data-section="warehouse-hero" className="relative overflow-hidden w-full min-h-[85vh] flex items-center border-b border-zinc-200 dark:border-zinc-800 bg-zinc-950">
+    <section
+      ref={containerRef}
+      data-section="warehouse-hero"
+      className="relative overflow-hidden w-full h-[97vh] max-h-[97vh] flex flex-col justify-between border-b border-zinc-800 bg-zinc-950"
+    >
       {/* Background Image Layer */}
       <div className="absolute inset-0 w-full h-full z-0 overflow-hidden">
         <SmartImage
@@ -32,45 +37,64 @@ export default function HeroSection() {
           priority
           mode="image"
           description="Warehouse Logistics Forklift Staging Area Background"
-          className="object-cover object-center opacity-70 mix-blend-luminosity"
+          className="object-cover object-center opacity-85"
         />
       </div>
 
       {/* Legibility Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-zinc-950/95 via-zinc-950/75 to-transparent z-10" />
+      <div className="absolute inset-x-0 bottom-0 h-32 md:h-44 bg-gradient-to-t from-zinc-950/80 to-transparent z-10" />
+
+      {/* Top Nav Spacer */}
+      <div className="pt-20 md:pt-24 shrink-0" />
 
       {/* Content Layer */}
-      <div className="relative z-20 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full pt-28 pb-16">
-        <div className="max-w-3xl mb-16">
-          <p className="hero-subcopy text-emerald-400 font-bold uppercase tracking-wider text-xs mb-4">
-            Warehouse & Material Handling Equipment
+      <div className="relative z-20 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full flex-grow flex flex-col justify-center py-4 md:py-6">
+        <div className="max-w-3xl">
+          <p className="hero-subcopy text-emerald-400 font-bold uppercase tracking-wider text-xs mb-3">
+            {warehouseBanner.eyebrow}
           </p>
-          <h1 className="hero-headline font-display text-5xl md:text-7xl font-black text-white uppercase leading-[0.95] tracking-tight mb-6">
-            CHARGING FOR HIGH-THROUGHPUT WAREHOUSES
+
+          <h1 className="hero-headline font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white uppercase leading-[0.95] tracking-tight mb-4">
+            {warehouseBanner.headline}
           </h1>
-          <div className="hero-subcopy text-lg text-zinc-300 font-light mb-10 max-w-2xl space-y-4">
-            <p className="font-bold text-white text-xl">
-              Minit Charger to eliminate battery room bottlenecks BEYOND just &quot;charging&quot;.
+
+          <div className="hero-subcopy mb-6 max-w-2xl space-y-4">
+            <p className="text-xl sm:text-2xl font-bold text-white leading-snug">
+              {warehouseBanner.subhead}
             </p>
-            <p className="text-zinc-300 leading-relaxed">
-              No more dangerous battery swaps. No more wasted storage square footage. Turn standard 15-minute operator breaks into rapid opportunity top-offs with dual 20kW ports.
+
+            {/* Stacked Pain Fragments */}
+            <div className="border-l-2 border-emerald-500/70 pl-4 py-1 space-y-1">
+              {warehouseBanner.painFragments.map((fragment, idx) => (
+                <p
+                  key={idx}
+                  className={`text-sm sm:text-base ${
+                    idx === warehouseBanner.painFragments.length - 1
+                      ? "font-semibold text-emerald-400"
+                      : "text-zinc-300 font-light"
+                  }`}
+                >
+                  {fragment}
+                </p>
+              ))}
+            </div>
+
+            <p className="text-sm sm:text-base text-zinc-300 font-light leading-relaxed">
+              {warehouseBanner.body}
             </p>
           </div>
 
-          <div className="hero-buttons flex flex-wrap items-center gap-6">
+          <div className="hero-buttons flex items-center gap-4 sm:gap-6">
             <Link
-              href="/contact"
-              className="inline-flex items-center justify-center rounded border border-white px-8 py-4 text-sm font-bold text-white hover:bg-white hover:text-zinc-950 transition-colors uppercase tracking-wider backdrop-blur-sm"
+              href={warehouseBanner.ctaButton.href}
+              className="inline-flex items-center justify-center rounded border border-white px-8 py-3.5 text-xs sm:text-sm font-bold text-white hover:bg-white hover:text-zinc-950 transition-colors uppercase tracking-wider backdrop-blur-sm shadow-lg"
             >
-              Talk to a Warehouse Expert
+              {warehouseBanner.ctaButton.label}
             </Link>
-            <span className="text-zinc-400 text-sm italic hidden sm:inline-block">
-              Ready to reclaim square footage from battery rooms?
-            </span>
           </div>
         </div>
       </div>
     </section>
   );
 }
-

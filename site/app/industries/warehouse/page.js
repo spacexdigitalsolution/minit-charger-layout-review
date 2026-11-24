@@ -1,50 +1,59 @@
 import HeroSection from "./_components/HeroSection";
 import ChallengesScroll from "./_components/ChallengesScroll";
 import ComparisonTable from "./_components/ComparisonTable";
-import PersonaSplit from "./_components/PersonaSplit";
 import BenefitModules from "./_components/BenefitModules";
 import CumulusSpotlight from "@/components/ui/CumulusSpotlight";
 import FaqSection from "@/components/ui/FaqSection";
 import ConversionBand from "@/components/ui/ConversionBand";
-import { warehouseFaqs } from "./_components/warehouseData";
+import {
+  warehouseSeo,
+  warehouseMonitoring,
+  warehouseFaqs,
+  warehouseCta
+} from "./_components/warehouseData";
 
 export const metadata = {
-  title: "Warehouse & Material Handling Charging | Minit Charger",
-  description: "High-throughput opportunity fast charging for forklifts, AGVs, and multi-shift warehouse distribution centers. Eliminate battery change rooms.",
+  title: warehouseSeo.title,
+  description: warehouseSeo.description,
+  keywords: warehouseSeo.keywords,
 };
 
 export default function WarehouseIndustryPage() {
   return (
     <>
+      {/* Section 1: Banner */}
       <HeroSection />
+
       <div className="relative z-10 bg-white dark:bg-zinc-950">
+        {/* Section 2: Challenges and capabilities */}
         <ChallengesScroll />
+
+        {/* Section 3: Comparison */}
         <ComparisonTable />
-        <PersonaSplit />
+
+        {/* Section 4: Ecosystem attributes & Section 5: Mobile power solution */}
         <BenefitModules />
 
+        {/* Section 6: Monitoring and data */}
         <CumulusSpotlight
-          headline="Nothing In Your Distribution Center Goes Unseen"
-          supportingCopy="Every forklift battery state of charge, charger operating temperature, and energy consumption metric is visible and adjustable remotely in one real-time dashboard."
-          featureBullets={[
-            "Dynamic peak load shaving to prevent utility demand surcharges",
-            "Real-time battery SoC and temperature alerts via CellTrac beacons",
-            "Automated shift energy consumption and asset utilization reports"
-          ]}
+          headline={warehouseMonitoring.heading}
+          supportingCopy={`${warehouseMonitoring.intro} ${warehouseMonitoring.body}`}
+          featureBullets={warehouseMonitoring.bullets}
           imageSide="right"
         />
 
+        {/* Section 7: FAQs */}
         <FaqSection
-          title="Frequently Asked Queries"
-          description="What logistics managers, facility directors, and fleet supervisors ask before electrifying warehouse equipment."
+          title="Frequently Asked Questions"
+          description="Common questions from warehouse, operations and maintenance teams."
           faqs={warehouseFaqs}
         />
 
+        {/* Section 8: Closing CTA */}
         <ConversionBand
-          headline="It Is Time To Retire Outdated Battery Rooms"
-          subheadline="Adopt modern opportunity fast charging to maximize picking uptime, reclaim floor space, and protect your bottom line."
-          primaryCTA={{ label: "Speak to a Warehouse Expert", href: "/contact" }}
-          secondaryCTA={{ label: "Request a Facility Assessment", href: "/contact" }}
+          headline={warehouseCta.headline}
+          subheadline={warehouseCta.subhead}
+          primaryCTA={warehouseCta.button}
           bgImage={null}
         />
       </div>
