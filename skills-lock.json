@@ -49,6 +49,14 @@
       "skillPath": "skills/nww/SKILL.md",
       "computedHash": "d29c8619a1ad34d8b583348d4447f89add49342cbb9b44e688a15bd405e24d0e"
     },
+    "security-best-practices": {
+      "source": "openai/skills",
+      "ref": "49f948faa9258a0c61caceaf225e179651397431",
+      "commit": "49f948faa9258a0c61caceaf225e179651397431",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/security-best-practices/SKILL.md",
+      "computedHash": "f3a018deca655724357a5576d36026b78f174a97094d42d3ef5f7ff08c9c1f27"
+    },
     "vercel-react-best-practices": {
       "source": "vercel-labs/agent-skills",
       "commit": "1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62",

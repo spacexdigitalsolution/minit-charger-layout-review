@@ -13,6 +13,7 @@ export default function DynamicForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [files, setFiles] = useState([]);
+  const [fileError, setFileError] = useState(null);
 
   const formContainerRef = useRef(null);
   const submitTimerRef = useRef(null);
@@ -41,9 +42,30 @@ export default function DynamicForm() {
     });
   }, { dependencies: [requestType], scope: formContainerRef });
 
+  const MAX_FILE_SIZE_BYTES = 25 * 1024 * 1024; // 25MB
+
   const handleFileChange = (e) => {
     if (e.target.files) {
-      setFiles(Array.from(e.target.files));
+      setFileError(null);
+      const selectedFiles = Array.from(e.target.files);
+      const validFiles = [];
+      const oversizedFiles = [];
+
+      for (const file of selectedFiles) {
+        if (file.size > MAX_FILE_SIZE_BYTES) {
+          oversizedFiles.push(file.name);
+        } else {
+          validFiles.push(file);
+        }
+      }
+
+      if (oversizedFiles.length > 0) {
+        setFileError(`Files exceed the 25MB limit: ${oversizedFiles.join(", ")}`);
+      }
+
+      if (validFiles.length > 0) {
+        setFiles(prev => [...prev, ...validFiles]);
+      }
     }
   };
 
@@ -178,6 +200,7 @@ export default function DynamicForm() {
                           <input
                             type="file"
                             multiple
+                            accept=".pdf,.png,.jpg,.jpeg,.doc,.docx,.xls,.xlsx"
                             onChange={handleFileChange}
                             className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
                             aria-label="Upload files"
@@ -186,6 +209,12 @@ export default function DynamicForm() {
                           <span className="text-sm font-bold text-zinc-700 dark:text-zinc-300 underline decoration-zinc-300 dark:decoration-zinc-700 underline-offset-4 group-hover:decoration-green-600">Browse files</span>
                           <span className="text-xs text-zinc-500 mt-2 font-light">or drag and drop here</span>
                         </div>
+
+                        {fileError && (
+                          <p className="mt-2 text-xs text-red-600 dark:text-red-400 font-medium" role="alert">
+                            {fileError}
+                          </p>
+                        )}
 
                         {files.length > 0 && (
                           <div className="mt-4 space-y-2">

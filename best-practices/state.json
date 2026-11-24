@@ -4,11 +4,11 @@
   "mode": "full",
   "focus": null,
   "currentGate": 4,
-  "currentSkillIndex": 6,
+  "currentSkillIndex": 7,
   "status": "awaiting_approval",
   "branch": "best-practices/2026-11-24",
   "createdAt": "2026-11-24T21:58:00.000Z",
-  "updatedAt": "2026-11-24T22:32:30.000Z",
+  "updatedAt": "2026-11-24T22:40:15.000Z",
   "detectedStack": {
     "framework": "Next.js 16.3.4 (App Router) + React 19.2.8",
     "styling": "Tailwind CSS v4 (@tailwindcss/postcss ^4)",
@@ -90,7 +90,7 @@
       "url": "https://skills.sh/openai/skills/security-best-practices",
       "domain": "Security / Static Guardrails",
       "installs": 13200,
-      "installedLocally": false
+      "installedLocally": true
     },
     {
       "name": "schema",
@@ -160,7 +160,7 @@
       "reason": "Optimize layout stability (CLS), initial paint (LCP), and interaction responsiveness",
       "applyOrder": 5,
       "status": "applied",
-      "commit": "PLACEHOLDER",
+      "commit": "bd98ea7",
       "appliedAt": "2026-11-24T22:32:30.000Z"
     },
     {
@@ -171,7 +171,9 @@
       "source": "openai",
       "reason": "Audit client-side data leaks, security headers, and static code guardrails",
       "applyOrder": 6,
-      "status": "pending"
+      "status": "applied",
+      "commit": "PLACEHOLDER",
+      "appliedAt": "2026-11-24T22:40:15.000Z"
     },
     {
       "skill": "schema",
@@ -189,7 +191,8 @@
     "nextjs-app-router-patterns",
     "web-design-guidelines",
     "accessibility",
-    "core-web-vitals"
+    "core-web-vitals",
+    "security-best-practices"
   ],
   "deferredSkills": [],
   "commits": [
@@ -231,9 +234,15 @@
     },
     {
       "skill": "core-web-vitals",
-      "commit": "PLACEHOLDER",
+      "commit": "bd98ea7",
       "message": "best-practices: apply core-web-vitals@afa8da94",
       "timestamp": "2026-11-24T22:32:30.000Z"
+    },
+    {
+      "skill": "security-best-practices",
+      "commit": "PLACEHOLDER",
+      "message": "best-practices: apply security-best-practices@49f948fa",
+      "timestamp": "2026-11-24T22:40:15.000Z"
     }
   ],
   "approvals": [
@@ -291,6 +300,11 @@
       "gate": "4.5",
       "approvedAt": "2026-11-24T22:31:30.000Z",
       "comment": "APPROVE CHANGES (core-web-vitals)"
+    },
+    {
+      "gate": "4.6",
+      "approvedAt": "2026-11-24T22:39:15.000Z",
+      "comment": "APPROVE CHANGES (security-best-practices)"
     }
   ]
 }
