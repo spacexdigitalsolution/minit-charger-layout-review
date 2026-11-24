@@ -21,7 +21,7 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const [activeMobileMenu, setActiveMobileMenu] = useState(null);
-  const [hoveredProduct, setHoveredProduct] = useState(DEFAULT_PREVIEW_PRODUCT);
+  const [hoveredProduct, setHoveredProduct] = useState(null);
 
   const openTimeoutRef = useRef(null);
   const closeTimeoutRef = useRef(null);
@@ -42,6 +42,7 @@ export default function Navbar() {
         setIsMenuOpen(false);
         setIsOpen(false);
         setActiveDesktopMenu(null);
+        setHoveredProduct(null);
       }
     };
     const handlePopState = () => {
@@ -49,6 +50,7 @@ export default function Navbar() {
       setIsMenuOpen(false);
       setIsOpen(false);
       setActiveDesktopMenu(null);
+      setHoveredProduct(null);
     };
     window.addEventListener("keydown", handleKeyDown);
     window.addEventListener("popstate", handlePopState);
@@ -68,6 +70,7 @@ export default function Navbar() {
         clearAllTimeouts();
         setIsMenuOpen(false);
         setActiveDesktopMenu(null);
+        setHoveredProduct(null);
       }
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -86,6 +89,11 @@ export default function Navbar() {
     }
   }, [isMenuOpen, activeDesktopMenu]);
 
+  const currentProduct = products.find(
+    p => pathname === p.productPageUrl || pathname.startsWith(p.productPageUrl + "/")
+  );
+  const activePreviewProduct = hoveredProduct || currentProduct || DEFAULT_PREVIEW_PRODUCT;
+
   // Preview panel crossfade animation
   useEffect(() => {
     if (previewPanelRef.current && isMenuOpen) {
@@ -95,7 +103,7 @@ export default function Navbar() {
         { autoAlpha: 1, duration: 0.18, ease: "power1.inOut", overwrite: true }
       );
     }
-  }, [hoveredProduct, isMenuOpen]);
+  }, [activePreviewProduct, isMenuOpen]);
 
   const handleMouseEnterNav = (menu) => {
     clearAllTimeouts();
@@ -118,6 +126,7 @@ export default function Navbar() {
     clearAllTimeouts();
     setIsMenuOpen(false);
     setActiveDesktopMenu(null);
+    setHoveredProduct(null);
     setIsOpen(false);
   };
 
@@ -138,6 +147,7 @@ export default function Navbar() {
       setIsMenuOpen(false);
       closeTimeoutRef.current = setTimeout(() => {
         setActiveDesktopMenu(null);
+        setHoveredProduct(null);
       }, 150);
     }, 280);
   };
@@ -147,7 +157,7 @@ export default function Navbar() {
   };
 
   const handleProductHover = (product) => {
-    if (hoveredProduct?.id !== product.id) {
+    if (activePreviewProduct?.id !== product.id) {
       setHoveredProduct(product);
     }
   };
@@ -162,10 +172,11 @@ export default function Navbar() {
   const colBMSAcc = getProductsByCategories(["bms", "accessories"]);
   const colSoftware = getProductsByCategories(["software"]);
 
-  const isProductsActive = pathname.startsWith("/products") || activeDesktopMenu === "products";
-  const isIndustriesActive = pathname.startsWith("/industries") || activeDesktopMenu === "industries";
-  const isBlogsActive = pathname.startsWith("/blogs");
-  const isCompanyActive = pathname.startsWith("/about");
+  const isProductsRoute = pathname.startsWith("/products");
+  const isIndustriesRoute = pathname.startsWith("/industries");
+  const isBlogsRoute = pathname.startsWith("/blogs");
+  const isCompanyRoute = pathname.startsWith("/about");
+  const isContactRoute = pathname.startsWith("/contact");
 
   return (
     <header className="fixed top-4 md:top-6 inset-x-0 mx-auto w-[calc(100%-2rem)] max-w-6xl z-50 pointer-events-none">
@@ -203,14 +214,17 @@ export default function Navbar() {
             onClick={(e) => handleDropdownTriggerClick(e, "products")}
             aria-expanded={isMenuOpen && activeDesktopMenu === "products"}
             aria-haspopup="true"
-            className={`group inline-flex items-center text-xs font-bold uppercase tracking-wider transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16a34a] rounded-full px-2.5 py-1 ${isProductsActive
-              ? "text-zinc-950 font-black"
-              : "text-zinc-600 hover:text-zinc-950"
-              }`}
+            className={`group inline-flex items-center text-xs font-bold uppercase tracking-wider transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16a34a] rounded-full px-3 py-1.5 ${
+              isProductsRoute
+                ? "bg-zinc-950/5 text-zinc-950 font-black shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)]"
+                : activeDesktopMenu === "products"
+                ? "text-zinc-950 bg-zinc-100/60"
+                : "text-zinc-600 hover:text-zinc-950 hover:bg-zinc-100/50"
+            }`}
           >
             <span>Products</span>
             <ChevronDown className={`ml-1 h-3.5 w-3.5 transition-transform duration-200 ${activeDesktopMenu === "products" ? "rotate-180 text-[#16a34a]" : "text-zinc-400 group-hover:text-zinc-700"}`} />
-            {isProductsActive && <span className="w-1.5 h-1.5 rounded-full bg-[#16a34a] ml-1.5" aria-hidden="true" />}
+            {isProductsRoute && <span className="w-1.5 h-1.5 rounded-full bg-[#16a34a] ml-1.5 shrink-0" aria-label="Current page" />}
           </Link>
 
           {/* Industries Dropdown Trigger */}
@@ -220,14 +234,17 @@ export default function Navbar() {
             onClick={(e) => handleDropdownTriggerClick(e, "industries")}
             aria-expanded={isMenuOpen && activeDesktopMenu === "industries"}
             aria-haspopup="true"
-            className={`group inline-flex items-center text-xs font-bold uppercase tracking-wider transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16a34a] rounded-full px-2.5 py-1 ${isIndustriesActive
-              ? "text-zinc-950 font-black"
-              : "text-zinc-600 hover:text-zinc-950"
-              }`}
+            className={`group inline-flex items-center text-xs font-bold uppercase tracking-wider transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16a34a] rounded-full px-3 py-1.5 ${
+              isIndustriesRoute
+                ? "bg-zinc-950/5 text-zinc-950 font-black shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)]"
+                : activeDesktopMenu === "industries"
+                ? "text-zinc-950 bg-zinc-100/60"
+                : "text-zinc-600 hover:text-zinc-950 hover:bg-zinc-100/50"
+            }`}
           >
             <span>Industries</span>
             <ChevronDown className={`ml-1 h-3.5 w-3.5 transition-transform duration-200 ${activeDesktopMenu === "industries" ? "rotate-180 text-[#16a34a]" : "text-zinc-400 group-hover:text-zinc-700"}`} />
-            {isIndustriesActive && <span className="w-1.5 h-1.5 rounded-full bg-[#16a34a] ml-1.5" aria-hidden="true" />}
+            {isIndustriesRoute && <span className="w-1.5 h-1.5 rounded-full bg-[#16a34a] ml-1.5 shrink-0" aria-label="Current page" />}
           </Link>
 
           {/* Direct Blogs Link */}
@@ -235,11 +252,14 @@ export default function Navbar() {
             href="/blogs"
             onMouseEnter={handleMouseLeaveNav}
             onClick={handleNavLinkClick}
-            className={`inline-flex items-center text-xs font-bold uppercase tracking-wider transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16a34a] rounded-full px-2.5 py-1 ${isBlogsActive ? "text-zinc-950 font-black" : "text-zinc-600 hover:text-zinc-950"
-              }`}
+            className={`inline-flex items-center text-xs font-bold uppercase tracking-wider transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16a34a] rounded-full px-3 py-1.5 ${
+              isBlogsRoute
+                ? "bg-zinc-950/5 text-zinc-950 font-black shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)]"
+                : "text-zinc-600 hover:text-zinc-950 hover:bg-zinc-100/50"
+            }`}
           >
             <span>Blogs</span>
-            {isBlogsActive && <span className="w-1.5 h-1.5 rounded-full bg-[#16a34a] ml-1.5" aria-hidden="true" />}
+            {isBlogsRoute && <span className="w-1.5 h-1.5 rounded-full bg-[#16a34a] ml-1.5 shrink-0" aria-label="Current page" />}
           </Link>
 
           {/* Direct Company Link */}
@@ -247,11 +267,14 @@ export default function Navbar() {
             href="/about"
             onMouseEnter={handleMouseLeaveNav}
             onClick={handleNavLinkClick}
-            className={`inline-flex items-center text-xs font-bold uppercase tracking-wider transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16a34a] rounded-full px-2.5 py-1 ${isCompanyActive ? "text-zinc-950 font-black" : "text-zinc-600 hover:text-zinc-950"
-              }`}
+            className={`inline-flex items-center text-xs font-bold uppercase tracking-wider transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16a34a] rounded-full px-3 py-1.5 ${
+              isCompanyRoute
+                ? "bg-zinc-950/5 text-zinc-950 font-black shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)]"
+                : "text-zinc-600 hover:text-zinc-950 hover:bg-zinc-100/50"
+            }`}
           >
             <span>Company</span>
-            {isCompanyActive && <span className="w-1.5 h-1.5 rounded-full bg-[#16a34a] ml-1.5" aria-hidden="true" />}
+            {isCompanyRoute && <span className="w-1.5 h-1.5 rounded-full bg-[#16a34a] ml-1.5 shrink-0" aria-label="Current page" />}
           </Link>
         </div>
 
@@ -260,9 +283,14 @@ export default function Navbar() {
           <Link
             href="/contact"
             onClick={handleNavLinkClick}
-            className="hidden md:inline-flex items-center justify-center rounded-full px-5 py-2 text-xs font-bold uppercase tracking-wider bg-zinc-950 text-white hover:bg-[#8CD34D] hover:text-zinc-950 transition-colors shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16a34a]"
+            className={`hidden md:inline-flex items-center justify-center rounded-full px-5 py-2 text-xs font-bold uppercase tracking-wider transition-all shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16a34a] ${
+              isContactRoute
+                ? "bg-[#16a34a] text-white ring-2 ring-[#16a34a]/30 shadow-md"
+                : "bg-zinc-950 text-white hover:bg-[#8CD34D] hover:text-zinc-950"
+            }`}
           >
-            Contact Us
+            <span>Contact Us</span>
+            {isContactRoute && <span className="w-1.5 h-1.5 rounded-full bg-white ml-1.5 shrink-0" aria-label="Current page" />}
           </Link>
 
           <button
@@ -288,7 +316,7 @@ export default function Navbar() {
           colEVLSV={colEVLSV}
           colBMSAcc={colBMSAcc}
           colSoftware={colSoftware}
-          hoveredProduct={hoveredProduct}
+          hoveredProduct={activePreviewProduct}
           handleProductHover={handleProductHover}
           industryCategories={industryCategories}
           onMenuEnter={handleMenuEnter}

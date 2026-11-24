@@ -3,33 +3,45 @@
 import Link from "next/link";
 import SmartImage from "@/components/SmartImage";
 import { Cloud, ArrowRight } from "lucide-react";
+import { usePathname } from "next/navigation";
 
-const ProductLinkItem = ({ product, onLinkClick, onHover }) => (
+const ProductLinkItem = ({ product, onLinkClick, onHover, isActive }) => (
   <Link
     href={product.productPageUrl}
     onClick={onLinkClick}
     onMouseEnter={() => onHover(product)}
     onFocus={() => onHover(product)}
-    className="group flex items-center py-1 text-[13px] text-zinc-600 hover:text-zinc-950 transition-colors"
+    className={`group flex items-center justify-between py-1 px-2 -mx-2 rounded-md transition-all text-[13px] ${
+      isActive
+        ? "bg-emerald-50/90 font-bold text-[#16a34a] border-l-2 border-[#16a34a]"
+        : "text-zinc-600 hover:text-zinc-950 hover:bg-zinc-50"
+    }`}
   >
     <span className="truncate">{product.name}</span>
+    {isActive && (
+      <span className="w-1.5 h-1.5 rounded-full bg-[#16a34a] shrink-0 ml-1.5" aria-label="Current page" />
+    )}
   </Link>
 );
 
-const MenuColumn = ({ title, products, onLinkClick, onHover }) => (
+const MenuColumn = ({ title, products, onLinkClick, onHover, pathname }) => (
   <div className="mega-menu-column flex flex-col gap-1 min-w-0">
     <h4 className="text-[11px] font-bold uppercase tracking-wider text-zinc-400 mb-3 border-b border-zinc-200/80 pb-1.5">
       {title}
     </h4>
     <div className="flex flex-col gap-0.5">
-      {products.map(p => (
-        <ProductLinkItem
-          key={p.id}
-          product={p}
-          onLinkClick={onLinkClick}
-          onHover={onHover}
-        />
-      ))}
+      {products.map(p => {
+        const isActive = pathname === p.productPageUrl || pathname.startsWith(p.productPageUrl + "/");
+        return (
+          <ProductLinkItem
+            key={p.id}
+            product={p}
+            onLinkClick={onLinkClick}
+            onHover={onHover}
+            isActive={isActive}
+          />
+        );
+      })}
     </div>
   </div>
 );
@@ -52,6 +64,7 @@ export default function NavbarMegaMenu({
   onMenuEnter,
   onMenuLeave
 }) {
+  const pathname = usePathname();
   const handleItemClick = () => {
     setIsMenuOpen(false);
     setActiveDesktopMenu(null);
@@ -86,11 +99,11 @@ export default function NavbarMegaMenu({
           {/* Products Menu */}
           {activeDesktopMenu === "products" && (
             <div className="grid grid-cols-[repeat(5,1fr)_280px] gap-6 items-start">
-              <MenuColumn title="Aviation" products={colAviation} onLinkClick={handleItemClick} onHover={handleProductHover} />
-              <MenuColumn title="MHE" products={colMHE} onLinkClick={handleItemClick} onHover={handleProductHover} />
-              <MenuColumn title="EV / LSV" products={colEVLSV} onLinkClick={handleItemClick} onHover={handleProductHover} />
-              <MenuColumn title="BMS / Acc." products={colBMSAcc} onLinkClick={handleItemClick} onHover={handleProductHover} />
-              <MenuColumn title="Software" products={colSoftware} onLinkClick={handleItemClick} onHover={handleProductHover} />
+              <MenuColumn title="Aviation" products={colAviation} onLinkClick={handleItemClick} onHover={handleProductHover} pathname={pathname} />
+              <MenuColumn title="MHE" products={colMHE} onLinkClick={handleItemClick} onHover={handleProductHover} pathname={pathname} />
+              <MenuColumn title="EV / LSV" products={colEVLSV} onLinkClick={handleItemClick} onHover={handleProductHover} pathname={pathname} />
+              <MenuColumn title="BMS / Acc." products={colBMSAcc} onLinkClick={handleItemClick} onHover={handleProductHover} pathname={pathname} />
+              <MenuColumn title="Software" products={colSoftware} onLinkClick={handleItemClick} onHover={handleProductHover} pathname={pathname} />
 
               {/* Live Preview Panel */}
               <div className="mega-menu-column pl-6 border-l border-zinc-200/80 flex flex-col justify-between h-full">
@@ -133,10 +146,18 @@ export default function NavbarMegaMenu({
                   <Link
                     href="/products"
                     onClick={handleItemClick}
-                    className="inline-flex items-center text-[11px] font-bold uppercase tracking-wider text-zinc-500 hover:text-zinc-950 transition-colors group"
+                    className={`inline-flex items-center text-[11px] font-bold uppercase tracking-wider transition-colors group ${
+                      pathname === "/products" || pathname === "/products/"
+                        ? "text-[#16a34a] font-black"
+                        : "text-zinc-500 hover:text-zinc-950"
+                    }`}
                   >
                     <span>View All Products</span>
-                    <ArrowRight className="ml-1.5 h-3 w-3 transition-transform group-hover:translate-x-1" />
+                    {pathname === "/products" || pathname === "/products/" ? (
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#16a34a] ml-1.5 shrink-0" aria-label="Current page" />
+                    ) : (
+                      <ArrowRight className="ml-1.5 h-3 w-3 transition-transform group-hover:translate-x-1" />
+                    )}
                   </Link>
                 </div>
               </div>
@@ -156,29 +177,59 @@ export default function NavbarMegaMenu({
                 <Link
                   href="/industries"
                   onClick={handleItemClick}
-                  className="inline-flex items-center text-xs font-bold uppercase tracking-wider text-[#16a34a] hover:text-zinc-950 transition-colors group"
+                  className={`inline-flex items-center text-xs font-bold uppercase tracking-wider transition-colors group ${
+                    pathname === "/industries" || pathname === "/industries/"
+                      ? "text-[#16a34a] font-black"
+                      : "text-zinc-950 hover:text-[#16a34a]"
+                  }`}
                 >
                   <span>Explore All Sectors</span>
-                  <ArrowRight className="ml-1.5 h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+                  {pathname === "/industries" || pathname === "/industries/" ? (
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#16a34a] ml-1.5 shrink-0" aria-label="Current page" />
+                  ) : (
+                    <ArrowRight className="ml-1.5 h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+                  )}
                 </Link>
               </div>
 
               <div className="col-span-8 grid grid-cols-3 gap-4">
-                {industryCategories.map(cat => (
-                  <Link
-                    key={cat.id}
-                    href={cat.slug}
-                    onClick={handleItemClick}
-                    className="group flex flex-col p-4 rounded-xl bg-zinc-50/80 hover:bg-zinc-100 border border-zinc-200/80 hover:border-zinc-300 transition-all duration-200"
-                  >
-                    <span className="font-oswald text-base font-bold uppercase text-zinc-900 mb-2 group-hover:text-[#16a34a] transition-colors">
-                      {cat.name}
-                    </span>
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-zinc-500 flex items-center mt-auto group-hover:text-zinc-900">
-                      View Solutions <ArrowRight className="ml-1.5 h-3 w-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
-                    </span>
-                  </Link>
-                ))}
+                {industryCategories.map(cat => {
+                  const isIndustryActive = pathname === cat.slug || pathname.startsWith(cat.slug + "/");
+                  return (
+                    <Link
+                      key={cat.id}
+                      href={cat.slug}
+                      onClick={handleItemClick}
+                      className={`group flex flex-col p-4 rounded-xl border transition-all duration-200 ${
+                        isIndustryActive
+                          ? "bg-emerald-50/80 border-[#16a34a] shadow-sm ring-1 ring-[#16a34a]/30"
+                          : "bg-zinc-50/80 hover:bg-zinc-100 border-zinc-200/80 hover:border-zinc-300"
+                      }`}
+                    >
+                      <div className="flex items-center justify-between mb-2">
+                        <span className={`font-oswald text-base font-bold uppercase transition-colors ${
+                          isIndustryActive ? "text-[#16a34a]" : "text-zinc-900 group-hover:text-[#16a34a]"
+                        }`}>
+                          {cat.name}
+                        </span>
+                        {isIndustryActive && (
+                          <span className="inline-flex items-center gap-1 text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-full bg-emerald-100 text-[#16a34a]">
+                            <span className="w-1 h-1 rounded-full bg-[#16a34a]" />
+                            Current
+                          </span>
+                        )}
+                      </div>
+                      <span className={`text-[11px] font-bold uppercase tracking-wider flex items-center mt-auto ${
+                        isIndustryActive ? "text-[#16a34a]" : "text-zinc-500 group-hover:text-zinc-900"
+                      }`}>
+                        {isIndustryActive ? "Viewing Page" : "View Solutions"}
+                        <ArrowRight className={`ml-1.5 h-3 w-3 transition-all ${
+                          isIndustryActive ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0"
+                        }`} />
+                      </span>
+                    </Link>
+                  );
+                })}
               </div>
             </div>
           )}
