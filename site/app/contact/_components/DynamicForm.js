@@ -1,7 +1,7 @@
 // section: contact-form
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { UploadCloud, X, CheckCircle2 } from "lucide-react";
@@ -15,6 +15,15 @@ export default function DynamicForm() {
   const [files, setFiles] = useState([]);
 
   const formContainerRef = useRef(null);
+  const submitTimerRef = useRef(null);
+
+  useEffect(() => {
+    return () => {
+      if (submitTimerRef.current) {
+        clearTimeout(submitTimerRef.current);
+      }
+    };
+  }, []);
 
   useGSAP(() => {
     let mm = gsap.matchMedia();
@@ -45,8 +54,8 @@ export default function DynamicForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Mock submission
-    setTimeout(() => {
+    if (submitTimerRef.current) clearTimeout(submitTimerRef.current);
+    submitTimerRef.current = setTimeout(() => {
       setIsSubmitting(false);
       setIsSuccess(true);
     }, 1500);
