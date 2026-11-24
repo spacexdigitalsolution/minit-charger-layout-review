@@ -31,14 +31,14 @@ client-approval-date: "2026-11-21"
 - **Required Dimensions / Aspect Ratio**: 1920x1080 (16:9), sizes: `100vw`
 - **Priority / LCP**: `true`
 - **Proposed Alt Text**: "Heavy-duty electric fleet charging in demanding weather conditions"
-- **Alt Text Sign-off**: `approved`
-- **Slot Status**: `approved`
+- **Alt Text Sign-off**: `slide-removed`
+- **Slot Status**: `slide-removed`
 - **Approved Source File**: `site/public/assets/home/hero/heavy-duty-electric-fleet-charging-in-demanding-weather-cond.png`
 - **Pixel Dimensions Found**: 4000x2250 (16:9)
-- **Client Approval**: `approved`
-- **Approval Evidence**: "Current is correct" confirmed by Devansh at 2026-11-21T00:25:41+05:30
-- **Current Render**: `wired`
-- **Provenance Note**: Assigned in commit 5ec399b; reset to placeholder; approved by Devansh.
+- **Client Approval**: `slide-removed`
+- **Approval Evidence**: "remove the 4 slide from the homepage banner" requested by Devansh at 2026-11-25T00:33:58+05:30
+- **Current Render**: `unmounted`
+- **Provenance Note**: Slide 4 removed from homepage hero banner per client directive.
 
 ## Slot: home.catalog.tabbed
 - **Slot ID**: `home.catalog.tabbed`

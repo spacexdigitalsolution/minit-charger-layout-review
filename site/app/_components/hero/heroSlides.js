@@ -28,15 +28,6 @@ export const slides = [
     features: ["20 kW DC Fast Charging", "Compact Wall or Pedestal", "94% Max Efficiency", "Multi-Chemistry Support", "AssetPro Connected"]
   },
   {
-    id: "img4",
-    type: "image",
-    src: "/assets/home/hero/heavy-duty-electric-fleet-charging-in-demanding-weather-cond.png",
-    duration: 6000,
-    headline: "Access Real-Time Data Instead of Guesswork",
-    subcopy: "See charging activity, energy usage, asset status, battery health, and maintenance needs across your operation through connected Minit intelligence.",
-    features: ["Cloud-Connected", "Live Dashboard", "Remote Monitoring", "Predictive Maintenance Alerts", "Charge History", "Fleet Data", "AssetPro Integration"]
-  },
-  {
     id: "vid5",
     type: "video",
     src: "/assets/Home Page/Banner/Home banner - 01-05.mp4",
