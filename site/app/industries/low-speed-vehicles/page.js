@@ -2,8 +2,8 @@ import IndustryDetailLayout from "@/components/industry/IndustryDetailLayout";
 import { industries } from "@/data/industries";
 
 export const metadata = {
-  title: "Low Speed Vehicle (LSV) Charging Solutions | Minit Charger",
-  description: "Durable onboard and standalone charging solutions for low-speed electric vehicles, campus shuttles, resort carts, and utility fleets.",
+  title: "Onboard Chargers for Low Speed Electric Vehicles | Minit Charger",
+  description: "Onboard charging with built-in battery management and GPS for low speed electric vehicles, plus DC fast charging and live fleet data across every site.",
 };
 
 export default function LowSpeedVehiclesPage() {

@@ -1,51 +1,60 @@
 import HeroSection from "./_components/HeroSection";
 import ChallengesScroll from "./_components/ChallengesScroll";
 import ComparisonTable from "./_components/ComparisonTable";
-import PersonaSplit from "./_components/PersonaSplit";
 import BenefitModules from "./_components/BenefitModules";
 import CumulusSpotlight from "@/components/ui/CumulusSpotlight";
 import FaqSection from "@/components/ui/FaqSection";
 import ConversionBand from "@/components/ui/ConversionBand";
-import { lsvFaqs } from "./_components/lsvData";
+import {
+  lsvSeo,
+  lsvMonitoring,
+  lsvFaqs,
+  lsvCta
+} from "./_components/lsvData";
 
 export const metadata = {
-  title: "Low Speed Vehicle (LSV) Charging Solutions | Minit Charger",
-  description: "Durable onboard and standalone charging solutions for low-speed electric vehicles, campus shuttles, resort carts, and utility fleets.",
+  title: lsvSeo.title,
+  description: lsvSeo.description,
+  keywords: lsvSeo.keywords,
 };
 
 export default function LSVIndustryPage() {
   return (
     <>
+      {/* Section 1: Banner */}
       <HeroSection />
+
       <div className="relative z-10 bg-white dark:bg-zinc-950">
+        {/* Section 2: Challenges and capabilities */}
         <ChallengesScroll />
+
+        {/* Section 3: Comparison */}
         <ComparisonTable />
-        <PersonaSplit />
+
+        {/* Section 4: Ecosystem attributes & Section 5: Mobile power solution */}
         <BenefitModules />
 
+        {/* Section 6: Monitoring and data */}
         <CumulusSpotlight
-          headline="Nothing In Your Campus Fleet Goes Unseen"
-          supportingCopy="Track vehicle GPS locations, battery SoC, and charging status across sprawling university campuses, corporate parks, and resort grounds in one live dashboard."
-          featureBullets={[
-            "Instant notifications when utility carts reach low battery thresholds",
-            "Real-time GPS geofencing and equipment location tracking",
-            "Automated energy consumption audit reports across departments"
-          ]}
+          headline={lsvMonitoring.heading}
+          supportingCopy={`${lsvMonitoring.intro} ${lsvMonitoring.body}`}
+          featureBullets={lsvMonitoring.bullets}
           imageSide="right"
         />
 
+        {/* Section 7: FAQs */}
         <FaqSection
-          title="Frequently Asked Queries"
-          description="What campus managers, resort directors, and security supervisors ask before electrifying utility fleets."
+          title="Frequently Asked Questions"
+          description="Common questions from campus, site and fleet teams running small electric vehicles."
           faqs={lsvFaqs}
         />
 
+        {/* Section 8: Closing CTA */}
         <ConversionBand
-          headline="It Is Time To Upgrade Outdated Consumer Cords"
-          subheadline="Standardize on commercial-grade, sealed Durus chargers to keep your campus utility and shuttle fleet moving reliably."
-          primaryCTA={{ label: "Speak to an LSV Expert", href: "/contact" }}
-          secondaryCTA={{ label: "Request a Campus Fleet Audit", href: "/contact" }}
-          bgImage="/assets/homepage/Engineered for LSEVs.webp"
+          headline={lsvCta.headline}
+          subheadline={lsvCta.subhead}
+          primaryCTA={lsvCta.button}
+          bgImage={null}
         />
       </div>
     </>
