@@ -137,10 +137,14 @@ export default function DynamicForm() {
                   {requestType === "sales" && (
                     <>
                       <div className="md:col-span-2 form-anim">
-                        <label className="text-xs font-bold text-zinc-500 uppercase  mb-2 flex justify-between">
+                        <label htmlFor="salesProductType" className="text-xs font-bold text-zinc-500 uppercase  mb-2 flex justify-between">
                           Product Type
                         </label>
-                        <select className="w-full bg-transparent border-b border-zinc-300 dark:border-zinc-700 rounded-none px-0 py-2 text-zinc-900 dark:text-white focus:outline-none focus:border-green-600 transition-colors">
+                        <select
+                          id="salesProductType"
+                          name="productType"
+                          className="w-full bg-transparent border-b border-zinc-300 dark:border-zinc-700 rounded-none px-0 py-2 text-zinc-900 dark:text-white focus:outline-none focus:border-green-600 transition-colors"
+                        >
                           <option value="">General Inquiry</option>
                           <option value="altus">Altus II (GSE)</option>
                           <option value="magnus">Magnus (Universal Fleet)</option>

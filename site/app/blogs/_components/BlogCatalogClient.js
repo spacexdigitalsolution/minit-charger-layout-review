@@ -86,12 +86,14 @@ export default function BlogCatalogClient({ blogs }) {
             Explore our latest case studies, deployment guides, and news.
           </p>
 
-          <div className="flex flex-wrap justify-center gap-2">
+          <div role="tablist" aria-label="Blog categories" className="flex flex-wrap justify-center gap-2">
             {categories.map((cat) => (
               <button
                 key={cat}
+                role="tab"
+                aria-selected={activeCategory === cat}
                 onClick={() => handleTabClick(cat)}
-                className={`px-6 py-2 text-sm font-bold uppercase rounded-sm transition-all duration-300 border ${activeCategory === cat
+                className={`px-6 py-2 text-sm font-bold uppercase rounded-sm transition-all duration-300 border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-900 dark:focus-visible:ring-white ${activeCategory === cat
                   ? "bg-zinc-900 text-white border-zinc-900 dark:bg-white dark:text-zinc-950 dark:border-white"
                   : "bg-transparent text-zinc-600 border-zinc-200 hover:border-zinc-900 hover:text-zinc-900 dark:text-zinc-400 dark:border-zinc-800 dark:hover:border-white dark:hover:text-white"
                   }`}

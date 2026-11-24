@@ -72,12 +72,16 @@ export default function InteractiveScenes() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Navigation Tabs */}
-        <div className="scene-nav flex flex-wrap justify-center gap-2 mb-16">
+        <div role="tablist" aria-label="Interactive charging scenes" className="scene-nav flex flex-wrap justify-center gap-2 mb-16">
           {Object.values(scenes).map((tab) => (
             <button
               key={tab.id}
+              role="tab"
+              id={`scene-tab-${tab.id}`}
+              aria-selected={activeScene === tab.id}
+              aria-controls={`scene-panel-${tab.id}`}
               onClick={() => handleTabClick(tab.id)}
-              className={`px-6 py-3 text-sm font-bold uppercase r rounded-none border transition-all duration-300 ${activeScene === tab.id
+              className={`px-6 py-3 text-sm font-bold uppercase r rounded-none border transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-900 dark:focus-visible:ring-white ${activeScene === tab.id
                 ? "bg-zinc-900 border-zinc-900 text-white dark:bg-white dark:border-white dark:text-zinc-950"
                 : "bg-transparent border-zinc-200 text-zinc-500 hover:bg-zinc-100 hover:text-zinc-900 dark:border-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-900 dark:hover:text-white"
                 }`}
@@ -94,6 +98,9 @@ export default function InteractiveScenes() {
             return (
               <div
                 key={data.id}
+                role="tabpanel"
+                id={`scene-panel-${data.id}`}
+                aria-labelledby={`scene-tab-${data.id}`}
                 className={`absolute inset-0 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center transition-all duration-700 ease-in-out ${isActive ? 'opacity-100 z-10 translate-y-0 pointer-events-auto' : 'opacity-0 z-0 translate-y-4 pointer-events-none'}`}
               >
 

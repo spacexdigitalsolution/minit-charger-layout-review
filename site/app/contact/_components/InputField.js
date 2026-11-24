@@ -24,7 +24,7 @@ export const InputField = ({ label, name, type = "text", required = false, isTex
         required={required}
         aria-required={required}
         rows={4}
-        className="w-full bg-transparent border border-zinc-300 dark:border-zinc-700 rounded-sm px-4 py-3 text-zinc-900 dark:text-white focus:outline-none focus:border-zinc-900 dark:focus:border-white transition-colors resize-y"
+        className="w-full bg-transparent border border-zinc-300 dark:border-zinc-700 rounded-sm px-4 py-3 text-zinc-900 dark:text-white focus:outline-none focus:border-zinc-900 dark:focus:border-white focus-visible:ring-1 focus-visible:ring-zinc-900 dark:focus-visible:ring-white transition-colors resize-y"
       />
     ) : (
       <input
@@ -33,7 +33,7 @@ export const InputField = ({ label, name, type = "text", required = false, isTex
         name={name}
         required={required}
         aria-required={required}
-        className="w-full bg-transparent border-b border-zinc-300 dark:border-zinc-700 rounded-none px-0 py-2 text-zinc-900 dark:text-white focus:outline-none focus:border-zinc-900 dark:focus:border-white transition-colors"
+        className="w-full bg-transparent border-b border-zinc-300 dark:border-zinc-700 rounded-none px-0 py-2 text-zinc-900 dark:text-white focus:outline-none focus:border-zinc-900 dark:focus:border-white focus-visible:ring-1 focus-visible:ring-zinc-900 dark:focus-visible:ring-white transition-colors"
       />
     )}
   </div>

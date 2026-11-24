@@ -45,9 +45,15 @@ export default function RootLayout({ children }) {
       className={`${geistSans.variable} ${geistMono.variable} ${oswald.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-white text-zinc-900">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-zinc-950 focus:text-white focus:rounded-md focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#16a34a] focus:font-semibold"
+        >
+          Skip to main content
+        </a>
         <SmoothScroll>
           <Navbar />
-          <main className="flex-grow">{children}</main>
+          <main id="main-content" tabIndex={-1} className="flex-grow">{children}</main>
           <Footer />
         </SmoothScroll>
       </body>

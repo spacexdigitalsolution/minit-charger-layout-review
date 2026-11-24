@@ -4,11 +4,11 @@
   "mode": "full",
   "focus": null,
   "currentGate": 4,
-  "currentSkillIndex": 4,
+  "currentSkillIndex": 5,
   "status": "awaiting_approval",
   "branch": "best-practices/2026-11-24",
   "createdAt": "2026-11-24T21:58:00.000Z",
-  "updatedAt": "2026-11-24T22:24:50.000Z",
+  "updatedAt": "2026-11-24T22:29:10.000Z",
   "detectedStack": {
     "framework": "Next.js 16.3.4 (App Router) + React 19.2.8",
     "styling": "Tailwind CSS v4 (@tailwindcss/postcss ^4)",
@@ -66,7 +66,7 @@
       "url": "https://skills.sh/addyosmani/web-quality-skills/accessibility",
       "domain": "Accessibility (a11y) & WCAG",
       "installs": 73900,
-      "installedLocally": false
+      "installedLocally": true
     },
     {
       "name": "core-web-vitals",
@@ -136,7 +136,7 @@
       "reason": "Verify typography scales, spatial rhythm, interactive element affordances, and contrast",
       "applyOrder": 3,
       "status": "applied",
-      "commit": "PLACEHOLDER",
+      "commit": "fb7dc61",
       "appliedAt": "2026-11-24T22:24:50.000Z"
     },
     {
@@ -147,7 +147,9 @@
       "source": "addyosmani",
       "reason": "Audit semantic HTML, ARIA landmarks, form labels, and keyboard navigability",
       "applyOrder": 4,
-      "status": "pending"
+      "status": "applied",
+      "commit": "PLACEHOLDER",
+      "appliedAt": "2026-11-24T22:29:10.000Z"
     },
     {
       "skill": "core-web-vitals",
@@ -183,7 +185,8 @@
   "appliedSkills": [
     "vercel-react-best-practices",
     "nextjs-app-router-patterns",
-    "web-design-guidelines"
+    "web-design-guidelines",
+    "accessibility"
   ],
   "deferredSkills": [],
   "commits": [
@@ -213,9 +216,15 @@
     },
     {
       "skill": "web-design-guidelines",
-      "commit": "PLACEHOLDER",
+      "commit": "fb7dc61",
       "message": "best-practices: apply web-design-guidelines@5a37a632",
       "timestamp": "2026-11-24T22:24:50.000Z"
+    },
+    {
+      "skill": "accessibility",
+      "commit": "PLACEHOLDER",
+      "message": "best-practices: apply accessibility@afa8da94",
+      "timestamp": "2026-11-24T22:29:10.000Z"
     }
   ],
   "approvals": [
@@ -263,6 +272,11 @@
       "gate": "4.3",
       "approvedAt": "2026-11-24T22:23:07.000Z",
       "comment": "APPROVE CHANGES (web-design-guidelines)"
+    },
+    {
+      "gate": "4.4",
+      "approvedAt": "2026-11-24T22:27:37.000Z",
+      "comment": "APPROVE CHANGES (accessibility)"
     }
   ]
 }
