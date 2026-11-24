@@ -39,8 +39,34 @@ export default async function BlogPostPage({ params }) {
     relatedPosts.push(...additional.slice(0, 3 - relatedPosts.length));
   }
 
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: blog.title,
+    description: blog.excerpt,
+    datePublished: blog.publishDate,
+    author: {
+      "@type": "Person",
+      name: blog.author?.name || "Minit Charger Team",
+      jobTitle: blog.author?.title || "Industry Specialist",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Minit Charger",
+      url: "https://minitcharger.com",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://minitcharger.com/blogs/${blog.slug}`,
+    },
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       <article className="relative z-10 bg-white dark:bg-zinc-950 font-sans min-h-screen pt-32 pb-24">
         <ArticleHero blog={blog} />
         <ArticleBody blog={blog} />

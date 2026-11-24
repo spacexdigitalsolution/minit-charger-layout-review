@@ -49,6 +49,14 @@
       "skillPath": "skills/nww/SKILL.md",
       "computedHash": "d29c8619a1ad34d8b583348d4447f89add49342cbb9b44e688a15bd405e24d0e"
     },
+    "schema": {
+      "source": "coreyhaines31/marketingskills",
+      "ref": "8fd2fcade2fd6629026e9dfe6d133b55b36968b9",
+      "commit": "8fd2fcade2fd6629026e9dfe6d133b55b36968b9",
+      "sourceType": "github",
+      "skillPath": "skills/schema/SKILL.md",
+      "computedHash": "f8704ea70fc7d7ff985b9d902e52bac2d455baa6678b803b4306c8afb99997b1"
+    },
     "security-best-practices": {
       "source": "openai/skills",
       "ref": "49f948faa9258a0c61caceaf225e179651397431",

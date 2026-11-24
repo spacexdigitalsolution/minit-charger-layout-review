@@ -29,8 +29,25 @@ export const metadata = {
 };
 
 export default function AltusIIProductPage() {
+  const altusJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: "Altus II Dual-Port DC Fast Charger",
+    description: "High-throughput airport GSE charger with dual independent ports, retractable cables, and 480VAC 3-phase efficiency.",
+    brand: {
+      "@type": "Brand",
+      name: "Minit Charger",
+    },
+    category: "Airport GSE Fast Charger",
+    url: "https://minitcharger.com/products/altus-ii",
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(altusJsonLd) }}
+      />
       <HeroSection />
 
       <div className="relative z-10 bg-white dark:bg-zinc-950">

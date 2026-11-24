@@ -41,6 +41,32 @@ export const metadata = {
   },
 };
 
+const siteSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://minitcharger.com/#organization",
+      name: "Minit Charger",
+      url: "https://minitcharger.com",
+      logo: "https://minitcharger.com/assets/_global/root-layout/icons/minit-charger-browser-shortcut-icon.ico",
+      description: "One charger for your entire fleet. Eliminating daily operational bottlenecks from airport ramps to warehouse floors.",
+      sameAs: [
+        "https://www.linkedin.com/company/minit-charger",
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://minitcharger.com/#website",
+      url: "https://minitcharger.com",
+      name: "Minit Charger",
+      publisher: {
+        "@id": "https://minitcharger.com/#organization",
+      },
+    },
+  ],
+};
+
 export default function RootLayout({ children }) {
   return (
     <html
@@ -48,6 +74,10 @@ export default function RootLayout({ children }) {
       className={`${geistSans.variable} ${geistMono.variable} ${oswald.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-white text-zinc-900">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteSchema) }}
+        />
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-zinc-950 focus:text-white focus:rounded-md focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#16a34a] focus:font-semibold"

@@ -51,8 +51,25 @@ export default function ProductDetailLayout({ product, content }) {
     }
   ];
 
+  const productJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    description: product.shortDescription || product.keyUSP,
+    brand: {
+      "@type": "Brand",
+      name: "Minit Charger",
+    },
+    category: product.categoryTag || "Fleet EV Charging Infrastructure",
+    url: `https://minitcharger.com${product.productPageUrl || `/products/${product.id}`}`,
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+      />
       <ProductHero product={product} banner={content?.banner} />
 
       <div className="relative z-10 bg-white dark:bg-zinc-950">
