@@ -132,18 +132,18 @@ client-approval-date: "2026-11-21"
 
 ## Slot: altus-ii.overview.video-poster
 - **Slot ID**: `altus-ii.overview.video-poster`
-- **Location**: `site/app/products/altus-ii/_components/overview/VideoModule.js:57` (`VideoModule.js`, prop `poster`)
+- **Location**: `site/app/products/altus-ii/_components/overview/VideoModule.js:41` (`VideoModule.js`, prop `src`)
 - **Required Dimensions / Aspect Ratio**: 1920x1080 (16:9)
 - **Priority / LCP**: `false`
 - **Proposed Alt Text**: "Altus II engineering x-ray video walkthrough poster"
-- **Alt Text Sign-off**: `approved`
-- **Slot Status**: `approved`
-- **Approved Source File**: `site/public/assets/products/altus-ii/context/altus_cta_bg.webp`
-- **Pixel Dimensions Found**: 1920x1080
-- **Client Approval**: `approved`
-- **Approval Evidence**: "find image from preview commits for each section also" requested by Devansh with screenshot of The X-Ray of Our Engineering at 2026-11-24T23:25:30+05:30
-- **Current Render**: `wired`
-- **Provenance Note**: Restored from commit a672ccf / a37799e with active ALTUS_II.mp4 video asset per client directive.
+- **Alt Text Sign-off**: `placeholder-kept`
+- **Slot Status**: `placeholder-kept`
+- **Approved Source File**: null
+- **Pixel Dimensions Found**: null
+- **Client Approval**: `placeholder-kept`
+- **Approval Evidence**: "remove that video again and add place in the atlus" requested by Devansh at 2026-11-24T23:38:55+05:30
+- **Current Render**: `placeholder`
+- **Provenance Note**: Video removed and SmartImage placeholder restored per client directive.
 
 ## Slot: altus-ii.cta.banner
 - **Slot ID**: `altus-ii.cta.banner`
