@@ -117,17 +117,19 @@ export default function TabbedProductCatalog() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="text-center mb-16">
-          <h2 className="catalog-nav font-display text-4xl md:text-5xl font-black  uppercase mb-8">
+          <h2 className="catalog-nav font-display text-4xl md:text-5xl font-black  uppercase mb-8 text-balance">
             Purpose-Built Platforms
           </h2>
 
           {/* Navigation Tabs */}
-          <div className="catalog-nav flex flex-wrap justify-center gap-2">
+          <div role="tablist" aria-label="Industries catalog filter" className="catalog-nav flex flex-wrap justify-center gap-2">
             {industries.map((tab) => (
               <button
                 key={tab.id}
+                role="tab"
+                aria-selected={activeTab === tab.id}
                 onClick={() => handleTabClick(tab.id)}
-                className={`px-6 py-3 text-sm font-bold uppercase r rounded-sm transition-all duration-300 ${activeTab === tab.id
+                className={`px-6 py-3 text-sm font-bold uppercase rounded-sm transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white ${activeTab === tab.id
                   ? "bg-white text-zinc-950"
                   : "bg-zinc-900 text-zinc-400 hover:bg-zinc-800 hover:text-white"
                   }`}

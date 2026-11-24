@@ -4,11 +4,11 @@
   "mode": "full",
   "focus": null,
   "currentGate": 4,
-  "currentSkillIndex": 2,
+  "currentSkillIndex": 4,
   "status": "awaiting_approval",
   "branch": "best-practices/2026-11-24",
   "createdAt": "2026-11-24T21:58:00.000Z",
-  "updatedAt": "2026-11-24T22:17:55.000Z",
+  "updatedAt": "2026-11-24T22:24:50.000Z",
   "detectedStack": {
     "framework": "Next.js 16.3.4 (App Router) + React 19.2.8",
     "styling": "Tailwind CSS v4 (@tailwindcss/postcss ^4)",
@@ -39,6 +39,7 @@
       "plan-first",
       "skill-creator",
       "vercel-react-best-practices",
+      "nextjs-app-router-patterns",
       "verify"
     ]
   },
@@ -57,7 +58,7 @@
       "url": "https://skills.sh/vercel-labs/agent-skills/web-design-guidelines",
       "domain": "UI/UX & Design Quality",
       "installs": 900600,
-      "installedLocally": false
+      "installedLocally": true
     },
     {
       "name": "accessibility",
@@ -81,7 +82,7 @@
       "url": "https://skills.sh/wshobson/agents/nextjs-app-router-patterns",
       "domain": "Architecture / App Router Patterns",
       "installs": 34700,
-      "installedLocally": false
+      "installedLocally": true
     },
     {
       "name": "security-best-practices",
@@ -122,7 +123,9 @@
       "source": "wshobson",
       "reason": "Modernize Next.js App Router structure, metadata propagation, and layout conventions",
       "applyOrder": 2,
-      "status": "pending"
+      "status": "applied",
+      "commit": "6999a00",
+      "appliedAt": "2026-11-24T22:20:42.000Z"
     },
     {
       "skill": "web-design-guidelines",
@@ -132,7 +135,9 @@
       "source": "vercel-labs",
       "reason": "Verify typography scales, spatial rhythm, interactive element affordances, and contrast",
       "applyOrder": 3,
-      "status": "pending"
+      "status": "applied",
+      "commit": "PLACEHOLDER",
+      "appliedAt": "2026-11-24T22:24:50.000Z"
     },
     {
       "skill": "accessibility",
@@ -176,7 +181,9 @@
     }
   ],
   "appliedSkills": [
-    "vercel-react-best-practices"
+    "vercel-react-best-practices",
+    "nextjs-app-router-patterns",
+    "web-design-guidelines"
   ],
   "deferredSkills": [],
   "commits": [
@@ -197,6 +204,18 @@
       "commit": "533b759",
       "message": "best-practices: apply vercel-react-best-practices@1a2c79d4 (pass 3)",
       "timestamp": "2026-11-24T22:17:46.000Z"
+    },
+    {
+      "skill": "nextjs-app-router-patterns",
+      "commit": "6999a00",
+      "message": "best-practices: apply nextjs-app-router-patterns@c96b5f65",
+      "timestamp": "2026-11-24T22:20:42.000Z"
+    },
+    {
+      "skill": "web-design-guidelines",
+      "commit": "PLACEHOLDER",
+      "message": "best-practices: apply web-design-guidelines@5a37a632",
+      "timestamp": "2026-11-24T22:24:50.000Z"
     }
   ],
   "approvals": [
@@ -234,6 +253,16 @@
       "gate": "4.1.3",
       "approvedAt": "2026-11-24T22:15:18.000Z",
       "comment": "APPROVE CHANGES (Pass 3)"
+    },
+    {
+      "gate": "4.2",
+      "approvedAt": "2026-11-24T22:15:23.000Z",
+      "comment": "APPROVE CHANGES (nextjs-app-router-patterns)"
+    },
+    {
+      "gate": "4.3",
+      "approvedAt": "2026-11-24T22:23:07.000Z",
+      "comment": "APPROVE CHANGES (web-design-guidelines)"
     }
   ]
 }

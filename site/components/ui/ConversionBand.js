@@ -53,7 +53,7 @@ export default function ConversionBand({
       <div className={`absolute inset-0 z-10 ${bgImage ? 'bg-gradient-to-b from-zinc-950/80 via-zinc-950/65 to-zinc-950/85 backdrop-blur-[1px]' : ''}`} />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center z-20">
-        <h2 className="cb-anim font-display text-4xl sm:text-5xl font-black text-white uppercase mb-4 max-w-4xl mx-auto">
+        <h2 className="cb-anim font-display text-4xl sm:text-5xl font-black text-white uppercase mb-4 max-w-4xl mx-auto text-balance">
           {displayHeadline}
         </h2>
         {displaySubheadline && (

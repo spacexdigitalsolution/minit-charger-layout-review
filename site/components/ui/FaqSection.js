@@ -37,7 +37,7 @@ export default function FaqSection({
 
           {/* Left Column: Heading & Intro */}
           <div className="lg:col-span-4 mb-12 lg:mb-0 faq-anim">
-            <h2 className="font-display text-4xl md:text-5xl font-black  text-zinc-900 dark:text-white uppercase mb-4 ">
+            <h2 className="font-display text-4xl md:text-5xl font-black  text-zinc-900 dark:text-white uppercase mb-4 text-balance">
               {title}
             </h2>
             <p className="text-zinc-600 dark:text-zinc-400 font-light text-lg">
@@ -50,20 +50,24 @@ export default function FaqSection({
             <div className="border-t border-zinc-200 dark:border-zinc-800 divide-y divide-zinc-200 dark:border-zinc-800">
               {faqs.map((faq, index) => {
                 const isOpen = openIndex === index;
+                const answerId = `faq-answer-${index}`;
                 return (
                   <div key={index} className="faq-anim">
                     <button
                       onClick={() => setOpenIndex(prev => prev === index ? null : index)}
-                      className="w-full flex items-center justify-between py-6 text-left focus:outline-none group"
+                      aria-expanded={isOpen}
+                      aria-controls={answerId}
+                      className="w-full flex items-center justify-between py-6 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-500 rounded-sm group"
                     >
                       <span className="font-bold text-lg text-zinc-900 dark:text-white group-hover:text-zinc-600 dark:group-hover:text-zinc-300 transition-colors pr-8">
                         {faq.question}
                       </span>
                       <span className={`shrink-0 text-zinc-400 dark:text-zinc-500 transition-all duration-300 group-hover:text-zinc-600 dark:group-hover:text-zinc-300 ${isOpen ? "rotate-45" : "rotate-0"}`}>
-                        <Plus className="w-5 h-5" />
+                        <Plus className="w-5 h-5" aria-hidden="true" />
                       </span>
                     </button>
                     <div
+                      id={answerId}
                       className={`grid transition-all duration-300 ease-in-out ${isOpen ? "grid-rows-[1fr] opacity-100 pb-6" : "grid-rows-[0fr] opacity-0"}`}
                     >
                       <div className="overflow-hidden">

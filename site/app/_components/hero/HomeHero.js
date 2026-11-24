@@ -135,7 +135,7 @@ export default function HomeHero() {
       {/* Dynamic Content */}
       <div className="relative z-20 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-32">
         <div className="max-w-3xl">
-          <h1 className="hero-anim font-display text-5xl md:text-5xl lg:text-5xl font-black  text-white uppercase  mb-6">
+          <h1 className="hero-anim font-display text-5xl md:text-5xl lg:text-5xl font-black  text-white uppercase  mb-6 text-balance">
             {slides[activeSlide].headline}
           </h1>
           <p className="hero-anim text-xl text-zinc-300 font-light mb-8">
@@ -175,7 +175,7 @@ export default function HomeHero() {
               <button
                 key={`ind-${index}`}
                 onClick={() => setActiveSlide(index)}
-                className="group py-2 relative"
+                className="group py-2 relative focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-sm"
                 aria-label={`Go to slide ${index + 1}`}
               >
                 <div className={`h-1 w-12 transition-colors duration-500 rounded-full ${index === activeSlide ? 'bg-white' : 'bg-white/30 group-hover:bg-white/50'}`}></div>
@@ -187,19 +187,19 @@ export default function HomeHero() {
           <div className="flex items-center gap-4">
             <button
               onClick={() => setIsUserPaused(!isUserPaused)}
-              className="text-white/70 hover:text-white transition-colors p-2"
+              className="text-white/70 hover:text-white transition-colors p-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-sm"
               aria-label={isUserPaused ? "Play slider" : "Pause slider"}
             >
-              {isUserPaused ? <Play className="w-5 h-5" /> : <Pause className="w-5 h-5" />}
+              {isUserPaused ? <Play className="w-5 h-5" aria-hidden="true" /> : <Pause className="w-5 h-5" aria-hidden="true" />}
             </button>
 
             {slides[activeSlide].type === "video" && (
               <button
                 onClick={() => setIsMuted(!isMuted)}
-                className="text-white/70 hover:text-white transition-colors p-2"
+                className="text-white/70 hover:text-white transition-colors p-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-sm"
                 aria-label={isMuted ? "Unmute video" : "Mute video"}
               >
-                {isMuted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
+                {isMuted ? <VolumeX className="w-5 h-5" aria-hidden="true" /> : <Volume2 className="w-5 h-5" aria-hidden="true" />}
               </button>
             )}
           </div>
